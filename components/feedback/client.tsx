@@ -50,9 +50,9 @@ const blockFeedbackResult = z.extend(blockFeedback, {
  * A feedback component to be attached at the end of page
  */
 export function Feedback({
-  onSendAction,
+  onSendAction = async () => ({}),
 }: {
-  onSendAction: (feedback: PageFeedback) => Promise<ActionResponse>;
+  onSendAction?: (feedback: PageFeedback) => Promise<ActionResponse>;
 }) {
   const pathname = usePathname();
   const { previous, setPrevious } = useSubmissionStorage(pathname, (v) => {
