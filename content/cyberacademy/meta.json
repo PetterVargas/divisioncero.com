@@ -1,0 +1,30 @@
+{
+  "title": "CyberAcademy",
+  "description": "Aprende resolviendo problemas",
+  "icon": "GraduationCap",
+  "root": true,
+  "pages": [
+    "---Introducción---",
+    "index",
+    "convenciones",
+    "ruta-de-aprendizaje",
+    "---Cursos Ciberusuario---",
+    "ciberseguridad-para-ciberusuarios",
+    "ciberseguridad-en-el-desarrollo-de-software",
+    "ciberseguridad-para-creacion-de-productos-saas",
+    "phishing-la-amenaza-constante",
+    "proteccion-digital-ninos-ninas-adolescentes",
+    "---Cursos Ciberguardianes---",
+    "cor-coherencia-organizacional",
+    "cip-ciberseguridad-en-identidad-y-puntos-finales",
+    "cif-ciberseguridad-en-infraestructura",
+    "cap-ciberseguridad-en-aplicaciones",
+    "ccn-continuidad-y-cambios-del-negocio",
+    "thp-ciberseguridad-en-talento-humano-y-proveedores",
+    "dia-ciberseguridad-en-datos-e-inteligencia-artificial",
+    "adr-analisis-deteccion-y-respuesta-de-ciberseguridad",
+    "---Evaluaciones y Certificaciones---",
+    "evaluaciones",
+    "certificaciones"
+  ]
+}
