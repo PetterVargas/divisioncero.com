@@ -1,6 +1,6 @@
 # divisioncero-docs
 
-Sitio de documentación oficial de [DivisionCero](https://divisioncero.com), construido con [Fumadocs](https://fumadocs.dev) y Next.js. Incluye dos secciones principales de contenido: **CyberAcademy** y **Ciberseguridad Empresarial**, además de un blog.
+Sitio de documentación oficial de [DivisionCero](https://divisioncero.com). Incluye dos secciones principales de contenido: **CyberAcademy** y **Ciberseguridad Empresarial**, además de un blog.
 
 ## Stack
 
