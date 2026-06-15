@@ -40,12 +40,7 @@ export default async function Page(props: PageProps<'/ciberseguridad-empresarial
           })}
         />
       </DocsBody>
-      <Feedback
-        onSendAction={async (_feedback) => {
-          'use server';
-          return {};
-        }}
-      />
+      <Feedback />
     </DocsPage>
   );
 }
