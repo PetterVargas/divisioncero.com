@@ -1,0 +1,12 @@
+{
+    "title": "Ciberseguridad Empresarial",
+    "description": "Automatización en Ciberseguridad",
+    "icon": "Settings",
+    "root": true,
+    "pages": [
+      "---Guías---",
+      "index",
+      "servicios",
+      "gana-dinero-ciberseguridad"
+    ]
+  }
