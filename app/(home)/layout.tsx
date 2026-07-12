@@ -3,6 +3,7 @@ import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { Banner } from 'fumadocs-ui/components/banner';
 import { baseOptions } from '@/app/layout.config';
 import { Globe, MessageCircle } from 'lucide-react';
+import { principalWebsiteUtm } from '@/lib/shared';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -21,7 +22,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2">
           <a
-            href="https://divisioncero.com/herramientas"
+            href="https://herramientas.divisioncero.com/?utm_source=divisioncero.com&utm_medium=text_link&utm_campaign=principal_website"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline hover:text-white/80 transition-colors"
@@ -126,9 +127,9 @@ function Footer() {
             <div className="flex flex-col gap-y-2.5">
               <h3 className="font-medium mb-4">Acerca de</h3>
               <ul className="space-y-2">
-                <li><a href="https://divisioncero.com/herramientas?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Herramientas</a></li>
-                <li><a href="https://docs.divisioncero.com?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Documentación</a></li>
-                <li><a href="/sgsi" className="text-sm hover:underline">SGSI</a></li>
+                <li><a href={`https://herramientas.divisioncero.com/?${principalWebsiteUtm}`} className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Herramientas</a></li>
+                <li><a href="https://divisioncero.com/docs" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Documentación</a></li>
+                <li><a href={`https://kudo.divisioncero.com/sgsi/?${principalWebsiteUtm}`} className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">SGSI</a></li>
               </ul>
             </div>
 
@@ -138,7 +139,7 @@ function Footer() {
               <ul className="space-y-2">
                 <li><a href="https://cyberacademy.divisioncero.com/?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberAcademy</a></li>
                 <li><a href="https://divisioncero.com/home/empresas?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Ciberseguridad Empresarial</a></li>
-                <li><a href="/framework" className="text-sm hover:underline">Framework Kudo</a></li>
+                <li><a href={`https://kudo.divisioncero.com/?${principalWebsiteUtm}`} className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Framework Kudo</a></li>
               </ul>
             </div>
 
@@ -146,10 +147,10 @@ function Footer() {
             <div className="flex flex-col gap-y-2.5">
               <h3 className="font-medium mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="https://divisioncero.com/terminos-de-servicio?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Términos de Servicio</a></li>
-                <li><a href="https://divisioncero.com/politica-de-privacidad?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></li>
-                <li><a href="https://divisioncero.com/politica-de-cookies?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Política de Cookies</a></li>
-                <li><a href="https://divisioncero.com/trust-center?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Centro de Confianza</a></li>
+                <li><a href="/terminos-de-servicio" className="text-sm hover:underline">Términos de Servicio</a></li>
+                <li><a href="/politica-de-privacidad" className="text-sm hover:underline">Política de Privacidad</a></li>
+                <li><a href="/politica-de-cookies" className="text-sm hover:underline">Política de Cookies</a></li>
+                <li><a href="/trust-center" className="text-sm hover:underline">Centro de Confianza</a></li>
               </ul>
             </div>
           </div>

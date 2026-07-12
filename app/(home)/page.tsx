@@ -1,296 +1,223 @@
 import Link from 'next/link';
-import { ArrowRight, Book, Rocket, Shield, FileText, Users, Target, Zap, Globe, CheckCircle } from 'lucide-react';
+import {
+  ArrowRight, Rocket, GraduationCap, Building2, Radar, BookOpen,
+  Timer, Headset, MapPin,
+  Map, Grid3x3, MessageCircleQuestion, Network, Calendar, KeyRound, QrCode, Hash, Mail, Binary, Link2, Fingerprint,
+} from 'lucide-react';
+import { HeroReveal, ScrollReveal } from '@/components/home-animations';
+import { HeroUniverse } from '@/components/hero-universe';
+import { FullViewportSection } from '@/components/full-viewport-section';
+import { PlanetButton } from '@/components/planet-button';
+import { PricingTiers } from '@/components/pricing-tiers';
+import { ToolsSlider } from '@/components/tools-slider';
+import { EcosystemPanels } from '@/components/ecosystem-panels';
+import { TextMaskReveal } from '@/components/text-mask-reveal';
+import { principalWebsiteUtm } from '@/lib/shared';
+
+const signUpUrl = `https://app.divisioncero.com/auth/sign-up?${principalWebsiteUtm}`;
+const discordUrl = 'https://discord.com/invite/RPxQTPBfvG';
+
+const herramientasUrl = `https://herramientas.divisioncero.com/?${principalWebsiteUtm}`;
+
+const toolIconClass = 'h-4.5 w-4.5 text-fd-primary';
+
+const tools = [
+  { icon: <Map className={toolIconClass} />, title: 'CyberMap', description: 'Visualiza el panorama de amenazas y ciberataques en tiempo real.', href: `https://herramientas.divisioncero.com/cybermap?${principalWebsiteUtm}`, external: true },
+  { icon: <Grid3x3 className={toolIconClass} />, title: 'Tabla Periódica de Ciberseguridad', description: 'Explora los elementos clave de la Ciberseguridad de forma visual.', href: `https://herramientas.divisioncero.com/tabla-periodica-ciberseguridad?${principalWebsiteUtm}`, external: true },
+  { icon: <MessageCircleQuestion className={toolIconClass} />, title: 'Rompehielos de Seguridad', description: 'Preguntas para romper el hielo y abrir la conversación sobre seguridad.', href: `https://herramientas.divisioncero.com/rompehielos?${principalWebsiteUtm}`, external: true },
+  { icon: <Network className={toolIconClass} />, title: 'Workflow de Ciberseguridad', description: 'Diagramas de flujo para procesos y procedimientos de seguridad.', href: `https://herramientas.divisioncero.com/workflow-ciberseguridad?${principalWebsiteUtm}`, external: true },
+  { icon: <Calendar className={toolIconClass} />, title: 'Calendario de Ciberseguridad', description: 'Fechas clave y eventos relevantes de Ciberseguridad.', href: `https://herramientas.divisioncero.com/calendario-ciberseguridad?${principalWebsiteUtm}`, external: true },
+  { icon: <KeyRound className={toolIconClass} />, title: 'Generador de Contraseñas', description: 'Crea contraseñas seguras y aleatorias al instante.', href: `https://herramientas.divisioncero.com/generador-contrasenas?${principalWebsiteUtm}`, external: true },
+  { icon: <QrCode className={toolIconClass} />, title: 'Generador de QR', description: 'Genera códigos QR gratis para tus enlaces y campañas.', href: `https://herramientas.divisioncero.com/generador-qr?${principalWebsiteUtm}`, external: true },
+  { icon: <Hash className={toolIconClass} />, title: 'Generador de Hash', description: 'Calcula el hash de cualquier texto o archivo.', href: `https://herramientas.divisioncero.com/generador-hash?${principalWebsiteUtm}`, external: true },
+  { icon: <Mail className={toolIconClass} />, title: 'Validador SPF', description: 'Verifica y valida los registros SPF de tu dominio.', href: `https://herramientas.divisioncero.com/validador-spf?${principalWebsiteUtm}`, external: true },
+  { icon: <Binary className={toolIconClass} />, title: 'Codif/Decod Base64', description: 'Codifica y decodifica texto en Base64.', href: `https://herramientas.divisioncero.com/codificador-base64?${principalWebsiteUtm}`, external: true },
+  { icon: <Link2 className={toolIconClass} />, title: 'Codif/Decod URL', description: 'Codifica y decodifica URLs fácilmente.', href: `https://herramientas.divisioncero.com/codificador-url?${principalWebsiteUtm}`, external: true },
+  { icon: <Fingerprint className={toolIconClass} />, title: 'Generador de UUID', description: 'Genera identificadores únicos universales (UUID).', href: `https://herramientas.divisioncero.com/generador-uuid?${principalWebsiteUtm}`, external: true },
+];
+
+const benefits = [
+  { icon: Timer, text: 'Setup en 5 minutos' },
+  { icon: Headset, text: 'Soporte incluido' },
+  { icon: MapPin, text: 'Por y para LatAm' },
+];
+
+const panelIconClass = 'h-6 w-6 text-fd-primary';
+
+const ecosystemPanels = [
+  {
+    icon: <GraduationCap className={panelIconClass} />,
+    title: 'CyberAcademy',
+    description: 'Capacitación práctica en Ciberseguridad, con casos reales y rutas de aprendizaje.',
+    href: `https://cyberacademy.divisioncero.com/?${principalWebsiteUtm}`,
+    cta: 'Visitar CyberAcademy',
+  },
+  {
+    icon: <BookOpen className={panelIconClass} />,
+    title: 'Kudo',
+    description: 'Framework de Ciberseguridad open-source para el cumplimiento de tu empresa.',
+    href: `https://kudo.divisioncero.com/?${principalWebsiteUtm}`,
+    cta: 'Visitar Kudo',
+  },
+  {
+    icon: <Radar className={panelIconClass} />,
+    title: 'Conan',
+    description: 'Tracking basado en direcciones IP para la detección de amenazas.',
+    href: 'https://app.divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website',
+    cta: 'Visitar Conan',
+  },
+  {
+    icon: <Building2 className={panelIconClass} />,
+    title: 'Ciberseguridad Empresarial',
+    description: 'Automatización y consultoría en Ciberseguridad para pequeñas y medianas empresas.',
+    href: signUpUrl,
+    cta: 'Comenzar',
+  },
+];
 
 export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col min-h-[calc(100vh-var(--header-height)-var(--footer-height))] font-sans">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center py-24 px-4 text-center relative overflow-hidden">
+      <FullViewportSection className="flex flex-col items-center justify-center py-24 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="flex flex-col items-center justify-center mb-8">
-            <svg
-              width={120}
-              className="w-[100px] lg:w-[120px] mb-6"
-              viewBox="0 0 2048 783"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                className={'dark:fill-white'}
-                transform="translate(746,1)"
-                d="m0 0 13 2 9 4 6 4 8 9 5 11 1 10v591l-1 17-4 10-8 10-8 5-21 7-69 19-212 58-59 16-5 1h-14l-45-12-62-17-117-32-62-17-58-16-16-5-8-4-8-7-6-10-2-6-1-7-1-233v-97l1-233 1-46 4-11 6-8 7-6 10-5 3-1h12l28 7 44 12 73 20 149 41 47 13 11 2 50-14 47-13 225-62zm-39 92-35 9-65 18-166 46-35 10-14 2-31-8-229-63-47-13h-3l-1 177v336l8 3 47 13 132 37 107 30 17 5 8-1 128-35 135-37 37-10 8-3 1-515z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(149,219)"
-                d="m0 0h490l14 7 9 9 6 12 2 15v15l-1 20-1 1h-470v221l12 3 119 33 50 14 17 4 13-4 68-19 119-33 69-19 4 1v57l-3 10-6 9-5 5-7 5-27 8-214 60-9 2h-9l-122-34-82-23-42-12-10-6-7-8-6-12-2-11v-291l2-10 7-14 7-7 10-6z"
-                fill="#4DAE84"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1463,332)"
-                d="m0 0h131l17 3 16 6 11 6 12 9 10 9 9 10 10 15 6 14 4 15 2 13v28l-4 20-4 12-7 13-8 11-9 10-13 11-15 9-4 2 2 6 10 19 15 28 17 32 15 29 6 12-4 1h-69l-6-9-18-34-12-22-14-27-12-22-1-1-33-1v113l-1 2-41 1h-25l-3-2-1-204v-41l1-95zm60 67-1 15v77h56l11-2 10-6 10-9 7-12 3-15-1-13-4-11-8-11-11-8-10-4-6-1z"
-                fill="#4DAE84"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1859,332)"
-                d="m0 0h36l20 3 21 6 21 10 18 12 10 8 12 11 8 8 11 14 9 14 8 16 8 20 7 29v44l-8 32-9 22-10 18-13 17-13 14-11 9-14 10-14 8-19 8-22 6-17 3-10 1h-23l-21-3-24-6-19-8-15-8-14-10-12-11-12-12-13-17-11-19-8-18-6-20-4-24v-28l3-22 5-19 6-16 11-21 8-12 7-9 11-12 7-7 13-10 14-9 15-8 18-7 21-5zm6 64-17 3-12 4-15 8-13 10-10 10-9 12-8 15-6 18-2 12-1 21 2 18 4 15 5 12 6 11 9 11 5 6 14 11 15 9 12 5 17 4 10 1h16l16-3 14-5 15-8 10-8 13-12 10-13 8-16 5-15 2-11v-33l-3-15-6-16-9-16-8-10-6-7-14-11-16-9-14-5-17-3z"
-                fill="#4DAE84"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1201,332)"
-                d="m0 0h201l6 1 1 13v51l-2 2h-139l1 71h138l1 1v64l-4 1h-136v71l140 1v65l-1 1-138 1h-68l-1-5-1-242 1-95z"
-                fill="#4DAE84"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1015,332)"
-                d="m0 0h34l20 3 21 6 16 7 15 8 17 12 15 13 12 13 1 6-15 14-11 9-14 13-3 3-4-2-11-12-11-9-16-10-15-6-16-4-8-1h-21l-20 4-16 6-15 9-10 8-11 11-9 13-8 15-5 15-3 16v23l3 16 4 12 8 16 9 13 11 12 17 12 16 8 16 5 12 2h26l17-4 13-5 15-8 12-9 9-8 6-8 4-1 11 9 13 11 8 7 10 9 3 4-8 10-17 17-16 12-18 10-16 7-20 6-21 4-10 1h-21l-20-3-20-5-18-7-16-8-15-10-10-8-12-11-11-12-12-17-9-16-6-14-6-19-4-20-1-13v-18l2-19 4-18 7-20 8-16 7-12 11-15 11-12 9-9 13-10 14-9 17-9 17-6 20-5z"
-                fill="#4DAE84"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1903,108)"
-                d="m0 0 36 1 6 8 12 19 15 23 25 38 9 14 4 4v-106h38v177l-3 1h-32l-6-7-29-44-27-41-8-12-5-4 1 2v105l-1 1h-35l-1-1v-177z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(859,109)"
-                d="m0 0h80l16 3 12 5 11 8 10 10 7 10 7 14 4 13 2 13v23l-3 17-6 16-8 13-11 13-11 8-10 5-14 4-13 2-15 1h-57l-1-2zm37 34v107h27l12-2 13-5 9-7 7-9 5-14 1-5v-22l-4-15-6-10-8-8-10-5-16-4-9-1z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1749,108)"
-                d="m0 0h17l17 2 13 5 12 7 14 12 10 13 6 11 5 12 3 12 1 8v14l-3 18-5 14-8 14-9 11-9 8-14 9-16 6-18 3h-18l-16-3-14-5-13-8-12-11-8-9-8-14-5-12-4-18v-20l4-18 6-15 7-11 9-10 7-7 10-7 12-6 9-3zm-3 34-13 4-11 8-9 10-7 14-2 8-1 14 2 13 4 10 6 10 9 9 10 6 12 4 5 1h12l14-4 12-7 8-7 7-10 5-12 1-5v-20l-4-14-6-10-9-10-10-7-10-4-5-1z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1489,108)"
-                d="m0 0h11l15 2 13 7 13 12 5 6-2 4-11 10-8 7-4 3-4-2-9-10-8-4-8-1-7 4-2 6 4 6 11 11 11 9 10 9 8 7 10 10 6 10 4 9 1 5v20l-4 12-8 11-9 8-10 5-15 3h-16l-12-3-10-5-12-10-9-12-4-7 1-4 22-13 4-3 4 1 8 11 8 7 6 3h8l8-4 4-5v-8l-6-10-11-10-11-9-15-14-10-10-9-14-3-9-1-9 2-11 7-14 9-9 11-6z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1141,108)"
-                d="m0 0 38 1 4 10 21 60 27 75 10 29-1 3-3 1h-33l-3-4-35-98-15-43-11-31z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1580,108)"
-                d="m0 0 36 1v177l-1 1h-35l-1-1-1-145 1-32z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1051,109)"
-                d="m0 0h37v178h-36l-1-1z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1350,109)"
-                d="m0 0h37l1 4-1 173-2 1h-34l-1-4z"
-                fill="#1B2433"
-              />
-              <path
-                className={'dark:fill-white'}
-                transform="translate(1264,109)"
-                d="m0 0h39l-3 9-14 40-20 55-10 28-4 11h-2l-5-12-13-37v-8l11-29 15-42z"
-                fill="#1B2433"
-              />
-            </svg>
+        <HeroUniverse className="absolute inset-0 w-full h-full pointer-events-none opacity-90" />
+        <HeroReveal>
+        <div className="max-w-4xl mx-auto relative z-10 -translate-y-[20%]">
+          <div className="flex justify-center mb-8">
+            <span data-hero-badge className="relative inline-flex items-center gap-2 pl-1 pr-1.5 py-1 rounded-full border border-fd-border/60 bg-fd-muted/60 text-sm motion-safe:opacity-0">
+              <span data-badge-pulse className="absolute inset-0 rounded-full ring-2 ring-fd-primary/50 pointer-events-none" />
+              <span className="bg-fd-foreground text-fd-background text-xs font-bold px-2 py-0.5 rounded-full">Nuevo</span>
+              <span className="text-fd-muted-foreground pl-1">Ciberseguridad por y para LatAm</span>
+              <Link
+                href={signUpUrl}
+                aria-label="Regístrate"
+                className="rounded-full p-1 text-fd-muted-foreground hover:bg-fd-accent hover:text-fd-accent-foreground transition-colors"
+              >
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </span>
           </div>
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6 bg-gradient-to-br from-fd-foreground to-fd-muted-foreground bg-clip-text text-transparent">
-            Documentación
+          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            <span className="block overflow-hidden">
+              <span
+                data-hero-line
+                className="block bg-gradient-to-r from-teal-600 to-cyan-600 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
+              >
+                Aprende Ciberseguridad
+              </span>
+            </span>
+            <span className="block overflow-hidden">
+              <span
+                data-hero-line
+                className="block bg-gradient-to-r from-teal-600 to-cyan-600 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
+              >
+                y asegura tu negocio
+              </span>
+            </span>
           </h1>
-          <h2 className="text-2xl lg:text-3xl font-semibold mb-4 text-fd-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            Aprende Ciberseguridad
-            y asegura tu negocio
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/cyberacademy"
+          <p data-hero-item className="text-base text-fd-muted-foreground max-w-xl mx-auto mb-10 motion-safe:opacity-0">
+            Enfócate en construir confianza y te ayudaremos a hacerlo realidad.
+          </p>
+          <div data-hero-item className="flex flex-col sm:flex-row gap-6 items-center justify-center motion-safe:opacity-0">
+            <PlanetButton
+              href={signUpUrl}
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
             >
-              <Rocket className="h-5 w-5 mr-2" />
-              Docs CyberAcademy
+              Comenzar
               <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </PlanetButton>
             <Link
-              href="/ciberseguridad-empresarial"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
+              href={discordUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold text-fd-foreground hover:text-fd-primary transition-colors"
             >
-              <Shield className="h-5 w-5 mr-2" />
-              Docs Ciberseguridad Empresarial
+              Únete a Discord
             </Link>
           </div>
         </div>
-      </section>
+        </HeroReveal>
+      </FullViewportSection>
 
-      {/* The Formula */}
-      <section className="py-20 px-4 bg-fd-muted/50">
-        <div className="max-w-6xl mx-auto">
+      {/* Ecosystem panels */}
+      <section className="py-20 bg-fd-foreground/[0.04] border-y border-fd-border">
+        <ScrollReveal className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold mb-4">La fórmula es simple</h3>
-            <div className="text-2xl font-mono bg-fd-card border rounded-lg py-6 px-4 inline-block">
-              <span className="text-fd-primary">Coherencia</span> + <span className="text-fd-primary">Confianza</span> = <span className="text-fd-foreground font-bold">Ciberseguridad</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold mb-6">¿Por qué DivisionCero?</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Aprendizaje práctico</h4>
-                    <p className="text-fd-muted-foreground text-sm">Desarrolla habilidades reales resolviendo problemas de ciberseguridad</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Servicios especializados</h4>
-                    <p className="text-fd-muted-foreground text-sm">Consultoría y automatización en seguridad para empresas</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Enfoque LatAm</h4>
-                    <p className="text-fd-muted-foreground text-sm">Contenido y servicios adaptados al contexto latinoamericano</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Comunidad activa</h4>
-                    <p className="text-fd-muted-foreground text-sm">Conecta con profesionales de ciberseguridad en la región</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-fd-card border border-fd-border/70 rounded-xl p-8 shadow-md">
-              <div className="text-center mb-6">
-                <h4 className="text-xl font-semibold mb-2">Lo que ofrecemos</h4>
-                <p className="text-fd-muted-foreground text-sm">Formación y servicios integrales</p>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-3 bg-fd-muted/70 rounded-lg">
-                  <Rocket className="h-5 w-5 text-fd-primary" />
-                  <span className="font-medium">Cursos prácticos de ciberseguridad</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-fd-muted/70 rounded-lg">
-                  <Shield className="h-5 w-5 text-fd-primary" />
-                  <span className="font-medium">Consultoría empresarial</span>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-fd-muted/70 rounded-lg">
-                  <Zap className="h-5 w-5 text-fd-primary" />
-                  <span className="font-medium">Automatización de seguridad</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* External Resources */}
-      <section className="py-20 px-4 bg-fd-muted/40">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Recursos Adicionales</h3>
-            <p className="text-xl text-fd-muted-foreground">
-              Explora nuestros recursos complementarios de Ciberseguridad
+            <h3 className="text-3xl font-bold mb-4">Un ecosistema completo de Ciberseguridad</h3>
+            <p className="text-xl text-fd-muted-foreground max-w-2xl mx-auto">
+              Conoce los productos que forman parte de DivisionCero.
             </p>
           </div>
+        </ScrollReveal>
+        <EcosystemPanels items={ecosystemPanels} />
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Complete suite of tools */}
+      <section className="py-20 overflow-hidden">
+        <ScrollReveal className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold mb-4">Herramientas para tu día a día</h3>
             <Link
-              href="https://kudo.divisioncero.com"
-              className="group flex flex-col gap-4 p-8 rounded-xl border border-fd-border/60 bg-fd-card/40 hover:border-fd-foreground/40 hover:bg-fd-card/70 transition-all duration-200 shadow-md"
+              href={herramientasUrl}
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-fd-primary/10 rounded-lg flex items-center justify-center">
-                  <Book className="h-6 w-6 text-fd-primary" />
-                </div>
-                <h4 className="text-2xl font-semibold">Kudo</h4>
-              </div>
-              <p className="text-fd-muted-foreground text-lg">
-                Framework completo de políticas y procedimientos de ciberseguridad para LatAm
-              </p>
-              <div className="flex items-center text-fd-primary font-medium mt-2">
-                Visitar Kudo <Globe className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-
-            <Link
-              href="https://divisioncero.com/home/kit-inicio-ciberseguridad"
-              className="group flex flex-col gap-4 p-8 rounded-xl border border-fd-border/60 bg-fd-card/40 hover:border-fd-foreground/40 hover:bg-fd-card/70 transition-all duration-200 shadow-md"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-fd-primary/10 rounded-lg flex items-center justify-center">
-                  <FileText className="h-6 w-6 text-fd-primary" />
-                </div>
-                <h4 className="text-2xl font-semibold">Kit de Inicio</h4>
-              </div>
-              <p className="text-fd-muted-foreground text-lg">
-                Descarga gratis recursos esenciales para comenzar tu viaje en ciberseguridad
-              </p>
-              <div className="flex items-center text-fd-primary font-medium mt-2">
-                Descargar kit <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </div>
+              Ver todas las herramientas
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
+        <ToolsSlider items={tools} />
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20 px-4 bg-fd-foreground/[0.04] border-y border-fd-border">
+        <ScrollReveal className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4">Precios transparentes para cada etapa de crecimiento</h3>
+            <p className="text-xl text-fd-muted-foreground max-w-2xl mx-auto">
+              Comienza gratis y escala con planes diseñados para empresas de todos los tamaños. Sin sorpresas, sin letra pequeña.
+            </p>
+          </div>
+          <PricingTiers />
+          <div className="text-center mt-10">
+            <Link href="/precios" className="text-fd-primary font-medium hover:underline inline-flex items-center gap-1">
+              Ver todos los detalles <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-6">Comienza tu viaje en ciberseguridad</h3>
+        <ScrollReveal className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-6">
+            <TextMaskReveal text="¿Listo para fortalecer tu Ciberseguridad?" />
+          </h3>
           <p className="text-xl text-fd-muted-foreground mb-8">
-            Desarrolla tus habilidades con formación práctica o fortalece la seguridad de tu empresa con nuestros servicios especializados
+            Únete a las empresas latinoamericanas que ya confían en DivisionCero para mejorar su postura de Ciberseguridad.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
-              href="https://divisioncero.com/cursos"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={signUpUrl}
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
             >
               <Rocket className="h-5 w-5 mr-2" />
-              Comenzar formación
+              Comenzar ahora
               <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="https://divisioncero.com/home/empresas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
-            >
-              <Shield className="h-5 w-5 mr-2" />
-              Ciberseguridad Empresarial
-            </Link>
           </div>
-        </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-fd-muted-foreground">
+            {benefits.map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-2">
+                <Icon className="h-4 w-4 text-fd-primary" />
+                {text}
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </section>
     </main>
   );

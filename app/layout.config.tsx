@@ -1,5 +1,6 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { BookIcon, FileTextIcon, UserIcon, LogInIcon, GraduationCapIcon, WrenchIcon, PackageIcon, NewspaperIcon } from 'lucide-react';
+import { BookIcon, FileTextIcon, UserIcon, LogInIcon, GraduationCapIcon, WrenchIcon, TagIcon, NewspaperIcon, BookOpenIcon } from 'lucide-react';
+import { principalWebsiteUtm } from '@/lib/shared';
 
 /**
  * Shared layout configurations
@@ -41,26 +42,27 @@ export const baseOptions: BaseLayoutProps = {
     {
       icon: <GraduationCapIcon />,
       text: 'CyberAcademy',
-      url: '/cyberacademy',
-      secondary: false,
-    },
-    {
-      icon: <PackageIcon />,
-      text: 'Ciberseguridad Empresarial',
-      url: '/ciberseguridad-empresarial',
-      secondary: false,
-    },
-    {
-      icon: <BookIcon />,
-      text: 'Kudo',
-      url: 'https://kudo.divisioncero.com',
+      url: `https://cyberacademy.divisioncero.com/?${principalWebsiteUtm}`,
       secondary: false,
       external: true,
     },
     {
-      icon: <NewspaperIcon />,
-      text: 'Blog',
-      url: '/blog',
+      icon: <BookIcon />,
+      text: 'Kudo',
+      url: `https://kudo.divisioncero.com?${principalWebsiteUtm}`,
+      secondary: false,
+      external: true,
+    },
+    {
+      icon: <TagIcon />,
+      text: 'Precio',
+      url: '/precios',
+      secondary: false,
+    },
+    {
+      icon: <BookOpenIcon />,
+      text: 'Documentación',
+      url: '/docs',
       secondary: false,
     },
     {
@@ -68,28 +70,34 @@ export const baseOptions: BaseLayoutProps = {
       text: 'Recursos',
       items: [
         {
+          icon: <NewspaperIcon />,
+          text: 'Blog',
+          description: 'Artículos y actualizaciones sobre ciberseguridad',
+          url: '/blog',
+        },
+        {
           icon: <FileTextIcon />,
           text: 'Open Sources',
           description: 'Proyectos y contribuciones abiertos',
-          url: 'https://divisioncero.com/opensource?utm_source=docs.divisioncero.com',
+          url: '/open-source',
         },
         {
           icon: <WrenchIcon />,
           text: 'Herramientas',
           description: 'Ayuda en Ciberseguridad',
-          url: 'https://divisioncero.com/herramientas?utm_source=docs.divisioncero.com',
+          url: `https://herramientas.divisioncero.com/?${principalWebsiteUtm}`,
         },
         {
           icon: <BookIcon />,
           text: 'Releases',
           description: 'Actualizaciones sobre la plataforma',
-          url: 'https://divisioncero.com/releases?utm_source=docs.divisioncero.com',
+          url: '/releases',
         },
       ],
     },
     {
       type: 'icon',
-      url: 'https://github.com/PetterVargas/divisioncero-docs',
+      url: 'https://github.com/PetterVargas/',
       text: 'Github',
       icon: (
         <svg role="img" viewBox="0 0 24 24" fill="currentColor">
@@ -101,13 +109,13 @@ export const baseOptions: BaseLayoutProps = {
     {
       icon: <LogInIcon />,
       text: <span className="block md:inline">Login</span>,
-      url: 'http://divisioncero.com/auth/sign-in?utm_source=docs.divisioncero.com',
+      url: `https://app.divisioncero.com/auth/sign-in?${principalWebsiteUtm}`,
       secondary: true,
     },
     {
       icon: <UserIcon />,
       text: <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold block md:inline-block">Regístrate</span>,
-      url: 'http://divisioncero.com/auth/sign-up?utm_source=docs.divisioncero.com',
+      url: `https://app.divisioncero.com/auth/sign-up?${principalWebsiteUtm}`,
       secondary: true,
     },
   ],
