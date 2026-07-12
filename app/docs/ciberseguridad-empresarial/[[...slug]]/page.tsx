@@ -14,7 +14,7 @@ import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { gitConfig } from '@/lib/shared';
 import { Feedback } from '@/components/feedback/client';
 
-export default async function Page(props: PageProps<'/ciberseguridad-empresarial/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/docs/ciberseguridad-empresarial/[[...slug]]'>) {
   const params = await props.params;
   const page = ciberseguridadEmpresarialSource.getPage(params.slug);
   if (!page) notFound();
@@ -49,7 +49,7 @@ export async function generateStaticParams() {
   return ciberseguridadEmpresarialSource.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/ciberseguridad-empresarial/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/docs/ciberseguridad-empresarial/[[...slug]]'>): Promise<Metadata> {
   const params = await props.params;
   const page = ciberseguridadEmpresarialSource.getPage(params.slug);
   if (!page) notFound();

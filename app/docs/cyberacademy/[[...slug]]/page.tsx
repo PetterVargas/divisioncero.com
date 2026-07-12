@@ -14,7 +14,7 @@ import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { gitConfig } from '@/lib/shared';
 import { Feedback } from '@/components/feedback/client';
 
-export default async function Page(props: PageProps<'/cyberacademy/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/docs/cyberacademy/[[...slug]]'>) {
   const params = await props.params;
   const page = cyberacademySource.getPage(params.slug);
   if (!page) notFound();
@@ -49,7 +49,7 @@ export async function generateStaticParams() {
   return cyberacademySource.generateParams();
 }
 
-export async function generateMetadata(props: PageProps<'/cyberacademy/[[...slug]]'>): Promise<Metadata> {
+export async function generateMetadata(props: PageProps<'/docs/cyberacademy/[[...slug]]'>): Promise<Metadata> {
   const params = await props.params;
   const page = cyberacademySource.getPage(params.slug);
   if (!page) notFound();

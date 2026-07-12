@@ -8,11 +8,11 @@ async function checkLinks() {
   const scanned = await scanURLs({
     preset: 'next',
     populate: {
-      'cyberacademy/[[...slug]]': allCyberacademyPages.map((page) => ({
+      'docs/cyberacademy/[[...slug]]': allCyberacademyPages.map((page) => ({
         value: { slug: page.slugs },
         hashes: getHeadings(page),
       })),
-      'ciberseguridad-empresarial/[[...slug]]': allCiberseguridadPages.map((page) => ({
+      'docs/ciberseguridad-empresarial/[[...slug]]': allCiberseguridadPages.map((page) => ({
         value: { slug: page.slugs },
         hashes: getHeadings(page),
       })),

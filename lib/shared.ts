@@ -1,10 +1,12 @@
 export const appName = 'DivisionCero';
 
-export const cyberacademyRoute = '/cyberacademy';
+export const principalWebsiteUtm = 'utm_source=divisioncero.com&utm_medium=text_link&utm_campaign=principal_website';
+
+export const cyberacademyRoute = '/docs/cyberacademy';
 export const cyberacademyImageRoute = '/og/cyberacademy';
 export const cyberacademyContentRoute = '/llms.mdx/cyberacademy';
 
-export const ciberseguridadEmpresarialRoute = '/ciberseguridad-empresarial';
+export const ciberseguridadEmpresarialRoute = '/docs/ciberseguridad-empresarial';
 export const ciberseguridadEmpresarialImageRoute = '/og/ciberseguridad-empresarial';
 export const ciberseguridadEmpresarialContentRoute = '/llms.mdx/ciberseguridad-empresarial';
 

@@ -3,7 +3,7 @@ import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { baseOptions, sectionTabs, getCyberacademySubTabs } from '@/lib/layout.shared';
 import { SubSectionPicker } from '@/components/sub-section-picker';
 
-export default function Layout({ children }: LayoutProps<'/cyberacademy'>) {
+export default function Layout({ children }: LayoutProps<'/docs/cyberacademy'>) {
   return (
     <DocsLayout
       tree={cyberacademySource.getPageTree()}

@@ -47,3 +47,12 @@ export const blogPosts = defineCollections({
     categories: z.array(z.string()).optional(),
   }),
 });
+
+export const releasePosts = defineCollections({
+  type: 'doc',
+  dir: 'content/release',
+  schema: pageSchema.extend({
+    version: z.string(),
+    date: z.string().or(z.date()),
+  }),
+});
