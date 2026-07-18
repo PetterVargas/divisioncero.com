@@ -98,11 +98,11 @@ export default function HomePage() {
               </Link>
             </span>
           </div>
-          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
             <span className="block overflow-hidden">
               <span
                 data-hero-line
-                className="block bg-gradient-to-r from-teal-600 to-cyan-600 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
+                className="block bg-gradient-to-br from-fd-foreground via-fd-foreground to-fd-muted-foreground bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
               >
                 Aprende Ciberseguridad
               </span>
@@ -110,7 +110,7 @@ export default function HomePage() {
             <span className="block overflow-hidden">
               <span
                 data-hero-line
-                className="block bg-gradient-to-r from-teal-600 to-cyan-600 dark:from-teal-400 dark:to-cyan-400 bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
+                className="block bg-gradient-to-r from-[#4DAE84] to-[#39b298] bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
               >
                 y asegura tu negocio
               </span>

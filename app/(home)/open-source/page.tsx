@@ -1,20 +1,27 @@
 import Link from 'next/link';
-import { ShieldCheck, GraduationCap, ArrowRight } from 'lucide-react';
+import { ShieldCheck, GraduationCap, Wrench, ArrowRight } from 'lucide-react';
 
 const projects = [
   {
     title: 'Kudo',
     tagline: 'Cumplimiento de ciberseguridad',
     description: 'Framework abierto de políticas y procedimientos de ciberseguridad, pensado para ayudar a las empresas de LatAm a alcanzar y mantener el cumplimiento.',
-    href: 'https://docs.divisioncero.com/docs/kudo',
+    href: 'https://github.com/PetterVargas/kudo',
     icon: ShieldCheck,
   },
   {
     title: 'CyberAcademy',
     tagline: 'Capacitación en Ciberseguridad',
     description: 'Contenido y rutas de aprendizaje abiertas, con casos prácticos y reales, para que cualquier persona en LatAm aprenda Ciberseguridad resolviendo problemas.',
-    href: '/docs/cyberacademy',
+    href: 'https://github.com/PetterVargas/cyberacademy',
     icon: GraduationCap,
+  },
+  {
+    title: 'Herramientas DivisionCero',
+    tagline: 'Utilidades de ciberseguridad',
+    description: 'Colección de herramientas abiertas para tareas de ciberseguridad, creadas para agilizar el trabajo diario de la comunidad en LatAm.',
+    href: 'https://github.com/PetterVargas/herramientas',
+    icon: Wrench,
   },
 ];
 
