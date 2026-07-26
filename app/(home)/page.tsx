@@ -83,7 +83,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
         <HeroUniverse className="absolute inset-0 w-full h-full pointer-events-none opacity-90" />
         <HeroReveal>
-        <div className="max-w-4xl mx-auto relative z-10 -translate-y-[20%]">
+        <div className="max-w-4xl mx-auto relative z-10 lg:-translate-y-[20%]">
           <div className="flex justify-center mb-8">
             <span data-hero-badge className="relative inline-flex items-center gap-2 pl-1 pr-1.5 py-1 rounded-full border border-fd-border/60 bg-fd-muted/60 text-sm motion-safe:opacity-0">
               <span data-badge-pulse className="absolute inset-0 rounded-full ring-2 ring-fd-primary/50 pointer-events-none" />
