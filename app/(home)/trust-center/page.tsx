@@ -3,6 +3,7 @@ import {
   ShieldCheck, Lock, KeyRound, ServerCog, FileCheck2, BadgeCheck,
   Eye, ClipboardCheck, Bell, LockKeyhole,
 } from 'lucide-react';
+import { pageMetadata } from '@/lib/shared';
 
 const certifications = [
   { name: 'Kudo Framework', status: 'Activo', detail: 'Cumplimiento vigente' },
@@ -177,8 +178,9 @@ export default function TrustCenterPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Centro de Confianza | DivisionCero',
+  return pageMetadata({
+    path: '/trust-center',
+    title: 'Centro de Confianza',
     description: 'Certificaciones, prácticas de seguridad y compromisos de privacidad de DivisionCero.',
-  };
+  });
 }

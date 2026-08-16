@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { blog } from '@/lib/source';
 import { BookOpen } from 'lucide-react';
+import { pageMetadata } from '@/lib/shared';
 
 export default function BlogIndexPage() {
   const posts = blog.getPages();
@@ -145,8 +146,9 @@ export default function BlogIndexPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: "Blog | DivisionCero",
-    description: "Artículos y actualizaciones sobre ciberseguridad y productos DivisionCero"
-  };
+  return pageMetadata({
+    path: '/blog',
+    title: 'Blog',
+    description: 'Artículos y actualizaciones sobre ciberseguridad y productos DivisionCero.',
+  });
 }

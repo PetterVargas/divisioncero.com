@@ -1,17 +1,66 @@
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import { Provider } from '@/components/provider';
-import { appName } from '@/lib/shared';
+import { appName, appDescription, baseUrl } from '@/lib/shared';
 import type { ReactNode } from 'react';
 import Script from 'next/script';
 import './global.css';
 import 'katex/dist/katex.css';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: appName,
+  url: baseUrl,
+  logo: `${baseUrl}/android-chrome-512x512.png`,
+  sameAs: [
+    'https://x.com/divisioncero',
+    'https://github.com/PetterVargas',
+    'https://linkedin.com/company/divisioncero',
+    'https://facebook.com/divisioncerocom',
+    'https://instagram.com/divisioncero',
+    'https://youtube.com/@divisioncero',
+    'https://tiktok.com/@divisioncero',
+    'https://discord.com/invite/RPxQTPBfvG',
+  ],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: appName,
+  url: baseUrl,
+  inLanguage: 'es',
+};
 
 export const metadata: Metadata = {
-  title: "DivisionCero - Simplificando juntos la Ciberseguridad de LatAm",
-  description: "Kudo Framework de Ciberseguridad - DivisionCero",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: `${appName} - ${appDescription}`,
+    template: `%s | ${appName}`,
+  },
+  description: 'DivisionCero es una comunidad y plataforma de Ciberseguridad para LatAm: Kudo Framework open-source, CyberAcademy, herramientas gratuitas y servicios para empresas.',
+  alternates: {
+    canonical: '/',
+    types: {
+      'application/rss+xml': [
+        {
+          title: appName,
+          url: `${baseUrl}/rss.xml`,
+        },
+      ],
+    },
+  },
+  openGraph: {
+    url: baseUrl,
+    siteName: appName,
+    locale: 'es_ES',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@divisioncero',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -40,16 +89,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    types: {
-      'application/rss+xml': [
-        {
-          title: appName,
-          url: `${baseUrl}/rss.xml`,
-        },
-      ],
-    },
-  },
 };
 
 const inter = Inter({
@@ -63,10 +102,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <style dangerouslySetInnerHTML={{ __html:
           `.fd-feedback-container ::highlight(fd-feedback-text){background-color:var(--color-fd-primary);color:var(--color-fd-primary-foreground);}`
         }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
       </head>
       <body className={inter.className}>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XEZ2YDSE2K"
+          src="https://www.googletagmanager.com/gtag/js?id=G-5KWQPXJPX4"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -74,7 +121,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XEZ2YDSE2K');
+            gtag('config', 'G-5KWQPXJPX4');
           `}
         </Script>
         <Provider>

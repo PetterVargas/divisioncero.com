@@ -1,4 +1,5 @@
 import { LegalPage } from '@/components/legal-page';
+import { pageMetadata } from '@/lib/shared';
 
 export default function PoliticaDeCookiesPage() {
   return (
@@ -65,8 +66,9 @@ export default function PoliticaDeCookiesPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Política de cookies | DivisionCero',
+  return pageMetadata({
+    path: '/politica-de-cookies',
+    title: 'Política de cookies',
     description: 'Cómo y para qué DivisionCero utiliza cookies en su plataforma.',
-  };
+  });
 }

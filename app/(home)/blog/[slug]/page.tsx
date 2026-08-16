@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { blog } from '@/lib/source';
+import { blog, getBlogPageImage } from '@/lib/source';
 import { ViewOptions } from '@/components/page-actions';
+import { appName, baseUrl } from '@/lib/shared';
 
 const owner = 'PetterVargas';
 const repo = 'kudo';
@@ -16,8 +18,30 @@ export default async function Page(props: {
   if (!page) notFound();
   const Mdx = page.data.body;
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: page.data.title,
+    description: page.data.description,
+    datePublished: new Date(page.data.date).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: page.data.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: appName,
+    },
+    image: `${baseUrl}${getBlogPageImage(page).url}`,
+    mainEntityOfPage: `${baseUrl}${page.url}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="w-full max-w-(--fd-layout-width) mx-auto px-4 flex flex-col items-center py-12">
         <h1 className="mb-2 text-center text-3xl font-bold">{page.data.title}</h1>
         <p className="mb-2 text-center text-fd-muted-foreground">{page.data.description}</p>
@@ -47,4 +71,33 @@ export function generateStaticParams(): { slug: string }[] {
   return blog.getPages().map((page) => ({
     slug: page.slugs[0],
   }));
+}
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const params = await props.params;
+  const page = blog.getPage([params.slug]);
+  if (!page) notFound();
+
+  const description = page.data.description ?? `Artículo del blog de ${appName}`;
+
+  return {
+    title: page.data.title,
+    description,
+    alternates: {
+      canonical: page.url,
+    },
+    openGraph: {
+      url: `${baseUrl}${page.url}`,
+      type: 'article',
+      publishedTime: new Date(page.data.date).toISOString(),
+      authors: page.data.author ? [page.data.author] : undefined,
+      images: getBlogPageImage(page).url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: getBlogPageImage(page).url,
+    },
+  };
 }

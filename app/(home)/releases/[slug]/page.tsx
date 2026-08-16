@@ -1,10 +1,12 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { releases } from '@/lib/source';
+import { releases, getReleasePageImage } from '@/lib/source';
 import { ViewOptions } from '@/components/page-actions';
+import { appName, baseUrl } from '@/lib/shared';
 
 const owner = 'PetterVargas';
 const repo = 'divisioncero-docs';
@@ -59,4 +61,32 @@ export function generateStaticParams(): { slug: string }[] {
   return releases.getPages().map((page) => ({
     slug: page.slugs[0],
   }));
+}
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const params = await props.params;
+  const page = releases.getPage([params.slug]);
+  if (!page) notFound();
+
+  const description = page.data.description ?? `Notas de lanzamiento ${page.data.version} de ${appName}`;
+
+  return {
+    title: `${page.data.title} (${page.data.version})`,
+    description,
+    alternates: {
+      canonical: page.url,
+    },
+    openGraph: {
+      url: `${baseUrl}${page.url}`,
+      type: 'article',
+      publishedTime: new Date(page.data.date).toISOString(),
+      images: getReleasePageImage(page).url,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: getReleasePageImage(page).url,
+    },
+  };
 }
