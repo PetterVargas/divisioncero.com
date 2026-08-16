@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { GraduationCap, Shield, Newspaper, PackageOpen, Rocket, ArrowRight } from 'lucide-react';
+import { pageMetadata } from '@/lib/shared';
 
 const sections = [
   {
@@ -64,8 +65,9 @@ export default function DocsIndexPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Documentación | DivisionCero',
+  return pageMetadata({
+    path: '/docs',
+    title: 'Documentación',
     description: 'Índice de documentación de DivisionCero: CyberAcademy, Empresas, Blog, Releases y Open Source.',
-  };
+  });
 }

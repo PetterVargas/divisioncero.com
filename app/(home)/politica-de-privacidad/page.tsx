@@ -1,4 +1,5 @@
 import { LegalPage } from '@/components/legal-page';
+import { pageMetadata } from '@/lib/shared';
 
 export default function PoliticaDePrivacidadPage() {
   return (
@@ -77,8 +78,9 @@ export default function PoliticaDePrivacidadPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Política de privacidad | DivisionCero',
+  return pageMetadata({
+    path: '/politica-de-privacidad',
+    title: 'Política de privacidad',
     description: 'Cómo DivisionCero recopila, usa y protege tu información personal.',
-  };
+  });
 }

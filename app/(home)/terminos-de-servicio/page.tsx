@@ -1,4 +1,5 @@
 import { LegalPage } from '@/components/legal-page';
+import { pageMetadata } from '@/lib/shared';
 
 export default function TerminosDeServicioPage() {
   return (
@@ -73,8 +74,9 @@ export default function TerminosDeServicioPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Términos de servicio | DivisionCero',
+  return pageMetadata({
+    path: '/terminos-de-servicio',
+    title: 'Términos de servicio',
     description: 'Términos y condiciones de uso de la plataforma DivisionCero.',
-  };
+  });
 }

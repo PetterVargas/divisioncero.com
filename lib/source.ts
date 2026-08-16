@@ -4,6 +4,7 @@ import { toFumadocsSource } from 'fumadocs-mdx/runtime/server';
 import {
   cyberacademyRoute, cyberacademyImageRoute, cyberacademyContentRoute,
   ciberseguridadEmpresarialRoute, ciberseguridadEmpresarialImageRoute, ciberseguridadEmpresarialContentRoute,
+  blogImageRoute, releasesImageRoute,
 } from './shared';
 
 export const cyberacademySource = loader({
@@ -46,6 +47,16 @@ export function getCiberseguridadEmpresarialPageImage(page: (typeof cibersegurid
 export function getCiberseguridadEmpresarialPageMarkdownUrl(page: (typeof ciberseguridadEmpresarialSource)['$inferPage']) {
   const segments = [...page.slugs, 'content.md'];
   return { segments, url: `${ciberseguridadEmpresarialContentRoute}/${segments.join('/')}` };
+}
+
+export function getBlogPageImage(page: (typeof blog)['$inferPage']) {
+  const segments = [...page.slugs, 'image.png'];
+  return { segments, url: `${blogImageRoute}/${segments.join('/')}` };
+}
+
+export function getReleasePageImage(page: (typeof releases)['$inferPage']) {
+  const segments = [...page.slugs, 'image.png'];
+  return { segments, url: `${releasesImageRoute}/${segments.join('/')}` };
 }
 
 export async function getLLMText(

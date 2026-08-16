@@ -1,27 +1,37 @@
 import { Feed } from 'feed';
-import { cyberacademySource, ciberseguridadEmpresarialSource } from '@/lib/source';
-import { appName } from '@/lib/shared';
-
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
+import { cyberacademySource, ciberseguridadEmpresarialSource, blog } from '@/lib/source';
+import { appName, appDescription, baseUrl } from '@/lib/shared';
 
 export function getRSS() {
   const feed = new Feed({
     title: appName,
+    description: appDescription,
     id: baseUrl,
     link: baseUrl,
-    language: 'en',
+    language: 'es',
     copyright: `All rights reserved ${new Date().getFullYear()}`,
   });
 
-  const pages = [...cyberacademySource.getPages(), ...ciberseguridadEmpresarialSource.getPages()];
+  const docsPages = [...cyberacademySource.getPages(), ...ciberseguridadEmpresarialSource.getPages()];
 
-  for (const page of pages) {
+  for (const page of docsPages) {
     feed.addItem({
       id: page.url,
       title: page.data.title,
       description: page.data.description,
       link: `${baseUrl}${page.url}`,
       date: new Date(),
+    });
+  }
+
+  for (const page of blog.getPages()) {
+    feed.addItem({
+      id: page.url,
+      title: page.data.title,
+      description: page.data.description,
+      link: `${baseUrl}${page.url}`,
+      date: new Date(page.data.date),
+      author: page.data.author ? [{ name: page.data.author }] : undefined,
     });
   }
 

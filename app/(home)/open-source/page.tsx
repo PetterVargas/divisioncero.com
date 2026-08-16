@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ShieldCheck, GraduationCap, Wrench, ArrowRight } from 'lucide-react';
+import { ShieldCheck, GraduationCap, Wrench, Presentation, Code2, ArrowRight } from 'lucide-react';
+import { pageMetadata } from '@/lib/shared';
 
 const projects = [
   {
@@ -22,6 +23,20 @@ const projects = [
     description: 'Colección de herramientas abiertas para tareas de ciberseguridad, creadas para agilizar el trabajo diario de la comunidad en LatAm.',
     href: 'https://github.com/PetterVargas/herramientas',
     icon: Wrench,
+  },
+  {
+    title: 'Presentaciones',
+    tagline: 'Material de CyberAcademy',
+    description: 'Presentaciones abiertas usadas en las sesiones de CyberAcademy, disponibles para que la comunidad aprenda y las reutilice.',
+    href: 'https://github.com/PetterVargas/cyberacademy/tree/main/presentaciones',
+    icon: Presentation,
+  },
+  {
+    title: 'DivisionCero.com',
+    tagline: 'Código del sitio principal',
+    description: 'Código fuente abierto del sitio web principal de DivisionCero, construido con Next.js y Fumadocs.',
+    href: 'https://github.com/PetterVargas/divisioncero.com',
+    icon: Code2,
   },
 ];
 
@@ -79,8 +94,9 @@ export default function OpenSourcePage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Código abierto | DivisionCero',
+  return pageMetadata({
+    path: '/open-source',
+    title: 'Código abierto',
     description: 'Proyectos y contribuciones de código abierto de DivisionCero para la comunidad de ciberseguridad en LatAm.',
-  };
+  });
 }

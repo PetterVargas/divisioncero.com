@@ -1,4 +1,5 @@
 import { PricingTiers } from '@/components/pricing-tiers';
+import { pageMetadata } from '@/lib/shared';
 
 export default function PreciosPage() {
   return (
@@ -18,8 +19,9 @@ export default function PreciosPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Precios | DivisionCero',
+  return pageMetadata({
+    path: '/precios',
+    title: 'Precios',
     description: 'Planes de precios y opciones de pago de DivisionCero: Básico, Maestro y Empresa.',
-  };
+  });
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { releases } from '@/lib/source';
 import { Rocket } from 'lucide-react';
+import { pageMetadata } from '@/lib/shared';
 
 export default function ReleaseIndexPage() {
   const posts = releases.getPages();
@@ -54,8 +55,9 @@ export default function ReleaseIndexPage() {
 }
 
 export function generateMetadata() {
-  return {
-    title: 'Releases | DivisionCero',
-    description: 'Lanzamientos y actualizaciones sobre la plataforma DivisionCero',
-  };
+  return pageMetadata({
+    path: '/releases',
+    title: 'Releases',
+    description: 'Lanzamientos y actualizaciones sobre la plataforma DivisionCero.',
+  });
 }
