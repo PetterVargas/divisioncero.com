@@ -1,6 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { BookIcon, FileTextIcon, UserIcon, LogInIcon, GraduationCapIcon, WrenchIcon, TagIcon, NewspaperIcon, BookOpenIcon } from 'lucide-react';
-import { principalWebsiteUtm } from '@/lib/shared';
+import { BookIcon, FileTextIcon, UserIcon, LogInIcon, GraduationCapIcon, WrenchIcon, TagIcon, NewspaperIcon, BookOpenIcon, PresentationIcon } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -42,14 +41,14 @@ export const baseOptions: BaseLayoutProps = {
     {
       icon: <GraduationCapIcon />,
       text: 'CyberAcademy',
-      url: `https://cyberacademy.divisioncero.com/?${principalWebsiteUtm}`,
+      url: 'https://cyberacademy.divisioncero.com/',
       secondary: false,
       external: true,
     },
     {
       icon: <BookIcon />,
       text: 'Kudo',
-      url: `https://kudo.divisioncero.com?${principalWebsiteUtm}`,
+      url: 'https://kudo.divisioncero.com',
       secondary: false,
       external: true,
     },
@@ -61,7 +60,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       icon: <BookOpenIcon />,
-      text: 'Documentación',
+      text: 'Docs',
       url: '/docs',
       secondary: false,
     },
@@ -85,13 +84,19 @@ export const baseOptions: BaseLayoutProps = {
           icon: <WrenchIcon />,
           text: 'Herramientas',
           description: 'Ayuda en Ciberseguridad',
-          url: `https://herramientas.divisioncero.com/?${principalWebsiteUtm}`,
+          url: 'https://herramientas.divisioncero.com/',
         },
         {
           icon: <BookIcon />,
           text: 'Releases',
           description: 'Actualizaciones sobre la plataforma',
           url: '/releases',
+        },
+        {
+          icon: <PresentationIcon />,
+          text: 'Presentaciones',
+          description: 'Material de las sesiones de CyberAcademy',
+          url: 'https://presentaciones.divisioncero.com/',
         },
       ],
     },
@@ -109,13 +114,13 @@ export const baseOptions: BaseLayoutProps = {
     {
       icon: <LogInIcon />,
       text: <span className="block md:inline">Login</span>,
-      url: `https://app.divisioncero.com/auth/sign-in?${principalWebsiteUtm}`,
+      url: 'https://app.divisioncero.com/auth/sign-in',
       secondary: true,
     },
     {
       icon: <UserIcon />,
       text: <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold block md:inline-block">Regístrate</span>,
-      url: `https://app.divisioncero.com/auth/sign-up?${principalWebsiteUtm}`,
+      url: 'https://app.divisioncero.com/auth/sign-up',
       secondary: true,
     },
   ],

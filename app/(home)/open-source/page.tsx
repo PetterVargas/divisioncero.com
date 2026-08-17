@@ -28,7 +28,7 @@ const projects = [
     title: 'Presentaciones',
     tagline: 'Material de CyberAcademy',
     description: 'Presentaciones abiertas usadas en las sesiones de CyberAcademy, disponibles para que la comunidad aprenda y las reutilice.',
-    href: 'https://github.com/PetterVargas/cyberacademy/tree/main/presentaciones',
+    href: 'https://github.com/PetterVargas/cyberacademy',
     icon: Presentation,
   },
   {

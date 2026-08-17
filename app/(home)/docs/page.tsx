@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { GraduationCap, Shield, Newspaper, PackageOpen, Rocket, ArrowRight } from 'lucide-react';
+import { GraduationCap, Shield, ArrowRight } from 'lucide-react';
 import { pageMetadata } from '@/lib/shared';
 
 const sections = [
@@ -15,24 +15,6 @@ const sections = [
     href: '/docs/ciberseguridad-empresarial',
     icon: Shield,
   },
-  {
-    title: 'Blog',
-    description: 'Artículos y actualizaciones sobre ciberseguridad y la filosofía detrás de DivisionCero.',
-    href: '/blog',
-    icon: Newspaper,
-  },
-  {
-    title: 'Releases',
-    description: 'Historial de lanzamientos y actualizaciones de la plataforma.',
-    href: '/releases',
-    icon: Rocket,
-  },
-  {
-    title: 'Open Source',
-    description: 'Proyectos y contribuciones de código abierto de DivisionCero.',
-    href: '/open-source',
-    icon: PackageOpen,
-  },
 ];
 
 export default function DocsIndexPage() {
@@ -42,7 +24,7 @@ export default function DocsIndexPage() {
         <h1 className="text-4xl font-bold tracking-tight mb-4">Documentación</h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
         {sections.map(({ title, description, href, icon: Icon }) => (
           <Link
             key={href}
@@ -68,6 +50,6 @@ export function generateMetadata() {
   return pageMetadata({
     path: '/docs',
     title: 'Documentación',
-    description: 'Índice de documentación de DivisionCero: CyberAcademy, Empresas, Blog, Releases y Open Source.',
+    description: 'Índice de documentación de DivisionCero: CyberAcademy y Empresas.',
   });
 }

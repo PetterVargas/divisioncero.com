@@ -56,3 +56,11 @@ export const releasePosts = defineCollections({
     date: z.string().or(z.date()),
   }),
 });
+
+export const legalPosts = defineCollections({
+  type: 'doc',
+  dir: 'content/legal',
+  schema: pageSchema.extend({
+    effectiveDate: z.string(),
+  }),
+});

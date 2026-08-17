@@ -1,11 +1,6 @@
 import type { BaseLayoutProps, LayoutTab } from 'fumadocs-ui/layouts/shared';
-import { getSidebarTabs } from 'fumadocs-ui/components/sidebar/tabs';
 import { appName, gitConfig, cyberacademyRoute, ciberseguridadEmpresarialRoute } from './shared';
-import { cyberacademySource, ciberseguridadEmpresarialSource } from './source';
-import {
-  GraduationCap, Settings, BookText, Route, Award, ClipboardCheck,
-} from 'lucide-react';
-import type { ReactNode } from 'react';
+import { GraduationCap, Settings } from 'lucide-react';
 
 export const sectionTabs: LayoutTab[] = [
   {
@@ -21,36 +16,6 @@ export const sectionTabs: LayoutTab[] = [
     url: ciberseguridadEmpresarialRoute,
   },
 ];
-
-const cyberacademyIcons: Record<string, ReactNode> = {
-  'CyberAcademy': <GraduationCap className="size-4" />,
-  'Convenciones': <BookText className="size-4" />,
-  'Ruta de Aprendizaje': <Route className="size-4" />,
-  'Evaluaciones': <ClipboardCheck className="size-4" />,
-  'Certificaciones': <Award className="size-4" />,
-};
-
-export function getCyberacademySubTabs(): LayoutTab[] {
-  return getSidebarTabs(cyberacademySource.getPageTree(), {
-    transform: (option) => ({
-      ...option,
-      icon: cyberacademyIcons[String(option.title)] ?? option.icon,
-    }),
-  });
-}
-
-const ciberseguridadEmpresarialIcons: Record<string, ReactNode> = {
-  'Ciberseguridad Empresarial': <Settings className="size-4" />,
-};
-
-export function getCiberseguridadEmpresarialSubTabs(): LayoutTab[] {
-  return getSidebarTabs(ciberseguridadEmpresarialSource.getPageTree(), {
-    transform: (option) => ({
-      ...option,
-      icon: ciberseguridadEmpresarialIcons[String(option.title)] ?? option.icon,
-    }),
-  });
-}
 
 export function baseOptions(): BaseLayoutProps {
   return {

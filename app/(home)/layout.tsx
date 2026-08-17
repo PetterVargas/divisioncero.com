@@ -3,7 +3,6 @@ import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { Banner } from 'fumadocs-ui/components/banner';
 import { baseOptions } from '@/app/layout.config';
 import { Globe, MessageCircle } from 'lucide-react';
-import { principalWebsiteUtm } from '@/lib/shared';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -22,7 +21,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2">
           <a
-            href="https://herramientas.divisioncero.com/?utm_source=divisioncero.com&utm_medium=text_link&utm_campaign=principal_website"
+            href="https://herramientas.divisioncero.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline hover:text-white/80 transition-colors"
@@ -127,10 +126,10 @@ function Footer() {
             <div className="flex flex-col gap-y-2.5">
               <h3 className="font-medium mb-4">Productos</h3>
               <ul className="space-y-2">
-                <li><a href="https://cyberacademy.divisioncero.com/?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberAcademy</a></li>
-                <li><a href={`https://kudo.divisioncero.com/?${principalWebsiteUtm}`} className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Framework Kudo</a></li>
-                <li><a href="https://divisioncero.com/home/empresas?utm_source=kudo.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Ciberseguridad Empresarial</a></li>
-                <li><a href={`https://herramientas.divisioncero.com/?${principalWebsiteUtm}`} className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Herramientas</a></li>
+                <li><a href="https://cyberacademy.divisioncero.com/" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberAcademy</a></li>
+                <li><a href="https://kudo.divisioncero.com/" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Framework Kudo</a></li>
+                <li><a href="https://divisioncero.com/home/empresas" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Ciberseguridad Empresarial</a></li>
+                <li><a href="https://herramientas.divisioncero.com/" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Herramientas</a></li>
               </ul>
             </div>
 
@@ -139,7 +138,7 @@ function Footer() {
               <h3 className="font-medium mb-4">Acerca de</h3>
               <ul className="space-y-2">
                 <li><a href="https://divisioncero.com/docs" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Documentación</a></li>
-                <li><a href={`https://kudo.divisioncero.com/sgx/?${principalWebsiteUtm}`} className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">SGX</a></li>
+                <li><a href="https://kudo.divisioncero.com/sgx/" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">SGX</a></li>
                 <li><a href="https://cyberacademy.divisioncero.com/cyberusuario" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberUsuario</a></li>
                 <li><a href="https://cyberacademy.divisioncero.com/cyberguardian" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberGuardián</a></li>
                 <li><a href="https://divisioncero.com/blog/filosofia-divisioncero" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Filosofía</a></li>
@@ -150,10 +149,10 @@ function Footer() {
             <div className="flex flex-col gap-y-2.5">
               <h3 className="font-medium mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="/terminos-de-servicio" className="text-sm hover:underline">Términos de Servicio</a></li>
-                <li><a href="/politica-de-privacidad" className="text-sm hover:underline">Política de Privacidad</a></li>
-                <li><a href="/politica-de-cookies" className="text-sm hover:underline">Política de Cookies</a></li>
-                <li><a href="/trust-center" className="text-sm hover:underline">Centro de Confianza</a></li>
+                <li><a href="/legal/terminos-de-servicio" className="text-sm hover:underline">Términos de Servicio</a></li>
+                <li><a href="/legal/politica-de-privacidad" className="text-sm hover:underline">Política de Privacidad</a></li>
+                <li><a href="/legal/politica-de-cookies" className="text-sm hover:underline">Política de Cookies</a></li>
+                <li><a href="/legal/trust-center" className="text-sm hover:underline">Centro de Confianza</a></li>
               </ul>
             </div>
           </div>
