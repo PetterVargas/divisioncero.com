@@ -6,8 +6,6 @@ export const appDescription = 'Simplificando juntos la Ciberseguridad de LatAm';
 
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://divisioncero.com';
 
-export const principalWebsiteUtm = 'utm_source=divisioncero.com&utm_medium=text_link&utm_campaign=principal_website';
-
 export const cyberacademyRoute = '/docs/cyberacademy';
 export const cyberacademyImageRoute = '/og/cyberacademy';
 export const cyberacademyContentRoute = '/llms.mdx/cyberacademy';

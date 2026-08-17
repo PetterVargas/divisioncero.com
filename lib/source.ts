@@ -1,4 +1,4 @@
-import { cyberacademyDocs, ciberseguridadEmpresarialDocs, blogPosts, releasePosts } from 'collections/server';
+import { cyberacademyDocs, ciberseguridadEmpresarialDocs, blogPosts, releasePosts, legalPosts } from 'collections/server';
 import { loader } from 'fumadocs-core/source';
 import { toFumadocsSource } from 'fumadocs-mdx/runtime/server';
 import {
@@ -27,6 +27,11 @@ export const blog = loader({
 export const releases = loader({
   baseUrl: '/releases',
   source: toFumadocsSource(releasePosts, []),
+});
+
+export const legal = loader({
+  baseUrl: '/legal',
+  source: toFumadocsSource(legalPosts, []),
 });
 
 export function getCyberacademyPageImage(page: (typeof cyberacademySource)['$inferPage']) {

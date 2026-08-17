@@ -3,6 +3,7 @@ import {
   ArrowRight, Rocket, GraduationCap, Building2, Radar, BookOpen,
   Timer, Headset, MapPin,
   Map, Grid3x3, MessageCircleQuestion, Network, Calendar, KeyRound, QrCode, Hash, Mail, Binary, Link2, Fingerprint,
+  Wrench, Presentation,
 } from 'lucide-react';
 import { HeroReveal, ScrollReveal } from '@/components/home-animations';
 import { HeroUniverse } from '@/components/hero-universe';
@@ -12,28 +13,27 @@ import { PricingTiers } from '@/components/pricing-tiers';
 import { ToolsSlider } from '@/components/tools-slider';
 import { EcosystemPanels } from '@/components/ecosystem-panels';
 import { TextMaskReveal } from '@/components/text-mask-reveal';
-import { principalWebsiteUtm } from '@/lib/shared';
 
-const signUpUrl = `https://app.divisioncero.com/auth/sign-up?${principalWebsiteUtm}`;
+const signUpUrl = 'https://app.divisioncero.com/auth/sign-up';
 const discordUrl = 'https://discord.com/invite/RPxQTPBfvG';
 
-const herramientasUrl = `https://herramientas.divisioncero.com/?${principalWebsiteUtm}`;
+const herramientasUrl = 'https://herramientas.divisioncero.com/';
 
 const toolIconClass = 'h-4.5 w-4.5 text-fd-primary';
 
 const tools = [
-  { icon: <Map className={toolIconClass} />, title: 'CyberMap', description: 'Visualiza el panorama de amenazas y ciberataques en tiempo real.', href: `https://herramientas.divisioncero.com/cybermap?${principalWebsiteUtm}`, external: true },
-  { icon: <Grid3x3 className={toolIconClass} />, title: 'Tabla Periódica de Ciberseguridad', description: 'Explora los elementos clave de la Ciberseguridad de forma visual.', href: `https://herramientas.divisioncero.com/tabla-periodica-ciberseguridad?${principalWebsiteUtm}`, external: true },
-  { icon: <MessageCircleQuestion className={toolIconClass} />, title: 'Rompehielos de Seguridad', description: 'Preguntas para romper el hielo y abrir la conversación sobre seguridad.', href: `https://herramientas.divisioncero.com/rompehielos?${principalWebsiteUtm}`, external: true },
-  { icon: <Network className={toolIconClass} />, title: 'Workflow de Ciberseguridad', description: 'Diagramas de flujo para procesos y procedimientos de seguridad.', href: `https://herramientas.divisioncero.com/workflow-ciberseguridad?${principalWebsiteUtm}`, external: true },
-  { icon: <Calendar className={toolIconClass} />, title: 'Calendario de Ciberseguridad', description: 'Fechas clave y eventos relevantes de Ciberseguridad.', href: `https://herramientas.divisioncero.com/calendario-ciberseguridad?${principalWebsiteUtm}`, external: true },
-  { icon: <KeyRound className={toolIconClass} />, title: 'Generador de Contraseñas', description: 'Crea contraseñas seguras y aleatorias al instante.', href: `https://herramientas.divisioncero.com/generador-contrasenas?${principalWebsiteUtm}`, external: true },
-  { icon: <QrCode className={toolIconClass} />, title: 'Generador de QR', description: 'Genera códigos QR gratis para tus enlaces y campañas.', href: `https://herramientas.divisioncero.com/generador-qr?${principalWebsiteUtm}`, external: true },
-  { icon: <Hash className={toolIconClass} />, title: 'Generador de Hash', description: 'Calcula el hash de cualquier texto o archivo.', href: `https://herramientas.divisioncero.com/generador-hash?${principalWebsiteUtm}`, external: true },
-  { icon: <Mail className={toolIconClass} />, title: 'Validador SPF', description: 'Verifica y valida los registros SPF de tu dominio.', href: `https://herramientas.divisioncero.com/validador-spf?${principalWebsiteUtm}`, external: true },
-  { icon: <Binary className={toolIconClass} />, title: 'Codif/Decod Base64', description: 'Codifica y decodifica texto en Base64.', href: `https://herramientas.divisioncero.com/codificador-base64?${principalWebsiteUtm}`, external: true },
-  { icon: <Link2 className={toolIconClass} />, title: 'Codif/Decod URL', description: 'Codifica y decodifica URLs fácilmente.', href: `https://herramientas.divisioncero.com/codificador-url?${principalWebsiteUtm}`, external: true },
-  { icon: <Fingerprint className={toolIconClass} />, title: 'Generador de UUID', description: 'Genera identificadores únicos universales (UUID).', href: `https://herramientas.divisioncero.com/generador-uuid?${principalWebsiteUtm}`, external: true },
+  { icon: <Map className={toolIconClass} />, title: 'CyberMap', description: 'Visualiza el panorama de amenazas y ciberataques en tiempo real.', href: 'https://herramientas.divisioncero.com/cybermap', external: true },
+  { icon: <Grid3x3 className={toolIconClass} />, title: 'Tabla Periódica de Ciberseguridad', description: 'Explora los elementos clave de la Ciberseguridad de forma visual.', href: 'https://herramientas.divisioncero.com/tabla-periodica-ciberseguridad', external: true },
+  { icon: <MessageCircleQuestion className={toolIconClass} />, title: 'Rompehielos de Seguridad', description: 'Preguntas para romper el hielo y abrir la conversación sobre seguridad.', href: 'https://herramientas.divisioncero.com/rompehielos', external: true },
+  { icon: <Network className={toolIconClass} />, title: 'Workflow de Ciberseguridad', description: 'Diagramas de flujo para procesos y procedimientos de seguridad.', href: 'https://herramientas.divisioncero.com/workflow-ciberseguridad', external: true },
+  { icon: <Calendar className={toolIconClass} />, title: 'Calendario de Ciberseguridad', description: 'Fechas clave y eventos relevantes de Ciberseguridad.', href: 'https://herramientas.divisioncero.com/calendario-ciberseguridad', external: true },
+  { icon: <KeyRound className={toolIconClass} />, title: 'Generador de Contraseñas', description: 'Crea contraseñas seguras y aleatorias al instante.', href: 'https://herramientas.divisioncero.com/generador-contrasenas', external: true },
+  { icon: <QrCode className={toolIconClass} />, title: 'Generador de QR', description: 'Genera códigos QR gratis para tus enlaces y campañas.', href: 'https://herramientas.divisioncero.com/generador-qr', external: true },
+  { icon: <Hash className={toolIconClass} />, title: 'Generador de Hash', description: 'Calcula el hash de cualquier texto o archivo.', href: 'https://herramientas.divisioncero.com/generador-hash', external: true },
+  { icon: <Mail className={toolIconClass} />, title: 'Validador SPF', description: 'Verifica y valida los registros SPF de tu dominio.', href: 'https://herramientas.divisioncero.com/validador-spf', external: true },
+  { icon: <Binary className={toolIconClass} />, title: 'Codif/Decod Base64', description: 'Codifica y decodifica texto en Base64.', href: 'https://herramientas.divisioncero.com/codificador-base64', external: true },
+  { icon: <Link2 className={toolIconClass} />, title: 'Codif/Decod URL', description: 'Codifica y decodifica URLs fácilmente.', href: 'https://herramientas.divisioncero.com/codificador-url', external: true },
+  { icon: <Fingerprint className={toolIconClass} />, title: 'Generador de UUID', description: 'Genera identificadores únicos universales (UUID).', href: 'https://herramientas.divisioncero.com/generador-uuid', external: true },
 ];
 
 const benefits = [
@@ -49,21 +49,21 @@ const ecosystemPanels = [
     icon: <GraduationCap className={panelIconClass} />,
     title: 'CyberAcademy',
     description: 'Capacitación práctica en Ciberseguridad, con casos reales y rutas de aprendizaje.',
-    href: `https://cyberacademy.divisioncero.com/?${principalWebsiteUtm}`,
+    href: 'https://cyberacademy.divisioncero.com/',
     cta: 'Visitar CyberAcademy',
   },
   {
     icon: <BookOpen className={panelIconClass} />,
     title: 'Kudo',
     description: 'Framework de Ciberseguridad open-source para el cumplimiento de tu empresa.',
-    href: `https://kudo.divisioncero.com/?${principalWebsiteUtm}`,
+    href: 'https://kudo.divisioncero.com/',
     cta: 'Visitar Kudo',
   },
   {
     icon: <Radar className={panelIconClass} />,
     title: 'Conan',
     description: 'Tracking basado en direcciones IP para la detección de amenazas.',
-    href: 'https://app.divisioncero.com/home/conan?utm_source=petervargas.com&utm_medium=text_link&utm_campaign=personal_website',
+    href: 'https://app.divisioncero.com/home/conan',
     cta: 'Visitar Conan',
   },
   {
@@ -72,6 +72,20 @@ const ecosystemPanels = [
     description: 'Automatización y consultoría en Ciberseguridad para pequeñas y medianas empresas.',
     href: signUpUrl,
     cta: 'Comenzar',
+  },
+  {
+    icon: <Wrench className={panelIconClass} />,
+    title: 'Herramientas',
+    description: 'Colección de herramientas abiertas para agilizar el trabajo diario en Ciberseguridad.',
+    href: 'https://herramientas.divisioncero.com/',
+    cta: 'Visitar Herramientas',
+  },
+  {
+    icon: <Presentation className={panelIconClass} />,
+    title: 'Presentaciones',
+    description: 'Material abierto usado en las sesiones de CyberAcademy, listo para reutilizar.',
+    href: 'https://presentaciones.divisioncero.com/',
+    cta: 'Visitar Presentaciones',
   },
 ];
 

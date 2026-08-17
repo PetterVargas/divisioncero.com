@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
-import { principalWebsiteUtm } from '@/lib/shared';
 
-const signUpUrl = `https://app.divisioncero.com/auth/sign-up?${principalWebsiteUtm}`;
+const signUpUrl = 'https://app.divisioncero.com/auth/sign-up';
 
 type Billing = 'monthly' | 'annual';
 
