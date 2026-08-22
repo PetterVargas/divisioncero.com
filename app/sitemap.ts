@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { cyberacademySource, ciberseguridadEmpresarialSource, blog, releases, legal } from '@/lib/source';
+import { ciberseguridadEmpresarialSource, blog, releases, legal } from '@/lib/source';
 import { baseUrl } from '@/lib/shared';
 
 export const revalidate = false;
@@ -20,10 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  const docsEntries: MetadataRoute.Sitemap = [
-    ...cyberacademySource.getPages(),
-    ...ciberseguridadEmpresarialSource.getPages(),
-  ].map((page) => ({
+  const docsEntries: MetadataRoute.Sitemap = ciberseguridadEmpresarialSource.getPages().map((page) => ({
     url: `${baseUrl}${page.url}`,
   }));
 

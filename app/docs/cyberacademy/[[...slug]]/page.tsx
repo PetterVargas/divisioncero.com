@@ -60,5 +60,9 @@ export async function generateMetadata(props: PageProps<'/docs/cyberacademy/[[..
     openGraph: {
       images: getCyberacademyPageImage(page).url,
     },
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
