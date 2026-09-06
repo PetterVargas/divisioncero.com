@@ -125,6 +125,7 @@ export default function BlogIndexPage() {
           <Link
             key={post.url}
             href={post.url}
+            title={post.data.title}
             className="block bg-fd-card rounded-lg shadow-sm border border-border hover:border-fd-foreground/20 hover:bg-muted/50 overflow-hidden transition-all duration-200"
           >
             <div className="p-5">

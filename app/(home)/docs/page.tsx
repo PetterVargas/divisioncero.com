@@ -29,6 +29,7 @@ export default function DocsIndexPage() {
           <Link
             key={href}
             href={href}
+            title={title}
             className="group flex flex-col gap-4 p-6 rounded-xl border border-fd-border/60 bg-fd-card/40 hover:border-fd-foreground/40 hover:bg-fd-card/70 transition-all duration-200 shadow-sm"
           >
             <div className="w-11 h-11 bg-fd-primary/10 rounded-lg flex items-center justify-center">

@@ -25,6 +25,7 @@ export default async function Page(props: {
       <div className="w-full max-w-(--fd-layout-width) mx-auto px-4 flex flex-col items-center py-12">
         <Link
           href="/releases"
+          title="Volver a Releases"
           className="self-start mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-fd-muted-foreground hover:text-fd-foreground transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />

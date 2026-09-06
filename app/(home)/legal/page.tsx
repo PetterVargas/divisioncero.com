@@ -25,6 +25,7 @@ export default function LegalIndexPage() {
           <Link
             key={post.url}
             href={post.url}
+            title={post.data.title}
             className="group flex flex-col gap-2 p-6 rounded-xl border border-fd-border/60 bg-fd-card/40 hover:border-fd-foreground/40 hover:bg-fd-card/70 transition-all duration-200 shadow-sm"
           >
             <h2 className="text-lg font-semibold">{post.data.title}</h2>
