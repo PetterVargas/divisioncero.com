@@ -56,6 +56,7 @@ export default function OpenSourcePage() {
           <Link
             key={title}
             href={href}
+            title={title}
             {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className="group flex flex-col gap-4 p-8 rounded-xl border border-fd-border/60 bg-fd-card/40 hover:border-fd-foreground/40 hover:bg-fd-card/70 transition-all duration-200 shadow-md"
           >
@@ -81,6 +82,7 @@ export default function OpenSourcePage() {
           href="https://github.com/PetterVargas"
           target="_blank"
           rel="noopener noreferrer"
+          title="Ver más proyectos en GitHub"
           className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
         >
           <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">

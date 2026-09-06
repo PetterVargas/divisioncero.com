@@ -114,11 +114,11 @@ export function ToolsSlider({ items }: { items: SliderTool[] }) {
     );
 
     return tool.external ? (
-      <a key={key} href={tool.href} target="_blank" rel="noopener noreferrer" className="select-none">
+      <a key={key} href={tool.href} title={tool.title} target="_blank" rel="noopener noreferrer" className="select-none">
         {content}
       </a>
     ) : (
-      <Link key={key} href={tool.href} className="select-none">
+      <Link key={key} href={tool.href} title={tool.title} className="select-none">
         {content}
       </Link>
     );

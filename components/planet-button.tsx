@@ -26,7 +26,7 @@ const ACTIVE_PATH = blobPath(CENTER, CENTER, 88, ACTIVE_RADII);
  * (curve-swipe-style path morph via MorphSVGPlugin), orbited by faint
  * rings and a couple of drifting moons.
  */
-export function PlanetButton({ href, children, className }: { href: string; children: ReactNode; className?: string }) {
+export function PlanetButton({ href, children, className, title }: { href: string; children: ReactNode; className?: string; title?: string }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const blobRef = useRef<SVGPathElement>(null);
   const glowRef = useRef<SVGCircleElement>(null);
@@ -105,7 +105,7 @@ export function PlanetButton({ href, children, className }: { href: string; chil
         </g>
         <path ref={blobRef} d={IDLE_PATH} fill="currentColor" opacity={0.14} />
       </svg>
-      <Link href={href} className={`relative z-10 ${className ?? ''}`}>
+      <Link href={href} title={title} className={`relative z-10 ${className ?? ''}`}>
         {children}
       </Link>
     </div>

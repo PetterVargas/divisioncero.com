@@ -147,6 +147,7 @@ export function PricingTiers() {
               </ul>
               <Link
                 href={signUpUrl}
+                title={tier.cta}
                 className={
                   tier.highlighted
                     ? 'inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors'

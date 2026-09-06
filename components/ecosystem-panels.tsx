@@ -72,6 +72,7 @@ export function EcosystemPanels({ items }: { items: EcosystemPanel[] }) {
           key={panel.title}
           data-ecosystem-panel
           href={panel.href}
+          title={panel.title}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex flex-col justify-between gap-6 p-8 rounded-2xl border border-fd-border/60 bg-fd-card/40 shadow-sm hover:border-fd-primary/40 hover:bg-fd-card/70 hover:-translate-y-1 transition-all duration-300"

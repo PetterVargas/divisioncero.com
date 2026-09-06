@@ -4,6 +4,9 @@ import {
   Timer, Headset, MapPin,
   Map, Grid3x3, MessageCircleQuestion, Network, Calendar, KeyRound, QrCode, Hash, Mail, Binary, Link2, Fingerprint,
   Wrench, Presentation,
+  Landmark, Code2, ShieldCheck, Gauge, Fish, BadgeAlert, Inbox, MonitorCheck, ScanSearch, Globe, Scale,
+  ClipboardCheck, ShieldAlert, Users, Bug, Lock, IdCard, UserRoundSearch, MessageCircleWarning, FileDigit,
+  FileSearch, FileCode2,
 } from 'lucide-react';
 import { HeroReveal, ScrollReveal } from '@/components/home-animations';
 import { HeroUniverse } from '@/components/hero-universe';
@@ -34,6 +37,29 @@ const tools = [
   { icon: <Binary className={toolIconClass} />, title: 'Codif/Decod Base64', description: 'Codifica y decodifica texto en Base64.', href: 'https://herramientas.divisioncero.com/codificador-base64', external: true },
   { icon: <Link2 className={toolIconClass} />, title: 'Codif/Decod URL', description: 'Codifica y decodifica URLs fácilmente.', href: 'https://herramientas.divisioncero.com/codificador-url', external: true },
   { icon: <Fingerprint className={toolIconClass} />, title: 'Generador de UUID', description: 'Genera identificadores únicos universales (UUID).', href: 'https://herramientas.divisioncero.com/generador-uuid', external: true },
+  { icon: <Code2 className={toolIconClass} />, title: 'Codif/Decod Hexadecimal', description: 'Codifica y decodifica texto en hexadecimal.', href: 'https://herramientas.divisioncero.com/codificador-hexadecimal', external: true },
+  { icon: <Landmark className={toolIconClass} />, title: 'Museo del Cibercrimen', description: 'Una galería visual con hitos, personajes y momentos icónicos del cibercrimen.', href: 'https://herramientas.divisioncero.com/museo-cibercrimen', external: true },
+  { icon: <ShieldCheck className={toolIconClass} />, title: 'Tríada CIA', description: 'Aprende e identifica Confidencialidad, Integridad y Disponibilidad.', href: 'https://herramientas.divisioncero.com/triada-cia', external: true },
+  { icon: <Gauge className={toolIconClass} />, title: 'Analizador de Contraseñas', description: 'Calcula cuánto tardaría un atacante en descifrar tu contraseña.', href: 'https://herramientas.divisioncero.com/analizador-contrasenas', external: true },
+  { icon: <Fish className={toolIconClass} />, title: 'Práctica: Detección de Phishing', description: 'Practica identificando mensajes de phishing en correos y SMS.', href: 'https://herramientas.divisioncero.com/deteccion-phishing', external: true },
+  { icon: <BadgeAlert className={toolIconClass} />, title: '10 ejemplos de suplantación de marcas', description: 'Ejemplos ilustrados de suplantación de marcas en redes y sitios web, con señales de alerta.', href: 'https://herramientas.divisioncero.com/suplantacion-marcas', external: true },
+  { icon: <Inbox className={toolIconClass} />, title: 'Correos Seguros vs. No Seguros', description: 'Revisa una bandeja simulada y distingue correos seguros de maliciosos.', href: 'https://herramientas.divisioncero.com/identificador-correos-seguros', external: true },
+  { icon: <MonitorCheck className={toolIconClass} />, title: '¿Es Seguro Este Sitio?', description: 'Animación paso a paso de las señales que confirman un sitio seguro.', href: 'https://herramientas.divisioncero.com/verificar-sitio-seguro', external: true },
+  { icon: <ScanSearch className={toolIconClass} />, title: 'Buenas Prácticas en el Puesto de Trabajo', description: 'Encuentra las 10 malas prácticas de seguridad en un escritorio simulado.', href: 'https://herramientas.divisioncero.com/malas-practicas-escritorio', external: true },
+  { icon: <Globe className={toolIconClass} />, title: '¿Cuál es mi IP?', description: 'Consulta tu IP pública, ubicación aproximada, fecha de conexión y user agent.', href: 'https://herramientas.divisioncero.com/cual-es-mi-ip', external: true },
+  { icon: <Scale className={toolIconClass} />, title: 'Rompehielos: Buenas y Malas Prácticas', description: 'Dinámica de equipo para discutir y aprender buenas y malas prácticas de ciberseguridad.', href: 'https://herramientas.divisioncero.com/rompehielos-practicas-ciberseguridad', external: true },
+  { icon: <ClipboardCheck className={toolIconClass} />, title: 'Checklist de Buenas Prácticas del Equipo', description: 'Verifica como líder que tu equipo cumpla las protecciones básicas de ciberseguridad.', href: 'https://herramientas.divisioncero.com/checklist-buenas-practicas-equipo', external: true },
+  { icon: <ShieldAlert className={toolIconClass} />, title: 'Checklist de Mitigación de Incidentes', description: 'Pasos inmediatos ante un incidente de seguridad, como colaborador o como líder.', href: 'https://herramientas.divisioncero.com/checklist-incidente-seguridad', external: true },
+  { icon: <Users className={toolIconClass} />, title: 'Flujo de Autenticación, Autorización y Roles', description: 'Visualiza paso a paso cómo funcionan la autenticación, autorización y roles.', href: 'https://herramientas.divisioncero.com/flujo-autenticacion-autorizacion', external: true },
+  { icon: <Bug className={toolIconClass} />, title: 'Detector de Código Vulnerable', description: 'Practica identificando código vulnerable vs. seguro: OWASP Top 10 y más.', href: 'https://herramientas.divisioncero.com/detector-codigo-vulnerable', external: true },
+  { icon: <Lock className={toolIconClass} />, title: 'Cifrado PGP Explicado', description: 'Cómo funciona el cifrado PGP paso a paso: claves, cifrado híbrido y firma digital.', href: 'https://herramientas.divisioncero.com/cifrado-pgp', external: true },
+  { icon: <IdCard className={toolIconClass} />, title: '¿Qué es un dato PII?', description: 'Aprende qué es información de identificación personal (PII) y cómo protegerla.', href: 'https://herramientas.divisioncero.com/que-es-pii', external: true },
+  { icon: <UserRoundSearch className={toolIconClass} />, title: '¿Qué es el grooming?', description: 'Herramienta didáctica sobre fases del grooming, señales de alerta y qué hacer.', href: 'https://herramientas.divisioncero.com/que-es-grooming', external: true },
+  { icon: <MessageCircleWarning className={toolIconClass} />, title: '¿Qué es el sexting?', description: 'Herramienta didáctica sobre los riesgos del sexting y sus consecuencias.', href: 'https://herramientas.divisioncero.com/que-es-sexting', external: true },
+  { icon: <ShieldAlert className={toolIconClass} />, title: '¿Qué es la sextorsión?', description: 'Herramienta didáctica sobre cómo opera la sextorsión y qué hacer si ocurre.', href: 'https://herramientas.divisioncero.com/que-es-sextorsion', external: true },
+  { icon: <FileDigit className={toolIconClass} />, title: 'Hash de Archivo', description: 'Calcula el MD5, SHA-1, SHA-256 y SHA-512 de un archivo sin subirlo a ningún servidor.', href: 'https://herramientas.divisioncero.com/hash-archivo', external: true },
+  { icon: <FileSearch className={toolIconClass} />, title: 'Analizador de Metadatos', description: 'Descubre los metadatos ocultos de una imagen o documento ofimático.', href: 'https://herramientas.divisioncero.com/analizador-metadatos', external: true },
+  { icon: <FileCode2 className={toolIconClass} />, title: 'Visor Hexadecimal', description: 'Visualiza el contenido byte a byte de cualquier archivo en hexadecimal y ASCII.', href: 'https://herramientas.divisioncero.com/visor-hexadecimal', external: true },
 ];
 
 const benefits = [
@@ -106,6 +132,7 @@ export default function HomePage() {
               <Link
                 href={signUpUrl}
                 aria-label="Regístrate"
+                title="Regístrate en DivisionCero"
                 className="rounded-full p-1 text-fd-muted-foreground hover:bg-fd-accent hover:text-fd-accent-foreground transition-colors"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -136,6 +163,7 @@ export default function HomePage() {
           <div data-hero-item className="flex flex-col sm:flex-row gap-6 items-center justify-center motion-safe:opacity-0">
             <PlanetButton
               href={signUpUrl}
+              title="Comenzar en DivisionCero"
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
             >
               Comenzar
@@ -145,6 +173,7 @@ export default function HomePage() {
               href={discordUrl}
               target="_blank"
               rel="noopener noreferrer"
+              title="Únete a nuestro Discord"
               className="text-lg font-semibold text-fd-foreground hover:text-fd-primary transition-colors"
             >
               Únete a Discord
@@ -176,6 +205,7 @@ export default function HomePage() {
               href={herramientasUrl}
               target="_blank"
               rel="noopener noreferrer"
+              title="Ver todas las herramientas de Ciberseguridad"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
             >
               Ver todas las herramientas
@@ -197,7 +227,7 @@ export default function HomePage() {
           </div>
           <PricingTiers />
           <div className="text-center mt-10">
-            <Link href="/precios" className="text-fd-primary font-medium hover:underline inline-flex items-center gap-1">
+            <Link href="/precios" title="Ver todos los detalles de precios" className="text-fd-primary font-medium hover:underline inline-flex items-center gap-1">
               Ver todos los detalles <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -216,6 +246,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
               href={signUpUrl}
+              title="Comenzar ahora en DivisionCero"
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
             >
               <Rocket className="h-5 w-5 mr-2" />
