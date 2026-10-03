@@ -6,7 +6,7 @@ import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { releases, getReleasePageImage } from '@/lib/source';
 import { ViewOptions } from '@/components/page-actions';
-import { appName, baseUrl } from '@/lib/shared';
+import { appName, pageMetadata } from '@/lib/shared';
 
 const owner = 'PetterVargas';
 const repo = 'divisioncero-docs';
@@ -73,21 +73,12 @@ export async function generateMetadata(props: {
 
   const description = page.data.description ?? `Notas de lanzamiento ${page.data.version} de ${appName}`;
 
-  return {
+  return pageMetadata({
+    path: page.url,
     title: `${page.data.title} (${page.data.version})`,
     description,
-    alternates: {
-      canonical: page.url,
-    },
-    openGraph: {
-      url: `${baseUrl}${page.url}`,
-      type: 'article',
-      publishedTime: new Date(page.data.date).toISOString(),
-      images: getReleasePageImage(page).url,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      images: getReleasePageImage(page).url,
-    },
-  };
+    type: 'article',
+    images: getReleasePageImage(page).url,
+    publishedTime: new Date(page.data.date).toISOString(),
+  });
 }

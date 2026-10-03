@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { legal } from '@/lib/source';
-import { appName, baseUrl } from '@/lib/shared';
+import { appName, pageMetadata } from '@/lib/shared';
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -46,18 +46,10 @@ export async function generateMetadata(props: {
 
   const description = page.data.description ?? `Documento legal de ${appName}`;
 
-  return {
+  return pageMetadata({
+    path: page.url,
     title: page.data.title,
     description,
-    alternates: {
-      canonical: page.url,
-    },
-    openGraph: {
-      url: `${baseUrl}${page.url}`,
-      type: 'article',
-    },
-    twitter: {
-      card: 'summary_large_image',
-    },
-  };
+    type: 'article',
+  });
 }

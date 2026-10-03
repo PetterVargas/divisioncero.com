@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import { Banner } from 'fumadocs-ui/components/banner';
-import { baseOptions } from '@/app/layout.config';
+import { baseOptions, resourceLinks } from '@/app/layout.config';
 import { Globe, MessageCircle } from 'lucide-react';
+import { AskAI } from '@/components/ask-ai';
+import { FooterReveal } from '@/components/footer-reveal';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -38,13 +40,76 @@ export default function Layout({ children }: { children: ReactNode }) {
         {children}
       </HomeLayout>
       <Footer />
+      <FooterReveal />
     </div>
   );
 }
 
+interface FooterLink {
+  text: string;
+  url: string;
+  title?: string;
+}
+
+const footerColumns: { title: string; links: FooterLink[] }[] = [
+  {
+    title: 'Productos',
+    links: [
+      { text: 'CyberAcademy', url: 'https://cyberacademy.divisioncero.com/' },
+      { text: 'Framework Kudo', url: 'https://kudo.divisioncero.com/' },
+      { text: 'Ciberseguridad Empresarial', url: 'https://divisioncero.com/home/empresas' },
+      { text: 'Herramientas', url: 'https://herramientas.divisioncero.com/', title: 'Herramientas de Ciberseguridad' },
+    ],
+  },
+  {
+    title: 'CyberAcademy',
+    links: [
+      { text: 'Cursos', url: 'https://cyberacademy.divisioncero.com/cursos', title: 'Cursos de CyberAcademy' },
+      { text: 'CyberUsuario', url: 'https://cyberacademy.divisioncero.com/cyberusuario' },
+      { text: 'CyberGuardián', url: 'https://cyberacademy.divisioncero.com/cyberguardian' },
+    ],
+  },
+  {
+    title: 'Kudo',
+    links: [
+      { text: 'Framework', url: 'https://kudo.divisioncero.com/framework/overview', title: 'Framework Kudo' },
+      { text: 'OSCAL', url: 'https://kudo.divisioncero.com/framework/oscal' },
+      { text: 'SGX', url: 'https://kudo.divisioncero.com/sgx' },
+      { text: 'Cuestionarios', url: 'https://kudo.divisioncero.com/framework/cuestionarios', title: 'Cuestionarios de Kudo' },
+    ],
+  },
+  {
+    title: 'Recursos',
+    links: resourceLinks.map((item) => ({ text: item.text, url: item.url, title: item.menu.title })),
+  },
+  {
+    title: 'Acerca de',
+    links: [
+      { text: 'Documentación', url: 'https://divisioncero.com/docs' },
+      { text: 'Filosofía', url: 'https://divisioncero.com/blog/filosofia-divisioncero', title: 'Filosofía de DivisionCero' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { text: 'Términos de Servicio', url: '/legal/terminos-de-servicio' },
+      { text: 'Política de Privacidad', url: '/legal/politica-de-privacidad' },
+      { text: 'Política de Cookies', url: '/legal/politica-de-cookies' },
+      { text: 'Centro de Confianza', url: '/legal/trust-center' },
+    ],
+  },
+  {
+    title: 'Cuenta',
+    links: [
+      { text: 'Iniciar sesión', url: 'https://app.divisioncero.com/auth/sign-in' },
+      { text: 'Registrarse', url: 'https://app.divisioncero.com/auth/sign-up', title: 'Regístrate en DivisionCero' },
+    ],
+  },
+];
+
 function Footer() {
   return (
-    <footer className="border-t bg-fd-card py-12 text-fd-secondary-foreground">
+    <footer className="footer-curtain border-t bg-fd-card py-12 text-fd-secondary-foreground">
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-12 gap-8">
           {/* Company Info Column - Left Side */}
@@ -120,45 +185,35 @@ function Footer() {
           </div>
 
           {/* Spacer - Empty Column */}
-          <div className="hidden md:block md:col-span-2"></div>
+          <div className="hidden md:block lg:hidden md:col-span-2"></div>
 
-          {/* Navigation Columns - Right Side */}
-          <div className="col-span-12 md:col-span-6 ml-auto grid grid-cols-3 gap-4">
-            {/* Product Column */}
-            <div className="flex flex-col gap-y-2.5">
-              <h3 className="font-medium mb-4">Productos</h3>
-              <ul className="space-y-2">
-                <li><a href="https://cyberacademy.divisioncero.com/" title="CyberAcademy" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberAcademy</a></li>
-                <li><a href="https://kudo.divisioncero.com/" title="Framework Kudo" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Framework Kudo</a></li>
-                <li><a href="https://divisioncero.com/home/empresas" title="Ciberseguridad Empresarial" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Ciberseguridad Empresarial</a></li>
-                <li><a href="https://herramientas.divisioncero.com/" title="Herramientas de Ciberseguridad" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Herramientas</a></li>
-              </ul>
-            </div>
-
-            {/* About Column */}
-            <div className="flex flex-col gap-y-2.5">
-              <h3 className="font-medium mb-4">Acerca de</h3>
-              <ul className="space-y-2">
-                <li><a href="https://divisioncero.com/docs" title="Documentación" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Documentación</a></li>
-                <li><a href="https://kudo.divisioncero.com/sgx/" title="SGX" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">SGX</a></li>
-                <li><a href="https://cyberacademy.divisioncero.com/cyberusuario" title="CyberUsuario" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberUsuario</a></li>
-                <li><a href="https://cyberacademy.divisioncero.com/cyberguardian" title="CyberGuardián" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">CyberGuardián</a></li>
-                <li><a href="https://divisioncero.com/blog/filosofia-divisioncero" title="Filosofía de DivisionCero" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Filosofía</a></li>
-              </ul>
-            </div>
-
-            {/* Legal Column */}
-            <div className="flex flex-col gap-y-2.5">
-              <h3 className="font-medium mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li><a href="/legal/terminos-de-servicio" title="Términos de Servicio" className="text-sm hover:underline">Términos de Servicio</a></li>
-                <li><a href="/legal/politica-de-privacidad" title="Política de Privacidad" className="text-sm hover:underline">Política de Privacidad</a></li>
-                <li><a href="/legal/politica-de-cookies" title="Política de Cookies" className="text-sm hover:underline">Política de Cookies</a></li>
-                <li><a href="/legal/trust-center" title="Centro de Confianza" className="text-sm hover:underline">Centro de Confianza</a></li>
-              </ul>
-            </div>
+          {/* Navigation Columns - Right Side: cuadrícula de 3 columnas (4 en pantallas grandes) */}
+          <div className="col-span-12 md:col-span-6 lg:col-span-8 ml-auto grid w-full grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-[repeat(4,max-content)] lg:justify-end lg:gap-x-14">
+            {footerColumns.map((column) => (
+              <div key={column.title} className="flex flex-col">
+                <h3 className="font-medium mb-2.5">{column.title}</h3>
+                <ul className="space-y-1">
+                  {column.links.map((link) => {
+                    const external = link.url.startsWith('http');
+                    return (
+                      <li key={link.url}>
+                        <a
+                          href={link.url}
+                          title={link.title ?? link.text}
+                          className="text-sm hover:underline"
+                          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        >
+                          {link.text}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
+        <AskAI prompt="¿Qué es DivisionCero (divisioncero.com) y cómo ayuda a empresas y profesionales de Latinoamérica a mejorar su ciberseguridad?" />
       </div>
     </footer>
   );

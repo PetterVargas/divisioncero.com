@@ -6,7 +6,7 @@ import {
   Wrench, Presentation,
   Landmark, Code2, ShieldCheck, Gauge, Fish, BadgeAlert, Inbox, MonitorCheck, ScanSearch, Globe, Scale,
   ClipboardCheck, ShieldAlert, Users, Bug, Lock, IdCard, UserRoundSearch, MessageCircleWarning, FileDigit,
-  FileSearch, FileCode2,
+  FileSearch, FileCode2, Clock, Server, AtSign,
 } from 'lucide-react';
 import { HeroReveal, ScrollReveal } from '@/components/home-animations';
 import { HeroUniverse } from '@/components/hero-universe';
@@ -37,6 +37,7 @@ const tools = [
   { icon: <Binary className={toolIconClass} />, title: 'Codif/Decod Base64', description: 'Codifica y decodifica texto en Base64.', href: 'https://herramientas.divisioncero.com/codificador-base64', external: true },
   { icon: <Link2 className={toolIconClass} />, title: 'Codif/Decod URL', description: 'Codifica y decodifica URLs fácilmente.', href: 'https://herramientas.divisioncero.com/codificador-url', external: true },
   { icon: <Fingerprint className={toolIconClass} />, title: 'Generador de UUID', description: 'Genera identificadores únicos universales (UUID).', href: 'https://herramientas.divisioncero.com/generador-uuid', external: true },
+  { icon: <Clock className={toolIconClass} />, title: 'Conversión de Fecha y Hora', description: 'Convierte fechas y horas entre zonas horarias (UTC, Bogotá y más).', href: 'https://herramientas.divisioncero.com/conversion-de-fecha-y-hora', external: true },
   { icon: <Code2 className={toolIconClass} />, title: 'Codif/Decod Hexadecimal', description: 'Codifica y decodifica texto en hexadecimal.', href: 'https://herramientas.divisioncero.com/codificador-hexadecimal', external: true },
   { icon: <Landmark className={toolIconClass} />, title: 'Museo del Cibercrimen', description: 'Una galería visual con hitos, personajes y momentos icónicos del cibercrimen.', href: 'https://herramientas.divisioncero.com/museo-cibercrimen', external: true },
   { icon: <ShieldCheck className={toolIconClass} />, title: 'Tríada CIA', description: 'Aprende e identifica Confidencialidad, Integridad y Disponibilidad.', href: 'https://herramientas.divisioncero.com/triada-cia', external: true },
@@ -47,6 +48,8 @@ const tools = [
   { icon: <MonitorCheck className={toolIconClass} />, title: '¿Es Seguro Este Sitio?', description: 'Animación paso a paso de las señales que confirman un sitio seguro.', href: 'https://herramientas.divisioncero.com/verificar-sitio-seguro', external: true },
   { icon: <ScanSearch className={toolIconClass} />, title: 'Buenas Prácticas en el Puesto de Trabajo', description: 'Encuentra las 10 malas prácticas de seguridad en un escritorio simulado.', href: 'https://herramientas.divisioncero.com/malas-practicas-escritorio', external: true },
   { icon: <Globe className={toolIconClass} />, title: '¿Cuál es mi IP?', description: 'Consulta tu IP pública, ubicación aproximada, fecha de conexión y user agent.', href: 'https://herramientas.divisioncero.com/cual-es-mi-ip', external: true },
+  { icon: <Server className={toolIconClass} />, title: 'WHOIS de IP', description: 'Consulta el titular, rango, ASN y contacto de abuso de una IP y exporta un PDF.', href: 'https://herramientas.divisioncero.com/whois-ip', external: true },
+  { icon: <AtSign className={toolIconClass} />, title: 'Identificador de ID en Redes Sociales', description: 'Obtén el ID y datos públicos de un perfil de Facebook, Instagram, TikTok o X.', href: 'https://herramientas.divisioncero.com/identificador-id-red-social', external: true },
   { icon: <Scale className={toolIconClass} />, title: 'Rompehielos: Buenas y Malas Prácticas', description: 'Dinámica de equipo para discutir y aprender buenas y malas prácticas de ciberseguridad.', href: 'https://herramientas.divisioncero.com/rompehielos-practicas-ciberseguridad', external: true },
   { icon: <ClipboardCheck className={toolIconClass} />, title: 'Checklist de Buenas Prácticas del Equipo', description: 'Verifica como líder que tu equipo cumpla las protecciones básicas de ciberseguridad.', href: 'https://herramientas.divisioncero.com/checklist-buenas-practicas-equipo', external: true },
   { icon: <ShieldAlert className={toolIconClass} />, title: 'Checklist de Mitigación de Incidentes', description: 'Pasos inmediatos ante un incidente de seguridad, como colaborador o como líder.', href: 'https://herramientas.divisioncero.com/checklist-incidente-seguridad', external: true },
@@ -57,7 +60,7 @@ const tools = [
   { icon: <UserRoundSearch className={toolIconClass} />, title: '¿Qué es el grooming?', description: 'Herramienta didáctica sobre fases del grooming, señales de alerta y qué hacer.', href: 'https://herramientas.divisioncero.com/que-es-grooming', external: true },
   { icon: <MessageCircleWarning className={toolIconClass} />, title: '¿Qué es el sexting?', description: 'Herramienta didáctica sobre los riesgos del sexting y sus consecuencias.', href: 'https://herramientas.divisioncero.com/que-es-sexting', external: true },
   { icon: <ShieldAlert className={toolIconClass} />, title: '¿Qué es la sextorsión?', description: 'Herramienta didáctica sobre cómo opera la sextorsión y qué hacer si ocurre.', href: 'https://herramientas.divisioncero.com/que-es-sextorsion', external: true },
-  { icon: <FileDigit className={toolIconClass} />, title: 'Hash de Archivo', description: 'Calcula el MD5, SHA-1, SHA-256 y SHA-512 de un archivo sin subirlo a ningún servidor.', href: 'https://herramientas.divisioncero.com/hash-archivo', external: true },
+  { icon: <FileDigit className={toolIconClass} />, title: 'Generador y Validador de Hash de Archivo', description: 'Calcula el MD5, SHA-1, SHA-256 y SHA-512 de un archivo sin subirlo a ningún servidor.', href: 'https://herramientas.divisioncero.com/generador-y-validador-hash-archivo', external: true },
   { icon: <FileSearch className={toolIconClass} />, title: 'Analizador de Metadatos', description: 'Descubre los metadatos ocultos de una imagen o documento ofimático.', href: 'https://herramientas.divisioncero.com/analizador-metadatos', external: true },
   { icon: <FileCode2 className={toolIconClass} />, title: 'Visor Hexadecimal', description: 'Visualiza el contenido byte a byte de cualquier archivo en hexadecimal y ASCII.', href: 'https://herramientas.divisioncero.com/visor-hexadecimal', external: true },
 ];
