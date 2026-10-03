@@ -23,9 +23,17 @@ export const gitConfig = {
   branch: 'main',
 };
 
+export const rssAlternateTypes = {
+  'application/rss+xml': [{ title: appName, url: `${baseUrl}/rss.xml` }],
+};
+
 /**
- * Builds consistent canonical + Open Graph + Twitter Card metadata for a static page.
+ * Builds consistent canonical + Open Graph + Twitter Card metadata for a page.
  * Pages that don't pass `images` inherit the site-wide default from app/opengraph-image.tsx.
+ *
+ * Next.js reemplaza `alternates`, `openGraph` y `twitter` completos por segmento
+ * (no los fusiona con el layout), así que aquí se repiten title/description,
+ * siteName/locale y el feed RSS para que no se pierdan.
  */
 export function pageMetadata({
   path,
@@ -33,27 +41,46 @@ export function pageMetadata({
   description,
   images,
   type = 'website',
+  publishedTime,
+  authors,
+  robots,
 }: {
   path: string;
   title: string;
-  description: string;
+  description?: string;
   images?: string;
   type?: 'website' | 'article';
+  publishedTime?: string;
+  authors?: string[];
+  robots?: Metadata['robots'];
 }): Metadata {
   return {
     title,
     description,
     alternates: {
       canonical: path,
+      types: rssAlternateTypes,
     },
     openGraph: {
+      title,
+      description,
       url: `${baseUrl}${path}`,
+      siteName: appName,
+      locale: 'es_419',
       type,
+      ...(publishedTime ? { publishedTime } : {}),
+      ...(authors ? { authors } : {}),
       ...(images ? { images } : {}),
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@divisioncero',
+      title,
+      description,
       ...(images ? { images } : {}),
     },
+    ...(robots ? { robots } : {}),
   };
 }
+
+export const cookieConsentKey = 'dc-cookie-consent';

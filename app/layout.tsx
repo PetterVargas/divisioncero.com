@@ -1,7 +1,9 @@
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import { Provider } from '@/components/provider';
-import { appName, appDescription, baseUrl } from '@/lib/shared';
+import { WhatsAppButton } from '@/components/whatsapp-button';
+import { CookieConsent } from '@/components/cookie-consent';
+import { appName, appDescription, baseUrl, cookieConsentKey } from '@/lib/shared';
 import type { ReactNode } from 'react';
 import Script from 'next/script';
 import './global.css';
@@ -80,7 +82,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: baseUrl,
     siteName: appName,
-    locale: 'es_ES',
+    locale: 'es_419',
     type: 'website',
   },
   twitter: {
@@ -146,6 +148,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            var consent = null;
+            try { consent = localStorage.getItem('${cookieConsentKey}'); } catch (e) {}
+            gtag('consent', 'default', {
+              analytics_storage: consent === 'accepted' ? 'granted' : 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+            });
             gtag('js', new Date());
             gtag('config', 'G-5KWQPXJPX4');
           `}
@@ -153,6 +163,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Provider>
           {children}
         </Provider>
+        <WhatsAppButton />
+        <CookieConsent />
       </body>
     </html>
   );

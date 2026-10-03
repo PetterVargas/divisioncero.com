@@ -8,6 +8,45 @@ import { NavTitle } from '@/components/nav-title';
 // attribute can be added without losing the built-in look at either size.
 const navLinkClassName = '[&_svg]:size-4 sm:inline-flex sm:items-center sm:gap-1 sm:p-2 sm:text-sm sm:text-fd-muted-foreground sm:transition-colors sm:hover:text-fd-accent-foreground sm:data-[active=true]:text-fd-primary max-sm:inline-flex max-sm:items-center max-sm:gap-2 max-sm:py-1.5 max-sm:transition-colors max-sm:hover:text-fd-popover-foreground/50 max-sm:data-[active=true]:font-medium max-sm:data-[active=true]:text-fd-primary';
 
+// Items del menú "Recursos"; el footer reutiliza la misma lista.
+export const resourceLinks = [
+  {
+    icon: <NewspaperIcon />,
+    text: 'Blog',
+    description: 'Artículos y actualizaciones sobre ciberseguridad',
+    url: '/blog',
+    menu: { title: 'Blog' },
+  },
+  {
+    icon: <FileTextIcon />,
+    text: 'Open Sources',
+    description: 'Proyectos y contribuciones abiertos',
+    url: '/open-source',
+    menu: { title: 'Open Sources' },
+  },
+  {
+    icon: <WrenchIcon />,
+    text: 'Herramientas',
+    description: 'Ayuda en Ciberseguridad',
+    url: 'https://herramientas.divisioncero.com/',
+    menu: { title: 'Herramientas de Ciberseguridad' },
+  },
+  {
+    icon: <BookIcon />,
+    text: 'Releases',
+    description: 'Actualizaciones sobre la plataforma',
+    url: '/releases',
+    menu: { title: 'Releases' },
+  },
+  {
+    icon: <PresentationIcon />,
+    text: 'Presentaciones',
+    description: 'Material de las sesiones de CyberAcademy',
+    url: 'https://presentaciones.divisioncero.com/',
+    menu: { title: 'Presentaciones' },
+  },
+];
+
 /**
  * Shared layout configurations
  *
@@ -72,43 +111,7 @@ export const baseOptions: BaseLayoutProps = {
     {
       type: 'menu',
       text: 'Recursos',
-      items: [
-        {
-          icon: <NewspaperIcon />,
-          text: 'Blog',
-          description: 'Artículos y actualizaciones sobre ciberseguridad',
-          url: '/blog',
-          menu: { title: 'Blog' },
-        },
-        {
-          icon: <FileTextIcon />,
-          text: 'Open Sources',
-          description: 'Proyectos y contribuciones abiertos',
-          url: '/open-source',
-          menu: { title: 'Open Sources' },
-        },
-        {
-          icon: <WrenchIcon />,
-          text: 'Herramientas',
-          description: 'Ayuda en Ciberseguridad',
-          url: 'https://herramientas.divisioncero.com/',
-          menu: { title: 'Herramientas de Ciberseguridad' },
-        },
-        {
-          icon: <BookIcon />,
-          text: 'Releases',
-          description: 'Actualizaciones sobre la plataforma',
-          url: '/releases',
-          menu: { title: 'Releases' },
-        },
-        {
-          icon: <PresentationIcon />,
-          text: 'Presentaciones',
-          description: 'Material de las sesiones de CyberAcademy',
-          url: 'https://presentaciones.divisioncero.com/',
-          menu: { title: 'Presentaciones' },
-        },
-      ],
+      items: resourceLinks,
     },
     {
       type: 'custom',

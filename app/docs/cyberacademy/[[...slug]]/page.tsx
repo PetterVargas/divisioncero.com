@@ -11,7 +11,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { gitConfig } from '@/lib/shared';
+import { gitConfig, pageMetadata } from '@/lib/shared';
 import { Feedback } from '@/components/feedback/client';
 
 export default async function Page(props: PageProps<'/docs/cyberacademy/[[...slug]]'>) {
@@ -54,15 +54,11 @@ export async function generateMetadata(props: PageProps<'/docs/cyberacademy/[[..
   const page = cyberacademySource.getPage(params.slug);
   if (!page) notFound();
 
-  return {
+  return pageMetadata({
+    path: page.url,
     title: page.data.title,
     description: page.data.description,
-    openGraph: {
-      images: getCyberacademyPageImage(page).url,
-    },
-    robots: {
-      index: false,
-      follow: false,
-    },
-  };
+    images: getCyberacademyPageImage(page).url,
+    robots: { index: false, follow: true },
+  });
 }

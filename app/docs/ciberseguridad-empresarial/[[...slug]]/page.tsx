@@ -11,7 +11,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { gitConfig } from '@/lib/shared';
+import { gitConfig, pageMetadata } from '@/lib/shared';
 import { Feedback } from '@/components/feedback/client';
 
 export default async function Page(props: PageProps<'/docs/ciberseguridad-empresarial/[[...slug]]'>) {
@@ -54,11 +54,10 @@ export async function generateMetadata(props: PageProps<'/docs/ciberseguridad-em
   const page = ciberseguridadEmpresarialSource.getPage(params.slug);
   if (!page) notFound();
 
-  return {
+  return pageMetadata({
+    path: page.url,
     title: page.data.title,
     description: page.data.description,
-    openGraph: {
-      images: getCiberseguridadEmpresarialPageImage(page).url,
-    },
-  };
+    images: getCiberseguridadEmpresarialPageImage(page).url,
+  });
 }
