@@ -66,7 +66,7 @@ export function EcosystemPanels({ items }: { items: EcosystemPanel[] }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto px-4">
+    <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto px-4 overflow-x-clip">
       {items.map((panel) => (
         <a
           key={panel.title}

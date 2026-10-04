@@ -111,9 +111,9 @@ function Footer() {
   return (
     <footer className="footer-curtain border-t bg-fd-card py-12 text-fd-secondary-foreground">
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Company Info Column - Left Side */}
-          <div className="col-span-12 md:col-span-4">
+          <div className="md:col-span-4">
             <p className="text-sm mb-6">
               <b>Ciberseguridad</b> creada por y para <b>LatAm</b>, aprendamos y aseguremos juntos. Creado por entusiastas de Ciberseguridad para CISO, CSO, CTO, CIO, SOC, CSIRT, SecOps, DevSecOps, DPO, CPO y mucho más...
             </p>
@@ -188,7 +188,7 @@ function Footer() {
           <div className="hidden md:block lg:hidden md:col-span-2"></div>
 
           {/* Navigation Columns - Right Side: cuadrícula de 3 columnas (4 en pantallas grandes) */}
-          <div className="col-span-12 md:col-span-6 lg:col-span-8 ml-auto grid w-full grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-[repeat(4,max-content)] lg:justify-end lg:gap-x-14">
+          <div className="md:col-span-6 lg:col-span-8 ml-auto grid w-full grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-[repeat(4,max-content)] lg:justify-end lg:gap-x-14">
             {footerColumns.map((column) => (
               <div key={column.title} className="flex flex-col">
                 <h3 className="font-medium mb-2.5">{column.title}</h3>
