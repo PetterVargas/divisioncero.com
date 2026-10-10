@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Provider } from '@/components/provider';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { CookieConsent } from '@/components/cookie-consent';
-import { appName, appDescription, baseUrl, cookieConsentKey } from '@/lib/shared';
+import { appName, appDescription, baseUrl, cookieConsentKey, homeImageRoute } from '@/lib/shared';
 import type { ReactNode } from 'react';
 import Script from 'next/script';
 import './global.css';
@@ -64,10 +64,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Peter Vargas', url: 'https://petervargas.com' }],
   creator: 'Peter Vargas',
   publisher: 'divisioncero.com',
-  robots: {
-    index: true,
-    follow: true,
-  },
   alternates: {
     canonical: '/',
     types: {
@@ -84,10 +80,12 @@ export const metadata: Metadata = {
     siteName: appName,
     locale: 'es_419',
     type: 'website',
+    images: homeImageRoute,
   },
   twitter: {
     card: 'summary_large_image',
     site: '@divisioncero',
+    images: homeImageRoute,
   },
   icons: {
     icon: [

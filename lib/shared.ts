@@ -14,6 +14,7 @@ export const ciberseguridadEmpresarialRoute = '/docs/ciberseguridad-empresarial'
 export const ciberseguridadEmpresarialImageRoute = '/og/ciberseguridad-empresarial';
 export const ciberseguridadEmpresarialContentRoute = '/llms.mdx/ciberseguridad-empresarial';
 
+export const homeImageRoute = '/og/home/image.png';
 export const blogImageRoute = '/og/blog';
 export const releasesImageRoute = '/og/releases';
 
@@ -29,7 +30,7 @@ export const rssAlternateTypes = {
 
 /**
  * Builds consistent canonical + Open Graph + Twitter Card metadata for a page.
- * Pages that don't pass `images` inherit the site-wide default from app/opengraph-image.tsx.
+ * Pages that don't pass `images` get the site-wide default (`homeImageRoute`).
  *
  * Next.js reemplaza `alternates`, `openGraph` y `twitter` completos por segmento
  * (no los fusiona con el layout), así que aquí se repiten title/description,
@@ -39,7 +40,7 @@ export function pageMetadata({
   path,
   title,
   description,
-  images,
+  images = homeImageRoute,
   type = 'website',
   publishedTime,
   authors,
@@ -70,14 +71,14 @@ export function pageMetadata({
       type,
       ...(publishedTime ? { publishedTime } : {}),
       ...(authors ? { authors } : {}),
-      ...(images ? { images } : {}),
+      images,
     },
     twitter: {
       card: 'summary_large_image',
       site: '@divisioncero',
       title,
       description,
-      ...(images ? { images } : {}),
+      images,
     },
     ...(robots ? { robots } : {}),
   };
