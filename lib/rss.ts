@@ -1,5 +1,5 @@
 import { Feed } from 'feed';
-import { cyberacademySource, ciberseguridadEmpresarialSource, blog } from '@/lib/source';
+import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource, blog } from '@/lib/source';
 import { appName, appDescription, baseUrl } from '@/lib/shared';
 
 export function getRSS() {
@@ -12,7 +12,11 @@ export function getRSS() {
     copyright: `All rights reserved ${new Date().getFullYear()}`,
   });
 
-  const docsPages = [...cyberacademySource.getPages(), ...ciberseguridadEmpresarialSource.getPages()];
+  const docsPages = [
+    ...cyberacademySource.getPages(),
+    ...ciberseguridadEmpresarialSource.getPages(),
+    ...selfHostingSource.getPages(),
+  ];
 
   for (const page of docsPages) {
     feed.addItem({

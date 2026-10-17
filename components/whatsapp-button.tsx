@@ -1,14 +1,13 @@
 'use client';
 
 import type { MouseEvent } from 'react';
-
-const WHATSAPP_NUMBER = '573046307327';
+import { whatsappUrl as buildWhatsappUrl } from '@/lib/shared';
 
 function whatsappUrl(pageUrl?: string) {
   const message = pageUrl
     ? `Hola DivisionCero, estaba en ${pageUrl} y tengo una pregunta`
     : 'Hola DivisionCero, tengo una pregunta';
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return buildWhatsappUrl(message);
 }
 
 /**

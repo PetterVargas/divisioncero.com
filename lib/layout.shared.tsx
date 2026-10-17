@@ -1,6 +1,6 @@
 import type { BaseLayoutProps, LayoutTab } from 'fumadocs-ui/layouts/shared';
-import { appName, gitConfig, cyberacademyRoute, ciberseguridadEmpresarialRoute } from './shared';
-import { GraduationCap, Settings } from 'lucide-react';
+import { appName, gitConfig, cyberacademyRoute, ciberseguridadEmpresarialRoute, selfHostingRoute } from './shared';
+import { GraduationCap, Server, Settings } from 'lucide-react';
 
 export const sectionTabs: LayoutTab[] = [
   {
@@ -14,6 +14,12 @@ export const sectionTabs: LayoutTab[] = [
     description: 'Automatización en Ciberseguridad',
     icon: <Settings className="size-4" />,
     url: ciberseguridadEmpresarialRoute,
+  },
+  {
+    title: 'Self-hosting',
+    description: 'DivisionCero en tu infraestructura',
+    icon: <Server className="size-4" />,
+    url: selfHostingRoute,
   },
 ];
 

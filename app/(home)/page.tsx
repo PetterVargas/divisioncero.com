@@ -6,7 +6,7 @@ import {
   Wrench, Presentation,
   Landmark, Code2, ShieldCheck, Gauge, Fish, BadgeAlert, Inbox, MonitorCheck, ScanSearch, Globe, Scale,
   ClipboardCheck, ShieldAlert, Users, Bug, Lock, IdCard, UserRoundSearch, MessageCircleWarning, FileDigit,
-  FileSearch, FileCode2, Clock, Server, AtSign,
+  FileSearch, FileCode2, Clock, Server, AtSign, TimerReset,
 } from 'lucide-react';
 import { HeroReveal, ScrollReveal } from '@/components/home-animations';
 import { HeroUniverse } from '@/components/hero-universe';
@@ -25,6 +25,8 @@ const herramientasUrl = 'https://herramientas.divisioncero.com/';
 const toolIconClass = 'h-4.5 w-4.5 text-fd-primary';
 
 const tools = [
+  { icon: <Building2 className={toolIconClass} />, title: 'GRC para Compañías', description: 'Gestiona la gobernanza, el riesgo y el cumplimiento de Ciberseguridad de tu empresa.', href: 'https://app.divisioncero.com/home/empresas', external: true },
+  { icon: <ShieldCheck className={toolIconClass} />, title: 'CyberKit', description: 'Kit de recursos y herramientas de Ciberseguridad para fortalecer tu organización.', href: 'https://app.divisioncero.com/home/cyberkit', external: true },
   { icon: <Map className={toolIconClass} />, title: 'CyberMap', description: 'Visualiza el panorama de amenazas y ciberataques en tiempo real.', href: 'https://herramientas.divisioncero.com/cybermap', external: true },
   { icon: <Grid3x3 className={toolIconClass} />, title: 'Tabla Periódica de Ciberseguridad', description: 'Explora los elementos clave de la Ciberseguridad de forma visual.', href: 'https://herramientas.divisioncero.com/tabla-periodica-ciberseguridad', external: true },
   { icon: <MessageCircleQuestion className={toolIconClass} />, title: 'Rompehielos de Seguridad', description: 'Preguntas para romper el hielo y abrir la conversación sobre seguridad.', href: 'https://herramientas.divisioncero.com/rompehielos', external: true },
@@ -37,6 +39,7 @@ const tools = [
   { icon: <Binary className={toolIconClass} />, title: 'Codif/Decod Base64', description: 'Codifica y decodifica texto en Base64.', href: 'https://herramientas.divisioncero.com/codificador-base64', external: true },
   { icon: <Link2 className={toolIconClass} />, title: 'Codif/Decod URL', description: 'Codifica y decodifica URLs fácilmente.', href: 'https://herramientas.divisioncero.com/codificador-url', external: true },
   { icon: <Fingerprint className={toolIconClass} />, title: 'Generador de UUID', description: 'Genera identificadores únicos universales (UUID).', href: 'https://herramientas.divisioncero.com/generador-uuid', external: true },
+  { icon: <TimerReset className={toolIconClass} />, title: 'Generador de Códigos TOTP', description: 'Genera códigos 2FA (TOTP) a partir de una clave secreta, con QR para apps autenticadoras.', href: 'https://herramientas.divisioncero.com/totp', external: true },
   { icon: <Clock className={toolIconClass} />, title: 'Conversión de Fecha y Hora', description: 'Convierte fechas y horas entre zonas horarias (UTC, Bogotá y más).', href: 'https://herramientas.divisioncero.com/conversion-de-fecha-y-hora', external: true },
   { icon: <Code2 className={toolIconClass} />, title: 'Codif/Decod Hexadecimal', description: 'Codifica y decodifica texto en hexadecimal.', href: 'https://herramientas.divisioncero.com/codificador-hexadecimal', external: true },
   { icon: <Landmark className={toolIconClass} />, title: 'Museo del Cibercrimen', description: 'Una galería visual con hitos, personajes y momentos icónicos del cibercrimen.', href: 'https://herramientas.divisioncero.com/museo-cibercrimen', external: true },
@@ -99,7 +102,7 @@ const ecosystemPanels = [
     icon: <Building2 className={panelIconClass} />,
     title: 'Ciberseguridad Empresarial',
     description: 'Automatización y consultoría en Ciberseguridad para pequeñas y medianas empresas.',
-    href: signUpUrl,
+    href: 'https://app.divisioncero.com/home/empresas',
     cta: 'Comenzar',
   },
   {

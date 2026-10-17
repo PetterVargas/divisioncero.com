@@ -1,0 +1,55 @@
+---
+title: Instalación en DigitalOcean
+description: "Guía para instalar el Self-hosting de DivisionCero en un Droplet de DigitalOcean: creación del servidor, dominio, instalación y activación de la licencia."
+---
+
+## Instalación en DigitalOcean
+
+Antes de comenzar, revisa los [requisitos](./requisitos).
+
+<Steps>
+<Step>
+
+### Crea el Droplet
+
+En el panel de DigitalOcean, crea un nuevo **Droplet** con Ubuntu LTS, elige la región más cercana a tus colaboradores y agrega tu llave SSH como método de autenticación.
+
+</Step>
+<Step>
+
+### Configura el firewall
+
+Crea un **Cloud Firewall** en DigitalOcean y asígnalo al Droplet, permitiendo solo el tráfico entrante de SSH (22), HTTP (80) y HTTPS (443).
+
+</Step>
+<Step>
+
+### Apunta tu dominio
+
+Crea un registro DNS de tipo `A` que apunte tu dominio o subdominio a la IP pública del Droplet. Puedes hacerlo en DigitalOcean (**Networking → Domains**) o en el proveedor donde administras tu dominio.
+
+</Step>
+<Step>
+
+### Instala DivisionCero
+
+Conéctate al Droplet por SSH y sigue las instrucciones de instalación del [repositorio de DivisionCero](https://github.com/PetterVargas/divisioncero).
+
+</Step>
+<Step>
+
+### Activa tu licencia
+
+Si tienes un plan de pago, activa la licencia entregada por DivisionCero. Con la versión Community este paso no es necesario.
+
+</Step>
+<Step>
+
+### Activa los respaldos
+
+En la configuración del Droplet, activa los **Backups** automáticos de DigitalOcean.
+
+</Step>
+</Steps>
+
+¿Necesitas ayuda con la instalación? [Contáctanos por WhatsApp](https://wa.me/573046307327?text=Hola%20DivisionCero%2C%20necesito%20ayuda%20con%20la%20instalaci%C3%B3n%20en%20DigitalOcean).

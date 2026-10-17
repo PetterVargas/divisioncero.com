@@ -22,6 +22,7 @@ export function generateMetadata() {
   return pageMetadata({
     path: '/precios',
     title: 'Precios',
-    description: 'Planes de precios y opciones de pago de DivisionCero: Básico, Maestro y Empresa.',
+    description:
+      'Planes de precios de DivisionCero: CyberAcademy (Free, Certificaciones, Enterprise), CSaaS (Free, Pymes, Enterprise) y Self-hosting.',
   });
 }
