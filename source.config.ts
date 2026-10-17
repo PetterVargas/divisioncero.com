@@ -21,6 +21,7 @@ const docsConfig = {
 
 export const cyberacademyDocs = defineDocs({ dir: 'content/cyberacademy', ...docsConfig });
 export const ciberseguridadEmpresarialDocs = defineDocs({ dir: 'content/ciberseguridad-empresarial', ...docsConfig });
+export const selfHostingDocs = defineDocs({ dir: 'content/self-hosting', ...docsConfig });
 
 export default defineConfig({
   mdxOptions: {

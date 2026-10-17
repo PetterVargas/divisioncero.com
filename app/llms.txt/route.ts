@@ -1,4 +1,4 @@
-import { cyberacademySource, ciberseguridadEmpresarialSource } from '@/lib/source';
+import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource } from '@/lib/source';
 import { llms } from 'fumadocs-core/source';
 
 export const revalidate = false;
@@ -8,6 +8,7 @@ export async function GET() {
     await Promise.all([
       llms(cyberacademySource).index(),
       llms(ciberseguridadEmpresarialSource).index(),
+      llms(selfHostingSource).index(),
     ])
   ).join('\n\n');
 

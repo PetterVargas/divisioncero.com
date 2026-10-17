@@ -1,0 +1,59 @@
+---
+title: Instalación en Hostinger
+description: "Guía para instalar el Self-hosting de DivisionCero en un VPS de Hostinger: creación del servidor, dominio, instalación y activación de la licencia."
+---
+
+## Instalación en Hostinger
+
+Antes de comenzar, revisa los [requisitos](./requisitos).
+
+<Callout type="warn">
+  DivisionCero requiere un **VPS**. Los planes de hosting compartido o de hosting web de Hostinger no son compatibles.
+</Callout>
+
+<Steps>
+<Step>
+
+### Crea el VPS
+
+Desde **hPanel**, contrata un **VPS** con Ubuntu LTS, elige la ubicación del servidor más cercana a tus colaboradores y configura una llave SSH para el acceso.
+
+</Step>
+<Step>
+
+### Configura el firewall
+
+En la sección de seguridad del VPS en hPanel, activa el **Firewall** y permite solo el tráfico entrante de SSH (22), HTTP (80) y HTTPS (443).
+
+</Step>
+<Step>
+
+### Apunta tu dominio
+
+Crea un registro DNS de tipo `A` que apunte tu dominio o subdominio a la IP pública del VPS. Si tu dominio está en Hostinger, hazlo desde el **Editor de zona DNS** de hPanel.
+
+</Step>
+<Step>
+
+### Instala DivisionCero
+
+Conéctate al VPS por SSH y sigue las instrucciones de instalación del [repositorio de DivisionCero](https://github.com/PetterVargas/divisioncero).
+
+</Step>
+<Step>
+
+### Activa tu licencia
+
+Si tienes un plan de pago, activa la licencia entregada por DivisionCero. Con la versión Community este paso no es necesario.
+
+</Step>
+<Step>
+
+### Activa los respaldos
+
+Verifica en hPanel que los **respaldos** del VPS estén activos y crea un snapshot después de la instalación.
+
+</Step>
+</Steps>
+
+¿Necesitas ayuda con la instalación? [Contáctanos por WhatsApp](https://wa.me/573046307327?text=Hola%20DivisionCero%2C%20necesito%20ayuda%20con%20la%20instalaci%C3%B3n%20en%20Hostinger).

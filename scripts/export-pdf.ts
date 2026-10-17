@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { cyberacademySource, ciberseguridadEmpresarialSource } from '@/lib/source';
+import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource } from '@/lib/source';
 
 const BASE_URL = process.env.BASE_URL ?? 'http://localhost:3000';
 const OUT_DIR = 'pdfs';
@@ -9,6 +9,7 @@ const OUT_DIR = 'pdfs';
 const urls = [
   ...cyberacademySource.getPages().map((p) => p.url),
   ...ciberseguridadEmpresarialSource.getPages().map((p) => p.url),
+  ...selfHostingSource.getPages().map((p) => p.url),
 ];
 
 async function exportPdf(browser: Awaited<ReturnType<typeof puppeteer.launch>>, pathname: string) {

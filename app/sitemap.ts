@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { execFileSync } from 'node:child_process';
-import { ciberseguridadEmpresarialSource, blog, releases, legal } from '@/lib/source';
+import { ciberseguridadEmpresarialSource, selfHostingSource, blog, releases, legal } from '@/lib/source';
 import { baseUrl } from '@/lib/shared';
 
 export const revalidate = false;
@@ -35,10 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: getGitLastModified(source),
   }));
 
-  const docsEntries: MetadataRoute.Sitemap = ciberseguridadEmpresarialSource.getPages().map((page) => ({
-    url: `${baseUrl}${page.url}`,
-    lastModified: getGitLastModified(`content/ciberseguridad-empresarial/${page.path}`),
-  }));
+  const docsEntries: MetadataRoute.Sitemap = [
+    ...ciberseguridadEmpresarialSource.getPages().map((page) => ({
+      url: `${baseUrl}${page.url}`,
+      lastModified: getGitLastModified(`content/ciberseguridad-empresarial/${page.path}`),
+    })),
+    ...selfHostingSource.getPages().map((page) => ({
+      url: `${baseUrl}${page.url}`,
+      lastModified: getGitLastModified(`content/self-hosting/${page.path}`),
+    })),
+  ];
 
   const blogEntries: MetadataRoute.Sitemap = blog.getPages().map((page) => ({
     url: `${baseUrl}${page.url}`,

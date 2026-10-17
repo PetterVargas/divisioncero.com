@@ -1,10 +1,11 @@
 import { type FileObject, printErrors, scanURLs, validateFiles } from 'next-validate-link';
 import remarkMath from 'remark-math';
-import { cyberacademySource, ciberseguridadEmpresarialSource } from '@/lib/source';
+import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource } from '@/lib/source';
 
 async function checkLinks() {
   const allCyberacademyPages = cyberacademySource.getPages();
   const allCiberseguridadPages = ciberseguridadEmpresarialSource.getPages();
+  const allSelfHostingPages = selfHostingSource.getPages();
 
   const scanned = await scanURLs({
     preset: 'next',
@@ -17,12 +18,17 @@ async function checkLinks() {
         value: { slug: page.slugs },
         hashes: getHeadings(page),
       })),
+      'docs/self-hosting/[[...slug]]': allSelfHostingPages.map((page) => ({
+        value: { slug: page.slugs },
+        hashes: getHeadings(page),
+      })),
     },
   });
 
   const files = await Promise.all([
     ...allCyberacademyPages.map((page) => toFileObject(page)),
     ...allCiberseguridadPages.map((page) => toFileObject(page)),
+    ...allSelfHostingPages.map((page) => toFileObject(page)),
   ]);
 
   printErrors(
@@ -42,7 +48,8 @@ async function checkLinks() {
 
 type AnyPage =
   | (typeof cyberacademySource)['$inferPage']
-  | (typeof ciberseguridadEmpresarialSource)['$inferPage'];
+  | (typeof ciberseguridadEmpresarialSource)['$inferPage']
+  | (typeof selfHostingSource)['$inferPage'];
 
 function getHeadings(page: AnyPage): string[] {
   return page.data.toc.map((item) => item.url.slice(1));

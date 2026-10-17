@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         ]}
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2">
-          <SubscribeDialog>🚀 Suscríbete a DivisionCero 👀</SubscribeDialog>
+          <SubscribeDialog>🚀 Newsletter de DivisionCero 👀</SubscribeDialog>
         </div>
       </Banner>
       <HomeLayout
@@ -51,6 +51,7 @@ const footerColumns: { title: string; links: FooterLink[] }[] = [
       { text: 'CyberAcademy', url: 'https://cyberacademy.divisioncero.com/' },
       { text: 'Framework Kudo', url: 'https://kudo.divisioncero.com/' },
       { text: 'Ciberseguridad Empresarial', url: 'https://divisioncero.com/docs/ciberseguridad-empresarial' },
+      { text: 'Self-hosting', url: 'https://divisioncero.com/docs/self-hosting', title: 'Self-hosting de DivisionCero' },
       { text: 'Herramientas', url: 'https://herramientas.divisioncero.com/', title: 'Herramientas de Ciberseguridad' },
     ],
   },

@@ -4,6 +4,12 @@ export const appName = 'DivisionCero';
 
 export const appDescription = 'Simplificando juntos la Ciberseguridad de LatAm';
 
+const whatsappNumber = '573046307327';
+
+export function whatsappUrl(message: string) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://divisioncero.com';
 
 export const cyberacademyRoute = '/docs/cyberacademy';
@@ -13,6 +19,10 @@ export const cyberacademyContentRoute = '/llms.mdx/cyberacademy';
 export const ciberseguridadEmpresarialRoute = '/docs/ciberseguridad-empresarial';
 export const ciberseguridadEmpresarialImageRoute = '/og/ciberseguridad-empresarial';
 export const ciberseguridadEmpresarialContentRoute = '/llms.mdx/ciberseguridad-empresarial';
+
+export const selfHostingRoute = '/docs/self-hosting';
+export const selfHostingImageRoute = '/og/self-hosting';
+export const selfHostingContentRoute = '/llms.mdx/self-hosting';
 
 export const homeImageRoute = '/og/home/image.png';
 export const blogImageRoute = '/og/blog';

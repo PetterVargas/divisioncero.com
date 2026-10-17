@@ -1,4 +1,4 @@
-import { cyberacademySource, ciberseguridadEmpresarialSource } from '@/lib/source';
+import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource } from '@/lib/source';
 import { createSearchAPI } from 'fumadocs-core/search/server';
 
 export const revalidate = false;
@@ -13,6 +13,13 @@ export const { staticGET: GET } = createSearchAPI('advanced', {
       structuredData: page.data.structuredData,
     })),
     ...ciberseguridadEmpresarialSource.getPages().map((page) => ({
+      id: page.url,
+      title: page.data.title,
+      description: page.data.description,
+      url: page.url,
+      structuredData: page.data.structuredData,
+    })),
+    ...selfHostingSource.getPages().map((page) => ({
       id: page.url,
       title: page.data.title,
       description: page.data.description,

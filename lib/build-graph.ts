@@ -1,8 +1,8 @@
-import { cyberacademySource, ciberseguridadEmpresarialSource } from '@/lib/source';
+import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource } from '@/lib/source';
 import type { Graph } from '../components/graph-view';
 
 export function buildGraph(): Graph {
-  const sources = [cyberacademySource, ciberseguridadEmpresarialSource];
+  const sources = [cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource];
   const graph: Graph = { links: [], nodes: [] };
 
   for (const source of sources) {
@@ -18,7 +18,8 @@ export function buildGraph(): Graph {
       for (const ref of extractedReferences) {
         const refPage =
           cyberacademySource.getPageByHref(ref.href) ??
-          ciberseguridadEmpresarialSource.getPageByHref(ref.href);
+          ciberseguridadEmpresarialSource.getPageByHref(ref.href) ??
+          selfHostingSource.getPageByHref(ref.href);
         if (!refPage) continue;
 
         graph.links.push({

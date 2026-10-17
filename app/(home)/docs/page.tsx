@@ -1,19 +1,25 @@
 import Link from 'next/link';
-import { GraduationCap, Shield, ArrowRight } from 'lucide-react';
+import { GraduationCap, Shield, Server, ArrowRight } from 'lucide-react';
 import { pageMetadata } from '@/lib/shared';
 
 const sections = [
   {
     title: 'CyberAcademy',
-    description: 'Rutas de aprendizaje, convenciones y evaluaciones para aprender ciberseguridad resolviendo problemas reales.',
+    description: 'Rutas de aprendizaje, suscripción y evaluaciones para aprender Ciberseguridad resolviendo problemas reales.',
     href: '/docs/cyberacademy',
     icon: GraduationCap,
   },
   {
-    title: 'Empresas',
-    description: 'Documentación sobre servicios de ciberseguridad empresarial y automatización.',
+    title: 'Empresas (CSaaS)',
+    description: 'Ciberseguridad como Servicio: documentación sobre servicios de ciberseguridad empresarial y automatización.',
     href: '/docs/ciberseguridad-empresarial',
     icon: Shield,
+  },
+  {
+    title: 'Self-hosting',
+    description: 'Instala DivisionCero en tu propia infraestructura.',
+    href: '/docs/self-hosting',
+    icon: Server,
   },
 ];
 
@@ -24,7 +30,7 @@ export default function DocsIndexPage() {
         <h1 className="text-4xl font-bold tracking-tight mb-4">Documentación</h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {sections.map(({ title, description, href, icon: Icon }) => (
           <Link
             key={href}
@@ -51,6 +57,6 @@ export function generateMetadata() {
   return pageMetadata({
     path: '/docs',
     title: 'Documentación',
-    description: 'Índice de documentación de DivisionCero: CyberAcademy y Empresas.',
+    description: 'Índice de documentación de DivisionCero: CyberAcademy, Empresas y Self-hosting.',
   });
 }
