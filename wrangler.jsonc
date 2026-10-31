@@ -10,6 +10,9 @@
   "compatibility_date": "2025-04-02",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "minify": true,
+  // wrangler 4.156 sube los source maps por defecto; los del handler pesan ~83 MiB
+  // y Cloudflare rechaza más de 60 MiB (error 10021).
+  "upload_source_maps": false,
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets"
