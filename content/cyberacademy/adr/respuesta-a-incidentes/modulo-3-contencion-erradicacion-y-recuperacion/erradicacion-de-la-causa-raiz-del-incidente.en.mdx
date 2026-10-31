@@ -1,0 +1,6 @@
+---
+title: "Eradicating the Incident's Root Cause"
+description: "Completely eliminating the cause of the attack"
+---
+
+Eradicating an incident's root cause means completely eliminating the entry vector, the installed malware and any persistence mechanism the attacker left behind, not just cleaning up the visible symptoms of the compromise. In practice, this phase requires having completed a deep enough analysis during the investigation to understand exactly how the attacker got in and what they did while they had access, because eradicating without that complete knowledge usually leaves hidden backdoors that allow a second compromise weeks later. Typical actions include patching the exploited vulnerability, deleting accounts created by the attacker, reviewing suspicious scheduled tasks or services, and rotating all potentially exposed credentials, not just those confirmed as compromised. A recurring mistake is declaring eradication complete as soon as the malware detected by the antivirus is removed, when sophisticated attackers usually install multiple redundant persistence mechanisms precisely to survive a superficial cleanup.

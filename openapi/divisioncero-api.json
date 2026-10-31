@@ -1,0 +1,4496 @@
+{
+  "info": {
+    "title": "DivisionCero API",
+    "version": "1.0.0",
+    "description": "The records of a team. Create an API key in the team settings (Settings → API) and send it as `Authorization: Bearer <key>`. The key decides the team and what it may read or write. Each key may make 300 requests per 60 seconds; every response carries RateLimit-Limit, RateLimit-Remaining and RateLimit-Reset, and a key over its limit gets 429 with Retry-After."
+  },
+  "servers": [
+    {
+      "url": "https://app.divisioncero.com/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "apiKey": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
+  "openapi": "3.1.1",
+  "paths": {
+    "/risks": {
+      "get": {
+        "operationId": "risks.list",
+        "summary": "List risks",
+        "description": "Risks of the risk register, with their inherent and residual rating (1-5). Requires risks.read.",
+        "tags": [
+          "risks"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "category_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "approach_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "threat": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "vulnerability": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "consequence": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "cia": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "inherent_likelihood": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "inherent_impact": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "residual_likelihood": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "residual_impact": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "treatment": {
+                            "enum": [
+                              "modify",
+                              "retain",
+                              "avoid",
+                              "share"
+                            ],
+                            "type": "string"
+                          },
+                          "treatment_plan": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "status": {
+                            "enum": [
+                              "identified",
+                              "analyzed",
+                              "evaluated",
+                              "inTreatment",
+                              "monitored",
+                              "closed"
+                            ],
+                            "type": "string"
+                          },
+                          "review_date": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "title",
+                          "description",
+                          "category_id",
+                          "approach_id",
+                          "threat",
+                          "vulnerability",
+                          "consequence",
+                          "cia",
+                          "owner_user_id",
+                          "inherent_likelihood",
+                          "inherent_impact",
+                          "residual_likelihood",
+                          "residual_impact",
+                          "treatment",
+                          "treatment_plan",
+                          "status",
+                          "review_date",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "risks.create",
+        "summary": "Create a risk",
+        "description": "Requires risks.write.",
+        "tags": [
+          "risks"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "category_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "A risk category of the team (GET /risks/catalogs)"
+                  },
+                  "approach_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "A risk approach of the team (GET /risks/catalogs)"
+                  },
+                  "threat": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 500
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "vulnerability": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 500
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "consequence": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "owner_user_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "A member of the team"
+                  },
+                  "inherent_likelihood": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "inherent_impact": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "residual_likelihood": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Defaults to the inherent one"
+                  },
+                  "residual_impact": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Defaults to the inherent one"
+                  },
+                  "treatment": {
+                    "enum": [
+                      "modify",
+                      "retain",
+                      "avoid",
+                      "share"
+                    ],
+                    "type": "string"
+                  },
+                  "treatment_plan": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "identified",
+                      "analyzed",
+                      "evaluated",
+                      "inTreatment",
+                      "monitored",
+                      "closed"
+                    ],
+                    "type": "string"
+                  },
+                  "review_date": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "title",
+                  "category_id",
+                  "approach_id",
+                  "inherent_likelihood",
+                  "inherent_impact"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "category_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "approach_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "threat": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "vulnerability": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "consequence": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "cia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "inherent_likelihood": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "inherent_impact": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "residual_likelihood": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "residual_impact": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "treatment": {
+                      "enum": [
+                        "modify",
+                        "retain",
+                        "avoid",
+                        "share"
+                      ],
+                      "type": "string"
+                    },
+                    "treatment_plan": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "identified",
+                        "analyzed",
+                        "evaluated",
+                        "inTreatment",
+                        "monitored",
+                        "closed"
+                      ],
+                      "type": "string"
+                    },
+                    "review_date": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "category_id",
+                    "approach_id",
+                    "threat",
+                    "vulnerability",
+                    "consequence",
+                    "cia",
+                    "owner_user_id",
+                    "inherent_likelihood",
+                    "inherent_impact",
+                    "residual_likelihood",
+                    "residual_impact",
+                    "treatment",
+                    "treatment_plan",
+                    "status",
+                    "review_date",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/risks/{id}": {
+      "get": {
+        "operationId": "risks.get",
+        "summary": "Get one of risks",
+        "description": "Requires risks.read.",
+        "tags": [
+          "risks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "category_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "approach_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "threat": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "vulnerability": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "consequence": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "cia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "inherent_likelihood": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "inherent_impact": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "residual_likelihood": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "residual_impact": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "treatment": {
+                      "enum": [
+                        "modify",
+                        "retain",
+                        "avoid",
+                        "share"
+                      ],
+                      "type": "string"
+                    },
+                    "treatment_plan": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "identified",
+                        "analyzed",
+                        "evaluated",
+                        "inTreatment",
+                        "monitored",
+                        "closed"
+                      ],
+                      "type": "string"
+                    },
+                    "review_date": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "category_id",
+                    "approach_id",
+                    "threat",
+                    "vulnerability",
+                    "consequence",
+                    "cia",
+                    "owner_user_id",
+                    "inherent_likelihood",
+                    "inherent_impact",
+                    "residual_likelihood",
+                    "residual_impact",
+                    "treatment",
+                    "treatment_plan",
+                    "status",
+                    "review_date",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "risks.update",
+        "summary": "Update a risk",
+        "description": "Only the fields sent change; null clears an optional one. Requires risks.write.",
+        "tags": [
+          "risks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "category_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "A risk category of the team (GET /risks/catalogs)"
+                  },
+                  "approach_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "A risk approach of the team (GET /risks/catalogs)"
+                  },
+                  "threat": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 500
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "vulnerability": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 500
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "consequence": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "owner_user_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "A member of the team"
+                  },
+                  "inherent_likelihood": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "inherent_impact": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  },
+                  "residual_likelihood": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Defaults to the inherent one"
+                  },
+                  "residual_impact": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5,
+                    "description": "Defaults to the inherent one"
+                  },
+                  "treatment": {
+                    "enum": [
+                      "modify",
+                      "retain",
+                      "avoid",
+                      "share"
+                    ],
+                    "type": "string"
+                  },
+                  "treatment_plan": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "identified",
+                      "analyzed",
+                      "evaluated",
+                      "inTreatment",
+                      "monitored",
+                      "closed"
+                    ],
+                    "type": "string"
+                  },
+                  "review_date": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "category_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "approach_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "threat": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "vulnerability": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "consequence": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "cia": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "inherent_likelihood": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "inherent_impact": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "residual_likelihood": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "residual_impact": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "treatment": {
+                      "enum": [
+                        "modify",
+                        "retain",
+                        "avoid",
+                        "share"
+                      ],
+                      "type": "string"
+                    },
+                    "treatment_plan": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "identified",
+                        "analyzed",
+                        "evaluated",
+                        "inTreatment",
+                        "monitored",
+                        "closed"
+                      ],
+                      "type": "string"
+                    },
+                    "review_date": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "category_id",
+                    "approach_id",
+                    "threat",
+                    "vulnerability",
+                    "consequence",
+                    "cia",
+                    "owner_user_id",
+                    "inherent_likelihood",
+                    "inherent_impact",
+                    "residual_likelihood",
+                    "residual_impact",
+                    "treatment",
+                    "treatment_plan",
+                    "status",
+                    "review_date",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/risks/catalogs": {
+      "get": {
+        "operationId": "risks.catalogs",
+        "summary": "Risk categories and approaches",
+        "description": "The ids a new risk needs. Requires risks.read.",
+        "tags": [
+          "risks"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name"
+                        ]
+                      }
+                    },
+                    "approaches": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "categories",
+                    "approaches"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/incidents": {
+      "get": {
+        "operationId": "incidents.list",
+        "summary": "List incidents",
+        "description": "Information security incidents. Requires incidents.read.",
+        "tags": [
+          "incidents"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "category_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "detection_source_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "occurred_on": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "detected_on": {
+                            "type": "string",
+                            "description": "Date, YYYY-MM-DD"
+                          },
+                          "affected_systems": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "impact": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "personal_data_involved": {
+                            "type": "boolean"
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "containment_actions": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "resolution": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "resolved_on": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "root_cause": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lessons_learned": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "improvements": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "title",
+                          "description",
+                          "category_id",
+                          "detection_source_id",
+                          "status_id",
+                          "occurred_on",
+                          "detected_on",
+                          "affected_systems",
+                          "impact",
+                          "personal_data_involved",
+                          "owner_user_id",
+                          "containment_actions",
+                          "resolution",
+                          "resolved_on",
+                          "root_cause",
+                          "lessons_learned",
+                          "improvements",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "incidents.create",
+        "summary": "Report an incident",
+        "description": "Requires incidents.write.",
+        "tags": [
+          "incidents"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "category_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "An incident category of the team (GET /incidents/catalogs)"
+                  },
+                  "detection_source_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "A detection source of the team (GET /incidents/catalogs)"
+                  },
+                  "status_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "An incident status of the team (GET /incidents/catalogs); defaults to the first open one"
+                  },
+                  "occurred_on": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "detected_on": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Defaults to today (UTC)"
+                  },
+                  "affected_systems": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "impact": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "personal_data_involved": {
+                    "type": "boolean"
+                  },
+                  "owner_user_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "A member of the team"
+                  }
+                },
+                "required": [
+                  "title",
+                  "category_id",
+                  "detection_source_id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "category_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "detection_source_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "occurred_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "detected_on": {
+                      "type": "string",
+                      "description": "Date, YYYY-MM-DD"
+                    },
+                    "affected_systems": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "impact": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "personal_data_involved": {
+                      "type": "boolean"
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "containment_actions": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "resolution": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "resolved_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "root_cause": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "lessons_learned": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "improvements": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "category_id",
+                    "detection_source_id",
+                    "status_id",
+                    "occurred_on",
+                    "detected_on",
+                    "affected_systems",
+                    "impact",
+                    "personal_data_involved",
+                    "owner_user_id",
+                    "containment_actions",
+                    "resolution",
+                    "resolved_on",
+                    "root_cause",
+                    "lessons_learned",
+                    "improvements",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/incidents/{id}": {
+      "get": {
+        "operationId": "incidents.get",
+        "summary": "Get one of incidents",
+        "description": "Requires incidents.read.",
+        "tags": [
+          "incidents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "category_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "detection_source_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "occurred_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "detected_on": {
+                      "type": "string",
+                      "description": "Date, YYYY-MM-DD"
+                    },
+                    "affected_systems": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "impact": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "personal_data_involved": {
+                      "type": "boolean"
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "containment_actions": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "resolution": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "resolved_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "root_cause": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "lessons_learned": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "improvements": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "category_id",
+                    "detection_source_id",
+                    "status_id",
+                    "occurred_on",
+                    "detected_on",
+                    "affected_systems",
+                    "impact",
+                    "personal_data_involved",
+                    "owner_user_id",
+                    "containment_actions",
+                    "resolution",
+                    "resolved_on",
+                    "root_cause",
+                    "lessons_learned",
+                    "improvements",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "incidents.update",
+        "summary": "Update an incident",
+        "description": "Only the fields sent change; null clears an optional one. Requires incidents.write.",
+        "tags": [
+          "incidents"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "description": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "category_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "An incident category of the team (GET /incidents/catalogs)"
+                  },
+                  "detection_source_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "A detection source of the team (GET /incidents/catalogs)"
+                  },
+                  "status_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "occurred_on": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "detected_on": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Defaults to today (UTC)"
+                  },
+                  "affected_systems": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "impact": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "personal_data_involved": {
+                    "type": "boolean"
+                  },
+                  "owner_user_id": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "A member of the team"
+                  },
+                  "containment_actions": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "resolution": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "resolved_on": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "Required when the status closes the incident"
+                  },
+                  "root_cause": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "lessons_learned": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "improvements": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "maxLength": 4000
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "category_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "detection_source_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "occurred_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "detected_on": {
+                      "type": "string",
+                      "description": "Date, YYYY-MM-DD"
+                    },
+                    "affected_systems": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "impact": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "personal_data_involved": {
+                      "type": "boolean"
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "containment_actions": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "resolution": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "resolved_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "root_cause": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "lessons_learned": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "improvements": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "category_id",
+                    "detection_source_id",
+                    "status_id",
+                    "occurred_on",
+                    "detected_on",
+                    "affected_systems",
+                    "impact",
+                    "personal_data_involved",
+                    "owner_user_id",
+                    "containment_actions",
+                    "resolution",
+                    "resolved_on",
+                    "root_cause",
+                    "lessons_learned",
+                    "improvements",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/incidents/catalogs": {
+      "get": {
+        "operationId": "incidents.catalogs",
+        "summary": "Incident categories, detection sources and statuses",
+        "description": "The ids a new incident needs. Requires incidents.read.",
+        "tags": [
+          "incidents"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name"
+                        ]
+                      }
+                    },
+                    "detection_sources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name"
+                        ]
+                      }
+                    },
+                    "statuses": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "is_closed": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name",
+                          "is_closed"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "categories",
+                    "detection_sources",
+                    "statuses"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/controls": {
+      "get": {
+        "operationId": "controls.list",
+        "summary": "List controls",
+        "description": "Internal controls of the control catalog. Requires controls.read.",
+        "tags": [
+          "controls"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "domain_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "type": {
+                            "enum": [
+                              "preventive",
+                              "detective",
+                              "corrective"
+                            ],
+                            "type": "string"
+                          },
+                          "nature": {
+                            "enum": [
+                              "manual",
+                              "automated",
+                              "hybrid"
+                            ],
+                            "type": "string"
+                          },
+                          "frequency": {
+                            "enum": [
+                              "continuous",
+                              "daily",
+                              "weekly",
+                              "monthly",
+                              "quarterly",
+                              "annual"
+                            ],
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "implemented",
+                              "partial",
+                              "planned",
+                              "notImplemented"
+                            ],
+                            "type": "string"
+                          },
+                          "effectiveness": {
+                            "type": "number"
+                          },
+                          "framework_references": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name",
+                          "description",
+                          "domain_id",
+                          "type",
+                          "nature",
+                          "frequency",
+                          "status",
+                          "effectiveness",
+                          "framework_references",
+                          "owner_user_id",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/controls/{id}": {
+      "get": {
+        "operationId": "controls.get",
+        "summary": "Get one of controls",
+        "description": "Requires controls.read.",
+        "tags": [
+          "controls"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "domain_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "type": {
+                      "enum": [
+                        "preventive",
+                        "detective",
+                        "corrective"
+                      ],
+                      "type": "string"
+                    },
+                    "nature": {
+                      "enum": [
+                        "manual",
+                        "automated",
+                        "hybrid"
+                      ],
+                      "type": "string"
+                    },
+                    "frequency": {
+                      "enum": [
+                        "continuous",
+                        "daily",
+                        "weekly",
+                        "monthly",
+                        "quarterly",
+                        "annual"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "enum": [
+                        "implemented",
+                        "partial",
+                        "planned",
+                        "notImplemented"
+                      ],
+                      "type": "string"
+                    },
+                    "effectiveness": {
+                      "type": "number"
+                    },
+                    "framework_references": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "name",
+                    "description",
+                    "domain_id",
+                    "type",
+                    "nature",
+                    "frequency",
+                    "status",
+                    "effectiveness",
+                    "framework_references",
+                    "owner_user_id",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies": {
+      "get": {
+        "operationId": "policies.list",
+        "summary": "List policies",
+        "description": "Policies and other governed documents. Requires policies.read.",
+        "tags": [
+          "policies"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "status": {
+                            "enum": [
+                              "draft",
+                              "inReview",
+                              "approved",
+                              "published",
+                              "retired"
+                            ],
+                            "type": "string"
+                          },
+                          "document_type_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "content_kind": {
+                            "enum": [
+                              "content",
+                              "attachment",
+                              "url"
+                            ],
+                            "type": "string"
+                          },
+                          "url": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "published_on": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "next_review_on": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name",
+                          "version",
+                          "status",
+                          "document_type_id",
+                          "content_kind",
+                          "url",
+                          "published_on",
+                          "next_review_on",
+                          "owner_user_id",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/policies/{id}": {
+      "get": {
+        "operationId": "policies.get",
+        "summary": "Get one of policies",
+        "description": "Requires policies.read.",
+        "tags": [
+          "policies"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "status": {
+                      "enum": [
+                        "draft",
+                        "inReview",
+                        "approved",
+                        "published",
+                        "retired"
+                      ],
+                      "type": "string"
+                    },
+                    "document_type_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "content_kind": {
+                      "enum": [
+                        "content",
+                        "attachment",
+                        "url"
+                      ],
+                      "type": "string"
+                    },
+                    "url": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "published_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "next_review_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "name",
+                    "version",
+                    "status",
+                    "document_type_id",
+                    "content_kind",
+                    "url",
+                    "published_on",
+                    "next_review_on",
+                    "owner_user_id",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets": {
+      "get": {
+        "operationId": "assets.list",
+        "summary": "List assets",
+        "description": "Information assets. Requires assets.read.",
+        "tags": [
+          "assets"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "type_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "classification_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status": {
+                            "enum": [
+                              "active",
+                              "inMaintenance",
+                              "retired"
+                            ],
+                            "type": "string"
+                          },
+                          "location": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name",
+                          "description",
+                          "type_id",
+                          "classification_id",
+                          "status",
+                          "location",
+                          "owner_user_id",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/assets/{id}": {
+      "get": {
+        "operationId": "assets.get",
+        "summary": "Get one of assets",
+        "description": "Requires assets.read.",
+        "tags": [
+          "assets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "type_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "classification_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "enum": [
+                        "active",
+                        "inMaintenance",
+                        "retired"
+                      ],
+                      "type": "string"
+                    },
+                    "location": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "name",
+                    "description",
+                    "type_id",
+                    "classification_id",
+                    "status",
+                    "location",
+                    "owner_user_id",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/third-parties": {
+      "get": {
+        "operationId": "thirdParties.list",
+        "summary": "List third-parties",
+        "description": "Third parties (vendors, suppliers, subprocessors). Requires third_parties.read.",
+        "tags": [
+          "third-parties"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "type_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "requires_assessment": {
+                            "enum": [
+                              "yes",
+                              "undefined",
+                              "no"
+                            ],
+                            "type": "string"
+                          },
+                          "last_review_on": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "next_review_on": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "contact_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name",
+                          "description",
+                          "type_id",
+                          "requires_assessment",
+                          "last_review_on",
+                          "next_review_on",
+                          "contact_user_id",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/third-parties/{id}": {
+      "get": {
+        "operationId": "thirdParties.get",
+        "summary": "Get one of third-parties",
+        "description": "Requires third_parties.read.",
+        "tags": [
+          "third-parties"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "type_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "requires_assessment": {
+                      "enum": [
+                        "yes",
+                        "undefined",
+                        "no"
+                      ],
+                      "type": "string"
+                    },
+                    "last_review_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "next_review_on": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "contact_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "name",
+                    "description",
+                    "type_id",
+                    "requires_assessment",
+                    "last_review_on",
+                    "next_review_on",
+                    "contact_user_id",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects": {
+      "get": {
+        "operationId": "projects.list",
+        "summary": "List projects",
+        "description": "Projects (remediation and improvement plans). Requires projects.read.",
+        "tags": [
+          "projects"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "type_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "priority": {
+                            "enum": [
+                              "low",
+                              "medium",
+                              "high",
+                              "critical"
+                            ],
+                            "type": "string"
+                          },
+                          "start_date": {
+                            "type": "string",
+                            "description": "Date, YYYY-MM-DD"
+                          },
+                          "end_date": {
+                            "type": "string",
+                            "description": "Date, YYYY-MM-DD"
+                          },
+                          "budget": {
+                            "type": "number"
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "name",
+                          "description",
+                          "type_id",
+                          "status_id",
+                          "priority",
+                          "start_date",
+                          "end_date",
+                          "budget",
+                          "owner_user_id",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/projects/{id}": {
+      "get": {
+        "operationId": "projects.get",
+        "summary": "Get one of projects",
+        "description": "Requires projects.read.",
+        "tags": [
+          "projects"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "type_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "priority": {
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high",
+                        "critical"
+                      ],
+                      "type": "string"
+                    },
+                    "start_date": {
+                      "type": "string",
+                      "description": "Date, YYYY-MM-DD"
+                    },
+                    "end_date": {
+                      "type": "string",
+                      "description": "Date, YYYY-MM-DD"
+                    },
+                    "budget": {
+                      "type": "number"
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "name",
+                    "description",
+                    "type_id",
+                    "status_id",
+                    "priority",
+                    "start_date",
+                    "end_date",
+                    "budget",
+                    "owner_user_id",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/audit-findings": {
+      "get": {
+        "operationId": "auditFindings.list",
+        "summary": "List audit-findings",
+        "description": "Audit findings, observations and issues (the activities the audit module governs). Requires audits.read.",
+        "tags": [
+          "audit-findings"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 50,
+              "description": "Page size, 1 to 100"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991,
+              "default": 0,
+              "description": "Records to skip"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "description": "Matches the code and the title or name"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          },
+          {
+            "name": "updated_since",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Only records updated at or after this ISO 8601 timestamp"
+            },
+            "allowEmptyValue": true,
+            "allowReserved": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "code": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "type_id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "status": {
+                            "enum": [
+                              "open",
+                              "in_progress",
+                              "closed",
+                              "risk_accepted"
+                            ],
+                            "type": "string"
+                          },
+                          "audit_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "criteria": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "due_date": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "description": "Date, YYYY-MM-DD"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "owner_user_id": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "uuid"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "remediation_description": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "ISO 8601 timestamp"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "code",
+                          "title",
+                          "description",
+                          "type_id",
+                          "status",
+                          "audit_id",
+                          "criteria",
+                          "due_date",
+                          "owner_user_id",
+                          "remediation_description",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "has_more": {
+                      "type": "boolean"
+                    },
+                    "next_offset": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "has_more",
+                    "next_offset"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/audit-findings/{id}": {
+      "get": {
+        "operationId": "auditFindings.get",
+        "summary": "Get one of audit-findings",
+        "description": "Requires audits.read.",
+        "tags": [
+          "audit-findings"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "code": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "type_id": {
+                      "type": "string",
+                      "format": "uuid"
+                    },
+                    "status": {
+                      "enum": [
+                        "open",
+                        "in_progress",
+                        "closed",
+                        "risk_accepted"
+                      ],
+                      "type": "string"
+                    },
+                    "audit_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "criteria": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "due_date": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "description": "Date, YYYY-MM-DD"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "owner_user_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "remediation_description": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "description": "ISO 8601 timestamp"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "code",
+                    "title",
+                    "description",
+                    "type_id",
+                    "status",
+                    "audit_id",
+                    "criteria",
+                    "due_date",
+                    "owner_user_id",
+                    "remediation_description",
+                    "created_at",
+                    "updated_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

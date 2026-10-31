@@ -1,0 +1,25 @@
+{
+  "title": "Cloud Infrastructure Cybersecurity Course",
+  "description": "Cloud security controls",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-seguridad-en-la-nube",
+    "---Module 2---",
+    "modulo-2-gestion-de-identidad-y-acceso-en-la-nube",
+    "---Module 3---",
+    "modulo-3-seguridad-de-redes-y-configuracion",
+    "---Module 4---",
+    "modulo-4-monitoreo-y-deteccion-en-entornos-cloud",
+    "---Module 5---",
+    "modulo-5-cumplimiento-y-gobierno-de-la-nube",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

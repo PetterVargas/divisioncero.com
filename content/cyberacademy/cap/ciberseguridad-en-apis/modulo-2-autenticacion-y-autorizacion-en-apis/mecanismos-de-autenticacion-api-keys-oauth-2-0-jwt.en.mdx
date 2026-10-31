@@ -1,0 +1,6 @@
+---
+title: "Authentication Mechanisms: API Keys, OAuth 2.0, JWT"
+description: "Comparing API authentication methods"
+---
+
+Choosing the right authentication mechanism depends on who consumes the API and with what level of trust, and confusing these use cases is a common source of insecure design decisions. API keys are simple to implement and suitable for identifying applications or services in machine-to-machine integrations, but they don't represent user identity and shouldn't be used to authorize sensitive actions on behalf of a person, since they often end up embedded in client code and are easy to leak. OAuth 2.0 solves access delegation, allowing an application to act on behalf of a user without knowing their password, and is the recommended standard when third parties need limited, revocable access to protected resources. JWT, for its part, isn't an authentication mechanism in itself but a token format usually used together with OAuth to carry the session in a self-contained, stateless way; its main risk appears when tokens are signed with weak algorithms or the signature isn't correctly validated on the server, which lets an attacker forge valid tokens and impersonate identities without needing to steal real credentials.

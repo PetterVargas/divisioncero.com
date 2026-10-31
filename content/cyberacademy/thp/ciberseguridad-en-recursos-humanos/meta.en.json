@@ -1,0 +1,25 @@
+{
+  "title": "Human Resources Cybersecurity Course",
+  "description": "Secure onboarding and security culture",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-el-rol-de-recursos-humanos-en-la-ciberseguridad",
+    "---Module 2---",
+    "modulo-2-seguridad-en-el-proceso-de-contratacion",
+    "---Module 3---",
+    "modulo-3-gestion-de-accesos-durante-la-relacion-laboral",
+    "---Module 4---",
+    "modulo-4-gestion-de-la-desvinculacion",
+    "---Module 5---",
+    "modulo-5-cultura-de-seguridad-desde-recursos-humanos",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

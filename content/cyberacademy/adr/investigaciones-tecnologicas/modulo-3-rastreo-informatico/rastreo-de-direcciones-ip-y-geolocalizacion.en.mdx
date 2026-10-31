@@ -1,0 +1,139 @@
+---
+title: "Tracing IP Addresses and Geolocation"
+description: "Locating the technical origin of a connection"
+---
+
+## Description
+
+IP address tracing consists of identifying the technical origin of a connection or malicious activity from 
+network records, server logs and email headers or captured traffic, and then estimating its 
+approximate geographic location through geolocation databases and WHOIS lookups. In practice, 
+this process rarely yields an exact address: an IP may belong to a hosting provider, a VPN, 
+a proxy or a Tor node, so the investigator must interpret the results cautiously and cross-reference them with 
+other sources before drawing conclusions. 
+
+Tools such as ARIN/RIPE/LACNIC records, IP 
+geolocation services and network route analysis (traceroute) make it possible to reconstruct the path 
+a communication followed and detect whether the attacker used intermediate infrastructure to hide their real origin. 
+
+The key nuance is that an IP address identifies a device or network, not necessarily a person, 
+so linking it to a responsible party requires additional evidence such as access or authentication records, or 
+cooperation from the service provider.
+
+## IT Tracing with Conan
+
+[Conan is a tool developed by DivisionCero](/en/herramientas) that lets you generate 
+a link to send to that social media profile or contact number, in order to obtain its IP address.
+
+### Steps
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+
+### [Sign up for DivisionCero](https://app.divisioncero.com/auth/sign-up)
+
+</Step>
+
+<Step>
+
+### You'll find Conan in the left sidebar
+
+</Step>
+<Step>
+
+### You'll see a form.
+
+- **Reference**: Asks for a reference name for the trace. Example: Predator trace.
+- **URL**: Web page the person you want to trace will be redirected to when they click.
+
+</Step>
+
+<Step>
+
+### Click Create Conan
+
+</Step>
+<Step>
+
+### Tracker Created Successfully
+
+It mainly shows you:
+
+- Original URL: The URL you entered in the form.
+- Tracking URL: The URL generated for the trace. It would look something like `https://divisioncero.com/conan/XYSDSSFD`
+
+</Step>
+
+<Step>
+
+### Changing the Tracking URL
+
+Since the tracking URL says divisioncero, the person behind the fake profile may notice it's a trace.
+
+So use a URL shortener to get a different URL.
+
+</Step>
+<Step>
+
+### Send the Conan
+
+Success depends on that person clicking the link.
+
+When they click, the tracker captures the IP address and then shows the page you entered in the form.
+
+</Step>
+
+<Step>
+
+### If the anonymous person clicks
+
+In this scenario your Conan already has important information for the trace.
+
+It obtains:
+
+- IP address.
+- Connection date and time.
+- User agent.
+
+</Step>
+<Step>
+
+### Trackers
+
+When you log back into DivisionCero and open Conan
+You'll find a trackers section.
+With the reference name you can open it and see the records obtained.
+
+</Step>
+
+<Step>
+
+### Report
+
+The tool lets you export a PDF report to hand over to the competent authorities.
+
+</Step>
+
+<Step>
+
+### Identifying the ISP
+
+Every IP address has an owner, most likely an ISP (Internet Service Provider)
+
+To identify the owner, you can look up the IP on this website:
+
+[Whois IP lookup](https://query.milacnic.lacnic.net/home)
+
+</Step>
+<Step>
+
+### Exact Location
+
+With this information, an authorized investigative body can request from the 
+ISP (Internet Service Provider) the information of the internet service subscriber
+who had the address X.Y.Z.A on XX/XX/XXX at XX:XX.
+
+</Step>
+</Steps>

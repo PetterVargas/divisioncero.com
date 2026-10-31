@@ -1,0 +1,6 @@
+---
+title: "Key Performance Metrics (MTTD, MTTR, Coverage)"
+description: "MTTD, MTTR and coverage: the metrics that matter"
+---
+
+MTTD (mean time to detect) and MTTR (mean time to respond) are the most cited metrics for evaluating a SOC, but misusing them is as common as using them well. Measuring only the average of these indicators can hide serious problems, such as a handful of incidents that took weeks to detect while most trivial alerts were resolved in minutes, skewing the average toward a number that looks healthy. That's why it's worth complementing them with coverage metrics, which show what percentage of the relevant techniques in a framework such as MITRE ATT&CK actually has active detection, and with quality metrics such as the false positive rate per analyst. In practice, these metrics only generate value when they're used to prioritize concrete improvements, for example identifying which poorly covered data source is behind the highest detection times, instead of becoming an isolated number reported to leadership with no associated action.

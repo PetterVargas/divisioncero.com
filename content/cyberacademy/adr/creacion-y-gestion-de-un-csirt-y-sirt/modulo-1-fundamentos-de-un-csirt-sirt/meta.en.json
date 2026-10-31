@@ -1,0 +1,10 @@
+{
+  "title": "CSIRT/SIRT Fundamentals",
+  "description": "Description",
+  "pages": [
+    "index",
+    "diferencias-entre-csirt-sirt-y-cert",
+    "modelos-organizacionales-de-equipos-de-respuesta",
+    "servicios-tipicos-que-ofrece-un-csirt"
+  ]
+}

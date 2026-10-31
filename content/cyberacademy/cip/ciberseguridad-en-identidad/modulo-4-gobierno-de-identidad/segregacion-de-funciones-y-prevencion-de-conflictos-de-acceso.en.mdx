@@ -1,0 +1,6 @@
+---
+title: "Segregation of Duties and Access Conflict Prevention"
+description: "Preventing one person from controlling an entire process"
+---
+
+Segregation of duties is the principle of designing access permissions so that no single person controls every stage of a critical process, such as creating a vendor and approving its payments, thus preventing one individual from committing fraud or a serious error without someone else detecting it at some point in the workflow. This matters in practice not only for security reasons but for regulatory compliance, since frameworks such as Sarbanes-Oxley or financial audits explicitly require demonstrating that controls of this kind exist in processes with economic impact. A concrete example is an identity management system configured to automatically detect conflicting permission combinations, alerting if the same user simultaneously accumulates the ability to create a purchase order and approve it, a combination that in most organizations represents a fraud risk that must be corrected by separating those duties between different people.

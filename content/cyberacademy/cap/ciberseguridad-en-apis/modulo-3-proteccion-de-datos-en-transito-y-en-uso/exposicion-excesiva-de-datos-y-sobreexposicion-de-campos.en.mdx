@@ -1,0 +1,6 @@
+---
+title: "Excessive Data Exposure and Field Overexposure"
+description: "Preventing the API from returning more data than necessary"
+---
+
+It's common for APIs to return a resource's complete object from the data layer, trusting the client to filter and display only the relevant fields in its interface, but that trust is the source of one of the most frequent information leaks in production. If a user profile endpoint responds with the password hash, ID number or internal notes from the support team, anyone inspecting network traffic with basic browser tools can access that data, without needing to exploit any technical vulnerability. The solution is to explicitly define which fields each endpoint exposes according to the context and the requester's role, instead of directly serializing the database model, and to apply that filtering on the server, never delegating it to the client. This problem gets worse in APIs that serve multiple consumers, such as a mobile app and an admin panel, where reusing the same endpoint without differentiating the response by privilege level ends up leaking information intended only for internal use to the general public.

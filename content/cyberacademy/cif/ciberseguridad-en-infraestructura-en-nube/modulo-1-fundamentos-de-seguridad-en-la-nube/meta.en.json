@@ -1,0 +1,10 @@
+{
+  "title": "Cloud Security Fundamentals",
+  "description": "Description",
+  "pages": [
+    "index",
+    "modelos-de-servicio-iaas-paas-saas-y-responsabilidad-compartida",
+    "principales-riesgos-de-seguridad-en-entornos-cloud",
+    "marco-de-referencia-csa-ccm-cis-benchmarks"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Employee Device Cybersecurity Course",
+  "description": "EDR and device protection",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-seguridad-del-puesto-de-trabajo",
+    "---Module 2---",
+    "modulo-2-proteccion-contra-amenazas-en-el-endpoint",
+    "---Module 3---",
+    "modulo-3-gestion-de-dispositivos-corporativos-y-byod",
+    "---Module 4---",
+    "modulo-4-cifrado-y-proteccion-de-datos-en-el-endpoint",
+    "---Module 5---",
+    "modulo-5-gestion-del-ciclo-de-vida-del-equipo",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

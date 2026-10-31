@@ -1,0 +1,99 @@
+---
+title: API de la plataforma
+description: "Lee y escribe los registros de ciberseguridad de tu equipo (riesgos, incidentes, controles, políticas, activos, terceros, proyectos y hallazgos de auditoría) desde tus propios sistemas."
+---
+
+La API pública de DivisionCero expone los registros de un equipo como REST sobre JSON. Cada endpoint de esta sección incluye su esquema completo, ejemplos de código y un _playground_ para probarlo con tu propia llave.
+
+```txt title="URL base"
+https://app.divisioncero.com/api/v1
+```
+
+## Autenticación
+
+Toda llamada requiere una **llave de API del equipo**. Créala en la configuración del equipo (**Settings → API**) y envíala en la cabecera `Authorization`:
+
+```bash
+curl https://app.divisioncero.com/api/v1/risks \
+  -H "Authorization: Bearer dcero_..."
+```
+
+La llave determina el equipo y qué puede leer o escribir: ningún endpoint recibe el equipo como parámetro. No se aceptan cookies de sesión, por lo que la API puede llamarse desde cualquier origen (CORS abierto).
+
+## Permisos
+
+Al crear la llave eliges sus permisos. Cada endpoint indica en su descripción el permiso que requiere; si la llave no lo tiene, la respuesta es `403`.
+
+| Módulo | Lectura | Escritura |
+| --- | --- | --- |
+| Riesgos | `risks.read` | `risks.write` |
+| Incidentes | `incidents.read` | `incidents.write` |
+| Controles | `controls.read` | — |
+| Políticas | `policies.read` | — |
+| Activos | `assets.read` | — |
+| Terceros | `third_parties.read` | — |
+| Proyectos | `projects.read` | — |
+| Hallazgos de auditoría | `audits.read` | — |
+
+## Paginación y filtros
+
+Los endpoints de listado aceptan los mismos parámetros de consulta:
+
+| Parámetro | Descripción |
+| --- | --- |
+| `limit` | Tamaño de página, de 1 a 100 (por defecto 50). |
+| `offset` | Registros a omitir (por defecto 0). |
+| `search` | Busca en el código y en el título o nombre. |
+| `updated_since` | Solo registros actualizados desde esta fecha (ISO 8601); útil para sincronizaciones incrementales. |
+
+La respuesta envuelve los registros en `data` e indica si hay más páginas:
+
+```json
+{
+  "data": [],
+  "has_more": true,
+  "next_offset": 50
+}
+```
+
+Para recorrer todo el listado, repite la llamada con `offset=next_offset` hasta que `has_more` sea `false`.
+
+## Crear y actualizar registros
+
+Riesgos e incidentes admiten `POST` (crear, responde `201`) y `PATCH` (actualizar). En un `PATCH` solo cambian los campos enviados; enviar `null` limpia un campo opcional.
+
+Los identificadores de catálogo que piden estos registros (categoría, enfoque de tratamiento, fuente de detección, estado…) son propios de cada equipo. Consúltalos antes con [`GET /risks/catalogs`](./risks/catalogs.mdx) y [`GET /incidents/catalogs`](./incidents/catalogs.mdx).
+
+Toda escritura queda registrada en la bitácora de auditoría del equipo a nombre de la llave que la hizo.
+
+## Límite de solicitudes
+
+Cada llave puede hacer **300 solicitudes cada 60 segundos**. Todas las respuestas incluyen las cabeceras:
+
+- `RateLimit-Limit`: solicitudes permitidas en la ventana.
+- `RateLimit-Remaining`: solicitudes restantes.
+- `RateLimit-Reset`: segundos hasta que se reinicia la ventana.
+
+Al superar el límite la respuesta es `429` con la cabecera `Retry-After`.
+
+## Errores
+
+Los errores responden con un cuerpo JSON con `code`, `status` y `message`:
+
+```json
+{
+  "code": "UNAUTHORIZED",
+  "status": 401,
+  "message": "Missing, invalid or expired API key"
+}
+```
+
+| Estado | Código | Causa |
+| --- | --- | --- |
+| `400` | `BAD_REQUEST` | Parámetros o cuerpo inválidos. |
+| `401` | `UNAUTHORIZED` | Llave ausente, inválida o expirada. |
+| `403` | `FORBIDDEN` | La llave no tiene el permiso requerido. |
+| `404` | `NOT_FOUND` | La ruta o el registro no existe. |
+| `409` | `CONFLICT` | El registro ya existe (por ejemplo, un código repetido). |
+| `429` | `TOO_MANY_REQUESTS` | Se superó el límite de solicitudes. |
+| `500` | `INTERNAL_SERVER_ERROR` | Error inesperado. |

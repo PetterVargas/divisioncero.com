@@ -12,6 +12,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from 'fumadocs-ui/components/ui/popover';
+import { useT } from '@/components/i18n';
+import type { Dictionary } from '@/lib/site-translations';
+
+const en: Dictionary = {
+  'Abrir con IA': 'Open with AI',
+  'Abrir en ChatGPT': 'Open in ChatGPT',
+  'Abrir en Claude': 'Open in Claude',
+  'Abrir en GitHub': 'Open in GitHub',
+};
+
 const optionClass = 'text-sm p-2 rounded-lg inline-flex items-center gap-2 hover:text-fd-accent-foreground hover:bg-fd-accent [&_svg]:size-4';
 
 export function ViewOptions({
@@ -28,6 +38,7 @@ export function ViewOptions({
    */
   githubUrl: string;
 }) {
+  const t = useT(en);
   const items = useMemo(() => {
     const fullMarkdownUrl =
       typeof window !== 'undefined'
@@ -37,7 +48,7 @@ export function ViewOptions({
 
     return [
       {
-        title: 'Abrir en ChatGPT',
+        title: t('Abrir en ChatGPT'),
         href: `https://chatgpt.com/?${new URLSearchParams({
           hints: 'search',
           q,
@@ -55,7 +66,7 @@ export function ViewOptions({
         ),
       },
       {
-        title: 'Abrir en Claude',
+        title: t('Abrir en Claude'),
         href: `https://claude.ai/new?${new URLSearchParams({
           q,
         })}`,
@@ -72,7 +83,7 @@ export function ViewOptions({
         ),
       },
       {
-        title: 'Abrir en GitHub',
+        title: t('Abrir en GitHub'),
         href: githubUrl,
         icon: (
           <svg fill="currentColor" role="img" viewBox="0 0 24 24">
@@ -82,7 +93,7 @@ export function ViewOptions({
         ),
       },
     ];
-  }, [githubUrl, markdownUrl]);
+  }, [githubUrl, markdownUrl, t]);
 
   return (
     <Popover>
@@ -95,7 +106,7 @@ export function ViewOptions({
           }),
         )}
       >
-        Abrir con IA
+        {t('Abrir con IA')}
         <ChevronDown className="size-3.5 text-fd-muted-foreground" />
       </PopoverTrigger>
       <PopoverContent className="flex flex-col overflow-auto">

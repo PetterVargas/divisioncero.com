@@ -1,0 +1,6 @@
+---
+title: "Continuous Monitoring and Auditing of AI Systems in Production"
+description: "Monitoring and auditing models already in production"
+---
+
+A model that worked correctly in initial validation can degrade over time due to the phenomenon known as drift, where real-world data stops resembling the training data, or it can be subject to gradual manipulation if it learns continuously. Continuous monitoring means logging the model's inputs and outputs, periodically measuring performance and fairness metrics, and setting alerts for anomalous usage patterns, such as an unusual volume of queries aimed at extracting information from the model. Auditing, for its part, reviews the logs, the decisions made and the traceability of each deployed version more deeply and periodically. In practice, many organizations deploy a model and consider it finished, without realizing its behavior changes over time until an incident or a user complaint reveals the problem.

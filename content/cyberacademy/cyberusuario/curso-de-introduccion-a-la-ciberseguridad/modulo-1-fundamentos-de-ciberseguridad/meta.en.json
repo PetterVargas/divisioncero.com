@@ -1,0 +1,10 @@
+{
+  "title": "Cybersecurity Fundamentals",
+  "description": "The importance of cybersecurity in today's world",
+  "pages": [
+    "index",
+    "que-es-la-ciberseguridad-y-por-que-importa",
+    "triada-cia-confidencialidad-integridad-y-disponibilidad",
+    "panorama-actual-de-amenazas-digitales"
+  ]
+}

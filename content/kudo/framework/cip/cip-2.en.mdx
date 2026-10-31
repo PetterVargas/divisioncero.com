@@ -1,0 +1,62 @@
+---
+title: CIP-2 - Authentication Cybersecurity
+description: Control for strong authentication mechanisms
+---
+
+## Control Definition
+
+An access control policy must be established that formalizes the assignment of credentials, requiring multi-factor authentication for administrative and remote access and access to critical systems, and centralizing authentication through a single provider (SSO). Strong password policies must be enforced, stronger authentication mechanisms must be promoted, and compromised credentials must be monitored and revoked immediately. Authentication between services and applications must be managed securely through managed identities, the keys and tokens used must be rotated automatically, and employees must be guided on handling their credentials correctly.
+
+## Requirements
+
+### Requirement 1
+
+We have an access control policy established in the company.
+
+### Requirement 2
+
+We guide employees on handling identities correctly and promote the use of password managers.
+
+### Requirement 3
+
+We control the assignment of access credentials through a formal, structured process.
+
+### Requirement 4
+
+We require formal approval from the cybersecurity lead and documented compensating controls for any MFA exemption.
+
+### Requirement 5
+
+We enforce mandatory MFA for all administrative and remote access and access to critical or confidential systems and data.
+
+### Requirement 6
+
+We support multiple second-verification factors according to the risk of the access.
+
+### Requirement 7
+
+We implement corporate Single Sign-On (SSO) based on standard protocols (SAML 2.0, OAuth 2.0, OIDC) to centralize authentication.
+
+### Requirement 8
+
+We enforce password policies with security criteria.
+
+### Requirement 9
+
+We promote passwordless authentication (FIDO2, Windows Hello) as a step toward more secure architectures.
+
+### Requirement 10
+
+We use managed identities or service principals with minimum permissions for authentication between services and applications.
+
+### Requirement 11
+
+We automatically rotate API keys and service tokens according to the established frequency.
+
+### Requirement 12
+
+We accept third-party software that supports automatic provisioning and deprovisioning (SCIM)
+
+### Requirement 13
+
+We continuously monitor for compromised credentials and revoke them immediately when detected.

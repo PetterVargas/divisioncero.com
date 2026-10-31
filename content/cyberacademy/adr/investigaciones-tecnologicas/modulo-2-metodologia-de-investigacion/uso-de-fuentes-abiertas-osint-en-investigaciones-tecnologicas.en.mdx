@@ -1,0 +1,74 @@
+---
+title: "Using Open Sources (OSINT) in Technology Investigations"
+description: "Leveraging publicly available information"
+---
+
+Using open sources, or OSINT, consists of collecting and analyzing publicly available information, such as social networks, domain records, forums, published leaks and public databases, to complement an investigation's internal evidence. 
+
+In practice, OSINT is especially valuable when the investigation involves external actors, since it makes it possible to build profiles of malicious infrastructure, verify claimed identities or find traces the attacker left outside the organization's controlled environment. 
+
+Tools such as WHOIS, specialized search engines and domain reputation platforms make it possible, for example, to link an IP address used in an attack with infrastructure previously reported in similar campaigns. The nuance every investigator must keep in mind is that open-source information must be verified and documented with the same rigor as internal evidence, because its public nature doesn't exempt it from errors, deliberate disinformation or manipulation by the actor under investigation.
+
+## OSINT tools
+
+### Domains and infrastructure
+
+- [WHOIS (DomainTools)](https://whois.domaintools.com/) - domain record lookup: owner, registration dates and associated DNS servers.
+- [Shodan](https://www.shodan.io/) - search engine for devices and infrastructure exposed on the internet (servers, cameras, IoT).
+- [Censys](https://search.censys.io/) - search engine for hosts, certificates and services exposed on the internet.
+- [SecurityTrails](https://securitytrails.com/) - DNS history and infrastructure data for correlating domains and IPs.
+- [DNSDumpster](https://dnsdumpster.com/) - DNS reconnaissance and subdomain mapping for a target domain.
+- [ViewDNS.info](https://viewdns.info/) - set of DNS utilities: historical IP, reverse domains, geolocation.
+- [BuiltWith](https://builtwith.com/) - identification of the technologies and providers a website uses.
+- [Netcraft](https://www.netcraft.com/) - website and hosting reports and phishing detection.
+
+### Reputation and threat analysis
+
+- [VirusTotal](https://www.virustotal.com/) - analysis and reputation of files, domains, IPs and URLs through multiple antivirus engines.
+- [urlscan.io](https://urlscan.io/) - scanning and behavioral analysis of suspicious websites.
+- [AbuseIPDB](https://www.abuseipdb.com/) - community reports of IP addresses associated with abuse or attacks.
+- [Talos Intelligence](https://talosintelligence.com/) - IP, domain and email reputation from Cisco Talos.
+- [AlienVault OTX](https://otx.alienvault.com/) - threat indicator (IOC) sharing platform.
+- [Hybrid Analysis](https://www.hybrid-analysis.com/) - public sandbox for analyzing the behavior of malicious files.
+
+### Leaks and exposed databases
+
+- [Have I Been Pwned](https://haveibeenpwned.com/) - check whether emails and domains were compromised in known data breaches.
+- [DeHashed](https://dehashed.com/) - search of leaked credential databases.
+- [Intelligence X](https://intelx.io/) - search engine for leaks, documents and dark web content.
+
+### People and social networks
+
+- [Sherlock](https://github.com/sherlock-project/sherlock) - search for a username across hundreds of platforms.
+- [Namechk](https://namechk.com/) - check the availability/use of the same username across multiple networks.
+- [Social Searcher](https://www.social-searcher.com/) - real-time monitoring and search of mentions on social networks.
+- [Pipl](https://pipl.com/) - people search based on emails, names or phone numbers.
+
+### Images and metadata
+
+- [TinEye](https://tineye.com/) - reverse image search to identify an image's origin or previous uses.
+- [Yandex Images](https://yandex.com/images/) - reverse image search, especially useful for facial recognition.
+- [ExifTool](https://exiftool.org/) - extraction of metadata (geolocation, device, date) from files.
+
+### Archives and historical content
+
+- [Wayback Machine](https://web.archive.org/) - historical archive of web pages, useful for reconstructing deleted infrastructure or content.
+- [archive.today](https://archive.ph/) - manual capture and preservation of specific web pages.
+
+### Email
+
+- [Hunter.io](https://hunter.io/) - locating and verifying corporate emails associated with a domain.
+- [EmailRep.io](https://emailrep.io/) - reputation and risk context of an email address.
+
+### Reconnaissance suites and frameworks
+
+- [Maltego](https://www.maltego.com/) - link analysis platform for correlating entities (domains, people, infrastructure).
+- [theHarvester](https://github.com/laramies/theHarvester) - collection of emails, subdomains and hosts from public sources.
+- [Recon-ng](https://github.com/lanmaster53/recon-ng) - modular web reconnaissance framework with multiple integrated sources.
+- [SpiderFoot](https://www.spiderfoot.net/) - automated OSINT reconnaissance combining dozens of sources.
+- [OSINT Framework](https://osintframework.com/) - categorized directory of OSINT tools for different types of investigation.
+
+### Advanced search engines
+
+- [Google Dorks](https://www.exploit-db.com/google-hacking-database) - advanced search engine techniques for discovering exposed information.
+- [Wigle.net](https://www.wigle.net/) - mapping of WiFi networks and their geolocation collected by the community.

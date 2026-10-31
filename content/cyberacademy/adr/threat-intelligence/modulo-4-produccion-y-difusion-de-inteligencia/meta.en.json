@@ -1,0 +1,10 @@
+{
+  "title": "Intelligence Production and Dissemination",
+  "description": "Description",
+  "pages": [
+    "index",
+    "elaboracion-de-reportes-de-inteligencia-para-distintas-audiencias",
+    "estandares-de-intercambio-de-inteligencia-stix-taxii",
+    "integracion-de-inteligencia-en-las-herramientas-de-deteccion"
+  ]
+}

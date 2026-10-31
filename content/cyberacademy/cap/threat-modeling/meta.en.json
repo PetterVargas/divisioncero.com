@@ -1,0 +1,25 @@
+{
+  "title": "Threat Modeling Course",
+  "description": "Threat identification and mitigation",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-del-threat-modeling",
+    "---Module 2---",
+    "modulo-2-metodologias-de-threat-modeling",
+    "---Module 3---",
+    "modulo-3-proceso-de-modelado-de-amenazas",
+    "---Module 4---",
+    "modulo-4-mitigacion-y-seguimiento",
+    "---Module 5---",
+    "modulo-5-threat-modeling-a-escala",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

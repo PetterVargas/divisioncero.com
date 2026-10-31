@@ -1,0 +1,30 @@
+import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
+import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
+import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { toolMetadata } from '@/lib/herramientas/seo';
+import { PasswordGeneratorComponent } from './password-generator-component';
+
+const title = 'Generador de Contraseñas';
+const description =
+  'Genera contraseñas fuertes, aleatorias y seguras gratis: elige longitud, mayúsculas, números y símbolos. Se crean en tu navegador, sin enviarse a ningún servidor.';
+const path = '/generador-contrasenas';
+
+export const generateMetadata = toolMetadata({ title, description, path });
+
+export default function PasswordGeneratorPage() {
+  return (
+    <div>
+      <ToolJsonLd title={title} description={description} path={path} />
+      <ToolPageHeader
+        title="Generador de contraseñas"
+        subtitle="Genera contraseñas fuertes y seguras para tus cuentas"
+      />
+
+      <ToolFullscreen className="container mx-auto">
+        <div className="flex flex-1 flex-col items-center justify-center py-12">
+          <PasswordGeneratorComponent />
+        </div>
+      </ToolFullscreen>
+    </div>
+  );
+}

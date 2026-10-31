@@ -1,0 +1,17 @@
+{
+  "title": "Correlación",
+  "description": "Mapping y automatización",
+  "root": true,
+  "pages": [
+    "---Mapping---",
+    "index",
+    "---Frameworks---",
+    "iso27001-v2022-y-kudo",
+    "csa-ccm-y-kudo",
+    "csa-aicm-y-kudo",
+    "soc-2-y-kudo",
+    "cis-controls-y-kudo",
+    "nist-cybersecurity-framework-y-kudo",
+    "pci-dss-y-kudo"
+  ]
+}

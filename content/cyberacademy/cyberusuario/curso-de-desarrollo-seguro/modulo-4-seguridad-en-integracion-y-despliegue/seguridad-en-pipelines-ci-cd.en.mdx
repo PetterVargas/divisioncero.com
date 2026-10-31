@@ -1,0 +1,6 @@
+---
+title: "Security in CI/CD Pipelines"
+description: "Protecting the deployment pipeline"
+---
+
+The continuous integration and deployment (CI/CD) pipeline is itself an attractive target for an attacker: whoever manages to compromise it can inject malicious code directly into the build process, affecting every version published afterward. Protecting the pipeline means restricting who can modify its configuration, signing and verifying the artifacts generated at each stage, and using minimum-scope, temporary credentials for each deployment step, instead of a single key with full, permanent access. Integrating automated security controls into the pipeline itself (code, dependency and image scanning) ensures no change reaches production without passing those validations, without depending on a human remembering to run them manually every time.

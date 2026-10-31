@@ -1,0 +1,22 @@
+{
+  "title": "API",
+  "pages": [
+    "index",
+    "---Risk management---",
+    "...risks",
+    "---Incidents---",
+    "...incidents",
+    "---Controls---",
+    "...controls",
+    "---Policies---",
+    "...policies",
+    "---Assets---",
+    "...assets",
+    "---Third parties---",
+    "...third-parties",
+    "---Projects---",
+    "...projects",
+    "---Audit findings---",
+    "...audit-findings"
+  ]
+}

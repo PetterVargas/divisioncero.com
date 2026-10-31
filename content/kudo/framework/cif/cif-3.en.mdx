@@ -1,0 +1,134 @@
+---
+title: CIF-3 - Network and Systems Cybersecurity
+description: Control for cloud network and system security
+---
+
+## Control Definition
+
+Networks must be segmented applying the principle of least access, internet-facing resources must be protected against external attacks, and systems must be hardened following industry references, keeping their configuration and topology documented and up to date. Administrative and privileged access to production environments must be strictly restricted and monitored, enabled temporarily, with centralized logging to detect anomalous activity. Facilities where information is processed or stored must be physically protected through perimeters and access controls, equipment must be safeguarded against physical and environmental threats, supply outages and cabling damage, its proper maintenance must be ensured, and clear desk and clear screen practices must be applied both inside and outside the facilities.
+
+## Requirements
+
+### Requirement 1
+
+We implement network segmentation in cloud environments with subnets separated by function: DMZ, application, data and management.
+
+### Requirement 2
+
+We apply the default-deny principle to all traffic controls: security groups, NACLs and network policies.
+
+### Requirement 3
+
+We place critical resources in private subnets with no direct internet access.
+
+### Requirement 4
+
+We define and use physical security perimeters to protect areas containing information and related assets.
+
+### Requirement 5
+
+We design and apply physical security measures for offices, rooms and other workspaces.
+
+### Requirement 6
+
+We design and apply procedures for working securely within protected areas.
+
+### Requirement 7
+
+We place equipment in secure, protected locations to reduce physical risks.
+
+### Requirement 8
+
+We protect the organization's assets when they are off-premises.
+
+### Requirement 9
+
+We make sure equipment receives proper maintenance to ensure the availability, integrity and confidentiality of information.
+
+### Requirement 10
+
+We define and document the security configurations of the organization's hardware, software, services and networks.
+
+### Requirement 11
+
+We strictly limit and monitor the use of programs or tools that can bypass or override system security controls.
+
+### Requirement 12
+
+We apply procedures and measures to securely manage software installation on production systems.
+
+### Requirement 13
+
+We identify the security mechanisms, service levels and requirements of all available network services.
+
+### Requirement 14
+
+We restrict access to production environments applying the principle of least privilege and the most restrictive policy possible.
+
+### Requirement 15
+
+We diagram the infrastructure's components and network topology and keep the diagrams updated whenever anything changes.
+
+### Requirement 16
+
+We implement a WAF to protect all internet-facing web applications.
+
+### Requirement 17
+
+We implement DDoS protection on all internet-facing resources.
+
+### Requirement 18
+
+We apply system and VM hardening based on industry references through centralized configuration management.
+
+### Requirement 19
+
+We restrict remote administrative access exclusively to bastion hosts or equivalent services with mandatory MFA.
+
+### Requirement 20
+
+We apply network policies in Kubernetes environments to control traffic between pods and services.
+
+### Requirement 21
+
+We enable VPC/VNet flow logs and centralize them in the SIEM to detect anomalous traffic.
+
+### Requirement 22
+
+We protect secure areas with appropriate entry controls and access points that prevent unauthorized access.
+
+### Requirement 23
+
+We design and implement protections for infrastructure against physical and environmental threats such as natural disasters or other unexpected events.
+
+### Requirement 24
+
+We protect information processing facilities against power outages and other disruptions caused by failures in basic utilities.
+
+### Requirement 25
+
+We protect power and telecommunications cabling carrying data against interception, interference or damage.
+
+### Requirement 26
+
+We synchronize the clocks of all the organization's information processing systems with reliable, approved time sources.
+
+### Requirement 27
+
+We configure any cloud-level change through Privileged Identity Management (PIM), enabling privileged permissions temporarily and on demand (Just in Time).
+
+### Requirement 28
+
+We review security group rules quarterly and remove unnecessary access.
+
+### Requirement 29
+
+We record all administrative access sessions and keep them available for audit.
+
+### Requirement 30
+
+We continuously monitor facilities to detect any unauthorized physical access.
+
+### Requirement 31
+
+We monitor and adjust the use of technology resources taking into account current and future capacity needs.

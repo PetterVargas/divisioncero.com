@@ -1,0 +1,58 @@
+---
+title: ADR-3 - Log Retention and Monitoring
+description: Control for log management and security event monitoring
+---
+
+## Control Definition
+
+Activity logs from systems, applications and infrastructure relevant to information security must be generated, collected and centralized in a SIEM, ensuring their complete transmission and availability during the defined retention periods. Logs must be protected against alteration or deletion and used to detect and alert on anomalous behavior in a timely manner through continuous monitoring by the security team.
+
+## Requirements
+
+### Requirement 1
+
+We collect and centralize security logs from all the organization's systems, applications and infrastructure in a SIEM.
+
+### Requirement 2
+
+We define and cover the mandatory log sources: operating systems, critical applications, firewalls, proxies, identity providers and cloud systems.
+
+### Requirement 3
+
+We stream logs to the SIEM in real time and periodically validate the integrity of the data flow.
+
+### Requirement 4
+
+We retain logs in active storage in the SIEM for a defined time.
+
+### Requirement 5
+
+We retain logs in archive storage for a defined period of time.
+
+### Requirement 6
+
+We protect archived logs against modification through immutability controls (WORM storage).
+
+### Requirement 7
+
+We implement correlation and detection rules in the SIEM to identify anomalous behavior of high interest.
+
+### Requirement 8
+
+We alert automatically on: multiple authentication failures, out-of-hours access to critical systems, data exfiltration, lateral movement and privilege escalation.
+
+### Requirement 9
+
+We enable and configure the logging of activities, errors, failures and other events relevant to information security on all source systems.
+
+### Requirement 10
+
+We protect logs in active storage and in transit against alteration or deletion, complementing the immutability controls applied to archive storage.
+
+### Requirement 11
+
+We inventory log sources and review their coverage on a scheduled basis.
+
+### Requirement 12
+
+The SOC team operates continuous security monitoring dashboards.

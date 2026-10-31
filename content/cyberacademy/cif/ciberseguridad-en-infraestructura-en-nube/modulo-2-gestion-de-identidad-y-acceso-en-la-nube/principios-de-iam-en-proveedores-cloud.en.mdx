@@ -1,0 +1,6 @@
+---
+title: "IAM Principles in Cloud Providers"
+description: "The basics of identity control in the cloud"
+---
+
+Identity and access management, IAM, is the central control system that decides who can do what with the resources of a cloud account, and understanding its basic principles is essential because a mistake here affects every service that depends on that account. Cloud providers organize IAM around identities, policies that define permissions, and resources those policies apply to, allowing very granular controls that are also easy to misconfigure if you don't understand how rules combine when policies overlap. Mandatory multi-factor authentication, credential rotation and separating day-to-day accounts from administrative accounts are basic practices derived from these principles. Its practical importance is that IAM is usually an attacker's first target in the cloud, because compromising an identity with broad permissions is more efficient than looking for technical vulnerabilities in each individual deployed service.

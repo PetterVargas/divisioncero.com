@@ -1,0 +1,10 @@
+{
+  "title": "Security across the Model Lifecycle",
+  "description": "Description",
+  "pages": [
+    "index",
+    "riesgos-en-el-entrenamiento-envenenamiento-de-datos-data-poisoning",
+    "proteccion-de-los-datos-de-entrenamiento-y-modelos",
+    "seguridad-en-el-despliegue-y-actualizacion-de-modelos"
+  ]
+}

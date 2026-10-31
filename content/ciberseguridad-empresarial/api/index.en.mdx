@@ -1,0 +1,99 @@
+---
+title: Platform API
+description: "Read and write your team's cybersecurity records (risks, incidents, controls, policies, assets, third parties, projects and audit findings) from your own systems."
+---
+
+The DivisionCero public API exposes a team's records as REST over JSON. Each endpoint in this section includes its full schema, code samples and a _playground_ to try it with your own key.
+
+```txt title="Base URL"
+https://app.divisioncero.com/api/v1
+```
+
+## Authentication
+
+Every call requires a **team API key**. Create it in the team settings (**Settings → API**) and send it in the `Authorization` header:
+
+```bash
+curl https://app.divisioncero.com/api/v1/risks \
+  -H "Authorization: Bearer dcero_..."
+```
+
+The key determines the team and what it can read or write: no endpoint takes the team as a parameter. Session cookies are not accepted, so the API can be called from any origin (open CORS).
+
+## Permissions
+
+You choose the key's permissions when you create it. Each endpoint states the permission it requires in its description; if the key doesn't have it, the response is `403`.
+
+| Module | Read | Write |
+| --- | --- | --- |
+| Risks | `risks.read` | `risks.write` |
+| Incidents | `incidents.read` | `incidents.write` |
+| Controls | `controls.read` | — |
+| Policies | `policies.read` | — |
+| Assets | `assets.read` | — |
+| Third parties | `third_parties.read` | — |
+| Projects | `projects.read` | — |
+| Audit findings | `audits.read` | — |
+
+## Pagination and filters
+
+List endpoints accept the same query parameters:
+
+| Parameter | Description |
+| --- | --- |
+| `limit` | Page size, from 1 to 100 (default 50). |
+| `offset` | Records to skip (default 0). |
+| `search` | Searches the code and the title or name. |
+| `updated_since` | Only records updated since this date (ISO 8601); useful for incremental syncs. |
+
+The response wraps the records in `data` and indicates whether there are more pages:
+
+```json
+{
+  "data": [],
+  "has_more": true,
+  "next_offset": 50
+}
+```
+
+To go through the whole list, repeat the call with `offset=next_offset` until `has_more` is `false`.
+
+## Creating and updating records
+
+Risks and incidents support `POST` (create, responds `201`) and `PATCH` (update). In a `PATCH` only the fields you send change; sending `null` clears an optional field.
+
+The catalog identifiers these records require (category, treatment approach, detection source, status…) are specific to each team. Look them up first with [`GET /risks/catalogs`](./risks/catalogs.mdx) and [`GET /incidents/catalogs`](./incidents/catalogs.mdx).
+
+Every write is recorded in the team's audit log under the name of the key that made it.
+
+## Rate limit
+
+Each key can make **300 requests every 60 seconds**. All responses include the headers:
+
+- `RateLimit-Limit`: requests allowed in the window.
+- `RateLimit-Remaining`: remaining requests.
+- `RateLimit-Reset`: seconds until the window resets.
+
+When the limit is exceeded the response is `429` with the `Retry-After` header.
+
+## Errors
+
+Errors respond with a JSON body containing `code`, `status` and `message`:
+
+```json
+{
+  "code": "UNAUTHORIZED",
+  "status": 401,
+  "message": "Missing, invalid or expired API key"
+}
+```
+
+| Status | Code | Cause |
+| --- | --- | --- |
+| `400` | `BAD_REQUEST` | Invalid parameters or body. |
+| `401` | `UNAUTHORIZED` | Missing, invalid or expired key. |
+| `403` | `FORBIDDEN` | The key doesn't have the required permission. |
+| `404` | `NOT_FOUND` | The route or record doesn't exist. |
+| `409` | `CONFLICT` | The record already exists (for example, a duplicate code). |
+| `429` | `TOO_MANY_REQUESTS` | The rate limit was exceeded. |
+| `500` | `INTERNAL_SERVER_ERROR` | Unexpected error. |

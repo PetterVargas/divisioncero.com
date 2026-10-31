@@ -1,0 +1,14 @@
+{
+  "title": "CAP",
+  "description": "Ciberseguridad en Aplicaciones",
+  "root": true,
+  "pages": [
+    "---Dominio CAP---",
+    "index",
+    "---Controles CAP---",
+    "cap-1",
+    "cap-2",
+    "---Herramientas CAP---",
+    "herramientas"
+  ]
+}

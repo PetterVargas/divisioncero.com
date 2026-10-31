@@ -1,4 +1,6 @@
+'use client';
 import { ExternalLink } from 'lucide-react';
+import { useT } from '@/components/i18n';
 
 /**
  * Sección "Pregúntale a la IA" del footer: abre ChatGPT, Claude o Google (AI Mode)
@@ -11,21 +13,22 @@ const providers = [
 ];
 
 export function AskAI({ prompt }: { prompt: string }) {
+  const t = useT();
   const q = encodeURIComponent(prompt);
   return (
     <div className="mt-10 border-t pt-6 flex flex-col gap-3 md:flex-row md:items-center md:gap-6">
-      <h3 className="font-bold text-sm">Pregúntale a la IA</h3>
+      <h3 className="font-bold text-sm">{t('Pregúntale a la IA')}</h3>
       <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
         {providers.map(({ name, url }) => (
           <li key={name}>
             <a
               href={url(q)}
-              title={`Pregúntale a ${name} sobre DivisionCero`}
+              title={t('Pregúntale a {name} sobre DivisionCero', { name })}
               className="text-sm hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Pregúntale a <b>{name}</b> sobre DivisionCero
+              {t('Pregúntale a')} <b>{name}</b> {t('sobre DivisionCero')}
               <ExternalLink className="ml-1 inline-block size-3.5 align-[-0.125em]" aria-hidden="true" />
             </a>
           </li>

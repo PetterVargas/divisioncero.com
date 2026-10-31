@@ -1,0 +1,25 @@
+{
+  "title": "Cybersecurity for Leaders Course",
+  "description": "The leader's role in security",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-ciberseguridad-como-prioridad-estrategica",
+    "---Module 2---",
+    "modulo-2-gobierno-y-gestion-de-riesgos",
+    "---Module 3---",
+    "modulo-3-toma-de-decisiones-ante-incidentes",
+    "---Module 4---",
+    "modulo-4-liderazgo-y-cultura-organizacional",
+    "---Module 5---",
+    "modulo-5-ciberseguridad-en-la-cadena-de-valor",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

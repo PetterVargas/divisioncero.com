@@ -1,0 +1,18 @@
+{
+  "title": "Provisioning",
+  "description": "ISMS provisioning",
+  "root": true,
+  "pages": [
+    "index",
+    "---Steps---",
+    "requisitos",
+    "crear-proyecto",
+    "ejecucion-local",
+    "adaptacion",
+    "probar-cambios",
+    "autenticacion-corporativa",
+    "subir-codigo",
+    "configurar-cicd",
+    "despliegue"
+  ]
+}

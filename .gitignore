@@ -67,3 +67,21 @@ next-env.d.ts
 
 # kudo app test app
 create-kudo-app/test-app
+# Cloudflare / OpenNext
+.open-next
+.wrangler
+.dev.vars*
+
+# presentaciones (generadas por `pnpm build:presentaciones`)
+/public/cyberacademy/presentaciones/
+
+# herramientas: fotos del Museo del Cibercrimen (generadas por `pnpm museo:update`)
+/downloads/
+/public/herramientas/museo-cibercrimen/
+
+# Imágenes Open Graph e índices de búsqueda (generados por `pnpm static:generate` antes de `next build`)
+/public/og/
+/public/kudo/og/
+/public/cyberacademy/og/
+/public/herramientas/og/
+/public/search/

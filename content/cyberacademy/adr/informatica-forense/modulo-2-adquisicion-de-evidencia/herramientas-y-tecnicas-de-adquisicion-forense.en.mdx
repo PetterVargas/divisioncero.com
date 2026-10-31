@@ -1,0 +1,6 @@
+---
+title: "Forensic Acquisition Tools and Techniques"
+description: "How to capture evidence without altering it in the process"
+---
+
+Forensically acquiring digital evidence means creating an exact, verifiable copy of the original data without modifying the source device, which requires specialized tools and not simple file copies made with the operating system's file explorer. Techniques such as bit-level forensic imaging, which replicates every sector of the disk including free and deleted space, are combined with hardware or software write blockers that prevent any accidental modification of the original device during the process. The choice of technique depends on the context: acquiring a production server requires methods that minimize service disruption, while a powered-off device allows a more complete, controlled offline acquisition. A frequent mistake among inexperienced investigators is connecting the original device directly to a workstation without write blocking, which can alter critical metadata such as access dates and compromise the legal validity of all the evidence collected.

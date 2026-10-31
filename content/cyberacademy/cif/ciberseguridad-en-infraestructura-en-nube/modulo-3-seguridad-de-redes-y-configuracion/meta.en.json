@@ -1,0 +1,10 @@
+{
+  "title": "Network Security and Configuration",
+  "description": "Description",
+  "pages": [
+    "index",
+    "segmentacion-de-redes-virtuales-y-grupos-de-seguridad",
+    "deteccion-de-configuraciones-erroneas-misconfigurations",
+    "cifrado-de-datos-en-transito-y-en-reposo-en-la-nube"
+  ]
+}

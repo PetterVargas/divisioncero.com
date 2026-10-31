@@ -1,0 +1,46 @@
+---
+title: "Secure Development Policy"
+description: "Guidelines for integrating security throughout the software lifecycle"
+---
+
+## Purpose
+Define the guidelines for integrating security throughout the software lifecycle, from design to deployment and maintenance. The policy ensures security is a fundamental part of architecture, code and operations.
+
+## Scope
+Applies to all internal development and third-party contributions. It covers software, web applications and any technical component that is part of the organization's architecture.
+
+## Secure Development Lifecycle (SDLC)
+Security must be integrated into every phase of the SDLC. The goal is to identify risks early and reduce vulnerabilities before deployment.
+
+The SDLC includes:
+- Threat modeling in the design phase.
+- Definition of risk-based security requirements.
+- Static and dynamic security testing.
+- Security-focused code reviews.
+- Penetration testing before deployment.
+- Continuous integration of security controls into the architecture.
+- Logging of activities that use operational data in testing.
+- Use of data in testing only if it has been removed, anonymized or masked.
+- Secure deletion of operational data from test environments when finished.
+
+## Secure Coding Standards
+Developers must apply secure coding practices and prevent common vulnerabilities such as SQL injection, XSS, CSRF and authentication failures. The principles of least privilege, strict validation and secure error handling apply.
+
+## Environment Separation
+Development, test and production environments must be kept separate. There must be no automatic trust between them. Access controls must be equivalent to those of production, especially for test environments.
+
+## Third-Party Components
+The use of external libraries and services requires:
+- Approval from the security team.
+- Prior vulnerability assessment.
+- Periodic updates to mitigate risks.
+- Validation that the vendor follows adequate security practices.
+
+## Web Application Firewall (WAF)
+All web applications must be protected by a WAF configured with rules aligned with the principle of minimal functionality and protection against known attacks.
+
+## Compliance
+Compliance with this policy is mandatory for all teams involved in development. Any non-compliance may lead to disciplinary action.
+
+## Monitoring and Review
+This policy must be reviewed and updated regularly to stay aligned with new threats, technologies and secure engineering practices. Oversight by the CISO and senior management is key to ensuring its effectiveness.

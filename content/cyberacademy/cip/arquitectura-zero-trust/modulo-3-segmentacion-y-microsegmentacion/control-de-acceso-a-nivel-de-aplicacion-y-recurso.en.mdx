@@ -1,0 +1,6 @@
+---
+title: "Application- and Resource-Level Access Control"
+description: "Granular permissions per application, not per network"
+---
+
+Application- and resource-level access control moves permission logic from the network to each individual application or piece of data, so instead of granting generic access to an entire network segment, it's explicitly defined which user can interact with which specific resource and under what conditions. This is relevant in practice because many serious breaches happen not because of a sophisticated initial intrusion, but because once inside the network the attacker finds broad access to systems they should never have been able to touch. A concrete example is a human resources application where a sales employee, even though connected to the same corporate network as the payroll team, can't even see that the payroll system exists, because access control is applied at the level of the application itself and doesn't depend on the underlying network segmentation.

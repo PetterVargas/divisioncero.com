@@ -1,0 +1,6 @@
+---
+title: "Benefits of Threat Modeling in the Development Cycle"
+description: "Why invest time in modeling threats"
+---
+
+The most cited benefit of threat modeling is economic: finding and fixing a design flaw during the architecture phase costs a fraction of what it costs to fix that same weakness once the system is already in production, when it means rewriting code in use, coordinating regression testing and, in the worst case, responding to a real incident with compromised data. Beyond cost savings, the process has a less obvious but equally valuable benefit: it forces the development team to explicitly articulate security assumptions that normally remain implicit, such as assuming a certain internal component is trustworthy without ever having formally verified it, and that exercise of making the implicit explicit frequently reveals risky design decisions nobody had openly questioned. It also improves communication between technical and security teams, creating a shared language and artifact for discussing risk, instead of each side speaking from its own isolated jargon. Over time, practicing threat modeling regularly develops a sharper security intuition in developers themselves, who start applying it naturally even before the formal analysis session, reducing the number of obvious threats that end up needing later fixes.

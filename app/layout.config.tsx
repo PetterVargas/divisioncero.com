@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { BookIcon, FileTextIcon, UserIcon, LogInIcon, GraduationCapIcon, WrenchIcon, TagIcon, NewspaperIcon, BookOpenIcon, PresentationIcon } from 'lucide-react';
+import {
+  BookIcon, FileTextIcon, UserIcon, LogInIcon, GraduationCapIcon, WrenchIcon, TagIcon, NewspaperIcon, BookOpenIcon, PresentationIcon,
+  LibraryIcon, ShieldIcon, CompassIcon, LayoutTemplateIcon, WorkflowIcon, ShieldCheckIcon, ClipboardCheckIcon,
+} from 'lucide-react';
 import { NavTitle } from '@/components/nav-title';
+import { localizeUrl } from '@/lib/i18n';
+import { getT } from '@/lib/site-translations';
 
 // Mirrors fumadocs-ui's internal nav item classes (desktop `main` variant via
 // `sm:`, mobile-menu `main` variant via `max-sm:`) so a hand-authored `title`
@@ -28,7 +33,7 @@ export const resourceLinks = [
     icon: <WrenchIcon />,
     text: 'Herramientas',
     description: 'Ayuda en Ciberseguridad',
-    url: 'https://herramientas.divisioncero.com/',
+    url: '/herramientas',
     menu: { title: 'Herramientas de Ciberseguridad' },
   },
   {
@@ -42,8 +47,93 @@ export const resourceLinks = [
     icon: <PresentationIcon />,
     text: 'Presentaciones',
     description: 'Material de las sesiones de CyberAcademy',
-    url: 'https://presentaciones.divisioncero.com/',
+    url: '/cyberacademy/presentaciones',
     menu: { title: 'Presentaciones' },
+  },
+];
+
+// Items del menú "CyberAcademy" (divisioncero.com/cyberacademy).
+export const cyberacademyLinks = [
+  {
+    icon: <GraduationCapIcon />,
+    text: 'CyberAcademy',
+    description: 'Cursos de Ciberseguridad gratis en español',
+    url: '/cyberacademy',
+    menu: { title: 'CyberAcademy' },
+  },
+  {
+    icon: <LibraryIcon />,
+    text: 'Cursos',
+    description: 'Todos los cursos de CyberAcademy',
+    url: '/cyberacademy/cursos',
+    menu: { title: 'Cursos de CyberAcademy' },
+  },
+  {
+    icon: <UserIcon />,
+    text: 'CyberUsuario',
+    description: 'Ciberseguridad para todas las personas',
+    url: '/cyberacademy/cyberusuario',
+    menu: { title: 'Cursos de CyberUsuario' },
+  },
+  {
+    icon: <ShieldIcon />,
+    text: 'CyberGuardián',
+    description: 'Los 8 dominios para profesionales',
+    url: '/cyberacademy/cyberguardian',
+    menu: { title: 'Cursos de CyberGuardián' },
+  },
+  {
+    icon: <CompassIcon />,
+    text: '¿Qué quieres aprender hoy?',
+    description: 'Encuentra el curso para tu objetivo',
+    url: '/cyberacademy/que-quieres-aprender-hoy',
+    menu: { title: '¿Qué quieres aprender hoy?' },
+  },
+  {
+    icon: <PresentationIcon />,
+    text: 'Presentaciones',
+    description: 'Material de las sesiones de CyberAcademy',
+    url: '/cyberacademy/presentaciones',
+    menu: { title: 'Presentaciones de CyberAcademy' },
+  },
+];
+
+// Items del menú "Kudo" (divisioncero.com/kudo).
+export const kudoLinks = [
+  {
+    icon: <BookIcon />,
+    text: 'Kudo',
+    description: 'Framework de Ciberseguridad por y para LatAm',
+    url: '/kudo',
+    menu: { title: 'Kudo Framework' },
+  },
+  {
+    icon: <LayoutTemplateIcon />,
+    text: 'Framework',
+    description: 'Dominios y controles del framework',
+    url: '/kudo/framework/overview',
+    menu: { title: 'Framework Kudo' },
+  },
+  {
+    icon: <WorkflowIcon />,
+    text: 'OSCAL',
+    description: 'Controles en formato OSCAL',
+    url: '/kudo/framework/oscal',
+    menu: { title: 'OSCAL' },
+  },
+  {
+    icon: <ShieldCheckIcon />,
+    text: 'SGX',
+    description: 'Sistema de Gestión, políticas y procedimientos',
+    url: '/kudo/sgx',
+    menu: { title: 'SGX' },
+  },
+  {
+    icon: <ClipboardCheckIcon />,
+    text: 'Cuestionarios',
+    description: 'Evalúa la madurez de tu organización',
+    url: '/kudo/framework/cuestionarios',
+    menu: { title: 'Cuestionarios de Kudo' },
   },
 ];
 
@@ -54,116 +144,110 @@ export const resourceLinks = [
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/(learn)/layout.tsx
  */
-export const baseOptions: BaseLayoutProps = {
-  nav: {
-    title: NavTitle,
-  },
-  // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [
-    {
-      type: 'custom',
-      children: (
-        <Link
-          href="https://cyberacademy.divisioncero.com/"
-          title="CyberAcademy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={navLinkClassName}
-        >
-          <GraduationCapIcon />
-          CyberAcademy
-        </Link>
-      ),
+export function getBaseOptions(lang: string): BaseLayoutProps {
+  const t = getT(lang);
+  const url = (href: string) => localizeUrl(href, lang);
+  const translateItems = (items: typeof resourceLinks) =>
+    items.map((item) => ({
+      ...item,
+      text: t(item.text),
+      description: t(item.description),
+      url: url(item.url),
+      menu: { ...item.menu, title: t(item.menu.title) },
+    }));
+
+  return {
+    nav: {
+      title: NavTitle,
+      url: url('/'),
     },
-    {
-      type: 'custom',
-      children: (
-        <Link
-          href="https://kudo.divisioncero.com"
-          title="Kudo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={navLinkClassName}
-        >
-          <BookIcon />
-          Kudo
-        </Link>
-      ),
-    },
-    {
-      type: 'custom',
-      children: (
-        <Link href="/precios" title="Precio" className={navLinkClassName}>
-          <TagIcon />
-          Precio
-        </Link>
-      ),
-    },
-    {
-      type: 'custom',
-      children: (
-        <Link href="/docs" title="Documentación" className={navLinkClassName}>
-          <BookOpenIcon />
-          Docs
-        </Link>
-      ),
-    },
-    {
-      type: 'menu',
-      text: 'Recursos',
-      items: resourceLinks,
-    },
-    {
-      type: 'custom',
-      secondary: true,
-      children: (
-        <Link
-          href="https://github.com/PetterVargas/"
-          title="Síguenos en GitHub"
-          aria-label="GitHub"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring hover:bg-fd-accent hover:text-fd-accent-foreground p-1.5 [&_svg]:size-5"
-        >
-          <svg role="img" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-          </svg>
-        </Link>
-      ),
-    },
-    {
-      type: 'custom',
-      secondary: true,
-      children: (
-        <Link
-          href="https://app.divisioncero.com/auth/sign-in"
-          title="Iniciar sesión"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={navLinkClassName}
-        >
-          <LogInIcon />
-          <span className="block md:inline">Login</span>
-        </Link>
-      ),
-    },
-    {
-      type: 'custom',
-      secondary: true,
-      children: (
-        <Link
-          href="https://app.divisioncero.com/auth/sign-up"
-          title="Regístrate en DivisionCero"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={navLinkClassName}
-        >
-          <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold flex items-center gap-1">
-            <UserIcon className="size-4" />
-            Regístrate
-          </span>
-        </Link>
-      ),
-    },
-  ],
-};
+    // see https://fumadocs.dev/docs/ui/navigation/links
+    links: [
+      {
+        type: 'menu',
+        text: 'CyberAcademy',
+        items: translateItems(cyberacademyLinks),
+      },
+      {
+        type: 'menu',
+        text: 'Kudo',
+        items: translateItems(kudoLinks),
+      },
+      {
+        type: 'custom',
+        children: (
+          <Link href={url('/precios')} title={t('Precio')} className={navLinkClassName}>
+            <TagIcon />
+            {t('Precio')}
+          </Link>
+        ),
+      },
+      {
+        type: 'custom',
+        children: (
+          <Link href={url('/docs')} title={t('Documentación')} className={navLinkClassName}>
+            <BookOpenIcon />
+            Docs
+          </Link>
+        ),
+      },
+      {
+        type: 'menu',
+        text: t('Recursos'),
+        items: translateItems(resourceLinks),
+      },
+      {
+        type: 'custom',
+        secondary: true,
+        children: (
+          <Link
+            href="https://github.com/PetterVargas/"
+            title={t('Síguenos en GitHub')}
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring hover:bg-fd-accent hover:text-fd-accent-foreground p-1.5 [&_svg]:size-5"
+          >
+            <svg role="img" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+          </Link>
+        ),
+      },
+      {
+        type: 'custom',
+        secondary: true,
+        children: (
+          <Link
+            href="https://app.divisioncero.com/auth/sign-in"
+            title={t('Iniciar sesión')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={navLinkClassName}
+          >
+            <LogInIcon />
+            <span className="block md:inline">Login</span>
+          </Link>
+        ),
+      },
+      {
+        type: 'custom',
+        secondary: true,
+        children: (
+          <Link
+            href="https://app.divisioncero.com/auth/sign-up"
+            title={t('Regístrate en DivisionCero')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={navLinkClassName}
+          >
+            <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold flex items-center gap-1">
+              <UserIcon className="size-4" />
+              {t('Regístrate')}
+            </span>
+          </Link>
+        ),
+      },
+    ],
+  };
+}

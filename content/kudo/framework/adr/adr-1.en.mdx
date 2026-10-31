@@ -1,0 +1,62 @@
+---
+title: ADR-1 - Malicious Software Protection
+description: Control for protection against malware and malicious applications
+---
+
+## Control Definition
+
+Malicious software threats must be prevented, detected and neutralized across the organization, deploying protection solutions with behavior-based detection on endpoints, servers and cloud environments, and applying containment controls such as application allowlisting and automatic threat quarantine. Email and web browsing must be protected against phishing, spoofing and malicious content, and staff kept alert and trained to recognize and report suspicious communications as a complement to the technical protections.
+
+## Requirements
+
+### Requirement 1
+
+We implement controls to prevent, detect and neutralize threats from malicious software on all the organization's systems.
+
+### Requirement 2
+
+We deploy antimalware solutions with behavior-based detection on endpoints, servers and cloud environments.
+
+### Requirement 3
+
+We alert employees to suspicious communications that are detected.
+
+### Requirement 4
+
+We properly train users to recognize and prevent malicious software as a complement to the technical protections in place.
+
+### Requirement 5
+
+We control access to external websites to reduce exposure to malicious or unauthorized content according to the organization's acceptable use policy.
+
+### Requirement 6
+
+We continuously update detection signatures and models without manual intervention.
+
+### Requirement 7
+
+We analyze files in a sandbox before execution (controlled detonation).
+
+### Requirement 8
+
+We detect advanced evasion techniques such as fileless malware and living-off-the-land.
+
+### Requirement 9
+
+We implement authorized application lists (allowlisting) on all systems.
+
+### Requirement 10
+
+We apply automatic quarantine when threats are detected on endpoints, servers and cloud environments.
+
+### Requirement 11
+
+We protect corporate email with sandboxed attachment analysis and URL verification through real-time reputation systems.
+
+### Requirement 12
+
+We enable DMARC, DKIM and SPF to protect email against phishing and spoofing.
+
+### Requirement 13
+
+We implement web content filtering that blocks known malicious domains, with SSL inspection.

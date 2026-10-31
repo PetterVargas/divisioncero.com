@@ -1,0 +1,6 @@
+---
+title: "Training Risks: Data Poisoning"
+description: "How data poisoning corrupts training"
+---
+
+Data poisoning consists of deliberately manipulating the data used to train or retrain a model, so that it learns erroneous patterns or incorporates a backdoor triggered by a specific input. It's an especially dangerous threat because it doesn't attack the model in production but its origin, and its effects only show up after deployment, when it's too late to intervene without retraining from scratch. The most common vectors include public or scraped data sources without controls, insiders with access to the data pipeline, and systems that learn continuously from user interaction. Mitigating it requires validating the provenance of each source, applying statistical anomaly detection before training, and establishing baselines of model behavior to detect suspicious deviations after each update.

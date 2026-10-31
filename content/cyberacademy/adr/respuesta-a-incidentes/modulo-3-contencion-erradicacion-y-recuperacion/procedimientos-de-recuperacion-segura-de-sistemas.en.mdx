@@ -1,0 +1,6 @@
+---
+title: "Secure System Recovery Procedures"
+description: "Restoring systems without reintroducing risk"
+---
+
+Secure system recovery consists of returning the organization to normal operations after an incident without reintroducing the same vulnerability or leaving backdoors the attacker may have installed during their presence in the environment. In practice, this requires verifying with technical evidence, not just assumptions, that the root cause was eradicated before restoring systems from backups, because restoring a backup taken after the attacker already had access simply reintroduces the problem. A solid procedure includes rebuilding critical systems from scratch when there's reasonable doubt about their integrity, instead of relying on partial cleanups, and intensively monitoring recovered systems in the following days to detect any sign of reinfection. A frequent case where this fails is restoring quickly under business pressure without changing the compromised credentials, which lets the attacker return using the same access they originally used to get in.

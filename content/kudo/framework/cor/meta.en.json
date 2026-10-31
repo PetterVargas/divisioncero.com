@@ -1,0 +1,16 @@
+{
+  "title": "COR",
+  "description": "Organizational Coherence",
+  "root": true,
+  "pages": [
+    "---COR Domain---",
+    "index",
+    "---COR Controls---",
+    "cor-1",
+    "cor-2",
+    "cor-3",
+    "cor-4",
+    "---COR Tools---",
+    "herramientas"
+  ]
+}

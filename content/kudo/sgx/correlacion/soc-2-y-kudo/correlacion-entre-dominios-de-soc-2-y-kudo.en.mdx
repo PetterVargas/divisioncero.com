@@ -1,0 +1,64 @@
+---
+title: Domain Mapping
+description: Graphical mapping between SOC 2 and Kudo domains
+---
+
+## 📝 SOC 2 and Kudo Mapping
+
+The 5 SOC 2 Trust Services Criteria map to the 8 domains of the Kudo Framework, covering the complete cycle of security, availability, confidentiality, integrity and privacy.
+
+<Mermaid
+  chart="
+graph LR
+  KUDO[🔐 Framework Kudo<br/>8 Domains - 35 Controls]
+  SOC2[SOC 2<br/>Trust Services Criteria<br/>5 Categories - 62 Criteria]
+
+  subgraph TSC[🛡️ Trust Services Criteria]
+    CC[CC — Common Criteria<br/>Security<br/>CC1 · CC2 · CC3 · CC4 · CC5<br/>CC6 · CC7 · CC8 · CC9]
+    AV[A — Availability<br/>A1]
+    CO[C — Confidentiality<br/>C1]
+    PI[PI — Processing Integrity<br/>PI1]
+    PR[P — Privacy<br/>P1–P8]
+  end
+
+  subgraph KUDO_DOMAINS[🎯 Kudo Domains]
+    COR[COR<br/>Organizational Coherence]
+    CIP[CIP<br/>Identity and Endpoints]
+    CIF[CIF<br/>Infrastructure Cybersecurity]
+    CAP[CAP<br/>Application Cybersecurity]
+    CCN[CCN<br/>Continuity and Change]
+    THP[THP<br/>Human Talent and Vendors]
+    DIA[DIA<br/>Data and Artificial Intelligence]
+    ADR[ADR<br/>Analysis, Detection and Response]
+  end
+
+  SOC2 --> CC
+  SOC2 --> AV
+  SOC2 --> CO
+  SOC2 --> PI
+  SOC2 --> PR
+
+  CC --> COR
+  CC --> CIP
+  CC --> CIF
+  CC --> CCN
+  CC --> THP
+  CC --> ADR
+
+  AV --> CCN
+
+  CO --> DIA
+
+  PI --> CAP
+
+  PR --> DIA
+
+  COR --> KUDO
+  CIP --> KUDO
+  CIF --> KUDO
+  CAP --> KUDO
+  CCN --> KUDO
+  THP --> KUDO
+  DIA --> KUDO
+  ADR --> KUDO"
+/>

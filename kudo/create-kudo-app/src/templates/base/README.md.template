@@ -1,0 +1,56 @@
+# {{PROJECT_NAME}}
+
+Proyecto de documentación de ciberseguridad basado en el framework Kudo de DivisionCero.
+
+## 🚀 Desarrollo
+
+```bash
+# Instalar dependencias
+{{PACKAGE_MANAGER}} install
+
+# Ejecutar en modo desarrollo
+{{PACKAGE_MANAGER}} dev
+
+# Build para producción
+{{PACKAGE_MANAGER}} build
+
+# Exportar sitio estático
+{{PACKAGE_MANAGER}} export
+```
+
+## 📁 Estructura del Proyecto
+
+```
+{{PROJECT_NAME}}/
+├── app/                          # Next.js App Router
+│   ├── (home)/                   # Landing page y blog
+│   ├── [...slug]/                # Páginas dinámicas de documentación
+│   └── api/search/               # API de búsqueda
+├── content/
+│   ├── docs/
+│   │   ├── politicas/           # Templates de políticas de seguridad
+│   │   └── framework/           # Documentación del framework Kudo
+│   └── blog/                    # Blog posts
+├── components/                   # Componentes React reutilizables
+├── lib/                         # Utilidades y configuración
+└── public/                      # Assets estáticos
+```
+
+## 📚 Recursos
+
+- [Framework Kudo](https://divisioncero.com/kudo)
+- [Fumadocs Documentation](https://fumadocs.dev)
+- [DivisionCero](https://divisioncero.com)
+- [CyberAcademy](https://divisioncero.com/cyberacademy)
+
+## 🛠️ Tecnologías
+
+- **Next.js 15** - Framework de React
+- **Fumadocs** - Sistema de documentación
+- **Tailwind CSS** - Estilos
+- **TypeScript** - Tipado estático
+- **MDX** - Markdown + componentes React
+
+## 📄 Licencia
+
+MIT © {{AUTHOR}}

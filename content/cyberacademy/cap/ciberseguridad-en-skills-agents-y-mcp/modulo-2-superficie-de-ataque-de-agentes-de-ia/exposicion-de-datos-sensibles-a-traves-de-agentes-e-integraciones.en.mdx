@@ -1,0 +1,6 @@
+---
+title: "Exposure of Sensitive Data through Agents and Integrations"
+description: "How agents can leak data unintentionally"
+---
+
+An agent with access to multiple internal data sources becomes a single aggregation point that, if not carefully controlled, can end up exposing information none of those individual sources would reveal on its own, simply because the agent combines and summarizes content from different systems into a single response. The risk grows when the agent responds through a less controlled channel than the source system, for example an assistant connected to a human resources database that responds in an open corporate chat, where a seemingly innocent question can cause the agent to summarize salary or medical data the user shouldn't see directly. There's also the risk that the conversation context itself, including fragments of sensitive data retrieved in earlier steps, is retained in the agent's memory and leaks into a later, unrelated response. Mitigating this requires applying authorization controls at the level of the agent itself, not just in the source system, verifying that the user asking the question has real permission over the data the agent is about to expose, and limiting how much sensitive context persists between interactions.

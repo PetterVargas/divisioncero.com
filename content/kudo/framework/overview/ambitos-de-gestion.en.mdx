@@ -1,0 +1,82 @@
+---
+title: Management Scopes
+description: Kudo operates across three management scopes that cover the full spectrum.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Organizational Roles
+
+Kudo has two organizational roles
+
+<Steps>
+<Step>
+
+### CSP (Cloud Service Provider)
+
+</Step>
+
+<Step>
+
+### CSC (Cloud Service Customer)
+
+</Step>
+</Steps>
+
+
+## Management Scopes
+
+Kudo has three management scopes:
+
+<Steps>
+<Step>
+
+### Internal Scope (Corporate)
+
+</Step>
+
+<Step>
+
+### Third-Party Scope (Vendors and Partners); also Internal.
+
+</Step>
+
+<Step>
+
+### External Scope (Customers)
+
+</Step>
+</Steps>
+
+
+## Ecosystem Diagram
+
+```mermaid
+flowchart LR
+
+    subgraph G["Management Scope"]
+        direction LR
+
+        subgraph IZQ["Internal Management"]
+            direction LR
+
+            C["Third-Party Scope<br/>(Vendors and Partners)"]
+            A["Internal Scope<br/>(Corporate)"]
+
+            A -->|CSP| C
+            C -.->|CSC| A
+        end
+
+        B["External Scope<br/>(Customers)"]
+
+        %% Keeps the visual position
+        A --- B
+
+        %% Relationship with customers
+        B -->|CSP| A
+        A -.->|CSC| B
+
+        %% Hides the positioning line
+        linkStyle 2 stroke-width:0px;
+    end
+```

@@ -1,0 +1,6 @@
+---
+title: "Network Microsegmentation Principles"
+description: "Dividing the network into small trust zones"
+---
+
+Network microsegmentation consists of dividing the corporate environment into much smaller, more isolated zones than traditional VLANs or subnets, applying specific access policies between each workload, server or even individual process, instead of relying on a single perimeter boundary. This matters in practice because it drastically limits an attacker's lateral movement, since compromising a web server no longer means having a free path to the database, file server and the rest of the infrastructure; each hop requires getting past a new control policy. A common example is a data center where each application runs in its own logical segment with rules that only allow explicit communication with the services it really needs, so ransomware that infects a server stays contained without being able to spread automatically to the rest of the network.

@@ -1,0 +1,27 @@
+{
+  "title": "Technology Investigations Course",
+  "description": "Digital incident investigation",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-la-investigacion-tecnologica",
+    "---Module 2---",
+    "modulo-2-metodologia-de-investigacion",
+    "---Module 3---",
+    "modulo-3-rastreo-informatico",
+    "---Module 4---",
+    "modulo-4-recoleccion-y-preservacion-de-evidencia-digital",
+    "---Module 5---",
+    "modulo-5-analisis-de-evidencia",
+    "---Module 6---",
+    "modulo-6-reporte-y-cierre-de-la-investigacion",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

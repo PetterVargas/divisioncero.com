@@ -2,9 +2,85 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 @import 'fumadocs-twoslash/twoslash.css';
+@import 'fumadocs-openapi/css/preset.css';
+@import 'tw-animate-css';
+
+/* Proyectos independientes (create-kudo-app, presentaciones...): no forman parte del sitio */
+@source not "../kudo";
+@source not "../cyberacademy";
 
 html {
   scrollbar-gutter: stable;
+}
+
+/*
+ * Herramientas (/herramientas) usan los tokens de shadcn/ui (bg-primary,
+ * text-muted-foreground...). Se apuntan a los de Fumadocs para que compartan el
+ * tema del sitio en claro y oscuro.
+ */
+@theme inline {
+  --color-background: var(--color-fd-background);
+  --color-foreground: var(--color-fd-foreground);
+  --color-card: var(--color-fd-card);
+  --color-card-foreground: var(--color-fd-card-foreground);
+  --color-popover: var(--color-fd-popover);
+  --color-popover-foreground: var(--color-fd-popover-foreground);
+  --color-primary: var(--color-fd-primary);
+  --color-primary-foreground: var(--color-fd-primary-foreground);
+  --color-secondary: var(--color-fd-secondary);
+  --color-secondary-foreground: var(--color-fd-secondary-foreground);
+  --color-muted: var(--color-fd-muted);
+  --color-muted-foreground: var(--color-fd-muted-foreground);
+  --color-accent: var(--color-fd-accent);
+  --color-accent-foreground: var(--color-fd-accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--color-white);
+  --color-border: var(--color-fd-border);
+  --color-input: var(--color-fd-border);
+  --color-ring: var(--color-fd-ring);
+}
+
+:root {
+  --destructive: var(--color-red-500);
+}
+
+.dark {
+  --destructive: var(--color-red-700);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-fd-muted-foreground);
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl var(--marquee-duration, 45s) linear infinite;
+}
+
+.animate-marquee-ltr {
+  animation: marquee-rtl var(--marquee-duration, 45s) linear infinite reverse;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-rtl,
+  .animate-marquee-ltr {
+    animation: none;
+  }
 }
 
 @media print {
@@ -20,6 +96,20 @@ html {
 html > body[data-scroll-locked] {
   margin-right: 0px !important;
   --removed-body-scroll-bar-size: 0px !important;
+}
+
+/*
+ * En modo claro, --color-fd-muted (96.1%) es casi idéntico a
+ * --color-fd-background (96%), por lo que las secciones alternas del home
+ * (bg-fd-muted/40) no generan contraste visible. En modo oscuro sí hay
+ * separación real (7.04% vs 12.9%), así que aquí solo reforzamos el claro.
+ */
+.home-section-alt {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.dark .home-section-alt {
+  background-color: transparent;
 }
 
 /* Footer reveal (cortina estilo amplitude.com) — ver components/footer-reveal.tsx */
@@ -81,4 +171,17 @@ html > body[data-scroll-locked] {
   position: relative;
   z-index: 10;
   box-shadow: 0 24px 48px -12px rgb(0 0 0 / 0.45);
+}
+
+/* Fila nueva en el feed del mockup del hero (components/hero-console.tsx) */
+@keyframes hero-row-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+    background-color: color-mix(in oklab, #4DAE84 12%, transparent);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }

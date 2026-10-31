@@ -1,0 +1,6 @@
+---
+title: "Integrating Intelligence into Detection Tools"
+description: "Turning intelligence into active detections"
+---
+
+Threat intelligence only generates real value when it's actively integrated into the organization's detection tools, such as SIEMs, endpoint detection systems and firewalls, turning indicators and behavior patterns into rules and alerts that operate continuously without depending on an analyst manually reviewing each report. In practice, this integration requires automation, since manually updating detection rules every time a new indicator appears is unfeasible at the scale at which threats are published today, and threat intelligence platforms usually expose APIs precisely to feed these tools automatically. A critical nuance is avoiding blind integration of every indicator received, because automatically applying blocking rules based on low-confidence sources can disrupt legitimate business operations. The recommended practice is to tier the integration according to the indicator's confidence level, applying automatic blocking only to high-confidence sources and leaving the rest in alert mode for human review before acting.

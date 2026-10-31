@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
+import { useT } from '@/components/i18n';
 
 const YOUFORM_ORIGIN = 'https://app.youform.com';
 const YOUFORM_SCRIPT = `${YOUFORM_ORIGIN}/embed.js`;
@@ -14,6 +15,7 @@ const CLOSE_AFTER_SUBMIT_MS = 5000;
  * no sumar el iframe del formulario a cada visita.
  */
 export function SubscribeDialog({ children }: { children: React.ReactNode }) {
+  const t = useT();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   // El formulario avisa con `youformComplete` cuando se envía (el script de
@@ -53,7 +55,7 @@ export function SubscribeDialog({ children }: { children: React.ReactNode }) {
       </button>
       <dialog
         ref={dialogRef}
-        aria-label="Suscríbete a DivisionCero"
+        aria-label={t('Suscríbete a DivisionCero')}
         // Cierra al hacer clic en el fondo (fuera del contenido).
         onClick={(e) => {
           if (e.target === e.currentTarget) e.currentTarget.close();
@@ -64,7 +66,7 @@ export function SubscribeDialog({ children }: { children: React.ReactNode }) {
           <button
             type="button"
             onClick={() => dialogRef.current?.close()}
-            aria-label="Cerrar"
+            aria-label={t('Cerrar')}
             className="absolute right-3 top-3 rounded-md p-1.5 text-fd-muted-foreground hover:bg-fd-accent hover:text-fd-accent-foreground transition-colors"
           >
             <X className="size-5" />

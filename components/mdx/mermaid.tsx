@@ -32,7 +32,8 @@ function MermaidContent({ chart }: { chart: string }) {
 
   mermaid.initialize({
     startOnLoad: false,
-    securityLevel: 'loose',
+    // 'strict' sanea las etiquetas y desactiva los `click` (ningún diagrama los usa).
+    securityLevel: 'strict',
     fontFamily: 'inherit',
     themeCSS: 'margin: 1.5rem auto 0;',
     theme: resolvedTheme === 'dark' ? 'dark' : 'default',

@@ -1,0 +1,62 @@
+---
+title: CAP-2 - API Cybersecurity
+description: Control for the protection and secure management of APIs
+---
+
+## Control Definition
+
+An up-to-date inventory of all APIs must be maintained and continuously monitored, and strong authentication and authorization must be implemented to verify identity and limit access according to the principle of least privilege. Inputs must be validated and sanitized to prevent injections and other OWASP API Security Top 10 vulnerabilities, integrating security testing into the development pipeline. Service availability must be ensured through rate limiting and circuit breakers, and sensitive information passing through or logged by APIs must be protected.
+
+## Requirements
+
+### Requirement 1
+
+We maintain a complete, up-to-date inventory of all APIs with owner, audience, version and lifecycle status.
+
+### Requirement 2
+
+We set an expiration date for API keys, rotate them periodically and revoke them when no longer in use.
+
+### Requirement 3
+
+We integrate API security testing (DAST, fuzzing) into the CI/CD pipeline.
+
+### Requirement 4
+
+We implement strong authentication on all APIs through OAuth 2.0, OpenID Connect or JWTs signed with secure algorithms.
+
+### Requirement 5
+
+We implement mTLS for mutual authentication between services on critical APIs.
+
+### Requirement 6
+
+We implement granular authorization (RBAC/ABAC) following the principle of least privilege on all APIs.
+
+### Requirement 7
+
+We implement strict schema validation (OpenAPI/Swagger) on all APIs.
+
+### Requirement 8
+
+We sanitize all inputs to prevent injections: SQL, NoSQL, command injection and XXE.
+
+### Requirement 9
+
+We implement rate limiting per user, IP and API key on all APIs.
+
+### Requirement 10
+
+We implement throttling and circuit breakers to ensure service availability.
+
+### Requirement 11
+
+We mask sensitive data in API logs.
+
+### Requirement 12
+
+We implement mandatory HTTP security headers: HSTS, CSP and X-Frame-Options.
+
+### Requirement 13
+
+We continuously monitor all inventoried APIs.

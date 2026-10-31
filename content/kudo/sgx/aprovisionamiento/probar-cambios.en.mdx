@@ -1,0 +1,34 @@
+---
+title: Step 5 - Test the changes
+description: Check that the static build is generated correctly before deploying
+---
+
+Before deploying, check that the static build is generated correctly:
+
+```bash tab="pnpm"
+pnpm build
+```
+
+```bash tab="npm"
+npm run build
+```
+
+```bash tab="yarn"
+yarn build
+```
+
+If the build succeeds, the `out/` directory is generated with the complete static site. You can preview it locally:
+
+```bash tab="pnpm"
+pnpm dlx serve out
+```
+
+```bash tab="npm"
+npx serve out
+```
+
+Open [http://localhost:3000](http://localhost:3000) and check that all pages, policies and navigation work correctly before continuing.
+
+<Callout type="warn">
+  If the build fails, check that all MDX files have the correct frontmatter (`title` and `description`) and that the internal links in `meta.json` point to existing files.
+</Callout>

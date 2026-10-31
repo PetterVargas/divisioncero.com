@@ -1,0 +1,40 @@
+---
+title: "Logging and Monitoring Policy"
+description: "Event logging and security monitoring of systems"
+---
+
+## Purpose
+Ensure effective oversight of systems and applications, preserving the integrity, confidentiality and availability of data, and improving the detection of anomalous events and threats.
+
+## Scope
+Applies to all systems, applications and cloud infrastructure, including Ubuntu EC2 instance logs, applications piped to CloudWatch, network traffic monitors and external threat sources.
+
+## Principles
+- Complete and secure logging of critical events.
+- Aggregation and correlation of data from multiple sources for anomaly detection.
+- Secure storage and retention of logs according to defined periods.
+- Periodic testing of data discovery effectiveness, especially for sensitive information (e.g. PAN).
+
+## System Configuration
+- All systems and applications must log essential information.
+- Data must be confidential, intact and accessible only to authorized staff.
+- Logs are preserved according to the retention policy and securely deleted after evaluation.
+
+## Monitoring
+- Automatic scripts analyze events every five minutes in CloudWatch.
+- Correlation engines detect complex threat patterns.
+- Immediate notifications to the relevant staff through designated channels (e.g. Slack).
+- Incident investigation according to the Incident Management Policy.
+
+## Review and Analysis
+- Periodic log analysis to confirm effectiveness and detect threats.
+- Systematic recording of identified inconsistencies and improvements.
+- Annual documentation of data discovery effectiveness tests.
+
+## Response and Investigation
+- All incidents are thoroughly analyzed and documented.
+- Findings drive continuous improvements to logging and monitoring systems.
+
+## Policy Monitoring and Review
+- Annual review or upon significant changes to systems or processes.
+- Frequent audits and assessments to stay relevant in the face of threats and technological change.
