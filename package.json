@@ -2,6 +2,7 @@
   "name": "kudo-new",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@12.11.2",
   "type": "module",
   "scripts": {
     "build": "pnpm build:presentaciones && pnpm museo:update && opennextjs-cloudflare build",
