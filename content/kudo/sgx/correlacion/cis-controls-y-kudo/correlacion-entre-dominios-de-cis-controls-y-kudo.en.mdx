@@ -1,0 +1,101 @@
+---
+title: Domain Mapping
+description: Graphical mapping between CIS Controls and Kudo domains
+---
+
+## 📝 CIS Controls v8 and Kudo Mapping
+
+The 18 CIS v8 controls are grouped into the 8 domains of the Kudo Framework according to the cybersecurity area they address.
+
+<Mermaid
+  chart="
+graph LR
+  KUDO[🔐 Framework Kudo<br/>8 Domains - 35 Controls]
+  CIS[CIS Controls v8<br/>18 Controls - 153 Safeguards]
+
+  subgraph CIS_CONTROLS[🛡️ CIS v8 Controls]
+    C1[CIS 1<br/>Enterprise Asset Inventory]
+    C2[CIS 2<br/>Software Asset Inventory]
+    C3[CIS 3<br/>Data Protection]
+    C4[CIS 4<br/>Secure Configuration]
+    C5[CIS 5<br/>Account Management]
+    C6[CIS 6<br/>Access Control]
+    C7[CIS 7<br/>Vulnerability Management]
+    C8[CIS 8<br/>Audit Log Management]
+    C9[CIS 9<br/>Email and Web Protections]
+    C10[CIS 10<br/>Malware Defenses]
+    C11[CIS 11<br/>Data Recovery]
+    C12[CIS 12<br/>Network Infrastructure]
+    C13[CIS 13<br/>Network Monitoring]
+    C14[CIS 14<br/>Security Awareness]
+    C15[CIS 15<br/>Service Provider Mgmt]
+    C16[CIS 16<br/>Application Security]
+    C17[CIS 17<br/>Incident Response]
+    C18[CIS 18<br/>Penetration Testing]
+  end
+
+  subgraph KUDO_DOMAINS[🎯 Kudo Domains]
+    COR[COR<br/>Organizational Coherence]
+    CIP[CIP<br/>Identity and Endpoints]
+    CIF[CIF<br/>Infrastructure Cybersecurity]
+    CAP[CAP<br/>Application Cybersecurity]
+    CCN[CCN<br/>Continuity and Change]
+    THP[THP<br/>Human Talent and Vendors]
+    DIA[DIA<br/>Data and Artificial Intelligence]
+    ADR[ADR<br/>Analysis, Detection and Response]
+  end
+
+  CIS --> C1
+  CIS --> C2
+  CIS --> C3
+  CIS --> C4
+  CIS --> C5
+  CIS --> C6
+  CIS --> C7
+  CIS --> C8
+  CIS --> C9
+  CIS --> C10
+  CIS --> C11
+  CIS --> C12
+  CIS --> C13
+  CIS --> C14
+  CIS --> C15
+  CIS --> C16
+  CIS --> C17
+  CIS --> C18
+
+  C1 --> COR
+  C2 --> COR
+  C7 --> COR
+
+  C4 --> CIP
+  C5 --> CIP
+  C6 --> CIP
+  C10 --> CIP
+
+  C9 --> CIF
+  C12 --> CIF
+
+  C16 --> CAP
+
+  C11 --> CCN
+
+  C14 --> THP
+  C15 --> THP
+
+  C3 --> DIA
+
+  C8 --> ADR
+  C13 --> ADR
+  C17 --> ADR
+  C18 --> ADR
+
+  COR --> KUDO
+  CIP --> KUDO
+  CIF --> KUDO
+  CAP --> KUDO
+  CCN --> KUDO
+  THP --> KUDO
+  DIA --> KUDO
+  ADR --> KUDO"
+/>

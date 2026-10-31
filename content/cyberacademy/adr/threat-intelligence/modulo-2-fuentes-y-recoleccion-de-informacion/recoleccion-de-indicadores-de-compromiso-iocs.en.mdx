@@ -1,0 +1,6 @@
+---
+title: "Collecting Indicators of Compromise (IoCs)"
+description: "Collecting technical traces of threats"
+---
+
+Indicators of compromise, or IoCs, are observable technical artifacts that signal malicious activity, such as IP addresses, file hashes, domains or traffic patterns associated with an attack, and collecting them systematically makes it possible to feed detection tools with concrete, actionable data. In practice, collecting IoCs isn't simply accumulating endless lists of data, but validating their currency and relevance before applying them, because many publicly shared indicators become obsolete within days when the attacker changes infrastructure, and applying expired indicators generates noise with no real detection value. An important nuance is the difference between low-confidence indicators, such as an IP address that appeared once in a report, and high-confidence ones, verified and observed repeatedly in different contexts, and giving both the same weight in blocking rules can create both false positives and a false sense of coverage. Enriching each IoC with context, such as when it was observed and in which campaign, is what turns it into useful intelligence instead of just an isolated piece of data.

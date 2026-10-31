@@ -1,0 +1,10 @@
+{
+  "title": "Information Sources and Collection",
+  "description": "Description",
+  "pages": [
+    "index",
+    "fuentes-abiertas-cerradas-y-comerciales-de-inteligencia",
+    "recoleccion-de-indicadores-de-compromiso-iocs",
+    "uso-de-plataformas-de-inteligencia-de-amenazas-tip"
+  ]
+}

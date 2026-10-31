@@ -1,0 +1,10 @@
+{
+  "title": "System Forensic Analysis",
+  "description": "Description",
+  "pages": [
+    "index",
+    "analisis-forense-de-sistemas-de-archivos-y-sistemas-operativos",
+    "analisis-de-memoria-ram-y-artefactos-volatiles",
+    "recuperacion-de-informacion-eliminada-u-oculta"
+  ]
+}

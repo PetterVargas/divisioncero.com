@@ -1,0 +1,25 @@
+{
+  "title": "Data Cybersecurity Course",
+  "description": "Classification, DLP and data protection",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-la-seguridad-de-datos",
+    "---Module 2---",
+    "modulo-2-proteccion-de-datos-en-reposo-y-en-transito",
+    "---Module 3---",
+    "modulo-3-control-de-acceso-a-los-datos",
+    "---Module 4---",
+    "modulo-4-prevencion-de-fuga-de-informacion-dlp",
+    "---Module 5---",
+    "modulo-5-gobierno-de-datos",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

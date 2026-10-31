@@ -1,0 +1,6 @@
+---
+title: "Using API Gateways to Enforce Security Controls"
+description: "Centralizing API security in a common layer"
+---
+
+An API gateway acts as the single entry point for all external consumers, which makes it the natural place to centralize controls that would otherwise have to be reimplemented in each individual microservice, such as authentication, rate limits, schema validation and TLS termination. This centralization reduces the risk of inconsistencies, because if each team implements its own rate limiting logic or its own token validation, sooner or later one will get it wrong or forget to update it when policies change. However, relying on the gateway doesn't exempt internal services from also applying their own authorization controls, since a misconfigured gateway or a service directly accessible without going through it voids all the centralized protection; this defense-in-depth pattern is especially relevant in microservice architectures, where internal traffic between services must also be validated, not just traffic arriving from the internet. Configuring the gateway correctly, with route-specific rules and not just generic global policies, is what makes the difference between a real security control and a false sense of protection.

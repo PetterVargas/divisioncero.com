@@ -1,0 +1,6 @@
+---
+title: "The Principle of Least Privilege Applied to Data"
+description: "Applying least privilege to data access"
+---
+
+The principle of least privilege states that each user or system should have access only to the data strictly necessary to do its job, no more and no less, and applied to data it means going beyond system-level access to also consider which specific fields, rows or categories of information each role requires. A support analyst, for example, may need to see a customer's order history without needing access to their full payment card number. Applying this principle consistently reduces the impact of a compromised account, since the attacker only gains access to the subset of data that account was authorized for, instead of the whole repository. The practical difficulty lies in maintaining it over time: broad access is usually granted for initial convenience and rarely reviewed afterward, so periodically adjusting permissions is as important as defining them correctly at the start.

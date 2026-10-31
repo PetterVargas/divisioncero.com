@@ -1,0 +1,25 @@
+{
+  "title": "Threat Intelligence Course",
+  "description": "Threat intelligence sources",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-la-inteligencia-de-amenazas",
+    "---Module 2---",
+    "modulo-2-fuentes-y-recoleccion-de-informacion",
+    "---Module 3---",
+    "modulo-3-analisis-de-amenazas",
+    "---Module 4---",
+    "modulo-4-produccion-y-difusion-de-inteligencia",
+    "---Module 5---",
+    "modulo-5-aplicacion-estrategica-de-la-inteligencia",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

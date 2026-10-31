@@ -1,0 +1,18 @@
+{
+  "title": "Self-hosting",
+  "description": "DivisionCero on your infrastructure",
+  "icon": "Server",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index",
+    "planes",
+    "licencia",
+    "---Installation---",
+    "requisitos",
+    "instalacion-en-digitalocean",
+    "instalacion-en-hostinger",
+    "---Support---",
+    "preguntas-frecuentes"
+  ]
+}

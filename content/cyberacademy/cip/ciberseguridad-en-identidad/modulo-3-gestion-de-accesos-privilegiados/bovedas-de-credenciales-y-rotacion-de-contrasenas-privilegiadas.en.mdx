@@ -1,0 +1,6 @@
+---
+title: "Credential Vaults and Privileged Password Rotation"
+description: "Storing and renewing keys for critical accounts"
+---
+
+Credential vaults are encrypted, tightly controlled repositories where the passwords of privileged accounts, such as system or database administrators, are stored, so users never need to know the real key but request it from the vault when they need it, while automatic rotation changes those passwords periodically or after each use to limit their lifespan. This matters in practice because privileged accounts are the main target of advanced attackers once inside a network, and an administrative password that never changes and that several technicians know by heart represents an enormous risk if that password leaks or if an employee with access to it leaves the company. A concrete example is an administrator who needs to access a critical server: the vault gives them a temporary credential valid only for that session, and when it ends it automatically rotates it, so that specific key becomes useless for any later unauthorized use.

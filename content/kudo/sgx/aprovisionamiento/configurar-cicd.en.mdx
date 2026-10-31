@@ -1,0 +1,108 @@
+---
+title: Step 8 - Configure CI/CD
+description: Create the GitHub Actions workflow to automate deployment
+---
+
+<Callout type="info">
+  If you deploy directly from the Azure portal or the Cloudflare dashboard, the GitHub connection is made from the CSP itself and the CI/CD workflow is created automatically in your repository. The following steps only apply if you prefer to configure it manually.
+</Callout>
+
+Create the GitHub Actions workflow for your deployment platform. The project already generates the static site in `out/` with `pnpm build`.
+
+<Tabs items={["Azure Static Web Apps", "Cloudflare Pages"]}>
+<Tab value="Azure Static Web Apps">
+
+Create the `.github/workflows/azure-swa.yml` file:
+
+```yaml title=".github/workflows/azure-swa.yml"
+name: Deploy Azure Static Web App
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: /
+          output_location: out
+          skip_app_build: true
+```
+
+Add the `AZURE_STATIC_WEB_APPS_API_TOKEN` secret in **GitHub → Settings → Secrets and variables → Actions**. You get the token in the Azure portal when you create the Static Web App resource.
+
+</Tab>
+<Tab value="Cloudflare Pages">
+
+Create the `.github/workflows/cloudflare-pages.yml` file:
+
+```yaml title=".github/workflows/cloudflare-pages.yml"
+name: Deploy Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: my-isms
+          directory: out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Add in **GitHub → Settings → Secrets**:
+- `CLOUDFLARE_API_TOKEN` → token with the `Cloudflare Pages: Edit` permission from [dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
+- `CLOUDFLARE_ACCOUNT_ID` → your Account ID, visible in the Cloudflare dashboard
+
+</Tab>
+</Tabs>

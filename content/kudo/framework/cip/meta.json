@@ -1,0 +1,18 @@
+{
+  "title": "CIP",
+  "description": "Identidad y Puntos Finales",
+  "root": true,
+  "pages": [
+    "---Dominio CIP---",
+    "index",
+    "---Controles CIP---",
+    "cip-1",
+    "cip-2",
+    "cip-3",
+    "cip-4",
+    "cip-5",
+    "cip-6",
+    "---Herramientas CIP---",
+    "herramientas"
+  ]
+}

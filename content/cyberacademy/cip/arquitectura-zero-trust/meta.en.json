@@ -1,0 +1,25 @@
+{
+  "title": "Zero Trust Architecture Course",
+  "description": "Zero Trust principles and design",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-zero-trust",
+    "---Module 2---",
+    "modulo-2-identidad-como-nuevo-perimetro",
+    "---Module 3---",
+    "modulo-3-segmentacion-y-microsegmentacion",
+    "---Module 4---",
+    "modulo-4-implementacion-de-zero-trust",
+    "---Module 5---",
+    "modulo-5-monitoreo-y-mejora-continua",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

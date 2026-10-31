@@ -1,0 +1,6 @@
+---
+title: "Continuous Security Testing for APIs"
+description: "Integrating security testing into every API change"
+---
+
+APIs change far more often than traditional applications, with new endpoints and fields added every sprint, which makes a one-off yearly security audit insufficient; to maintain an acceptable risk level, testing must run continuously, integrated into the development cycle. This means combining different techniques depending on the stage of the pipeline: static analysis of the code and the OpenAPI specification to detect insecure designs before writing a single line of implementation, automated dynamic testing against the API deployed in test environments to validate authentication and authorization in real time, and periodic manual penetration tests focused on business logic, which automated tools can't evaluate. One aspect that separates a mature program from a superficial one is specifically testing broken authorization scenarios, such as accessing another user's resources or invoking administrative functions with a regular account, because these are exactly the failures generic scanners miss and that represent the greatest real risk in production.

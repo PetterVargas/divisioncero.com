@@ -1,0 +1,6 @@
+---
+title: "RAM and Volatile Artifact Analysis"
+description: "What disappears when the device is shut down matters"
+---
+
+RAM contains evidence no disk analysis can recover: running processes, active network connections, temporarily decrypted passwords, encryption keys and malware that exists only in memory without leaving a trace on persistent storage, an increasingly common technique among attackers precisely to evade traditional antivirus tools. Analyzing these volatile artifacts requires capturing memory before shutting down the system, a step that becomes irreversible once the device loses power, which is why the order of acquisition at a forensic scene follows the order of volatility, always prioritizing the most ephemeral data. Specialized tools make it possible to extract operating system structures from a memory dump, identify hidden processes that don't appear in the conventional task manager and reconstruct fragments of recent communication. In investigations of active intrusions, memory analysis often reveals more about the attacker's real behavior than weeks of disk analysis.

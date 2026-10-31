@@ -1,0 +1,6 @@
+---
+title: "Security in Model Deployment and Updates"
+description: "Best practices for deploying models securely"
+---
+
+Moving a model from a test environment to production introduces risks rarely considered during development: CI/CD pipelines without integrity controls, loosely signed model artifacts, or automatic updates that overwrite a validated version with a compromised one. Securing deployment means versioning and digitally signing each model, validating its provenance before promoting it, and keeping the ability to roll back immediately if an update introduces anomalous behavior or a vulnerability. It's also critical to separate the training, staging and production environments, and to limit who can deploy changes to the active model. A frequent case is teams that update models via notebooks connected directly to production, without a pipeline or approval, which eliminates any traceability and opens the door to errors or manipulations that are hard to detect after the fact.

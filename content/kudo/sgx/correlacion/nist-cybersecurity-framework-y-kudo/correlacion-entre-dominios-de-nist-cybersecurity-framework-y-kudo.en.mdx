@@ -1,0 +1,70 @@
+---
+title: Domain Mapping
+description: Graphical mapping between NIST CSF and Kudo domains
+---
+
+## 📝 NIST CSF 2.0 and Kudo Mapping
+
+The 6 NIST CSF 2.0 functions map to the 8 domains of the Kudo Framework, covering the complete cybersecurity risk management cycle.
+
+<Mermaid
+  chart="
+graph LR
+  KUDO[🔐 Framework Kudo<br/>8 Domains - 35 Controls]
+  CSF[NIST CSF 2.0<br/>6 Functions - 106 Subcategories]
+
+  subgraph CSF_FUNCTIONS[🛡️ NIST CSF 2.0 Functions]
+    GV[GV — GOVERN<br/>GV.OC · GV.RM · GV.RR<br/>GV.PO · GV.OV · GV.SC]
+    ID[ID — IDENTIFY<br/>ID.AM · ID.RA · ID.IM]
+    PR[PR — PROTECT<br/>PR.AA · PR.AT · PR.DS · PR.PS]
+    DE[DE — DETECT<br/>DE.CM · DE.AE]
+    RS[RS — RESPOND<br/>RS.MA · RS.AN · RS.CO · RS.MI]
+    RC[RC — RECOVER<br/>RC.RP · RC.CO]
+  end
+
+  subgraph KUDO_DOMAINS[🎯 Kudo Domains]
+    COR[COR<br/>Organizational Coherence]
+    CIP[CIP<br/>Identity and Endpoints]
+    CIF[CIF<br/>Infrastructure Cybersecurity]
+    CAP[CAP<br/>Application Cybersecurity]
+    CCN[CCN<br/>Continuity and Change]
+    THP[THP<br/>Human Talent and Vendors]
+    DIA[DIA<br/>Data and Artificial Intelligence]
+    ADR[ADR<br/>Analysis, Detection and Response]
+  end
+
+  CSF --> GV
+  CSF --> ID
+  CSF --> PR
+  CSF --> DE
+  CSF --> RS
+  CSF --> RC
+
+  GV --> COR
+  GV --> THP
+
+  ID --> COR
+  ID --> DIA
+
+  PR --> CIP
+  PR --> THP
+  PR --> DIA
+  PR --> CIF
+  PR --> CAP
+
+  DE --> ADR
+
+  RS --> ADR
+  RS --> CCN
+
+  RC --> CCN
+
+  COR --> KUDO
+  CIP --> KUDO
+  CIF --> KUDO
+  CAP --> KUDO
+  CCN --> KUDO
+  THP --> KUDO
+  DIA --> KUDO
+  ADR --> KUDO"
+/>

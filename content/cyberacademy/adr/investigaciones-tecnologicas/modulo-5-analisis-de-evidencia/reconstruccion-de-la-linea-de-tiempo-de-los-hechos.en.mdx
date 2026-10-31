@@ -1,0 +1,6 @@
+---
+title: "Reconstructing the Timeline of Events"
+description: "Ordering events to understand the incident"
+---
+
+Reconstructing the timeline consists of chronologically ordering all the relevant events extracted from the different evidence sources, from the first unauthorized access to the last action of the actor involved, in order to understand the real sequence of what happened and not just isolated fragments. In practice this requires normalizing timestamps from systems with different time zones or unsynchronized clocks, something that, if ignored, can lead to completely wrong conclusions about the order of events. Timeline analysis tools make it possible to cross-reference data from logs, the file system, memory and the network in a single visual view, making it easier to detect patterns such as lateral movement or data exfiltration that only become evident when the complete sequence is visible. A common example is discovering, after ordering the events correctly, that the initial access happened weeks earlier than thought, completely changing the investigation's real scope and which systems need additional review.

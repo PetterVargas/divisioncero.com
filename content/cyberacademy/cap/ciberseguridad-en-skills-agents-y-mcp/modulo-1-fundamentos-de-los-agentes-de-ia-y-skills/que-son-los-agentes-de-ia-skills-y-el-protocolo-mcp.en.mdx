@@ -1,0 +1,6 @@
+---
+title: "What AI Agents, Skills and the MCP Protocol Are"
+description: "Basic concepts of agents, skills and MCP"
+---
+
+An AI agent is a system built on a language model that, in addition to generating text, can plan steps and carry out concrete actions using external tools, instead of just answering a question. Skills are packages of instructions, context or specialized code that extend what the agent knows how to do in a specific domain, working as additional capabilities activated according to the task. The Model Context Protocol, or MCP, is the standard that defines how an agent connects uniformly to external data sources and tools, such as databases, file systems or third-party APIs, replacing custom integrations with a common protocol that any client and any server can speak to each other. Understanding this layered architecture is key from a security perspective, because each layer introduces its own risk vector: a poorly designed skill can inject unwanted instructions, and a compromised MCP server can expose data or carry out actions beyond what the user authorized, even if the underlying model behaves exactly as expected.

@@ -1,0 +1,6 @@
+---
+title: "Technology Infrastructure Recovery Strategies"
+description: "How to restore systems after a disruption"
+---
+
+Recovering technology infrastructure requires a technical strategy defined in advance, not improvised during the incident, that specifies in what order systems are restored, which configurations and backups are used, and what validations are run before declaring a service operational again. Typical options range from manually restoring servers from backups, slower but lower cost, to automatic failover to redundant infrastructure in another region, almost instant but costlier to maintain over time. Choosing the right strategy depends on the RTO defined for each system in the BIA, and on the real complexity of the dependencies between applications, because restoring an isolated system is useless if it depends on another that isn't available yet. An important nuance is documenting and testing the real order of dependencies, since many organizations discover during a real incident that their database depends on an authentication service nobody prioritized restoring first.

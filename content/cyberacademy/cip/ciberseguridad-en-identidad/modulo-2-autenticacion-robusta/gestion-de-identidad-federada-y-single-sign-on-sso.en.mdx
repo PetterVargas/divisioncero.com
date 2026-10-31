@@ -1,0 +1,6 @@
+---
+title: "Federated Identity Management and Single Sign-On (SSO)"
+description: "A single sign-in for multiple systems"
+---
+
+Federated identity and single sign-on, or SSO, allow a user to authenticate once with a central identity provider and then access multiple applications and services without having to enter credentials again in each one, thanks to standard protocols such as SAML or OpenID Connect that let applications trust that centralized authentication. This matters in practice because it drastically reduces the number of passwords a user must manage, lessening the temptation to reuse them across services, and at the same time greatly simplifies administration for IT, since revoking the access of an employee who leaves the company comes down to disabling a single central account instead of chasing dozens of scattered accesses. An important nuance is that SSO also concentrates risk, because if the central account is compromised, the attacker potentially gains access to all federated systems, which is why that central account must always be protected with mandatory multi-factor authentication.

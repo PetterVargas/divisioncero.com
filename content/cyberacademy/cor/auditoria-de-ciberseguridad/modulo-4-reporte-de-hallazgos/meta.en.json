@@ -1,0 +1,10 @@
+{
+  "title": "Findings Reporting",
+  "description": "Description",
+  "pages": [
+    "index",
+    "clasificacion-de-hallazgos-segun-severidad-y-riesgo",
+    "elaboracion-de-informes-de-auditoria-claros-y-accionables",
+    "comunicacion-de-resultados-a-la-direccion-y-a-las-areas-auditadas"
+  ]
+}

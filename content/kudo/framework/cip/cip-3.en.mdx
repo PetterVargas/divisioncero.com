@@ -1,0 +1,54 @@
+---
+title: CIP-3 - Authorization Cybersecurity
+description: "Least-privilege access control: roles, attributes, approval of elevated privileges and periodic permission reviews."
+---
+
+## Control Definition
+
+The principle of least privilege must be applied to all physical and digital access controls, using role-, attribute- and policy-based authorization models that allow dynamic, contextual access decisions. Elevated privileges must be granted temporarily and subject to approval, granted permissions must be reviewed periodically to revoke those no longer needed, and segregation of duties conflicts must be detected. Privileged sessions must be recorded for audit, and physical access rules for facilities and critical rooms must be established according to business needs.
+
+## Requirements
+
+### Requirement 1
+
+We apply the principle of least privilege to all access controls.
+
+### Requirement 2
+
+We establish and enforce physical access control rules for facilities, server rooms and related assets, based on business and security needs.
+
+### Requirement 3
+
+We restrict physical and digital access to information and related assets according to the defined access control policies, applying the principle of least privilege.
+
+### Requirement 4
+
+We implement a role-based access control (RBAC) model where permissions are assigned according to each user's role.
+
+### Requirement 5
+
+We implement attribute-based access control (ABAC) policies for dynamic, contextual decisions.
+
+### Requirement 6
+
+We implement centralized policy-based access control (PBAC) evaluated in real time.
+
+### Requirement 7
+
+We implement Just-in-Time (JIT) access for elevated privileges, with limited duration and workflow approval.
+
+### Requirement 8
+
+System owners and area managers review permissions at frequent intervals.
+
+### Requirement 9
+
+We revoke access that is no longer needed during permission reviews.
+
+### Requirement 10
+
+We automatically detect segregation of duties conflicts.
+
+### Requirement 11
+
+We record all privileged sessions and keep them available for forensic review and audit.

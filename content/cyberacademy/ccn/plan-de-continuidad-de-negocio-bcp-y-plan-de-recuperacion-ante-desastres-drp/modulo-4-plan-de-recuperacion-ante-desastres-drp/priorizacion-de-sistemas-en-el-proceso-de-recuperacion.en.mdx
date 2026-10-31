@@ -1,0 +1,6 @@
+---
+title: "Prioritizing Systems in the Recovery Process"
+description: "The right order for restoring critical systems"
+---
+
+When a disaster affects multiple systems at the same time, restoring everything at once is almost never possible because of limits on staff, bandwidth or compute capacity available at the alternate site, so prioritization decides what's recovered first and in what order, directly following the criticality defined in the business impact analysis. This prioritization must consider not only each system's individual importance, but its technical dependencies: there's no point prioritizing a customer-facing application if the identity system it depends on is further down the recovery list. Defining this order in advance avoids improvised discussions during the incident, when different areas push for their system to be recovered first without considering the overall impact. A practical example is always prioritizing network and authentication infrastructure before any business application, because everything else depends on those two elements being available first.

@@ -31,8 +31,11 @@ pnpm dev
 
 ```bash
 pnpm dev           # Servidor de desarrollo
-pnpm build         # Build de producción (export estático)
-pnpm start         # Sirve el export estático (carpeta out/)
+pnpm build         # Build para Cloudflare Workers (presentaciones + museo + OpenNext)
+pnpm build:next    # Solo el build de Next.js (webpack: genera un Worker más pequeño que Turbopack)
+pnpm preview       # Build + Worker local con wrangler (runtime de Cloudflare)
+pnpm deploy        # Build + despliegue a Cloudflare Workers
+pnpm start         # Sirve un `pnpm build:next` con Node
 pnpm types:check   # Verificación de tipos TypeScript
 pnpm lint:links    # Valida enlaces internos en el contenido
 pnpm export:pdf    # Exporta páginas a PDF con Puppeteer
@@ -52,6 +55,17 @@ scripts/                 # Scripts de lint y exportación PDF
 source.config.ts         # Configuración de Fumadocs MDX
 ```
 
+## Idiomas
+
+El sitio está en español (sin prefijo, `/kudo`) e inglés (`/en/kudo`). `proxy.ts` detecta el idioma del navegador en la primera visita y recuerda la elección del selector del footer en la cookie `FD_LOCALE`.
+
+- Textos de la interfaz: `lib/i18n.ts` (Fumadocs) y `lib/site-translations.ts` (sitio); cada página puede declarar su propio diccionario `en`.
+- Contenido MDX en inglés: crea `<archivo>.en.mdx` junto al original (ver `content/legal`). Mientras no exista, `/en/...` muestra el español y su URL canónica apunta a la versión en español.
+
+## Herramientas
+
+Las herramientas (antes `herramientas.divisioncero.com`) viven en `/herramientas`: páginas en `app/[lang]/herramientas`, APIs en `app/herramientas/api`, componentes en `components/herramientas` y lógica en `lib/herramientas`. Variables necesarias: `NEXT_PUBLIC_CAPTCHA_SITE_KEY`, `NEXT_PUBLIC_CAPTCHA_WIDGET_SIZE` y `CAPTCHA_SECRET_TOKEN` (Turnstile); `UNSPLASH_ACCESS_KEY` y `UNSPLASH_COLLECTION_ID` para el Museo del Cibercrimen.
+
 ## Agregar contenido
 
 El contenido se escribe en MDX dentro de `content/`. Cada sección tiene su propio `meta.json` para configurar la navegación lateral. Fumadocs genera automáticamente la navegación y los índices de búsqueda a partir de los archivos.
@@ -59,5 +73,5 @@ El contenido se escribe en MDX dentro de `content/`. Cada sección tiene su prop
 ## Links
 
 - Sitio principal: [divisioncero.com](https://divisioncero.com)
-- Repositorio: [github.com/PetterVargas/divisioncero-docs](https://github.com/PetterVargas/divisioncero-docs)
-- Plataforma Kudo: [kudo.divisioncero.com](https://kudo.divisioncero.com)
+- Repositorio: [github.com/PetterVargas/divisioncero.com](https://github.com/PetterVargas/divisioncero.com)
+- Plataforma Kudo: [divisioncero.com/kudo](https://divisioncero.com/kudo)

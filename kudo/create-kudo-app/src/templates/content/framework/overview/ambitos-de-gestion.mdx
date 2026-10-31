@@ -1,0 +1,82 @@
+---
+title: Ámbitos de Gestión
+description: Kudo opera sobre tres ámbitos de gestión que cubren el espectro completo.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Roles Organizacionales
+
+Kudo tiene dos roles organizaciones
+
+<Steps>
+<Step>
+
+### CSP (Cloud Service Provider)
+
+</Step>
+
+<Step>
+
+### CSC (Cloud Service Customer)
+
+</Step>
+</Steps>
+
+
+## Ámbitos de Gestión
+
+Kudo tiene tres ámbitos de gestión:
+
+<Steps>
+<Step>
+
+### Ámbito Interno (Corporativo)
+
+</Step>
+
+<Step>
+
+### Ámbito de Terceros (Proveedores y Partners); también Interno.
+
+</Step>
+
+<Step>
+
+### Ámbito Externo (Clientes)
+
+</Step>
+</Steps>
+
+
+## Gráfica del Ecosistema
+
+```mermaid
+flowchart LR
+
+    subgraph G["Ámbito de Gestión"]
+        direction LR
+
+        subgraph IZQ["Gestión Interna"]
+            direction LR
+
+            C["Ámbito de Terceros<br/>(Proveedores y Partners)"]
+            A["Ámbito Interno<br/>(Corporativo)"]
+
+            A -->|CSP| C
+            C -.->|CSC| A
+        end
+
+        B["Ámbito Externo<br/>(Clientes)"]
+
+        %% Mantiene la posición visual
+        A --- B
+
+        %% Relación con clientes
+        B -->|CSP| A
+        A -.->|CSC| B
+
+        %% Oculta la línea de posicionamiento
+        linkStyle 2 stroke-width:0px;
+    end
+```

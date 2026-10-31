@@ -1,0 +1,6 @@
+---
+title: "Human Oversight and Approval Mechanisms (Human in the Loop)"
+description: "When to require human approval before acting"
+---
+
+Human in the loop is the design in which an agent, before carrying out a high-impact action, stops and requests explicit confirmation from a person instead of proceeding fully autonomously, and it's one of the most effective controls available today to contain the risk of the model's erroneous or manipulated decisions. The key is deciding judiciously which actions require that pause and which don't, because requiring approval for every trivial step eliminates the practical value of automating with agents, while not requiring it for irreversible actions, such as money transfers, data deletion or sending external communications, leaves the door open to costly mistakes with no possibility of correction. A mature approach classifies actions by risk level and irreversibility, letting the agent autonomously carry out low-impact, reversible tasks, such as generating a draft or querying information, while reserving human approval for what really justifies it. An important nuance is that the approval must show the person enough context to decide judiciously, not just a generic confirm button, because an approval given without really understanding what's being authorized provides no real protection.

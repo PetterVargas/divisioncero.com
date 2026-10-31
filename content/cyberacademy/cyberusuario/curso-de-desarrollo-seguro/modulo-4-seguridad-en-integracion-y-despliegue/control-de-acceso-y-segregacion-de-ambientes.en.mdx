@@ -1,0 +1,6 @@
+---
+title: "Access Control and Environment Segregation"
+description: "Separating development and production environments"
+---
+
+Mixing development, test and production environments is one of the most common ways real customer data ends up exposed in environments with much less protection, or an experimental change directly affects real users. Segregating these environments means not just separate infrastructure, but also differentiated access control: not every developer needs access to production, and those who have it should go through an approval process with that action being logged. Data used in testing should ideally be anonymized or synthetic, avoiding copying production databases directly into environments with looser controls. This clear separation reduces both the risk of data leaks and the impact of a human error during development or testing.

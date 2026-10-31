@@ -1,0 +1,6 @@
+---
+title: "Designing Use Cases and Correlation Rules"
+description: "Designing use cases that detect real threats"
+---
+
+A use case is the translation of a specific threat, for example lateral movement after an initial compromise, into a concrete correlation rule the SIEM can evaluate against the events it receives. Designing well-thought-out use cases is what separates a SOC that generates constant noise from one that detects real attacks with few false positives, which is why the process should start from a reference framework such as MITRE ATT&CK, prioritizing the most likely techniques according to the organization's threat profile instead of copying generic rules from a vendor. In practice, each use case should document the detection logic, the thresholds that trigger it, the context needed for triage and the expected response outcome, because a rule without that context ends up generating alerts analysts learn to ignore, which completely cancels out its value.

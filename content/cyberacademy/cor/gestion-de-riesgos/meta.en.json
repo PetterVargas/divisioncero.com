@@ -1,0 +1,25 @@
+{
+  "title": "Risk Management Course",
+  "description": "Risk analysis and treatment",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-la-gestion-de-riesgos",
+    "---Module 2---",
+    "modulo-2-identificacion-y-evaluacion-de-riesgos",
+    "---Module 3---",
+    "modulo-3-tratamiento-del-riesgo",
+    "---Module 4---",
+    "modulo-4-gestion-del-riesgo-de-terceros",
+    "---Module 5---",
+    "modulo-5-gobierno-del-riesgo",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

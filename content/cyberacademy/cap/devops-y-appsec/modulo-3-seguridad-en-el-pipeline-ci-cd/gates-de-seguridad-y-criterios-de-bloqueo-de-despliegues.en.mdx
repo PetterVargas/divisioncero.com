@@ -1,0 +1,6 @@
+---
+title: "Security Gates and Deployment Blocking Criteria"
+description: "Defining when a finding should stop a deployment"
+---
+
+A security gate is an automated checkpoint within the pipeline that decides whether a deployment can continue or must stop based on the results of the security controls run previously, and designing it well is as important as implementing the scanning tools themselves, because a poorly calibrated gate ends up ignored or disabled by the teams themselves. Blocking the pipeline on any finding, regardless of its severity, creates excessive friction and usually ends with developers looking for ways to bypass the control entirely; the most effective approach defines clear criteria based on severity and exploitability, for example automatically blocking on critical vulnerabilities with a known exploit, while allowing lower-risk findings to proceed with a mandatory follow-up ticket. These criteria should be known and predictable for development teams from the start of the project, not a surprise that appears right before a major release, and it's worth including a formal, documented exception mechanism with explicit approval for cases where the business consciously decides to accept a known risk, instead of someone simply overlooking it without any record.

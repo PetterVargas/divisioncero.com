@@ -1,0 +1,6 @@
+---
+title: "Interactive Security Testing (IAST)"
+description: "Combining code and execution for fewer false positives"
+---
+
+Interactive security testing, or IAST, sits halfway between SAST and DAST, instrumenting the application with an agent that observes from the inside how code executes while normal functional tests run, without needing a separate scanning phase dedicated exclusively to security. This hybrid position gives it a concrete advantage over both approaches on their own: with visibility into both the source code and the real execution flow, IAST can confirm much more accurately whether a detected vulnerability is actually exploitable in practice, significantly reducing the false positive rate that tends to frustrate development teams with traditional SAST. Its weak point is that coverage depends directly on which functionality is exercised during the instrumented tests, just as with DAST, so code paths poorly covered by existing functional tests simply generate no findings. IAST is especially useful in organizations that already have robust, automated functional test suites, because it leverages that existing work to obtain security analysis at practically no additional runtime cost in the pipeline.

@@ -1,0 +1,25 @@
+{
+  "title": "Incident Response Course",
+  "description": "Incident response playbooks",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-la-respuesta-a-incidentes",
+    "---Module 2---",
+    "modulo-2-preparacion-y-deteccion",
+    "---Module 3---",
+    "modulo-3-contencion-erradicacion-y-recuperacion",
+    "---Module 4---",
+    "modulo-4-comunicacion-y-coordinacion",
+    "---Module 5---",
+    "modulo-5-lecciones-aprendidas-y-mejora-continua",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

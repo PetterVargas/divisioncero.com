@@ -1,0 +1,10 @@
+{
+  "title": "Apps and Permissions",
+  "description": "Description",
+  "pages": [
+    "index",
+    "descarga-segura-de-aplicaciones-desde-tiendas-oficiales",
+    "gestion-de-permisos-de-aplicaciones",
+    "riesgos-de-aplicaciones-falsas-o-modificadas"
+  ]
+}

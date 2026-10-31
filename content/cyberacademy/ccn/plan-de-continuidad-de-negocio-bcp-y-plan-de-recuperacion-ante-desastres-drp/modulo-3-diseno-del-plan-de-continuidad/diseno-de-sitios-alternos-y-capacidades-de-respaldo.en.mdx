@@ -1,0 +1,6 @@
+---
+title: "Designing Alternate Sites and Backup Capabilities"
+description: "Alternate infrastructure to keep operating"
+---
+
+An alternate site is the infrastructure, physical or in the cloud, that allows the organization to keep operating when the primary site is no longer available, whether because of a natural disaster, a prolonged power outage or a security incident that forces the primary environment to be isolated. Designing this capability means choosing between different levels of availability: a cold site that only has space and basic infrastructure and takes hours or days to activate, a warm site with partially configured systems, or a hot site that permanently mirrors the primary environment, ready to take over the load in minutes. The choice depends directly on the recovery times defined in the BIA and on the available budget, because a hot site is significantly costlier to maintain. A practical example in modern environments is using a cloud provider's secondary region as an alternate site, automatically replicating critical data without maintaining duplicate physical hardware.

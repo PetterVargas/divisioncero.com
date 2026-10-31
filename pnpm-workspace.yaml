@@ -1,4 +1,13 @@
 allowBuilds:
+  core-js: false
   esbuild: true
   puppeteer: true
   sharp: true
+  workerd: true
+
+# Versiones parcheadas de dependencias transitivas con avisos de seguridad (pnpm audit).
+overrides:
+  dompurify: '>=3.4.17'
+  katex: '>=0.18.2'
+  undici@>=7.0.0 <7.30.1: '^7.30.1'
+  zod@>=4.0.0 <4.6.6: '^4.6.6'

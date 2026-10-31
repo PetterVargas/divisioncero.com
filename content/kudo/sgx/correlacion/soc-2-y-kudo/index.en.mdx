@@ -1,0 +1,48 @@
+---
+title: SOC 2 and Kudo
+description: "How Kudo, through its ISMS, relates to SOC 2: domain mapping, controls and compliance objectives explained step by step."
+---
+
+import { ClipboardCheck, ShieldCheck, List, FileText } from 'lucide-react';
+
+SOC 2 is an audit standard developed by the AICPA for service providers that store customer data in the cloud. It's based on the Trust Services Criteria (TSC), organized into 5 categories: Security (mandatory) and four optional ones. Kudo maps its criteria to the framework and the ISMS policies.
+
+## SOC 2 — Trust Services Criteria (TSC) Structure
+
+<Cards>
+  <Card icon={<ShieldCheck />} title="5 TSC Categories">
+    CC (Security), A (Availability), C (Confidentiality), PI (Processing Integrity) and P (Privacy).
+  </Card>
+  <Card icon={<List />} title="62 Criteria">
+    Distributed across the 5 categories of the TSC framework, with CC (Common Criteria) being the mandatory category.
+  </Card>
+  <Card icon={<ClipboardCheck />} title="9 CC Groups">
+    Common Criteria organized into groups CC1–CC9 covering the control environment, risks, access and operations.
+  </Card>
+</Cards>
+
+## SOC 2 Trust Services Criteria
+
+| Category | Description | Groups | Criteria |
+|-----------|-------------|:------:|:---------:|
+| CC | Common Criteria (Security) — mandatory | CC1–CC9 | 33 |
+| A | Availability | A1 | 3 |
+| C | Confidentiality | C1 | 2 |
+| PI | Processing Integrity | PI1 | 5 |
+| P | Privacy | P1–P8 | 19 |
+| **Total** | | | **62** |
+
+## Common Criteria (CC) Breakdown
+
+| Group | Description | Criteria |
+|-------|-------------|:---------:|
+| CC1 | Control Environment | 5 |
+| CC2 | Communication and Information | 3 |
+| CC3 | Risk Assessment | 4 |
+| CC4 | Monitoring Activities | 2 |
+| CC5 | Control Activities | 3 |
+| CC6 | Logical and Physical Access Controls | 8 |
+| CC7 | System Operations | 5 |
+| CC8 | Change Management | 1 |
+| CC9 | Risk Mitigation | 2 |
+| **Total CC** | | **33** |

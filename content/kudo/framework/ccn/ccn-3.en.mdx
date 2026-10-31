@@ -1,0 +1,50 @@
+---
+title: CCN-3 - Change Rollback
+description: Control for rollback and reversal of failed changes
+---
+
+## Control Definition
+
+A documented, tested rollback plan must be required for every change, clearly defining the criteria that trigger a reversal and who is responsible for carrying it out. Deployment strategies that allow changes to critical services to be reverted immediately and without impact on users must be promoted. Every reverted change must be recorded, its root cause analyzed through a post-mortem, and the lessons learned incorporated into the change management process.
+
+## Requirements
+
+### Requirement 1
+
+We require a documented, tested rollback plan as a mandatory requirement in every change request.
+
+### Requirement 2
+
+We document step-by-step reversal procedures for each change.
+
+### Requirement 3
+
+We define rollback triggering criteria: maximum degradation times, error rates and monitoring alerts.
+
+### Requirement 4
+
+We assign owners of the reversal process for each change.
+
+### Requirement 5
+
+We promote the use of blue/green or canary deployment strategies for changes to critical services.
+
+### Requirement 6
+
+We ensure immediate reversal without user impact through safe deployment strategies.
+
+### Requirement 7
+
+We record all reverted changes in the change management system with their incident, impact time and rollback cause.
+
+### Requirement 8
+
+We perform a mandatory post-mortem analysis for every reverted change on critical systems.
+
+### Requirement 9
+
+We identify the root cause of the failure and create corrective actions in each post-mortem.
+
+### Requirement 10
+
+We review post-mortems in the Change Advisory Board (CAB) and incorporate the lessons learned into the change management process.

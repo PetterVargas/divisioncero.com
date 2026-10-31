@@ -1,0 +1,22 @@
+{
+  "title": "API",
+  "pages": [
+    "index",
+    "---Gestión de riesgos---",
+    "...risks",
+    "---Incidentes---",
+    "...incidents",
+    "---Controles---",
+    "...controls",
+    "---Políticas---",
+    "...policies",
+    "---Activos---",
+    "...assets",
+    "---Terceros---",
+    "...third-parties",
+    "---Proyectos---",
+    "...projects",
+    "---Hallazgos de auditoría---",
+    "...audit-findings"
+  ]
+}

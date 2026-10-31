@@ -1,0 +1,6 @@
+---
+title: "Use Cases and Typical Architecture of Agent-Based Solutions"
+description: "Common design patterns for agent systems"
+---
+
+Agent-based solutions are being adopted in use cases such as customer service assistants that query and modify data in internal systems, development agents that read and write code in real repositories, and business automation flows that orchestrate multiple systems to complete multi-step tasks without continuous human intervention. The typical architecture of these solutions follows a common pattern: a central orchestrator that receives the user's instruction, a language model that plans the necessary steps, a set of tools or MCP connections the agent can invoke to carry out real actions, and optionally other specialized agents that collaborate on specific subtasks. From a security perspective, each of these components is a link in the chain, and the complete architecture is only as secure as its weakest link: a robust orchestrator doesn't make up for a poorly isolated tool, and a well-aligned model doesn't make up for overprivileged credentials in an integration. Understanding this complete architectural map, before getting into specific controls, is what makes it possible to identify exactly where to apply each defense.

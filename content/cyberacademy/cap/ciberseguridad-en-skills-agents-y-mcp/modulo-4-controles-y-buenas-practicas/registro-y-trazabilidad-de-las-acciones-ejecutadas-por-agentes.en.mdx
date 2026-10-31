@@ -1,0 +1,6 @@
+---
+title: "Logging and Traceability of Actions Executed by Agents"
+description: "Auditing every action taken by an autonomous agent"
+---
+
+When an agent acts autonomously, the question a security team needs to be able to answer after an incident isn't just what the model said, but exactly which actions it carried out, with what parameters, on which resources and in response to what input, and without a detailed log of each step that reconstruction becomes impossible. An effective log for agents captures the complete chain of reasoning and action: the original instruction received, the tools invoked along with the exact arguments used, the response obtained from each one, and the final decision made, not just a high-level summary of the result. This traceability is especially important for detecting successful prompt injection attacks after the fact, because it makes it possible to identify the exact point where the agent's behavior deviated from what was expected after processing a specific external data source. Besides serving forensic investigation, these logs feed real-time monitoring systems that can alert on anomalous patterns, such as an agent that suddenly invokes a tool it never uses in its normal flow, making it possible to intervene before the action is completed.

@@ -1,0 +1,6 @@
+---
+title: "Dependency and Vulnerability Management (SCA)"
+description: "Managing the risk of external libraries"
+---
+
+An application's own code is usually a small fraction of everything that actually runs: most of it is third-party libraries and frameworks, each with its own potential vulnerabilities that are constantly being discovered and published. Software composition analysis (SCA) automatically scans these dependencies, comparing them against public databases of known vulnerabilities, and alerts when a library used in the project has a reported flaw, also indicating whether a fixed version is available. Ignoring this layer of risk is common and dangerous: large-scale incidents, such as the Log4j vulnerability, spread precisely because many organizations didn't know for sure which projects used that library. Keeping an up-to-date inventory of dependencies is as important as writing your own secure code.

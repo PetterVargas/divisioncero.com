@@ -1,0 +1,10 @@
+{
+  "title": "IT Tracing",
+  "description": "Description",
+  "pages": [
+    "index",
+    "rastreo-de-direcciones-ip-y-geolocalizacion",
+    "rastreo-de-metadatos-y-huellas-digitales",
+    "rastreo-en-redes-sociales-y-dispositivos-moviles"
+  ]
+}

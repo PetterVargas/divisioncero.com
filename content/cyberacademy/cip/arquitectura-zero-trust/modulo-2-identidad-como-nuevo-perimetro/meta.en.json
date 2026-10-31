@@ -1,0 +1,10 @@
+{
+  "title": "Identity as the New Perimeter",
+  "description": "Description",
+  "pages": [
+    "index",
+    "verificacion-continua-de-identidad-y-contexto",
+    "autenticacion-adaptativa-basada-en-riesgo",
+    "gestion-de-identidad-como-base-de-la-arquitectura-zero-trust"
+  ]
+}

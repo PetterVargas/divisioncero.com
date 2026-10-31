@@ -1,0 +1,38 @@
+---
+title: CIP-5 - Endpoint Inventory
+description: "Endpoint device inventory: automated discovery, isolation of unauthorized devices and secure wiping when they're retired."
+---
+
+## Control Definition
+
+A complete, up-to-date inventory of all endpoint devices that access the network or organizational resources must be maintained, automating their discovery and recording the attributes needed to identify their status and compliance level. Unauthorized devices attempting to connect must be detected and isolated, the physical inventory must be periodically reconciled with the logical one, and the lifecycle of each device must be managed from acquisition to retirement, ensuring information is securely wiped before final disposal.
+
+## Requirements
+
+### Requirement 1
+
+We maintain a complete, up-to-date inventory of all endpoint devices that access the corporate network or organizational resources.
+
+### Requirement 2
+
+For each device we record: hostname, MAC address, serial number, operating system, assigned user, EDR agent status, encryption status and compliance status.
+
+### Requirement 3
+
+We manage the device lifecycle from acquisition to retirement.
+
+### Requirement 4
+
+We automate device discovery through MDM/UEM agents and network scans.
+
+### Requirement 5
+
+We detect unauthorized devices trying to connect to the network and block them or redirect them to quarantine.
+
+### Requirement 6
+
+We apply certified data wiping before the final disposal or reassignment of each device.
+
+### Requirement 7
+
+We reconcile the physical inventory with the logical one on a scheduled basis.

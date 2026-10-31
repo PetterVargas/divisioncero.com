@@ -1,0 +1,58 @@
+---
+title: CCN-2 - Quality and Security Testing in Change Management
+description: "Quality and security testing before production: minimum coverage, vulnerability analysis, load testing and a rollback plan."
+---
+
+## Control Definition
+
+All changes must be thoroughly tested in non-production environments before being implemented in production, requiring minimum test coverage levels and configuration parity with the production environment. The security of the code, dependencies and infrastructure affected by the change must be verified, blocking deployment when critical vulnerabilities are found, and the change's performance must be validated under load conditions where applicable. A working rollback plan and formal quality and security approval must be required before promoting any change, keeping evidence of the tests performed.
+
+## Requirements
+
+### Requirement 1
+
+We thoroughly test all changes in non-production environments before implementing them in production.
+
+### Requirement 2
+
+We require minimum unit test coverage as an approval criterion for promotion between environments.
+
+### Requirement 3
+
+We ensure configuration parity between the staging and production environments.
+
+### Requirement 4
+
+We block deployment when any critical or high vulnerability is detected.
+
+### Requirement 5
+
+We require formal approval from the quality and security team for promotion between environments.
+
+### Requirement 6
+
+We run SAST on modified code before promoting to production.
+
+### Requirement 7
+
+We run DAST on the application in the staging environment before promoting to production.
+
+### Requirement 8
+
+We run SCA to verify the security of dependencies before each deployment.
+
+### Requirement 9
+
+We perform infrastructure vulnerability scanning when it applies to the change.
+
+### Requirement 10
+
+We validate performance within the defined SLAs before approving each change.
+
+### Requirement 11
+
+We perform load and performance testing (load, stress, soak and spike testing) for changes to critical systems.
+
+### Requirement 12
+
+We keep a record of the tests performed as evidence for each change.

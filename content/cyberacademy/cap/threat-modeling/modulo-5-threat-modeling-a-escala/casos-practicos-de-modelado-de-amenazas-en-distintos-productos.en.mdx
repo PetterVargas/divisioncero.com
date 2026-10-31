@@ -1,0 +1,6 @@
+---
+title: "Practical Threat Modeling Cases across Different Products"
+description: "How the analysis varies by type of product"
+---
+
+Threat modeling isn't applied the same way to every product, because the risk profile, the components involved and the most likely attackers change radically depending on the context. In a traditional web application, the analysis usually focuses on authentication flows, session management and user input validation, while in a cloud infrastructure product the focus shifts to permission configuration between services, virtual network segmentation and credential management between automated components. A connected device, or IoT, system introduces still different considerations, such as the physical security of the hardware, remote firmware updates and communication with central servers over potentially untrusted networks, threats that don't exist in a purely software-based product. Reviewing concrete practical cases for each type of product, instead of studying only the general theory of the methodologies, is what lets a team anticipate which threat categories are really relevant to its specific context, avoiding both over-analysis of unlikely risks and neglect of threats specific to its particular type of architecture that a generic approach would easily miss.

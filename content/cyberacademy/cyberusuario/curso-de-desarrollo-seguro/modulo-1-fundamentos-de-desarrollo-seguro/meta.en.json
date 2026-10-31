@@ -1,0 +1,10 @@
+{
+  "title": "Secure Development Fundamentals",
+  "description": "Description",
+  "pages": [
+    "index",
+    "principios-de-seguridad-en-el-ciclo-de-vida-del-software",
+    "devsecops-integrar-la-seguridad-en-devops",
+    "modelo-de-amenazas-threat-modeling"
+  ]
+}

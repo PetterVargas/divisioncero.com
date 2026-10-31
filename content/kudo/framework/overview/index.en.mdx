@@ -1,0 +1,210 @@
+---
+title: Kudo
+description: Open-source, practical cybersecurity framework and book
+---
+
+import { FileText, Shield } from 'lucide-react';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+The formula is simple:
+
+```math
+\text{Coherence} + \text{Trust} = \text{Cybersecurity}
+```
+
+> It applies to governments, investors, companies, customers and many more...
+
+<Callout title="Want to learn more?">
+  Download the [Cybersecurity Kit](https://app.divisioncero.com/home/kit-inicio-ciberseguridad).
+</Callout>
+
+
+## 🚀 Quick Install
+
+Create your Kudo app in seconds with our interactive CLI:
+
+```bash tab="pnpm"
+pnpm create @divisioncero/kudo-app
+```
+
+```bash tab="npm"
+npm create @divisioncero/kudo-app
+```
+
+```bash tab="yarn"
+yarn create @divisioncero/kudo-app
+```
+
+### Next steps after installing:
+
+```bash tab="pnpm"
+cd your-project
+pnpm install
+pnpm dev
+```
+
+```bash tab="npm"
+cd your-project
+npm install
+npm run dev
+```
+
+```bash tab="yarn"
+cd your-project
+yarn install
+yarn dev
+```
+
+Your app will be available at [http://localhost:3000](http://localhost:3000)
+
+---
+
+
+## 🛡️ Cybersecurity Policy
+
+<Callout type="success">
+We believe in a digital world built on freedom, responsibility and integrity.
+
+Cybersecurity isn't just about defense or attack — it's about mutual respect. It's about striving to give our best so that every interaction, every line of code and every user experience reflects a commitment agreed between the parties, based on what is defined in policies and procedures; and so that they don't stand out only for their lengthy, theoretical content.
+</Callout>
+
+## 📋 Sections
+
+<Cards>
+  <Card icon={<Shield />} href="/en/kudo/framework/overview/dominios" title="Kudo Domains">
+    Get the initial, big-picture view.
+  </Card>
+  <Card icon={<FileText />} href="/en/kudo/sgx/politicas-y-procedimientos" title="SGX">
+    Policies, Procedures and more...
+  </Card>
+</Cards>
+
+
+## 🎯 Why use this site?
+
+- [X] **Trust between stakeholders:** It applies to investors, governments, companies, customers and users.
+- [X] **Define reference policies:** Establish a common framework for cybersecurity management.
+- [X] **Team training:** Support the initial and ongoing training of employees.  
+- [X] **Simplify audits:** Demonstrate a structured approach during internal and external assessments.  
+- [X] **Scale security practices:** Allow best practices to be replicated across different contexts.  
+- [X] **Optimize Business as Usual (BaU):** Improve operational efficiency and risk management.
+
+
+## 🏛️ Document Governance
+
+### Enterprise Context
+
+This means the documents aren't only applicable to a specific project or team, but are intended to be used across the whole organization.
+
+All documents are created and maintained in a hypothetical enterprise context named `DivisionCero`.
+
+### Organizational Structure
+
+DivisionCero's organizational structure follows a hierarchical model, with clear reporting lines and functional departments that facilitate governance, accountability and specialization.
+
+<Mermaid
+  chart="
+graph TD
+CEO[CEO] --> CTO[Chief Technology Officer]
+CEO --> CFO[Chief Financial Officer]
+CEO --> COO[Chief Operations Officer]
+CEO --> CISO[Chief Information Security Officer]
+CEO --> CLO[Chief Legal Officer]
+
+CTO --> SWD[Software Development]
+CTO --> OPS[Operations]
+
+CISO --> SOC[SOC Team]
+CISO --> ISEC[Infrastructure Security Team]
+CISO --> GRCT[GRC Team]
+
+COO --> PROC[Procurement]
+COO --> TH[Human Talent]
+
+CLO --> LEG[Legal]
+CLO --> PRIV[Privacy Office]
+
+CFO --> FIN[Finance]
+CFO --> IA[Internal Audit]"
+/>
+
+### Hypothetical Enterprise Context
+
+- [X] A technology company that offers software as a service (SaaS).
+- [X] It has software development, infrastructure, quality and security teams; also applicable in outsourced contexts.
+- [X] It runs its infrastructure across multiple Cloud Service Providers (CSPs).
+- [X] It maintains a 24/7 SOC (Security Operations Center) for continuous threat monitoring.
+- [X] It has a team specialized in infrastructure security for implementing and maintaining controls.
+- [X] It serves customers in several countries.
+- [X] It employs people who work remotely.
+
+### Roles and Responsibilities
+
+- [X] **CEO (Chief Executive Officer):** Ultimately responsible for the organization's security posture and risk management strategy.
+- [X] **CTO (Chief Technology Officer) & Technology Teams:** Ensure the secure implementation of systems and infrastructure following the defined policies.
+- [X] **COO (Chief Operations Officer):** Oversees daily operations, ensuring security procedures are built into business processes.
+- [X] **CFO (Chief Financial Officer):** Secures appropriate financial resources for security initiatives and evaluates security investments.
+- [X] **CISO (Chief Information Security Officer):** Main sponsor of the information security policy framework and governance structure.
+- [X] **SOC (Security Operations Center) Team:** Monitors threats in real time, detects security incidents, coordinates the initial response and keeps continuous watch over the technology environment.
+- [X] **Infrastructure Security Team:** Implements and maintains technical security controls, manages secure configurations, performs vulnerability assessments and ensures system hardening.
+- [X] **GRC (Governance, Risk & Compliance) Team:** Curators of the document architecture and responsible for the policy lifecycle.
+- [X] **Legal & Privacy Office:** Ensures alignment with regulatory requirements and data protection obligations, provides legal guidance on security policies and handles security-related legal matters.
+- [X] **Software Development:** Implements secure development practices and addresses security requirements in software products.
+- [X] **Operations:** Maintains secure infrastructure configurations and operational security controls.
+- [X] **Procurement:** Evaluates vendors' security practices and includes security requirements in contracts.
+- [X] **Human Resources:** Manages security training, background checks and security aspects of personnel processes.
+- [X] **Finance:** Manages the financial aspects of the security program and related expenses.
+- [X] **Internal Audit:** Performs independent assessments of security controls and provides assurance of their effectiveness.
+- [X] **All teams:** Responsible for understanding and complying with the established policies and procedures.
+
+## 🔄 Document lifecycle
+
+<Mermaid
+  chart="
+graph LR
+A[📌 Need] --> B[✍️ Creation]
+B --> C[🔍 Review]
+C --> D[🌀 Versioning]
+D --> E[📢 Publication]
+E --> F[🔄 Update]
+F --> A"
+/>
+
+## 📂 Document Structure
+
+<Files>
+  <Folder name="Kudo Cybersecurity Framework" defaultOpen>
+    <Folder name="Domains" defaultOpen>
+      <File name="Baseline | Tools | Courses" />
+      <Folder name="Kudo Controls"></Folder>
+    </Folder>
+    <Folder name="ISMS" defaultOpen>
+      <File name="Policies | Procedures" />
+    </Folder>
+  </Folder>
+</Files>
+
+## 💾 Clarifications
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions type="single">
+  <Accordion title="Versioning">
+    Document versioning follows this naming scheme:
+
+    - Continuous changes vX.Y.Z
+        - X: Major version (significant changes)
+        - Y: Minor version (improvements or minor changes)
+        - Z: Patch version (bug fixes)
+        - Example: v1.0.0 (initial version), v1.1.0 (improvements), v1.1.1 (bug fixes)
+
+    - Releases grouped on the site as a whole are referenced by year and quarter:
+        - Example: 2025-Q2 (initial version for the second quarter of 2025)
+  </Accordion>
+  <Accordion title="Change Control">
+    Change control is carried out continuously with traceability through the git workflow; specifically through Pull Requests (PRs), which can be reviewed in the following [repository](https://github.com/PetterVargas/divisioncero.com). There's a direct link at the top right of the website.
+  </Accordion>
+  <Accordion title="Scope">
+    We aim for this project's scope to be broad and its applicability in each context to be general, with an overall focus on technology contexts.
+  </Accordion>
+</Accordions>

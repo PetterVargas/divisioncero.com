@@ -1,8 +1,12 @@
 import type { BaseLayoutProps, LayoutTab } from 'fumadocs-ui/layouts/shared';
 import { appName, gitConfig, cyberacademyRoute, ciberseguridadEmpresarialRoute, selfHostingRoute } from './shared';
 import { GraduationCap, Server, Settings } from 'lucide-react';
+import { localizeUrl } from './i18n';
+import { getT } from './site-translations';
 
-export const sectionTabs: LayoutTab[] = [
+export function getSectionTabs(lang: string): LayoutTab[] {
+  const t = getT(lang);
+  return [
   {
     title: 'CyberAcademy',
     description: 'Aprende resolviendo problemas',
@@ -21,11 +25,13 @@ export const sectionTabs: LayoutTab[] = [
     icon: <Server className="size-4" />,
     url: selfHostingRoute,
   },
-];
+  ].map((tab) => ({ ...tab, title: t(tab.title), description: t(tab.description), url: localizeUrl(tab.url, lang) }));
+}
 
-export function baseOptions(): BaseLayoutProps {
+export function baseOptions(lang: string): BaseLayoutProps {
   return {
     nav: {
+      url: localizeUrl('/', lang),
       title: (
         <>
           <svg

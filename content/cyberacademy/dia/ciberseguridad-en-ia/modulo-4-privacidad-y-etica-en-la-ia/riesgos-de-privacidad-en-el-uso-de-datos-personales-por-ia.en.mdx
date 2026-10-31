@@ -1,0 +1,6 @@
+---
+title: "Privacy Risks in AI's Use of Personal Data"
+description: "Privacy risks when using personal data in AI"
+---
+
+Training or fine-tuning models with personal data introduces privacy risks that go beyond simply storing that information: a model can memorize fragments of training data and reveal them in response to a specific query, an attacker can infer whether a specific person was part of the training set through membership inference attacks, and a model's generated responses can combine data from different individuals in a way that re-identifies someone who was originally anonymized. These risks are especially relevant in sectors such as health or finance, where data protection regulations require justifying the legal basis for processing and guaranteeing rights such as erasure, something technically complex once the information has been incorporated into a model's weights. Applying differential privacy during training and minimizing the personal data used are practices that significantly reduce this exposure.

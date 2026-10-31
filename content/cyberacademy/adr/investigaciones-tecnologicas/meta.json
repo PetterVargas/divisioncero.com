@@ -1,0 +1,27 @@
+{
+  "title": "Curso de Investigaciones Tecnológicas",
+  "description": "Investigación digital de incidentes",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Módulo 1---",
+    "modulo-1-fundamentos-de-la-investigacion-tecnologica",
+    "---Módulo 2---",
+    "modulo-2-metodologia-de-investigacion",
+    "---Módulo 3---",
+    "modulo-3-rastreo-informatico",
+    "---Módulo 4---",
+    "modulo-4-recoleccion-y-preservacion-de-evidencia-digital",
+    "---Módulo 5---",
+    "modulo-5-analisis-de-evidencia",
+    "---Módulo 6---",
+    "modulo-6-reporte-y-cierre-de-la-investigacion",
+    "---Validación---",
+    "evaluacion-y-certificacion",
+    "---Cierre---",
+    "cierre"
+  ]
+}

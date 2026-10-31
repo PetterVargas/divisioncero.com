@@ -1,0 +1,25 @@
+{
+  "title": "DevOps and AppSec Course",
+  "description": "Security in CI/CD pipelines",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-de-appsec-y-devsecops",
+    "---Module 2---",
+    "modulo-2-seguridad-en-el-codigo",
+    "---Module 3---",
+    "modulo-3-seguridad-en-el-pipeline-ci-cd",
+    "---Module 4---",
+    "modulo-4-pruebas-dinamicas-y-de-seguridad",
+    "---Module 5---",
+    "modulo-5-cultura-y-gobierno-de-appsec",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

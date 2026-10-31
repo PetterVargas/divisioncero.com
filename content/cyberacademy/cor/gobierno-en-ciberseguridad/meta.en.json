@@ -1,0 +1,25 @@
+{
+  "title": "Cybersecurity Governance Course",
+  "description": "Roles and responsibilities of the CISO",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-fundamentos-del-gobierno-de-ciberseguridad",
+    "---Module 2---",
+    "modulo-2-diseno-de-la-estrategia-de-ciberseguridad",
+    "---Module 3---",
+    "modulo-3-politicas-y-marco-normativo-interno",
+    "---Module 4---",
+    "modulo-4-gestion-del-presupuesto-y-recursos",
+    "---Module 5---",
+    "modulo-5-medicion-y-reporte-del-gobierno",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

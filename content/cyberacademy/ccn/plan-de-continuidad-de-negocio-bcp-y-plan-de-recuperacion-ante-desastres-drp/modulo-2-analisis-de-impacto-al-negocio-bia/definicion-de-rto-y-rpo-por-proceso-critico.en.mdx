@@ -1,0 +1,6 @@
+---
+title: "Defining RTO and RPO per Critical Process"
+description: "Maximum downtime and data loss"
+---
+
+The RTO, recovery time objective, defines how long a process can be down before causing unacceptable harm to the business, while the RPO, recovery point objective, defines how much information it's acceptable to lose, measured in time, for example the last fifteen minutes of transactions. These two values must be defined per critical process and not generically for the whole organization, because a billing system may tolerate hours of disruption while an online payments platform may need an RTO of minutes. Their practical importance lies in the fact that they directly determine how much the organization must invest in redundancy, data replication and backup capacity: investing too much is waste and too little is risk taken on without a conscious decision. A key nuance is that an ambitious RPO, close to zero, usually requires real-time replication, which is much costlier than a traditional daily backup.

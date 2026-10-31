@@ -1,0 +1,10 @@
+{
+  "title": "Maintenance and Response",
+  "description": "Description",
+  "pages": [
+    "index",
+    "gestion-de-parches-y-actualizaciones",
+    "programas-de-bug-bounty-y-divulgacion-responsable",
+    "monitoreo-continuo-de-aplicaciones-en-produccion"
+  ]
+}

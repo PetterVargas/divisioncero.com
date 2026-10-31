@@ -1,0 +1,16 @@
+{
+  "title": "THP",
+  "description": "Human Talent and Vendors",
+  "root": true,
+  "pages": [
+    "---THP Domain---",
+    "index",
+    "---THP Controls---",
+    "thp-1",
+    "thp-2",
+    "thp-3",
+    "thp-4",
+    "---THP Tools---",
+    "herramientas"
+  ]
+}

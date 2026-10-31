@@ -19,7 +19,7 @@ export function HeroReveal({ children }: { children: ReactNode }) {
     const el = ref.current;
     if (!el) return;
 
-    // `motion-safe:opacity-0` on badge/lines/items (in the server-rendered
+    // `motion-safe:opacity-0` on lines/items (in the server-rendered
     // markup) is what hides them before this effect ever runs, so there's
     // no frame where the fully-visible static content flashes first. Only
     // opacity is set via CSS — position/scale/rotation are established
@@ -31,41 +31,17 @@ export function HeroReveal({ children }: { children: ReactNode }) {
     // nothing to animate for them.
     if (prefersReducedMotion()) return;
 
-    const badge = el.querySelector<HTMLElement>('[data-hero-badge]');
-    const badgePulse = el.querySelector<HTMLElement>('[data-badge-pulse]');
     const lines = el.querySelectorAll<HTMLElement>('[data-hero-line]');
     const items = el.querySelectorAll<HTMLElement>('[data-hero-item]');
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      tl.set(lines, { yPercent: 115, rotate: 1.5 })
-        .set(badge, { scale: 0.8, y: -8 })
-        .set(items, { y: 26 });
+      tl.set(lines, { yPercent: 115, rotate: 1.5 }).set(items, { y: 26 });
 
-      tl.to(badge, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'back.out(2.4)' })
-        .to(
-          lines,
-          { yPercent: 0, rotate: 0, opacity: 1, duration: 1, stagger: 0.14, ease: 'power4.out' },
-          '-=0.2',
-        );
+      tl.to(lines, { yPercent: 0, rotate: 0, opacity: 1, duration: 1, stagger: 0.14, ease: 'power4.out' });
 
       tl.to(items, { opacity: 1, y: 0, duration: 0.6, stagger: 0.14 }, '-=0.55');
-
-      if (badgePulse) {
-        gsap.fromTo(
-          badgePulse,
-          { scale: 1, opacity: 0.5 },
-          {
-            scale: 1.9,
-            opacity: 0,
-            duration: 1.8,
-            repeat: -1,
-            ease: 'power1.out',
-            delay: 1.3,
-          },
-        );
-      }
     }, el);
 
     return () => ctx.revert();

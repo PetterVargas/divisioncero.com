@@ -1,0 +1,6 @@
+---
+title: "Versioning and Secure Deprecation of APIs"
+description: "How to retire API versions without leaving gaps"
+---
+
+When an API evolves, keeping old versions alive indefinitely creates an attack surface that rarely receives the same level of maintenance as the current version, and that's where forgotten vulnerabilities usually appear. Responsible version management requires communicating deprecation timelines in advance, clearly documenting which endpoints will become obsolete and setting firm shutdown dates, not indefinite suggestions. In practice, many organizations leave v1 versions accessible "just in case" while concentrating all security controls on v2 or v3, leaving that old version as the path of least resistance for an attacker who discovers it in a reconnaissance scan. A mature process includes actively monitoring traffic to deprecated versions to identify consumers that still depend on them, automatic alerts as the shutdown date approaches and, finally, the actual removal of the associated code and infrastructure, not just its deactivation in the public documentation.

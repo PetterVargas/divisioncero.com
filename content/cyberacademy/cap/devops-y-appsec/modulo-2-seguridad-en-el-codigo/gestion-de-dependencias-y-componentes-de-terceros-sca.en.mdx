@@ -1,0 +1,6 @@
+---
+title: "Managing Dependencies and Third-Party Components (SCA)"
+description: "Controlling the risk of open-source libraries"
+---
+
+Most of the code that makes up a modern application isn't written by the development team itself, but comes from third-party open-source libraries and components, which means a vulnerability in a dependency used by hundreds of thousands of projects can become a massive threat overnight, as has happened in several high-profile incidents in widely adopted logging or compression libraries. Software composition analysis, or SCA, scans a project's complete dependency tree, including the transitive dependencies most teams don't even know they're using, comparing them against databases of known vulnerabilities to alert when one needs an urgent update. An important nuance is that detecting the vulnerability isn't enough; you have to assess whether the vulnerable component is actually used in an exploitable way in the application's specific context, since blindly updating every dependency flagged as vulnerable, without prioritization, can create an unsustainable workload and the risk of breaking functionality. Keeping an accurate inventory of all the components used, known as an SBOM, is what makes it possible to respond quickly when a new critical vulnerability appears in the ecosystem.

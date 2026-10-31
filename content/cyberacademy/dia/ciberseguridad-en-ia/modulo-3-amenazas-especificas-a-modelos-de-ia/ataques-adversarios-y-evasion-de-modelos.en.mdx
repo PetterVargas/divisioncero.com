@@ -1,0 +1,6 @@
+---
+title: "Adversarial Attacks and Model Evasion"
+description: "How a model is fooled with manipulated inputs"
+---
+
+Adversarial attacks consist of minimally and often imperceptibly modifying an input, such as an image or text, so that the model misclassifies it without a human noticing the difference. These changes are calculated by exploiting how the model weights each feature, and can be applied both at inference time, to evade a one-off detection, and systematically to degrade the system's overall performance. It's an especially critical risk in security systems that depend on automated classifiers, such as malware filtering or fraud detection, where an attacker with knowledge of the model can design variants that go unnoticed by the system but keep their malicious behavior. Defending against it means deliberately training with adversarial examples, using model ensembles that make it harder for an attack to transfer, and not relying on a single classifier for critical security decisions.

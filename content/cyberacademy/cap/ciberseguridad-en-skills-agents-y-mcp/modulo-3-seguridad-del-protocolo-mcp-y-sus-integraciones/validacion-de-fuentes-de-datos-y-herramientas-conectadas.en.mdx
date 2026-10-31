@@ -1,0 +1,6 @@
+---
+title: "Validating Connected Data Sources and Tools"
+description: "Verifying the trustworthiness of each MCP integration"
+---
+
+Not all MCP servers or data sources an agent can query deserve the same level of trust, and treating them all equally is a frequent design mistake in early implementations. An official MCP server from a known vendor, audited and with controlled updates, presents a very different risk from a community server of unknown origin installed for convenience, since the latter could be deliberately designed to leak data or embed hidden instructions in the responses it gives the agent. Effective validation starts by reviewing the server's source code or reputation before connecting it, continues with verifying that the responses it returns match the expected schema without suspicious extra fields, and is reinforced by treating all content coming from an external source, including tool results, as potentially hostile data that could contain instructions disguised for the model. This last point is critical because a document, web page or API response the agent consults can become the vehicle for an indirect prompt injection attack, without the user having written anything malicious.

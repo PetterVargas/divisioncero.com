@@ -1,0 +1,130 @@
+---
+title: CAP-1 - Cybersecurity in the Software Development Lifecycle
+description: Control for integrated, automated security in the SDLC
+---
+
+## Control Definition
+
+Security must be integrated into every phase of the software development lifecycle under a Shift Left approach, performing threat modeling and defining security requirements from planning, and establishing secure design principles and coding standards to guide development. Access to source code and development tools must be controlled, teams must be trained in secure coding, and secret detection and security analysis of code, dependencies, containers and infrastructure as code must be automated in the CI/CD pipeline. Artifacts with critical vulnerabilities must be blocked from reaching production by defining security gates and remediation SLAs, secrets used by applications must be managed securely, and development, test and production environments must be kept separate and protected.
+
+## Requirements
+
+### Requirement 1
+
+We integrate security practices into every phase of the SDLC under a Shift Left approach.
+
+### Requirement 2
+
+We perform business threat modeling in the planning phase of each development initiative.
+
+### Requirement 3
+
+We perform threat modeling between architectural components in the planning phase of each development initiative.
+
+### Requirement 4
+
+We define functional and non-functional security requirements before starting the design.
+
+### Requirement 5
+
+We review the security architecture applying Defense in Depth principles in the design phase.
+
+### Requirement 6
+
+We define and maintain secure coding standards based on the OWASP Top 10 and SANS CWE/25.
+
+### Requirement 7
+
+We train developers in secure coding on a scheduled basis.
+
+### Requirement 8
+
+We define remediation SLAs for security defects found in testing.
+
+### Requirement 9
+
+We properly manage who can read the source code, development tools and software libraries.
+
+### Requirement 10
+
+We properly manage who can modify the source code, development tools and software libraries.
+
+### Requirement 11
+
+We clearly specify information security requirements when developing or acquiring new applications.
+
+### Requirement 12
+
+We formally approve information security requirements before developing or acquiring new applications.
+
+### Requirement 13
+
+We document secure system design principles so they're available for all development activities.
+
+### Requirement 14
+
+We implement pre-commit hooks to automatically verify compliance with security standards before accepting code into the repository.
+
+### Requirement 15
+
+We implement CI/CD workflows with branch protection and codeowner assignment on all main branches of the repository.
+
+### Requirement 16
+
+We run automatic secret detection on source code both in the CI pipeline and in pull requests.
+
+### Requirement 17
+
+We integrate static application security testing (SAST) on the source code, running it automatically on every CI pipeline build.
+
+### Requirement 18
+
+We integrate dynamic analysis (DAST) of the running application in the staging environment as part of the CD pipeline.
+
+### Requirement 19
+
+We integrate software composition analysis (SCA) to identify vulnerabilities in third-party dependencies, running it automatically in the CI pipeline.
+
+### Requirement 20
+
+We scan container images for vulnerabilities as part of the CI pipeline.
+
+### Requirement 21
+
+We run static security analysis on all infrastructure defined as code (IaC).
+
+### Requirement 22
+
+We validate deployed configurations as part of the CD pipeline.
+
+### Requirement 23
+
+We define automated security gates with maximum vulnerability thresholds by severity that block the production deployment of artifacts with critical or high vulnerabilities.
+
+### Requirement 24
+
+We record security gate results in the security ticketing system.
+
+### Requirement 25
+
+We manage all secrets through vault services and inject them at runtime.
+
+### Requirement 26
+
+We integrate and automatically verify commit signing in the SDLC, both in the CI pipeline and in pull requests.
+
+### Requirement 27
+
+We keep development, test and production environments separate to avoid interference between them.
+
+### Requirement 28
+
+We protect development, test and production environments against unauthorized access or improper changes.
+
+### Requirement 29
+
+We continuously monitor vulnerabilities in dependencies and apply security patches.
+
+### Requirement 30
+
+We keep secure system design principles up to date over time.

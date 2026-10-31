@@ -1,0 +1,25 @@
+{
+  "title": "Business Change Cybersecurity Course",
+  "description": "Secure management of business changes",
+  "root": true,
+  "pages": [
+    "---Overview---",
+    "index",
+    "draw",
+    "convenciones",
+    "---Module 1---",
+    "modulo-1-gestion-del-riesgo-en-los-cambios-organizacionales",
+    "---Module 2---",
+    "modulo-2-seguridad-en-fusiones-y-adquisiciones",
+    "---Module 3---",
+    "modulo-3-gestion-de-cambios-tecnologicos",
+    "---Module 4---",
+    "modulo-4-continuidad-de-la-seguridad-durante-la-transformacion",
+    "---Module 5---",
+    "modulo-5-gobierno-del-cambio-y-mejora-continua",
+    "---Validation---",
+    "evaluacion-y-certificacion",
+    "---Wrap-up---",
+    "cierre"
+  ]
+}

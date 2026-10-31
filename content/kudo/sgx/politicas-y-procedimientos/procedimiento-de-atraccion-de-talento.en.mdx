@@ -1,0 +1,62 @@
+---
+title: "Talent Acquisition Procedure"
+description: "Complete onboarding cycle: candidate validation, security screening, hiring and access provisioning"
+---
+
+<ThemedImage
+  light="/kudo/sgx/politicas-y-procedimientos/draw-ciberseguridad-en-recursos-humanos-light.png"
+  dark="/kudo/sgx/politicas-y-procedimientos/draw-ciberseguridad-en-recursos-humanos-dark.png"
+  alt="Talent Acquisition Procedure diagram"
+  width={1132}
+  height={645}
+/>
+
+## Purpose
+Define the operational **how** of the [Human Resources Security Policy](/en/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos): the steps, roles and records needed to attract, validate, hire and provision access for new employees securely, and to deprovision that access when employment ends.
+
+## Scope
+Applies to every onboarding process for employees, contractors and temporary staff, managed by the Talent Acquisition team with support from Information Security, area leads and the Technology team.
+
+## Roles and Responsibilities
+- **Talent Acquisition Team:** Runs the vacancy, validates candidates, coordinates screening and manages registration in the HR system.
+- **Information Security:** Defines the security screening required for each role and validates access provisioning.
+- **Area lead:** Defines the position's roles and responsibilities matrix and confirms the need for the vacancy.
+- **Technology / IdP:** Carries out automatic access provisioning and deprovisioning in the identity provider (IdP).
+
+## 1. Vacancy Description
+The area lead, with support from Talent Acquisition, documents the vacancy including duties, requirements, the level of access to information or systems the position will have, and whether it involves handling personal data or confidential information. This classification determines the depth of the screening in section 3.
+
+## 2. Document and Information Validation
+Talent Acquisition verifies the candidate's identity and the authenticity of the documentation provided (ID, academic records, employment certificates) before continuing the process.
+
+## 3. Pre-Employment Screening
+Depending on the vacancy's classification (section 1), the following screening is carried out:
+- **Socio-family study:** Verification of the candidate's background for roles with greater exposure or trust.
+- **Security screening:** Validation of criminal, disciplinary and tax records and restrictive lists, proportional to the risk of the position.
+- **Medical exams:** Occupational medical fitness assessment in accordance with current labor regulations.
+
+Any adverse finding is escalated to the area lead and Information Security before continuing the process.
+
+## 4. Employment Contract
+Once the screening has been passed, the **Employment Contract** is formalized, incorporating the [Employee Clauses](/en/kudo/sgx/politicas-y-procedimientos/clausulas-para-colaboradores) and the [Terms and Conditions for Employees](/en/kudo/sgx/politicas-y-procedimientos/terminos-y-condiciones-para-colaboradores) as an integral part, together with the position's **Job Description**.
+
+## 5. Registration and Roles Matrix
+- **Registration in the HR system:** Talent Acquisition creates the employee's official record with their details and start date.
+- **Roles and responsibilities matrix:** The area lead confirms the access profile that corresponds to the employee according to their position, which Technology uses for provisioning.
+
+## 6. Access Provisioning
+- **Automatic first access in the IdP:** Based on the HR registration and the roles matrix, Technology automatically provisions the employee's credentials in the identity provider.
+- **Secure first access:** The employee activates their credentials following the secure first-access procedure (initial password change, two-factor enrollment) before their onboarding talk.
+
+## 7. Deprovisioning on Offboarding
+When employment ends, for any reason, the HR system notifies the IdP to carry out the **automatic deprovisioning** of all the employee's credentials and access, in accordance with the [Access Management Policy](/en/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos).
+
+## Related Documents
+- [Human Resources Security Policy](/en/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos)
+- [Employee Clauses](/en/kudo/sgx/politicas-y-procedimientos/clausulas-para-colaboradores)
+- [Terms and Conditions for Employees](/en/kudo/sgx/politicas-y-procedimientos/terminos-y-condiciones-para-colaboradores)
+- [Awareness Procedure](/en/kudo/sgx/politicas-y-procedimientos/procedimiento-de-concientizacion)
+- [Access Management Policy](/en/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos)
+
+## Monitoring and Review
+Talent Acquisition reports quarterly to Information Security on the status of pending screening and completed onboardings. The procedure is reviewed annually or upon regulatory changes or relevant incidents during staff onboarding or departure.

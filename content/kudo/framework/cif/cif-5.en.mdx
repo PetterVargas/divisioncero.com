@@ -1,0 +1,54 @@
+---
+title: CIF-5 - Key Administration and Management
+description: Control for cryptographic key lifecycle management
+---
+
+## Control Definition
+
+The complete lifecycle of cryptographic keys must be managed through specialized services, defining a key hierarchy and generating keys with cryptographically secure methods. Keys must be protected and rotated at a frequency matching their criticality, their storage segregated by environment, and they must be distributed only through secure channels, separating duties between administrators and users. All cryptographic operations must be audited and keys securely destroyed at the end of their lifecycle.
+
+## Requirements
+
+### Requirement 1
+
+We manage the complete lifecycle of cryptographic keys through managed KMS services.
+
+### Requirement 2
+
+We define and implement a cryptographic key hierarchy with Master Keys, Data Keys and API keys.
+
+### Requirement 3
+
+We segregate key storage by environment (production, staging, development) with a defined owner for each set.
+
+### Requirement 4
+
+We follow a documented secure destruction procedure at the end of each key's lifecycle.
+
+### Requirement 5
+
+We store Master Keys in an HSM with scheduled rotation.
+
+### Requirement 6
+
+We generate Data Keys through envelope encryption with scheduled rotation.
+
+### Requirement 7
+
+We rotate API keys on a scheduled basis.
+
+### Requirement 8
+
+We generate cryptographic keys with cryptographically secure random number generators (CSPRNG).
+
+### Requirement 9
+
+We distribute keys only through secure, encrypted channels.
+
+### Requirement 10
+
+We technically enforce the separation of duties between key administrators and key users.
+
+### Requirement 11
+
+We record all cryptographic operations in audit logs.
