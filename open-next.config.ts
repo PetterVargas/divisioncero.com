@@ -5,6 +5,10 @@ import staticAssetsIncrementalCache from '@opennextjs/cloudflare/overrides/incre
 // ambos idiomas) se sirven desde los assets del worker sin volver a renderizar el MDX.
 const config = defineCloudflareConfig({
   incrementalCache: staticAssetsIncrementalCache,
+  // Sirve las páginas prerenderizadas (HTML y payloads RSC de los prefetch) desde la capa de
+  // routing, sin cargar el handler de Next (~51 MiB). Sin esto, cada isolate nuevo evalúa ese
+  // bundle completo y la petición gasta ~1 s de CPU aunque la página ya esté en los assets.
+  enableCacheInterception: true,
 });
 
 export default {
