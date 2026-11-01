@@ -3,7 +3,7 @@ import {
   ArrowRight, Rocket, GraduationCap, Building2, Radar, BookOpen,
   Timer, Headset, MapPin, Wrench, Presentation, CalendarDays,
 } from 'lucide-react';
-import { HeroReveal, ScrollReveal } from '@/components/home-animations';
+import { ScrollReveal } from '@/components/home-animations';
 import { HeroGrid } from '@/components/hero-grid';
 import { HeroConsole } from '@/components/hero-console';
 import { FullViewportSection } from '@/components/full-viewport-section';
@@ -44,8 +44,6 @@ const en: Dictionary = {
   'Visitar Presentaciones': 'Visit Presentations',
   'Aprende Ciberseguridad': 'Learn Cybersecurity',
   'y asegura tu negocio': 'and secure your business',
-  'Enfócate en construir confianza y te ayudaremos a hacerlo realidad.':
-    "Focus on building trust and we'll help you make it happen.",
   'Comenzar en DivisionCero': 'Get started with DivisionCero',
   'Agendar demo': 'Book a demo',
   'Agenda una demo por WhatsApp': 'Book a demo on WhatsApp',
@@ -168,13 +166,12 @@ export default async function HomePage(props: PageProps<'/[lang]'>) {
       <FullViewportSection className="flex flex-col items-center justify-center pt-20 pb-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
         <HeroGrid className="absolute inset-0 w-full h-full pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_85%)]" />
-        <HeroReveal>
         <div className="max-w-5xl mx-auto relative z-10">
-          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-10 leading-tight">
             <span className="block overflow-hidden">
               <span
                 data-hero-line
-                className="block bg-gradient-to-br from-fd-foreground via-fd-foreground to-fd-muted-foreground bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
+                className="block bg-gradient-to-br from-fd-foreground via-fd-foreground to-fd-muted-foreground bg-clip-text text-transparent pb-2 hero-line"
               >
                 {t('Aprende Ciberseguridad')}
               </span>
@@ -182,16 +179,13 @@ export default async function HomePage(props: PageProps<'/[lang]'>) {
             <span className="block overflow-hidden">
               <span
                 data-hero-line
-                className="block bg-gradient-to-r from-[#4DAE84] to-[#39b298] bg-clip-text text-transparent pb-2 motion-safe:opacity-0"
+                className="block bg-gradient-to-r from-[#4DAE84] to-[#39b298] bg-clip-text text-transparent pb-2 hero-line [animation-delay:140ms]"
               >
                 {t('y asegura tu negocio')}
               </span>
             </span>
           </h1>
-          <p data-hero-item className="text-base text-fd-muted-foreground max-w-xl mx-auto mb-10 motion-safe:opacity-0">
-            {t('Enfócate en construir confianza y te ayudaremos a hacerlo realidad.')}
-          </p>
-          <div data-hero-item className="flex flex-row gap-3 items-center justify-center motion-safe:opacity-0">
+          <div data-hero-item className="flex flex-row gap-3 items-center justify-center hero-item [animation-delay:600ms]">
             <Link
               data-hero-cta
               href={signUpUrl}
@@ -209,15 +203,14 @@ export default async function HomePage(props: PageProps<'/[lang]'>) {
               {t('Agendar demo')}
             </DemoWhatsAppLink>
           </div>
-          <div data-hero-item className="mt-6 flex justify-center motion-safe:opacity-0">
+          <div data-hero-item className="mt-6 flex justify-center hero-item [animation-delay:740ms]">
             <AskAgent />
           </div>
-          <div data-hero-item className="relative mt-16 motion-safe:opacity-0">
+          <div data-hero-item className="relative mt-16 hero-item [animation-delay:880ms]">
             <div className="absolute -inset-x-10 -top-10 bottom-0 bg-gradient-to-b from-[#4DAE84]/20 via-[#4DAE84]/5 to-transparent blur-3xl rounded-full pointer-events-none" />
             <HeroConsole />
           </div>
         </div>
-        </HeroReveal>
       </FullViewportSection>
 
       {/* Ecosystem panels */}

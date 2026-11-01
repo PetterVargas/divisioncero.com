@@ -48,6 +48,6 @@ pnpm build
 
 ## Otros comandos
 
-- `pnpm export` — exporta la presentación por defecto (`slides/slides.md`) a PDF.
+- `pnpm export slides/<archivo>.md` — exporta una presentación a PDF.
 
 Más información en la [documentación de Slidev](https://sli.dev/).

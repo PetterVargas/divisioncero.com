@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node scripts/build-all.mjs",
     "dev": "node scripts/dev.mjs",
-    "export": "slidev export slides/slides.md",
+    "export": "slidev export",
     "format": "prettier --write ."
   },
   "dependencies": {

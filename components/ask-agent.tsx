@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import type { ComponentProps } from 'react';
-import { Check, Copy, Sparkle, Sparkles } from 'lucide-react';
+import { Check, Copy } from 'lucide-react';
 import { useT } from '@/components/i18n';
 import { baseUrl } from '@/lib/shared';
 import type { Dictionary } from '@/lib/site-translations';
@@ -26,11 +26,40 @@ function ChatGPTIcon(props: ComponentProps<'svg'>) {
   );
 }
 
+/** Logo de Anthropic (Claude), en `currentColor`. */
+function AnthropicIcon(props: ComponentProps<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z" />
+    </svg>
+  );
+}
+
+/** Logo de Gemini (Google), con su degradado azul-violeta. */
+function GeminiIcon(props: ComponentProps<'svg'>) {
+  const id = useId();
+  return (
+    <svg viewBox="0 0 24 24" {...props}>
+      <defs>
+        <linearGradient id={id} x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#1C7DFF" />
+          <stop offset="0.52" stopColor="#1C69FF" />
+          <stop offset="1" stopColor="#A87FFE" />
+        </linearGradient>
+      </defs>
+      <path
+        fill={`url(#${id})`}
+        d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"
+      />
+    </svg>
+  );
+}
+
 // Avatares superpuestos de agentes de IA a los que se puede pegar el prompt.
 const agents = [
-  { Icon: Sparkle, className: 'bg-[#D97757] text-white' },
+  { Icon: AnthropicIcon, className: 'bg-[#D97757] text-white' },
+  { Icon: GeminiIcon, className: 'bg-fd-background' },
   { Icon: ChatGPTIcon, className: 'bg-fd-background text-fd-foreground' },
-  { Icon: Sparkles, className: 'bg-fd-background text-violet-500' },
 ];
 
 /**
