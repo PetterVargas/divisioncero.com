@@ -1,6 +1,0 @@
----
-title: "Model Extraction and Theft (Model Stealing)"
-description: "How models are stolen and how to prevent it"
----
-
-Model stealing is a technique in which an attacker makes many queries to an exposed model, for example through a public API, and uses the responses obtained to train a substitute model that replicates its behavior without direct access to its weights or training data. The risk goes beyond the loss of intellectual property, since the stolen model also makes it possible to study its weaknesses offline to design more effective adversarial attacks against the original. It's particularly relevant for organizations that expose proprietary models as a service, where each query represents an opportunity for knowledge leakage. Mitigating it requires limiting the query rate per user, obfuscating the precision of responses where possible, and monitoring usage patterns that suggest systematic extraction, such as query volumes far above a legitimate customer's typical use.

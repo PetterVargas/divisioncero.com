@@ -1,6 +1,0 @@
----
-title: "Prompt Injection and Instruction Manipulation Risks"
-description: "How an agent's instructions are manipulated"
----
-
-Prompt injection consists of inserting malicious instructions into the content an agent processes, either directly in the conversation with the user or, more dangerously, hidden in an external data source the agent consults as part of its task, such as a web page, an email or a shared document. In the indirect variant, not even the legitimate user writes anything malicious; the attack is embedded in content the agent will read during its normal operation, for example a file with invisible text instructing the agent to leak credentials or carry out an unauthorized action as soon as it processes it. This risk is hard to fully mitigate because language models don't inherently and reliably distinguish between system instructions, user instructions and content that should only be read as data; everything arrives mixed in the same text context. Practical defenses combine several layers: clearly marking the origin of each piece of context, restricting which actions the agent can carry out without confirmation after processing external content, and applying filters that detect typical patterns of injected instructions before they reach the model.

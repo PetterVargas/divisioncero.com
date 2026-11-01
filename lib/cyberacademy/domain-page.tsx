@@ -12,27 +12,25 @@ import { buildPageMetadata } from '@/lib/cyberacademy/metadata';
 import { JsonLd, courseJsonLd, learningResourceJsonLd, breadcrumbJsonLd } from '@/lib/cyberacademy/json-ld';
 import { getBreadcrumbItems } from 'fumadocs-core/breadcrumb';
 import type { Metadata } from 'next';
-import { canonicalUrl, defaultLocale, localizeUrl } from '@/lib/i18n';
-import { getT } from '@/lib/site-translations';
 
 type AnySource = {
-  getPage: (slug?: string[], lang?: string) => any;
+  getPage: (slug?: string[]) => any;
   generateParams: () => any;
-  getPageTree: (lang?: string) => any;
+  getPageTree: () => any;
 };
 
 let duplicateTitles: Set<string> | undefined;
 function getDuplicateTitles() {
   duplicateTitles ??= findDuplicateTitles(
     [cyberusuarioSource, cyberguardianSource, ...allDomainSources].flatMap(
-      (source) => source.getPages(defaultLocale) as { data: { title: string } }[],
+      (source) => source.getPages() as { data: { title: string } }[],
     ),
   );
   return duplicateTitles;
 }
 
-function getSeo(source: AnySource, page: any, lang: string) {
-  return getSeoTitleAndDescription(page, source.getPageTree(lang), getDuplicateTitles());
+function getSeo(source: AnySource, page: any) {
+  return getSeoTitleAndDescription(page, source.getPageTree(), getDuplicateTitles());
 }
 
 type PageFns = {
@@ -45,21 +43,18 @@ export async function renderDomainPage(
   fns: PageFns,
   contentSlug: string,
   slug: string[] | undefined,
-  lang: string,
 ) {
-  const page = source.getPage(slug, lang);
+  const page = source.getPage(slug);
   if (!page) notFound();
-
-  const t = getT(lang);
   const MDX = page.data.body;
   const markdownUrl = fns.getPageMarkdownUrl(page).url;
-  const neighbours = getContentFlowNeighbours(page.url, lang);
-  const seo = getSeo(source, page, lang);
-  const domainRootUrl = source.getPage([], lang)?.url;
+  const neighbours = getContentFlowNeighbours(page.url);
+  const seo = getSeo(source, page);
+  const domainRootUrl = source.getPage([])?.url;
   const breadcrumbItems = [
-    { name: t('Inicio'), url: `${baseUrl}${localizeUrl('/', lang)}` },
-    { name: 'CyberAcademy', url: `${baseUrl}${localizeUrl(academyRoute, lang)}` },
-    ...getBreadcrumbItems(page.url, source.getPageTree(lang), {
+    { name: 'Inicio', url: `${baseUrl}${'/'}` },
+    { name: 'CyberAcademy', url: `${baseUrl}${academyRoute}` },
+    ...getBreadcrumbItems(page.url, source.getPageTree(), {
       includeRoot: { url: domainRootUrl },
       includePage: true,
     }),
@@ -110,15 +105,14 @@ export async function generateDomainMetadata(
   source: AnySource,
   fns: PageFns,
   slug: string[] | undefined,
-  lang: string,
 ): Promise<Metadata> {
-  const page = source.getPage(slug, lang);
+  const page = source.getPage(slug);
   if (!page) notFound();
-  const seo = getSeo(source, page, lang);
+  const seo = getSeo(source, page);
   return buildPageMetadata({
     title: seo.title,
     description: seo.description,
-    path: canonicalUrl(page),
+    path: page.url,
     image: fns.getPageImage(page).url,
   });
 }

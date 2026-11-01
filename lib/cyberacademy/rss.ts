@@ -1,7 +1,6 @@
 import { Feed } from 'feed';
 import { cyberusuarioSource, cyberguardianSource, allDomainSources } from '@/lib/cyberacademy/source';
 import { appName, baseUrl, academyUrl } from '@/lib/cyberacademy/shared';
-import { defaultLocale } from '@/lib/i18n';
 
 export function getRSS() {
   const feed = new Feed({
@@ -13,9 +12,9 @@ export function getRSS() {
   });
 
   const pages = [
-    ...cyberusuarioSource.getPages(defaultLocale),
-    ...cyberguardianSource.getPages(defaultLocale),
-    ...allDomainSources.flatMap((s) => s.getPages(defaultLocale)),
+    ...cyberusuarioSource.getPages(),
+    ...cyberguardianSource.getPages(),
+    ...allDomainSources.flatMap((s) => s.getPages()),
   ];
 
   for (const page of pages) {

@@ -1,28 +1,20 @@
 /**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
+ * Sitio estático: `pnpm build` genera `out/` y Cloudflare lo sirve como assets, sin código de
+ * Worker (no hay invocaciones ni CPU por petición).
+ * https://developers.cloudflare.com/workers/static-assets/
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "divisioncero-com",
-  "main": ".open-next/worker.js",
-  "keep_vars": true,
   "compatibility_date": "2025-04-02",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "minify": true,
-  // wrangler 4.156 sube los source maps por defecto; los del handler pesan ~83 MiB
-  // y Cloudflare rechaza más de 60 MiB (error 10021).
-  "upload_source_maps": false,
   "assets": {
-    "binding": "ASSETS",
-    "directory": ".open-next/assets"
+    "directory": "out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
   },
   "observability": {
     "enabled": true
   },
-  "placement": { "mode": "smart" },
   // Las ramas que no son `main` se despliegan con `wrangler preview`, que exige este bloque.
-  "previews": {
-    "placement": { "mode": "smart" }
-  }
+  "previews": {}
 }

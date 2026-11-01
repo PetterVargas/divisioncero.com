@@ -1,6 +1,5 @@
 import { selfHostingSource, getSelfHostingPageMarkdownUrl, getLLMText } from '@/lib/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -17,7 +16,7 @@ export async function GET(_req: Request, { params }: RouteContext<'/llms.mdx/sel
 }
 
 export function generateStaticParams() {
-  return selfHostingSource.getPages(defaultLocale).map((page) => ({
+  return selfHostingSource.getPages().map((page) => ({
     slug: getSelfHostingPageMarkdownUrl(page).segments,
   }));
 }

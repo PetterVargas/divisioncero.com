@@ -1,6 +1,0 @@
----
-title: "Secure Management of Containers and Infrastructure as Code"
-description: "Security in containers and IaC"
----
-
-Containers and infrastructure as code (IaC) greatly speed up application deployment, but they can also replicate insecure configurations at scale if not managed carefully: an outdated or misconfigured base image automatically becomes hundreds of vulnerable instances. Best practices include scanning container images for vulnerabilities before publishing them to a registry, avoiding running processes inside the container with administrator privileges, and treating infrastructure definition files (such as Terraform or Kubernetes templates) with the same review rigor as the application code. An error in an IaC configuration file can accidentally expose a storage bucket or an entire database to the internet, so reviewing it shouldn't be treated as a minor detail.

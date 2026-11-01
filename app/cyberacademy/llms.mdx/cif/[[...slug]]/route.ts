@@ -1,6 +1,5 @@
 import { cifSource, getCifPageMarkdownUrl, getLLMText } from '@/lib/cyberacademy/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -12,5 +11,5 @@ export async function GET(_req: Request, { params }: RouteContext<'/cyberacademy
 }
 
 export function generateStaticParams() {
-  return cifSource.getPages(defaultLocale).map((page) => ({ slug: getCifPageMarkdownUrl(page).segments }));
+  return cifSource.getPages().map((page) => ({ slug: getCifPageMarkdownUrl(page).segments }));
 }

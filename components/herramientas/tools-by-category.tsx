@@ -3,12 +3,11 @@
 import { useMemo, useState } from 'react';
 import { categories, type Category, type Tool } from '@/lib/herramientas/tools';
 import { ToolCard } from '@/components/herramientas/tool-card';
-import { useI18n } from '@/components/herramientas/i18n-provider';
+import { textos } from '@/lib/herramientas/textos';
 
 export function ToolsByCategory({ tools }: { tools: Tool[] }) {
   const [selected, setSelected] = useState<Category | null>(null);
-  const { dict } = useI18n();
-  const t = dict.home;
+  const t = textos.home;
 
   const availableCategories = useMemo(
     () => categories.filter((category) => tools.some((tool) => tool.categories.includes(category))),
@@ -56,7 +55,7 @@ export function ToolsByCategory({ tools }: { tools: Tool[] }) {
                 : 'border-border bg-card/80 backdrop-blur-sm hover:border-primary/40 hover:bg-card'
             }`}
           >
-            {dict.categories[category]}
+            {category}
           </button>
         ))}
       </div>

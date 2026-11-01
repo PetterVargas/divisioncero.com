@@ -1,6 +1,0 @@
----
-title: "API Inventory and Discovery (Shadow APIs)"
-description: "Detecting undocumented APIs before an attacker does"
----
-
-You can't protect what you don't know exists, and in organizations where different teams publish APIs independently it's common for the official security inventory to fall out of date with the reality of production traffic. Shadow APIs arise in several typical ways: a test endpoint that was never removed after going to production, a legacy version that remains active alongside the current one, or an integration created by a business team without going through the standard security review process; in every case, they share the same problem: they aren't subject to the controls and monitoring that apply to known APIs. Effective discovery combines several sources: analyzing real traffic in gateways and proxies to identify routes that don't appear in the documentation, actively scanning the namespace of domains and subdomains, and reviewing code repositories for orphaned route definitions. Keeping this inventory alive, updated automatically and not as an annual manual exercise, is what closes the gap between the organization's real attack surface and the one the security team actually watches.

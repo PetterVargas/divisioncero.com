@@ -7,7 +7,6 @@ import { dirname, join } from 'node:path';
 import type { ReactElement } from 'react';
 import { ImageResponse } from 'next/og';
 import { generate as DefaultImage } from 'fumadocs-ui/og';
-import { defaultLocale } from '@/lib/i18n';
 import * as site from '@/lib/shared';
 import * as kudo from '@/lib/kudo/shared';
 import * as academy from '@/lib/cyberacademy/shared';
@@ -35,13 +34,13 @@ type Section = {
 
 // Cada sección: sus páginas (en español, como hasta ahora) y la URL de su imagen.
 const sections: Section[] = [
-  { site: site.appName, pages: blog.getPages(defaultLocale), image: getBlogPageImage },
-  { site: site.appName, pages: releases.getPages(defaultLocale), image: getReleasePageImage },
-  { site: site.appName, pages: cyberacademySource.getPages(defaultLocale), image: getCyberacademyPageImage },
-  { site: site.appName, pages: ciberseguridadEmpresarialSource.getPages(defaultLocale), image: getCiberseguridadEmpresarialPageImage },
-  { site: site.appName, pages: selfHostingSource.getPages(defaultLocale), image: getSelfHostingPageImage },
-  { site: kudo.appName, pages: frameworkSource.getPages(defaultLocale), image: getFrameworkPageImage },
-  { site: kudo.appName, pages: sgxSource.getPages(defaultLocale), image: getSgxPageImage },
+  { site: site.appName, pages: blog.getPages(), image: getBlogPageImage },
+  { site: site.appName, pages: releases.getPages(), image: getReleasePageImage },
+  { site: site.appName, pages: cyberacademySource.getPages(), image: getCyberacademyPageImage },
+  { site: site.appName, pages: ciberseguridadEmpresarialSource.getPages(), image: getCiberseguridadEmpresarialPageImage },
+  { site: site.appName, pages: selfHostingSource.getPages(), image: getSelfHostingPageImage },
+  { site: kudo.appName, pages: frameworkSource.getPages(), image: getFrameworkPageImage },
+  { site: kudo.appName, pages: sgxSource.getPages(), image: getSgxPageImage },
   ...[
     [cyberusuarioSource, getCyberusuarioPageImage],
     [cyberguardianSource, getCyberguardianPageImage],
@@ -55,7 +54,7 @@ const sections: Section[] = [
     [adrSource, getAdrPageImage],
   ].map(([source, image]) => ({
     site: academy.appName,
-    pages: (source as { getPages: (lang: string) => Page[] }).getPages(defaultLocale),
+    pages: (source as { getPages: () => Page[] }).getPages(),
     image: image as Section['image'],
   })),
 ];

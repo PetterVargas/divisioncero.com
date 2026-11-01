@@ -1,6 +1,0 @@
----
-title: "Encryption and Data Protection in API Communications"
-description: "Protecting data in transit with proper encryption"
----
-
-Encrypting an API's traffic with TLS is a minimum requirement, not an advanced security measure, and yet there are still internal integrations between microservices that communicate in plain text under the mistaken assumption that the internal network is already a trusted environment. In a realistic security model, any network segment can be compromised, so encryption in transit must be applied both to internet-facing connections and to internal communication between services, ideally also reinforcing mutual authentication between them so both ends verify each other's identity, not just that the channel is encrypted. Beyond transport, some data requires protection even while being processed in memory, such as card numbers or credentials, where tokenization or field-level encryption techniques reduce the impact if an intermediate component is compromised. A frequent mistake is assuming TLS solves the whole confidentiality problem, when in reality it only protects transit, leaving data exposed in application logs, detailed error responses or caching if additional specific controls aren't applied.

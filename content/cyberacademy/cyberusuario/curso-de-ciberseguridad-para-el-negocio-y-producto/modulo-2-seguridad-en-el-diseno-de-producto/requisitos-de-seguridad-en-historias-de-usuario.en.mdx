@@ -1,6 +1,0 @@
----
-title: "Security Requirements in User Stories"
-description: "How to include security in product development"
----
-
-Including security requirements directly in user stories means that, when writing "as a user I want to reset my password", the team also defines from the start how identity will be validated, how many attempts are allowed and what happens if someone tries to abuse that feature, instead of leaving it to be reviewed after the product is already built. This practice matters because adding security at the end of development is usually more expensive and creates friction between the product and engineering teams, while thinking about it from the design stage avoids rework and vulnerabilities that are later hard to fix without breaking the user experience. A simple example is adding an acceptance criterion that explicitly says the account recovery feature must lock after several failed attempts, preventing it from becoming an open door for automated attacks.

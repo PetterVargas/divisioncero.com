@@ -1,6 +1,5 @@
 import { frameworkSource, getFrameworkPageMarkdownUrl, getLLMText } from '@/lib/kudo/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -17,7 +16,7 @@ export async function GET(_req: Request, { params }: RouteContext<'/kudo/llms.md
 }
 
 export function generateStaticParams() {
-  return frameworkSource.getPages(defaultLocale).map((page) => ({
+  return frameworkSource.getPages().map((page) => ({
     slug: getFrameworkPageMarkdownUrl(page).segments,
   }));
 }

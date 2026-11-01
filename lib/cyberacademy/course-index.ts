@@ -1,8 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { domains, academyRoute, cyberusuarioRoute } from '@/lib/cyberacademy/shared';
-import { localizeUrl } from '@/lib/i18n';
-import { getT } from '@/lib/site-translations';
 
 export type TemaNode = {
   title: string;
@@ -123,13 +121,12 @@ export function buildCourseIndex(): SectionNode[] {
 }
 
 /** Índice con las URLs del idioma de la página y los nombres de sección traducidos (el contenido sigue en español). */
-export function localizeCourseIndex(sections: SectionNode[], lang: string): SectionNode[] {
-  const t = getT(lang);
-  const url = (href: string) => localizeUrl(href, lang);
+export function localizeCourseIndex(sections: SectionNode[]): SectionNode[] {
+  const url = (href: string) => href;
   return sections.map((section) => ({
     ...section,
-    title: t(section.title),
-    description: t(section.description),
+    title: section.title,
+    description: section.description,
     cursos: section.cursos.map((curso) => ({
       ...curso,
       url: url(curso.url),

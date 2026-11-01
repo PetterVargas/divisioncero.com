@@ -1,6 +1,0 @@
----
-title: "Risk Assessment before Deploying Agent-Based Solutions"
-description: "Risk checklist before deploying an agent"
----
-
-Before putting any agent-based solution into production, it's worth applying a structured risk assessment that goes beyond validating that the functionality meets the intended use case, because an agent that works correctly under normal conditions can represent a severe risk under adversarial manipulation that was never tested. This assessment must answer concrete questions: which tools the agent has connected and what an attacker could do with each one if they manage to control its instructions, which sensitive data it may touch during normal operation, which actions are reversible and which aren't, and what human approval mechanisms or automatic limits exist to contain unexpected behavior. A useful practical criterion is to classify risk according to the product of the potential impact of an action and the likelihood that existing defenses fail to stop it, prioritizing additional controls where both factors are high, for example an agent with access to financial transactions and no human confirmation step. Skipping this assessment under launch time pressure is, in practice, the most common cause of security incidents in early deployments of autonomous agents.

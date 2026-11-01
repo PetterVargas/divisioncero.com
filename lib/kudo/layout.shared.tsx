@@ -8,11 +8,8 @@ import {
   ShieldAlert, Code2, RefreshCw, Server, Fingerprint, Building2, Database, Users,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { localizeUrl } from '@/lib/i18n';
-import { getT } from '@/lib/site-translations';
 
-export function getSectionTabs(lang: string): LayoutTab[] {
-  const t = getT(lang);
+export function getSectionTabs(): LayoutTab[] {
   return [
   {
     title: 'Framework',
@@ -26,7 +23,7 @@ export function getSectionTabs(lang: string): LayoutTab[] {
     icon: <ShieldCheck className="size-4" />,
     url: sgxRoute,
   },
-  ].map((tab) => ({ ...tab, description: t(tab.description), url: localizeUrl(tab.url, lang) }));
+  ].map((tab) => ({ ...tab, description: tab.description, url: tab.url }));
 }
 
 const frameworkIcons: Record<string, ReactNode> = {
@@ -51,8 +48,8 @@ const sgxIcons: Record<string, ReactNode> = {
   Correlación: <GitMerge className="size-4" />,
 };
 
-export function getFrameworkSubTabs(lang: string): LayoutTab[] {
-  return getSidebarTabs(frameworkSource.getPageTree(lang), {
+export function getFrameworkSubTabs(): LayoutTab[] {
+  return getSidebarTabs(frameworkSource.getPageTree(), {
     transform: (option) => ({
       ...option,
       icon: frameworkIcons[String(option.title)] ?? option.icon,
@@ -60,8 +57,8 @@ export function getFrameworkSubTabs(lang: string): LayoutTab[] {
   });
 }
 
-export function getSgxSubTabs(lang: string): LayoutTab[] {
-  return getSidebarTabs(sgxSource.getPageTree(lang), {
+export function getSgxSubTabs(): LayoutTab[] {
+  return getSidebarTabs(sgxSource.getPageTree(), {
     transform: (option) => ({
       ...option,
       icon: sgxIcons[String(option.title)] ?? option.icon,

@@ -5,8 +5,6 @@ import {
   LibraryIcon, ShieldIcon, CompassIcon, LayoutTemplateIcon, WorkflowIcon, ShieldCheckIcon, ClipboardCheckIcon,
 } from 'lucide-react';
 import { NavTitle } from '@/components/nav-title';
-import { localizeUrl } from '@/lib/i18n';
-import { getT } from '@/lib/site-translations';
 
 // Mirrors fumadocs-ui's internal nav item classes (desktop `main` variant via
 // `sm:`, mobile-menu `main` variant via `max-sm:`) so a hand-authored `title`
@@ -144,16 +142,15 @@ export const kudoLinks = [
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/(learn)/layout.tsx
  */
-export function getBaseOptions(lang: string): BaseLayoutProps {
-  const t = getT(lang);
-  const url = (href: string) => localizeUrl(href, lang);
+export function getBaseOptions(): BaseLayoutProps {
+  const url = (href: string) => href;
   const translateItems = (items: typeof resourceLinks) =>
     items.map((item) => ({
       ...item,
-      text: t(item.text),
-      description: t(item.description),
+      text: item.text,
+      description: item.description,
       url: url(item.url),
-      menu: { ...item.menu, title: t(item.menu.title) },
+      menu: { ...item.menu, title: item.menu.title },
     }));
 
   return {
@@ -176,16 +173,16 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
       {
         type: 'custom',
         children: (
-          <Link href={url('/precios')} title={t('Precio')} className={navLinkClassName}>
+          <Link href={url('/precios')} title="Precio" className={navLinkClassName}>
             <TagIcon />
-            {t('Precio')}
+            Precio
           </Link>
         ),
       },
       {
         type: 'custom',
         children: (
-          <Link href={url('/docs')} title={t('Documentación')} className={`${navLinkClassName} max-sm:mb-4`}>
+          <Link href={url('/docs')} title="Documentación" className={`${navLinkClassName} max-sm:mb-4`}>
             <BookOpenIcon />
             Docs
           </Link>
@@ -193,7 +190,7 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
       },
       {
         type: 'menu',
-        text: t('Recursos'),
+        text: 'Recursos',
         items: translateItems(resourceLinks),
       },
       {
@@ -202,7 +199,7 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
         children: (
           <Link
             href="https://github.com/PetterVargas/"
-            title={t('Síguenos en GitHub')}
+            title="Síguenos en GitHub"
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
@@ -220,7 +217,7 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
         children: (
           <Link
             href="https://app.divisioncero.com/auth/sign-in"
-            title={t('Iniciar sesión')}
+            title="Iniciar sesión"
             target="_blank"
             rel="noopener noreferrer"
             className={navLinkClassName}
@@ -236,14 +233,14 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
         children: (
           <Link
             href="https://app.divisioncero.com/auth/sign-up"
-            title={t('Regístrate en DivisionCero')}
+            title="Regístrate en DivisionCero"
             target="_blank"
             rel="noopener noreferrer"
             className={navLinkClassName}
           >
             <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold flex items-center gap-1 whitespace-nowrap">
               <UserIcon className="size-4" />
-              {t('Regístrate')}
+              Regístrate
             </span>
           </Link>
         ),

@@ -6,7 +6,6 @@ import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource 
 import { frameworkSource, sgxSource } from '@/lib/kudo/source';
 import { cyberusuarioSource, cyberguardianSource, allDomainSources } from '@/lib/cyberacademy/source';
 import { domains } from '@/lib/cyberacademy/shared';
-import { defaultLocale } from '@/lib/i18n';
 
 type AnyPage = {
   slugs: string[];
@@ -18,7 +17,7 @@ type AnyPage = {
   };
 };
 
-type AnySource = { getPages: (lang?: string) => AnyPage[] };
+type AnySource = { getPages: () => AnyPage[] };
 
 // Ruta dinámica de la app → source que la genera.
 const sections: { route: string; source: AnySource }[] = [
@@ -33,18 +32,16 @@ const sections: { route: string; source: AnySource }[] = [
 ];
 
 async function checkLinks() {
-  const pagesBySection = sections.map(({ route, source }) => ({ route, pages: source.getPages(defaultLocale) }));
+  const pagesBySection = sections.map(({ route, source }) => ({ route, pages: source.getPages() }));
 
   const scanned = await scanURLs({
     preset: 'next',
-    // Las rutas viven en app/[lang]; el contenido enlaza a la versión en español, sin prefijo.
     populate: {
-      '[lang]': [{ value: { lang: defaultLocale } }],
       ...Object.fromEntries(
         pagesBySection.map(({ route, pages }) => [
-          `[lang]/${route}`,
+          route,
           pages.map((page) => ({
-            value: { lang: defaultLocale, slug: page.slugs },
+            value: { slug: page.slugs },
             hashes: getHeadings(page),
           })),
         ]),
@@ -52,11 +49,6 @@ async function checkLinks() {
     },
   });
 
-  const localePrefix = `/${defaultLocale}`;
-  for (const [url, meta] of [...scanned.urls]) {
-    if (url === localePrefix) scanned.urls.set('/', meta);
-    else if (url.startsWith(`${localePrefix}/`)) scanned.urls.set(url.slice(localePrefix.length), meta);
-  }
 
   // Los archivos de public/ (descargas, imágenes) también son URLs válidas.
   for (const url of listPublicUrls('public')) scanned.urls.set(url, {});

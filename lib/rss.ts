@@ -1,7 +1,6 @@
 import { Feed } from 'feed';
 import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource, blog } from '@/lib/source';
 import { appName, appDescription, baseUrl } from '@/lib/shared';
-import { defaultLocale } from '@/lib/i18n';
 
 export function getRSS() {
   const feed = new Feed({
@@ -14,9 +13,9 @@ export function getRSS() {
   });
 
   const docsPages = [
-    ...cyberacademySource.getPages(defaultLocale),
-    ...ciberseguridadEmpresarialSource.getPages(defaultLocale),
-    ...selfHostingSource.getPages(defaultLocale),
+    ...cyberacademySource.getPages(),
+    ...ciberseguridadEmpresarialSource.getPages(),
+    ...selfHostingSource.getPages(),
   ];
 
   for (const page of docsPages) {
@@ -29,7 +28,7 @@ export function getRSS() {
     });
   }
 
-  for (const page of blog.getPages(defaultLocale)) {
+  for (const page of blog.getPages()) {
     feed.addItem({
       id: page.url,
       title: page.data.title,

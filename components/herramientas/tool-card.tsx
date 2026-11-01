@@ -3,15 +3,13 @@
 import Link from 'next/link';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import type { Tool } from '@/lib/herramientas/tools';
-import { useI18n } from '@/components/herramientas/i18n-provider';
-import { localizeUrl } from '@/lib/i18n';
+import { textos } from '@/lib/herramientas/textos';
 import { toolIcons } from '@/lib/herramientas/tool-icons';
 
 
 export function ToolCard({ tool }: { tool: Tool }) {
   const Icon = toolIcons[tool.iconName];
-  const { locale, dict } = useI18n();
-  const t = dict.home;
+  const t = textos.home;
   const className =
     'group block rounded-xl border border-border bg-card/80 backdrop-blur-sm p-4 transition-all hover:border-primary/40 hover:bg-card';
 
@@ -52,7 +50,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
       {content}
     </a>
   ) : (
-    <Link href={localizeUrl(tool.href, locale)} title={tool.title} className={className}>
+    <Link href={tool.href} title={tool.title} className={className}>
       {content}
     </Link>
   );

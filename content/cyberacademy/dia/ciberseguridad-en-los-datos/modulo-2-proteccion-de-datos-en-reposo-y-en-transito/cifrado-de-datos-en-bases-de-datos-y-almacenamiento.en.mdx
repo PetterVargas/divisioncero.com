@@ -1,6 +1,0 @@
----
-title: "Encrypting Data in Databases and Storage"
-description: "How to encrypt data in databases and storage"
----
-
-Encrypting data at rest means the information stored in a database, a disk or a cloud bucket is unreadable without the corresponding key, even if an attacker manages to directly access the underlying storage. There are different levels of application: full-disk encryption, which protects against physical theft but not against an attacker with access to the application; database-level encryption; and column- or field-level encryption, more granular and suitable for specifically protecting the most sensitive data without encrypting the whole table. Key management is as important as the encryption itself; a key stored alongside the data it protects cancels out much of the benefit. In practice, many data breaches don't happen because the attacker breaks the encryption, but because they find poorly protected credentials or access keys in the same environment as the encrypted data.

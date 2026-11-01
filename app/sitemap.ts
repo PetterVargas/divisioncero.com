@@ -6,7 +6,6 @@ import { cyberusuarioSource, cyberguardianSource, allDomainSources } from '@/lib
 import { domains } from '@/lib/cyberacademy/shared';
 import { getDeckGroups } from '@/lib/cyberacademy/presentaciones';
 import { baseUrl } from '@/lib/shared';
-import { defaultLocale, localizeUrl } from '@/lib/i18n';
 import { tools } from '@/lib/herramientas/tools';
 
 export const revalidate = false;
@@ -25,30 +24,26 @@ function getGitLastModified(path: string): Date | undefined {
   }
 }
 
-// Páginas propias del sitio: todas tienen versión en inglés (/en/...).
+// Páginas propias del sitio.
 const staticRoutes: { path: string; source: string }[] = [
-  { path: '', source: 'app/[lang]/(home)/page.tsx' },
-  { path: '/docs', source: 'app/[lang]/(home)/docs/page.tsx' },
-  { path: '/precios', source: 'app/[lang]/(home)/precios/page.tsx' },
-  { path: '/open-source', source: 'app/[lang]/(home)/open-source/page.tsx' },
+  { path: '', source: 'app/(home)/page.tsx' },
+  { path: '/docs', source: 'app/(home)/docs/page.tsx' },
+  { path: '/precios', source: 'app/(home)/precios/page.tsx' },
+  { path: '/open-source', source: 'app/(home)/open-source/page.tsx' },
   { path: '/legal', source: 'content/legal' },
   { path: '/blog', source: 'content/blog' },
   { path: '/releases', source: 'content/release' },
-  { path: '/kudo', source: 'app/[lang]/kudo/(home)' },
+  { path: '/kudo', source: 'app/kudo/(home)' },
   { path: '/cyberacademy', source: 'content/cyberacademy' },
   { path: '/cyberacademy/cursos', source: 'content/cyberacademy' },
-  { path: '/cyberacademy/que-quieres-aprender-hoy', source: 'app/[lang]/cyberacademy/(home)/que-quieres-aprender-hoy' },
+  { path: '/cyberacademy/que-quieres-aprender-hoy', source: 'app/cyberacademy/(home)/que-quieres-aprender-hoy' },
   { path: '/cyberacademy/presentaciones', source: 'cyberacademy/presentaciones/decks.json' },
-  { path: '/herramientas', source: 'app/[lang]/herramientas' },
+  { path: '/herramientas', source: 'app/herramientas' },
 ];
 
-/** Entradas en español e inglés de una ruta, enlazadas entre sí con hreflang. */
-function bilingualEntries(path: string, lastModified?: Date): MetadataRoute.Sitemap {
-  const languages = { es: `${baseUrl}${path || '/'}`, en: `${baseUrl}${localizeUrl(path || '/', 'en')}` };
-  return [
-    { url: languages.es, lastModified, alternates: { languages } },
-    { url: languages.en, lastModified, alternates: { languages } },
-  ];
+/** Entrada del sitemap de una ruta. */
+function entry(path: string, lastModified?: Date): MetadataRoute.Sitemap {
+  return [{ url: `${baseUrl}${path || '/'}`, lastModified }];
 }
 
 // Secciones de Kudo y CyberAcademy con el directorio de su contenido.
@@ -61,10 +56,8 @@ const projectSources = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Todo el contenido tiene versión en inglés (`.en.mdx`), así que cada página
-  // aparece en ambos idiomas, enlazada con hreflang.
   const staticEntries = staticRoutes.flatMap(({ path, source }) =>
-    bilingualEntries(path, getGitLastModified(source)),
+    entry(path, getGitLastModified(source)),
   );
 
   const docsEntries = [
@@ -72,16 +65,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { source: ciberseguridadEmpresarialSource, dir: 'content/ciberseguridad-empresarial' },
     { source: selfHostingSource, dir: 'content/self-hosting' },
   ].flatMap(({ source, dir }) =>
-    source.getPages(defaultLocale).flatMap((page) => bilingualEntries(page.url, getGitLastModified(`${dir}/${page.path}`))),
+    source.getPages().flatMap((page) => entry(page.url, getGitLastModified(`${dir}/${page.path}`))),
   );
 
   const projectEntries = projectSources.flatMap(({ source, dir }) =>
     source
-      .getPages(defaultLocale)
-      .flatMap((page: { url: string; path: string }) => bilingualEntries(page.url, getGitLastModified(`${dir}/${page.path}`))),
+      .getPages()
+      .flatMap((page: { url: string; path: string }) => entry(page.url, getGitLastModified(`${dir}/${page.path}`))),
   );
 
-  // Cada presentación (Slidev) se publica en /cyberacademy/presentaciones/<slug>/ (solo en español).
+  // Cada presentación (Slidev) se publica en /cyberacademy/presentaciones/<slug>/.
   const deckLastModified = getGitLastModified('cyberacademy/presentaciones/slides');
   const deckEntries: MetadataRoute.Sitemap = getDeckGroups().flatMap((group) =>
     group.decks
@@ -89,19 +82,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .map((deck) => ({ url: `${baseUrl}${deck.url}`, lastModified: deckLastModified })),
   );
 
-  const postEntries = [...blog.getPages(defaultLocale), ...releases.getPages(defaultLocale)].flatMap((page) =>
-    bilingualEntries(page.url, new Date(page.data.date)),
+  const postEntries = [...blog.getPages(), ...releases.getPages()].flatMap((page) =>
+    entry(page.url, new Date(page.data.date)),
   );
 
   const legalEntries = legal
-    .getPages(defaultLocale)
-    .flatMap((page) => bilingualEntries(page.url, getGitLastModified(`content/legal/${page.path}`)));
+    .getPages()
+    .flatMap((page) => entry(page.url, getGitLastModified(`content/legal/${page.path}`)));
 
   // Herramientas propias (las externas del catálogo enlazan a otros sitios).
-  const toolsLastModified = getGitLastModified('app/[lang]/herramientas');
+  const toolsLastModified = getGitLastModified('app/herramientas');
   const toolEntries = tools
     .filter((tool) => !tool.external && tool.href.startsWith('/herramientas/'))
-    .flatMap((tool) => bilingualEntries(tool.href, toolsLastModified));
+    .flatMap((tool) => entry(tool.href, toolsLastModified));
 
   return [
     ...staticEntries,

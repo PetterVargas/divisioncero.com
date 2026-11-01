@@ -3,34 +3,31 @@ import {
   corDocs, cipDocs, cifDocs, capDocs, ccnDocs, thpDocs, diaDocs, adrDocs,
 } from 'collections/server';
 import { loader } from 'fumadocs-core/source';
-import { i18n } from '@/lib/i18n';
 import { flattenTree } from 'fumadocs-core/page-tree';
 import {
   academyRoute, cyberusuarioRoute, cyberusuarioImageRoute, cyberusuarioContentRoute,
 } from './shared';
 
 export const cyberusuarioSource = loader({
-  i18n,
   baseUrl: cyberusuarioRoute,
   source: cyberusuarioDocs.toFumadocsSource(),
   plugins: [],
 });
 
 export const cyberguardianSource = loader({
-  i18n,
   baseUrl: `${academyRoute}/cyberguardian`,
   source: cyberguardianDocs.toFumadocsSource(),
   plugins: [],
 });
 
-export const corSource = loader({ i18n, baseUrl: `${academyRoute}/cor`, source: corDocs.toFumadocsSource(), plugins: [] });
-export const cipSource = loader({ i18n, baseUrl: `${academyRoute}/cip`, source: cipDocs.toFumadocsSource(), plugins: [] });
-export const cifSource = loader({ i18n, baseUrl: `${academyRoute}/cif`, source: cifDocs.toFumadocsSource(), plugins: [] });
-export const capSource = loader({ i18n, baseUrl: `${academyRoute}/cap`, source: capDocs.toFumadocsSource(), plugins: [] });
-export const ccnSource = loader({ i18n, baseUrl: `${academyRoute}/ccn`, source: ccnDocs.toFumadocsSource(), plugins: [] });
-export const thpSource = loader({ i18n, baseUrl: `${academyRoute}/thp`, source: thpDocs.toFumadocsSource(), plugins: [] });
-export const diaSource = loader({ i18n, baseUrl: `${academyRoute}/dia`, source: diaDocs.toFumadocsSource(), plugins: [] });
-export const adrSource = loader({ i18n, baseUrl: `${academyRoute}/adr`, source: adrDocs.toFumadocsSource(), plugins: [] });
+export const corSource = loader({ baseUrl: `${academyRoute}/cor`, source: corDocs.toFumadocsSource(), plugins: [] });
+export const cipSource = loader({ baseUrl: `${academyRoute}/cip`, source: cipDocs.toFumadocsSource(), plugins: [] });
+export const cifSource = loader({ baseUrl: `${academyRoute}/cif`, source: cifDocs.toFumadocsSource(), plugins: [] });
+export const capSource = loader({ baseUrl: `${academyRoute}/cap`, source: capDocs.toFumadocsSource(), plugins: [] });
+export const ccnSource = loader({ baseUrl: `${academyRoute}/ccn`, source: ccnDocs.toFumadocsSource(), plugins: [] });
+export const thpSource = loader({ baseUrl: `${academyRoute}/thp`, source: thpDocs.toFumadocsSource(), plugins: [] });
+export const diaSource = loader({ baseUrl: `${academyRoute}/dia`, source: diaDocs.toFumadocsSource(), plugins: [] });
+export const adrSource = loader({ baseUrl: `${academyRoute}/adr`, source: adrDocs.toFumadocsSource(), plugins: [] });
 
 // ─── CyberUsuario ─────────────────────────────────────────────────────────────
 export function getCyberusuarioPageImage(page: (typeof cyberusuarioSource)['$inferPage']) {
@@ -108,19 +105,15 @@ export const allDomainSources = [corSource, cipSource, cifSource, capSource, ccn
 // se llega al último (o primer) post de cada uno, replicando el orden del navbar.
 const contentFlowSources = [cyberusuarioSource, cyberguardianSource, ...allDomainSources];
 
-const contentFlowCache = new Map<string, ReturnType<typeof flattenTree>>();
+let contentFlow: ReturnType<typeof flattenTree> | undefined;
 
-function getContentFlow(lang: string) {
-  let list = contentFlowCache.get(lang);
-  if (!list) {
-    list = contentFlowSources.flatMap((source) => flattenTree(source.getPageTree(lang).children));
-    contentFlowCache.set(lang, list);
-  }
-  return list;
+function getContentFlow() {
+  contentFlow ??= contentFlowSources.flatMap((source) => flattenTree(source.getPageTree().children));
+  return contentFlow;
 }
 
-export function getContentFlowNeighbours(url: string, lang: string) {
-  const list = getContentFlow(lang);
+export function getContentFlowNeighbours(url: string) {
+  const list = getContentFlow();
   const idx = list.findIndex((item) => item.url === url);
   if (idx === -1) return {};
   return { previous: list[idx - 1], next: list[idx + 1] };

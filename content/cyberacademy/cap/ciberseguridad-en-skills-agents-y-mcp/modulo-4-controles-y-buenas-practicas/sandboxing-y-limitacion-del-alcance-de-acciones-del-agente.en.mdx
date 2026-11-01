@@ -1,6 +1,0 @@
----
-title: "Sandboxing and Limiting the Scope of Agent Actions"
-description: "Isolating the agent's execution to contain errors"
----
-
-Sandboxing consists of running an agent's actions inside an isolated, controlled environment, so that if the agent makes a mistake or is manipulated into acting maliciously, the damage stays contained within that environment and doesn't spread to critical production systems. This is especially relevant when the agent runs dynamically generated code, something increasingly common in programming assistants, where allowing direct execution on the developer's machine or on a production server without any isolation is equivalent to giving an untrusted process full access to the system. A well-designed sandbox limits not only the accessible file system and network, but also execution time and available compute resources, preventing an infinite loop or a deliberate attempt to exhaust resources from affecting other services. Beyond technical isolation, limiting the scope of actions means explicitly defining a list of permitted operations per context, so an agent used for data analysis doesn't, by default, have the ability to delete files or modify system settings, even if it technically could.

@@ -1,6 +1,0 @@
----
-title: "Static Code Analysis (SAST)"
-description: "Detecting vulnerabilities by reading the source code"
----
-
-Static code analysis, or SAST, examines an application's source code without running it, looking for known vulnerability patterns such as insecure SQL query concatenation, use of weak cryptographic functions or improper handling of user input. Its great advantage is how quickly it can be integrated into the development workflow, running on every commit or pull request and giving the developer feedback within minutes, well before that code reaches a test or production environment, which drastically reduces the cost of fixing the problem. However, SAST has important limitations worth understanding so as not to rely on it too much: it generates a considerable number of false positives because it analyzes code outside its real execution context, and it can't detect vulnerabilities that depend on the environment's configuration or on the interaction between components at runtime. That's why the recommended practice is to use SAST as the first line of defense within the pipeline, combined with human review of the most critical findings and with dynamic testing that does exercise the running application.

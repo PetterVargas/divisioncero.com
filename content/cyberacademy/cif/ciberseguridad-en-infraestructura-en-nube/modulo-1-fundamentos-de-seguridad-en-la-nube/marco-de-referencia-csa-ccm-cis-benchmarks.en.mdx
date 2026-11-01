@@ -1,6 +1,0 @@
----
-title: "Reference Frameworks (CSA CCM, CIS Benchmarks)"
-description: "Frameworks that standardize cloud controls"
----
-
-CSA CCM and CIS Benchmarks are two complementary references for structuring cloud security without starting from scratch on every project. The Cloud Security Alliance's Cloud Controls Matrix organizes controls by domain (identity management, encryption, continuity) and serves as a checklist for assessing both your own architecture and the security posture of an external provider. CIS Benchmarks, on the other hand, go into technical detail, with specific recommended configurations for AWS, Azure or GCP, such as which ports should be closed by default or which password policies to apply to a root account. Using them together matters because one gives the strategic view of which controls the security program should have, and the other gives actionable instructions to implement them correctly. A practical example is using a configuration scanning tool that automatically compares the real cloud environment against a CIS Benchmark, flagging deviations before they become an exploitable breach.

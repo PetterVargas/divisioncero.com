@@ -1,0 +1,8 @@
+# URLs antiguas de herramientas (antes en herramientas.divisioncero.com).
+/herramientas/hash-archivo /herramientas/generador-y-validador-hash-archivo 301
+/herramientas/whois-ip /herramientas/whois-ip-y-dominio 301
+# El sitio ya no tiene versión en inglés.
+/en / 301
+/en/* /:splat 301
+/es / 301
+/es/* /:splat 301

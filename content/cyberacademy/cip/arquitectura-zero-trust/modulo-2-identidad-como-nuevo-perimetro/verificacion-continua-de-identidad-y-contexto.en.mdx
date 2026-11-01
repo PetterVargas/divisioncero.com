@@ -1,6 +1,0 @@
----
-title: "Continuous Identity and Context Verification"
-description: "Re-evaluating access throughout the session"
----
-
-Continuous identity and context verification breaks with the idea that authenticating once at the start of the session is enough, and instead constantly re-evaluates whether the user and device still deserve their level of access, observing signals such as location changes, unusual traffic patterns or changes in the device's security posture. This matters in practice because a session can start completely legitimately and become risky minutes later, for example if the device connects to an insecure public network or if malware activity is detected, and a model that only verifies at the start doesn't react to that change. A concrete example is an employee who accesses a financial system from the office, but whose session is automatically interrupted when it's detected that the device began communicating with a command-and-control server minutes after logging in.

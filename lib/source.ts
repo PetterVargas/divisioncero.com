@@ -1,6 +1,5 @@
 import { cyberacademyDocs, ciberseguridadEmpresarialDocs, selfHostingDocs, blogPosts, releasePosts, legalPosts } from 'collections/server';
 import { loader } from 'fumadocs-core/source';
-import { i18n } from '@/lib/i18n';
 import { toFumadocsSource } from 'fumadocs-mdx/runtime/server';
 import { openapiPlugin } from 'fumadocs-openapi/server';
 import {
@@ -11,40 +10,34 @@ import {
 } from './shared';
 
 export const cyberacademySource = loader({
-  i18n,
   baseUrl: cyberacademyRoute,
   source: cyberacademyDocs.toFumadocsSource(),
   plugins: [],
 });
 
 export const ciberseguridadEmpresarialSource = loader({
-  i18n,
   baseUrl: ciberseguridadEmpresarialRoute,
   source: ciberseguridadEmpresarialDocs.toFumadocsSource(),
   plugins: [openapiPlugin()],
 });
 
 export const selfHostingSource = loader({
-  i18n,
   baseUrl: selfHostingRoute,
   source: selfHostingDocs.toFumadocsSource(),
   plugins: [],
 });
 
 export const blog = loader({
-  i18n,
   baseUrl: '/blog',
   source: toFumadocsSource(blogPosts, []),
 });
 
 export const releases = loader({
-  i18n,
   baseUrl: '/releases',
   source: toFumadocsSource(releasePosts, []),
 });
 
 export const legal = loader({
-  i18n,
   baseUrl: '/legal',
   source: toFumadocsSource(legalPosts, []),
 });

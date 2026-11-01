@@ -7,23 +7,6 @@ import {
 } from 'lucide-react';
 import { domainVisuals, cyberusuarioVisual, courseCountLabel, type DomainVisual } from '@/lib/cyberacademy/domain-visuals';
 import type { SectionNode } from '@/lib/cyberacademy/course-index';
-import { useT } from '@/components/i18n';
-import type { Dictionary, TFunction } from '@/lib/site-translations';
-
-const en: Dictionary = {
-  Curso: 'Course',
-  Módulo: 'Module',
-  Tema: 'Topic',
-  curso: 'course',
-  'Ej. phishing, contraseñas, threat modeling, Zero Trust...': 'E.g. phishing, passwords, threat modeling, Zero Trust...',
-  'Limpiar búsqueda': 'Clear search',
-  'Busca entre {cursos} cursos, {modulos} módulos y {temas} temas.': 'Search across {cursos} courses, {modulos} modules and {temas} topics.',
-  'No encontramos resultados para “{query}”. Intenta con otro término.': 'No results found for “{query}”. Try another term.',
-  '1 resultado': '1 result',
-  '{count} resultados': '{count} results',
-  ' — mostrando los primeros {limit}, afina tu búsqueda para ver más': ' — showing the first {limit}, refine your search to see more',
-  '{count} temas': '{count} topics',
-};
 
 type ItemType = 'curso' | 'modulo' | 'tema';
 
@@ -111,7 +94,6 @@ function scoreItem(item: FlatItem, nq: string): number {
 
 export function AprendeHoyExplorer({ sections }: { sections: SectionNode[] }) {
   const [query, setQuery] = useState('');
-  const t = useT(en);
   const flatItems = useMemo(() => buildFlatItems(sections), [sections]);
   const nq = normalize(query.trim());
 
@@ -146,14 +128,14 @@ export function AprendeHoyExplorer({ sections }: { sections: SectionNode[] }) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={t('Ej. phishing, contraseñas, threat modeling, Zero Trust...')}
+            placeholder="Ej. phishing, contraseñas, threat modeling, Zero Trust..."
             className="w-full rounded-2xl border border-fd-border bg-fd-background py-4 pl-14 pr-14 text-base outline-none focus:border-fd-primary/60 focus:ring-4 focus:ring-fd-primary/10 transition-all shadow-sm"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery('')}
-              aria-label={t('Limpiar búsqueda')}
+              aria-label="Limpiar búsqueda"
               className="absolute right-4 top-1/2 -translate-y-1/2 text-fd-muted-foreground hover:text-fd-foreground transition-colors"
             >
               <X className="h-5 w-5" />
@@ -161,24 +143,24 @@ export function AprendeHoyExplorer({ sections }: { sections: SectionNode[] }) {
           )}
         </div>
         <p className="text-center text-sm text-fd-muted-foreground mt-3">
-          {t('Busca entre {cursos} cursos, {modulos} módulos y {temas} temas.', stats)}
+          Busca entre {stats.cursos} cursos, {stats.modulos} módulos y {stats.temas} temas.
         </p>
       </div>
 
       {nq ? (
-        <SearchResults results={results} query={query} t={t} />
+        <SearchResults results={results} query={query} />
       ) : (
-        <BrowseTree sections={sections} t={t} />
+        <BrowseTree sections={sections} />
       )}
     </div>
   );
 }
 
-function SearchResults({ results, query, t }: { results: FlatItem[]; query: string; t: TFunction }) {
+function SearchResults({ results, query }: { results: FlatItem[]; query: string; }) {
   if (results.length === 0) {
     return (
       <div className="text-center py-20 text-fd-muted-foreground">
-        {t('No encontramos resultados para “{query}”. Intenta con otro término.', { query })}
+        {`No encontramos resultados para “${query}”. Intenta con otro término.`}
       </div>
     );
   }
@@ -188,8 +170,8 @@ function SearchResults({ results, query, t }: { results: FlatItem[]; query: stri
   return (
     <div className="max-w-3xl mx-auto">
       <p className="text-sm text-fd-muted-foreground mb-4">
-        {results.length === 1 ? t('1 resultado') : t('{count} resultados', { count: results.length })}
-        {results.length > RESULT_LIMIT ? t(' — mostrando los primeros {limit}, afina tu búsqueda para ver más', { limit: RESULT_LIMIT }) : ''}
+        {results.length === 1 ? '1 resultado' : `${results.length} resultados`}
+        {results.length > RESULT_LIMIT ? ` — mostrando los primeros ${RESULT_LIMIT}, afina tu búsqueda para ver más` : ''}
       </p>
       <div className="flex flex-col gap-3">
         {shown.map((item) => {
@@ -203,7 +185,7 @@ function SearchResults({ results, query, t }: { results: FlatItem[]; query: stri
             >
               <div className="flex items-center gap-2 flex-wrap">
                 <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${v.badge}`}>
-                  {t(typeLabel[item.type])}
+                  {typeLabel[item.type]}
                 </span>
                 <span className="text-xs text-fd-muted-foreground">{item.breadcrumb}</span>
               </div>
@@ -222,7 +204,7 @@ function SearchResults({ results, query, t }: { results: FlatItem[]; query: stri
   );
 }
 
-function BrowseTree({ sections, t }: { sections: SectionNode[]; t: TFunction }) {
+function BrowseTree({ sections }: { sections: SectionNode[]; }) {
   return (
     <div>
       {sections.map((section) => {
@@ -240,7 +222,7 @@ function BrowseTree({ sections, t }: { sections: SectionNode[]; t: TFunction }) 
                 {section.slug !== 'cyberusuario' ? ` — ${section.title}` : ''}
               </div>
               <span className="text-sm text-fd-muted-foreground">
-                {courseCountLabel(section.cursos.length, t('curso'))} · {t('{count} temas', { count: totalTemas })}
+                {courseCountLabel(section.cursos.length, 'curso')} · {`${totalTemas} temas`}
               </span>
             </div>
             <p className="text-fd-muted-foreground mb-5 max-w-2xl">{section.description}</p>

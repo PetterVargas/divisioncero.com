@@ -1,6 +1,0 @@
----
-title: "Protecting Data in Transit"
-description: "How to protect data traveling over the network"
----
-
-Data in transit, the data that travels between systems, applications or to the end user, is vulnerable to interception if it isn't protected with proper encryption, whether through TLS for web communications, VPNs for site-to-site connections, or encrypted protocols for file transfers. A common mistake is assuming encryption in transit is already guaranteed by default, when in reality many internal integrations between services, especially in microservice architectures, still transmit unencrypted data on the assumption that the internal network is trustworthy. Besides encryption, it's important to validate certificates correctly to prevent man-in-the-middle attacks, and to avoid obsolete protocols still kept active for compatibility. A typical case is an internal API that exposes sensitive data without TLS because nobody thought it would be accessed from outside its original environment, until an architecture change leaves it exposed without anyone reviewing its transport controls.

@@ -1,6 +1,0 @@
----
-title: "Backup and Recovery of Critical Data"
-description: "Making sure backups really work"
----
-
-Having backups configured isn't the same as having useful backups, and this difference is only discovered at the worst possible moment if it hasn't been validated beforehand, when an organization tries to restore data after an incident and finds corrupted, incomplete copies or copies incompatible with the available recovery infrastructure. A solid backup strategy defines frequency according to each system's RPO, keeps copies in locations separate from the primary environment to withstand an event that affects both, and above all includes periodic restore tests, not just verification that the copy process ran without errors. This matters especially against ransomware, where attackers actively seek to encrypt or delete the backups reachable from the main network as well. A practical and increasingly common example is keeping at least one immutable backup copy isolated from the network, which not even a compromised administrator can modify or delete.

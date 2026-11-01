@@ -1,6 +1,0 @@
----
-title: "Managing Roles, Policies and Least Privilege"
-description: "Granting only strictly necessary access"
----
-
-The principle of least privilege states that each identity, whether a person or an automated service, should have only the permissions needed to perform its function, not one more, and in the cloud this is implemented through granular roles and policies instead of assigning broad permissions for administrative convenience. Applying it correctly requires periodically reviewing which permissions are actually in use, since an identity commonly accumulates access granted for one-off tasks that's never revoked afterward. This matters in practice because when an attacker compromises a credential, the real damage they can cause is directly limited by the privileges that credential had, not by the sophistication of the attack. A common example is an automated function that only needs to read data from a service, but is carelessly configured with full administrator permissions over the entire cloud account.

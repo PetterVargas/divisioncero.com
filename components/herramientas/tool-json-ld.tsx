@@ -1,7 +1,6 @@
 'use client';
 
-import { siteUrl, localizedTool } from '@/lib/herramientas/seo';
-import { useI18n } from '@/components/herramientas/i18n-provider';
+import { siteUrl } from '@/lib/herramientas/seo';
 
 const publisher = {
   '@type': 'Organization',
@@ -25,9 +24,7 @@ export function ToolJsonLd({
   path: string;
   kind?: 'app' | 'article';
 }) {
-  const { locale } = useI18n();
-  ({ title, description } = localizedTool(locale, { title, description, path }));
-  const base = locale === 'en' ? siteUrl.replace('/herramientas', '/en/herramientas') : siteUrl;
+  const base = siteUrl;
   const url = `${base}${path}`;
 
   const mainEntity =
@@ -38,7 +35,7 @@ export function ToolJsonLd({
           description,
           url,
           mainEntityOfPage: url,
-          inLanguage: locale,
+          inLanguage: 'es',
           image: `${siteUrl}/opengraph-image`,
           author: publisher,
           publisher,
@@ -48,7 +45,7 @@ export function ToolJsonLd({
           name: title,
           description,
           url,
-          inLanguage: locale,
+          inLanguage: 'es',
           applicationCategory: 'SecurityApplication',
           operatingSystem: 'Any',
           isAccessibleForFree: true,
@@ -67,7 +64,7 @@ export function ToolJsonLd({
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: locale === 'en' ? 'Tools' : 'Herramientas', item: base },
+          { '@type': 'ListItem', position: 1, name: 'Herramientas', item: base },
           { '@type': 'ListItem', position: 2, name: title, item: url },
         ],
       },

@@ -1,6 +1,0 @@
----
-title: "Security Principles for Connecting Agents and MCP Servers"
-description: "Basic rules for connecting agents to MCP servers"
----
-
-The connection between an agent and an MCP server establishes a trust channel that, if not properly secured, becomes a critical point of compromise, since both the instructions the agent sends and the data and tools the server exposes in return travel through that channel. A first basic principle is mutually authenticating both ends: the server must verify that the connecting client is authorized, and the agent must be able to confirm that it's actually talking to the legitimate server and not to one impersonated through a man-in-the-middle attack. Another central principle is encrypting the communication channel end to end and not trusting that the local or internal network already offers enough protection, an assumption that has repeatedly proven false in real incidents. Equally relevant is explicitly limiting which tools and what scope of data each server exposes, instead of granting full access by default, and setting session time and invocation rate limits, so a compromised or misconfigured server can't be used as a channel to exfiltrate data massively and continuously over time.

@@ -1,6 +1,0 @@
----
-title: "Virtual Network Segmentation and Security Groups"
-description: "Isolating resources to limit lateral movement"
----
-
-Segmenting the virtual network in the cloud means dividing the environment into isolated zones through subnets, security groups and access control lists, so a compromised resource doesn't automatically have visibility or connectivity to the rest of the infrastructure. This practice directly limits an attacker's lateral movement, which is usually one of the most effective phases of an attack: gaining a small entry point and expanding from there toward more valuable systems. Defining security groups with restrictive rules by default, allowing only strictly necessary traffic between specific components, is more laborious to configure than an open flat network, but drastically reduces the potential impact of any incident. A practical example is isolating an application's database in its own private subnet, accessible only from authorized application servers and never directly from the internet.
