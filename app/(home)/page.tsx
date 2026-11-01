@@ -118,7 +118,7 @@ export default function HomePage() {
       <FullViewportSection className="flex flex-col items-center justify-center pt-20 pb-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
         <HeroGrid className="absolute inset-0 w-full h-full pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_85%)]" />
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="w-full max-w-5xl mx-auto relative z-10">
           <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight mb-10 leading-tight">
             <span className="block overflow-hidden">
               <span
