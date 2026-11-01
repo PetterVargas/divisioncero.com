@@ -1,6 +1,0 @@
----
-title: "Managing Credentials and Permissions in MCP Integrations"
-description: "Handling MCP credentials securely"
----
-
-Each MCP server connected to an agent typically requires its own credentials to authenticate against the system it represents, whether a database, a cloud service or a third-party API, and how those credentials are managed largely determines the blast radius of a compromise. A frequent mistake is using a single credential with broad permissions and sharing it among multiple integrations for operational simplicity, which means that if a single MCP server is compromised, the attacker inherits access to every system connected with that same credential, not just the one originally intended to be exposed. The recommended practice is to issue specific, minimum-scope credentials for each integration, store them in a dedicated secrets manager instead of plain configuration files, and rotate them regularly, especially after any suspicious incident. Equally important is that these credentials are never exposed to the language model itself within the conversation context; the agent must be able to invoke the tool without the underlying access token being part of the text it processes, preventing a context leak from translating directly into a credential leak.

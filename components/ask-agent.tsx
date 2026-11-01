@@ -3,19 +3,7 @@
 import { useEffect, useId, useState } from 'react';
 import type { ComponentProps } from 'react';
 import { Check, Copy } from 'lucide-react';
-import { useT } from '@/components/i18n';
 import { baseUrl } from '@/lib/shared';
-import type { Dictionary } from '@/lib/site-translations';
-
-const en: Dictionary = {
-  'Pregúntale a tu agente': 'Ask your agent',
-  'Copiar prompt': 'Copy prompt',
-  '¡Copiado!': 'Copied!',
-  'Copia un prompt para preguntarle a tu agente de IA por DivisionCero':
-    'Copy a prompt to ask your AI agent about DivisionCero',
-  'Lee {url} y explícame qué es DivisionCero, qué ofrece (CyberAcademy, Kudo, Conan y Herramientas) y cómo puede ayudar a mejorar la Ciberseguridad de mi empresa.':
-    'Read {url} and explain what DivisionCero is, what it offers (CyberAcademy, Kudo, Conan and Tools) and how it can help improve my company\'s cybersecurity.',
-};
 
 /** Logo de ChatGPT (OpenAI), en `currentColor` para que siga el tema claro u oscuro. */
 function ChatGPTIcon(props: ComponentProps<'svg'>) {
@@ -67,7 +55,6 @@ const agents = [
  * agente de IA por DivisionCero, apuntando al `llms.txt` del sitio.
  */
 export function AskAgent({ className }: { className?: string }) {
-  const t = useT(en);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -77,10 +64,7 @@ export function AskAgent({ className }: { className?: string }) {
   }, [copied]);
 
   async function copy() {
-    const prompt = t(
-      'Lee {url} y explícame qué es DivisionCero, qué ofrece (CyberAcademy, Kudo, Conan y Herramientas) y cómo puede ayudar a mejorar la Ciberseguridad de mi empresa.',
-      { url: `${baseUrl}/llms.txt` },
-    );
+    const prompt = `Lee ${`${baseUrl}/llms.txt`} y explícame qué es DivisionCero, qué ofrece (CyberAcademy, Kudo, Conan y Herramientas) y cómo puede ayudar a mejorar la Ciberseguridad de mi empresa.`;
     try {
       await navigator.clipboard.writeText(prompt);
       setCopied(true);
@@ -103,15 +87,15 @@ export function AskAgent({ className }: { className?: string }) {
           </span>
         ))}
       </div>
-      <span className="whitespace-nowrap text-xs sm:text-sm font-medium text-fd-foreground">{t('Pregúntale a tu agente')}</span>
+      <span className="whitespace-nowrap text-xs sm:text-sm font-medium text-fd-foreground">Pregúntale a tu agente</span>
       <button
         type="button"
         onClick={copy}
-        title={t('Copia un prompt para preguntarle a tu agente de IA por DivisionCero')}
+        title="Copia un prompt para preguntarle a tu agente de IA por DivisionCero"
         className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-fd-border bg-fd-background px-2.5 sm:px-3 py-1.5 text-xs sm:text-sm font-medium text-fd-foreground hover:bg-fd-muted transition-colors"
       >
         {copied ? <Check className="h-3.5 w-3.5 text-[#4DAE84]" /> : <Copy className="h-3.5 w-3.5" />}
-        <span aria-live="polite">{copied ? t('¡Copiado!') : t('Copiar prompt')}</span>
+        <span aria-live="polite">{copied ? '¡Copiado!' : 'Copiar prompt'}</span>
       </button>
     </div>
   );

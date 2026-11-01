@@ -1,6 +1,0 @@
----
-title: "Resource-Level Access Control and Authorization"
-description: "Verifying permissions on each individual resource"
----
-
-Authenticating a user confirms who they are, but says nothing about which specific resources they can query or modify, and confusing these two concepts is the root of a large share of API security breaches. Resource-level access control requires that, besides validating the session, the server verifies on every request that the authenticated user has explicit permission over the requested object, comparing the resource's ownership or relationship with the identity of the requester, not assuming that a valid ID implies valid authorization. In practice, this means an endpoint such as getting an invoice's details must check, before responding, whether that invoice actually belongs to the user or organization making the request, and not simply look it up by its identifier in the database. A robust approach centralizes this logic in a common layer, instead of reimplementing it endpoint by endpoint, because forgetting the check on a single new route is enough to introduce a critical vulnerability exposing other people's data.

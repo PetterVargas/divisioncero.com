@@ -1,6 +1,5 @@
 import { cyberacademySource, getCyberacademyPageMarkdownUrl, getLLMText } from '@/lib/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -17,7 +16,7 @@ export async function GET(_req: Request, { params }: RouteContext<'/llms.mdx/cyb
 }
 
 export function generateStaticParams() {
-  return cyberacademySource.getPages(defaultLocale).map((page) => ({
+  return cyberacademySource.getPages().map((page) => ({
     slug: getCyberacademyPageMarkdownUrl(page).segments,
   }));
 }

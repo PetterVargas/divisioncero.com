@@ -1,6 +1,0 @@
----
-title: "Risk Differences between Traditional AI Models and Autonomous Agents"
-description: "Why an autonomous agent is riskier"
----
-
-A traditional AI model, used as a question-answering chatbot, responds with text and that's where its ability to cause direct harm ends, since any real action depends on a person reading the response and deciding to act on it. An autonomous agent breaks that containment barrier because it's allowed to carry out actions by itself, such as sending emails, modifying files, calling payment APIs or querying databases, which turns every reasoning error or every successful manipulation of the model into an action with a real, immediate effect, not just a wrong answer someone can ignore. This difference completely changes the threat model: an agent with access to a billing system that's tricked through prompt injection doesn't just produce wrong text, but can actually transfer funds or alter records. That's why assessing an agent's risk requires looking not only at how well the underlying model reasons, but at which tools it has connected, with what privileges it operates and what controls exist to stop or reverse an action before it causes irreversible damage.

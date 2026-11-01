@@ -1,6 +1,0 @@
----
-title: "Protecting Training Data and Models"
-description: "How to protect datasets and model artifacts"
----
-
-Training data and a model's weights are assets as valuable as an application's source code, but they usually receive much less protection: complete datasets circulate in unencrypted buckets, shared notebooks or repositories with overly broad permissions. Protecting these assets means encrypting data at rest and in transit, controlling access with the principle of least privilege, and applying anonymization or differential privacy techniques when the data contains personal information. Model weights must also be protected, since they represent a significant investment in compute and can leak information about the data they were trained on. A common case is a training dataset stored in a misconfigured cloud bucket, publicly accessible by mistake, which ends up exposing sensitive customer information months before anyone detects it.

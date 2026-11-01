@@ -1,6 +1,0 @@
----
-title: "Input Validation and Secure Data Handling"
-description: "Sanitizing inputs to prevent injections and abuse"
----
-
-Any API that accepts data from an external client must treat it as potentially hostile, regardless of whether it comes from your own mobile app or a third party, because any request can be modified before reaching the server. Input validation consists of verifying the type, length, format and range of each field before processing it, ideally against an allowlist of permitted values instead of trying to block known malicious patterns, which is always one step behind new evasion techniques. This control prevents everything from SQL or NoSQL injection to insecure deserialization attacks, where a manipulated payload executes arbitrary code when processed by the backend. A frequently overlooked nuance is that validation must happen on the server, never only on the client, because frontend validations are trivial to bypass by calling the endpoint directly; it's also worth applying size limits on the full payload, not just individual fields, to prevent a disproportionately large request from exhausting memory or causing a denial of service.

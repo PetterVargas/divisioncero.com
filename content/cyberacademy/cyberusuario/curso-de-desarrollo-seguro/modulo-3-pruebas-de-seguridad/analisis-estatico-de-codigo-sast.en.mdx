@@ -1,6 +1,0 @@
----
-title: "Static Code Analysis (SAST)"
-description: "Scanning code without running it"
----
-
-Static analysis tools (SAST) review source code without needing to run it, looking for known vulnerability patterns: insecure use of cryptographic functions, possible SQL injections, credentials written directly into the code or incorrect handling of sensitive data. Their big advantage is that they integrate directly into the developer's workflow, flagging the problem in the editor itself or in the pull request, before the code even reaches a test environment. They don't replace human review or other security testing, since they generate false positives and don't detect business logic flaws, but they work as a first automated line of defense, cheap and fast, that catches common mistakes before they become exploitable vulnerabilities in production.

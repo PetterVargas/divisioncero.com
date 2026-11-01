@@ -8,9 +8,6 @@ import { Button } from '@/components/herramientas/ui/button';
 import { Card } from '@/components/herramientas/ui/card';
 import { Checkbox } from '@/components/herramientas/ui/checkbox';
 import { cn } from '@/lib/herramientas/utils';
-import { useToolT, useTranslated } from '@/lib/herramientas/i18n/use-tool-t';
-import type { Dictionary } from '@/lib/site-translations';
-import { en as sharedEn } from './i18n';
 
 export interface ChecklistItemData {
   id: string;
@@ -40,17 +37,11 @@ function readStoredChecked(storageKey: string): Record<string, boolean> {
  */
 export function ChecklistGroup({
   storageKey,
-  sections: baseSections,
-  en = {},
+  sections,
 }: {
   storageKey: string;
   sections: ChecklistSectionData[];
-  /** Traducciones de los textos del checklist (los de la herramienta que lo usa). */
-  en?: Dictionary;
 }) {
-  const dictionary = useMemo(() => ({ ...sharedEn, ...en }), [en]);
-  const t = useToolT(dictionary);
-  const sections = useTranslated(baseSections, dictionary);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -83,11 +74,11 @@ export function ChecklistGroup({
       <Card className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2">
           <ClipboardCheck className="h-5 w-5 text-primary" />
-          <span className="font-semibold">{t('Progreso del checklist')}</span>
+          <span className="font-semibold">Progreso del checklist</span>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-sm font-medium">
-            {t('{done}/{total} completados', { done: checkedCount, total })}
+            {`${checkedCount}/${total} completados`}
           </span>
           <div className="h-2 w-28 overflow-hidden rounded-full bg-muted">
             <div
@@ -97,7 +88,7 @@ export function ChecklistGroup({
           </div>
           <Button onClick={handleReset} variant="outline" size="sm" data-test="checklist-reset">
             <RotateCcw className="mr-2 h-3.5 w-3.5" />
-            {t('Reiniciar')}
+            Reiniciar
           </Button>
         </div>
       </Card>
@@ -106,7 +97,7 @@ export function ChecklistGroup({
         <Card className="border-2 border-green-500 bg-green-50 p-4 text-center dark:bg-green-950/50">
           <p className="flex items-center justify-center gap-2 font-semibold">
             <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400" />
-            {t('¡Checklist completo! Quedó todo verificado.')}
+            ¡Checklist completo! Quedó todo verificado.
           </p>
         </Card>
       )}

@@ -1,6 +1,0 @@
----
-title: "The Principle of Least Privilege Applied to Agents and Skills"
-description: "Granting only strictly necessary permissions"
----
-
-The principle of least privilege, already well known in traditional identity security, takes on a different urgency when applied to AI agents, because an agent can be manipulated into misusing any permission it has available, even if the user never requested that action. Applying it in practice means an agent designed to summarize documents shouldn't have credentials with write permission on the file system, and a financial analysis skill doesn't need access to the user's emails just because they share the same agent session. The particular challenge with agents is that their capabilities are usually configured in aggregate, connecting several tools to the same assistant for convenience, which easily ends up implicitly granting permissions no individual task justifies. An effective practice is to define specific permission profiles per task or per activated skill, revoking access to tools not used in that particular session, and periodically reviewing which agents accumulate broad privileges "just in case", since that silent accumulation is exactly what an attacker looks to exploit when compromising an agent through instruction manipulation.

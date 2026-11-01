@@ -4,7 +4,6 @@ import { X } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { buttonVariants } from '@/components/ui/button';
 import { bannerKey } from '@/lib/banner';
-import { useT } from '@/components/i18n';
 
 const maskImage = 'linear-gradient(to bottom,white,transparent), radial-gradient(circle at top center, white, transparent)';
 
@@ -24,7 +23,6 @@ export function SiteBanner({
   height?: string;
   children: ReactNode;
 }) {
-  const t = useT();
   const [open, setOpen] = useState(true);
   const key = bannerKey(id);
 
@@ -71,8 +69,8 @@ export function SiteBanner({
       {children}
       <button
         type="button"
-        aria-label={t('Cerrar banner')}
-        title={t('Cerrar banner')}
+        aria-label="Cerrar banner"
+        title="Cerrar banner"
         onClick={onClose}
         className={cn(buttonVariants({ variant: 'ghost', size: 'icon-sm' }), 'absolute inset-e-2 top-1/2 -translate-y-1/2 text-fd-muted-foreground/50')}
       >

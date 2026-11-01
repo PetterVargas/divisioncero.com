@@ -25,19 +25,6 @@ import {
 } from './schema';
 import { z } from 'zod/mini';
 import { usePathname } from 'fumadocs-core/framework';
-import { useT } from '@/components/i18n';
-import type { Dictionary } from '@/lib/site-translations';
-
-const en: Dictionary = {
-  '¿Qué te pareció esta guía?': 'How is this guide?',
-  'Buena': 'Good',
-  'Mala': 'Bad',
-  '¡Gracias por tus comentarios!': 'Thank you for your feedback!',
-  'Ver en GitHub': 'View on GitHub',
-  'Enviar de nuevo': 'Submit Again',
-  'Deja tus comentarios...': 'Leave your feedback...',
-  'Enviar': 'Submit',
-};
 
 
 const rateButtonVariants = cva(
@@ -68,7 +55,6 @@ export function Feedback({
 }: {
   onSendAction?: (feedback: PageFeedback) => Promise<ActionResponse>;
 }) {
-  const t = useT(en);
   const pathname = usePathname();
   const { previous, setPrevious } = useSubmissionStorage(pathname, (v) => {
     const result = pageFeedbackResult.safeParse(v);
@@ -111,7 +97,7 @@ export function Feedback({
       className="border-y py-3"
     >
       <div className="flex flex-row items-center gap-2">
-        <p className="text-sm font-medium pe-2">{t('¿Qué te pareció esta guía?')}</p>
+        <p className="text-sm font-medium pe-2">¿Qué te pareció esta guía?</p>
         <button
           disabled={previous !== null}
           className={cn(
@@ -124,7 +110,7 @@ export function Feedback({
           }}
         >
           <ThumbsUp />
-          {t('Buena')}
+          Buena
         </button>
         <button
           disabled={previous !== null}
@@ -138,13 +124,13 @@ export function Feedback({
           }}
         >
           <ThumbsDown />
-          {t('Mala')}
+          Mala
         </button>
       </div>
       <CollapsibleContent className="mt-3">
         {previous ? (
           <div className="px-3 py-6 flex flex-col items-center gap-3 bg-fd-card text-fd-muted-foreground text-sm text-center rounded-xl">
-            <p>{t('¡Gracias por tus comentarios!')}</p>
+            <p>¡Gracias por tus comentarios!</p>
             <div className="flex flex-row items-center gap-2">
               <a
                 href={previous.response?.githubUrl}
@@ -157,7 +143,7 @@ export function Feedback({
                   'text-xs',
                 )}
               >
-                {t('Ver en GitHub')}
+                Ver en GitHub
               </a>
 
               <button
@@ -172,7 +158,7 @@ export function Feedback({
                   setPrevious(null);
                 }}
               >
-                {t('Enviar de nuevo')}
+                Enviar de nuevo
               </button>
             </div>
           </div>
@@ -184,7 +170,7 @@ export function Feedback({
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               className="border rounded-lg bg-fd-secondary text-fd-secondary-foreground p-3 resize-none focus-visible:outline-none placeholder:text-fd-muted-foreground"
-              placeholder={t('Deja tus comentarios...')}
+              placeholder="Deja tus comentarios..."
               onKeyDown={(e) => {
                 if (!e.shiftKey && e.key === 'Enter') {
                   submit(e);
@@ -196,7 +182,7 @@ export function Feedback({
               className={cn(buttonVariants({ color: 'outline' }), 'w-fit px-3')}
               disabled={isPending}
             >
-              {t('Enviar')}
+              Enviar
             </button>
           </form>
         )}
@@ -394,7 +380,6 @@ function FeedbackTextForm({
   onSendAction: (feedback: BlockFeedback) => Promise<ActionResponse>;
   onClose: () => void;
 }) {
-  const t = useT(en);
   const pathname = usePathname();
   const { previous, setPrevious } = useSubmissionStorage(`${pathname}-${blockId}`, (v) => {
     const result = blockFeedbackResult.safeParse(v);
@@ -433,7 +418,7 @@ function FeedbackTextForm({
           container.className,
         )}
       >
-        <p>{t('¡Gracias por tus comentarios!')}</p>
+        <p>¡Gracias por tus comentarios!</p>
         <div className="flex flex-row items-center gap-2">
           <a
             href={previous.response?.githubUrl}
@@ -446,7 +431,7 @@ function FeedbackTextForm({
               'text-xs',
             )}
           >
-            {t('Ver en GitHub')}
+            Ver en GitHub
           </a>
 
           <button
@@ -460,7 +445,7 @@ function FeedbackTextForm({
               setPrevious(null);
             }}
           >
-            {t('Enviar de nuevo')}
+            Enviar de nuevo
           </button>
         </div>
       </div>
@@ -478,7 +463,7 @@ function FeedbackTextForm({
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         className="border rounded-lg bg-fd-secondary text-fd-secondary-foreground p-3 resize-none focus-visible:outline-none placeholder:text-fd-muted-foreground"
-        placeholder={t('Deja tus comentarios...')}
+        placeholder="Deja tus comentarios..."
         onKeyDown={(e) => {
           if (!e.shiftKey && e.key === 'Enter') {
             submit(e);
@@ -492,7 +477,7 @@ function FeedbackTextForm({
           disabled={isPending}
         >
           <CornerDownRightIcon className="size-4" />
-          {t('Enviar')}
+          Enviar
         </button>
         <button
           type="button"

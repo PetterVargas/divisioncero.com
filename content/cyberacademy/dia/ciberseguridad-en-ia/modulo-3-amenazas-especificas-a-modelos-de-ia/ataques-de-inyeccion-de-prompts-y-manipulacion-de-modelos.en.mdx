@@ -1,6 +1,0 @@
----
-title: "Prompt Injection Attacks and Model Manipulation"
-description: "How prompt injection works and how to mitigate it"
----
-
-Prompt injection consists of inserting malicious instructions into a language model's input so it ignores its original rules and carries out unauthorized actions, such as revealing the system prompt, leaking confidential data or running commands in connected tools. It's especially risky in applications that give the model access to APIs, databases or web browsing, because the attack can arrive indirectly, hidden in a document, email or web page the model processes without the user writing it directly. Unlike a classic SQL injection, there's no fixed pattern to block, which forces a combination of input validation, privilege isolation for the tools the model can invoke, and human review of sensitive actions. Ignoring this risk in an assistant connected to internal systems can translate into data leaks or unwanted actions carried out on the user's behalf.

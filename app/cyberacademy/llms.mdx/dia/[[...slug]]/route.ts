@@ -1,6 +1,5 @@
 import { diaSource, getDiaPageMarkdownUrl, getLLMText } from '@/lib/cyberacademy/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -12,5 +11,5 @@ export async function GET(_req: Request, { params }: RouteContext<'/cyberacademy
 }
 
 export function generateStaticParams() {
-  return diaSource.getPages(defaultLocale).map((page) => ({ slug: getDiaPageMarkdownUrl(page).segments }));
+  return diaSource.getPages().map((page) => ({ slug: getDiaPageMarkdownUrl(page).segments }));
 }

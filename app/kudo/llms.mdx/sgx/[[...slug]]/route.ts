@@ -1,6 +1,5 @@
 import { sgxSource, getSgxPageMarkdownUrl, getLLMText } from '@/lib/kudo/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -17,7 +16,7 @@ export async function GET(_req: Request, { params }: RouteContext<'/kudo/llms.md
 }
 
 export function generateStaticParams() {
-  return sgxSource.getPages(defaultLocale).map((page) => ({
+  return sgxSource.getPages().map((page) => ({
     slug: getSgxPageMarkdownUrl(page).segments,
   }));
 }

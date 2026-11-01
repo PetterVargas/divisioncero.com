@@ -187,7 +187,7 @@ html > body[data-scroll-locked] {
 }
 
 /*
- * Entrada del hero de la home (app/[lang]/(home)/page.tsx). Es CSS puro para que el título y
+ * Entrada del hero de la home (app/(home)/page.tsx). Es CSS puro para que el título y
  * los botones aparezcan en cuanto llega el HTML: con GSAP quedaban ocultos hasta que el
  * JavaScript cargaba e hidrataba, lo que en celulares tardaba varios segundos.
  */

@@ -1,6 +1,0 @@
----
-title: "Tokenizing and Masking Sensitive Data"
-description: "Techniques for hiding sensitive data without losing it"
----
-
-Tokenization replaces a sensitive value, such as a card number or an ID document, with a substitute value with no mathematical meaning that can only be linked back to the original through a centralized, controlled system, while masking hides part of the data, such as showing only the last four digits of a card, so it remains visually useful without exposing the complete value. Both techniques let development, support or analytics teams work with realistic data without needing access to the original, drastically reducing the exposure surface in the event of a breach. The practical difference matters: tokenization is reversible and suitable for processes that need to recover the real value, such as a payment, while masking is usually used in test environments or reports where the original value should never be reconstructed. Applying the wrong technique, for example masking data that's later needed intact, creates avoidable operational friction.

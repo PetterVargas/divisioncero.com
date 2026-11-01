@@ -1,6 +1,0 @@
----
-title: "API Architectures: REST, GraphQL and gRPC"
-description: "Comparing API styles and their risks"
----
-
-REST, GraphQL and gRPC are the three most widely used architectural styles for exposing functionality between systems, and each comes with its own risk profile. REST organizes resources into predictable endpoints over HTTP, which makes it easy to apply classic perimeter controls but can lead to data overexposure if resources aren't carefully designed. GraphQL centralizes everything in a single endpoint where the client decides what to query, which gives flexibility but opens the door to abusive nested queries that exhaust server resources if there are no depth and complexity limits. gRPC, for its part, uses Protocol Buffers and HTTP/2 for high-performance communication between internal services, with a strict contract that reduces typing errors but whose binary nature makes inspection with traditional proxy tools harder. Understanding these differences is the first step before applying any security control, because the same known threats materialize differently depending on the chosen architecture.

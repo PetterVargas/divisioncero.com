@@ -5,15 +5,14 @@
   "packageManager": "pnpm@12.11.2",
   "type": "module",
   "scripts": {
-    "build": "pnpm build:presentaciones && pnpm museo:update && opennextjs-cloudflare build",
+    "build": "pnpm build:presentaciones && pnpm museo:update && pnpm build:next",
     "build:next": "pnpm static:generate && next build --webpack",
     "static:generate": "fumadocs-mdx && tsx --import ./scripts/register-mdx.ts ./scripts/og-generate.tsx && tsx --import ./scripts/register-mdx.ts ./scripts/search-generate.ts",
     "build:presentaciones": "pnpm --dir cyberacademy/presentaciones install --frozen-lockfile && PRESENTACIONES_OUT_DIR=../../public/cyberacademy/presentaciones pnpm --dir cyberacademy/presentaciones build",
     "dev": "next dev",
     "start": "next start",
-    "preview": "pnpm run build && opennextjs-cloudflare preview",
-    "deploy": "pnpm run build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "preview": "pnpm run build && wrangler dev",
+    "deploy": "pnpm run build && wrangler deploy",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "lint:links": "fumadocs-mdx && tsx --import ./scripts/register-mdx.ts ./scripts/lint.ts",
     "export:pdf": "fumadocs-mdx && tsx --import ./scripts/register-mdx.ts ./scripts/export-pdf.ts",
@@ -60,7 +59,6 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "1.20.14",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/d3-force": "^3.0.10",
     "@types/mdx": "^2.0.14",

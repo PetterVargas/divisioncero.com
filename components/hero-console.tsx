@@ -2,35 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { BookOpen, GraduationCap, Radar, Sparkles, ArrowUp, Loader2 } from 'lucide-react';
-import { useT } from '@/components/i18n';
-import type { Dictionary } from '@/lib/site-translations';
-
-const en: Dictionary = {
-  'Postura de Ciberseguridad': 'Cybersecurity posture',
-  'En vivo': 'Live',
-  'Cumplimiento Kudo': 'Kudo compliance',
-  'Amenazas bloqueadas': 'Threats blocked',
-  'Personas capacitadas': 'People trained',
-  Cumple: 'Compliant',
-  'En progreso': 'In progress',
-  Bloqueada: 'Blocked',
-  Completado: 'Completed',
-  'Analizando…': 'Analyzing…',
-  'Ciberseguridad en Autenticación': 'Authentication security',
-  'Gestión de Vulnerabilidades': 'Vulnerability management',
-  'Inventario de Identidad': 'Identity inventory',
-  'Escaneo desde nodo de salida Tor': 'Scan from a Tor exit node',
-  'Fuerza bruta contra el VPN': 'Brute force against the VPN',
-  'Curso: Detección de phishing': 'Course: Phishing detection',
-  'Capacitación de Ciberseguridad': 'Cybersecurity training',
-  'Mapeo de Cumplimiento Regulatorio': 'Regulatory compliance mapping',
-  'Pregunta lo que quieras': 'Ask anything',
-  '¿Qué controles nos faltan para ISO 27001?': 'Which controls are we missing for ISO 27001?',
-  'Te faltan 3 controles críticos:': 'You are missing 3 critical controls:',
-  '¿Quién no ha completado la capacitación?': "Who hasn't completed the training?",
-  '2 personas de Finanzas tienen pendiente:': '2 people in Finance still have pending:',
-  ahora: 'now',
-};
 
 type Source = 'kudo' | 'conan' | 'academy';
 type Status = 'ok' | 'progress' | 'blocked' | 'done';
@@ -105,7 +76,6 @@ function usePrefersReducedMotion() {
  * Es decorativo; con movimiento reducido se muestra estático.
  */
 export function HeroConsole({ className }: { className?: string }) {
-  const t = useT(en);
   const reduced = usePrefersReducedMotion();
 
   // Índice de la fila más reciente en `pool`; las visibles son las siguientes VISIBLE_ROWS hacia atrás.
@@ -130,7 +100,7 @@ export function HeroConsole({ className }: { className?: string }) {
   }, [reduced]);
 
   const question = questions[qIndex];
-  const questionText = t(question.q);
+  const questionText = question.q;
 
   useEffect(() => {
     if (reduced) {
@@ -168,21 +138,21 @@ export function HeroConsole({ className }: { className?: string }) {
           <span className="h-2.5 w-2.5 rounded-full bg-fd-muted-foreground/30" />
           <span className="h-2.5 w-2.5 rounded-full bg-fd-muted-foreground/30" />
         </div>
-        <span className="text-xs font-medium text-fd-muted-foreground truncate">{t('Postura de Ciberseguridad')}</span>
+        <span className="text-xs font-medium text-fd-muted-foreground truncate">Postura de Ciberseguridad</span>
         <span className="ml-auto inline-flex items-center gap-1.5 text-xs font-medium text-[#4DAE84]">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full rounded-full bg-[#4DAE84] opacity-60 motion-safe:animate-ping" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-[#4DAE84]" />
           </span>
-          {t('En vivo')}
+          En vivo
         </span>
       </div>
 
       {/* Métricas */}
       <div className="grid grid-cols-3 divide-x divide-fd-border border-b border-fd-border">
-        <Metric label={t('Cumplimiento Kudo')} value="72%" bar={72} />
-        <Metric label={t('Amenazas bloqueadas')} value={String(blocked)} />
-        <Metric label={t('Personas capacitadas')} value="18/20" bar={90} />
+        <Metric label="Cumplimiento Kudo" value="72%" bar={72} />
+        <Metric label="Amenazas bloqueadas" value={String(blocked)} />
+        <Metric label="Personas capacitadas" value="18/20" bar={90} />
       </div>
 
       {/* Feed */}
@@ -199,22 +169,22 @@ export function HeroConsole({ className }: { className?: string }) {
                 <Icon className="h-3.5 w-3.5 text-[#4DAE84]" />
               </span>
               <span className="hidden sm:inline font-mono text-xs text-fd-muted-foreground w-28 shrink-0 truncate">{row.id}</span>
-              <span className="min-w-0 flex-1 truncate font-medium">{t(row.title)}</span>
+              <span className="min-w-0 flex-1 truncate font-medium">{row.title}</span>
               <span className="hidden md:inline text-xs text-fd-muted-foreground shrink-0">
                 {sourceLabel[row.source]} · {row.meta}
               </span>
               {pending ? (
                 <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium text-fd-muted-foreground bg-fd-muted shrink-0">
                   <Loader2 className="h-3 w-3 animate-spin" />
-                  {t('Analizando…')}
+                  Analizando…
                 </span>
               ) : (
                 <span className={`rounded-full px-2 py-0.5 text-xs font-medium shrink-0 ${statusClass[row.status]}`}>
-                  {t(statusLabel[row.status])}
+                  {statusLabel[row.status]}
                 </span>
               )}
               <span className="hidden sm:inline w-10 text-right text-xs text-fd-muted-foreground shrink-0">
-                {i === 0 ? t('ahora') : row.time}
+                {i === 0 ? 'ahora' : row.time}
               </span>
             </li>
           );
@@ -227,7 +197,7 @@ export function HeroConsole({ className }: { className?: string }) {
           className={`mb-3 flex flex-wrap items-center gap-2 text-sm transition-all duration-500 ${answered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}`}
         >
           <Sparkles className="h-4 w-4 text-[#4DAE84] shrink-0" />
-          <span className="text-fd-muted-foreground">{t(question.lead)}</span>
+          <span className="text-fd-muted-foreground">{question.lead}</span>
           {question.chips.map((chip) => (
             <span key={chip} className="rounded-md border border-fd-border bg-fd-background px-1.5 py-0.5 font-mono text-xs">
               {chip}
@@ -237,7 +207,7 @@ export function HeroConsole({ className }: { className?: string }) {
         <div className="flex items-center gap-2 rounded-xl border border-fd-border bg-fd-background px-3 py-2">
           <span className="min-w-0 flex-1 truncate text-sm">
             {typed === 0 ? (
-              <span className="text-fd-muted-foreground">{t('Pregunta lo que quieras')}</span>
+              <span className="text-fd-muted-foreground">Pregunta lo que quieras</span>
             ) : (
               <>
                 {questionText.slice(0, typed)}

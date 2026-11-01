@@ -4,7 +4,7 @@
 
 [divisioncero.com](https://divisioncero.com) es el portal de DivisionCero. Reúne formación, un framework de cumplimiento, herramientas gratuitas y servicios para que personas y empresas, sobre todo pequeñas y medianas, mejoren su Ciberseguridad sin necesidad de ser expertas.
 
-El portal está disponible en **español** e **inglés**.
+El portal está disponible en **español**.
 
 ---
 

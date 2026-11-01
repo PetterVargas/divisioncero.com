@@ -1,6 +1,5 @@
 import { ccnSource, getCcnPageMarkdownUrl, getLLMText } from '@/lib/cyberacademy/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -12,5 +11,5 @@ export async function GET(_req: Request, { params }: RouteContext<'/cyberacademy
 }
 
 export function generateStaticParams() {
-  return ccnSource.getPages(defaultLocale).map((page) => ({ slug: getCcnPageMarkdownUrl(page).segments }));
+  return ccnSource.getPages().map((page) => ({ slug: getCcnPageMarkdownUrl(page).segments }));
 }

@@ -1,6 +1,5 @@
 import { frameworkDocs, sgxDocs } from 'collections/server';
 import { loader } from 'fumadocs-core/source';
-import { i18n, defaultLocale } from '@/lib/i18n';
 import {
   baseUrl, kudoUrl,
   frameworkRoute, frameworkImageRoute, frameworkContentRoute,
@@ -8,14 +7,12 @@ import {
 } from './shared';
 
 export const frameworkSource = loader({
-  i18n,
   baseUrl: frameworkRoute,
   source: frameworkDocs.toFumadocsSource(),
   plugins: [],
 });
 
 export const sgxSource = loader({
-  i18n,
   baseUrl: sgxRoute,
   source: sgxDocs.toFumadocsSource(),
   plugins: [],
@@ -90,7 +87,7 @@ let duplicateTitles: Set<string> | undefined;
 function getDuplicateTitles() {
   if (!duplicateTitles) {
     const counts = new Map<string, number>();
-    for (const p of [...frameworkSource.getPages(defaultLocale), ...sgxSource.getPages(defaultLocale)]) {
+    for (const p of [...frameworkSource.getPages(), ...sgxSource.getPages()]) {
       counts.set(p.data.title, (counts.get(p.data.title) ?? 0) + 1);
     }
     duplicateTitles = new Set([...counts].filter(([, n]) => n > 1).map(([t]) => t));

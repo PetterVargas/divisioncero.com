@@ -1,13 +1,12 @@
 import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource } from '@/lib/source';
 import type { Graph } from '../components/graph-view';
-import { defaultLocale } from '@/lib/i18n';
 
 export function buildGraph(): Graph {
   const sources = [cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource];
   const graph: Graph = { links: [], nodes: [] };
 
   for (const source of sources) {
-    for (const page of source.getPages(defaultLocale)) {
+    for (const page of source.getPages()) {
       graph.nodes.push({
         id: page.url,
         url: page.url,

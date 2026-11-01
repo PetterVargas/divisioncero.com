@@ -1,6 +1,0 @@
----
-title: "API-Specific Attack Surface"
-description: "What makes an API's risk exposure unique"
----
-
-APIs expand an organization's attack surface differently from a traditional web application, because they directly expose business logic and underlying data without the graphical interface layer that normally hides or obscures certain internal behaviors. Each endpoint is, in essence, an independent entry point with its own risk surface, which means an API with hundreds of routes has hundreds of points that must be individually protected, not a single perimeter to secure. On top of this, APIs are usually consumed by multiple clients, such as mobile apps, third-party integrations and other microservices, each with a different level of trust, which makes applying uniform controls harder. A particularly relevant risk is undocumented or "shadow" APIs, old versions or test endpoints that remain active without the security team knowing about them, and that represent an invisible attack path even for organizations with good controls over their main API; that's why a complete, up-to-date endpoint inventory is the foundation of any serious API security strategy.

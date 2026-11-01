@@ -9,8 +9,6 @@ import {
   Building2, Cloud, Code, RefreshCw, Users, Database, Search,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
-import { localizeUrl } from '@/lib/i18n';
-import { getT } from '@/lib/site-translations';
 
 const sectionTabs: LayoutTab[] = [
   {
@@ -38,12 +36,11 @@ const domainTabs: LayoutTab[] = [
   { title: 'ADR', description: 'Detección y Respuesta', icon: <Search className="size-4" />, url: `${academyRoute}/adr` },
 ];
 
-export function getAllTabs(lang: string): LayoutTab[] {
-  const t = getT(lang);
+export function getAllTabs(): LayoutTab[] {
   return [...sectionTabs, ...domainTabs].map((tab) => ({
     ...tab,
-    description: t(String(tab.description)),
-    url: localizeUrl(tab.url, lang),
+    description: String(tab.description),
+    url: tab.url,
   }));
 }
 
@@ -51,8 +48,8 @@ const cyberusuarioIcons: Record<string, ReactNode> = {
   Políticas: <FileText className="size-4" />,
 };
 
-export function getCyberusuarioSubTabs(lang: string): LayoutTab[] {
-  return getSidebarTabs(cyberusuarioSource.getPageTree(lang), {
+export function getCyberusuarioSubTabs(): LayoutTab[] {
+  return getSidebarTabs(cyberusuarioSource.getPageTree(), {
     transform: (option) => ({
       ...option,
       icon: cyberusuarioIcons[String(option.title)] ?? option.icon,

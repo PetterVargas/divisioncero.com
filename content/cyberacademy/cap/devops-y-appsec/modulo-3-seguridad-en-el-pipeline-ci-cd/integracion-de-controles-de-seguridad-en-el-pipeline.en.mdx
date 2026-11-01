@@ -1,6 +1,0 @@
----
-title: "Integrating Security Controls into the Pipeline"
-description: "Inserting security into every stage of the CI/CD pipeline"
----
-
-Integrating security into the CI/CD pipeline means each control (code analysis, dependency scanning, dynamic testing and configuration verification) runs automatically at the right point in the build and deployment flow, without depending on a security team manually reviewing each change before it goes to production. Effective design distributes these controls according to their cost and speed: fast, low-cost analyses, such as static code or dependency scanning, run on every commit to give immediate feedback, while slower tests, such as full dynamic analysis or automated penetration testing, are reserved for later stages where the impact on development speed is smaller. A nuance that distinguishes a mature integration from a superficial one is that the results of these controls must be directly actionable by the developer, showing exactly which line of code or which dependency generated the finding, instead of producing generic reports that end up ignored. When security becomes a natural part of the pipeline instead of an additional, external step, the development team's cultural resistance to these controls drops considerably.

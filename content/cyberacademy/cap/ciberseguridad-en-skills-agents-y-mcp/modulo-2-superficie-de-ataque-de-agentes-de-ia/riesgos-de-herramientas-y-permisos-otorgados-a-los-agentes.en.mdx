@@ -1,6 +1,0 @@
----
-title: "Risks of Tools and Permissions Granted to Agents"
-description: "How each connected tool expands the risk"
----
-
-Each tool connected to an agent, whether access to email, a code repository, a database or a payment API, directly expands its attack surface, because the agent de facto inherits all of that tool's permissions, without distinguishing by itself between a legitimate user instruction and one manipulated by malicious external content. The risk isn't only in granting too many tools, but in granting them with broader permissions than the task really needs, such as giving full write access to a repository when the agent only needs to read code to answer questions. A frequent attack pattern combines several tools to escalate impact: an agent with access to read email and send messages can, if manipulated through malicious content embedded in a received email, end up forwarding sensitive information to an external recipient without the user having requested it. The recommended practice is to audit each tool before connecting it, asking specifically what an attacker who manages to control the agent's instructions could do with it, not just what the legitimate use case needs.

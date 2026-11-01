@@ -6,8 +6,7 @@ import { Search } from 'lucide-react';
 import type { Tool } from '@/lib/herramientas/tools';
 import { ToolCard } from '@/components/herramientas/tool-card';
 import { toolIcons as icons } from '@/lib/herramientas/tool-icons';
-import { useI18n } from '@/components/herramientas/i18n-provider';
-import { format } from '@/lib/herramientas/i18n/format';
+import { textos } from '@/lib/herramientas/textos';
 
 const MARQUEE_ROWS = 5;
 // Con pocas herramientas por fila, dos copias no alcanzan a cubrir el ancho
@@ -123,7 +122,7 @@ function normalize(value: string) {
 
 export function ToolsSearch({ tools }: { tools: Tool[] }) {
   const [query, setQuery] = useState('');
-  const { home: t } = useI18n().dict;
+  const t = textos.home;
 
   const filtered = useMemo(() => {
     const q = normalize(query.trim());
@@ -153,7 +152,7 @@ export function ToolsSearch({ tools }: { tools: Tool[] }) {
       {isSearching &&
         (filtered.length === 0 ? (
           <p className="text-center text-sm text-muted-foreground">
-            {format(t.noResults, { query })}
+            {t.noResults.replace('{query}', query)}
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">

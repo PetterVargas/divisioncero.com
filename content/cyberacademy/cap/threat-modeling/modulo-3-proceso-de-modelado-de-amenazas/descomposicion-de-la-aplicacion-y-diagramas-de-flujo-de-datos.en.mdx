@@ -1,6 +1,0 @@
----
-title: "Application Decomposition and Data Flow Diagrams"
-description: "Mapping components and flows before looking for threats"
----
-
-Before threats can be systematically identified, you need to understand precisely how the system to be analyzed is built, and that's the purpose of application decomposition: dividing it into its main components, processes, data stores, external entities and the trust boundaries that separate them. The data flow diagram is the central tool of this stage; it visually represents how information moves between these components, specifically indicating where it crosses a trust boundary, for example when data travels from the user's browser to the server, or from an internal microservice to an external vendor's API, because it's precisely at those crossings that the most relevant threats tend to concentrate. A common mistake when building these diagrams is making them too detailed or too abstract; the right level of granularity shows enough components to reason about realistic threats without getting lost in implementation details that add nothing to the analysis. A well-built diagram, with trust boundaries clearly marked, turns the search for threats from an exercise in scattered intuition into a systematic walkthrough, component by component and flow by flow, which reduces the likelihood of leaving blind spots unanalyzed.

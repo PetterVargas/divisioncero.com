@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { cookieConsentKey } from '@/lib/shared';
-import { useLocalizeUrl, useT } from '@/components/i18n';
 
 type Consent = 'accepted' | 'rejected';
 
@@ -27,8 +26,6 @@ function readConsent(): Consent | null {
  * Guarda la elección en localStorage y actualiza el Consent Mode de Google Analytics.
  */
 export function CookieConsent() {
-  const t = useT();
-  const u = useLocalizeUrl();
   const [visible, setVisible] = useState(false);
 
   // Se decide en el cliente para no desajustar la hidratación del HTML estático.
@@ -53,13 +50,13 @@ export function CookieConsent() {
   return (
     <div
       role="region"
-      aria-label={t('Aviso de cookies')}
+      aria-label="Aviso de cookies"
       className="fixed bottom-5 left-5 z-50 w-[calc(100vw-7rem)] max-w-xs rounded-xl border bg-fd-popover p-4 text-fd-popover-foreground shadow-lg"
     >
       <p className="text-sm">
-        {t('Nosotros usamos')}{' '}
+        Nosotros usamos{' '}
         <Link
-          href={u('/legal/politica-de-cookies')}
+          href="/legal/politica-de-cookies"
           className="font-medium underline underline-offset-4 hover:text-fd-primary"
         >
           cookies
@@ -72,14 +69,14 @@ export function CookieConsent() {
           onClick={() => choose('rejected')}
           className="flex-1 rounded-lg border px-3 py-1.5 text-sm font-medium transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
         >
-          {t('Rechazar')}
+          Rechazar
         </button>
         <button
           type="button"
           onClick={() => choose('accepted')}
           className="flex-1 rounded-lg bg-fd-primary px-3 py-1.5 text-sm font-medium text-fd-primary-foreground transition-opacity hover:opacity-90"
         >
-          {t('Aceptar')}
+          Aceptar
         </button>
       </div>
     </div>

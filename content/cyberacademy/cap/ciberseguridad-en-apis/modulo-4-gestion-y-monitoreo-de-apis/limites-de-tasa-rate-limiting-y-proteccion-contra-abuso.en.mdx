@@ -1,6 +1,0 @@
----
-title: "Rate Limiting and Abuse Protection"
-description: "Controlling request volume to prevent abuse"
----
-
-Rate limiting restricts the number of requests a client can make to an API within a given time window, and although it sounds like a purely performance-related control, it's actually a critical security defense against brute-force attacks, credential enumeration, mass scraping and application-level denial of service. Without rate limits, an attacker can try thousands of username and password combinations per minute, or systematically walk through a range of identifiers to exploit a BOLA-type vulnerability, with nothing stopping them until the damage is done. An effective implementation isn't limited to a global per-IP limit, which is easy to evade with rotating proxies, but applies differentiated limits per authenticated user, per endpoint according to its sensitivity, and with stricter thresholds on critical operations such as login or password recovery. It's also important to return clear responses when the limit is reached, including headers indicating when to retry, so legitimate integrations don't break while real abuse is stopped.

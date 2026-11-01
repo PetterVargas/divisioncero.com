@@ -1,6 +1,0 @@
----
-title: "Continuous Monitoring and Response to Anomalous Agent Behavior"
-description: "Detecting and responding to agent deviations"
----
-
-An agent in production doesn't behave like a static system; its responses and actions vary according to the context of each conversation, which makes defining what's "normal" more complex than in a traditional system based on fixed rules, and that's precisely why continuous monitoring is essential, not optional. Establishing a baseline of expected behavior per task type makes it possible to detect significant deviations, such as a support agent that suddenly starts invoking administrative tools outside its usual pattern, or a skill that generates an unusual volume of calls to an external API in a short period, signals that usually indicate successful manipulation or a serious configuration error. The response to these anomalies should be automated at least in its first phase, with the ability to temporarily suspend the agent's permissions or pause the active session while a human investigates, instead of relying exclusively on later manual review that comes too late to prevent the damage. One element that distinguishes a mature program is feeding these incidents back into the agent's design, adjusting permissions, input filters or human approval rules according to the abuse patterns actually observed in production.

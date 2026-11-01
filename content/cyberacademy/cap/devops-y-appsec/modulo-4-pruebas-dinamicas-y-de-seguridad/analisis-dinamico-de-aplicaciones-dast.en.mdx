@@ -1,6 +1,0 @@
----
-title: "Dynamic Application Analysis (DAST)"
-description: "Testing the running application like an attacker"
----
-
-Unlike static analysis, dynamic application analysis, or DAST, tests the application while it's actually running, sending it real requests and observing how it responds, much as an external attacker without access to the source code would. This lets it detect categories of vulnerabilities that static analysis simply can't see, such as server configuration problems, authentication failures that only manifest at runtime, or vulnerabilities that depend on how different components deployed together interact. Its main limitation is that it can only evaluate the code paths actually exercised during the test, so coverage depends directly on how complete the set of tested routes and flows is, leaving blind spots in little-used functionality or functionality that's hard to reach automatically, such as flows that require several steps of complex authentication. In a mature AppSec program, DAST runs against staging environments that faithfully mirror production, and its results are correlated with SAST findings to prioritize which vulnerabilities represent a real, exploitable risk, not just a theoretical one.

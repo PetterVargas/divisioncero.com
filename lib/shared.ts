@@ -1,4 +1,3 @@
-import { localizeUrl, stripLocale } from './i18n';
 import type { Metadata } from 'next';
 
 export const appName = 'DivisionCero';
@@ -56,11 +55,9 @@ export function pageMetadata({
   publishedTime,
   authors,
   robots,
-  lang = 'es',
 }: {
-  /** Ruta de la página (con o sin prefijo de idioma). */
+  /** Ruta de la página. */
   path: string;
-  lang?: string;
   title: string;
   description?: string;
   images?: string;
@@ -69,14 +66,12 @@ export function pageMetadata({
   authors?: string[];
   robots?: Metadata['robots'];
 }): Metadata {
-  const esPath = stripLocale(path);
-  const canonical = localizeUrl(esPath, lang);
+  const canonical = path;
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: { es: esPath, en: localizeUrl(esPath, 'en'), 'x-default': esPath },
       types: rssAlternateTypes,
     },
     openGraph: {
@@ -84,7 +79,7 @@ export function pageMetadata({
       description,
       url: `${baseUrl}${canonical}`,
       siteName: appName,
-      locale: lang === 'en' ? 'en_US' : 'es_419',
+      locale: 'es_419',
       type,
       ...(publishedTime ? { publishedTime } : {}),
       ...(authors ? { authors } : {}),

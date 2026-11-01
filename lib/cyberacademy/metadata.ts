@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { appName, baseUrl, homeImageRoute, rssAlternateTypes } from './shared';
-import { localizeUrl, stripLocale } from '@/lib/i18n';
 
 // Next.js replaces `openGraph`/`twitter` wholesale per route segment instead of
 // deep-merging with the parent, so every page must restate its own title and
@@ -9,7 +8,7 @@ import { localizeUrl, stripLocale } from '@/lib/i18n';
 export function buildPageMetadata(opts: {
   title: string;
   description?: string;
-  /** Ruta de la página; con prefijo `/en` si es la versión en inglés. */
+  /** Ruta de la página. */
   path: string;
   image?: string;
   type?: 'website' | 'article';
@@ -19,8 +18,6 @@ export function buildPageMetadata(opts: {
   const { title, description, path, image, type = 'website', publishedTime, authors } = opts;
   const url = `${baseUrl}${path}`;
   const images = image ?? homeImageRoute;
-  const esPath = stripLocale(path);
-  const isEnglish = esPath !== path;
 
   return {
     title,
@@ -28,7 +25,6 @@ export function buildPageMetadata(opts: {
     authors: authors?.map((name) => ({ name })),
     alternates: {
       canonical: url,
-      languages: { es: esPath, en: localizeUrl(esPath, 'en'), 'x-default': esPath },
       types: rssAlternateTypes,
     },
     openGraph: {
@@ -37,7 +33,7 @@ export function buildPageMetadata(opts: {
       url,
       type,
       siteName: appName,
-      locale: isEnglish ? 'en_US' : 'es_419',
+      locale: 'es_419',
       images,
       ...(publishedTime ? { publishedTime } : {}),
       ...(authors ? { authors } : {}),

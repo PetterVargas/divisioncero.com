@@ -1,6 +1,0 @@
----
-title: "Encrypting Data in Transit and at Rest in the Cloud"
-description: "Protecting data whether it's moving or stored"
----
-
-Encryption in transit protects data while it travels between systems, typically through TLS, while encryption at rest protects data stored on disks, databases or storage services, and both are needed because they cover different moments of exposure to an attacker. Cloud providers usually offer encryption at rest that can be enabled in a few clicks, but leaving it disabled by default on some services is still a common mistake that exposes sensitive data if someone accesses the underlying physical or logical storage. Managing encryption keys with a dedicated service, instead of letting the provider manage them entirely, adds an extra layer of control when the sensitivity of the data justifies it. A practical example is encrypting a customer database with keys managed by the organization itself, so that not even the cloud provider can read the data without explicit authorization.

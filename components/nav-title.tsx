@@ -2,12 +2,10 @@
 
 import type { ComponentProps } from 'react';
 import Link from 'fumadocs-core/link';
-import { useT } from '@/components/i18n';
 
 export function NavTitle({ href = '/', ...props }: ComponentProps<'a'>) {
-  const t = useT();
   return (
-    <Link href={href} title={`DivisionCero - ${t('Inicio')}`} {...props}>
+    <Link href={href} title={`DivisionCero - ${'Inicio'}`} {...props}>
       <svg
         width="24"
         height="24"

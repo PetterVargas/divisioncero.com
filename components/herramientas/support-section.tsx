@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
-import { getDictionary } from '@/lib/herramientas/i18n/server';
+import { textos } from '@/lib/herramientas/textos';
 
 // Mismo destino que codifican los dos QR.
 const SUBSCRIBE_URL = 'https://youtube.com/@divisioncero?sub_confirmation=1';
@@ -11,8 +11,8 @@ const SUBSCRIBE_URL = 'https://youtube.com/@divisioncero?sub_confirmation=1';
  * hay parpadeo ni desajuste de hidratación al cargar.
  * "dark"/"light" en el nombre del archivo indica el color de los módulos del QR.
  */
-export function SupportSection({ lang }: { lang: string }) {
-  const { support: t } = getDictionary(lang);
+export function SupportSection() {
+  const t = textos.support;
 
   return (
     <section className="relative z-10 w-full max-w-6xl mx-auto px-4 pb-20 sm:pb-28">

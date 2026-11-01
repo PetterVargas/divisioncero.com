@@ -2,13 +2,11 @@
 
 import type { MouseEvent, ReactNode } from 'react';
 import { whatsappUrl as buildWhatsappUrl } from '@/lib/shared';
-import { useT } from '@/components/i18n';
-import type { TFunction } from '@/lib/site-translations';
 
-function whatsappUrl(t: TFunction, pageUrl?: string) {
+function whatsappUrl(pageUrl?: string) {
   const message = pageUrl
-    ? t('Hola DivisionCero, estaba en {url} y tengo una pregunta', { url: pageUrl })
-    : t('Hola DivisionCero, tengo una pregunta');
+    ? `Hola DivisionCero, estaba en ${pageUrl} y tengo una pregunta`
+    : 'Hola DivisionCero, tengo una pregunta';
   return buildWhatsappUrl(message);
 }
 
@@ -17,20 +15,19 @@ function whatsappUrl(t: TFunction, pageUrl?: string) {
  * con un mensaje que incluye la URL de la página en la que está el usuario.
  */
 export function WhatsAppButton() {
-  const t = useT();
   // La URL se lee al hacer clic para reflejar navegaciones del lado del cliente.
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
-    event.currentTarget.href = whatsappUrl(t, window.location.href);
+    event.currentTarget.href = whatsappUrl(window.location.href);
   }
 
   return (
     <a
-      href={whatsappUrl(t)}
+      href={whatsappUrl()}
       onClick={handleClick}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={t('Escríbenos por WhatsApp')}
-      title={t('Escríbenos por WhatsApp')}
+      aria-label="Escríbenos por WhatsApp"
+      title="Escríbenos por WhatsApp"
       className="fixed bottom-5 right-5 z-50 flex h-7 w-7 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform lg:h-14 lg:w-14 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
     >
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-[15px] w-[15px] lg:h-[30px] lg:w-[30px]">
@@ -40,22 +37,21 @@ export function WhatsAppButton() {
   );
 }
 
-function demoUrl(t: TFunction, pageUrl?: string) {
+function demoUrl(pageUrl?: string) {
   const message = pageUrl
-    ? t('Hola DivisionCero, estaba en {url} y quiero agendar una demo', { url: pageUrl })
-    : t('Hola DivisionCero, quiero agendar una demo');
+    ? `Hola DivisionCero, estaba en ${pageUrl} y quiero agendar una demo`
+    : 'Hola DivisionCero, quiero agendar una demo';
   return buildWhatsappUrl(message);
 }
 
 /** Enlace a WhatsApp para pedir una demo; igual que el botón flotante, el mensaje incluye la URL actual. */
 export function DemoWhatsAppLink({ children, className, title }: { children: ReactNode; className?: string; title?: string }) {
-  const t = useT();
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
-    event.currentTarget.href = demoUrl(t, window.location.href);
+    event.currentTarget.href = demoUrl(window.location.href);
   }
 
   return (
-    <a href={demoUrl(t)} onClick={handleClick} target="_blank" rel="noopener noreferrer" title={title} className={className}>
+    <a href={demoUrl()} onClick={handleClick} target="_blank" rel="noopener noreferrer" title={title} className={className}>
       {children}
     </a>
   );

@@ -1,6 +1,5 @@
 import { ciberseguridadEmpresarialSource, getCiberseguridadEmpresarialPageMarkdownUrl, getLLMText } from '@/lib/source';
 import { notFound } from 'next/navigation';
-import { defaultLocale } from '@/lib/i18n';
 
 export const revalidate = false;
 
@@ -17,7 +16,7 @@ export async function GET(_req: Request, { params }: RouteContext<'/llms.mdx/cib
 }
 
 export function generateStaticParams() {
-  return ciberseguridadEmpresarialSource.getPages(defaultLocale).map((page) => ({
+  return ciberseguridadEmpresarialSource.getPages().map((page) => ({
     slug: getCiberseguridadEmpresarialPageMarkdownUrl(page).segments,
   }));
 }

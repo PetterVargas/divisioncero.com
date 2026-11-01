@@ -1,6 +1,0 @@
----
-title: "Input Validation and Error Handling"
-description: "Validating inputs and handling errors well"
----
-
-Almost every injection vulnerability, whether SQL, command or browser script injection, originates from trusting input data without properly validating it before processing it. The basic rule is simple but often forgotten: all input coming from a user, an external API or a file must be treated as potentially malicious until its expected format, length and content are validated. Error handling is just as important: an overly detailed error message that reveals a database's structure or a framework's exact version gives an attacker valuable information. Errors should be logged in detail in internal logs for the development team, but shown to the user generically, without exposing technical details of the system that generated them.

@@ -31,5 +31,5 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "kudo", "cyberacademy"]
+  "exclude": ["node_modules", "kudo", "cyberacademy", "legacy", "out"]
 }
