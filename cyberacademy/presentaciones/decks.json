@@ -214,12 +214,5 @@
     "entry": "slides/dia-ciberseguridad-en-los-datos.md",
     "title": "Curso de Ciberseguridad en los Datos",
     "description": "Clasificación, DLP y protección de datos"
-  },
-  {
-    "slug": "bienvenida-slidev",
-    "entry": "slides/slides.md",
-    "title": "Bienvenida a Slidev",
-    "description": "Demo de referencia con los recursos y sintaxis disponibles en Slidev.",
-    "noindex": true
   }
 ]

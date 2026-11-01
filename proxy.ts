@@ -24,7 +24,13 @@ export function proxy(request: NextRequest) {
 
   if (isLocale(first)) {
     const res = NextResponse.next();
-    if (request.cookies.get(localeCookie)?.value !== first) res.cookies.set(localeCookie, first, cookieOptions);
+    // Solo una visita real a la página fija el idioma. Los prefetch y las peticiones RSC de Next
+    // (cabecera `rsc`) pueden seguir en curso al salir de una página en inglés: si también
+    // escribieran la cookie, deshacían el cambio a español hecho con el selector.
+    const isPageVisit = !request.headers.has('rsc') && !request.headers.has('next-router-prefetch');
+    if (isPageVisit && request.cookies.get(localeCookie)?.value !== first) {
+      res.cookies.set(localeCookie, first, cookieOptions);
+    }
     return res;
   }
 

@@ -185,7 +185,7 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
       {
         type: 'custom',
         children: (
-          <Link href={url('/docs')} title={t('Documentación')} className={navLinkClassName}>
+          <Link href={url('/docs')} title={t('Documentación')} className={`${navLinkClassName} max-sm:mb-4`}>
             <BookOpenIcon />
             Docs
           </Link>
@@ -241,7 +241,7 @@ export function getBaseOptions(lang: string): BaseLayoutProps {
             rel="noopener noreferrer"
             className={navLinkClassName}
           >
-            <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold flex items-center gap-1">
+            <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold flex items-center gap-1 whitespace-nowrap">
               <UserIcon className="size-4" />
               {t('Regístrate')}
             </span>

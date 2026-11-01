@@ -6,7 +6,7 @@ import type { I18nProviderProps } from 'fumadocs-ui/contexts/i18n';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams, usePathname, useRouter } from 'next/navigation';
-import { defaultLocale, stripLocale } from '@/lib/i18n';
+import { defaultLocale, localeCookie, stripLocale } from '@/lib/i18n';
 import { type ReactNode, useMemo } from 'react';
 
 /**
@@ -27,6 +27,9 @@ export function Provider({ i18n, children }: { i18n: I18nProviderProps; children
       // (y para el español redirige a la ruta sin prefijo). Recarga completa para que
       // también cambie el `<html lang>` del layout raíz.
       onLocaleChange(value: string) {
+        // La cookie se escribe aquí también, antes de salir, para que la elección no dependa
+        // de la respuesta de `/<idioma>/...` (ver `proxy.ts`).
+        document.cookie = `${localeCookie}=${value}; path=/; max-age=31536000; samesite=lax`;
         const path = stripLocale(window.location.pathname);
         window.location.assign(`/${value}${path === '/' ? '' : path}${window.location.search}${window.location.hash}`);
       },
