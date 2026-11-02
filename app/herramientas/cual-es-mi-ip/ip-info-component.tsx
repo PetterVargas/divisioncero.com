@@ -63,7 +63,7 @@ export function IpInfoComponent() {
       const hash = await sha256Hex(pdfBytes);
       setLastHash(hash);
 
-      const filename = `reporte-ip-${hash}.pdf`;
+      const filename = `reporte-ip-sha256-${hash}.pdf`;
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
 

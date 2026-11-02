@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Book, Rocket, Shield, FileText, Users, Target, Zap, CheckCircle, Layers, Database, Settings2, ShieldCheck, ClipboardCheck } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HeroUniverse } from '@/components/kudo/hero-universe';
+import { HeroGrid } from '@/components/hero-grid';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -192,21 +192,9 @@ export function HomeContent() {
         className="relative overflow-hidden pb-20 flex flex-col justify-center"
         style={{ minHeight: `calc(100vh - ${BANNER_AND_NAV_HEIGHT_PX}px)` }}
       >
+        {/* Mismo fondo que el hero de la página principal. */}
         <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
-        <HeroUniverse className="absolute inset-0 w-full h-full pointer-events-none opacity-90" />
-
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none text-fd-foreground"
-          aria-hidden="true"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <pattern id="hero-dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="1" cy="1" r="0.7" fill="currentColor" opacity="0.1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hero-dots)" />
-        </svg>
+        <HeroGrid className="absolute inset-0 w-full h-full pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_85%)]" />
 
         <div className="w-full">
           <svg

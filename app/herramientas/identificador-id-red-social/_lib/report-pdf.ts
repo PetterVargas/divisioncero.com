@@ -1,7 +1,7 @@
 import { jsPDF } from 'jspdf';
 
 import { formatDateWithUtcOffset } from '@/lib/herramientas/datetime';
-import { drawGeneratedByDivisionCero } from '@/lib/herramientas/pdf-report';
+import { REPORT_HEADER_OFFSET, drawDivisionCeroLogo, drawGeneratedByDivisionCero } from '@/lib/herramientas/pdf-report';
 
 import { PLATFORM_INFO, type SocialProfile } from './platforms';
 
@@ -71,18 +71,20 @@ export function buildSocialProfileReportPdf(profile: SocialProfile): ArrayBuffer
   const doc = new jsPDF({ unit: 'mm', format: 'a4' });
   const platformLabel = PLATFORM_INFO[profile.platform].label;
 
+  drawDivisionCeroLogo(doc, MARGIN_X);
+
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(18);
   doc.setTextColor(20, 20, 20);
-  doc.text('Reporte de Identificación de Perfil', MARGIN_X, TOP_Y);
+  doc.text('Reporte de Identificación de Perfil', MARGIN_X, TOP_Y + REPORT_HEADER_OFFSET);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.setTextColor(120, 120, 120);
-  drawGeneratedByDivisionCero(doc, MARGIN_X, 26);
-  doc.text(`Fecha y hora de generación: ${formatDateWithUtcOffset(new Date())}`, MARGIN_X, 31);
+  drawGeneratedByDivisionCero(doc, MARGIN_X, 26 + REPORT_HEADER_OFFSET);
+  doc.text(`Fecha y hora de generación: ${formatDateWithUtcOffset(new Date())}`, MARGIN_X, 31 + REPORT_HEADER_OFFSET);
 
-  let y = 42;
+  let y = 42 + REPORT_HEADER_OFFSET;
 
   y = addSectionTitle(doc, 'Consulta', y);
   y = addRow(doc, 'Red social', platformLabel, y);

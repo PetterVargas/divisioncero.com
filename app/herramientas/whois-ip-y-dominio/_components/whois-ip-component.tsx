@@ -428,7 +428,7 @@ export function WhoisIpComponent() {
       const hash = await sha256Hex(pdfBytes);
       setLastHash(hash);
 
-      const filename = `reporte-whois-${lookup.kind === 'ip' ? 'ip' : 'dominio'}-${hash}.pdf`;
+      const filename = `reporte-whois-${lookup.kind === 'ip' ? 'ip' : 'dominio'}-sha256-${hash}.pdf`;
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
 

@@ -112,7 +112,7 @@ export function FileHashCalculator() {
       const reportHash = await sha256Hex(pdfBytes);
       setLastReportHash(reportHash);
 
-      const filename = `reporte-hash-${file.name.replace(/\.[^.]+$/, '')}-${reportHash}.pdf`;
+      const filename = `reporte-hash-${file.name.replace(/\.[^.]+$/, '')}-sha256-${reportHash}.pdf`;
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');

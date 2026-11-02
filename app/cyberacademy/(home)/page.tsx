@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HeroUniverse } from '@/components/hero-universe';
+import { HeroGrid } from '@/components/hero-grid';
 import { FullViewportSection } from '@/components/cyberacademy/full-viewport-section';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -252,9 +252,9 @@ export default function HomePage() {
 
       {/* ── Hero ── */}
       <FullViewportSection ref={heroRef} className="relative flex flex-col items-center justify-center py-28 px-4 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/8 via-transparent to-fd-secondary/8 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-fd-primary/5 via-transparent to-transparent pointer-events-none" />
-        <HeroUniverse className="absolute inset-0 w-full h-full pointer-events-none opacity-90" />
+        {/* Mismo fondo que el hero de la página principal. */}
+        <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-secondary/5 pointer-events-none" />
+        <HeroGrid className="absolute inset-0 w-full h-full pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_35%,transparent_85%)]" />
 
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="gsap-hi inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-fd-primary/30 bg-fd-primary/10 text-fd-primary text-sm font-medium mb-8">

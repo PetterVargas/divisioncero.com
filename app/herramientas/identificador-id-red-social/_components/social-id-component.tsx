@@ -131,7 +131,7 @@ export function SocialIdComponent() {
       const hash = await sha256Hex(pdfBytes);
       setLastHash(hash);
 
-      const filename = `reporte-id-${profile.platform}-${hash}.pdf`;
+      const filename = `reporte-id-${profile.platform}-sha256-${hash}.pdf`;
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const objectUrl = URL.createObjectURL(blob);
 

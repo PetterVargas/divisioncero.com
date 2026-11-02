@@ -87,7 +87,7 @@ export function MetadataAnalyzer() {
       const hash = await sha256Hex(pdfBytes);
       setLastHash(hash);
 
-      const filename = `reporte-metadatos-${result.fileName.replace(/\.[^.]+$/, '')}-${hash}.pdf`;
+      const filename = `reporte-metadatos-${result.fileName.replace(/\.[^.]+$/, '')}-sha256-${hash}.pdf`;
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');

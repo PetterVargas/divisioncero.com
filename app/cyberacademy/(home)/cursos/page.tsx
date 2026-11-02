@@ -8,6 +8,7 @@ import {
 import { domains } from '@/lib/cyberacademy/shared';
 import { buildPageMetadata } from '@/lib/cyberacademy/metadata';
 import { CursosExplorer, type Course, type DomainGroup } from '@/components/cyberacademy/cursos-explorer';
+import { HeroGridPage } from '@/components/hero-grid-page';
 
 // Lee el contenido del disco: solo se renderiza en el build (en Cloudflare no hay filesystem).
 export const dynamic = 'force-static';
@@ -74,30 +75,32 @@ export default function CursosPage() {
   const totalCourses = cyberusuarioCourses.length + guardianDomains.reduce((acc, d) => acc + d.courses.length, 0);
 
   return (
-    <main className="grow w-full max-w-(--fd-layout-width) mx-auto px-4 py-16">
-      <div className="text-center mb-14 max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-fd-primary/30 bg-fd-primary/10 text-fd-primary text-sm font-medium mb-6">
-          <Shield className="h-3.5 w-3.5" />
-          CyberAcademy · DivisionCero
+    <HeroGridPage>
+      <main className="relative z-10 grow w-full max-w-(--fd-layout-width) mx-auto px-4 py-16">
+        <div className="text-center mb-14 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-fd-primary/30 bg-fd-primary/10 text-fd-primary text-sm font-medium mb-6">
+            <Shield className="h-3.5 w-3.5" />
+            CyberAcademy · DivisionCero
+          </div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+            Todos los cursos
+          </h1>
+          <p className="text-lg text-fd-muted-foreground leading-relaxed">
+            {`${totalCourses} cursos entre las rutas de`} <b>CyberUsuario</b> y los{' '}
+            {guardianDomains.reduce((acc, d) => acc + d.courses.length, 0)} cursos de{' '}
+            <b>CyberGuardián</b>{`, clasificados en sus ${guardianDomains.length} dominios.`}
+          </p>
         </div>
-        <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
-          Todos los cursos
-        </h1>
-        <p className="text-lg text-fd-muted-foreground leading-relaxed">
-          {`${totalCourses} cursos entre las rutas de`} <b>CyberUsuario</b> y los{' '}
-          {guardianDomains.reduce((acc, d) => acc + d.courses.length, 0)} cursos de{' '}
-          <b>CyberGuardián</b>{`, clasificados en sus ${guardianDomains.length} dominios.`}
-        </p>
-      </div>
 
-      <CursosExplorer
-        cyberusuario={{
-          title: 'CyberUsuario',
-          description: 'Rutas de aprendizaje para colaboradores y usuarios finales: hábitos seguros, identidad digital y protección en el día a día.',
-          courses: cyberusuarioCourses,
-        }}
-        domains={guardianDomains}
-      />
-    </main>
+        <CursosExplorer
+          cyberusuario={{
+            title: 'CyberUsuario',
+            description: 'Rutas de aprendizaje para colaboradores y usuarios finales: hábitos seguros, identidad digital y protección en el día a día.',
+            courses: cyberusuarioCourses,
+          }}
+          domains={guardianDomains}
+        />
+      </main>
+    </HeroGridPage>
   );
 }

@@ -66,11 +66,11 @@ const ecosystemPanels: { icon: React.ReactNode; title: string; description: stri
     cta: 'Visitar CyberAcademy',
   },
   {
-    icon: <BookOpen className={panelIconClass} />,
-    title: 'Kudo',
-    description: 'Framework de Ciberseguridad open-source para el cumplimiento de tu empresa.',
-    href: '/kudo',
-    cta: 'Visitar Kudo',
+    icon: <Building2 className={panelIconClass} />,
+    title: 'Ciberseguridad Empresarial',
+    description: 'Automatización y consultoría en Ciberseguridad para pequeñas y medianas empresas.',
+    href: 'https://app.divisioncero.com/home/empresas',
+    cta: 'Comenzar',
   },
   {
     icon: <Radar className={panelIconClass} />,
@@ -80,11 +80,11 @@ const ecosystemPanels: { icon: React.ReactNode; title: string; description: stri
     cta: 'Visitar Conan',
   },
   {
-    icon: <Building2 className={panelIconClass} />,
-    title: 'Ciberseguridad Empresarial',
-    description: 'Automatización y consultoría en Ciberseguridad para pequeñas y medianas empresas.',
-    href: 'https://app.divisioncero.com/home/empresas',
-    cta: 'Comenzar',
+    icon: <BookOpen className={panelIconClass} />,
+    title: 'Kudo',
+    description: 'Framework de Ciberseguridad open-source para el cumplimiento de tu empresa.',
+    href: '/kudo',
+    cta: 'Visitar Kudo',
   },
   {
     icon: <Wrench className={panelIconClass} />,

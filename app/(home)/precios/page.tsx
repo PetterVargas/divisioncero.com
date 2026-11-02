@@ -1,21 +1,24 @@
 import { PricingTiers } from '@/components/pricing-tiers';
 import { pageMetadata } from '@/lib/shared';
+import { HeroGridPage } from '@/components/hero-grid-page';
 
 export default function PreciosPage() {
 
   return (
-    <main className="grow w-full max-w-(--fd-layout-width) mx-auto px-4 py-16">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Precios</h1>
-        <p className="text-lg text-fd-muted-foreground max-w-2xl mx-auto">
-          Planes de precios y opciones de pago
-        </p>
-      </div>
+    <HeroGridPage>
+      <main className="relative z-10 grow w-full max-w-(--fd-layout-width) mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">Precios</h1>
+          <p className="text-lg text-fd-muted-foreground max-w-2xl mx-auto">
+            Planes de precios y opciones de pago
+          </p>
+        </div>
 
-      <div className="max-w-5xl mx-auto">
-        <PricingTiers />
-      </div>
-    </main>
+        <div className="max-w-5xl mx-auto">
+          <PricingTiers />
+        </div>
+      </main>
+    </HeroGridPage>
   );
 }
 

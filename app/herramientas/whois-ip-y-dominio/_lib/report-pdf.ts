@@ -1,7 +1,7 @@
 import { jsPDF } from 'jspdf';
 
 import { formatDateWithUtcOffset } from '@/lib/herramientas/datetime';
-import { drawGeneratedByDivisionCero } from '@/lib/herramientas/pdf-report';
+import { REPORT_HEADER_OFFSET, drawDivisionCeroLogo, drawGeneratedByDivisionCero } from '@/lib/herramientas/pdf-report';
 
 import {
   formatDnssec,
@@ -66,18 +66,20 @@ function addParagraph(doc: jsPDF, text: string, y: number): number {
 }
 
 function addReportHeader(doc: jsPDF, title: string): number {
+  drawDivisionCeroLogo(doc, MARGIN_X);
+
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(18);
   doc.setTextColor(20, 20, 20);
-  doc.text(title, MARGIN_X, TOP_Y);
+  doc.text(title, MARGIN_X, TOP_Y + REPORT_HEADER_OFFSET);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.setTextColor(120, 120, 120);
-  drawGeneratedByDivisionCero(doc, MARGIN_X, 26);
-  doc.text(`Fecha y hora de generación: ${formatDateWithUtcOffset(new Date())}`, MARGIN_X, 31);
+  drawGeneratedByDivisionCero(doc, MARGIN_X, 26 + REPORT_HEADER_OFFSET);
+  doc.text(`Fecha y hora de generación: ${formatDateWithUtcOffset(new Date())}`, MARGIN_X, 31 + REPORT_HEADER_OFFSET);
 
-  return 42;
+  return 42 + REPORT_HEADER_OFFSET;
 }
 
 function addContacts(doc: jsPDF, contacts: WhoisContact[], y: number): number {

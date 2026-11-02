@@ -1,4 +1,4 @@
-import { HeroBackground } from '@/components/herramientas/hero-background';
+import { HeroGridBackdrop } from '@/components/hero-grid-page';
 import { ToolsSearch } from '@/components/herramientas/tools-search';
 import { ToolsByCategory } from '@/components/herramientas/tools-by-category';
 import { SupportSection } from '@/components/herramientas/support-section';
@@ -46,8 +46,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
-      <HeroBackground className="fixed inset-0 w-full h-full pointer-events-none opacity-90" />
+      {/* Mismo fondo que el hero de la página principal, en el primer pantallazo. */}
+      <HeroGridBackdrop />
 
       <div className="relative z-10 flex-1 w-full max-w-6xl mx-auto px-4 py-20 sm:py-28">
         <div className="text-center mb-14">
