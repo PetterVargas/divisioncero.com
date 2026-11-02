@@ -26,7 +26,9 @@ export const selfHostingContentRoute = '/llms.mdx/self-hosting';
 
 export const homeImageRoute = '/og/home/image.png';
 export const blogImageRoute = '/og/blog';
+export const blogContentRoute = '/llms.mdx/blog';
 export const releasesImageRoute = '/og/releases';
+export const releasesContentRoute = '/llms.mdx/releases';
 
 export const gitConfig = {
   user: 'PetterVargas',

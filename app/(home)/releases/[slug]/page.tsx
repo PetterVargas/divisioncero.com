@@ -5,7 +5,8 @@ import type { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { releases, getReleasePageImage } from '@/lib/source';
+import { releases, getReleasePageImage, getReleasePageMarkdownUrl } from '@/lib/source';
+import { MarkdownCopyButton } from 'fumadocs-ui/layouts/docs/page';
 import { ViewOptions } from '@/components/page-actions';
 import { appName, pageMetadata, gitConfig } from '@/lib/shared';
 
@@ -36,8 +37,9 @@ export default async function Page(props: {
         <h1 className="mb-2 text-center text-3xl font-bold">{page.data.title}</h1>
         <p className="mb-2 text-center text-fd-muted-foreground">{page.data.description}</p>
         <div className="flex flex-row gap-2 items-center border-b mb-6 pb-4">
+          <MarkdownCopyButton markdownUrl={getReleasePageMarkdownUrl(page).url} />
           <ViewOptions
-            markdownUrl={`/api/mdx${page.url}`}
+            markdownUrl={getReleasePageMarkdownUrl(page).url}
             githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/release/${page.path}`}
           />
         </div>

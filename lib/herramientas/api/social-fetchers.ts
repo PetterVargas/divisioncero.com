@@ -3,7 +3,7 @@ import type {
   ProfileField,
   ProfileTarget,
   SocialProfile,
-} from '@/app/[lang]/herramientas/identificador-id-red-social/_lib/platforms';
+} from '../../../app/herramientas/identificador-id-red-social/_lib/platforms';
 
 type ProfileData = Omit<SocialProfile, 'platform' | 'inputUrl' | 'queriedAt'>;
 

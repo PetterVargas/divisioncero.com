@@ -7,7 +7,7 @@ export async function GET(_req: Request, { params }: RouteContext<'/cyberacademy
   const { slug } = await params;
   const page = cifSource.getPage(slug?.slice(0, -1));
   if (!page) notFound();
-  return new Response(await getLLMText(page), { headers: { 'Content-Type': 'text/markdown' } });
+  return new Response(await getLLMText(page), { headers: { 'Content-Type': 'text/markdown; charset=utf-8' } });
 }
 
 export function generateStaticParams() {

@@ -1,14 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server';
-
 import { z } from 'zod';
 
-import { verifyCaptcha } from '@/legacy/herramientas-api/turnstile';
+import { json, type ApiHandler } from '../../../../lib/herramientas/api/http';
+import { verifyCaptcha } from '../../../../lib/herramientas/api/turnstile';
 
 import {
   normalizeDomain,
   type WhoisDomainResponse,
   type WhoisDomainResult,
-} from '@/app/[lang]/herramientas/whois-ip-y-dominio/_lib/whois';
+} from '../../../../app/herramientas/whois-ip-y-dominio/_lib/whois';
 
 import {
   RDAP_REQUEST_HEADERS,
@@ -19,7 +18,7 @@ import {
   hostOf,
   remarkTexts,
   type RdapObject,
-} from '../_lib/rdap';
+} from '../../../../lib/herramientas/api/rdap';
 
 const DomainSchema = z.object({
   domain: z.string().max(2048),
@@ -101,10 +100,10 @@ function normalize(query: string, finalUrl: string, data: RdapDomain): WhoisDoma
 }
 
 function errorResponse(error: string, status: number) {
-  return NextResponse.json<WhoisDomainResponse>({ success: false, error }, { status });
+  return json<WhoisDomainResponse>({ success: false, error }, { status });
 }
 
-export async function POST(request: NextRequest) {
+export const onRequestPost: ApiHandler = async ({ request, env }) => {
   let body: unknown;
   try {
     body = await request.json();
@@ -118,7 +117,7 @@ export async function POST(request: NextRequest) {
     return errorResponse('Dominio inválido', 400);
   }
 
-  const captchaError = await verifyCaptcha(request);
+  const captchaError = await verifyCaptcha(request, env.CAPTCHA_SECRET_TOKEN);
   if (captchaError) return errorResponse(captchaError, 403);
 
   const controller = new AbortController();
@@ -153,7 +152,7 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      return NextResponse.json<WhoisDomainResponse>({
+      return json<WhoisDomainResponse>({
         success: true,
         data: normalize(domain, response.url, data),
       });

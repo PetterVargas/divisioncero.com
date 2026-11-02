@@ -6,7 +6,7 @@ import {
   cyberacademyRoute, cyberacademyImageRoute, cyberacademyContentRoute,
   ciberseguridadEmpresarialRoute, ciberseguridadEmpresarialImageRoute, ciberseguridadEmpresarialContentRoute,
   selfHostingRoute, selfHostingImageRoute, selfHostingContentRoute,
-  blogImageRoute, releasesImageRoute,
+  blogImageRoute, releasesImageRoute, blogContentRoute, releasesContentRoute,
 } from './shared';
 
 export const cyberacademySource = loader({
@@ -82,11 +82,23 @@ export function getReleasePageImage(page: (typeof releases)['$inferPage']) {
   return { segments, url: `${releasesImageRoute}/${segments.join('/')}` };
 }
 
+export function getBlogPageMarkdownUrl(page: (typeof blog)['$inferPage']) {
+  const segments = [...page.slugs, 'content.md'];
+  return { segments, url: `${blogContentRoute}/${segments.join('/')}` };
+}
+
+export function getReleasePageMarkdownUrl(page: (typeof releases)['$inferPage']) {
+  const segments = [...page.slugs, 'content.md'];
+  return { segments, url: `${releasesContentRoute}/${segments.join('/')}` };
+}
+
 export async function getLLMText(
   page:
     | (typeof cyberacademySource)['$inferPage']
     | (typeof ciberseguridadEmpresarialSource)['$inferPage']
-    | (typeof selfHostingSource)['$inferPage'],
+    | (typeof selfHostingSource)['$inferPage']
+    | (typeof blog)['$inferPage']
+    | (typeof releases)['$inferPage'],
 ) {
   const processed = await page.data.getText('processed');
   return `# ${page.data.title} (${page.url})\n\n${processed}`;

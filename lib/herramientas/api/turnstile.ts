@@ -1,5 +1,4 @@
-import type { NextRequest } from 'next/server';
-import { CAPTCHA_HEADER } from '@/lib/herramientas/turnstile';
+import { CAPTCHA_HEADER } from '../turnstile';
 
 const SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
@@ -14,8 +13,7 @@ interface SiteverifyResponse {
  * configurado ninguna consulta pasa.
  * Ver https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
  */
-export async function verifyCaptcha(request: NextRequest): Promise<string | null> {
-  const secret = process.env.CAPTCHA_SECRET_TOKEN;
+export async function verifyCaptcha(request: Request, secret: string | undefined): Promise<string | null> {
   if (!secret) {
     console.error('CAPTCHA_SECRET_TOKEN no está configurado');
     return 'La verificación anti-bots no está disponible. Intenta más tarde';

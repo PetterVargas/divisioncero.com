@@ -67,6 +67,7 @@ export default defineConfig({
 export const blogPosts = defineCollections({
   type: 'doc',
   dir: 'content/blog',
+  postprocess: { includeProcessedMarkdown: true },
   schema: pageSchema.extend({
     author: z.string().optional(),
     date: z.string().or(z.date()),
@@ -77,6 +78,7 @@ export const blogPosts = defineCollections({
 export const releasePosts = defineCollections({
   type: 'doc',
   dir: 'content/release',
+  postprocess: { includeProcessedMarkdown: true },
   schema: pageSchema.extend({
     version: z.string(),
     date: z.string().or(z.date()),

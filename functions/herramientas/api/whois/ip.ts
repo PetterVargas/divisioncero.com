@@ -1,10 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
-
 import { z } from 'zod';
 
-import { verifyCaptcha } from '@/legacy/herramientas-api/turnstile';
+import { json, type ApiHandler } from '../../../../lib/herramientas/api/http';
+import { verifyCaptcha } from '../../../../lib/herramientas/api/turnstile';
 
-import type { WhoisIpResponse, WhoisIpResult } from '@/app/[lang]/herramientas/whois-ip-y-dominio/_lib/whois';
+import type { WhoisIpResponse, WhoisIpResult } from '../../../../app/herramientas/whois-ip-y-dominio/_lib/whois';
 
 import {
   RDAP_REQUEST_HEADERS,
@@ -14,7 +13,7 @@ import {
   hostOf,
   remarkTexts,
   type RdapObject,
-} from '../_lib/rdap';
+} from '../../../../lib/herramientas/api/rdap';
 
 const IpSchema = z.object({
   ip: z.union([z.ipv4(), z.ipv6()], { error: 'Dirección IP inválida' }),
@@ -82,10 +81,10 @@ function normalize(query: string, finalUrl: string, data: RdapIpNetwork): WhoisI
 }
 
 function errorResponse(error: string, status: number) {
-  return NextResponse.json<WhoisIpResponse>({ success: false, error }, { status });
+  return json<WhoisIpResponse>({ success: false, error }, { status });
 }
 
-export async function POST(request: NextRequest) {
+export const onRequestPost: ApiHandler = async ({ request, env }) => {
   let body: unknown;
   try {
     body = await request.json();
@@ -98,7 +97,7 @@ export async function POST(request: NextRequest) {
     return errorResponse(validation.error.issues[0]?.message || 'Dirección IP inválida', 400);
   }
 
-  const captchaError = await verifyCaptcha(request);
+  const captchaError = await verifyCaptcha(request, env.CAPTCHA_SECRET_TOKEN);
   if (captchaError) return errorResponse(captchaError, 403);
 
   const { ip } = validation.data;
@@ -135,7 +134,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json<WhoisIpResponse>({
+    return json<WhoisIpResponse>({
       success: true,
       data: normalize(ip, response.url, data),
     });

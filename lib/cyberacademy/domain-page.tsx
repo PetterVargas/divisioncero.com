@@ -1,7 +1,8 @@
 import {
   DocsBody, DocsDescription, DocsPage, DocsTitle,
-  MarkdownCopyButton, ViewOptionsPopover,
+  MarkdownCopyButton,
 } from 'fumadocs-ui/layouts/docs/page';
+import { ViewOptions } from '@/components/page-actions';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/components/mdx';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
@@ -88,7 +89,7 @@ export async function renderDomainPage(
         <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
         <div className="flex flex-row gap-2 items-center border-b pb-6">
           <MarkdownCopyButton markdownUrl={markdownUrl} />
-          <ViewOptionsPopover
+          <ViewOptions
             markdownUrl={markdownUrl}
             githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/${contentDir}/${contentSlug}/${page.path}`}
           />

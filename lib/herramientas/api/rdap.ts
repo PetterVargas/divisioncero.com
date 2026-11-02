@@ -1,4 +1,4 @@
-import type { WhoisContact } from '@/app/[lang]/herramientas/whois-ip-y-dominio/_lib/whois';
+import type { WhoisContact } from '../../../app/herramientas/whois-ip-y-dominio/_lib/whois';
 
 // rdap.org rechaza (403) las peticiones sin User-Agent.
 export const RDAP_REQUEST_HEADERS = {

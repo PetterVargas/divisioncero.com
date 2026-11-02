@@ -1,8 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-
 import { z } from 'zod';
 
-import { verifyCaptcha } from '@/legacy/herramientas-api/turnstile';
+import { json, type ApiHandler } from '../../../../lib/herramientas/api/http';
+import { verifyCaptcha } from '../../../../lib/herramientas/api/turnstile';
 
 const domainSchema = z.object({
   domain: z
@@ -23,13 +22,13 @@ interface DNSResponse {
   }>;
 }
 
-export async function POST(request: NextRequest) {
+export const onRequestPost: ApiHandler = async ({ request, env }) => {
   try {
     const body = await request.json();
     const validationResult = domainSchema.safeParse(body);
 
     if (!validationResult.success) {
-      return NextResponse.json(
+      return json(
         {
           success: false,
           error: validationResult.error.issues[0]?.message || 'Dominio inválido',
@@ -38,9 +37,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const captchaError = await verifyCaptcha(request);
+    const captchaError = await verifyCaptcha(request, env.CAPTCHA_SECRET_TOKEN);
     if (captchaError) {
-      return NextResponse.json({ success: false, error: captchaError }, { status: 403 });
+      return json({ success: false, error: captchaError }, { status: 403 });
     }
 
     const { domain } = validationResult.data;
@@ -66,7 +65,7 @@ export async function POST(request: NextRequest) {
     for (const provider of dnsProviders) {
       // Create AbortController for timeout
       const controller = new AbortController();
-      let timeoutId: NodeJS.Timeout | undefined;
+      let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
       try {
         timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
@@ -118,7 +117,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (!spfRecord) {
-      return NextResponse.json({
+      return json({
         success: true,
         data: {
           domain,
@@ -131,7 +130,7 @@ export async function POST(request: NextRequest) {
     // Parse SPF record
     const parsedSpf = parseSPFRecord(spfRecord);
 
-    return NextResponse.json({
+    return json({
       success: true,
       data: {
         domain,
@@ -143,7 +142,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('SPF validation error:', error);
 
-    return NextResponse.json(
+    return json(
       {
         success: false,
         error: 'Error interno del servidor durante la validación SPF',

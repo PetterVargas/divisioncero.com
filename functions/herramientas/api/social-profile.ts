@@ -1,16 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server';
-
 import { z } from 'zod';
 
-import { verifyCaptcha } from '@/legacy/herramientas-api/turnstile';
+import { json, type ApiHandler } from '../../../lib/herramientas/api/http';
+import { verifyCaptcha } from '../../../lib/herramientas/api/turnstile';
 
 import {
   parseProfileUrl,
   platforms,
   type SocialProfileResponse,
-} from '@/app/[lang]/herramientas/identificador-id-red-social/_lib/platforms';
+} from '../../../app/herramientas/identificador-id-red-social/_lib/platforms';
 
-import { ProfileLookupError, profileFetchers } from './fetchers';
+import { ProfileLookupError, profileFetchers } from '../../../lib/herramientas/api/social-fetchers';
 
 const RequestSchema = z.object({
   platform: z.enum(platforms, { error: 'Red social no soportada' }),
@@ -18,10 +17,10 @@ const RequestSchema = z.object({
 });
 
 function errorResponse(error: string, status: number) {
-  return NextResponse.json<SocialProfileResponse>({ success: false, error }, { status });
+  return json<SocialProfileResponse>({ success: false, error }, { status });
 }
 
-export async function POST(request: NextRequest) {
+export const onRequestPost: ApiHandler = async ({ request, env }) => {
   let body: unknown;
   try {
     body = await request.json();
@@ -38,12 +37,12 @@ export async function POST(request: NextRequest) {
   const target = parseProfileUrl(platform, url);
   if (typeof target === 'string') return errorResponse(target, 400);
 
-  const captchaError = await verifyCaptcha(request);
+  const captchaError = await verifyCaptcha(request, env.CAPTCHA_SECRET_TOKEN);
   if (captchaError) return errorResponse(captchaError, 403);
 
   try {
     const profile = await profileFetchers[platform](target);
-    return NextResponse.json<SocialProfileResponse>({
+    return json<SocialProfileResponse>({
       success: true,
       data: { ...profile, platform, inputUrl: url.trim(), queriedAt: new Date().toISOString() },
     });
