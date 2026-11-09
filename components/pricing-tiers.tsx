@@ -76,6 +76,7 @@ const models: { id: Model; label: string; tiers: Tier[] }[] = [
         highlighted: true,
         features: [
           'Todo lo del plan Free',
+          'Evaluaciones de los cursos',
           'Diploma de los cursos',
           '+ de 37 certificaciones',
           'Validación de certificado',

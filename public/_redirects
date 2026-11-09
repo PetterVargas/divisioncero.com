@@ -6,3 +6,5 @@
 /en/* /:splat 301
 /es / 301
 /es/* /:splat 301
+# La página de evaluaciones de CyberAcademy ahora se llama exámenes.
+/docs/cyberacademy/evaluaciones /docs/cyberacademy/examenes 301

@@ -226,7 +226,18 @@ export function MetadataAnalyzer() {
                             </Badge>
                           )}
                         </span>
-                        <span className="text-sm font-medium break-all sm:text-right">{row.value}</span>
+                        {row.href ? (
+                          <a
+                            href={row.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary text-sm font-medium break-all underline underline-offset-2 sm:text-right"
+                          >
+                            {row.value}
+                          </a>
+                        ) : (
+                          <span className="text-sm font-medium break-all sm:text-right">{row.value}</span>
+                        )}
                       </div>
                     ))}
                   </div>

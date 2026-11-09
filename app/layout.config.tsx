@@ -218,8 +218,6 @@ export function getBaseOptions(): BaseLayoutProps {
           <Link
             href="https://app.divisioncero.com/auth/sign-in"
             title="Iniciar sesión"
-            target="_blank"
-            rel="noopener noreferrer"
             className={navLinkClassName}
           >
             <LogInIcon />
@@ -234,8 +232,6 @@ export function getBaseOptions(): BaseLayoutProps {
           <Link
             href="https://app.divisioncero.com/auth/sign-up"
             title="Regístrate en DivisionCero"
-            target="_blank"
-            rel="noopener noreferrer"
             className={navLinkClassName}
           >
             <span className="bg-fd-primary hover:bg-fd-primary/90 dark:bg-fd-primary/80 dark:hover:bg-fd-primary text-fd-primary-foreground rounded-md px-3 py-1 font-bold flex items-center gap-1 whitespace-nowrap">

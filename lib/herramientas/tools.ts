@@ -61,6 +61,7 @@ export interface Tool {
     | 'Clock'
     | 'AtSign'
     | 'TimerReset'
+    | 'Timer'
     | 'Building2';
 }
 
@@ -230,6 +231,14 @@ export const tools: Tool[] = [
     href: '/herramientas/conversion-de-fecha-y-hora',
     categories: ['Utilidades'],
     iconName: 'Clock',
+  },
+  {
+    slug: 'temporizador',
+    title: 'Temporizador',
+    description: 'Cuenta regresiva para charlas y clases; cambia de color en los últimos 10 segundos.',
+    href: '/herramientas/temporizador',
+    categories: ['Utilidades'],
+    iconName: 'Timer',
   },
   {
     slug: 'triada-cia',

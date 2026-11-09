@@ -39,6 +39,7 @@ import {
   Clock,
   AtSign,
   TimerReset,
+  Timer,
   Building2,
   type LucideIcon,
 } from 'lucide-react';
@@ -84,5 +85,6 @@ export const toolIcons: Record<Tool['iconName'], LucideIcon> = {
   Clock,
   AtSign,
   TimerReset,
+  Timer,
   Building2,
 };
