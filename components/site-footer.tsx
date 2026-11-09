@@ -156,7 +156,8 @@ export function Footer({ askAIPrompt = defaultAskAIPrompt }: { askAIPrompt?: str
                 <h3 className="font-medium mb-2.5">{column.title}</h3>
                 <ul className="space-y-1">
                   {column.links.map((link) => {
-                    const external = link.url.startsWith('http');
+                    const external =
+                      link.url.startsWith('http') && !link.url.startsWith('https://app.divisioncero.com/auth/');
                     return (
                       <li key={link.url}>
                         <a

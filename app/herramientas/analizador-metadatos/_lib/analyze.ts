@@ -1,4 +1,4 @@
-import { extractJpegExifBlock, getJpegDimensions, parseTiff } from './exif';
+import { combineGps, extractJpegExifBlock, extractJpegXmp, getJpegDimensions, gpsFromXmp, parseTiff, type GpsInfo } from './exif';
 import { parsePng, PNG_COLOR_TYPES } from './png-metadata';
 import { extractOoxmlMetadata } from './ooxml-metadata';
 import { extractLegacyOfficeMetadata } from './legacy-office-metadata';
@@ -8,6 +8,8 @@ export interface MetadataRow {
   label: string;
   value: string;
   sensitive?: boolean;
+  /** Si existe, el valor se muestra como enlace. Solo se navega si el usuario hace clic. */
+  href?: string;
 }
 
 export interface MetadataSection {
@@ -59,13 +61,76 @@ function fileInfoSection(file: File): MetadataSection {
   };
 }
 
+/** "1/125 s" para tiempos cortos, "2 s" o "2.5 s" desde 1 s. Sin valor si el numerador o el denominador es 0. */
+export function formatExposureTime(exposure: [number, number] | undefined): string | undefined {
+  if (!exposure) return undefined;
+  const [num, den] = exposure;
+  if (num === 0 || den === 0) return undefined;
+  const seconds = num / den;
+  if (!Number.isFinite(seconds) || seconds <= 0) return undefined;
+  if (seconds >= 1) return `${Number.isInteger(seconds) ? seconds : Number(seconds.toFixed(1))} s`;
+  return `1/${Math.round(den / num)} s`;
+}
+
+const GPS_STATUS_TEXT: Record<Exclude<GpsInfo['status'], 'valida'>, string> = {
+  'sin-ubicacion': 'Sin ubicación válida',
+  'no-legible': 'No se pudo leer',
+  'formato-no-reconocido': 'Formato no reconocido',
+};
+
+const GPS_SOURCE_TEXT: Record<GpsInfo['source'], string> = {
+  EXIF: 'EXIF (GPS)',
+  XMP: 'XMP',
+  texto: 'Campo de texto (descripción o comentario)',
+};
+
+/** Sección de ubicación. Las coordenadas y el enlace al mapa solo aparecen si la ubicación es válida. */
+export function gpsSection(gps: GpsInfo): MetadataSection {
+  if (gps.status !== 'valida' || gps.latitude === undefined || gps.longitude === undefined) {
+    const status = gps.status === 'valida' ? 'no-legible' : gps.status;
+    return {
+      title: 'GPS',
+      rows: [
+        { label: 'Estado', value: GPS_STATUS_TEXT[status] },
+        ...(gps.detail ? [{ label: 'Detalle', value: gps.detail }] : []),
+        { label: 'Fuente', value: GPS_SOURCE_TEXT[gps.source] },
+      ],
+    };
+  }
+
+  const lat = gps.latitude.toFixed(6);
+  const lon = gps.longitude.toFixed(6);
+  const altitude = gps.altitude;
+  const mapUrl = `https://www.google.com/maps?q=${lat},${lon}`;
+  return {
+    title: 'Ubicación (GPS)',
+    rows: [
+      { label: 'Latitud', value: lat, sensitive: true },
+      { label: 'Longitud', value: lon, sensitive: true },
+      ...(altitude !== undefined
+        ? [
+            {
+              label: 'Altitud',
+              value: altitude < 0 ? `${altitude.toFixed(0)} m (bajo el nivel del mar)` : `${altitude.toFixed(0)} m`,
+              sensitive: true,
+            },
+          ]
+        : []),
+      ...(gps.source !== 'EXIF' ? [{ label: 'Fuente', value: GPS_SOURCE_TEXT[gps.source] }] : []),
+      // Solo se genera el texto del enlace; la ubicación no se envía a ningún servicio.
+      { label: 'Ver en mapa', value: mapUrl, href: mapUrl, sensitive: true },
+    ],
+  };
+}
+
 async function analyzeJpeg(file: File, bytes: Uint8Array): Promise<AnalysisResult> {
   const sections: MetadataSection[] = [fileInfoSection(file)];
   let hasSensitiveData = false;
 
   const dims = getJpegDimensions(bytes);
   const exifBlock = extractJpegExifBlock(bytes);
-  const exif = exifBlock ? parseTiff(exifBlock) : null;
+  const xmp = extractJpegXmp(bytes);
+  const exif = exifBlock ? parseTiff(exifBlock, { xmp }) : null;
 
   const imageRows: MetadataRow[] = [];
   if (dims) {
@@ -84,34 +149,22 @@ async function analyzeJpeg(file: File, bytes: Uint8Array): Promise<AnalysisResul
     if (exif.software) cameraRows.push({ label: 'Software', value: exif.software });
     if (exif.dateTime) cameraRows.push({ label: 'Fecha (archivo)', value: formatDate(exif.dateTime)! });
     if (exif.dateTimeOriginal) cameraRows.push({ label: 'Fecha de captura', value: formatDate(exif.dateTimeOriginal)! });
-    if (exif.exposureTime) cameraRows.push({ label: 'Tiempo de exposición', value: `1/${Math.round(exif.exposureTime[1] / exif.exposureTime[0])} s` });
+    const exposure = formatExposureTime(exif.exposureTime);
+    if (exposure) cameraRows.push({ label: 'Tiempo de exposición', value: exposure });
     if (exif.fNumber) cameraRows.push({ label: 'Apertura', value: `f/${(exif.fNumber[0] / exif.fNumber[1]).toFixed(1)}` });
     if (exif.isoSpeed) cameraRows.push({ label: 'ISO', value: String(exif.isoSpeed) });
     if (exif.focalLength) cameraRows.push({ label: 'Distancia focal', value: `${(exif.focalLength[0] / exif.focalLength[1]).toFixed(0)} mm` });
     if (exif.artist) cameraRows.push({ label: 'Autor', value: exif.artist });
     if (exif.copyright) cameraRows.push({ label: 'Copyright', value: exif.copyright });
     if (cameraRows.length) sections.push({ title: 'Cámara y captura (EXIF)', rows: cameraRows });
-
-    if (exif.gpsLatitude !== undefined && exif.gpsLongitude !== undefined) {
-      hasSensitiveData = true;
-      sections.push({
-        title: 'Ubicación (GPS)',
-        rows: [
-          { label: 'Latitud', value: exif.gpsLatitude.toFixed(6), sensitive: true },
-          { label: 'Longitud', value: exif.gpsLongitude.toFixed(6), sensitive: true },
-          ...(exif.gpsAltitude !== undefined
-            ? [{ label: 'Altitud', value: `${exif.gpsAltitude.toFixed(0)} m`, sensitive: true }]
-            : []),
-          {
-            label: 'Ver en mapa',
-            value: `https://www.google.com/maps?q=${exif.gpsLatitude.toFixed(6)},${exif.gpsLongitude.toFixed(6)}`,
-            sensitive: true,
-          },
-        ],
-      });
-    }
   } else {
     sections.push({ title: 'EXIF', rows: [{ label: 'Estado', value: 'Esta imagen no contiene metadatos EXIF.' }] });
+  }
+
+  const gps = exif ? exif.gps : xmp ? combineGps([gpsFromXmp(xmp)]) : undefined;
+  if (gps) {
+    sections.push(gpsSection(gps));
+    if (gps.status === 'valida') hasSensitiveData = true;
   }
 
   return {
