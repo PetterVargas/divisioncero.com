@@ -17,18 +17,10 @@ export interface EcosystemPanel {
   cta: string;
 }
 
-// One distinct entrance direction per panel, in order.
-const DIRECTIONS: Array<{ x: number; y: number }> = [
-  { x: -70, y: 0 },
-  { x: 70, y: 0 },
-  { x: 0, y: -70 },
-  { x: 0, y: 70 },
-];
-
 /**
- * A static grid of (up to four) panels where each one flies in from a
- * different side — left, right, top, bottom — as the section scrolls into
- * view.
+ * Minimal two-column list of products: hairline dividers, small inline icon,
+ * title + one-line description and an arrow that nudges on hover. Rows fade
+ * up softly as the section scrolls into view.
  */
 export function EcosystemPanels({ items }: { items: EcosystemPanel[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -41,52 +33,42 @@ export function EcosystemPanels({ items }: { items: EcosystemPanel[] }) {
 
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>('[data-ecosystem-panel]', el);
-      cards.forEach((card, i) => {
-        const dir = DIRECTIONS[i % DIRECTIONS.length];
-        gsap.fromTo(
-          card,
-          { opacity: 0, x: dir.x, y: dir.y },
-          {
-            opacity: 1,
-            x: 0,
-            y: 0,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 88%',
-              once: true,
-            },
-          },
-        );
-      });
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 16 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+          stagger: 0.06,
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        },
+      );
     }, el);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto px-4 overflow-x-clip">
+    <div ref={containerRef} className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 max-w-4xl mx-auto px-4">
       {items.map((panel) => (
         <a
           key={panel.title}
           data-ecosystem-panel
           href={panel.href}
-          title={panel.title}
+          title={panel.cta}
           {...(panel.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          className="group flex flex-col justify-between gap-6 p-8 rounded-2xl border border-fd-border/60 bg-fd-card/40 shadow-sm hover:border-fd-primary/40 hover:bg-fd-card/70 hover:-translate-y-1 transition-all duration-300"
+          className="group flex items-start gap-4 py-6 border-t border-fd-border/70"
         >
-          <div className="w-14 h-14 bg-fd-primary/10 rounded-xl flex items-center justify-center">
+          <span className="mt-0.5 shrink-0 text-fd-muted-foreground group-hover:text-fd-primary transition-colors">
             {panel.icon}
-          </div>
-          <div>
-            <h4 className="text-xl font-semibold mb-2">{panel.title}</h4>
-            <p className="text-fd-muted-foreground text-sm">{panel.description}</p>
-          </div>
-          <div className="flex items-center text-fd-primary font-medium text-sm">
-            {panel.cta}
-            <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
-          </div>
+          </span>
+          <span className="flex-1 min-w-0">
+            <span className="block font-semibold">{panel.title}</span>
+            <span className="block mt-1 text-sm text-fd-muted-foreground">{panel.description}</span>
+          </span>
+          <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-fd-muted-foreground/60 group-hover:text-fd-primary group-hover:translate-x-1 transition-all" />
         </a>
       ))}
     </div>

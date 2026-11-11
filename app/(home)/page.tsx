@@ -55,7 +55,7 @@ const benefits = [
   { icon: MapPin, text: 'Por y para LatAm' },
 ];
 
-const panelIconClass = 'h-6 w-6 text-fd-primary';
+const panelIconClass = 'h-5 w-5';
 
 const ecosystemPanels: { icon: React.ReactNode; title: string; description: string; href: string; cta: string }[] = [
   {
@@ -166,11 +166,11 @@ export default function HomePage() {
       </FullViewportSection>
 
       {/* Ecosystem panels */}
-      <section className="py-20 bg-fd-foreground/[0.04] border-y border-fd-border">
-        <ScrollReveal className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold mb-4">Un ecosistema completo de Ciberseguridad</h3>
-            <p className="text-xl text-fd-muted-foreground max-w-2xl mx-auto">
+      <section className="py-20">
+        <ScrollReveal className="max-w-4xl mx-auto px-4">
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold">Un ecosistema completo de Ciberseguridad</h3>
+            <p className="mt-2 text-fd-muted-foreground">
               Conoce los productos que forman parte de DivisionCero.
             </p>
           </div>
