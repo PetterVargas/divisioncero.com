@@ -1,0 +1,29 @@
+---
+title: Revisión de cuentas
+description: "Módulo de Revisión de cuentas: campañas de revisión de accesos por sistema y la decisión sobre cada cuenta (mantener, modificar o revocar)."
+---
+
+Ruta en la aplicación: `/dashboard/access-reviews`. Revisa periódicamente quién tiene acceso a cada sistema.
+
+## Pestañas
+
+| Pestaña | Contenido |
+| --- | --- |
+| **Panel** | Avance de las campañas, decisiones tomadas y cambios por aplicar. |
+| **Campañas** | Cada campaña revisa las cuentas y accesos de un sistema en un periodo: quién revisa, para cuándo y cómo va. |
+| **Cuentas** | Las cuentas de cada campaña con la decisión tomada. |
+| **Relaciones** | Vínculos con activos, controles, riesgos y otros registros. |
+
+**Personalización:** Etapas y Criticidad.
+
+## Qué puedes hacer
+
+- Crear una campaña (p. ej. *Revisión trimestral del ERP, T4 2026*) sobre un **activo** del inventario o un sistema externo, con revisor, inicio y fecha límite.
+- **Importar las cuentas** desde un CSV o Excel exportado del sistema revisado.
+- Decidir sobre cada cuenta: **mantener**, **modificar** o **revocar**, con comentario y quién decidió.
+- Marcar el **cambio aplicado** cuando la modificación o revocación ya se hizo en el sistema.
+- Cerrar la campaña con su conclusión y fecha de finalización.
+
+## Campos de una cuenta
+
+Cuenta (usuario en el sistema), titular, correo del titular, acceso (rol, perfil o permisos), último acceso, decisión, decidido por, comentario y cambio aplicado.
