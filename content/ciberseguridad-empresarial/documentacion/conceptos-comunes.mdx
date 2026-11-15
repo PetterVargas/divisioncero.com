@@ -1,0 +1,39 @@
+---
+title: Conceptos comunes
+description: "Elementos que comparten todos los módulos del CSaaS: panel, pestañas, personalización, relaciones, comentarios, tags, importación, exportación y reportes."
+---
+
+Todos los módulos de GRC siguen la misma estructura, así que lo que aprendas en uno sirve para los demás.
+
+## Pestañas de un módulo
+
+| Pestaña | Para qué sirve |
+| --- | --- |
+| **Panel** | Indicadores y gráficos del módulo: totales, distribución por estado o criticidad, vencimientos y avance. Es la primera pestaña de cada módulo. |
+| **Listado** (Registro, Políticas, Activos…) | La tabla de registros con búsqueda, filtros y ordenamiento. Desde aquí se crean, editan y eliminan registros. |
+| **Relaciones** | Los vínculos del módulo con registros de otros módulos (riesgos, controles, proyectos, actividades de auditoría, brechas…). |
+| **Personalización** | Catálogos propios del equipo: tipos, estados, etapas, categorías y criticidad. Se abren desde el menú **Agregar → Personalización** y no aparecen en la fila de pestañas. |
+
+## Botones de la cabecera
+
+- **Agregar** — crea un registro del módulo. Su menú también da acceso a las pestañas de personalización.
+- **Importar** — carga los registros del módulo desde un Excel con la plantilla del módulo (ver [Integraciones](/docs/ciberseguridad-empresarial/documentacion/integraciones)).
+
+## Catálogos de personalización
+
+- **Criticidad (niveles)**: qué tan crítico es cada registro para el negocio. Cada nivel tiene nombre, orden, color y descripción; cada registro puede tener uno. Si eliminas un nivel, los registros que lo usaban quedan sin definir.
+- **Estados**: los estados que usa tu organización. Cada estado **equivale** a una etapa del ciclo de vida de la plataforma, así los indicadores funcionan aunque cambies los nombres.
+- **Etapas**: una clasificación adicional, independiente del estado (en Negocios, Frameworks, Continuidad y Revisión de cuentas).
+- **Tipos y categorías**: por ejemplo tipos de activo, de proyecto, de tercero o de auditoría.
+
+## Comentarios y tags
+
+Cada registro tiene una sección de **notas** con los comentarios del equipo y sus **tags**. Desde [Integraciones → Tags](/docs/ciberseguridad-empresarial/documentacion/integraciones#tags) puedes buscar un tag y ver todos los registros que lo tienen, en todos los módulos.
+
+## Responsables y grupos
+
+Muchos campos aceptan **usuarios** o **grupos de usuarios** (por ejemplo revisores de políticas, asesores de evaluaciones o dueños de hallazgos). Los grupos se crean en [Miembros → Grupos](/docs/ciberseguridad-empresarial/documentacion/miembros).
+
+## Historial
+
+Cada creación, edición y eliminación queda en el **registro de auditoría** del equipo, en [Configuración → Registros](/docs/ciberseguridad-empresarial/documentacion/configuracion#registros).

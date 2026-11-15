@@ -1,0 +1,41 @@
+---
+title: Roles y planes
+description: "Los roles de un equipo en el CSaaS, sus permisos, y qué incluye el equipo con y sin plan."
+---
+
+## Roles
+
+Los roles y sus permisos son los mismos en todos los equipos. Puedes consultarlos en [Miembros → Roles](/docs/ciberseguridad-empresarial/documentacion/miembros); el rol de cada persona se cambia en la pestaña **Miembros**.
+
+| Rol | Qué puede hacer |
+| --- | --- |
+| **Propietario** | Control total del equipo, incluida la facturación. |
+| **Administrador** | Todo, excepto la facturación. |
+| **Líder de seguridad** | Gestiona todos los módulos, el registro de auditoría y la concientización. No gestiona el equipo. |
+| **Gestor de riesgos** | Gestiona riesgos y terceros; ve el resto de módulos. |
+| **Gestor de cumplimiento** | Gestiona controles, políticas, evaluaciones y auditorías; ve el resto de módulos. |
+| **Colaborador** | Trabajo del día a día: registra incidentes, presenta evaluaciones, edita políticas y terceros, invita miembros y cambia la configuración del equipo. |
+| **Miembro** | Rol por defecto: ve los módulos, reporta incidentes y realiza exámenes y certificaciones. |
+| **Auditor** | Gestiona las auditorías; ve el resto de módulos, incluido el registro de auditoría. |
+| **Lector** | Solo lectura. |
+
+<Callout>
+El equipo tiene un **propietario principal**. Puede transferir la propiedad a otro miembro desde la pestaña Miembros; al hacerlo deja de ser el propietario principal.
+</Callout>
+
+## Planes
+
+Un equipo tiene un solo plan a la vez: **CSaaS** (planes Starter y Pro, todos los módulos en la nube de DivisionCero) o **Self-hosting** (licencias para instalar DivisionCero en tu infraestructura, ver [Self-hosting](/docs/self-hosting)).
+
+| | Sin plan | Starter / Pro |
+| --- | --- | --- |
+| Panel (resumen) | ✓ | ✓ |
+| Calendario | — | ✓ |
+| Evaluaciones (presentar y ver resultados) | ✓ | ✓ |
+| Evaluaciones propias (dominios, preguntas, modelo) | — | ✓ |
+| Resto de módulos de GRC | — | ✓ |
+| Configuración general, miembros y facturación | ✓ | ✓ |
+| API, MCP y registro de auditoría | — | ✓ |
+| Webhooks y SSO | — | ✓ |
+
+Si el plan vence, los webhooks dejan de enviar eventos y el SSO muestra la pantalla de plan; desde esas mismas páginas puedes apagarlos o eliminarlos.
