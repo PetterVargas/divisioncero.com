@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Provider } from '@/components/provider';
 import { WhatsAppButton } from '@/components/whatsapp-button';
 import { CookieConsent } from '@/components/cookie-consent';
-import { appName, appDescription, baseUrl, cookieConsentKey, homeImageRoute } from '@/lib/shared';
+import { appName, appDescription, baseUrl, cookieConsentKey, googleTagId, homeImageRoute } from '@/lib/shared';
 import { bannerHideScript, subscribeBannerId } from '@/lib/banner';
 import Script from 'next/script';
 import './global.css';
@@ -141,7 +141,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
           {bannerHideScript(subscribeBannerId)}
         </Script>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-5KWQPXJPX4"
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -157,7 +157,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               ad_personalization: 'denied',
             });
             gtag('js', new Date());
-            gtag('config', 'G-5KWQPXJPX4');
+            gtag('config', '${googleTagId}');
           `}
         </Script>
         <Provider>

@@ -8,3 +8,6 @@
 /es/* /:splat 301
 # La página de evaluaciones de CyberAcademy ahora se llama exámenes.
 /docs/cyberacademy/evaluaciones /docs/cyberacademy/examenes 301
+# La documentación CSaaS ya no está bajo /documentacion.
+/docs/ciberseguridad-empresarial/documentacion /docs/ciberseguridad-empresarial 301
+/docs/ciberseguridad-empresarial/documentacion/* /docs/ciberseguridad-empresarial/:splat 301
