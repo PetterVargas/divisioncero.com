@@ -13,3 +13,8 @@
 /docs/ciberseguridad-empresarial/documentacion/* /docs/ciberseguridad-empresarial/:splat 301
 /docs/ciberseguridad-empresarial/introduccion /docs/ciberseguridad-empresarial 301
 /docs/ciberseguridad-empresarial/servicios /docs/ciberseguridad-empresarial 301
+# Sitemaps de los antiguos subdominios (kudo. y cyberacademy.divisioncero.com redirigen
+# aquí): ahora hay un único sitemap para todo el sitio.
+/kudo/sitemap.xml /sitemap.xml 301
+/cyberacademy/sitemap.xml /sitemap.xml 301
+/herramientas/sitemap.xml /sitemap.xml 301
