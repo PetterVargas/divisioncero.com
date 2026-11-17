@@ -11,3 +11,5 @@
 # La documentación CSaaS ya no está bajo /documentacion.
 /docs/ciberseguridad-empresarial/documentacion /docs/ciberseguridad-empresarial 301
 /docs/ciberseguridad-empresarial/documentacion/* /docs/ciberseguridad-empresarial/:splat 301
+/docs/ciberseguridad-empresarial/introduccion /docs/ciberseguridad-empresarial 301
+/docs/ciberseguridad-empresarial/servicios /docs/ciberseguridad-empresarial 301
