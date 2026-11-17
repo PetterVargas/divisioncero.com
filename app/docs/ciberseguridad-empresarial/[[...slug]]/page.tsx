@@ -64,7 +64,18 @@ export async function generateMetadata(props: PageProps<'/docs/ciberseguridad-em
     // Sin traducción propia, la canónica es la versión en español.
     path: page.url,
     title: page.data.title,
-    description: page.data.description,
+    description: page.data.description ?? getOpenApiDescription(page.data),
     images: getCiberseguridadEmpresarialPageImage(page).url,
   });
+}
+
+/**
+ * Las páginas generadas de la API (fumadocs-openapi) no traen `description`; se usa
+ * el texto de la operación que el generador guarda en `_openapi.structuredData`.
+ */
+function getOpenApiDescription(data: unknown): string | undefined {
+  const openapi = (data as { _openapi?: { structuredData?: { contents?: { content?: string }[] } } })._openapi;
+  const text = openapi?.structuredData?.contents?.find((c) => c.content)?.content?.trim();
+  if (!text) return undefined;
+  return text.length > 160 ? `${text.slice(0, 157).trimEnd()}…` : text;
 }

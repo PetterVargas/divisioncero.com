@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { IcebreakerGrid } from './_components/icebreaker-grid';
 
@@ -23,6 +24,7 @@ export default function RompehielosPage() {
       <ToolFullscreen className="container mx-auto max-w-7xl py-8">
         <IcebreakerGrid />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

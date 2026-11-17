@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { VulnerabilityQuizDynamic } from './_components/vulnerability-quiz-dynamic';
 
@@ -23,6 +24,7 @@ export default function DetectorCodigoVulnerablePage() {
       <ToolFullscreen className="container mx-auto max-w-2xl px-4 py-8">
         <VulnerabilityQuizDynamic />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

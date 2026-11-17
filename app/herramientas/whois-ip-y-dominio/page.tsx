@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { WhoisIpComponent } from './_components/whois-ip-component';
 
@@ -25,6 +26,7 @@ export default function WhoisIpPage() {
           <WhoisIpComponent />
         </div>
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

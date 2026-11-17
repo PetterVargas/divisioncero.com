@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { execFileSync } from 'node:child_process';
-import { cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource, blog, releases, legal } from '@/lib/source';
+import { ciberseguridadEmpresarialSource, selfHostingSource, blog, releases, legal } from '@/lib/source';
 import { frameworkSource, sgxSource } from '@/lib/kudo/source';
 import { cyberusuarioSource, cyberguardianSource, allDomainSources } from '@/lib/cyberacademy/source';
 import { domains } from '@/lib/cyberacademy/shared';
@@ -60,8 +60,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(path, getGitLastModified(source)),
   );
 
+  // /docs/cyberacademy no va: sus páginas son `noindex` (el contenido indexable
+  // de CyberAcademy está en /cyberacademy) y un sitemap no debe listar URLs noindex.
   const docsEntries = [
-    { source: cyberacademySource, dir: 'content/docs/cyberacademy' },
     { source: ciberseguridadEmpresarialSource, dir: 'content/ciberseguridad-empresarial' },
     { source: selfHostingSource, dir: 'content/self-hosting' },
   ].flatMap(({ source, dir }) =>
@@ -91,10 +92,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .flatMap((page) => entry(page.url, getGitLastModified(`content/legal/${page.path}`)));
 
   // Herramientas propias (las externas del catálogo enlazan a otros sitios).
-  const toolsLastModified = getGitLastModified('app/herramientas');
+  // Cada una con la fecha de su propio directorio, no la de todo app/herramientas.
   const toolEntries = tools
     .filter((tool) => !tool.external && tool.href.startsWith('/herramientas/'))
-    .flatMap((tool) => entry(tool.href, toolsLastModified));
+    .flatMap((tool) => entry(tool.href, getGitLastModified(`app${tool.href}`)));
 
   return [
     ...staticEntries,

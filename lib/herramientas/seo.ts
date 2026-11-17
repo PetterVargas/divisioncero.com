@@ -7,6 +7,11 @@ export const siteUrl = `https://divisioncero.com${toolsRoute}`;
 /** Imagen Open Graph de las herramientas (la genera `scripts/og-generate.tsx`). */
 export const toolsImage = `${toolsRoute}/og/image.png`;
 
+/** Imagen Open Graph propia de una herramienta (`/cybermap` → `/herramientas/og/cybermap.png`). */
+export function toolImage(path: string) {
+  return `${toolsRoute}/og${path}.png`;
+}
+
 /**
  * Metadata por página: además del title/description para buscadores, define
  * openGraph/twitter propios para que los links compartidos (WhatsApp, Slack,
@@ -24,6 +29,7 @@ export function buildMetadata({
 }): Metadata {
   const url = `https://divisioncero.com${toolsRoute}${path}`;
   const ogTitle = `${title} · Herramientas · DivisionCero`;
+  const images = { url: toolImage(path), width: 1200, height: 630, alt: title };
 
   return {
     title,
@@ -38,13 +44,14 @@ export function buildMetadata({
       siteName: siteName,
       type: 'website',
       locale: 'es_419',
-      images: toolsImage,
+      images,
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@divisioncero',
       title: ogTitle,
       description,
-      images: toolsImage,
+      images,
     },
   };
 }

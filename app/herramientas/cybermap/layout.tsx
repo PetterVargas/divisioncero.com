@@ -1,4 +1,5 @@
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 
 const title = 'CyberMap';
@@ -12,6 +13,7 @@ export default function CyberMapLayout({ children }: { children: React.ReactNode
     <>
       <ToolJsonLd title={title} description={description} path={path} />
       {children}
+      <ToolFaq path={path} />
     </>
   );
 }

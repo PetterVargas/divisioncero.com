@@ -8,30 +8,40 @@ import { textos } from '@/lib/herramientas/textos';
 
 const baseUrl = 'https://divisioncero.com';
 
+// Una sola entidad WebSite por dominio (la del layout raíz): el catálogo es una
+// CollectionPage cuyo contenido principal es la lista de herramientas.
 function getJsonLd(meta: { siteName: string; shortDescription: string }, tools: Tool[]) {
+  const url = `${baseUrl}/herramientas`;
   return {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'WebSite',
+        '@type': 'CollectionPage',
+        '@id': `${url}#coleccion`,
         name: meta.siteName,
-        url: `${baseUrl}/herramientas`,
+        url,
         description: meta.shortDescription,
-        publisher: {
-          '@type': 'Organization',
-          name: 'DivisionCero',
-          url: 'https://divisioncero.com',
+        inLanguage: 'es',
+        isPartOf: { '@id': `${baseUrl}/#website` },
+        publisher: { '@id': `${baseUrl}/#organization` },
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: tools.length,
+          itemListElement: tools.map((tool, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: tool.title,
+            description: tool.description,
+            url: tool.external ? tool.href : `${baseUrl}${tool.href}`,
+          })),
         },
       },
       {
-        '@type': 'ItemList',
-        itemListElement: tools.map((tool, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: tool.title,
-          description: tool.description,
-          url: tool.external ? tool.href : `${baseUrl}${tool.href}`,
-        })),
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'DivisionCero', item: baseUrl },
+          { '@type': 'ListItem', position: 2, name: 'Herramientas', item: url },
+        ],
       },
     ],
   };

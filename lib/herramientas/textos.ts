@@ -3,7 +3,7 @@ export const textos = {
   meta: {
     siteName: 'Herramientas de Ciberseguridad - DivisionCero',
     siteDescription:
-      'Herramientas gratuitas de Ciberseguridad para el día a día: generador de contraseñas, hash, QR, UUID, validador SPF, codificadores Base64/URL, cuál es mi IP y más, por DivisionCero.',
+      'Herramientas gratis de Ciberseguridad: generador de contraseñas, hash, QR y UUID, validador SPF, codificadores Base64 y URL, cuál es mi IP y más.',
     shortDescription: 'Herramientas gratuitas de Ciberseguridad para el día a día, por DivisionCero.',
     ogLocale: 'es_419',
     keywords: [

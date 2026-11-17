@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { DateTimeConverterComponent } from './_components/date-time-converter-component';
 
@@ -25,6 +26,7 @@ export default function DateTimeConverterPage() {
           <DateTimeConverterComponent />
         </div>
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

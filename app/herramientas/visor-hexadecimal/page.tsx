@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { HexViewer } from './_components/hex-viewer';
 
@@ -23,6 +24,7 @@ export default function VisorHexadecimalPage() {
       <ToolFullscreen className="container mx-auto flex flex-col items-center px-4 py-8">
         <HexViewer />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

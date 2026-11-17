@@ -1,5 +1,6 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 
 import { CountdownTimer } from './_components/countdown-timer';
@@ -23,6 +24,7 @@ export default function TemporizadorPage() {
       <div className="container mx-auto max-w-6xl px-4 pb-12">
         <CountdownTimer />
       </div>
+      <ToolFaq path={path} />
     </div>
   );
 }

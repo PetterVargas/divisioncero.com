@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { PhishingQuiz } from './_components/phishing-quiz';
 
@@ -23,6 +24,7 @@ export default function DeteccionPhishingPage() {
       <ToolFullscreen className="container mx-auto max-w-2xl px-4 py-8">
         <PhishingQuiz />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

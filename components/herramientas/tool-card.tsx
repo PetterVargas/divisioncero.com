@@ -7,7 +7,7 @@ import { textos } from '@/lib/herramientas/textos';
 import { toolIcons } from '@/lib/herramientas/tool-icons';
 
 
-export function ToolCard({ tool }: { tool: Tool }) {
+export function ToolCard({ tool, heading: Heading = 'h2' }: { tool: Tool; heading?: 'h2' | 'h3' }) {
   const Icon = toolIcons[tool.iconName];
   const t = textos.home;
   const className =
@@ -26,7 +26,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
         )}
       </div>
       <div className="flex items-center gap-1.5 mb-1">
-        <h2 className="text-sm font-semibold">{tool.title}</h2>
+        <Heading className="text-sm font-semibold">{tool.title}</Heading>
         {tool.external && !tool.firstParty && (
           <span className="inline-flex items-center rounded-full bg-muted px-1.5 py-0.5 text-[10px] font-medium leading-none text-muted-foreground">
             {t.external}
