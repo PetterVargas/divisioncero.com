@@ -78,6 +78,7 @@ export async function renderDomainPage(
       <JsonLd
         data={breadcrumbJsonLd(
           breadcrumbItems.map((item) => ({ name: String(item.name), url: item.url })),
+          page.url,
         )}
       />
       <DocsPage

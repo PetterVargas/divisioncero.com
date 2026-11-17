@@ -72,15 +72,28 @@ export function learningResourceJsonLd(opts: {
   };
 }
 
-export function breadcrumbJsonLd(items: { name: string; url?: string }[]) {
+/**
+ * Google exige `item` (URL) en cada elemento salvo el último. Las carpetas de
+ * módulo del árbol de fumadocs no tienen página propia, así que se omiten en vez
+ * de publicarlas sin URL; `currentUrl` asegura la URL del último elemento.
+ */
+export function breadcrumbJsonLd(items: { name: string; url?: string }[], currentUrl?: string) {
+  const absolute = (url: string) => (url.startsWith('http') ? url : `${baseUrl}${url}`);
+  const crumbs = items
+    .map((item, i) => ({ name: item.name, url: item.url ?? (i === items.length - 1 ? currentUrl : undefined) }))
+    .filter((item): item is { name: string; url: string } => Boolean(item.url))
+    .map((item) => ({ name: item.name, url: absolute(item.url) }))
+    // Sin repetir la misma URL dos veces seguidas (p. ej. carpeta e índice del módulo).
+    .filter((item, i, all) => i === 0 || all[i - 1].url !== item.url);
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: items.map((item, i) => ({
+    itemListElement: crumbs.map((item, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      ...(item.url ? { item: item.url.startsWith('http') ? item.url : `${baseUrl}${item.url}` } : {}),
+      item: item.url,
     })),
   };
 }
