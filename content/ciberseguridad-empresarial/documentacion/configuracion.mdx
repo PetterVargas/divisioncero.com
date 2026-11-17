@@ -1,0 +1,58 @@
+---
+title: Configuración
+description: "Configuración del equipo: datos generales, MCP, API keys, webhooks, SSO, registro de auditoría, mantenimiento y acerca de."
+---
+
+Ruta en la aplicación: `/dashboard/settings`.
+
+## Pestañas
+
+| Pestaña | Contenido |
+| --- | --- |
+| **Configuración** | Nombre, logo e idioma del equipo; zona de peligro. |
+| **MCP** | Conecta asistentes de IA a los datos del equipo. |
+| **API** | API keys para leer y escribir los registros por REST. |
+| **Webhooks** | Envía los cambios del equipo a tus sistemas en el momento. |
+| **SSO** | Inicio de sesión único con SAML. |
+| **Registros** | Registro de auditoría: quién creó, editó o eliminó cada registro y cuándo. |
+| **Mantenimiento** | Recarga los datos del equipo guardados en el navegador (caché). |
+| **Acerca de** | Información de la aplicación. |
+
+MCP, API y Registros requieren plan. Webhooks y SSO también, pero puedes apagarlos sin plan.
+
+## Configuración general
+
+- Cambiar el **nombre** y el **logo** del equipo.
+- Elegir el **idioma** en que ves la aplicación.
+- **Zona de peligro**: salir del equipo o eliminarlo. Eliminar un equipo borra todos sus datos y no se puede deshacer.
+
+## MCP
+
+Añade la URL del servidor MCP como conector en tu asistente de IA. Al conectarte inicias sesión y eliges el equipo que puede usar. El asistente actúa **como tú**: solo ve y cambia lo que permite tu rol. Desde esta pestaña ves los asistentes conectados y puedes desconectarlos, lo que revoca su acceso al instante.
+
+## API
+
+- Crea **API keys** eligiendo sus permisos (solo puedes conceder los que tiene tu rol). La llave se muestra una sola vez.
+- Cada solicitud lleva la cabecera `Authorization: Bearer dcero_…`.
+- Las llaves pertenecen al **equipo**, no a ti: siguen funcionando si sales del equipo. Revocar una corta el acceso de inmediato.
+- Consulta todas las operaciones en la [referencia de la API](/docs/ciberseguridad-empresarial/api).
+
+## Webhooks
+
+- Registra endpoints públicos con HTTPS; recibirán un `POST` cuando cambie un registro del equipo.
+- Los envíos siguen **Standard Webhooks** (cabeceras `webhook-id`, `webhook-timestamp` y `webhook-signature`); verifica la firma con el secreto del endpoint. Rotarlo invalida el anterior al instante.
+- Los fallidos se reintentan durante unas 28 horas; verás los últimos 50 envíos (se conservan 30 días).
+
+## SSO
+
+1. Registra DivisionCero como aplicación SAML en tu IdP (Entra ID, Okta, Google Workspace, JumpCloud…) con los valores del proveedor de servicio.
+2. Agrega y verifica los **dominios** de correo de tu empresa.
+3. Carga la metadata SAML del IdP y prueba la conexión con el enlace directo en una ventana privada.
+4. Activa el proveedor: los usuarios de tus dominios entran con **Continuar con SSO**.
+5. Opcional: **exige SSO**. El propietario principal y las cuentas de emergencia que marques siguen entrando con contraseña y MFA, y su uso queda registrado.
+
+Requiere plan Starter o Pro y el permiso de gestionar el SSO.
+
+## Registros
+
+El registro de auditoría muestra quién creó, editó o eliminó cada registro del equipo y cuándo, con filtros por usuario, módulo y acción. Incluye los cambios hechos con API keys.
