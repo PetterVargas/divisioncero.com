@@ -1,0 +1,50 @@
+---
+title: Riesgos
+description: "Módulo de Riesgos: registro, análisis y tratamiento de riesgos según ISO 31000 e ISO/IEC 27005, con mapa de calor, excepciones y relaciones."
+---
+
+Ruta en la aplicación: `/dashboard/risks`. Identifica, analiza y define el tratamiento de cada riesgo según **ISO 31000** e **ISO/IEC 27005**.
+
+## Pestañas
+
+| Pestaña | Contenido |
+| --- | --- |
+| **Panel** | Mapa de calor (probabilidad × impacto), riesgos por nivel, estado y categoría, y los que superan el apetito de riesgo. Haz clic en una celda del mapa para filtrar. |
+| **Registro** | Todos los riesgos del equipo. Un riesgo puede relacionarse con controles, proyectos, activos, procesos, terceros y cualquier otro registro. |
+| **Excepciones** | Riesgos aceptados de forma temporal y documentada. |
+| **Relaciones** | Los vínculos de los riesgos con registros de otros módulos. |
+
+**Personalización:** Categorías, Enfoques, Amenazas, Vulnerabilidades, Propiedades y Criticidad.
+
+## Qué puedes hacer
+
+- Registrar riesgos con su amenaza, vulnerabilidad, consecuencia y propiedades afectadas (confidencialidad, integridad, disponibilidad u otras propias).
+- Calificar **probabilidad** e **impacto** (1 a 5) para obtener el riesgo **inherente** y, con los controles, el **residual**. La plataforma indica si el residual está dentro del apetito de riesgo y cuánto lo reducen los controles.
+- Elegir la opción de tratamiento y vincular el **plan de tratamiento** a un proyecto.
+- Relacionar el riesgo con controles, proyectos, activos, procesos, terceros, políticas y más.
+- Documentar excepciones de riesgo.
+- Importar categorías, enfoques, riesgos y relaciones desde un único Excel.
+
+## Campos principales
+
+| Campo | Descripción |
+| --- | --- |
+| Código / Título | Identificación del riesgo. |
+| Categoría | De la personalización del módulo. |
+| Enfoque de identificación | Cómo se identificó: basado en eventos o en activos (ISO/IEC 27005:2022) u otro propio. |
+| Responsable / Dueño del riesgo | Miembros del equipo. |
+| Amenaza, Vulnerabilidad, Consecuencia | Escenario del riesgo. |
+| Propiedades afectadas | Confidencialidad, Integridad, Disponibilidad u otras. |
+| Probabilidad e impacto | Escala de 1 a 5 para el riesgo inherente y el residual. |
+| Opción de tratamiento | Modificar (mitigar), Retener (aceptar), Evitar o Compartir (transferir). |
+| Estado | Identificado, Analizado, Evaluado, En tratamiento, En seguimiento o Cerrado. |
+| Próxima revisión | Fecha en que se vuelve a revisar. |
+
+## Niveles de riesgo
+
+| Nivel | Puntaje (probabilidad × impacto) |
+| --- | --- |
+| Bajo | 1–4 |
+| Medio | 5–9 |
+| Alto | 10–16 |
+| Crítico | 17–25 |

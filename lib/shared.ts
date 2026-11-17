@@ -99,3 +99,6 @@ export function pageMetadata({
 }
 
 export const cookieConsentKey = 'dc-cookie-consent';
+
+/** ID de la etiqueta de Google (GA4 → flujo "Portal DivisionCero", G-5KWQPXJPX4). */
+export const googleTagId = 'G-ECH7HX0T7L';

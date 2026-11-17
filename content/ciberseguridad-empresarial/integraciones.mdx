@@ -1,0 +1,44 @@
+---
+title: Integraciones
+description: "Integraciones: importador masivo desde Excel, exportación, reportería en PDF, tags y accesos a API, webhooks y MCP."
+---
+
+Ruta en la aplicación: `/dashboard/integrations`. Mueve información hacia y desde la plataforma.
+
+## Secciones
+
+| Sección | Contenido |
+| --- | --- |
+| **Importador masivo** | Carga los registros de cada módulo, o de todos a la vez, desde archivos Excel. |
+| **Exportación** | Descarga los registros de cada módulo, o de todos, en Excel con la misma estructura del importador. |
+| **Reportería** | Reportes en PDF de cada módulo o de todos a la vez. |
+| **Tags** | Busca un tag y ve todos los registros que lo tienen, en todos los módulos. |
+| **API, Webhooks y MCP** | Accesos a su configuración en [Configuración](/docs/ciberseguridad-empresarial/configuracion). |
+
+## Importador masivo
+
+Hay una plantilla por módulo (Programas, Negocios, Riesgos, Proyectos, Catálogo de controles, Activos, Evaluaciones, Políticas, Incidentes, Terceros, Contactos de soporte, Calendario, Miembros, Grupos, Revisión de cuentas, Data, Continuidad, Auditoría y Frameworks) y una **completa** con todas las secciones.
+
+1. Descarga la plantilla del módulo.
+2. Completa una hoja por sección y deja vacías las que no vayas a importar. No cambies los nombres de las hojas ni los encabezados.
+3. Las referencias a otros registros se escriben por **nombre o código**, de un registro existente o del mismo archivo; los miembros, por su email.
+4. Sube el archivo y revisa la vista previa.
+
+<Callout type="warn">
+Si alguna fila tiene un problema **no se importa nada**: el importador indica la hoja, la fila y la columna para que la corrijas.
+</Callout>
+
+Cada módulo también tiene un botón **Importar** en su cabecera con su propia plantilla.
+
+## Exportación
+
+Descarga un Excel por módulo o uno completo (una hoja por sección), en el mismo formato del importador: sirve como respaldo o para editar y volver a importar. Solo verás los módulos que tu rol puede leer.
+
+## Reportería
+
+- **Reporte completo**: un PDF con el resumen y los registros de todos los módulos.
+- **Reporte por módulo**: elige uno o varios registros para descargar su reporte con detalles y relaciones, o descarga el de un registro con su botón.
+
+## Tags
+
+Selecciona un tag para ver todos los registros que lo tienen, de cualquier módulo.

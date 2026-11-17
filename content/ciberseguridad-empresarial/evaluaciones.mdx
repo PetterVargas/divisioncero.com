@@ -1,0 +1,37 @@
+---
+title: Evaluaciones
+description: "Módulo de Evaluaciones: presenta evaluaciones de madurez, crea las propias del equipo con dominios, preguntas y modelo, y gestiona resultados, feedback y hallazgos."
+---
+
+Ruta en la aplicación: `/dashboard/assessments`. Disponible **sin plan** (presentar y ver resultados); crear un catálogo propio (Dominios, Preguntas y Modelo) requiere plan.
+
+## Pestañas
+
+| Pestaña | Contenido |
+| --- | --- |
+| **Panel** | Las evaluaciones publicadas que puedes presentar: las del equipo y las de la plataforma. |
+| **Evaluaciones** | Las evaluaciones propias del equipo. Solo se ven en este equipo; publícalas para presentarlas. |
+| **Dominios** | Agrupan las preguntas de cada evaluación. |
+| **Preguntas** | Las preguntas de cada dominio, con sus opciones de respuesta y puntos. |
+| **Modelo** | Los niveles de madurez que alcanza una evaluación según su puntaje. |
+| **Resultados** | Las evaluaciones presentadas en el equipo, con su puntaje y nivel. |
+| **Feedback** | Recomendaciones de los asesores sobre una evaluación presentada y sobre cada respuesta. |
+| **Hallazgos** | Los hallazgos registrados sobre una evaluación presentada: dueños, estado, fecha de expiración y preguntas asociadas. |
+
+## Qué puedes hacer
+
+- **Presentar una evaluación**: desde el Panel, ponle nombre a la presentación y elige sus **asesores** (usuarios o grupos). Los asesores registran el feedback y los hallazgos.
+- **Crear evaluaciones propias**: define nombre, descripción, guía y orden; agrega dominios y preguntas, y márcala como **Publicada** para poder presentarla.
+- **Diseñar preguntas**: cada pregunta pertenece a un dominio y puede ser de selección única, selección múltiple o Sí/No, con puntos por opción y una guía opcional para quien responde.
+- **Definir el modelo**: cada nivel empieza en un porcentaje del puntaje máximo (**Desde %**). Agrega un nivel que empiece en 0 % para que todo puntaje tenga nivel.
+- **Revisar resultados**: puntaje, nivel, fechas de inicio y finalización, y quién la presentó; abre el reporte de cada respuesta.
+- **Registrar feedback y hallazgos**: recomendaciones generales y por respuesta; hallazgos con título, descripción, dueños, fecha de expiración y preguntas asociadas.
+- **Importar** evaluaciones, dominios y preguntas desde Excel.
+
+## Cómo se calcula el puntaje
+
+El puntaje es la suma de los puntos obtenidos sobre el máximo posible. El máximo de una pregunta es su mejor opción (selección única) o la suma de sus opciones (selección múltiple). El porcentaje resultante define el nivel del modelo.
+
+<Callout>
+Las evaluaciones de este módulo también se usan en [Terceros](/docs/ciberseguridad-empresarial/terceros) para evaluar a proveedores.
+</Callout>
