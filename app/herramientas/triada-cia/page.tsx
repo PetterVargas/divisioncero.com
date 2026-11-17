@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/herramientas/ui/tabs';
 
@@ -43,6 +44,7 @@ export default function TriadaCiaPage() {
           </TabsContent>
         </Tabs>
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

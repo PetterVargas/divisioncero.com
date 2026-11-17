@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { ChecklistGroup } from '@/components/herramientas/checklist-group';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { teamChecklistSections } from './_lib/checklist-data';
@@ -27,6 +28,7 @@ export default function ChecklistBuenasPracticasEquipoPage() {
           sections={teamChecklistSections}
         />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

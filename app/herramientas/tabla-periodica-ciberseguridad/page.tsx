@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { PeriodicTable } from './_components/periodic-table';
 
@@ -23,6 +24,7 @@ export default function TablaPeriodicaPage() {
       <ToolFullscreen className="container mx-auto py-6">
         <PeriodicTable />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </>
   );
 }

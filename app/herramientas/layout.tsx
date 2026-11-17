@@ -3,6 +3,7 @@ import { SiteLayout } from '@/components/site-layout';
 import { Toaster } from '@/components/herramientas/ui/sonner';
 import { textos } from '@/lib/herramientas/textos';
 import { toolsImage } from '@/lib/herramientas/seo';
+import { RelatedTools } from '@/components/herramientas/related-tools';
 
 const { meta } = textos;
 
@@ -29,6 +30,7 @@ export const metadata: Metadata = (() => {
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@divisioncero',
       title: meta.siteName,
       description: meta.siteDescription,
       images: toolsImage,
@@ -42,6 +44,7 @@ export default function Layout({ children }: LayoutProps<'/herramientas'>) {
     <SiteLayout askAIPrompt={textos.footer.askAi.prompt}>
       <Toaster position="top-center" />
       <div className="flex flex-1 flex-col">{children}</div>
+      <RelatedTools />
     </SiteLayout>
   );
 }

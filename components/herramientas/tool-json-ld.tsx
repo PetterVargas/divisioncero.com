@@ -1,15 +1,18 @@
-'use client';
+import { siteUrl, toolImage } from '@/lib/herramientas/seo';
+import { tools } from '@/lib/herramientas/tools';
 
-import { siteUrl } from '@/lib/herramientas/seo';
+const homeUrl = 'https://divisioncero.com';
 
+// Misma entidad que el JSON-LD del layout raíz (`app/layout.tsx`).
 const publisher = {
   '@type': 'Organization',
+  '@id': `${homeUrl}/#organization`,
   name: 'DivisionCero',
-  url: 'https://divisioncero.com',
+  url: homeUrl,
 };
 
 /**
- * `kind="app"` para herramientas interactivas (SoftwareApplication) y
+ * `kind="app"` para herramientas interactivas (WebApplication) y
  * `kind="article"` para páginas explicativas/educativas (Article), que es el
  * tipo que corresponde a contenido de lectura como "¿Qué es el grooming?".
  */
@@ -24,32 +27,39 @@ export function ToolJsonLd({
   path: string;
   kind?: 'app' | 'article';
 }) {
-  const base = siteUrl;
-  const url = `${base}${path}`;
+  const url = `${siteUrl}${path}`;
+  const image = `${homeUrl}${toolImage(path)}`;
+  const tool = tools.find((t) => t.href === `/herramientas${path}`);
+  const about = tool?.categories.map((name) => ({ '@type': 'Thing', name }));
+
+  const common = {
+    '@id': `${url}#main`,
+    description,
+    url,
+    image,
+    inLanguage: 'es',
+    isAccessibleForFree: true,
+    publisher,
+    isPartOf: { '@type': 'CollectionPage', '@id': `${siteUrl}#coleccion`, url: siteUrl, name: 'Herramientas de Ciberseguridad' },
+    ...(about?.length ? { about } : {}),
+  };
 
   const mainEntity =
     kind === 'article'
       ? {
           '@type': 'Article',
+          ...common,
           headline: title,
-          description,
-          url,
           mainEntityOfPage: url,
-          inLanguage: 'es',
-          image: `${siteUrl}/opengraph-image`,
           author: publisher,
-          publisher,
         }
       : {
-          '@type': 'SoftwareApplication',
+          '@type': 'WebApplication',
+          ...common,
           name: title,
-          description,
-          url,
-          inLanguage: 'es',
           applicationCategory: 'SecurityApplication',
           operatingSystem: 'Any',
-          isAccessibleForFree: true,
-          publisher,
+          browserRequirements: 'Requiere JavaScript. Funciona en cualquier navegador moderno.',
           offers: {
             '@type': 'Offer',
             price: '0',
@@ -64,8 +74,9 @@ export function ToolJsonLd({
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Herramientas', item: base },
-          { '@type': 'ListItem', position: 2, name: title, item: url },
+          { '@type': 'ListItem', position: 1, name: 'DivisionCero', item: homeUrl },
+          { '@type': 'ListItem', position: 2, name: 'Herramientas', item: siteUrl },
+          { '@type': 'ListItem', position: 3, name: title, item: url },
         ],
       },
     ],

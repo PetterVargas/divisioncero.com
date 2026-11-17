@@ -10,6 +10,8 @@ import { generate as DefaultImage } from 'fumadocs-ui/og';
 import * as site from '@/lib/shared';
 import * as kudo from '@/lib/kudo/shared';
 import * as academy from '@/lib/cyberacademy/shared';
+import { tools } from '@/lib/herramientas/tools';
+import { toolImage, toolsRoute } from '@/lib/herramientas/seo';
 import {
   blog, releases, cyberacademySource, ciberseguridadEmpresarialSource, selfHostingSource,
   getBlogPageImage, getReleasePageImage, getCyberacademyPageImage,
@@ -80,6 +82,15 @@ const homes: { url: string; element: ReactElement }[] = [
   { url: '/herramientas/og/image.png', element: <HerramientasImage /> },
 ];
 
+// Una imagen por herramienta propia, para que cada enlace compartido y cada
+// resultado de imágenes muestre la herramienta y no la portada genérica.
+const toolImages = tools
+  .filter((tool) => !tool.external && tool.href.startsWith(`${toolsRoute}/`))
+  .map((tool) => ({
+    url: toolImage(tool.href.slice(toolsRoute.length)),
+    element: DefaultImage({ title: tool.title, description: tool.description, site: 'Herramientas · DivisionCero' }),
+  }));
+
 function HerramientasImage() {
   return (
     <div
@@ -147,6 +158,7 @@ async function render(url: string, element: ReactElement) {
 async function main() {
   const jobs = [
     ...homes,
+    ...toolImages,
     ...sections.flatMap(({ site: siteName, pages, image }) =>
       pages.map((page) => ({
         url: image(page as never).url,

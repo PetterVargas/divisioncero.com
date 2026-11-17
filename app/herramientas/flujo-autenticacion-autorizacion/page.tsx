@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 
 import { ConceptGlossary } from './_components/concept-glossary';
@@ -36,6 +37,7 @@ export default function FlujoAutenticacionAutorizacionPage() {
           <ComparisonCards title="Autenticación por API vs. por MCP" items={authComparison} />
         </div>
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }

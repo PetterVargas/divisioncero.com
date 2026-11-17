@@ -1,6 +1,7 @@
 import { ToolPageHeader } from '@/components/herramientas/tool-page-header';
 import { ToolFullscreen } from '@/components/herramientas/tool-fullscreen';
 import { ToolJsonLd } from '@/components/herramientas/tool-json-ld';
+import { ToolFaq } from '@/components/herramientas/tool-faq';
 import { toolMetadata } from '@/lib/herramientas/seo';
 import { FileHashCalculator } from './_components/file-hash-calculator';
 
@@ -23,6 +24,7 @@ export default function HashArchivoPage() {
       <ToolFullscreen className="container mx-auto flex flex-col items-center px-4 py-8">
         <FileHashCalculator />
       </ToolFullscreen>
+      <ToolFaq path={path} />
     </div>
   );
 }
