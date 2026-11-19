@@ -122,6 +122,7 @@ async function processTemplateFiles(
   const templateFiles = [
     'package.json.template',
     'README.md.template',
+    path.join('lib', 'shared.ts.template'),
   ];
 
   for (const templateFile of templateFiles) {

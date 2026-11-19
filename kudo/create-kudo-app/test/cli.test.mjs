@@ -32,6 +32,9 @@ test('genera el proyecto con SGX, MCP, agentes y skills', () => {
     const pkg = JSON.parse(fs.readFileSync(path.join(proyecto, 'package.json'), 'utf8'));
     assert.equal(pkg.name, 'mi-sgx');
     assert.ok(pkg.scripts.mcp);
+    const shared = fs.readFileSync(path.join(proyecto, 'lib/shared.ts'), 'utf8');
+    assert.match(shared, /repo: 'mi-sgx'/);
+    assert.ok(!existe('lib/shared.ts.template'));
 
     // Ningún enlace interno debe apuntar a rutas del sitio que no existen en la plantilla.
     const indice = fs.readFileSync(path.join(proyecto, 'content/sgx/politicas-y-procedimientos/index.mdx'), 'utf8');
