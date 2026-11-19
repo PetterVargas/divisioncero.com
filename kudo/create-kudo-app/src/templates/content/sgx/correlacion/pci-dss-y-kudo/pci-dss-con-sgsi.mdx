@@ -3,94 +3,110 @@ title: PCI DSS con SGSI
 description: "Vista general de PCI DSS correlacionado con el SGSI de Kudo: dominios, alcance y equivalencias entre ambos marcos de ciberseguridad."
 ---
 
-Requisitos de PCI DSS v4.0 organizados por objetivo y mapeados a las políticas del SGSI de Kudo.
+Requisitos de PCI DSS v4.0 organizados por objetivo y mapeados a las políticas y procedimientos del SGX de Kudo.
 
-### Objetivo 1 — Build and Maintain a Secure Network and Systems
+### COR — Coherencia Organizacional
 
 <Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" title="📡 Política de Seguridad de Comunicaciones">
-    Req. 1 — Controles de seguridad de red: firewalls, segmentación y protección del entorno de datos del titular.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros" title="📄 Política de Documentos y Registros">
+    10.5 — Estándares para gestión de documentos y registros organizacionales.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-hardening" title="🔒 Política de Hardening">
-    Req. 2 — Configuraciones seguras de todos los componentes del sistema: eliminación de valores predeterminados y configuraciones inseguras.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" title="🛡️ Política de Seguridad de la Información">
+    12.1 — Protección de información, activos y reputación organizacional.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones" title="🛠️ Política de Gestión de Cambios y Configuraciones">
-    Req. 2 — Gestión y documentación de configuraciones de seguridad en sistemas y componentes.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" title="⚠️ Política de Gestión de Riesgos">
+    12.2, 12.3 — Marco para identificación, evaluación y tratamiento de riesgos.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" title="⚖️ Política de Gestión de Cumplimiento">
+    12.4 — Aseguramiento del cumplimiento de requisitos legales y regulatorios.
   </Card>
 </Cards>
 
-### Objetivo 2 — Protect Account Data
+### CIP — Ciberseguridad en Identidad y Puntos Finales
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-hardening" title="🔒 Política de Hardening">
+    2.1, 2.2, 11.1, 11.2 — Configuración segura y fortalecimiento de sistemas y aplicaciones.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos" title="🔑 Política de Gestión de Accesos">
+    7.1–7.3, 8.1–8.6 — Control y gestión de acceso a sistemas y recursos de información.
+  </Card>
+</Cards>
+
+### CIF — Ciberseguridad en Infraestructura
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" title="📡 Política de Seguridad de Comunicaciones">
+    1.1–1.5, 4.1 — Protección de comunicaciones y transferencias de información.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" title="🔐 Política de Criptografía y Gestión de Claves">
+    3.5–3.7, 4.2 — Uso correcto de técnicas criptográficas y gestión del ciclo de vida de claves y certificados.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-fisica" title="🏢 Política de Seguridad Física">
+    9.1–9.5 — Protección física de instalaciones, equipos y activos.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" title="📊 Política de Registro y Monitoreo">
+    10.1–10.4, 10.6, 11.5, 11.6 — Registro de eventos y monitoreo de seguridad de sistemas.
+  </Card>
+</Cards>
+
+### CAP — Ciberseguridad en Aplicaciones
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-desarrollo-seguro" title="👨‍💻 Política de Desarrollo Seguro">
+    6.1, 6.2, 6.4 — Directrices para integrar seguridad en todo el ciclo de vida del software.
+  </Card>
+</Cards>
+
+### CCN — Continuidad y Cambios del Negocio
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones" title="🛠️ Política de Gestión de Cambios y Configuraciones">
+    2.3, 6.5 — Control de cambios en sistemas y configuraciones de TI.
+  </Card>
+</Cards>
+
+### THP — Talento Humano y Proveedores
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-concienciacion" title="🎓 Política de Gestión de Concienciación">
+    5.4, 12.6 — Programa de capacitación y concientización en seguridad de la información.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos" title="👥 Política de Seguridad de Recursos Humanos">
+    12.7 — Seguridad en el ciclo de vida del empleado y gestión de personal.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores" title="🤝 Política de Gestión de Proveedores">
+    12.8, 12.9 — Evaluación y gestión de riesgos de terceros y proveedores.
+  </Card>
+</Cards>
+
+### DIA — Datos e Inteligencia Artificial
 
 <Cards>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-privacidad" title="🛡️ Política de Privacidad">
-    Req. 3 — Protección de datos de cuenta almacenados: minimización, enmascaramiento, cifrado y retención.
+    3.1, 3.3, 3.4 — Protección de datos personales y cumplimiento de regulaciones de privacidad.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" title="🗑️ Política de Retención y Eliminación de Datos">
+    3.2 — Plazos de conservación por categoría de datos y eliminación segura con evidencia.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" title="📦 Política de Gestión de Activos">
-    Req. 3 — Inventario y clasificación de datos de titulares de tarjetas almacenados.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" title="📡 Política de Seguridad de Comunicaciones">
-    Req. 4 — Cifrado fuerte de datos de titulares de tarjetas en transmisión por redes públicas abiertas.
+    12.5 — Gestión y protección de activos de información de la organización.
   </Card>
 </Cards>
 
-### Objetivo 3 — Maintain a Vulnerability Management Program
+### ADR — Análisis, Detección y Respuesta
 
 <Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-hardening" title="🔒 Política de Hardening">
-    Req. 5 — Protección contra malware: antivirus, detección de amenazas y mecanismos anti-phishing.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" title="🦠 Política de Protección contra Software Malicioso">
+    5.1–5.3 — Prevención, detección y contención de malware en puntos finales, servidores, correo y navegación.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-desarrollo-seguro" title="👨‍💻 Política de Desarrollo Seguro">
-    Req. 6 — Desarrollo y mantenimiento de sistemas y software seguros: gestión de vulnerabilidades y parches.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones" title="🛠️ Política de Gestión de Cambios y Configuraciones">
-    Req. 6 — Control de cambios en sistemas y software que procesan datos de tarjetas.
-  </Card>
-</Cards>
-
-### Objetivo 4 — Implement Strong Access Control Measures
-
-<Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos" title="🔑 Política de Gestión de Accesos">
-    Req. 7, Req. 8 — Restricción de acceso por necesidad de negocio, gestión de identidades y autenticación de usuarios.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-fisica" title="🏢 Política de Seguridad Física">
-    Req. 9 — Restricción del acceso físico a datos de titulares de tarjetas e instalaciones del entorno de datos.
-  </Card>
-</Cards>
-
-### Objetivo 5 — Regularly Monitor and Test Networks
-
-<Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" title="📊 Política de Registro y Monitoreo">
-    Req. 10 — Registro y monitoreo de todos los accesos a componentes del sistema y datos de titulares.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-hardening" title="🔒 Política de Hardening">
-    Req. 11 — Pruebas regulares de seguridad: escaneos de vulnerabilidades, pruebas de penetración y detección de intrusos.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" title="🩹 Política de Gestión de Vulnerabilidades y Parches">
+    6.3, 11.3, 11.4 — Identificación, priorización y remediación de vulnerabilidades con plazos según su severidad.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" title="🚨 Política de Gestión de Incidentes">
-    Req. 11 — Detección y respuesta ante cambios no autorizados y eventos de seguridad en el entorno de datos.
+    10.7 — Detección, respuesta y gestión de incidentes de seguridad.
   </Card>
-</Cards>
-
-### Objetivo 6 — Maintain an Information Security Policy
-
-<Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" title="🛡️ Política de Seguridad de la Información">
-    Req. 12 — Política de seguridad de la información que aborde todos los requisitos PCI DSS.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" title="⚠️ Política de Gestión de Riesgos">
-    Req. 12 — Evaluación anual de riesgos y gestión de amenazas al entorno de datos del titular.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos" title="👥 Política de Seguridad de Recursos Humanos">
-    Req. 12 — Gestión de seguridad del personal: verificación, formación y responsabilidades.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-concienciacion" title="🎓 Política de Gestión de Concienciación">
-    Req. 12 — Programa de concienciación en seguridad para todo el personal.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores" title="🤝 Política de Gestión de Proveedores">
-    Req. 12 — Gestión de proveedores de servicios: contratos, monitoreo y responsabilidades PCI DSS.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" title="🚨 Política de Gestión de Incidentes">
-    Req. 12 — Plan de respuesta ante incidentes de seguridad que afecten datos de titulares de tarjetas.
+  <Card href="/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" title="🧯 Procedimiento de Respuesta a Incidentes">
+    12.10 — Pasos operativos, roles, plazos y guías rápidas para responder a incidentes de ciberseguridad.
   </Card>
 </Cards>

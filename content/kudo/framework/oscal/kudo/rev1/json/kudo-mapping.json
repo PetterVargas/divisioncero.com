@@ -592,30 +592,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -638,30 +638,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -1217,21 +1217,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -1254,22 +1258,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -1293,21 +1297,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -1594,26 +1602,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "cor-3"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Auditoría Interna"
               }
             ]
           },
@@ -1968,26 +1976,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "thp-1"
+                "id-ref": "thp-2"
               },
               {
                 "type": "control",
-                "id-ref": "cip-4"
+                "id-ref": "cip-5"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-THP-01"
+                "value": "POL-THP-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Recursos Humanos"
+                "text": "Política de Trabajo Remoto y Dispositivos Móviles"
               }
             ]
           },
@@ -2636,26 +2648,30 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "cip-5"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "thp-2"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-CIF-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Seguridad de TI"
               }
             ]
           },
@@ -2920,26 +2936,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -2962,6 +2978,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -2973,15 +2993,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -3054,30 +3074,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -3670,30 +3686,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -4163,15 +4175,12 @@
           "unmapped-controls": [
             {
               "with-ids": [
-                "adr-1",
-                "adr-2",
-                "cif-5",
                 "dia-7"
               ]
             }
           ]
         },
-        "remarks": "93 controles del estándar; 32 de 36 controles Kudo relacionados."
+        "remarks": "93 controles del estándar; 35 de 36 controles Kudo relacionados."
       },
       {
         "uuid": "8eb60374-3e02-52e9-88e1-c2e973e70d2b",
@@ -5066,26 +5075,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "cor-3"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Auditoría Interna"
               }
             ]
           },
@@ -5892,30 +5901,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "adr-2"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cip-6"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-03"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Riesgos"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -5938,30 +5947,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "adr-2"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cip-6"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-03"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Riesgos"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -6168,26 +6177,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
-              },
-              {
-                "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -6210,26 +6215,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
-              },
-              {
-                "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -6252,26 +6253,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
-              },
-              {
-                "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -6712,30 +6709,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
-              },
-              {
-                "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -7214,6 +7207,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -7225,15 +7222,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -7660,22 +7657,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-3"
+                "id-ref": "adr-1"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-07"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Registro y Monitoreo"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -8003,21 +8004,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -8041,21 +8046,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -8079,21 +8088,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -8117,21 +8130,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -8155,21 +8172,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -8269,21 +8290,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -8751,15 +8776,12 @@
           "unmapped-controls": [
             {
               "with-ids": [
-                "adr-1",
-                "adr-2",
-                "cif-5",
                 "dia-7"
               ]
             }
           ]
         },
-        "remarks": "106 controles del estándar; 32 de 36 controles Kudo relacionados."
+        "remarks": "106 controles del estándar; 35 de 36 controles Kudo relacionados."
       },
       {
         "uuid": "fe3ab343-b97d-5868-8344-31a858bbe20a",
@@ -9344,30 +9366,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -9390,30 +9412,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -9482,30 +9504,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -9528,30 +9546,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -9574,30 +9588,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
-              },
-              {
-                "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -9620,30 +9630,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -9712,30 +9722,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
-              },
-              {
-                "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -9758,30 +9764,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
-              },
-              {
-                "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -9804,30 +9806,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -11212,6 +11210,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -11223,15 +11225,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -11254,6 +11256,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -11265,15 +11271,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -11296,6 +11302,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -11307,15 +11317,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -11338,6 +11348,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -11349,15 +11363,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -11380,6 +11394,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -11391,15 +11409,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -11422,30 +11440,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "adr-2"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cip-6"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-03"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Riesgos"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -11468,30 +11486,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "adr-2"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cip-6"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-03"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Riesgos"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -12246,30 +12264,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-4"
-              },
-              {
-                "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12292,26 +12306,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12334,26 +12348,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12376,26 +12390,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12418,26 +12432,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12460,26 +12474,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12502,26 +12516,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -12544,22 +12558,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-3"
+                "id-ref": "adr-1"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-07"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Registro y Monitoreo"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -15097,21 +15115,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -15252,26 +15274,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
-              },
-              {
-                "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CCN-02"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-crisis",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Crisis"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -15412,6 +15430,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -15423,15 +15445,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -15521,15 +15543,12 @@
           "unmapped-controls": [
             {
               "with-ids": [
-                "adr-1",
-                "adr-2",
-                "cif-5",
                 "dia-7"
               ]
             }
           ]
         },
-        "remarks": "155 controles del estándar; 32 de 36 controles Kudo relacionados."
+        "remarks": "155 controles del estándar; 35 de 36 controles Kudo relacionados."
       },
       {
         "uuid": "af3ed2b0-d80c-57b9-85b0-a9500f6119bf",
@@ -15708,26 +15727,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "thp-1"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cip-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "POL-THP-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Política de Seguridad de Recursos Humanos"
               }
             ]
           },
@@ -16106,22 +16125,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-3"
+                "id-ref": "cor-3"
+              },
+              {
+                "type": "control",
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-07"
+                "value": "PRO-COR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Registro y Monitoreo"
+                "text": "Procedimiento de Auditoría Interna"
               }
             ]
           },
@@ -16144,26 +16167,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
-              },
-              {
-                "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -16592,30 +16611,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
-              },
-              {
-                "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -16638,26 +16653,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -16680,6 +16695,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -16691,15 +16710,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -16799,21 +16818,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -17100,30 +17123,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "ccn-4"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
-              },
-              {
-                "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "cor-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "PLN-CCN-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Plan de Continuidad del Negocio"
               }
             ]
           },
@@ -17146,30 +17165,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
+                "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "dia-5"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -17192,30 +17211,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -18325,17 +18340,12 @@
           "unmapped-controls": [
             {
               "with-ids": [
-                "adr-1",
-                "adr-2",
-                "cif-5",
-                "dia-1",
-                "dia-7",
-                "thp-1"
+                "dia-7"
               ]
             }
           ]
         },
-        "remarks": "62 controles del estándar; 30 de 36 controles Kudo relacionados."
+        "remarks": "62 controles del estándar; 35 de 36 controles Kudo relacionados."
       },
       {
         "uuid": "8acab146-bfe2-59f1-beeb-d65a7a232061",
@@ -18786,30 +18796,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -18924,30 +18930,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -18970,30 +18972,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -19016,30 +19014,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
+                "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-1"
-              },
-              {
-                "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -19108,30 +19102,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -19154,26 +19144,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -19196,26 +19186,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -19238,26 +19228,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -19410,6 +19400,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -19421,15 +19415,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -20562,6 +20556,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -20573,15 +20571,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -20604,22 +20602,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
+              },
+              {
+                "type": "control",
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -20898,26 +20904,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "cif-2"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "dia-1"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "POL-DIA-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Política de Gestión de Activos"
               }
             ]
           },
@@ -21105,21 +21115,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           }
@@ -21129,18 +21143,15 @@
           "unmapped-controls": [
             {
               "with-ids": [
-                "adr-1",
-                "adr-2",
                 "ccn-4",
                 "cif-1",
-                "cif-5",
                 "dia-7",
                 "thp-2"
               ]
             }
           ]
         },
-        "remarks": "63 controles del estándar; 29 de 36 controles Kudo relacionados."
+        "remarks": "63 controles del estándar; 32 de 36 controles Kudo relacionados."
       },
       {
         "uuid": "0e608e0c-b215-5755-87cb-b1794eb51518",
@@ -21223,26 +21234,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "cor-3"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Auditoría Interna"
               }
             ]
           },
@@ -21265,26 +21276,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "cor-3"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "PRO-COR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Procedimiento de Auditoría Interna"
               }
             ]
           },
@@ -21349,26 +21360,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "cor-3"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-02"
+                "value": "PRO-COR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Documentos y Registros"
+                "text": "Procedimiento de Auditoría Interna"
               }
             ]
           },
@@ -21391,26 +21402,22 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
-              },
-              {
-                "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cor-4"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-02"
+                "value": "PRO-COR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Documentos y Registros"
+                "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
               }
             ]
           },
@@ -22809,30 +22816,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -22855,30 +22858,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -22901,30 +22900,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -22947,30 +22942,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -22993,30 +22984,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23039,30 +23026,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23085,30 +23068,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23131,30 +23110,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23177,30 +23152,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23223,30 +23194,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23269,30 +23236,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23315,30 +23278,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23361,30 +23320,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23407,30 +23362,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23453,30 +23404,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23499,30 +23446,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23545,30 +23488,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23591,30 +23530,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23637,30 +23572,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23683,30 +23614,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -23729,30 +23656,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-3"
-              },
-              {
-                "type": "control",
                 "id-ref": "cif-4"
               },
               {
                 "type": "control",
-                "id-ref": "dia-3"
+                "id-ref": "cif-5"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-03"
+                "value": "POL-CIF-08"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Comunicaciones"
+                "text": "Política de Criptografía y Gestión de Claves"
               }
             ]
           },
@@ -24349,30 +24272,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
+                "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-1"
-              },
-              {
-                "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -24441,30 +24360,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -24993,30 +24912,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "dia-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-6"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-01"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Privacidad"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -25801,26 +25716,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "thp-1"
+                "id-ref": "thp-2"
               },
               {
                 "type": "control",
-                "id-ref": "cip-4"
+                "id-ref": "cip-5"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-THP-01"
+                "value": "POL-THP-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de Recursos Humanos"
+                "text": "Política de Trabajo Remoto y Dispositivos Móviles"
               }
             ]
           },
@@ -28174,21 +28093,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -28212,21 +28135,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -28859,6 +28786,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -28870,15 +28801,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -28901,26 +28832,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cif-3"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -28943,6 +28874,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -28954,15 +28889,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -28985,6 +28920,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -28996,15 +28935,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29027,6 +28966,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -29038,15 +28981,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29111,6 +29054,10 @@
             "targets": [
               {
                 "type": "control",
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
                 "id-ref": "cip-6"
               },
               {
@@ -29122,15 +29069,15 @@
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-02"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Hardening"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29153,22 +29100,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
+              },
+              {
+                "type": "control",
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29191,22 +29146,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
+              },
+              {
+                "type": "control",
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29229,22 +29192,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
+              },
+              {
+                "type": "control",
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29267,22 +29238,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "adr-4"
+                "id-ref": "adr-2"
+              },
+              {
+                "type": "control",
+                "id-ref": "cip-6"
+              },
+              {
+                "type": "control",
+                "id-ref": "cif-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "POL-ADR-02"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Política de Gestión de Vulnerabilidades y Parches"
               }
             ]
           },
@@ -29649,34 +29628,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-1"
+                "id-ref": "adr-1"
               },
               {
                 "type": "control",
-                "id-ref": "cip-2"
-              },
-              {
-                "type": "control",
-                "id-ref": "cip-3"
-              },
-              {
-                "type": "control",
-                "id-ref": "cip-4"
+                "id-ref": "cip-6"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIP-01"
+                "value": "POL-ADR-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Accesos"
+                "text": "Política de Protección contra Software Malicioso"
               }
             ]
           },
@@ -29886,15 +29857,12 @@
           "unmapped-controls": [
             {
               "with-ids": [
-                "adr-1",
-                "adr-2",
-                "cif-5",
                 "dia-7"
               ]
             }
           ]
         },
-        "remarks": "197 controles del estándar; 32 de 36 controles Kudo relacionados."
+        "remarks": "197 controles del estándar; 35 de 36 controles Kudo relacionados."
       },
       {
         "uuid": "9d51cbd3-20e1-5521-80b6-49d191959e55",
@@ -30027,30 +29995,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-01"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de la Información"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -30073,30 +30041,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-01"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de la Información"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -30701,30 +30669,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
-              },
-              {
-                "type": "control",
                 "id-ref": "dia-1"
               },
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-04"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Clasificación y Manejo de la Información"
               }
             ]
           },
@@ -30747,30 +30715,26 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cif-2"
+                "id-ref": "dia-5"
               },
               {
                 "type": "control",
-                "id-ref": "dia-1"
-              },
-              {
-                "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-DIA-02"
+                "value": "POL-DIA-05"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Activos"
+                "text": "Política de Retención y Eliminación de Datos"
               }
             ]
           },
@@ -31023,30 +30987,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -31069,30 +31033,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -31115,30 +31079,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -31161,30 +31125,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -31207,30 +31171,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -31253,30 +31217,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cip-5"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cip-6"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "thp-2"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-CIF-02"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de TI"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -32531,26 +32495,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -32573,26 +32541,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -32615,26 +32587,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -32657,26 +32633,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-3"
+                "id-ref": "dia-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-04"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Cumplimiento"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -32699,30 +32679,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-01"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de la Información"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -32745,30 +32725,30 @@
             "targets": [
               {
                 "type": "control",
-                "id-ref": "cor-1"
+                "id-ref": "dia-7"
               },
               {
                 "type": "control",
-                "id-ref": "cor-2"
+                "id-ref": "dia-4"
               },
               {
                 "type": "control",
-                "id-ref": "cor-4"
+                "id-ref": "thp-1"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-COR-01"
+                "value": "POL-DIA-03"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Seguridad de la Información"
+                "text": "Política de Uso Aceptable de Inteligencia Artificial"
               }
             ]
           },
@@ -33040,21 +33020,25 @@
               {
                 "type": "control",
                 "id-ref": "adr-4"
+              },
+              {
+                "type": "control",
+                "id-ref": "adr-3"
               }
             ],
             "props": [
               {
                 "name": "sgx-document",
                 "ns": "https://divisioncero.com/kudo/framework/oscal",
-                "value": "POL-ADR-01"
+                "value": "PRO-ADR-01"
               }
             ],
             "links": [
               {
-                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+                "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
                 "rel": "reference",
                 "media-type": "text/html",
-                "text": "Política de Gestión de Incidentes"
+                "text": "Procedimiento de Respuesta a Incidentes"
               }
             ]
           },
@@ -33228,15 +33212,12 @@
                 "cip-1",
                 "cip-2",
                 "cip-3",
-                "cip-4",
-                "dia-4",
-                "dia-7",
-                "thp-1"
+                "cip-4"
               ]
             }
           ]
         },
-        "remarks": "75 controles del estándar; 20 de 36 controles Kudo relacionados."
+        "remarks": "75 controles del estándar; 23 de 36 controles Kudo relacionados."
       }
     ],
     "back-matter": {

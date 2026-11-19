@@ -25,7 +25,8 @@
     "kudo:sgx": "tsx scripts/kudo/sync-sgx-documentos.ts",
     "kudo:oscal": "tsx scripts/kudo/oscal-generate.ts",
     "kudo:oscal:xml": "bash scripts/kudo/oscal-to-xml.sh",
-    "kudo:herramientas": "tsx scripts/kudo/generate-herramientas.ts"
+    "kudo:herramientas": "tsx scripts/kudo/generate-herramientas.ts",
+    "kudo:correlacion": "tsx scripts/kudo/sync-correlacion.ts"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.9",

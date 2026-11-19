@@ -3,114 +3,122 @@ title: SOC 2 con SGSI
 description: "Vista general de SOC 2 correlacionado con el SGSI de Kudo: dominios, alcance y equivalencias entre ambos marcos de ciberseguridad."
 ---
 
-Trust Services Criteria de SOC 2 organizados por su correlación con los dominios Kudo y mapeados a las políticas del SGSI.
+Trust Services Criteria de SOC 2 organizados por su correlación con los dominios Kudo y mapeados a las políticas y procedimientos del SGX de Kudo.
 
-### CC — Common Criteria (Security)
-
-#### COR — Coherencia Organizacional
+### COR — Coherencia Organizacional
 
 <Cards>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" title="🛡️ Política de Seguridad de la Información">
-    CC1.1–CC1.3, CC2.1 — Entorno de control: compromiso de la dirección, estructura y valores éticos.
+    CC1.1–CC1.3, CC2.1 — Protección de información, activos y reputación organizacional.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" title="⚖️ Política de Gestión de Cumplimiento">
-    CC1.4, CC1.5, CC4.2, CC5.1, CC5.2 — Responsabilidades, supervisión y actividades de control.
+    CC1.5, CC5.1, CC5.2, P8.1 — Aseguramiento del cumplimiento de requisitos legales y regulatorios.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros" title="📄 Política de Documentos y Registros">
-    CC2.2, CC2.3, CC5.3 — Comunicación de información relevante interna y externamente.
+    CC2.2, CC2.3, CC5.3 — Estándares para gestión de documentos y registros organizacionales.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" title="⚠️ Política de Gestión de Riesgos">
-    CC3.1–CC3.4, CC9.1 — Evaluación de riesgos: identificación, análisis y respuesta al riesgo.
+    CC3.1–CC3.4, CC9.1 — Marco para identificación, evaluación y tratamiento de riesgos.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores" title="🤝 Política de Gestión de Proveedores">
-    CC9.2 — Mitigación de riesgos con proveedores y socios de negocio.
+  <Card href="/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" title="🔍 Procedimiento de Auditoría Interna">
+    CC4.1 — Planificación, ejecución y reporte de auditorías internas independientes del SGX.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" title="🔁 Procedimiento de Acciones Correctivas y Mejora Continua">
+    CC4.2 — Gestión de no conformidades, análisis de causa raíz, planes de acción y verificación de eficacia.
   </Card>
 </Cards>
 
-#### CIP — Identidad y Puntos Finales
+### CIP — Ciberseguridad en Identidad y Puntos Finales
 
 <Cards>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos" title="🔑 Política de Gestión de Accesos">
-    CC6.1–CC6.3 — Controles lógicos de acceso: autenticación, autorización y gestión de credenciales.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-hardening" title="🔒 Política de Hardening">
-    CC6.8, CC7.1 — Prevención y detección de software no autorizado y configuraciones inseguras.
+    CC6.1–CC6.3 — Control y gestión de acceso a sistemas y recursos de información.
   </Card>
 </Cards>
 
-#### CIF — Ciberseguridad en Infraestructura
+### CIF — Ciberseguridad en Infraestructura
 
 <Cards>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-fisica" title="🏢 Política de Seguridad Física">
-    CC6.4, CC6.5 — Controles físicos de acceso a instalaciones y activos de infraestructura.
+    CC6.4, CC6.5 — Protección física de instalaciones, equipos y activos.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" title="📡 Política de Seguridad de Comunicaciones">
-    CC6.6 — Protección de transmisiones lógicas contra accesos no autorizados.
+    CC6.6 — Protección de comunicaciones y transferencias de información.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" title="💻 Política de Seguridad de TI">
-    CC6.7 — Restricción de la transmisión, movimiento y eliminación de información.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" title="🔐 Política de Criptografía y Gestión de Claves">
+    CC6.7 — Uso correcto de técnicas criptográficas y gestión del ciclo de vida de claves y certificados.
   </Card>
-</Cards>
-
-#### CCN — Continuidad y Cambios del Negocio
-
-<Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones" title="🛠️ Política de Gestión de Cambios y Configuraciones">
-    CC8.1 — Gestión de cambios en infraestructura, datos, software y procedimientos.
-  </Card>
-</Cards>
-
-#### ADR — Análisis, Detección y Respuesta
-
-<Cards>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" title="📊 Política de Registro y Monitoreo">
-    CC4.1, CC7.2 — Monitoreo continuo de controles y evaluación de rendimiento del sistema.
+    CC7.2 — Registro de eventos y monitoreo de seguridad de sistemas.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" title="🚨 Política de Gestión de Incidentes">
-    CC7.3–CC7.5 — Evaluación, respuesta y recuperación ante eventos de seguridad.
-  </Card>
-</Cards>
-
-### A — Availability
-
-<Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-continuidad-del-negocio" title="🛟 Política de Continuidad del Negocio">
-    A1.1 — Disponibilidad de componentes de infraestructura necesarios para las operaciones.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-backups-y-recuperacion" title="💾 Políticas de Backups y Recuperación">
-    A1.2 — Respaldo y recuperación de datos para cumplir los objetivos de disponibilidad.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-backups-y-recuperacion" title="💾 Política de Backups y Recuperación">
+    A1.2 — Respaldo y recuperación de información crítica del negocio.
   </Card>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" title="💻 Política de Seguridad de TI">
-    A1.3 — Recuperación y restablecimiento del sistema dentro de los objetivos de tiempo acordados.
+    PI1.4 — Estándares de seguridad para infraestructura y servicios de TI.
   </Card>
 </Cards>
 
-### C — Confidentiality
-
-<Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-privacidad" title="🛡️ Política de Privacidad">
-    C1.1, C1.2 — Identificación y protección de información confidencial durante su ciclo de vida.
-  </Card>
-</Cards>
-
-### PI — Processing Integrity
+### CAP — Ciberseguridad en Aplicaciones
 
 <Cards>
   <Card href="/sgx/politicas-y-procedimientos/politica-de-desarrollo-seguro" title="👨‍💻 Política de Desarrollo Seguro">
-    PI1.1–PI1.3, PI1.5 — Procesamiento completo, válido, exacto, oportuno y autorizado de transacciones.
-  </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" title="💻 Política de Seguridad de TI">
-    PI1.4 — Salidas de sistema entregadas a los destinatarios correctos y protegidas en tránsito.
+    PI1.1–PI1.3, PI1.5 — Directrices para integrar seguridad en todo el ciclo de vida del software.
   </Card>
 </Cards>
 
-### P — Privacy
+### CCN — Continuidad y Cambios del Negocio
 
 <Cards>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-privacidad" title="🛡️ Política de Privacidad">
-    P1.1–P8.1 — Ciclo de vida completo de la privacidad: notificación, consentimiento, recolección, uso, retención, acceso, divulgación, calidad y monitoreo.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones" title="🛠️ Política de Gestión de Cambios y Configuraciones">
+    CC8.1 — Control de cambios en sistemas y configuraciones de TI.
   </Card>
-  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" title="⚖️ Política de Gestión de Cumplimiento">
-    P8.1 — Monitoreo y cumplimiento de compromisos y requisitos legales de privacidad.
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-continuidad-del-negocio" title="🛟 Política de Continuidad del Negocio">
+    A1.1 — Directrices para asegurar la continuidad de funciones críticas durante y después de interrupciones.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio" title="📋 Plan de Continuidad del Negocio">
+    A1.3 — Marco para responder a incidentes disruptivos que afecten las operaciones y asegurar funciones esenciales.
+  </Card>
+</Cards>
+
+### THP — Talento Humano y Proveedores
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos" title="👥 Política de Seguridad de Recursos Humanos">
+    CC1.4 — Seguridad en el ciclo de vida del empleado y gestión de personal.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores" title="🤝 Política de Gestión de Proveedores">
+    CC9.2 — Evaluación y gestión de riesgos de terceros y proveedores.
+  </Card>
+</Cards>
+
+### DIA — Datos e Inteligencia Artificial
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" title="🏷️ Política de Clasificación y Manejo de la Información">
+    C1.1 — Niveles de clasificación, etiquetado y reglas de manejo de la información según su sensibilidad.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" title="🗑️ Política de Retención y Eliminación de Datos">
+    C1.2 — Plazos de conservación por categoría de datos y eliminación segura con evidencia.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-privacidad" title="🛡️ Política de Privacidad">
+    P1.1, P1.2, P2.1, P3.1, P3.2, P4.1–P4.3, P5.1, P5.2, P6.1–P6.7, P7.1 — Protección de datos personales y cumplimiento de regulaciones de privacidad.
+  </Card>
+</Cards>
+
+### ADR — Análisis, Detección y Respuesta
+
+<Cards>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" title="🦠 Política de Protección contra Software Malicioso">
+    CC6.8 — Prevención, detección y contención de malware en puntos finales, servidores, correo y navegación.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" title="🩹 Política de Gestión de Vulnerabilidades y Parches">
+    CC7.1 — Identificación, priorización y remediación de vulnerabilidades con plazos según su severidad.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" title="🚨 Política de Gestión de Incidentes">
+    CC7.3, CC7.5 — Detección, respuesta y gestión de incidentes de seguridad.
+  </Card>
+  <Card href="/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" title="🧯 Procedimiento de Respuesta a Incidentes">
+    CC7.4 — Pasos operativos, roles, plazos y guías rápidas para responder a incidentes de ciberseguridad.
   </Card>
 </Cards>

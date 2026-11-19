@@ -3,19 +3,22 @@ title: CSA AICM con SGSI
 description: "Vista general de CSA AICM correlacionado con el SGSI de Kudo: dominios, alcance y equivalencias entre ambos marcos de ciberseguridad."
 ---
 
-Dominios del CSA AICM v1 organizados por su correlación con los dominios Kudo y mapeados a las políticas del SGSI.
+Dominios del CSA AICM v1 organizados por su correlación con los dominios Kudo y mapeados a las políticas y procedimientos del SGX de Kudo.
 
 ### COR — Coherencia Organizacional
 
 <Cards>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" title="🛡️ Política de Seguridad de la Información">
-    GOV-01–GOV-08 — Gobernanza, estrategia y políticas para sistemas de IA.
+    GOV-01, GOV-02 — Protección de información, activos y reputación organizacional.
   </Card>
-  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" title="⚠️ Política de Gestión de Riesgos">
-    RSK-01–RSK-06 — Identificación, evaluación y tratamiento de riesgos en sistemas de IA.
+  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros" title="📄 Política de Documentos y Registros">
+    GOV-05, GOV-06, COM-05 — Estándares para gestión de documentos y registros organizacionales.
   </Card>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" title="⚖️ Política de Gestión de Cumplimiento">
-    COM-01–COM-05 — Cumplimiento regulatorio y normativo aplicable a sistemas de IA.
+    GOV-07, GOV-08, COM-01–COM-04 — Aseguramiento del cumplimiento de requisitos legales y regulatorios.
+  </Card>
+  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" title="⚠️ Política de Gestión de Riesgos">
+    RSK-01–RSK-06 — Marco para identificación, evaluación y tratamiento de riesgos.
   </Card>
 </Cards>
 
@@ -23,7 +26,10 @@ Dominios del CSA AICM v1 organizados por su correlación con los dominios Kudo y
 
 <Cards>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" title="💻 Política de Seguridad de TI">
-    MDS-01–MDS-06, OPS-01–OPS-04 — Infraestructura de cómputo para entrenamiento y despliegue de modelos.
+    OPS-01–OPS-04 — Estándares de seguridad para infraestructura y servicios de TI.
+  </Card>
+  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" title="📊 Política de Registro y Monitoreo">
+    OPS-05–OPS-08 — Registro de eventos y monitoreo de seguridad de sistemas.
   </Card>
 </Cards>
 
@@ -31,7 +37,7 @@ Dominios del CSA AICM v1 organizados por su correlación con los dominios Kudo y
 
 <Cards>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-desarrollo-seguro" title="👨‍💻 Política de Desarrollo Seguro">
-    MDS-07–MDS-12 — Ciclo de vida seguro de modelos: entrenamiento, validación y despliegue.
+    MDS-07–MDS-12 — Directrices para integrar seguridad en todo el ciclo de vida del software.
   </Card>
 </Cards>
 
@@ -39,31 +45,37 @@ Dominios del CSA AICM v1 organizados por su correlación con los dominios Kudo y
 
 <Cards>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores" title="🤝 Política de Gestión de Proveedores">
-    SUP-01–SUP-06 — Seguridad en la cadena de suministro de IA: datasets, modelos y herramientas de terceros.
+    SUP-01–SUP-06 — Evaluación y gestión de riesgos de terceros y proveedores.
   </Card>
 </Cards>
 
 ### DIA — Datos e Inteligencia Artificial
 
 <Cards>
+  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" title="🤖 Política de Uso Aceptable de Inteligencia Artificial">
+    GOV-03, GOV-04, MDS-01–MDS-06, ETH-01–ETH-06 — Uso seguro y responsable de herramientas, agentes y modelos de IA en la organización.
+  </Card>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" title="📦 Política de Gestión de Activos">
-    DAT-01–DAT-05 — Inventario y clasificación de datasets y activos de datos utilizados en IA.
+    DAT-01–DAT-03 — Gestión y protección de activos de información de la organización.
+  </Card>
+  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" title="🏷️ Política de Clasificación y Manejo de la Información">
+    DAT-04 — Niveles de clasificación, etiquetado y reglas de manejo de la información según su sensibilidad.
+  </Card>
+  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" title="🗑️ Política de Retención y Eliminación de Datos">
+    DAT-05 — Plazos de conservación por categoría de datos y eliminación segura con evidencia.
   </Card>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" title="🛡️ Política de Privacidad">
-    DAT-06–DAT-10, PRI-01–PRI-08 — Privacidad y protección de datos personales en el ciclo de vida de IA.
-  </Card>
-  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" title="⚖️ Política de Gestión de Cumplimiento">
-    ETH-01–ETH-06 — Ética, equidad, transparencia y rendición de cuentas en sistemas de IA.
+    DAT-06–DAT-10, PRI-01–PRI-08 — Protección de datos personales y cumplimiento de regulaciones de privacidad.
   </Card>
 </Cards>
 
 ### ADR — Análisis, Detección y Respuesta
 
 <Cards>
-  <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" title="📊 Política de Registro y Monitoreo">
-    OPS-05–OPS-08 — Monitoreo continuo de modelos en producción y detección de anomalías.
-  </Card>
   <Card href="/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" title="🚨 Política de Gestión de Incidentes">
-    INC-01–INC-06 — Gestión y respuesta ante incidentes de seguridad en sistemas de IA.
+    INC-01, INC-03–INC-06 — Detección, respuesta y gestión de incidentes de seguridad.
+  </Card>
+  <Card href="/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" title="🧯 Procedimiento de Respuesta a Incidentes">
+    INC-02 — Pasos operativos, roles, plazos y guías rápidas para responder a incidentes de ciberseguridad.
   </Card>
 </Cards>
