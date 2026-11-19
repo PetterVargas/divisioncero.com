@@ -8,8 +8,10 @@ export const sgxRoute = '/sgx';
 export const sgxImageRoute = '/og/sgx';
 export const sgxContentRoute = '/llms.mdx/sgx';
 
+// Repositorio de GitHub de tu sitio: lo usan los enlaces "Ver en GitHub".
+// Cambia `user` por tu usuario u organización de GitHub.
 export const gitConfig = {
-  user: 'PetterVargas',
-  repo: 'kudo',
+  user: 'tu-usuario-github',
+  repo: '{{PROJECT_NAME}}',
   branch: 'main',
 };
