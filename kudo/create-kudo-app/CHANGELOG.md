@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-11-19
+
+### Changed
+- Tablas de correlación del SGX actualizadas con las políticas nuevas y páginas resumen de correlación regeneradas desde las tablas.
+- Página OSCAL Mapping con la cobertura actualizada por estándar.
+
 ## [0.4.1] - 2026-11-19
 
 ### Changed
