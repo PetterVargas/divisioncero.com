@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-11-19
+
+### Changed
+- El `gitConfig` del proyecto generado (`lib/shared.ts`) usa el nombre del proyecto como repositorio y `tu-usuario-github` como usuario, en lugar del repositorio antiguo `PetterVargas/kudo`.
+- Publicación en npm con Trusted Publishing (OIDC), sin token.
+
 ## [0.4.0] - 2026-11-18
 
 ### Added

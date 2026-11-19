@@ -1,6 +1,6 @@
 {
   "name": "@divisioncero/kudo-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Servidor MCP de Kudo: controles, documentos SGX, modelos OSCAL, agentes y skills de ciberseguridad para tu asistente de IA",
   "type": "module",
   "bin": {

@@ -35,7 +35,12 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - name: Publish to npm with provenance
-        run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Trusted Publishing (OIDC): npm valida este workflow con el token de identidad de
+      # GitHub (permiso id-token: write), sin NPM_TOKEN. Requiere npm 11.5.1 o superior y
+      # configurar el Trusted Publisher del paquete en npmjs.com. La procedencia (provenance)
+      # se adjunta automáticamente.
+      - name: Update npm for Trusted Publishing
+        run: npm install -g npm@11.6.2
+
+      - name: Publish to npm
+        run: npm publish --access public
