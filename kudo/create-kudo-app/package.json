@@ -4,7 +4,7 @@
   "description": "CLI para crear tu sitio Kudo con el SGX (políticas y procedimientos de ciberseguridad), el servidor MCP y agentes de IA",
   "type": "module",
   "bin": {
-    "create-kudo-app": "./bin/cli.js"
+    "create-kudo-app": "bin/cli.js"
   },
   "files": [
     "bin",
@@ -45,7 +45,7 @@
   "homepage": "https://divisioncero.com/kudo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PetterVargas/divisioncero.com.git",
+    "url": "git+https://github.com/PetterVargas/divisioncero.com.git",
     "directory": "kudo/create-kudo-app"
   },
   "bugs": {
