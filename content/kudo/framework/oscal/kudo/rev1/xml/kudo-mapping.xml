@@ -191,12 +191,12 @@
          <source type="control" id-ref="iso_A.5.12">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.5.12"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
          <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="50d8606f-6f57-502a-86b6-821b853c6bfe">
@@ -204,12 +204,12 @@
          <source type="control" id-ref="iso_A.5.13">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.5.13"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
          <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="e89183f2-dc57-5848-8d57-41c0bf80d96a">
@@ -369,9 +369,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.5.26"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="754c9dd3-8d0a-5863-a3e7-eaf7545aa9ec">
@@ -379,10 +380,10 @@
          <source type="control" id-ref="iso_A.5.27">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.5.27"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="d43e6d80-3715-5bf0-8746-34d4f66478c4">
@@ -391,9 +392,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.5.28"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="8a7319e1-a0e4-5a16-a635-2db8d00d4c39">
@@ -476,11 +478,11 @@
          <source type="control" id-ref="iso_A.5.35">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.5.35"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
          <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" rel="reference" media-type="text/html">
+            <text>Procedimiento de Auditoría Interna</text>
          </link>
       </map>
       <map uuid="8fdf6cd2-a2ac-5834-ab00-ba3644fab0d2">
@@ -583,11 +585,12 @@
          <source type="control" id-ref="iso_A.6.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.6.7"/>
          </source>
-         <target type="control" id-ref="thp-1"/>
-         <target type="control" id-ref="cip-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-THP-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Recursos Humanos</text>
+         <target type="control" id-ref="thp-2"/>
+         <target type="control" id-ref="cip-5"/>
+         <target type="control" id-ref="cip-6"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-THP-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles" rel="reference" media-type="text/html">
+            <text>Política de Trabajo Remoto y Dispositivos Móviles</text>
          </link>
       </map>
       <map uuid="706eace2-fc8e-54dd-b47a-d39cbe45492b">
@@ -774,11 +777,12 @@
          <source type="control" id-ref="iso_A.8.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.8.1"/>
          </source>
+         <target type="control" id-ref="cip-5"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <target type="control" id-ref="thp-2"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
+            <text>Política de Seguridad de TI</text>
          </link>
       </map>
       <map uuid="ec831aa1-3e8c-5c67-9874-fd04c6336c74">
@@ -854,11 +858,11 @@
          <source type="control" id-ref="iso_A.8.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.8.7"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="acd767c0-f7e2-5e15-8ed6-21f2b286eb36">
@@ -866,11 +870,12 @@
          <source type="control" id-ref="iso_A.8.8">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.8.8"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="c808b1fa-9f99-597e-821c-6b37e6089aec">
@@ -892,12 +897,11 @@
          <source type="control" id-ref="iso_A.8.10">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.8.10"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
          <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="c84877f9-3b70-5b3b-9d67-8bf14e99a60e">
@@ -1067,12 +1071,11 @@
          <source type="control" id-ref="iso_A.8.24">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A.8.24"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="9ff414fa-9483-52c9-b59f-bfdd839cf181">
@@ -1206,16 +1209,13 @@
          </link>
       </map>
       <remarks>
-         <p>93 controles del estándar; 32 de 36 controles Kudo relacionados.</p>
+         <p>93 controles del estándar; 35 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>ISO/IEC 27001:2022 – Anexo A → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (93 controles del estándar).</p>
       </mapping-description>
       <target-gap-summary uuid="4b0b23b1-0e66-55a2-8a92-d187a64c6c2a">
          <unmapped-controls>
-            <with-id>adr-1</with-id>
-            <with-id>adr-2</with-id>
-            <with-id>cif-5</with-id>
             <with-id>dia-7</with-id>
          </unmapped-controls>
       </target-gap-summary>
@@ -1475,11 +1475,11 @@
          <source type="control" id-ref="csf_GV.OV-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="GV.OV-02"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
          <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" rel="reference" media-type="text/html">
+            <text>Procedimiento de Auditoría Interna</text>
          </link>
       </map>
       <map uuid="342bbe99-8eac-5704-9733-5aa7fc207859">
@@ -1710,12 +1710,12 @@
          <source type="control" id-ref="csf_ID.RA-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ID.RA-01"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-3"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Riesgos</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="8da82ca1-0821-5fe4-96c7-b4c5d8d7f54e">
@@ -1723,12 +1723,12 @@
          <source type="control" id-ref="csf_ID.RA-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ID.RA-02"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-3"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Riesgos</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="11e6ec8b-fd21-54de-babb-0146ff1157a8">
@@ -1788,11 +1788,10 @@
          <source type="control" id-ref="csf_ID.IM-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ID.IM-01"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="2275f17d-4ebe-545c-a55d-697d0d3e9305">
@@ -1800,11 +1799,10 @@
          <source type="control" id-ref="csf_ID.IM-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ID.IM-02"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="b1e514bd-47c8-5985-897c-af78263be1a9">
@@ -1812,11 +1810,10 @@
          <source type="control" id-ref="csf_ID.IM-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ID.IM-03"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="46b50a5e-0279-57fc-8365-c5d5390b3e66">
@@ -1942,12 +1939,11 @@
          <source type="control" id-ref="csf_PR.DS-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="PR.DS-01"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="cif-4"/>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="224b243f-dfe9-5350-8989-5ca513f42390">
@@ -2084,11 +2080,12 @@
          <source type="control" id-ref="csf_PR.PS-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="PR.PS-02"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="a8fbc788-7aed-54c8-9c14-27fe5b300345">
@@ -2212,10 +2209,11 @@
          <source type="control" id-ref="csf_DE.CM-09">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="DE.CM-09"/>
          </source>
-         <target type="control" id-ref="adr-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-07"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" rel="reference" media-type="text/html">
-            <text>Política de Registro y Monitoreo</text>
+         <target type="control" id-ref="adr-1"/>
+         <target type="control" id-ref="cip-6"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="e2476ba6-d076-5c2c-bb11-10591d08b90c">
@@ -2312,9 +2310,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="RS.MA-01"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="3e63e595-9478-5255-8276-e6634aee67c8">
@@ -2323,9 +2322,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="RS.MA-02"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="78e82e05-9776-5478-98a9-840f24190bc9">
@@ -2334,9 +2334,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="RS.MA-03"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="6c217b7c-162d-5b97-a2ce-0311a94c95f7">
@@ -2345,9 +2346,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="RS.MA-04"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="31bad1b5-d0a5-5809-a64d-bcdf040c63cf">
@@ -2356,9 +2358,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="RS.MA-05"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="cbda5ce9-119f-5395-bd6b-7efca5534ba9">
@@ -2389,9 +2392,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="RS.AN-03"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="58695d97-9eb9-592c-a2cd-c83f1de11bf2">
@@ -2526,16 +2530,13 @@
          </link>
       </map>
       <remarks>
-         <p>106 controles del estándar; 32 de 36 controles Kudo relacionados.</p>
+         <p>106 controles del estándar; 35 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>NIST Cybersecurity Framework 2.0 → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (106 controles del estándar).</p>
       </mapping-description>
       <target-gap-summary uuid="8bba99b1-c862-5363-ac10-0203778508f0">
          <unmapped-controls>
-            <with-id>adr-1</with-id>
-            <with-id>adr-2</with-id>
-            <with-id>cif-5</with-id>
             <with-id>dia-7</with-id>
          </unmapped-controls>
       </target-gap-summary>
@@ -2707,12 +2708,12 @@
          <source type="control" id-ref="cis_3.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.1"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
          <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="01503f0a-a6ee-5ab3-bbc3-20206b4f6cd8">
@@ -2720,12 +2721,12 @@
          <source type="control" id-ref="cis_3.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.2"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-1"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="ec267f59-d969-53f9-a944-f22e35ced450">
@@ -2746,12 +2747,11 @@
          <source type="control" id-ref="cis_3.4">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.4"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
          <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="c91f9ee1-d53a-5a42-8d1e-df9259a52e48">
@@ -2759,12 +2759,11 @@
          <source type="control" id-ref="cis_3.5">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.5"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
          <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="50041ff9-d2bd-5d87-ba79-9d2e22cdb1d2">
@@ -2772,12 +2771,11 @@
          <source type="control" id-ref="cis_3.6">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.6"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="cif-4"/>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="2d58e258-3d53-53e6-9376-edda9ce6ef9d">
@@ -2785,12 +2783,12 @@
          <source type="control" id-ref="cis_3.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.7"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-1"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="6467e5f8-6801-5726-ad51-dfaa07aeaeea">
@@ -2811,12 +2809,11 @@
          <source type="control" id-ref="cis_3.9">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.9"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="cif-4"/>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="090b3e2c-9e92-5c5e-a161-2a779ea9b108">
@@ -2824,12 +2821,11 @@
          <source type="control" id-ref="cis_3.10">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.10"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="cif-4"/>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="a10af840-5738-5d5a-bcb5-2149d6a41b2e">
@@ -2837,12 +2833,11 @@
          <source type="control" id-ref="cis_3.11">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.11"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="4ee4574c-7e3d-5683-a228-8e548c367496">
@@ -3234,11 +3229,12 @@
          <source type="control" id-ref="cis_7.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.1"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="b3aff5d7-4fa1-5f36-95dc-2833d717874e">
@@ -3246,11 +3242,12 @@
          <source type="control" id-ref="cis_7.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.2"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="d8666988-3bf1-5525-a82b-fe8313aba4eb">
@@ -3258,11 +3255,12 @@
          <source type="control" id-ref="cis_7.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.3"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="f25fad26-9616-546d-af44-ca75797fa6c5">
@@ -3270,11 +3268,12 @@
          <source type="control" id-ref="cis_7.4">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.4"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="2c3f3c5c-4af0-50a1-92ee-1f5d6693e9bd">
@@ -3282,11 +3281,12 @@
          <source type="control" id-ref="cis_7.5">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.5"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="b5faf370-0e75-50ba-8423-e6e8e439c00c">
@@ -3294,12 +3294,12 @@
          <source type="control" id-ref="cis_7.6">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.6"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-3"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Riesgos</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="ad69afc6-9e3b-50c0-9790-ee196a36eee2">
@@ -3307,12 +3307,12 @@
          <source type="control" id-ref="cis_7.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="7.7"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-3"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Riesgos</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="6e1e324c-ef00-5108-bf56-64da892437fb">
@@ -3530,12 +3530,11 @@
          <source type="control" id-ref="cis_9.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="9.7"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
-         <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="adr-1"/>
+         <target type="control" id-ref="cip-6"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="5f13471a-922d-5660-a590-ab96b764a69e">
@@ -3543,11 +3542,11 @@
          <source type="control" id-ref="cis_10.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.1"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="49fd1d38-1d1a-59e8-8a99-a8587b7cb1d4">
@@ -3555,11 +3554,11 @@
          <source type="control" id-ref="cis_10.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.2"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="3d6aaacb-aa1f-56a8-9b6b-3b660723b482">
@@ -3567,11 +3566,11 @@
          <source type="control" id-ref="cis_10.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.3"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="e346364b-de33-57d6-9206-ad7704afb47f">
@@ -3579,11 +3578,11 @@
          <source type="control" id-ref="cis_10.4">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.4"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="b7d1dd0b-4fa2-5c7f-a067-f0760ae5e642">
@@ -3591,11 +3590,11 @@
          <source type="control" id-ref="cis_10.5">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.5"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="4e5b6636-cfac-5ea6-b8f2-1435a90eec7c">
@@ -3603,11 +3602,11 @@
          <source type="control" id-ref="cis_10.6">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.6"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="23231652-f8ab-538f-99d1-ba793984a7eb">
@@ -3615,10 +3614,11 @@
          <source type="control" id-ref="cis_10.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="10.7"/>
          </source>
-         <target type="control" id-ref="adr-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-07"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" rel="reference" media-type="text/html">
-            <text>Política de Registro y Monitoreo</text>
+         <target type="control" id-ref="adr-1"/>
+         <target type="control" id-ref="cip-6"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="9febcddd-cfa1-5b8a-9020-b4b46ef69593">
@@ -4344,9 +4344,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="17.4"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="feb467d6-7bda-57a3-ada5-e824870b496a">
@@ -4388,11 +4389,10 @@
          <source type="control" id-ref="cis_17.8">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="17.8"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <target type="control" id-ref="cor-1"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CCN-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-crisis" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Crisis</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="095d51e9-1fc8-567e-a7b5-440b23a6c528">
@@ -4434,11 +4434,12 @@
          <source type="control" id-ref="cis_18.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="18.3"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="198befb1-68b7-5c88-8519-9b3fcb18f0e1">
@@ -4465,16 +4466,13 @@
          </link>
       </map>
       <remarks>
-         <p>155 controles del estándar; 32 de 36 controles Kudo relacionados.</p>
+         <p>155 controles del estándar; 35 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>CIS Controls v8.1 → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (155 controles del estándar).</p>
       </mapping-description>
       <target-gap-summary uuid="8b570111-09c6-53a4-abdb-d069264c51c1">
          <unmapped-controls>
-            <with-id>adr-1</with-id>
-            <with-id>adr-2</with-id>
-            <with-id>cif-5</with-id>
             <with-id>dia-7</with-id>
          </unmapped-controls>
       </target-gap-summary>
@@ -4531,11 +4529,11 @@
          <source type="control" id-ref="tsc_CC1.4">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC1.4"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="thp-1"/>
+         <target type="control" id-ref="cip-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-THP-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos" rel="reference" media-type="text/html">
+            <text>Política de Seguridad de Recursos Humanos</text>
          </link>
       </map>
       <map uuid="b3f1abe7-f74f-5ec9-b9bb-fb67f5c09a66">
@@ -4644,10 +4642,11 @@
          <source type="control" id-ref="tsc_CC4.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC4.1"/>
          </source>
-         <target type="control" id-ref="adr-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-07"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo" rel="reference" media-type="text/html">
-            <text>Política de Registro y Monitoreo</text>
+         <target type="control" id-ref="cor-3"/>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" rel="reference" media-type="text/html">
+            <text>Procedimiento de Auditoría Interna</text>
          </link>
       </map>
       <map uuid="9c8783b2-55e6-5669-93f0-036bfd3decc6">
@@ -4655,11 +4654,10 @@
          <source type="control" id-ref="tsc_CC4.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC4.2"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="758e9dae-cbe8-5e67-92a0-60cad1e72846">
@@ -4782,12 +4780,11 @@
          <source type="control" id-ref="tsc_CC6.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC6.7"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="cif-4"/>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="9861b492-63f3-577f-88c5-2532ca538a70">
@@ -4795,11 +4792,11 @@
          <source type="control" id-ref="tsc_CC6.8">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC6.8"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="3459c2d7-7335-5d60-9451-a91190f09924">
@@ -4807,11 +4804,12 @@
          <source type="control" id-ref="tsc_CC7.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC7.1"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="335da6ae-2b68-5cec-ab09-e0c9a77dfeee">
@@ -4842,9 +4840,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CC7.4"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="33781315-5344-5b8f-acc9-51facc12a349">
@@ -4927,12 +4926,11 @@
          <source type="control" id-ref="tsc_A1.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A1.3"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="ccn-4"/>
+         <target type="control" id-ref="cor-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PLN-CCN-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio" rel="reference" media-type="text/html">
+            <text>Plan de Continuidad del Negocio</text>
          </link>
       </map>
       <map uuid="407d3a79-4dd5-58d6-9d12-39988ab56469">
@@ -4940,12 +4938,12 @@
          <source type="control" id-ref="tsc_C1.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="C1.1"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
-         <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-1"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="5faf6a7f-b659-5b63-bf6c-b8708cb37bb6">
@@ -4953,12 +4951,11 @@
          <source type="control" id-ref="tsc_C1.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="C1.2"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
          <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="f1b13042-07de-5b66-85c8-b26a8e72e83a">
@@ -5273,19 +5270,14 @@
          </link>
       </map>
       <remarks>
-         <p>62 controles del estándar; 30 de 36 controles Kudo relacionados.</p>
+         <p>62 controles del estándar; 35 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>SOC 2 – Trust Services Criteria → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (62 controles del estándar).</p>
       </mapping-description>
       <target-gap-summary uuid="f1211b60-f7af-5ea3-86cd-f40ebc82cde4">
          <unmapped-controls>
-            <with-id>adr-1</with-id>
-            <with-id>adr-2</with-id>
-            <with-id>cif-5</with-id>
-            <with-id>dia-1</with-id>
             <with-id>dia-7</with-id>
-            <with-id>thp-1</with-id>
          </unmapped-controls>
       </target-gap-summary>
    </mapping>
@@ -5418,12 +5410,11 @@
          <source type="control" id-ref="pci_3.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.2"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
          <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="6dbde9ef-0fb7-5208-a43d-2a21a54183e8">
@@ -5457,12 +5448,11 @@
          <source type="control" id-ref="pci_3.5">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.5"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="011a8bf5-78c1-5264-8237-ba0dbf203a1d">
@@ -5470,12 +5460,11 @@
          <source type="control" id-ref="pci_3.6">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.6"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="caa259a9-ddab-5489-9fb2-11ef9819267a">
@@ -5483,12 +5472,11 @@
          <source type="control" id-ref="pci_3.7">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="3.7"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
-         <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="cif-4"/>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="45a501d7-e430-5db4-bd4a-92e131f705a2">
@@ -5509,12 +5497,11 @@
          <source type="control" id-ref="pci_4.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="4.2"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="5af27be5-3ac6-50c0-a01d-b42e13a0ea6b">
@@ -5522,11 +5509,11 @@
          <source type="control" id-ref="pci_5.1">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="5.1"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="0fc188b6-cc91-52f3-aa3e-0512d6a04ddc">
@@ -5534,11 +5521,11 @@
          <source type="control" id-ref="pci_5.2">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="5.2"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="c6305ba8-6561-534a-b863-2ba279e77e91">
@@ -5546,11 +5533,11 @@
          <source type="control" id-ref="pci_5.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="5.3"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="962a6e84-24ae-5496-b51f-18e31c96c677">
@@ -5595,11 +5582,12 @@
          <source type="control" id-ref="pci_6.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="6.3"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="f6007e9c-d125-544c-8987-48bd706e97b0">
@@ -5922,11 +5910,12 @@
          <source type="control" id-ref="pci_11.3">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="11.3"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="0f179784-3401-57ff-986a-362e20cdd2dc">
@@ -5934,10 +5923,12 @@
          <source type="control" id-ref="pci_11.4">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="11.4"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="aa906206-bce4-5769-9c1f-b21e4584095c">
@@ -6018,11 +6009,12 @@
          <source type="control" id-ref="pci_12.5">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="12.5"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cif-2"/>
+         <target type="control" id-ref="dia-1"/>
+         <target type="control" id-ref="cip-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Activos</text>
          </link>
       </map>
       <map uuid="8d9252c8-ea53-54fe-b9d5-5f98046f2bab">
@@ -6078,24 +6070,22 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="12.10"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <remarks>
-         <p>63 controles del estándar; 29 de 36 controles Kudo relacionados.</p>
+         <p>63 controles del estándar; 32 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>PCI DSS v4.0.1 → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (63 controles del estándar).</p>
       </mapping-description>
       <target-gap-summary uuid="c1b653dc-c634-5ac2-b1e9-c710d564bcf5">
          <unmapped-controls>
-            <with-id>adr-1</with-id>
-            <with-id>adr-2</with-id>
             <with-id>ccn-4</with-id>
             <with-id>cif-1</with-id>
-            <with-id>cif-5</with-id>
             <with-id>dia-7</with-id>
             <with-id>thp-2</with-id>
          </unmapped-controls>
@@ -6126,11 +6116,11 @@
          <source type="control" id-ref="ccm_A-A-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A&amp;A-02"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
          <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" rel="reference" media-type="text/html">
+            <text>Procedimiento de Auditoría Interna</text>
          </link>
       </map>
       <map uuid="d62bdc41-dcb0-5b17-a624-52eb663462b5">
@@ -6138,11 +6128,11 @@
          <source type="control" id-ref="ccm_A-A-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A&amp;A-03"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
          <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" rel="reference" media-type="text/html">
+            <text>Procedimiento de Auditoría Interna</text>
          </link>
       </map>
       <map uuid="1e532fac-a356-5c52-9728-0de69e2d4dc6">
@@ -6162,11 +6152,11 @@
          <source type="control" id-ref="ccm_A-A-05">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A&amp;A-05"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros" rel="reference" media-type="text/html">
-            <text>Política de Documentos y Registros</text>
+         <target type="control" id-ref="cor-3"/>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna" rel="reference" media-type="text/html">
+            <text>Procedimiento de Auditoría Interna</text>
          </link>
       </map>
       <map uuid="29b04850-7030-5e97-b9e3-d998c466b144">
@@ -6174,11 +6164,10 @@
          <source type="control" id-ref="ccm_A-A-06">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="A&amp;A-06"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros" rel="reference" media-type="text/html">
-            <text>Política de Documentos y Registros</text>
+         <target type="control" id-ref="cor-4"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-COR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua" rel="reference" media-type="text/html">
+            <text>Procedimiento de Acciones Correctivas y Mejora Continua</text>
          </link>
       </map>
       <map uuid="22910340-179d-5b77-a1bb-e168e229f120">
@@ -6575,12 +6564,11 @@
          <source type="control" id-ref="ccm_CEK-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-01"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="e15cdb96-cff1-5f19-b659-05a4d43e6a57">
@@ -6588,12 +6576,11 @@
          <source type="control" id-ref="ccm_CEK-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-02"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="b87ca101-2b4d-542c-9f37-387cf8ee8a96">
@@ -6601,12 +6588,11 @@
          <source type="control" id-ref="ccm_CEK-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-03"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="cdcf087d-b1f9-56cb-a55c-4af03cadc077">
@@ -6614,12 +6600,11 @@
          <source type="control" id-ref="ccm_CEK-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-04"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="eb2f8d93-21d2-585f-b71f-9f7cc674e4c8">
@@ -6627,12 +6612,11 @@
          <source type="control" id-ref="ccm_CEK-05">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-05"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="9306277e-0618-528e-9438-dd940ac57bab">
@@ -6640,12 +6624,11 @@
          <source type="control" id-ref="ccm_CEK-06">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-06"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="6896fb88-99db-55c8-a3c0-e5b0d356a134">
@@ -6653,12 +6636,11 @@
          <source type="control" id-ref="ccm_CEK-07">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-07"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="a340abe9-0f29-5314-9ed8-d9f9ebdf4c1b">
@@ -6666,12 +6648,11 @@
          <source type="control" id-ref="ccm_CEK-08">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-08"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="981e95b0-7d18-5cf6-81f5-9df09f569ea7">
@@ -6679,12 +6660,11 @@
          <source type="control" id-ref="ccm_CEK-09">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-09"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="610d642d-b741-55c1-ad87-54ea7008be2d">
@@ -6692,12 +6672,11 @@
          <source type="control" id-ref="ccm_CEK-10">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-10"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="d160df4f-99af-5cd7-8df4-67b278da774e">
@@ -6705,12 +6684,11 @@
          <source type="control" id-ref="ccm_CEK-11">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-11"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="d16e9429-1793-5d17-821f-d59d6a7b5e9f">
@@ -6718,12 +6696,11 @@
          <source type="control" id-ref="ccm_CEK-12">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-12"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="c284fe81-0de2-5b75-a3fa-a40eb9a0732b">
@@ -6731,12 +6708,11 @@
          <source type="control" id-ref="ccm_CEK-13">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-13"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="a8f51b83-0f7c-5a61-8cf6-16fb5fae3faf">
@@ -6744,12 +6720,11 @@
          <source type="control" id-ref="ccm_CEK-14">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-14"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="26fa44e8-f8ec-5e06-a23f-eef440fdb118">
@@ -6757,12 +6732,11 @@
          <source type="control" id-ref="ccm_CEK-15">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-15"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="5058674f-deee-5d98-9d53-8901ebec535b">
@@ -6770,12 +6744,11 @@
          <source type="control" id-ref="ccm_CEK-16">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-16"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="b8985901-bdd9-5a04-b0f6-b9c771642822">
@@ -6783,12 +6756,11 @@
          <source type="control" id-ref="ccm_CEK-17">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-17"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="c37e35b5-5d10-53d9-ace2-a2a1737aeb82">
@@ -6796,12 +6768,11 @@
          <source type="control" id-ref="ccm_CEK-18">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-18"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="12537903-796c-506b-855b-da623485d47e">
@@ -6809,12 +6780,11 @@
          <source type="control" id-ref="ccm_CEK-19">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-19"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="6d801e42-dfff-5425-ae98-5649f2a538fc">
@@ -6822,12 +6792,11 @@
          <source type="control" id-ref="ccm_CEK-20">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-20"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="0895ee5d-b083-5164-a1e3-c104e0458a92">
@@ -6835,12 +6804,11 @@
          <source type="control" id-ref="ccm_CEK-21">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="CEK-21"/>
          </source>
-         <target type="control" id-ref="cif-3"/>
          <target type="control" id-ref="cif-4"/>
-         <target type="control" id-ref="dia-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-03"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Comunicaciones</text>
+         <target type="control" id-ref="cif-5"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-08"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves" rel="reference" media-type="text/html">
+            <text>Política de Criptografía y Gestión de Claves</text>
          </link>
       </map>
       <map uuid="2a51ef37-c18a-5984-9e82-2c52b995af3b">
@@ -7011,12 +6979,11 @@
          <source type="control" id-ref="ccm_DSP-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="DSP-02"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
-         <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-5"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="448f25c3-c0c6-5a15-8526-ce5f53bf11ea">
@@ -7037,12 +7004,12 @@
          <source type="control" id-ref="ccm_DSP-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="DSP-04"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
          <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="c159f69b-7b8f-5a04-81ac-afcf667c7cf4">
@@ -7193,12 +7160,11 @@
          <source type="control" id-ref="ccm_DSP-16">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="DSP-16"/>
          </source>
-         <target type="control" id-ref="dia-2"/>
          <target type="control" id-ref="dia-5"/>
-         <target type="control" id-ref="dia-6"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad" rel="reference" media-type="text/html">
-            <text>Política de Privacidad</text>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="3e9da63d-efa7-501d-9a8e-d6a5e445734d">
@@ -7422,11 +7388,12 @@
          <source type="control" id-ref="ccm_HRS-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="HRS-04"/>
          </source>
-         <target type="control" id-ref="thp-1"/>
-         <target type="control" id-ref="cip-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-THP-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de Recursos Humanos</text>
+         <target type="control" id-ref="thp-2"/>
+         <target type="control" id-ref="cip-5"/>
+         <target type="control" id-ref="cip-6"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-THP-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles" rel="reference" media-type="text/html">
+            <text>Política de Trabajo Remoto y Dispositivos Móviles</text>
          </link>
       </map>
       <map uuid="9ae8721a-bb83-5eff-8b50-6a2d65f7f809">
@@ -8097,9 +8064,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="SEF-03"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="a65fdfab-676c-5d22-9d9b-3137d9c48f35">
@@ -8108,9 +8076,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="SEF-04"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="397289d6-2ecb-574b-9c5b-9719feee132c">
@@ -8293,11 +8262,12 @@
          <source type="control" id-ref="ccm_TVM-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-01"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="e0c2ca98-5f80-533f-b8dc-c014241a05eb">
@@ -8305,11 +8275,11 @@
          <source type="control" id-ref="ccm_TVM-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-02"/>
          </source>
+         <target type="control" id-ref="adr-1"/>
          <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="b0b9ef87-afed-5b76-8a19-7775333a9ed3">
@@ -8317,11 +8287,12 @@
          <source type="control" id-ref="ccm_TVM-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-03"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="7b6bf793-f920-541b-9f35-824cca8f8d42">
@@ -8329,11 +8300,12 @@
          <source type="control" id-ref="ccm_TVM-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-04"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="c906dcf8-bdac-54b9-abd4-422466e95069">
@@ -8341,11 +8313,12 @@
          <source type="control" id-ref="ccm_TVM-05">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-05"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="fd77ff4b-9f04-5dcc-867c-f6d4ce2452e5">
@@ -8365,11 +8338,12 @@
          <source type="control" id-ref="ccm_TVM-07">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-07"/>
          </source>
+         <target type="control" id-ref="adr-2"/>
          <target type="control" id-ref="cip-6"/>
          <target type="control" id-ref="cif-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening" rel="reference" media-type="text/html">
-            <text>Política de Hardening</text>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="ae6c1b29-2698-51d5-b410-86cc3f5b7900">
@@ -8377,10 +8351,12 @@
          <source type="control" id-ref="ccm_TVM-08">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-08"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="7e1e3160-1240-515b-97d4-7e13f5b784e1">
@@ -8388,10 +8364,12 @@
          <source type="control" id-ref="ccm_TVM-09">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-09"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="7d558005-37db-5626-96a9-70f34df9a99e">
@@ -8399,10 +8377,12 @@
          <source type="control" id-ref="ccm_TVM-10">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-10"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="342f3c1d-1227-5410-af0d-017d101f1ffd">
@@ -8410,10 +8390,12 @@
          <source type="control" id-ref="ccm_TVM-11">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="TVM-11"/>
          </source>
-         <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-2"/>
+         <target type="control" id-ref="cip-6"/>
+         <target type="control" id-ref="cif-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-02"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches" rel="reference" media-type="text/html">
+            <text>Política de Gestión de Vulnerabilidades y Parches</text>
          </link>
       </map>
       <map uuid="170ea49a-ad79-5fa9-b4f7-c4323f97e5a1">
@@ -8519,13 +8501,11 @@
          <source type="control" id-ref="ccm_UEM-09">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="UEM-09"/>
          </source>
-         <target type="control" id-ref="cip-1"/>
-         <target type="control" id-ref="cip-2"/>
-         <target type="control" id-ref="cip-3"/>
-         <target type="control" id-ref="cip-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIP-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Accesos</text>
+         <target type="control" id-ref="adr-1"/>
+         <target type="control" id-ref="cip-6"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso" rel="reference" media-type="text/html">
+            <text>Política de Protección contra Software Malicioso</text>
          </link>
       </map>
       <map uuid="97a77203-7c67-58ec-8c66-4737a5c05339">
@@ -8585,16 +8565,13 @@
          </link>
       </map>
       <remarks>
-         <p>197 controles del estándar; 32 de 36 controles Kudo relacionados.</p>
+         <p>197 controles del estándar; 35 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>CSA Cloud Controls Matrix v4 → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (197 controles del estándar).</p>
       </mapping-description>
       <target-gap-summary uuid="60aa976a-5da5-5b11-87f3-6a1cfb0e4229">
          <unmapped-controls>
-            <with-id>adr-1</with-id>
-            <with-id>adr-2</with-id>
-            <with-id>cif-5</with-id>
             <with-id>dia-7</with-id>
          </unmapped-controls>
       </target-gap-summary>
@@ -8638,12 +8615,12 @@
          <source type="control" id-ref="aicm_GOV-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="GOV-03"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de la Información</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="2faf1b36-ede5-510d-a03e-da0c2c22e373">
@@ -8651,12 +8628,12 @@
          <source type="control" id-ref="aicm_GOV-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="GOV-04"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de la Información</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="e85c6cde-431a-5a39-b6be-ae99edb80d64">
@@ -8829,12 +8806,12 @@
          <source type="control" id-ref="aicm_DAT-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="DAT-04"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
          <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-04"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion" rel="reference" media-type="text/html">
+            <text>Política de Clasificación y Manejo de la Información</text>
          </link>
       </map>
       <map uuid="20682b0e-5d9c-50f4-9190-fee080063707">
@@ -8842,12 +8819,11 @@
          <source type="control" id-ref="aicm_DAT-05">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="DAT-05"/>
          </source>
-         <target type="control" id-ref="cif-2"/>
-         <target type="control" id-ref="dia-1"/>
-         <target type="control" id-ref="cip-5"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Activos</text>
+         <target type="control" id-ref="dia-5"/>
+         <target type="control" id-ref="dia-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-05"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos" rel="reference" media-type="text/html">
+            <text>Política de Retención y Eliminación de Datos</text>
          </link>
       </map>
       <map uuid="45dfb2d6-c82b-5545-be02-2a3c92139cf5">
@@ -8920,12 +8896,12 @@
          <source type="control" id-ref="aicm_MDS-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="MDS-01"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="1d1ac0f0-e2f4-5cf9-a0ae-2c8b4ae3c5fd">
@@ -8933,12 +8909,12 @@
          <source type="control" id-ref="aicm_MDS-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="MDS-02"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="427b08c4-6d1a-50dd-8fe1-0327bb7b53d4">
@@ -8946,12 +8922,12 @@
          <source type="control" id-ref="aicm_MDS-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="MDS-03"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="ff27b75e-f378-5e2d-98d3-8a5d9dabd5a3">
@@ -8959,12 +8935,12 @@
          <source type="control" id-ref="aicm_MDS-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="MDS-04"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="e56e6227-b687-56ac-9de5-ad550eada309">
@@ -8972,12 +8948,12 @@
          <source type="control" id-ref="aicm_MDS-05">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="MDS-05"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="1e464cb1-45cf-505f-a255-8281406f7e6a">
@@ -8985,12 +8961,12 @@
          <source type="control" id-ref="aicm_MDS-06">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="MDS-06"/>
          </source>
-         <target type="control" id-ref="cip-5"/>
-         <target type="control" id-ref="cip-6"/>
-         <target type="control" id-ref="thp-2"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-CIF-02"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de TI</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="fd99659e-0706-5701-883d-e107b99452ff">
@@ -9348,11 +9324,12 @@
          <source type="control" id-ref="aicm_ETH-01">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ETH-01"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="ba7d5a32-b192-5ea3-9384-52264103a7d6">
@@ -9360,11 +9337,12 @@
          <source type="control" id-ref="aicm_ETH-02">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ETH-02"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="d3b9f288-6c9c-5ac9-b365-214da3e3313f">
@@ -9372,11 +9350,12 @@
          <source type="control" id-ref="aicm_ETH-03">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ETH-03"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="948f83c6-5ff6-5d27-bfe7-63afbe6a5bfe">
@@ -9384,11 +9363,12 @@
          <source type="control" id-ref="aicm_ETH-04">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ETH-04"/>
          </source>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-3"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-04"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Cumplimiento</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="4c17f2c4-3b5e-5ecd-828a-23b5352bf57b">
@@ -9396,12 +9376,12 @@
          <source type="control" id-ref="aicm_ETH-05">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ETH-05"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de la Información</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="e192e0f7-3dae-5065-b66b-55a5825a8830">
@@ -9409,12 +9389,12 @@
          <source type="control" id-ref="aicm_ETH-06">
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="ETH-06"/>
          </source>
-         <target type="control" id-ref="cor-1"/>
-         <target type="control" id-ref="cor-2"/>
-         <target type="control" id-ref="cor-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-COR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion" rel="reference" media-type="text/html">
-            <text>Política de Seguridad de la Información</text>
+         <target type="control" id-ref="dia-7"/>
+         <target type="control" id-ref="dia-4"/>
+         <target type="control" id-ref="thp-1"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-DIA-03"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial" rel="reference" media-type="text/html">
+            <text>Política de Uso Aceptable de Inteligencia Artificial</text>
          </link>
       </map>
       <map uuid="fd5586af-cea6-595f-ae90-c14dd0c598a5">
@@ -9494,9 +9474,10 @@
             <prop name="label" ns="https://divisioncero.com/kudo/framework/oscal" value="INC-02"/>
          </source>
          <target type="control" id-ref="adr-4"/>
-         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="POL-ADR-01"/>
-         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes" rel="reference" media-type="text/html">
-            <text>Política de Gestión de Incidentes</text>
+         <target type="control" id-ref="adr-3"/>
+         <prop name="sgx-document" ns="https://divisioncero.com/kudo/framework/oscal" value="PRO-ADR-01"/>
+         <link href="https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes" rel="reference" media-type="text/html">
+            <text>Procedimiento de Respuesta a Incidentes</text>
          </link>
       </map>
       <map uuid="6afaa534-79e3-5bd0-9768-936376ef4c47">
@@ -9544,7 +9525,7 @@
          </link>
       </map>
       <remarks>
-         <p>75 controles del estándar; 20 de 36 controles Kudo relacionados.</p>
+         <p>75 controles del estándar; 23 de 36 controles Kudo relacionados.</p>
       </remarks>
       <mapping-description>
          <p>CSA AI Controls Matrix → Kudo. Cada control del estándar se relaciona con los controles Kudo que desarrolla la política del SGX asociada en la correlación (75 controles del estándar).</p>
@@ -9564,9 +9545,6 @@
             <with-id>cip-2</with-id>
             <with-id>cip-3</with-id>
             <with-id>cip-4</with-id>
-            <with-id>dia-4</with-id>
-            <with-id>dia-7</with-id>
-            <with-id>thp-1</with-id>
          </unmapped-controls>
       </target-gap-summary>
    </mapping>
