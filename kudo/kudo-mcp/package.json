@@ -4,7 +4,7 @@
   "description": "Servidor MCP de Kudo: controles, documentos SGX, modelos OSCAL, agentes y skills de ciberseguridad para tu asistente de IA",
   "type": "module",
   "bin": {
-    "kudo-mcp": "./dist/index.js"
+    "kudo-mcp": "dist/index.js"
   },
   "files": [
     "dist",
@@ -36,7 +36,7 @@
   "homepage": "https://divisioncero.com/kudo/framework/overview/mcp-agentes-y-skills",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PetterVargas/divisioncero.com.git",
+    "url": "git+https://github.com/PetterVargas/divisioncero.com.git",
     "directory": "kudo/kudo-mcp"
   },
   "bugs": {
