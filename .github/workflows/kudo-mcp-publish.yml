@@ -16,17 +16,14 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 10
+      # Usa la versión de pnpm del campo packageManager del package.json raíz.
+      - uses: pnpm/action-setup@v4
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: '20'
-          cache: 'pnpm'
-          cache-dependency-path: './kudo/kudo-mcp/pnpm-lock.yaml'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
