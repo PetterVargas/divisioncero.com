@@ -1,6 +1,6 @@
 {
   "name": "@divisioncero/create-kudo-app",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "CLI para crear tu sitio Kudo con el SGX (políticas y procedimientos de ciberseguridad), el servidor MCP y agentes de IA",
   "type": "module",
   "bin": {

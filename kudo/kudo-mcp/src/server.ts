@@ -4,7 +4,7 @@ import { McpServer, ResourceTemplate } from '@modelcontextprotocol/sdk/server/mc
 import { z } from 'zod';
 import { mdxATexto, parseFrontmatter, type Control, type KudoData } from './data.js';
 
-export const VERSION = '0.1.0';
+export const VERSION = '0.1.1';
 
 const texto = (t: string) => ({ content: [{ type: 'text' as const, text: t }] });
 const json = (data: unknown) => texto(JSON.stringify(data, null, 2));
