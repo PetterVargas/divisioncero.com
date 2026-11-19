@@ -103,3 +103,45 @@ export function collectBrowserInfo(): BrowserInfo {
     pageUrl: window.location.href,
   };
 }
+
+/**
+ * Lo que recibe el servidor en la petición HTTP: encabezados y datos de la
+ * conexión que el navegador no puede leer por sí mismo. Lo responde la Pages
+ * Function `functions/herramientas/api/mi-ip/[[campo]].ts`.
+ */
+export interface ConnectionInfo {
+  ip: string;
+  ipVersion: 'IPv4' | 'IPv6';
+  method: string;
+  userAgent: string;
+  acceptLanguage: string;
+  acceptEncoding: string;
+  accept: string;
+  acceptCharset: string;
+  referer: string;
+  xForwardedFor: string;
+  clientHintsBrowser: string;
+  clientHintsPlatform: string;
+  clientHintsMobile: string;
+  httpProtocol: string;
+  tlsVersion: string;
+  tlsCipher: string;
+  asn: string;
+  asOrganization: string;
+  edgeLocation: string;
+  roundTripMs: string;
+  receivedAt: string;
+}
+
+/** Ruta pública de la API; también se consulta desde la terminal con curl. */
+export const CONNECTION_API_PATH = '/herramientas/api/mi-ip';
+
+export async function fetchConnectionInfo(): Promise<ConnectionInfo> {
+  const response = await fetch(`${CONNECTION_API_PATH}/todo.json`, { cache: 'no-store' });
+
+  if (!response.ok) {
+    throw new Error('No se pudo consultar lo que recibe el servidor');
+  }
+
+  return (await response.json()) as ConnectionInfo;
+}

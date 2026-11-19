@@ -18,3 +18,5 @@
 /kudo/sitemap.xml /sitemap.xml 301
 /cyberacademy/sitemap.xml /sitemap.xml 301
 /herramientas/sitemap.xml /sitemap.xml 301
+# Corrección ortográfica del slug de la política de backups.
+/kudo/sgx/politicas-y-procedimientos/politicas-de-bakups-y-recuperacion /kudo/sgx/politicas-y-procedimientos/politica-de-backups-y-recuperacion 301

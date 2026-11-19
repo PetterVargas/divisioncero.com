@@ -115,7 +115,7 @@ export default function HomePage() {
             Framework de Ciberseguridad por y para LatAm
           </h2>
           <p className="text-xl text-fd-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            Marco completo con SGSI, políticas, procedimientos y controles de Ciberseguridad. 
+            Marco completo con SGX (SGSI, SGC, SGIA…), políticas, procedimientos y controles de Ciberseguridad. 
             Más de 25 templates organizacionales listos para implementar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -127,7 +127,7 @@ export default function HomePage() {
               <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link 
-              href="https://divisioncero.com/home/kit-inicio-ciberseguridad"
+              href="https://app.divisioncero.com/home/cyberkit"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
               target="_blank"
               rel="noopener noreferrer"
@@ -304,11 +304,11 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/sgsi/politicas"
+              href="/sgx/politicas-y-procedimientos"
               className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
             >
               <FileText className="h-5 w-5 mr-2" />
-              Ver SGSI
+              Ver SGX
               <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link 

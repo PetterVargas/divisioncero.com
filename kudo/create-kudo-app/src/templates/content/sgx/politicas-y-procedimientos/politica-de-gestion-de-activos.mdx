@@ -1,0 +1,79 @@
+---
+title: "Política de Gestión de Activos"
+description: "Gestión y protección de activos de información de la organización"
+codigo: "POL-DIA-02"
+tipo: "politica"
+dominio: "dia"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cif-2, dia-1, cip-5]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-DIA-02 | Política | DIA | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer cómo se identifican, inventarían, asignan, protegen y retiran los activos de la organización (físicos, digitales, de software y de nube), garantizando que cada activo tenga un propietario y se use de forma segura.
+
+## Alcance
+- Aplica a todos los activos de la organización: equipos, dispositivos, información, aplicaciones, licencias, recursos de nube y servicios.
+- Todos los colaboradores, contratistas y terceros que usan activos de la organización deben cumplirla.
+
+## Inventario de Activos
+- Todos los activos se registran en un inventario con, como mínimo: identificador único, tipo, descripción, propietario, ubicación, clasificación de la información que contiene o procesa y estado.
+- Los recursos de nube se inventarían de forma automatizada y se etiquetan con propietario, entorno y clasificación; el inventario se concilia periódicamente con lo realmente desplegado.
+- Los puntos finales se gestionan conforme a la Política de Seguridad de TI.
+
+## Tipos de Activos
+
+### Activos Físicos
+- Se registran con identificador único y se almacenan y mantienen de forma segura.
+- Los daños o pérdidas se reportan de inmediato a TI.
+
+### Activos de Información
+- Se clasifican conforme a la [Política de Clasificación y Manejo de la Información](/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion).
+- Su retención y eliminación siguen la Política de Retención y Eliminación de Datos.
+
+### Licencias de Software
+- Se mantiene un registro de licencias para validar su cumplimiento y renovarlas a tiempo.
+- Solo se instala software licenciado y aprobado.
+
+## Propiedad de los Activos
+- Cada activo tiene un propietario responsable de su clasificación, protección y revisión de accesos.
+- Los activos son propiedad de la organización; su venta, transferencia o préstamo no autorizado está prohibido.
+
+## Uso Aceptable de Información y Activos
+- Los activos se usan para fines laborales y conforme a las políticas de seguridad. Se permite un uso personal limitado y razonable, siempre que no afecte la seguridad, la productividad ni contravenga la ley.
+- Está prohibido usarlos para actividades ilegales, para eludir controles de seguridad o para instalar software no autorizado.
+- La organización puede monitorear el uso de sus activos conforme a la ley y a lo informado a los colaboradores.
+- Las violaciones pueden derivar en medidas disciplinarias o legales.
+
+## Asignación y Devolución
+- TI asigna los activos según las necesidades del cargo y registra la entrega.
+- Los colaboradores devuelven los activos al finalizar su relación laboral o cuando ya no los necesiten; la devolución se verifica en el proceso de salida.
+
+## Almacenamiento y Marcado
+- Los activos se guardan conforme a las especificaciones del fabricante y a los estándares internos.
+- Los medios con información Confidencial o Restringida se marcan y los maneja solo personal autorizado.
+
+## Disposición y Eliminación
+- Se realiza solo con autorización, con borrado seguro o destrucción de la información y registro de la evidencia.
+
+## Cambios al Inventario
+- TI mantiene el inventario; los cambios importantes (altas, bajas y reasignaciones) quedan registrados con fecha y responsable.
+
+## Monitoreo y Revisión
+- Conciliación del inventario al menos semestralmente (de forma continua para los recursos de nube).
+- Auditorías periódicas lideradas por TI y revisión anual de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIF-2 · Inventario de Activos](/framework/cif/cif-2)
+- [DIA-1 · Inventario de Datos](/framework/dia/dia-1)
+- [CIP-5 · Inventario de Puntos Finales](/framework/cip/cip-5)
+{/* /kudo:controles */}

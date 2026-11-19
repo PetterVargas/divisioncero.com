@@ -1,66 +1,91 @@
 ---
 title: "Política de Gestión de Incidentes"
 description: "Detección, respuesta y gestión de incidentes de seguridad"
+codigo: "POL-ADR-01"
+tipo: "politica"
+dominio: "adr"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.1"
+revision: "Anual"
+controles: [adr-4]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-ADR-01 | Política | ADR | 1.1 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Establecer estándares y procedimientos para la gestión sistemática de incidentes, alineados con el Sistema de Gestión de Seguridad de la Información, minimizando impactos legales, contractuales y reputacionales.
+Establecer cómo la organización detecta, clasifica, contiene, erradica, recupera y aprende de los incidentes de seguridad de la información, minimizando sus impactos operativos, legales, contractuales y reputacionales.
 
 ## Objetivos
-- Registrar y documentar todos los incidentes de forma consistente.  
-- Identificar, contener y aprender de los incidentes.  
-- Mantener informadas a las partes interesadas internas y externas.  
-- Documentar y cerrar análisis con aprobación de gerencia.  
-- Notificar rápidamente a clientes y reguladores afectados.  
-- Compartir información relevante con terceros para fortalecer la conciencia situacional de ciberseguridad.
+- Registrar y documentar todos los incidentes de forma consistente.
+- Responder con tiempos acordes a la severidad.
+- Preservar la evidencia para el análisis y, si aplica, para acciones legales.
+- Notificar a clientes, titulares de datos y reguladores dentro de los plazos aplicables.
+- Aprender de cada incidente y mejorar los controles.
 
 ## Alcance
-Aplica a todos los incidentes internos, desde su identificación hasta la revisión post-incidente.
+Aplica a todos los eventos e incidentes de seguridad que afecten la información, los sistemas, los servicios en la nube o los proveedores de la organización, desde su detección hasta la revisión posincidente.
 
 ## Definiciones Clave
-- **Incidente:** Evento que causa interrupción del servicio y requiere respuesta gestionada.  
-- **Crisis:** Interrupción significativa con posibles impactos políticos, legales, financieros o reputacionales.  
-- **Emergencia:** Evento no planificado con riesgo de daños graves, muertes o interrupción crítica de operaciones.  
-- **IMT (Incident Management Team):** Equipo que gestiona la respuesta a incidentes en su área o instalación.  
-- **BCMS:** Sistema de gestión de continuidad del negocio.
+- **Evento de seguridad:** ocurrencia observable que puede indicar un problema de seguridad (por ejemplo, una alerta o un intento fallido de acceso).
+- **Incidente de seguridad:** evento que compromete o puede comprometer la confidencialidad, integridad o disponibilidad de la información (por ejemplo, malware, acceso no autorizado, fuga de datos, phishing exitoso o denegación de servicio).
+- **Brecha de datos personales:** incidente que afecta datos personales y puede requerir notificación a la autoridad y a los titulares.
+- **Crisis:** incidente de magnitud tal que se gestiona con la Política de Gestión de Crisis.
+- **Equipo de Respuesta a Incidentes (IRT/CSIRT):** equipo que coordina la respuesta técnica.
 
 ## Roles y Responsabilidades
-- **Comandante de Incidentes:** Lidera la gestión general del incidente.  
-- **Equipo de Gestión de Incidentes (IMT):** Coordina acciones tácticas, contención, comunicación y recuperación.  
-- **Oficial de Comunicaciones:** Gestiona comunicación interna y externa.  
-- **Coordinadores de RRHH, Logística, Operaciones y Seguridad:** Soporte en personal, infraestructura, continuidad operativa y seguridad.  
-- **Representante BCMS y Oficial de Riesgos:** Evaluación de riesgos y coordinación de soluciones.  
+- **Todos los colaboradores y proveedores:** reportan de inmediato cualquier evento sospechoso (los colaboradores, en un máximo de 24 horas según sus Términos y Condiciones; idealmente en el momento).
+- **Coordinador / Comandante del Incidente:** lidera la respuesta y toma las decisiones operativas.
+- **Equipo de Respuesta (IRT):** analiza, contiene, erradica y recupera.
+- **Legal y Oficial de Protección de Datos:** evalúan las obligaciones de notificación.
+- **Comunicaciones:** gestiona los mensajes internos y externos.
+- **Gerencia:** aprueba las decisiones de alto impacto y escala a crisis cuando corresponde.
+
+## Clasificación y Tiempos de Respuesta
+| Nivel | Criterio | Ejemplo | Inicio de la respuesta | Escalamiento |
+| ----- | -------- | ------- | ---------------------- | ------------ |
+| 1 – Bajo | Impacto local reducido, sin datos sensibles. | Malware bloqueado en un equipo. | 1 día hábil | Equipo de seguridad |
+| 2 – Medio | Impacto moderado o visible para clientes. | Cuenta de usuario comprometida. | 4 horas | Responsable de Ciberseguridad |
+| 3 – Alto | Afecta múltiples áreas, sistemas críticos o datos confidenciales. | Acceso no autorizado a una base de datos. | 1 hora | Gerencia |
+| 4 – Crítico | Impacto severo en el negocio, datos personales a gran escala o servicios críticos detenidos. | Ransomware en producción. | Inmediato (24/7) | Gerencia y Equipo de Crisis |
 
 ## Proceso de Gestión de Incidentes
-1. **Notificación y Evaluación:** Registrar incidente, evaluar gravedad y posibles impactos.  
-2. **Activación del IMT:** Notificar y movilizar recursos según nivel de incidente.  
-3. **Desarrollo de Recomendaciones:** Identificar acciones de contención y recuperación.  
-4. **Comunicación:** Informar a stakeholders internos y externos de forma clara y oportuna.  
-5. **Acción Post-Incidente:** Declarar cierre, analizar causas, documentar lecciones aprendidas y actualizar procesos.
+1. **Detección y reporte:** el evento llega por alertas de monitoreo, reportes de usuarios, proveedores o terceros.
+2. **Registro y clasificación:** se registra el incidente y se asigna su nivel.
+3. **Contención:** se limita el daño (aislar equipos, deshabilitar cuentas, bloquear indicadores).
+4. **Erradicación:** se elimina la causa (malware, accesos, vulnerabilidad explotada).
+5. **Recuperación:** se restauran los servicios y se verifica su normalidad.
+6. **Notificación:** se informa a las partes interesadas según los plazos aplicables.
+7. **Cierre y lecciones aprendidas:** análisis de causa raíz para los incidentes de nivel 2 o superior, con acciones correctivas.
 
-## Clasificación de Incidentes
-- **Nivel 1 (Menor):** Impacto local reducido.  
-- **Nivel 2 (Moderado):** Impacto local moderado, visible al cliente.  
-- **Nivel 3 (Significativo):** Incidente a gran escala que afecta múltiples departamentos.  
-- **Nivel 4 (Catastrófico):** Impacto crítico a largo plazo en el negocio.
+El detalle operativo se define en el [Procedimiento de Respuesta a Incidentes](/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes).
 
-## Plan de Respuesta a Incidentes (IRP)
-- Define roles, responsabilidades y pasos para contener, investigar y remediar incidentes.  
-- Establece protocolos de coordinación con partes interesadas externas y voluntaria compartición de información de ciberseguridad.  
-- Contempla contención, escalamiento, notificación y reporte estructurado.
+## Preservación de Evidencia
+- Antes de modificar o reinstalar sistemas comprometidos se preserva la evidencia relevante (registros, imágenes de disco o memoria cuando aplique).
+- Se mantiene la cadena de custodia para la evidencia que pueda usarse en procesos legales.
 
-## Documentación y Notificación
-- Registrar todas las fases del incidente con aprobación de gerencia y representante de seguridad.  
-- Garantizar notificación rápida a clientes, reguladores y terceros relevantes.
+## Notificación
+- **Clientes:** según los plazos de sus contratos.
+- **Autoridad de protección de datos y titulares:** según la ley aplicable en cada país (los plazos varían, por ejemplo, de 72 horas a algunos días hábiles); Legal y el Oficial de Protección de Datos determinan la obligación.
+- **Reguladores sectoriales y CSIRT nacional:** cuando la regulación lo exija.
+- Los proveedores deben notificar a la organización los incidentes que la afecten en un máximo de 48 horas.
 
 ## Pruebas y Capacitación
-- Ejecutar simulaciones, pruebas de mesa y ejercicios regulares para mantener efectividad del IRP.  
-- Incluir coordinación con partes externas (agencias, pares de la industria).
+- Al menos un ejercicio de mesa al año sobre escenarios relevantes (ransomware, fuga de datos, compromiso de cuentas).
+- Capacitación del equipo de respuesta y de los colaboradores en cómo reportar incidentes.
 
 ## Mejora Continua
-- Revisar y actualizar el programa basado en incidentes, resultados de pruebas y capacitación.  
-- Asegurar alineación con mejores prácticas y requisitos del Sistema de Gestión de Seguridad de la Información.
+Las lecciones aprendidas alimentan la gestión de riesgos, los controles y esta política, mediante el Procedimiento de Acciones Correctivas y Mejora Continua.
 
 ## Monitoreo y Revisión
-- Revisión anual del programa y planes de continuidad para garantizar precisión, efectividad y preparación.  
-- Validar protocolos de comunicación y coordinación con stakeholders internos y externos.
+- Indicadores: número de incidentes por nivel, tiempo medio de detección (MTTD) y de respuesta (MTTR).
+- Revisión anual de esta política y del procedimiento.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-4 · Atención de Eventos y/o Incidentes de Ciberseguridad](/kudo/framework/adr/adr-4)
+{/* /kudo:controles */}

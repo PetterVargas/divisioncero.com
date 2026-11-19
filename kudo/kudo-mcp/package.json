@@ -1,0 +1,56 @@
+{
+  "name": "@divisioncero/kudo-mcp",
+  "version": "0.1.0",
+  "description": "Servidor MCP de Kudo: controles, documentos SGX, modelos OSCAL, agentes y skills de ciberseguridad para tu asistente de IA",
+  "type": "module",
+  "bin": {
+    "kudo-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "bundle": "node scripts/bundle-data.mjs",
+    "build": "node scripts/bundle-data.mjs && tsc",
+    "start": "node dist/index.js",
+    "test": "node --test test/*.test.mjs",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
+  "keywords": [
+    "kudo",
+    "divisioncero",
+    "mcp",
+    "model-context-protocol",
+    "ciberseguridad",
+    "cybersecurity",
+    "oscal",
+    "grc",
+    "agentes",
+    "skills"
+  ],
+  "author": "DivisionCero <hello@divisioncero.com> (https://divisioncero.com)",
+  "license": "MIT",
+  "homepage": "https://divisioncero.com/kudo/framework/overview/mcp-agentes-y-skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PetterVargas/divisioncero.com.git",
+    "directory": "kudo/kudo-mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/PetterVargas/divisioncero.com/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

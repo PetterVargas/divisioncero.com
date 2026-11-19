@@ -2,10 +2,11 @@
 
 import { useRef, useEffect, useLayoutEffect } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Book, Rocket, Shield, FileText, Users, Target, Zap, CheckCircle, Layers, Database, Settings2, ShieldCheck, ClipboardCheck } from 'lucide-react';
+import { ArrowRight, Download, Book, Rocket, Shield, FileText, Users, Target, Zap, CheckCircle, Layers, Database, Settings2, ShieldCheck, ClipboardCheck } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HeroGrid } from '@/components/hero-grid';
+import { InstallCommand } from '@/components/kudo/install-command';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -351,27 +352,29 @@ export function HomeContent() {
             Framework de Ciberseguridad por y para LatAm
           </h2>
           <p className="gsap-hi text-xl text-fd-muted-foreground max-w-3xl mx-auto mb-5 leading-relaxed">
-            Marco completo con SGX (SGC, SGSI, SGIA, etc...), políticas, procedimientos y controles de Ciberseguridad. Más de 25 templates organizacionales listos para implementar.
+            Marco completo con SGX (SGC, SGSI, SGIA, etc...), políticas, procedimientos y controles de Ciberseguridad. Más de 40 plantillas organizacionales listas para implementar.
           </p>
-          <div className="gsap-hi flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="gsap-hi flex flex-row flex-wrap gap-3 justify-center">
             <Link
               href="/kudo/framework/overview"
-              className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
+              className="group inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-fd-primary-foreground bg-fd-primary hover:bg-fd-primary/90 rounded-lg transition-colors"
               title="Explorar Framework Kudo"
             >
               Explorar Framework
-              <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-3.5 w-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="https://app.divisioncero.com/home/kit-inicio-ciberseguridad"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-fd-foreground border border-fd-border hover:bg-fd-muted/50 rounded-lg transition-colors"
+              href="https://app.divisioncero.com/home/cyberkit"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-semibold text-fd-foreground border border-fd-border bg-fd-background/60 backdrop-blur-sm hover:bg-fd-muted/60 rounded-lg transition-colors"
               target="_blank"
               rel="noopener noreferrer"
               title="Descargar Kit de Inicio de Ciberseguridad"
             >
+              <Download className="h-3.5 w-3.5" />
               Descargar Kit
             </Link>
           </div>
+          <InstallCommand className="gsap-hi mt-8" />
         </div>
       </section>
 
@@ -400,10 +403,10 @@ export function HomeContent() {
                 <CheckCircle className="h-8 w-8 text-fd-primary" />
               </div>
               <h4 className="text-xl font-semibold mb-3">
-                <span data-count="35" data-suffix="">35</span> Controles
+                <span data-count="36" data-suffix="">36</span> Controles
               </h4>
               <p className="text-fd-muted-foreground">
-                Marco completo con 35 controles de Ciberseguridad
+                Marco completo con 36 controles de Ciberseguridad
               </p>
             </div>
             <div className="gsap-stat text-center">
@@ -411,10 +414,10 @@ export function HomeContent() {
                 <Shield className="h-8 w-8 text-fd-primary" />
               </div>
               <h4 className="text-xl font-semibold mb-3">
-                <span data-count="25" data-suffix="+">25+</span> Políticas
+                <span data-count="45" data-suffix="">45</span> Documentos SGX
               </h4>
               <p className="text-fd-muted-foreground">
-                Templates completos de políticas organizacionales basados en estándares internacionales
+                Políticas, procedimientos y plantillas trazados a los controles Kudo y a OSCAL
               </p>
             </div>
           </div>
@@ -489,7 +492,7 @@ export function HomeContent() {
             </div>
             <h3 className="text-3xl font-bold mb-4">Kudo adaptado a OSCAL</h3>
             <p className="text-xl text-fd-muted-foreground max-w-2xl mx-auto">
-              Los 35 controles de Kudo expresados según OSCAL (Open Security Controls Assessment Language), el estándar de NIST para intercambiar información de controles de seguridad.
+              Los 36 controles de Kudo y sus 8 modelos OSCAL (Open Security Controls Assessment Language) en JSON, XML, YAML y TOON, validados con el esquema oficial de NIST.
             </p>
           </div>
 
@@ -584,7 +587,7 @@ export function HomeContent() {
         <div className="cta-content max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-6">Comienza tu implementación hoy</h3>
           <p className="text-xl text-fd-muted-foreground mb-8">
-            Accede a más de 25 templates de políticas organizacionales y construye un marco de ciberseguridad sólido
+            Accede a más de 40 plantillas de políticas y procedimientos y construye un marco de ciberseguridad sólido
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

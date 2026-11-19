@@ -1,0 +1,77 @@
+---
+title: "Política de Servicios en la Nube"
+description: "Uso seguro y gestión de servicios cloud y SaaS"
+codigo: "POL-CIF-05"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cif-1, cif-2, dia-6]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-05 | Política | CIF | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer las directrices para seleccionar, contratar, configurar y usar de forma segura los servicios en la nube (IaaS, PaaS y SaaS), protegiendo la información de la organización en todo el ciclo de vida del servicio.
+
+## Alcance
+Aplica a todos los colaboradores, contratistas y terceros que contratan, administran o usan servicios en la nube en nombre de la organización.
+
+## Objetivos
+- Usar solo servicios en la nube evaluados y aprobados.
+- Entender y cumplir el modelo de responsabilidad compartida de cada servicio.
+- Proteger la confidencialidad, integridad y disponibilidad de los datos en la nube.
+- Evitar la "nube en la sombra" (*shadow IT*).
+
+## Estándares
+
+**Selección, Aprobación y Contratos**
+- Todo servicio en la nube se aprueba por TI y Seguridad de la Información antes de su uso; los que procesen información Confidencial o Restringida, además, por la gerencia.
+- La evaluación considera las certificaciones del proveedor (ISO 27001, SOC 2, CSA STAR u otras), la ubicación de los datos y su plan de continuidad.
+- Los contratos incluyen: niveles de servicio, notificación de incidentes, derecho de auditoría o entrega de informes, ubicación de los datos, devolución y eliminación de datos al terminar, y condiciones de subcontratación.
+- Se mantiene un inventario de servicios en la nube aprobados con su propietario y la clasificación de los datos que procesa.
+
+**Responsabilidad Compartida**
+- Para cada servicio se documenta qué controles gestiona el proveedor y cuáles la organización (identidades, configuración, datos, respaldos). Consulta el [Modelo de Responsabilidad Compartida](/framework/overview/responsabilidad-compartida) de Kudo.
+
+**Configuración Segura**
+- Las cuentas y suscripciones se configuran conforme a la Política de Hardening, preferentemente con infraestructura como código.
+- Se monitorea la postura de seguridad (CSPM) para detectar configuraciones inseguras, como almacenamiento público o puertos expuestos.
+- Todos los recursos se etiquetan con propietario, entorno y clasificación de datos.
+
+**Identidad y Acceso**
+- Acceso mediante el IdP corporativo (SSO) y MFA obligatoria para todos los usuarios; las cuentas raíz o de propietario se protegen con MFA resistente a phishing y no se usan para la operación diaria.
+
+**Cifrado y Gestión de Claves**
+- Datos cifrados en reposo y en tránsito, conforme a la Política de Criptografía y Gestión de Claves.
+
+**Ubicación de los Datos**
+- Los datos se almacenan solo en las regiones aprobadas, considerando las restricciones legales de residencia y transferencia internacional.
+
+**Respaldo y Continuidad**
+- Los datos críticos en la nube se respaldan conforme a la Política de Backups y Recuperación, incluso en servicios SaaS.
+- Se monitorean la capacidad y el rendimiento de los servicios críticos.
+
+**Gestión de Incidentes**
+- Los incidentes se reportan de inmediato a Seguridad de la Información y se gestionan según la Política de Gestión de Incidentes.
+
+**Salida del Servicio**
+- Antes de contratar un servicio crítico se define la estrategia de salida (exportación de datos y alternativas).
+- Al terminar, se exige la devolución y eliminación de los datos con evidencia del proveedor.
+
+## Monitoreo y Revisión
+- Revisión semestral del inventario de servicios en la nube y de sus accesos.
+- Revisión anual de los proveedores críticos y de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIF-1 · Proveedores de Servicio de Nube](/framework/cif/cif-1)
+- [CIF-2 · Inventario de Activos](/framework/cif/cif-2)
+- [DIA-6 · Ubicación de Información y Datos](/framework/dia/dia-6)
+{/* /kudo:controles */}

@@ -5,11 +5,17 @@ on:
     branches: [main, develop]
     paths:
       - 'kudo/create-kudo-app/**'
+      - 'kudo/agents/**'
+      - 'kudo/skills/**'
+      - 'content/kudo/sgx/politicas-y-procedimientos/**'
       - '.github/workflows/create-kudo-app-ci.yml'
   pull_request:
     branches: [main, develop]
     paths:
       - 'kudo/create-kudo-app/**'
+      - 'kudo/agents/**'
+      - 'kudo/skills/**'
+      - 'content/kudo/sgx/politicas-y-procedimientos/**'
       - '.github/workflows/create-kudo-app-ci.yml'
 
 jobs:
@@ -44,6 +50,9 @@ jobs:
 
       - name: Check TypeScript
         run: pnpm tsc --noEmit
+
+      - name: Test
+        run: pnpm test
 
   lint:
     runs-on: ubuntu-latest

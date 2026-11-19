@@ -1,0 +1,74 @@
+---
+title: "Política de Retención y Eliminación de Datos"
+description: "Plazos de conservación por categoría de datos y eliminación segura con evidencia"
+codigo: "POL-DIA-05"
+tipo: "politica"
+dominio: "dia"
+propietario: "Oficial de Protección de Datos"
+version: "1.0"
+revision: "Anual"
+controles: [dia-5, dia-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-DIA-05 | Política | DIA | 1.0 | Oficial de Protección de Datos | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Definir cuánto tiempo conserva la organización cada categoría de datos y cómo los elimina de forma segura al vencer su plazo, cumpliendo las obligaciones legales y el principio de limitación del plazo de conservación.
+
+## Alcance
+Aplica a todos los datos y registros de la organización (incluidos datos personales, registros del SGX, logs y respaldos) en sistemas propios, servicios en la nube y proveedores.
+
+## Principios
+- Los datos se conservan solo mientras sean necesarios para la finalidad que justificó su recolección o mientras lo exija una obligación legal o contractual.
+- Al vencer el plazo, los datos se eliminan o anonimizan de forma irreversible.
+- La eliminación queda registrada como evidencia.
+- Una **retención legal** (por ejemplo, por un litigio o una investigación) suspende la eliminación de los datos afectados hasta que Legal la libere.
+
+## Tabla de Retención de Referencia
+Ajusta esta tabla a la legislación de cada país donde opera la organización; **el plazo legal aplicable siempre prevalece**.
+
+| Categoría | Plazo de referencia | Fundamento habitual |
+| --------- | ------------------- | ------------------- |
+| Registros contables, fiscales y facturas | 10 años | Legislación tributaria y comercial |
+| Historias laborales y nómina | Según legislación laboral (referencia: 7 años desde el retiro) | Legislación laboral y de seguridad social |
+| Candidatos no contratados | 1 año desde el cierre del proceso (o lo que indique la autorización) | Finalidad del proceso de selección |
+| Datos de clientes | Duración de la relación + plazo de prescripción legal | Contrato y legislación civil |
+| Datos de clientes tratados como encargado | Según contrato; devolución o eliminación al terminar | Contrato de transmisión o encargo |
+| Datos de *marketing* | Hasta la revocación del consentimiento | Consentimiento del titular |
+| Logs de seguridad | Mínimo 12 meses | Política de Registro y Monitoreo |
+| Grabaciones de CCTV | 30 días, salvo incidente | Política de Seguridad Física |
+| Registros del SGX (auditorías, incidentes, actas) | 5 años | Política de Documentos y Registros |
+| Respaldos | Según la Política de Backups y Recuperación | Recuperación operativa |
+
+## Eliminación Segura
+| Medio | Método |
+| ----- | ------ |
+| Sistemas y bases de datos | Eliminación automatizada al vencer el plazo, o anonimización irreversible |
+| Servicios en la nube | Eliminación mediante las funciones del proveedor y destrucción de las claves de cifrado (*crypto-shredding*) cuando aplique |
+| Discos y dispositivos | Borrado seguro (por ejemplo, según NIST SP 800-88) o destrucción física |
+| Papel | Trituración de corte cruzado o destrucción certificada |
+| Proveedores | Certificado de eliminación al terminar el servicio |
+
+Los respaldos vencen según su ciclo de rotación; no es necesario editarlos individualmente, siempre que los datos eliminados no se restauren a producción.
+
+## Derechos de los Titulares
+Las solicitudes de supresión ("derecho al olvido") se atienden conforme a la [Política de Privacidad](/sgx/politicas-y-procedimientos/politica-de-privacidad), salvo que exista una obligación legal de conservar los datos.
+
+## Responsabilidades
+- **Propietarios de la información:** aplican los plazos en sus sistemas y procesos.
+- **TI:** automatiza la eliminación y conserva la evidencia.
+- **Legal y Oficial de Protección de Datos:** mantienen actualizada la tabla de retención y gestionan las retenciones legales.
+
+## Monitoreo y Revisión
+Revisión anual de la tabla de retención y verificación por muestreo de la eliminación efectiva en las auditorías internas.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [DIA-5 · Tiempo de Retención de Datos y Derecho al Olvido](/framework/dia/dia-5)
+- [DIA-3 · Ciclo de Vida de los Datos](/framework/dia/dia-3)
+{/* /kudo:controles */}

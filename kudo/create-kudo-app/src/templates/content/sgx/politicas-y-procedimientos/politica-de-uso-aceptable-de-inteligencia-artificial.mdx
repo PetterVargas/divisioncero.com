@@ -1,0 +1,77 @@
+---
+title: "Política de Uso Aceptable de Inteligencia Artificial"
+description: "Uso seguro y responsable de herramientas, agentes y modelos de IA en la organización"
+codigo: "POL-DIA-03"
+tipo: "politica"
+dominio: "dia"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.0"
+revision: "Semestral"
+controles: [dia-7, dia-4, thp-1]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-DIA-03 | Política | DIA | 1.0 | Responsable de Ciberseguridad (CISO) | Semestral |
+{/* /kudo:control-documento */}
+
+## Propósito
+Permitir que la organización aproveche la inteligencia artificial (IA) de forma segura, ética y conforme a la ley, protegiendo la información, los datos personales y la propiedad intelectual frente a los riesgos propios de estas tecnologías.
+
+## Alcance
+Aplica a todos los colaboradores, contratistas y proveedores que usen, desarrollen, integren o adquieran soluciones de IA: asistentes conversacionales, copilotos de código, agentes autónomos, servidores MCP, funciones de IA incluidas en aplicaciones SaaS y modelos propios.
+
+## Principios
+- **Supervisión humana:** una persona es responsable de cada resultado de IA que se use para tomar decisiones o se entregue a terceros.
+- **Protección de la información:** la IA no recibe información que no podría compartirse con el proveedor de la herramienta.
+- **Transparencia:** se informa cuando un contenido o una interacción con clientes es generado por IA, cuando sea relevante o lo exija la ley.
+- **Proporcionalidad:** los controles aumentan según el riesgo del caso de uso.
+
+## Herramientas Aprobadas
+- Seguridad de la Información y TI mantienen un **catálogo de herramientas de IA aprobadas**, indicando la clasificación máxima de información permitida en cada una.
+- Las herramientas aprobadas deben contar con acuerdos que garanticen que los datos de la organización **no se usan para entrenar modelos** del proveedor, con controles de retención y con el acceso mediante cuentas corporativas (SSO).
+- El uso de herramientas no aprobadas para información de la organización está prohibido (*shadow AI*).
+
+## Información Permitida
+| Clasificación | Herramientas de IA públicas o personales | Herramientas de IA aprobadas (corporativas) |
+| ------------- | ---------------------------------------- | ------------------------------------------- |
+| Pública | Permitido | Permitido |
+| Interna | No permitido | Permitido |
+| Confidencial | No permitido | Solo si la herramienta está aprobada para ese nivel |
+| Restringida / datos personales sensibles | No permitido | Solo con aprobación expresa y evaluación de impacto |
+
+Nunca se ingresan credenciales, secretos, llaves de API ni datos de tarjetas de pago en herramientas de IA.
+
+## Uso Responsable
+- Verificar la exactitud de los resultados: la IA puede generar información incorrecta ("alucinaciones").
+- Revisar el código generado con el mismo rigor que el código humano (ver Política de Desarrollo Seguro) y validar sus licencias.
+- No usar la IA para tomar decisiones automatizadas con efectos significativos sobre personas (contratación, crédito, sanciones) sin evaluación previa y supervisión humana.
+- Respetar la propiedad intelectual y los derechos de imagen de terceros.
+
+## Agentes de IA y Servidores MCP
+- Los agentes y servidores MCP solo se conectan a sistemas corporativos con aprobación de Seguridad de la Información.
+- Operan con **mínimo privilegio** y credenciales propias (identidades no humanas inventariadas), nunca con las credenciales personales de un colaborador.
+- Las acciones con efectos irreversibles (borrar, pagar, enviar comunicaciones externas, desplegar a producción) requieren confirmación humana.
+- Se considera el riesgo de inyección de instrucciones (*prompt injection*): el contenido externo que procesa un agente se trata como no confiable.
+- Sus acciones quedan registradas conforme a la Política de Registro y Monitoreo.
+
+## Desarrollo y Adquisición de Modelos o Soluciones de IA
+Antes de poner en producción una solución de IA se evalúan sus riesgos de seguridad, privacidad, sesgo y cumplimiento regulatorio (incluida una evaluación de impacto en la privacidad cuando trate datos personales). Las soluciones de alto riesgo requieren aprobación formal de la gerencia, pruebas de seguridad específicas (por ejemplo, frente a inyección de instrucciones y fuga de datos) y monitoreo de su comportamiento en producción.
+
+## Capacitación
+Todos los colaboradores reciben orientación sobre el uso seguro de la IA como parte del programa de concienciación.
+
+## Incidentes
+La exposición de información en una herramienta de IA no autorizada, o el comportamiento anómalo de un agente, se reporta de inmediato como incidente de seguridad.
+
+## Monitoreo y Revisión
+Debido a la rápida evolución de estas tecnologías, el catálogo de herramientas se revisa trimestralmente y esta política, al menos cada seis meses.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [DIA-7 · Ciberseguridad en Modelos de Inteligencia Artificial](/framework/dia/dia-7)
+- [DIA-4 · Ciberseguridad en Información y Datos](/framework/dia/dia-4)
+- [THP-1 · Capacitación de Ciberseguridad](/framework/thp/thp-1)
+{/* /kudo:controles */}

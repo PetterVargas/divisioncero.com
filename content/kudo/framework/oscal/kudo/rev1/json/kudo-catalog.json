@@ -4,10 +4,10 @@
     "metadata": {
       "title": "Catálogo de Controles Kudo - Framework de Ciberseguridad en la Nube",
       "published": "2026-07-04T00:00:00Z",
-      "last-modified": "2026-07-05T03:05:30Z",
-      "version": "0.1.0",
+      "last-modified": "2026-11-19T00:00:00Z",
+      "version": "0.2.0",
       "oscal-version": "1.2.2",
-      "remarks": "Catálogo OSCAL generado a partir de Kudo - Framework de Ciberseguridad. Contiene 8 dominios, 35 controles y 491 requisitos.",
+      "remarks": "Catálogo OSCAL generado a partir de Kudo - Framework de Ciberseguridad. Contiene 8 dominios, 36 controles y 503 requisitos.",
       "props": [
         {
           "name": "domain-count",
@@ -17,12 +17,12 @@
         {
           "name": "control-count",
           "ns": "https://divisioncero.com/kudo/framework/oscal",
-          "value": "35"
+          "value": "36"
         },
         {
           "name": "requirement-count",
           "ns": "https://divisioncero.com/kudo/framework/oscal",
-          "value": "491"
+          "value": "503"
         }
       ],
       "links": [
@@ -1866,7 +1866,7 @@
           {
             "id": "ccn_ovw",
             "name": "overview",
-            "prose": "Dominio enfocado en la resiliencia organizacional, la continuidad operacional y la gestión controlada de cambios en el entorno empresarial. Abarca los procedimientos de gestión y control de cambios, las pruebas de calidad y seguridad previas a los despliegues, y la capacidad de revertir cambios ante fallas (rollback). Promueve la identificación de puntos únicos de falla, el uso del modelo de responsabilidad compartida con proveedores de nube (CSP) y la implementación de estrategias de despliegue como blue/green. Su propósito es garantizar que los cambios tecnológicos no comprometan la disponibilidad de los servicios ni la experiencia de los clientes."
+            "prose": "Dominio enfocado en la resiliencia organizacional, la continuidad operacional y la gestión controlada de cambios en el entorno empresarial. Abarca los procedimientos de gestión y control de cambios, las pruebas de calidad y seguridad previas a los despliegues, la capacidad de revertir cambios ante fallas (rollback) y la continuidad del negocio y la recuperación ante desastres (BIA, respaldos y planes de continuidad). Promueve la identificación de puntos únicos de falla, el uso del modelo de responsabilidad compartida con proveedores de nube (CSP) y la implementación de estrategias de despliegue como blue/green. Su propósito es garantizar que los cambios tecnológicos no comprometan la disponibilidad de los servicios ni la experiencia de los clientes."
           }
         ],
         "controls": [
@@ -2490,6 +2490,225 @@
                       }
                     ],
                     "prose": "Revisamos los post-mortems en el Comité Asesor de Cambios (CAB) e incorporamos las lecciones aprendidas al proceso de gestión de cambios."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ccn-4",
+            "title": "Continuidad del Negocio y Recuperación ante Desastres",
+            "props": [
+              {
+                "name": "label",
+                "value": "CCN-4"
+              }
+            ],
+            "links": [
+              {
+                "href": "https://divisioncero.com/kudo/framework/ccn/ccn-4",
+                "rel": "reference",
+                "media-type": "text/html",
+                "text": "Documentación del control en el sitio Kudo"
+              }
+            ],
+            "parts": [
+              {
+                "id": "ccn-4_smt",
+                "name": "statement",
+                "prose": "Es necesario identificar los procesos críticos del negocio mediante un análisis de impacto y definir sus objetivos de recuperación (MTPD, RTO y RPO), y mantener planes de continuidad y de recuperación ante desastres documentados para cumplirlos. Es necesario respaldar los datos y sistemas críticos con copias aisladas e inmutables, cifradas y probadas periódicamente, y eliminar los puntos únicos de falla de los servicios críticos. Es necesario ejercitar los planes al menos una vez al año, verificar las capacidades de continuidad de los proveedores críticos y actualizar los planes con las lecciones aprendidas.",
+                "parts": [
+                  {
+                    "id": "ccn-4_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "a"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-1"
+                      }
+                    ],
+                    "prose": "Realizamos un análisis de impacto en el negocio (BIA) para identificar los procesos y servicios críticos y sus dependencias de personas, tecnología, información y proveedores."
+                  },
+                  {
+                    "id": "ccn-4_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "b"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-2"
+                      }
+                    ],
+                    "prose": "Definimos para cada proceso crítico el tiempo máximo tolerable de interrupción (MTPD), el tiempo objetivo de recuperación (RTO) y el punto objetivo de recuperación (RPO)."
+                  },
+                  {
+                    "id": "ccn-4_smt.c",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "c"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-3"
+                      }
+                    ],
+                    "prose": "Documentamos un plan de continuidad del negocio con estrategias, roles, comunicación y criterios de activación para cada proceso crítico."
+                  },
+                  {
+                    "id": "ccn-4_smt.d",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "d"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-4"
+                      }
+                    ],
+                    "prose": "Documentamos un plan de recuperación ante desastres (DRP) para los sistemas que soportan los procesos críticos."
+                  },
+                  {
+                    "id": "ccn-4_smt.e",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "e"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-5"
+                      }
+                    ],
+                    "prose": "Respaldamos los datos, sistemas y configuraciones críticas con una frecuencia acorde al RPO definido."
+                  },
+                  {
+                    "id": "ccn-4_smt.f",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "f"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-6"
+                      }
+                    ],
+                    "prose": "Mantenemos al menos una copia de los respaldos fuera del sitio o de la cuenta principal y una copia inmutable o desconectada, protegida frente a ransomware."
+                  },
+                  {
+                    "id": "ccn-4_smt.g",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "g"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-7"
+                      }
+                    ],
+                    "prose": "Ciframos los respaldos y restringimos su acceso con credenciales separadas de las de producción."
+                  },
+                  {
+                    "id": "ccn-4_smt.h",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "h"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-8"
+                      }
+                    ],
+                    "prose": "Probamos la restauración de los respaldos de los sistemas críticos al menos trimestralmente y verificamos que se cumple el RTO."
+                  },
+                  {
+                    "id": "ccn-4_smt.i",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "i"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-9"
+                      }
+                    ],
+                    "prose": "Eliminamos los puntos únicos de falla de los servicios críticos mediante redundancia, alta disponibilidad o despliegue en múltiples zonas o regiones."
+                  },
+                  {
+                    "id": "ccn-4_smt.j",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "j"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-10"
+                      }
+                    ],
+                    "prose": "Ejecutamos al menos un ejercicio anual de continuidad o recuperación (prueba de mesa, recorrido o simulación) y documentamos sus resultados."
+                  },
+                  {
+                    "id": "ccn-4_smt.k",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "k"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-11"
+                      }
+                    ],
+                    "prose": "Verificamos que los proveedores críticos cuenten con capacidades de continuidad acordes a nuestros objetivos de recuperación."
+                  },
+                  {
+                    "id": "ccn-4_smt.l",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "l"
+                      },
+                      {
+                        "name": "requirement-id",
+                        "ns": "https://divisioncero.com/kudo/framework/oscal",
+                        "value": "req-12"
+                      }
+                    ],
+                    "prose": "Revisamos y actualizamos el BIA y los planes de continuidad al menos una vez al año, tras cada activación y ante cambios significativos."
                   }
                 ]
               }

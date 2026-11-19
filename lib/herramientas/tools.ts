@@ -300,7 +300,8 @@ export const tools: Tool[] = [
   {
     slug: 'cual-es-mi-ip',
     title: '¿Cuál es mi IP?',
-    description: 'Consulta tu IP pública, ubicación aproximada, fecha de conexión y user agent.',
+    description:
+      'Consulta tu IP pública, ubicación aproximada, user agent y los encabezados HTTP que recibe un servidor, también desde la terminal.',
     href: '/herramientas/cual-es-mi-ip',
     categories: ['Utilidades', 'Rastreo'],
     iconName: 'Globe',

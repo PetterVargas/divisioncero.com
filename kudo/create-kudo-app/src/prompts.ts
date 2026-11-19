@@ -1,4 +1,4 @@
-import { intro, text, select, isCancel, cancel } from '@clack/prompts';
+import { intro, text, select, confirm, isCancel, cancel } from '@clack/prompts';
 import pc from 'picocolors';
 import { DOMINIOS, PACKAGE_MANAGERS, type DominioId, type PackageManager } from './constants.js';
 
@@ -6,8 +6,8 @@ export interface UserChoices {
   projectName: string;
   packageManager: PackageManager;
   selectedDominios: DominioId[];
-  selectedPolicies: string[];
   includeBlog: boolean;
+  includeAi: boolean;
 }
 
 export async function runInteractivePrompts(defaultProjectName?: string): Promise<UserChoices> {
@@ -46,9 +46,18 @@ export async function runInteractivePrompts(defaultProjectName?: string): Promis
     process.exit(0);
   }
 
+  const includeAi = await confirm({
+    message: '¿Incluir el servidor MCP, los agentes y las skills de ciberseguridad para tu asistente de IA?',
+    initialValue: true,
+  });
+
+  if (isCancel(includeAi)) {
+    cancel('Operación cancelada');
+    process.exit(0);
+  }
+
   // Incluir todos los dominios por defecto (sin preguntar)
   const selectedDominios: DominioId[] = Object.keys(DOMINIOS) as DominioId[];
-  const selectedPolicies: string[] = Object.values(DOMINIOS).flatMap((d) => d.politicas);
 
   // Incluir blog por defecto (sin preguntar)
   const includeBlog = true;
@@ -57,7 +66,7 @@ export async function runInteractivePrompts(defaultProjectName?: string): Promis
     projectName: projectName as string,
     packageManager: packageManager as PackageManager,
     selectedDominios,
-    selectedPolicies,
     includeBlog,
+    includeAi: includeAi as boolean,
   };
 }

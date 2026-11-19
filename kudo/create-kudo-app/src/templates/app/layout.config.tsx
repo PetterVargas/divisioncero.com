@@ -38,8 +38,8 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       icon: <FileTextIcon />,
-      text: 'SGSI',
-      url: '/sgsi',
+      text: 'SGX',
+      url: '/sgx',
       secondary: false,
     },
     {

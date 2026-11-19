@@ -1,0 +1,77 @@
+---
+title: "Procedimiento de Auditoría Interna"
+description: "Planificación, ejecución y reporte de auditorías internas independientes del SGX"
+codigo: "PRO-COR-01"
+tipo: "procedimiento"
+dominio: "cor"
+propietario: "Responsable de Cumplimiento"
+version: "1.0"
+revision: "Anual"
+controles: [cor-3, cor-4]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| PRO-COR-01 | Procedimiento | COR | 1.0 | Responsable de Cumplimiento | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Definir cómo se planifican, ejecutan y reportan las auditorías internas del SGX para verificar, con independencia y basándose en riesgos, que los controles Kudo están implementados y son eficaces.
+
+## Alcance
+Aplica a todos los procesos, controles, políticas y proveedores dentro del alcance del SGX. Complementa, sin reemplazarlas, las auditorías externas y las certificaciones.
+
+## Roles y Responsabilidades
+- **Gerencia:** aprueba el programa anual de auditoría y conoce sus resultados.
+- **Responsable de Cumplimiento / Coordinador de auditoría:** elabora el programa, asigna auditores y consolida los informes.
+- **Auditores internos:** personas competentes e **independientes del proceso auditado** (no auditan su propio trabajo). Pueden ser colaboradores de otras áreas o un tercero contratado.
+- **Auditados:** facilitan la información y las evidencias, y definen las acciones correctivas.
+
+## 1. Programa Anual de Auditoría
+- Al inicio de cada año se define un programa que cubre **todos los dominios Kudo al menos una vez cada tres años** y, cada año, los procesos de mayor riesgo, los afectados por incidentes y los que tuvieron hallazgos previos.
+- El programa indica: alcance, controles a evaluar, fechas, auditores y criterios (políticas internas, controles Kudo y estándares aplicables).
+- El programa puede expresarse como un *Assessment Plan* OSCAL (ver [OSCAL – Assessment Plan](/framework/oscal/ap-assessment-plan)).
+
+## 2. Planificación de Cada Auditoría
+- Comunicar al área auditada el alcance, la agenda y la información requerida con al menos **5 días hábiles** de anticipación.
+- Preparar una lista de verificación con los requisitos de los controles Kudo en alcance (puedes usar el [cuestionario de Kudo](/framework/cuestionarios) como base).
+
+## 3. Ejecución
+- **Reunión de apertura:** confirmar el alcance y la agenda.
+- **Recolección de evidencias:** entrevistas, revisión de documentos y registros, observación y pruebas técnicas o de muestras.
+- **Evaluación:** para cada requisito se determina si **cumple**, **cumple parcialmente** o **no cumple**, con la evidencia que lo respalda.
+- **Reunión de cierre:** presentar los hallazgos preliminares al área auditada.
+
+## 4. Clasificación de Hallazgos
+| Tipo | Descripción | Plazo para el plan de acción |
+| ---- | ----------- | ---------------------------- |
+| No conformidad mayor | Ausencia o falla sistemática de un control que expone a un riesgo alto. | 10 días hábiles |
+| No conformidad menor | Incumplimiento puntual o parcial de un requisito. | 20 días hábiles |
+| Observación | Debilidad que podría convertirse en no conformidad. | Opcional |
+| Oportunidad de mejora | Recomendación para mejorar la eficacia o la eficiencia. | Opcional |
+
+## 5. Informe
+- El informe incluye: alcance, criterios, auditores, resumen ejecutivo, hallazgos con evidencia y conclusión sobre la eficacia de los controles evaluados.
+- Se entrega al área auditada y al Responsable de Ciberseguridad en un máximo de **10 días hábiles** después de la reunión de cierre, y se presenta en el Comité de Seguridad.
+- Los resultados pueden registrarse como *Assessment Results* OSCAL (ver [OSCAL – Assessment Results](/framework/oscal/ar-assessment-results)).
+
+## 6. Seguimiento
+- Las no conformidades se gestionan con el [Procedimiento de Acciones Correctivas y Mejora Continua](/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua).
+- El coordinador verifica el cierre de las acciones y su eficacia en la siguiente auditoría.
+
+## Evaluaciones Independientes Externas
+Además de las auditorías internas, la organización contrata periódicamente evaluaciones de terceros independientes (por ejemplo, pruebas de penetración anuales o auditorías de certificación) con un alcance definido según su perfil de riesgo.
+
+## Registros
+Programa anual, planes de auditoría, listas de verificación, evidencias, informes y seguimiento de acciones, conservados conforme a la Política de Documentos y Registros.
+
+## Monitoreo y Revisión
+Indicadores: cumplimiento del programa de auditoría y porcentaje de hallazgos cerrados a tiempo. Este procedimiento se revisa anualmente.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [COR-3 · Evaluación Independiente basada en Riesgos](/framework/cor/cor-3)
+- [COR-4 · Mejora Continua y Acciones Correctivas](/framework/cor/cor-4)
+{/* /kudo:controles */}

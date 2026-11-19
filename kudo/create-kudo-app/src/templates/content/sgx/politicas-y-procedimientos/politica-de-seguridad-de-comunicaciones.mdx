@@ -1,0 +1,50 @@
+---
+title: "Política de Seguridad de Comunicaciones"
+description: "Protección de comunicaciones y transferencias de información"
+codigo: "POL-CIF-03"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cif-3, cif-4, dia-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-03 | Política | CIF | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Asegurar la protección de la información durante su transmisión y transferencia, tanto interna como externa.
+
+## Alcance
+Aplica a todas las comunicaciones y transferencias de datos de la organización: correo electrónico, mensajería, videoconferencia, transferencia de archivos, APIs e integraciones con terceros.
+
+## Estándares
+
+- **Cifrado en tránsito:** toda transferencia usa protocolos cifrados reconocidos (TLS 1.2 o superior, SFTP, SSH, VPN). Se prohíben protocolos sin cifrar para información Interna, Confidencial o Restringida.
+- **Clasificación:** el canal se elige según la clasificación de la información, conforme a la Política de Clasificación y Manejo de la Información.
+- **Canales aprobados:** solo se usan las herramientas de correo, mensajería, almacenamiento y videoconferencia aprobadas por la organización. Se prohíbe enviar información Confidencial o Restringida a cuentas personales.
+- **Correo electrónico:**
+  - Los dominios de la organización publican registros SPF, DKIM y DMARC (con política `quarantine` o `reject`). Puedes verificarlos con el [Validador SPF](https://divisioncero.com/herramientas/validador-spf).
+  - La información Confidencial o Restringida que deba enviarse por correo se adjunta cifrada; la contraseña se comparte por un canal distinto.
+  - Los correos externos se identifican visualmente y los adjuntos y enlaces se analizan antes de su entrega.
+- **Transferencia de archivos:** se usan plataformas corporativas con control de acceso, vencimiento de enlaces y registro de descargas, o protocolos seguros (SFTP).
+- **Intercambio con terceros:** los intercambios recurrentes de información Confidencial con terceros se formalizan en acuerdos que definen canal, cifrado y responsables.
+- **Dispositivos móviles:** solo se accede a comunicaciones corporativas desde dispositivos que cumplen la Política de Seguridad de TI.
+
+## Monitoreo y Acción
+
+- **Supervisión:** Seguridad de la Información y TI revisan la configuración de los servicios de comunicación (incluidos los reportes DMARC) al menos trimestralmente.
+- **Incidentes:** cualquier envío indebido de información o sospecha de interceptación se reporta de inmediato y se gestiona según la Política de Gestión de Incidentes.
+- Esta política se revisa anualmente.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIF-3 · Ciberseguridad en la Red y Sistemas](/framework/cif/cif-3)
+- [CIF-4 · Cifrado de Información y Datos](/framework/cif/cif-4)
+- [DIA-3 · Ciclo de Vida de los Datos](/framework/dia/dia-3)
+{/* /kudo:controles */}

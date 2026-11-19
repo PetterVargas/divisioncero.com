@@ -1,0 +1,274 @@
+assessment-plan:
+  uuid: fe943603-e363-57f4-beca-b0e79fd0d731
+  metadata:
+    title: Plan de Evaluación (AP) – Auditoría interna Kudo
+    published: 2026-11-18T00:00:00Z
+    last-modified: 2026-11-18T00:00:00Z
+    version: 0.1.0
+    oscal-version: 1.2.3
+    remarks: "Programa de auditoría interna de referencia: evalúa los 36 controles Kudo, un dominio por mes, con revisión documental, entrevistas y pruebas técnicas, conforme al Procedimiento de Auditoría Interna del SGX. Ajusta fechas, alcance y auditores."
+    links:
+      - href: https://divisioncero.com/kudo/framework/oscal
+        rel: canonical
+        media-type: text/html
+        text: Kudo y OSCAL
+    roles:
+      - id: creator
+        title: Autor del contenido
+      - id: prepared-for
+        title: Organización destinataria
+      - id: assessor
+        title: Auditor interno
+    parties:
+      - uuid: ed04377f-1282-41a6-b653-477f0b38742c
+        type: organization
+        name: DivisionCero
+        links:
+          - href: https://divisioncero.com/kudo
+            rel: homepage
+      - uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+        type: organization
+        name: "[Nombre de tu organización]"
+        remarks: Reemplaza este valor por la razón social de la organización que adopta Kudo.
+    responsible-parties:
+      - role-id: creator
+        party-uuids:
+          - ed04377f-1282-41a6-b653-477f0b38742c
+      - role-id: prepared-for
+        party-uuids:
+          - e9de3acc-be4b-58c9-816f-25e260a9dcbe
+  import-ssp:
+    href: "#01974cd3-6aa5-5c1d-8131-808922726ef3"
+  local-definitions:
+    activities:
+      - uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+        title: Revisión documental
+        description: Revisar políticas, procedimientos, registros y configuraciones que evidencian el control.
+        props:
+          - name: method
+            value: EXAMINE
+        related-controls:
+          control-selections:
+            - include-all: {}
+      - uuid: af709827-56ca-57fa-83bf-875b48002241
+        title: Entrevista
+        description: Entrevistar a los responsables del control y a una muestra de usuarios.
+        props:
+          - name: method
+            value: INTERVIEW
+        related-controls:
+          control-selections:
+            - include-all: {}
+      - uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+        title: Prueba técnica
+        description: Verificar el funcionamiento del control mediante pruebas o muestreo.
+        props:
+          - name: method
+            value: TEST
+        related-controls:
+          control-selections:
+            - include-all: {}
+  terms-and-conditions:
+    parts:
+      - name: rules-of-engagement
+        title: Reglas de la evaluación
+        prose: Los auditores son independientes del proceso auditado. Las pruebas técnicas se acuerdan con el propietario del sistema y no deben afectar la operación. Los hallazgos se clasifican como no conformidad mayor, no conformidad menor, observación u oportunidad de mejora.
+  reviewed-controls:
+    description: Se evalúan todos los controles del perfil Kudo.
+    control-selections:
+      - include-all: {}
+  assessment-subjects:
+    - type: component
+      description: Todos los componentes del SSP.
+      include-all: {}
+  tasks:
+    - uuid: 3b541205-ccdf-59b9-992c-2b09f736dd3e
+      type: action
+      title: Auditoría del dominio ADR – Análisis, Detección y Respuesta de Ciberseguridad
+      description: Evaluar los controles ADR-1, ADR-2, ADR-3, ADR-4 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-01-01T00:00:00Z
+          end: 2027-01-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: 0162304f-cddf-525b-85be-b38f657f2fee
+      type: action
+      title: Auditoría del dominio CAP – Ciberseguridad en Aplicaciones
+      description: Evaluar los controles CAP-1, CAP-2 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-02-01T00:00:00Z
+          end: 2027-02-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: 513c29df-0c89-5bed-b63e-eb68423bb871
+      type: action
+      title: Auditoría del dominio CCN – Continuidad y Cambios del Negocio
+      description: Evaluar los controles CCN-1, CCN-2, CCN-3, CCN-4 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-03-01T00:00:00Z
+          end: 2027-03-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: a1c1176e-b25f-5895-b233-83800ec5ace1
+      type: action
+      title: Auditoría del dominio CIF – Ciberseguridad en Infraestructura
+      description: Evaluar los controles CIF-1, CIF-2, CIF-3, CIF-4, CIF-5 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-04-01T00:00:00Z
+          end: 2027-04-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: 195ee17f-8f54-5494-83c9-521fcd92c7d4
+      type: action
+      title: Auditoría del dominio CIP – Ciberseguridad en Identidad y Puntos Finales
+      description: Evaluar los controles CIP-1, CIP-2, CIP-3, CIP-4, CIP-5, CIP-6 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-05-01T00:00:00Z
+          end: 2027-05-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: ef1b9f0f-61cb-5688-9dbc-736b84c15acf
+      type: action
+      title: Auditoría del dominio COR – Coherencia Organizacional
+      description: Evaluar los controles COR-1, COR-2, COR-3, COR-4 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-06-01T00:00:00Z
+          end: 2027-06-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: af1297fb-ee4e-5725-b694-4a83103a72ff
+      type: action
+      title: Auditoría del dominio DIA – Ciberseguridad en Datos e Inteligencia Artificial
+      description: Evaluar los controles DIA-1, DIA-2, DIA-3, DIA-4, DIA-5, DIA-6, DIA-7 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-07-01T00:00:00Z
+          end: 2027-07-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+    - uuid: c81bae97-8555-5d72-ae93-7bb772e44ba3
+      type: action
+      title: Auditoría del dominio THP – Ciberseguridad en Talento Humano y Proveedores
+      description: Evaluar los controles THP-1, THP-2, THP-3, THP-4 con revisión documental, entrevistas y pruebas técnicas.
+      timing:
+        within-date-range:
+          start: 2027-08-01T00:00:00Z
+          end: 2027-08-15T00:00:00Z
+      associated-activities:
+        - activity-uuid: 88baad88-160c-5b7c-8eec-2f85aae8ed35
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: af709827-56ca-57fa-83bf-875b48002241
+          subjects:
+            - type: component
+              include-all: {}
+        - activity-uuid: fd2c2ee4-dd6c-5435-9f4b-7105174742e7
+          subjects:
+            - type: component
+              include-all: {}
+  back-matter:
+    resources:
+      - uuid: 01974cd3-6aa5-5c1d-8131-808922726ef3
+        title: Plan de Seguridad del Sistema – plantilla Kudo
+        description: SSP de referencia basado en el perfil Kudo.
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-ssp.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-ssp.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-ssp.yaml
+            media-type: application/oscal+yaml
+      - uuid: 242e1697-3681-58b1-900b-2954de79a7e0
+        title: Perfil Kudo – Línea base completa
+        description: Perfil OSCAL que selecciona todos los controles del catálogo Kudo.
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-profile.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-profile.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-profile.yaml
+            media-type: application/oscal+yaml

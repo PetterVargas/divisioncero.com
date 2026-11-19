@@ -1,6 +1,6 @@
 {
   "title": "Políticas y Procedimientos",
-  "description": "Políticas y procedimientos del SGSI",
+  "description": "Políticas y procedimientos del SGX",
   "root": true,
   "pages": [
     "index",
@@ -9,6 +9,8 @@
     "politica-de-documentos-y-registros",
     "politica-de-gestion-de-riesgos",
     "politica-de-gestion-de-cumplimiento",
+    "procedimiento-de-auditoria-interna",
+    "procedimiento-de-acciones-correctivas-y-mejora-continua",
     "---CIP - Identidad y Puntos Finales---",
     "politica-de-gestion-de-accesos",
     "politica-de-hardening",
@@ -18,8 +20,9 @@
     "politica-de-seguridad-de-comunicaciones",
     "politica-de-seguridad-ics-ot",
     "politica-de-servicios-en-la-nube",
-    "politicas-de-bakups-y-recuperacion",
+    "politica-de-backups-y-recuperacion",
     "politica-de-registro-y-monitoreo",
+    "politica-de-criptografia-y-gestion-de-claves",
     "---CAP - Ciberseguridad en Aplicaciones---",
     "politica-de-desarrollo-seguro",
     "---CCN - Continuidad y Cambios del Negocio---",
@@ -31,10 +34,14 @@
     "politica-de-gestion-de-cambios-y-configuraciones",
     "---ADR - Análisis, Detección y Respuesta---",
     "politica-de-gestion-de-incidentes",
+    "procedimiento-de-respuesta-a-incidentes",
+    "politica-de-gestion-de-vulnerabilidades-y-parches",
+    "politica-de-proteccion-contra-software-malicioso",
     "---THP - Talento Humano y Proveedores---",
     "politica-de-seguridad-de-recursos-humanos",
     "politica-de-gestion-de-concienciacion",
     "politica-de-gestion-de-proveedores",
+    "politica-de-trabajo-remoto-y-dispositivos-moviles",
     "---Documentos de Seguridad en Recursos Humanos---",
     "procedimiento-de-atraccion-de-talento",
     "clausulas-para-colaboradores",
@@ -49,6 +56,9 @@
     "plantilla-de-contrato-proveedores",
     "---DIA - Datos e Inteligencia Artificial---",
     "politica-de-privacidad",
-    "politica-de-gestion-de-activos"
+    "politica-de-gestion-de-activos",
+    "politica-de-clasificacion-y-manejo-de-la-informacion",
+    "politica-de-retencion-y-eliminacion-de-datos",
+    "politica-de-uso-aceptable-de-inteligencia-artificial"
   ]
 }

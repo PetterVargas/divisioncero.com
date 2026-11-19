@@ -1,0 +1,64 @@
+---
+title: "Política de Trabajo Remoto y Dispositivos Móviles"
+description: "Requisitos de seguridad para el teletrabajo, el trabajo híbrido y el uso de dispositivos personales (BYOD)"
+codigo: "POL-THP-04"
+tipo: "politica"
+dominio: "thp"
+propietario: "Responsable de TI"
+version: "1.0"
+revision: "Anual"
+controles: [thp-2, cip-5, cip-6]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-THP-04 | Política | THP | 1.0 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Garantizar que los colaboradores que trabajan fuera de las instalaciones, o que usan dispositivos móviles o personales, tengan el mismo nivel de protección que en las oficinas de la organización.
+
+## Alcance
+Aplica a todos los colaboradores, contratistas y terceros que acceden a información o sistemas de la organización desde fuera de sus instalaciones (casa, viajes, espacios de *coworking*) o desde dispositivos móviles, sean corporativos o personales.
+
+## Requisitos de Acceso
+- El acceso a los recursos corporativos se realiza mediante el IdP con **MFA obligatoria**.
+- Las aplicaciones internas se acceden mediante VPN corporativa o una solución de acceso de confianza cero (ZTNA).
+- Se prohíbe acceder a información Confidencial o Restringida desde equipos públicos o compartidos (por ejemplo, cibercafés o computadores de hoteles).
+
+## Dispositivos Corporativos
+- Cumplen los requisitos mínimos de la [Política de Seguridad de TI](/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it): gestión centralizada (MDM), cifrado de disco, EDR, actualizaciones y bloqueo automático.
+- Solo los usa el colaborador asignado; no se prestan a familiares ni a terceros.
+
+## Dispositivos Personales (BYOD)
+- Solo se permiten si la organización lo autoriza para el cargo.
+- El acceso se limita a aplicaciones gestionadas (por ejemplo, correo y mensajería corporativa mediante perfiles de trabajo o MAM), que permitan borrar los datos corporativos sin afectar los personales.
+- Requisitos mínimos: sistema operativo con soporte vigente, bloqueo de pantalla, cifrado y sin *root* ni *jailbreak*.
+- Se prohíbe descargar información Confidencial o Restringida al almacenamiento personal del dispositivo.
+
+## Entorno de Trabajo
+- Trabajar en un lugar donde las conversaciones y las pantallas no queden expuestas a terceros; usar filtros de privacidad en lugares públicos.
+- Proteger la red doméstica: cambiar la contraseña predeterminada del router, usar WPA2/WPA3 y mantener el firmware actualizado.
+- En redes Wi-Fi públicas, conectarse siempre mediante la VPN corporativa o compartir datos desde el móvil.
+- Aplicar escritorio y pantalla limpios; no imprimir información Confidencial fuera de las instalaciones salvo autorización.
+
+## Viajes
+- Mantener los equipos bajo custodia y nunca dejarlos en vehículos o equipaje facturado.
+- Para viajes a países de alto riesgo, consultar a Seguridad de la Información (pueden asignarse equipos con información mínima).
+
+## Pérdida o Robo
+Reportar de inmediato la pérdida o robo de cualquier dispositivo que contenga o acceda a información de la organización, para su bloqueo y borrado remoto conforme a la Política de Gestión de Incidentes.
+
+## Monitoreo y Revisión
+- Revisión mensual del cumplimiento de los dispositivos en la consola de gestión.
+- Los accesos remotos se revocan al terminar la relación laboral o contractual.
+- Revisión anual de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [THP-2 · Trabajo Remoto](/framework/thp/thp-2)
+- [CIP-5 · Inventario de Puntos Finales](/framework/cip/cip-5)
+- [CIP-6 · Ciberseguridad en Puntos Finales](/framework/cip/cip-6)
+{/* /kudo:controles */}

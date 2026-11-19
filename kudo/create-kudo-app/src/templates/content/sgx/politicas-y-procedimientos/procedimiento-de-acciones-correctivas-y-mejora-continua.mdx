@@ -1,0 +1,76 @@
+---
+title: "Procedimiento de Acciones Correctivas y Mejora Continua"
+description: "Gestión de no conformidades, análisis de causa raíz, planes de acción y verificación de eficacia"
+codigo: "PRO-COR-02"
+tipo: "procedimiento"
+dominio: "cor"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.0"
+revision: "Anual"
+controles: [cor-4]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| PRO-COR-02 | Procedimiento | COR | 1.0 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Definir cómo se registran, analizan, corrigen y cierran las no conformidades, debilidades y oportunidades de mejora del SGX, verificando que las acciones tomadas eliminen la causa raíz y no solo el síntoma.
+
+## Alcance
+Aplica a los hallazgos provenientes de auditorías internas y externas, incidentes de seguridad, evaluaciones de riesgo, pruebas de penetración, ejercicios de continuidad, revisiones por la dirección, quejas de clientes y reportes de colaboradores.
+
+## Roles y Responsabilidades
+- **Responsable de Ciberseguridad:** mantiene el registro de acciones y reporta su estado.
+- **Propietario de la acción:** analiza la causa, ejecuta el plan y aporta la evidencia de cierre.
+- **Comité de Seguridad:** prioriza, da seguimiento y aprueba ampliaciones de plazo.
+
+## Procedimiento
+
+### 1. Registro
+Cada hallazgo se registra con: identificador, origen, descripción, control Kudo afectado, severidad, propietario y fecha de detección.
+
+### 2. Contención Inmediata
+Si el hallazgo expone a un riesgo activo, se aplica una acción de contención inmediata (por ejemplo, deshabilitar un acceso o aislar un sistema) antes del análisis.
+
+### 3. Análisis de Causa Raíz
+Para las no conformidades y los incidentes de nivel 2 o superior, el propietario identifica la causa raíz con una técnica sencilla:
+- **5 porqués:** preguntar "¿por qué?" sucesivamente hasta llegar a una causa sobre la que se pueda actuar.
+- **Diagrama de Ishikawa:** analizar causas por categorías (personas, procesos, tecnología, proveedores, entorno).
+
+### 4. Plan de Acción
+| Severidad del hallazgo | Plazo máximo para implementar |
+| ---------------------- | ----------------------------- |
+| Crítica / no conformidad mayor | 30 días |
+| Alta | 60 días |
+| Media / no conformidad menor | 90 días |
+| Baja / oportunidad de mejora | Según el plan anual |
+
+Cada acción tiene responsable, fecha compromiso y el criterio con el que se verificará su eficacia. El plan puede gestionarse como un *Plan of Action and Milestones* OSCAL (ver [OSCAL – POA&M](/framework/oscal/poam-plan-of-actions-and-milestones)).
+
+### 5. Implementación y Seguimiento
+- El propietario ejecuta las acciones y actualiza su estado.
+- Las acciones vencidas se escalan al Comité de Seguridad; las ampliaciones de plazo deben justificarse y aprobarse.
+
+### 6. Verificación de Eficacia y Cierre
+- Transcurrido un tiempo prudente, se verifica que el problema no se repite y que el control funciona (por ejemplo, con una nueva prueba o en la siguiente auditoría).
+- Si la acción no fue eficaz, se reabre el análisis de causa raíz.
+- Se cierra la acción con la evidencia correspondiente.
+
+### 7. Mejora Continua
+- Las lecciones aprendidas se incorporan a las políticas, procedimientos, capacitaciones y a la evaluación de riesgos.
+- Las tendencias (hallazgos repetidos por dominio o por causa) se presentan en la revisión por la dirección.
+
+## Registros
+Registro de acciones correctivas (o POA&M), análisis de causa raíz y evidencias de cierre, conservados conforme a la Política de Documentos y Registros.
+
+## Monitoreo y Revisión
+Indicadores: acciones abiertas por severidad, porcentaje de acciones cerradas a tiempo y porcentaje de hallazgos repetidos. Este procedimiento se revisa anualmente.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [COR-4 · Mejora Continua y Acciones Correctivas](/framework/cor/cor-4)
+{/* /kudo:controles */}

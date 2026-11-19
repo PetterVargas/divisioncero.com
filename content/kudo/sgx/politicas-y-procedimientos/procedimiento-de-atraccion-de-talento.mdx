@@ -1,7 +1,20 @@
 ---
 title: "Procedimiento de Atracción de Talento"
 description: "Ciclo completo de vinculación: validación de candidatos, estudios de seguridad, contratación y aprovisionamiento de accesos"
+codigo: "PRO-THP-01"
+tipo: "procedimiento"
+dominio: "thp"
+propietario: "Atracción de Talento"
+version: "1.0"
+revision: "Anual"
+controles: [cip-1, cip-4, thp-1]
 ---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| PRO-THP-01 | Procedimiento | THP | 1.0 | Atracción de Talento | Anual |
+{/* /kudo:control-documento */}
 
 <ThemedImage
   light="/kudo/sgx/politicas-y-procedimientos/draw-ciberseguridad-en-recursos-humanos-light.png"
@@ -48,7 +61,7 @@ Una vez superados los estudios, se formaliza el **Contrato Laboral**, que incorp
 - **Primer acceso automático en IdP:** A partir del registro en RRHH y la matriz de roles, Tecnología aprovisiona automáticamente las credenciales del colaborador en el proveedor de identidad.
 - **Primer acceso seguro:** El colaborador activa sus credenciales siguiendo el procedimiento de primer acceso seguro (cambio de contraseña inicial, registro de doble factor) antes de su charla de onboarding.
 
-## 7. Desaprovisionamiento en Outboarding
+## 7. Desaprovisionamiento en el Proceso de Salida (Offboarding)
 Al finalizar la relación laboral, por cualquier causa, el sistema de RRHH notifica al IdP para ejecutar el **desaprovisionamiento automático** de todas las credenciales y accesos del colaborador, conforme a la [Política de Gestión de Accesos](/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos).
 
 ## Documentos Relacionados
@@ -60,3 +73,11 @@ Al finalizar la relación laboral, por cualquier causa, el sistema de RRHH notif
 
 ## Monitoreo y Revisión
 Atracción de Talento reporta trimestralmente a Seguridad de la Información el estado de los estudios pendientes y las vinculaciones completadas. El procedimiento se revisa anualmente o ante cambios regulatorios o incidentes relevantes durante la vinculación o el egreso de personal.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIP-1 · Inventario de Identidad](/kudo/framework/cip/cip-1)
+- [CIP-4 · Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades](/kudo/framework/cip/cip-4)
+- [THP-1 · Capacitación de Ciberseguridad](/kudo/framework/thp/thp-1)
+{/* /kudo:controles */}

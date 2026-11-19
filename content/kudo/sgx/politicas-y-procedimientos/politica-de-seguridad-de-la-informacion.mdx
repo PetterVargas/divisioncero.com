@@ -1,65 +1,94 @@
 ---
 title: "Política de Seguridad de la Información"
 description: "Protección de información, activos y reputación organizacional"
+codigo: "POL-COR-01"
+tipo: "politica"
+dominio: "cor"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.1"
+revision: "Anual"
+controles: [cor-1, cor-2, cor-4]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-COR-01 | Política | COR | 1.1 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Establecer estándares y directrices para proteger la información, activos y reputación de la organización, garantizando cumplimiento regulatorio, contractual y buenas prácticas de seguridad.
+Establecer los principios, responsabilidades y directrices para proteger la información, los activos y la reputación de la organización, garantizando el cumplimiento legal, regulatorio y contractual y la aplicación de buenas prácticas de seguridad. Es la política marco del SGSI: las demás políticas y procedimientos la desarrollan.
 
 ## Alcance
-Aplica a todas las personas, procesos y tecnologías involucradas en el desarrollo, mantenimiento y entrega de software y servicios tecnológicos de la organización (Sitio, SaaS, Consultoría, Soporte).
+Aplica a todas las personas (colaboradores, contratistas, practicantes y terceros), procesos y tecnologías que intervienen en el desarrollo, mantenimiento y entrega de los productos y servicios de la organización, en sus instalaciones, en trabajo remoto y en servicios de nube.
+
+## Objetivos de Seguridad
+- Proteger la confidencialidad, integridad y disponibilidad de la información según su clasificación.
+- Cumplir las obligaciones legales, regulatorias y contractuales aplicables.
+- Gestionar los riesgos de ciberseguridad dentro del apetito de riesgo aprobado por la gerencia.
+- Detectar, responder y aprender de los incidentes de seguridad.
+- Mejorar continuamente el SGSI con indicadores medibles, revisados al menos una vez al año.
 
 ## Liderazgo y Gobernanza
-- La gerencia respalda activamente la seguridad de la información, define roles y responsabilidades y asegura recursos y capacitación adecuados.
-- La Junta Directiva supervisa de manera independiente los controles y políticas, incluyendo la participación de asesores externos si es necesario.
-- Todos los miembros del personal y partes interesadas deben cumplir la política; las violaciones generan acciones disciplinarias proporcionales.
+- La gerencia aprueba esta política, respalda activamente la seguridad de la información, asigna recursos y define roles y responsabilidades.
+- Se designa un **Responsable de Ciberseguridad (CISO o equivalente)** con autoridad para coordinar el SGSI y reportar directamente a la gerencia.
+- Un **Comité de Seguridad** (gerencia, Seguridad de la Información, TI, Legal y RRHH) se reúne al menos trimestralmente para revisar riesgos, incidentes, indicadores y el avance del plan de seguridad.
+- La Junta Directiva, cuando exista, supervisa de manera independiente el desempeño del SGSI y puede apoyarse en asesores externos.
 
 ## Roles y Responsabilidades
-- Roles claros y documentados en: Gerencia, Seguridad de la Información, TI, Finanzas, RH y Desarrollo.
-- Segregación de funciones para garantizar independencia en actividades críticas.
-- Capacitación continua y comunicación de expectativas de seguridad según cada rol.
+- **Gerencia:** aprueba políticas, apetito de riesgo, excepciones de alto impacto y recursos.
+- **Responsable de Ciberseguridad:** mantiene el SGSI, las políticas y el plan de tratamiento de riesgos; reporta el estado de seguridad.
+- **TI y Desarrollo:** implementan y operan los controles técnicos.
+- **Propietarios de información y de sistemas:** clasifican sus activos, aprueban accesos y aceptan riesgos residuales de su ámbito.
+- **RRHH y Legal:** incorporan la seguridad en el ciclo de vida del colaborador y en los contratos.
+- **Todos los colaboradores:** cumplen las políticas y reportan incidentes y debilidades.
+- Se aplica segregación de funciones en actividades críticas (por ejemplo, quien aprueba un cambio no es quien lo implementa).
 
 ## Cumplimiento y Contratos
-- Todos los colaboradores y contratistas deben firmar cláusulas de confidencialidad y propiedad intelectual.
-- Las responsabilidades de seguridad vigentes después de la terminación o cambio de empleo se definen y comunican formalmente.
-- Se garantiza educación y capacitación continua en seguridad de la información.
+- Todos los colaboradores y contratistas firman cláusulas de confidencialidad y propiedad intelectual antes de acceder a la información.
+- Las responsabilidades de seguridad que continúan después de la terminación o el cambio de empleo se definen y comunican formalmente.
+- Los contratos con proveedores incorporan los requisitos de seguridad definidos en la Política de Gestión de Proveedores.
 
-## Gestión de Riesgos y Ciberseguridad
-- Identificar, evaluar, tratar y monitorear riesgos de información.
-- Integrar la gestión de riesgos de ciberseguridad en la toma de decisiones estratégicas, operacionales y de proyecto.
-- Documentar riesgos, medidas de mitigación y riesgo residual.
-- Revisión periódica de políticas, controles y procesos frente a cambios legales, regulatorios y amenazas emergentes.
+## Gestión de Riesgos de Ciberseguridad
+- Identificar, evaluar, tratar y monitorear los riesgos de la información conforme a la [Política de Gestión de Riesgos](/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos).
+- Integrar la gestión de riesgos en las decisiones estratégicas, operativas y de proyectos.
+- Documentar riesgos, tratamientos y riesgo residual aceptado por su propietario.
 
-## Operación del SGSI (Sistema de Gestión de Seguridad de la Información)
-- Mantener políticas, estándares y procedimientos documentados, actualizados y accesibles.
-- Capacitar al personal y evaluar competencias para cumplir con sus roles.
-- Documentar excepciones y desviaciones con aprobación de Gerencia y Equipo de Seguridad.
-- Revisar periódicamente las actividades de control y ajustar según necesidades del entorno de seguridad.
+## Operación del SGSI
+- Mantener las políticas, estándares y procedimientos documentados, versionados, aprobados y accesibles para quien los necesita.
+- Revisar cada política al menos una vez al año o ante cambios significativos (legales, tecnológicos, organizacionales o tras un incidente relevante).
+- Documentar los procedimientos de actividades críticas, nuevas o poco frecuentes, con responsables, configuraciones, respaldo, monitoreo y contactos de soporte.
+- Capacitar al personal y evaluar sus competencias según el rol.
 
-## Procedimientos Operativos
-- Documentar procedimientos para actividades críticas, nuevas o poco frecuentes.
-- Especificar responsables, configuraciones, manejo de información, respaldo, monitoreo, mantenimiento y contactos de soporte.
-- Revisar y actualizar procedimientos según cambios significativos.
+## Excepciones
+- Toda excepción a una política se solicita por escrito, con justificación, riesgo asociado, controles compensatorios y fecha de vencimiento (máximo 12 meses).
+- Las excepciones las aprueba el Responsable de Ciberseguridad; las de riesgo alto, la gerencia. Se registran y revisan antes de su vencimiento.
 
 ## Contacto con Autoridades y Partes Interesadas
-- Informar a Gerencia y autoridades en caso de incidentes que violen normas legales, regulatorias o contractuales.
-- Mantener comunicación regular con clientes, auditores, socios, medios y personal interno sobre seguridad de la información.
-- Considerar impacto de terceros en estructuras, roles y responsabilidades.
+- Mantener actualizado el listado de autoridades (CSIRT nacional, autoridad de protección de datos, reguladores sectoriales, policía) y de grupos de interés especial en ciberseguridad.
+- Informar a la gerencia y, cuando la ley lo exija, a las autoridades sobre incidentes que vulneren normas legales, regulatorias o contractuales.
+- Mantener comunicación con clientes, auditores y socios sobre seguridad de la información a través de los canales definidos.
 
 ## Legislación y Regulaciones
-- Cumplir con GDPR, CCPA y leyes locales equivalentes de protección de datos.
-- Identificar y cumplir regulaciones específicas de la industria.
-- Incorporar cambios legales y regulatorios al SGSI para minimizar riesgos legales.
+- Cumplir la legislación de protección de datos aplicable en cada país donde opera la organización (por ejemplo: Ley 1581 de 2012 en Colombia, LGPD en Brasil, LFPDPPP en México, Ley 29733 en Perú, Ley 25.326 en Argentina, Ley 21.719 en Chile) y, cuando aplique, el GDPR u otras normas extranjeras.
+- Identificar y cumplir las regulaciones específicas del sector (financiero, salud, telecomunicaciones, etc.) conforme a la [Política de Gestión de Cumplimiento](/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento).
 
 ## Reporte y Canales Confidenciales
-- Reuniones periódicas para revisar riesgos, desempeño de controles y actualizar documentos.
-- Canales confidenciales para reportar violaciones o problemas de seguridad, garantizando anonimato o confidencialidad.
+- Cualquier persona puede reportar incidentes, debilidades o violaciones de política al equipo de Seguridad de la Información o mediante un canal confidencial que garantice la no represalia.
+- Los reportes se registran, se analizan y se responden en un plazo razonable.
 
-## Monitoreo y Revisión
-- Auditorías internas y revisiones periódicas del SGSI para asegurar cumplimiento, efectividad y mejora continua.
-- Identificar áreas de mejora, implementar acciones correctivas y preventivas.
-- La Gerencia recibe actualizaciones regulares sobre desempeño y acciones correctivas para garantizar la efectividad continua del SGSI.
+## Incumplimiento
+El incumplimiento de esta política o de las que la desarrollan puede dar lugar a acciones disciplinarias, contractuales o legales, proporcionales a la gravedad y conforme al proceso de sanciones de la Política de Seguridad de Recursos Humanos.
 
-## Mejora Continua
-- Evaluar regularmente la efectividad del SGSI y realizar ajustes para mejorar la seguridad de la información.
-- Documentar hallazgos, acciones y resultados para aprendizaje organizacional y trazabilidad.
+## Monitoreo, Revisión y Mejora Continua
+- Ejecutar auditorías internas del SGSI conforme al [Procedimiento de Auditoría Interna](/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna).
+- Gestionar los hallazgos con el [Procedimiento de Acciones Correctivas y Mejora Continua](/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua).
+- La gerencia realiza una revisión anual del SGSI (riesgos, incidentes, auditorías, indicadores y recursos) y deja constancia de las decisiones tomadas.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/kudo/framework/cor/cor-1)
+- [COR-2 · Mapeo de Cumplimiento Regulatorio](/kudo/framework/cor/cor-2)
+- [COR-4 · Mejora Continua y Acciones Correctivas](/kudo/framework/cor/cor-4)
+{/* /kudo:controles */}

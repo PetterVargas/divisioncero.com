@@ -1,0 +1,58 @@
+---
+title: System Security Plan (SSP)
+description: Plantilla de Plan de Seguridad del Sistema que documenta la implementación de los controles Kudo según modelo OSCAL
+---
+
+El **System Security Plan (SSP)** describe un sistema concreto (su alcance, información, usuarios y componentes) y **cómo implementa cada control** del perfil. Kudo publica una plantilla lista para completar.
+
+## Plan de Seguridad del Sistema – Plantilla Kudo
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-ssp.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-ssp.json) |
+| xml | [kudo-ssp.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-ssp.xml) |
+| yaml | [kudo-ssp.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-ssp.yaml) |
+| toon | [kudo-ssp.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-ssp.toon) |
+
+## Contenido
+
+| Sección | Contenido de la plantilla |
+| ------- | ------------------------- |
+| `import-profile` | [Perfil Kudo – Línea base completa](/framework/oscal/profile) |
+| `system-characteristics` | Sistema genérico "[Plataforma de la organización]", nivel de sensibilidad `moderate`, dos tipos de información (datos de clientes e información interna), límite de autorización a completar |
+| `system-implementation` | Usuarios (colaboradores y administradores) y 46 componentes: el sistema (`this-system`) y los 45 documentos del SGX |
+| `control-implementation` | 36 requisitos implementados (uno por control), cada uno con el sistema y los documentos SGX que lo desarrollan como `by-components`, en estado `planned` |
+
+## Cómo completarlo
+
+1. **Alcance:** reemplaza los valores entre corchetes de `system-characteristics` y describe el `authorization-boundary` (sedes, aplicaciones, cuentas de nube y proveedores).
+2. **Información:** ajusta los `information-types` y sus niveles de impacto según tu [clasificación de la información](/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion).
+3. **Componentes técnicos:** agrega tu IdP, EDR, SIEM, nube, etc. (o impórtalos desde un Component Definition).
+4. **Implementación:** para cada control, describe en el componente `this-system` *quién, cómo y con qué evidencia* se implementa, y actualiza `implementation-status` a `partial`, `implemented` o `not-applicable`.
+5. **Versiona** el SSP cada vez que cambie el sistema o el estado de un control.
+
+```json title="Un requisito implementado (extracto)"
+{
+  "control-id": "cip-2",
+  "by-components": [
+    {
+      "component-uuid": "<uuid-this-system>",
+      "description": "[Describe cómo la organización implementa CIP-2 …]",
+      "implementation-status": { "state": "planned" }
+    },
+    {
+      "component-uuid": "<uuid-politica-de-gestion-de-accesos>",
+      "description": "Política de Gestión de Accesos (POL-CIP-01) define las directrices para este control.",
+      "implementation-status": { "state": "planned" }
+    }
+  ]
+}
+```
+
+## Validación
+
+```bash
+oscal-cli ssp validate kudo-ssp.json
+```

@@ -1,0 +1,70 @@
+---
+title: "Política de Backups y Recuperación"
+description: "Respaldo y recuperación de información crítica del negocio"
+codigo: "POL-CIF-06"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [ccn-4, dia-4]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-06 | Política | CIF | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Asegurar que los datos, sistemas y configuraciones estén protegidos contra pérdidas, corrupción, ransomware e interrupciones, garantizando que puedan recuperarse dentro de los tiempos acordados con el negocio.
+
+## Alcance
+Aplica a todos los sistemas, datos y configuraciones de la organización (servidores, estaciones de trabajo críticas, bases de datos, repositorios de código, servicios en la nube y SaaS) y al personal, proveedores y consultores que los administran.
+
+## Objetivos
+- Respaldar los datos, sistemas y configuraciones de forma regular y segura.
+- Recuperar la información dentro del RPO y el RTO definidos en el BIA.
+- Comprobar periódicamente que los respaldos se pueden restaurar.
+
+## Estándares
+
+**Regla 3-2-1-1**
+- Mantener al menos **3 copias** de los datos críticos, en **2 medios o servicios distintos**, con **1 copia fuera del sitio o de la cuenta principal** y **1 copia inmutable o desconectada** (*air-gapped*), protegida frente a ransomware.
+
+**Frecuencia y Retención**
+| Criticidad (según BIA) | Frecuencia mínima | Retención mínima |
+| ---------------------- | ----------------- | ---------------- |
+| Crítica | Diaria (o continua según el RPO) | 35 días |
+| Alta | Diaria | 30 días |
+| Media / Baja | Semanal | 30 días |
+
+- El tipo de respaldo (completo, incremental o diferencial) se define según el volumen y el RPO.
+- La retención de largo plazo de los registros se rige por la [Política de Retención y Eliminación de Datos](/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos); los respaldos no sustituyen el archivo de registros.
+
+**Protección de los Respaldos**
+- Cifrado en reposo y en tránsito conforme a la Política de Criptografía y Gestión de Claves.
+- Acceso restringido a personal autorizado, con MFA y separado de las credenciales de producción.
+- Monitoreo de fallos de respaldo con alerta al responsable.
+
+**Pruebas de Restauración**
+- Pruebas de restauración de los sistemas críticos al menos **trimestralmente** y de todos los demás al menos **una vez al año**.
+- Cada prueba documenta el alcance, el tiempo real de recuperación frente al RTO, los problemas encontrados y las acciones correctivas.
+- Los resultados se reportan al Responsable de TI y a Seguridad de la Información.
+
+**Procedimientos Documentados**
+- Para cada sistema crítico se documenta: qué se respalda, frecuencia, herramienta, ubicación de las copias, responsables y pasos de recuperación.
+
+**Continuidad del Negocio**
+- Las estrategias de respaldo y recuperación se integran con el [Plan de Continuidad del Negocio](/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio) y el [BIA](/sgx/politicas-y-procedimientos/procedimiento-de-analisis-de-impacto-en-el-negocio).
+
+## Monitoreo y Revisión
+- Revisión mensual del estado de los trabajos de respaldo.
+- Revisión de esta política al menos una vez al año o tras cambios significativos en TI o en los resultados del BIA.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CCN-4 · Continuidad del Negocio y Recuperación ante Desastres](/framework/ccn/ccn-4)
+- [DIA-4 · Ciberseguridad en Información y Datos](/framework/dia/dia-4)
+{/* /kudo:controles */}

@@ -1,0 +1,109 @@
+---
+title: "Política de Gestión de Accesos"
+description: "Control y gestión de acceso a sistemas y recursos de información"
+codigo: "POL-CIP-01"
+tipo: "politica"
+dominio: "cip"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cip-1, cip-2, cip-3, cip-4]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIP-01 | Política | CIP | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+
+Establecer cómo la organización controla el acceso a sistemas e información, gestionando el ciclo de vida completo de las identidades y garantizando autenticación segura, asignación y revisión periódica de permisos y uso responsable de las herramientas privilegiadas.
+
+## Alcance
+
+Aplica a todas las identidades humanas y no humanas (cuentas de servicio, API keys, tokens), sistemas, aplicaciones, programas utilitarios y accesos temporales de la organización, incluidos los de terceros.
+
+## Principios Clave
+
+- **Mínimo privilegio y necesidad de conocer:** cada identidad recibe solo los accesos que requiere su función.
+- **Acceso basado en roles:** los permisos se asignan mediante perfiles definidos en la Matriz de Control de Acceso.
+- **Segregación de funciones** en actividades críticas.
+- **Identidad única:** no se permiten cuentas compartidas; las excepciones (cuentas de emergencia) se custodian y registran.
+- **Trazabilidad:** todos los accesos y cambios quedan registrados.
+
+## Roles y Responsabilidades
+
+- **Propietarios de sistemas:** aprueban accesos, revisan periódicamente los permisos y reportan discrepancias.
+- **TI:** implementa los accesos, mantiene la Matriz de Control de Acceso y monitorea los sistemas y programas utilitarios.
+- **Gerencia:** valida cambios estratégicos y autoriza los accesos privilegiados.
+- **Usuarios:** protegen sus credenciales, cumplen esta política y reportan incidentes.
+
+## Gestión de Cuentas e Identidades
+
+### Inventario de Identidades
+- Se mantiene un inventario de identidades humanas y no humanas, integrado con el proveedor de identidad (IdP) y con el sistema de RRHH.
+- Cada cuenta de servicio o credencial técnica tiene un propietario responsable.
+
+### Aprovisionamiento (Joiner)
+- El acceso se solicita mediante ticket, con justificación, y se aprueba según la Matriz de Control de Acceso.
+- Siempre que sea posible, el aprovisionamiento se automatiza desde el registro en RRHH hacia el IdP.
+- Los accesos de terceros requieren acuerdo de confidencialidad, fecha de vencimiento y un responsable interno.
+- Quien aprueba un acceso no es quien lo implementa.
+
+### Cambios de Rol (Mover)
+- Ante un cambio de cargo se revisan los accesos: se otorgan los del nuevo rol y se retiran los que ya no corresponden en un plazo máximo de **5 días hábiles**.
+
+### Desaprovisionamiento (Leaver)
+- Al terminar la relación laboral o contractual, los accesos se revocan **el mismo día** (de inmediato si la salida no es voluntaria).
+- Los accesos temporales se configuran con vencimiento automático.
+- Las identidades duplicadas, huérfanas o inactivas por más de **90 días** se deshabilitan.
+
+## Estándares de Autenticación
+
+- **Autenticación centralizada (SSO)** a través del IdP corporativo siempre que el sistema lo permita.
+- **MFA obligatoria** para todos los accesos remotos, administrativos, a correo y a sistemas críticos. Para cuentas privilegiadas se prefieren factores resistentes a phishing (llaves FIDO2/passkeys).
+- **Contraseñas:** longitud mínima de 12 caracteres (16 para cuentas privilegiadas), verificación contra listas de contraseñas comprometidas y cambio obligatorio solo ante sospecha de compromiso. Se recomienda el uso de un gestor de contraseñas corporativo.
+- Bloqueo o retardo progresivo tras **5 intentos fallidos** consecutivos.
+- Validación completa de credenciales antes de mostrar información sensible y notificación de inicios de sesión inusuales.
+- Duración máxima de sesión definida por aplicación y cierre automático por inactividad.
+- Los secretos de aplicaciones (API keys, tokens) se almacenan en un gestor de secretos y se rotan al menos cada **180 días** o ante sospecha de exposición.
+
+## Accesos Privilegiados y Programas Utilitarios
+
+- Las cuentas privilegiadas son nominales, separadas de la cuenta de uso diario y limitadas a un mínimo de personas autorizadas.
+- Se privilegia el acceso **just-in-time** (elevación temporal con aprobación) sobre los privilegios permanentes.
+- Las cuentas de emergencia (*break-glass*) se custodian de forma segura, se usan solo ante contingencias y cada uso se revisa.
+- Los programas utilitarios con capacidad de eludir controles se restringen, se registra su uso y se eliminan cuando no son necesarios.
+
+## Revisión de Accesos
+
+| Tipo de acceso | Frecuencia de revisión |
+| -------------- | ---------------------- |
+| Cuentas privilegiadas y de administración | Trimestral |
+| Sistemas críticos y con datos confidenciales | Semestral |
+| Resto de sistemas | Anual |
+| Cuentas de terceros y de servicio | Semestral |
+
+Los propietarios de sistemas certifican el resultado de cada revisión; los accesos no justificados se retiran.
+
+## Cambios a la Matriz de Control de Acceso
+
+- Los cambios requieren aprobación del propietario del sistema y de TI, y de la gerencia cuando afecten accesos privilegiados.
+- Se documentan los cambios y sus razones.
+- TI implementa los cambios y mantiene la matriz actualizada.
+
+## Monitoreo y Auditoría
+
+- Registro centralizado de autenticaciones, cambios de permisos y uso de cuentas privilegiadas, conforme a la Política de Registro y Monitoreo.
+- Alertas ante patrones anómalos (accesos fuera de horario, desde ubicaciones inusuales o múltiples fallos).
+- Auditorías periódicas de accesos, identidades y programas utilitarios; esta política se revisa anualmente.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIP-1 · Inventario de Identidad](/framework/cip/cip-1)
+- [CIP-2 · Ciberseguridad en Autenticación](/framework/cip/cip-2)
+- [CIP-3 · Ciberseguridad en Autorización](/framework/cip/cip-3)
+- [CIP-4 · Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades](/framework/cip/cip-4)
+{/* /kudo:controles */}

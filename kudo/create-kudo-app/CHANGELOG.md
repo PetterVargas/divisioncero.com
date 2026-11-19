@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-18
+
+### Added
+- **IA local:** el proyecto generado incluye `.mcp.json` con el servidor MCP de Kudo (`@divisioncero/kudo-mcp`), 8 agentes de ciberseguridad en `.claude/agents/` y 16 skills en `.claude/skills/`. Se puede omitir con `--no-ai`.
+- Scripts `mcp` y `mcp:http` en el `package.json` del proyecto.
+- Opción `-y, --yes` para crear el proyecto sin preguntas.
+- `scripts/sync-templates.mjs`: sincroniza las políticas del SGX, los agentes y las skills desde el sitio de Kudo antes de compilar.
+- Pruebas del CLI (`pnpm test`).
+
+### Changed
+- El SGX de la plantilla pasa de 26 a 45 documentos (políticas revisadas y 10 documentos nuevos), en `.mdx`, con bloque de control del documento y controles Kudo relacionados.
+- Librerías de la plantilla alineadas con el sitio de Kudo: Next.js 16.4.6, React 19.3, Fumadocs 16.19 / fumadocs-mdx 15.6, Mermaid 12, Tailwind CSS 4.3.5, TypeScript 7.
+- Búsqueda migrada de `@orama/orama` a `zbsearch` (requerido por Fumadocs 16.19).
+- Dependencias del CLI: commander 15, @clack/prompts 1.8, execa 10, ora 10.
+- La versión del CLI se lee del `package.json` (antes estaba fija en 0.1.0).
+
+### Fixed
+- El `.gitignore` del proyecto generado no se publicaba en npm; ahora se guarda como `gitignore` y se renombra al crear el proyecto.
+
 ## [0.3.0] - 2026-06-20
 
 ### Added

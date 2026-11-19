@@ -1,0 +1,3858 @@
+{
+  "component-definition": {
+    "uuid": "9e2f1aa1-4189-54da-a489-33d60d123c2d",
+    "metadata": {
+      "title": "Definición de Componentes Kudo – SGX",
+      "published": "2026-11-18T00:00:00Z",
+      "last-modified": "2026-11-18T00:00:00Z",
+      "version": "0.1.0",
+      "oscal-version": "1.2.3",
+      "remarks": "Cada componente es un documento del SGX de Kudo (45 políticas, procedimientos, planes y plantillas) con la lista de controles Kudo que ayuda a implementar. Agrega aquí tus componentes técnicos (IdP, EDR, SIEM, nube) para completar la trazabilidad.",
+      "links": [
+        {
+          "href": "https://divisioncero.com/kudo/framework/oscal",
+          "rel": "canonical",
+          "media-type": "text/html",
+          "text": "Kudo y OSCAL"
+        }
+      ],
+      "roles": [
+        {
+          "id": "creator",
+          "title": "Autor del contenido"
+        },
+        {
+          "id": "prepared-for",
+          "title": "Organización destinataria"
+        },
+        {
+          "id": "document-owner",
+          "title": "Propietario del documento"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "ed04377f-1282-41a6-b653-477f0b38742c",
+          "type": "organization",
+          "name": "DivisionCero",
+          "links": [
+            {
+              "href": "https://divisioncero.com/kudo",
+              "rel": "homepage"
+            }
+          ]
+        },
+        {
+          "uuid": "e9de3acc-be4b-58c9-816f-25e260a9dcbe",
+          "type": "organization",
+          "name": "[Nombre de tu organización]",
+          "remarks": "Reemplaza este valor por la razón social de la organización que adopta Kudo."
+        }
+      ],
+      "responsible-parties": [
+        {
+          "role-id": "creator",
+          "party-uuids": [
+            "ed04377f-1282-41a6-b653-477f0b38742c"
+          ]
+        },
+        {
+          "role-id": "prepared-for",
+          "party-uuids": [
+            "e9de3acc-be4b-58c9-816f-25e260a9dcbe"
+          ]
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "ed72c648-62d3-5d74-a3af-17c30bfd093b",
+        "type": "guidance",
+        "title": "Cláusulas para Colaboradores",
+        "description": "Cláusulas contractuales obligatorias aplicables a colaboradores en materia de seguridad de la información",
+        "purpose": "Documento CLA-THP-01 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "CLA-THP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "clausulas"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/clausulas-para-colaboradores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Cláusulas para Colaboradores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Legal"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "64d29957-6d58-5aaf-8c3d-5f0decf9cdad",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Cláusulas para Colaboradores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "2a1588a0-c04c-5b07-9db2-87b4bd9dfba1",
+                "control-id": "thp-1",
+                "description": "Cláusulas para Colaboradores establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "4756f97a-cfde-5acc-b797-67f46c279752",
+                "control-id": "dia-4",
+                "description": "Cláusulas para Colaboradores establece las directrices organizacionales para Ciberseguridad en Información y Datos (DIA-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "dcc7b547-10d7-561c-a087-ebc0d6dacd1c",
+        "type": "guidance",
+        "title": "Cláusulas para Proveedores",
+        "description": "Cláusulas contractuales obligatorias aplicables a proveedores, incluyendo propiedad intelectual",
+        "purpose": "Documento CLA-THP-02 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "CLA-THP-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "clausulas"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/clausulas-para-proveedores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Cláusulas para Proveedores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Legal"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "b252c508-dea2-5165-b9e7-fb06f7178945",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Cláusulas para Proveedores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "588a4013-231d-542b-a59b-722b951caadf",
+                "control-id": "thp-4",
+                "description": "Cláusulas para Proveedores establece las directrices organizacionales para Modelo de Responsabilidad Compartida en la Cadena de Suministro (THP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "d8db43da-a8fd-525d-9222-ecd496e32571",
+        "type": "guidance",
+        "title": "Solicitud de Compras",
+        "description": "Formato y flujo para solicitar la adquisición de bienes o servicios a proveedores",
+        "purpose": "Documento FOR-THP-01 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "FOR-THP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "formato"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/solicitud-de-compras",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Solicitud de Compras"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Compras"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "abac8076-3e75-5cf7-87e8-c5a24c2083e0",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Solicitud de Compras\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "4eeb5342-8a62-590b-bf51-8fc07f689038",
+                "control-id": "thp-3",
+                "description": "Solicitud de Compras establece las directrices organizacionales para Inventario de la Cadena de Suministro (THP-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "8b5a3ca9-ac5f-5fa5-a672-5f08c8f8a007",
+        "type": "guidance",
+        "title": "Plantilla de Contrato de Proveedores",
+        "description": "Estructura base de contrato para la vinculación formal de proveedores",
+        "purpose": "Documento PLA-THP-01 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PLA-THP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "plantilla"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/plantilla-de-contrato-proveedores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Plantilla de Contrato de Proveedores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Legal"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "574b77ab-5ce4-51a1-9449-3d24d6475a07",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Plantilla de Contrato de Proveedores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "b900806f-f8a9-52bd-8fd1-3f61f9012ef9",
+                "control-id": "thp-4",
+                "description": "Plantilla de Contrato de Proveedores establece las directrices organizacionales para Modelo de Responsabilidad Compartida en la Cadena de Suministro (THP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "aa2becfe-1634-59a6-a638-aeeca4e80281",
+                "control-id": "cif-1",
+                "description": "Plantilla de Contrato de Proveedores establece las directrices organizacionales para Proveedores de Servicio de Nube (CIF-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "5bb4f2af-e575-5a06-b287-700ec1d0c90e",
+        "type": "plan",
+        "title": "Plan de Continuidad del Negocio",
+        "description": "Marco para responder a incidentes disruptivos que afecten las operaciones y asegurar funciones esenciales",
+        "purpose": "Documento PLN-CCN-01 del SGX de Kudo (dominio CCN).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PLN-CCN-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "plan"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "ccn"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Plan de Continuidad del Negocio"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Continuidad (BCM)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "b5bf911c-9efe-5a64-a016-4e88c71fc26a",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Plan de Continuidad del Negocio\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "23ad13fe-30ac-5a19-9469-1e5a8f8014a9",
+                "control-id": "ccn-4",
+                "description": "Plan de Continuidad del Negocio establece las directrices organizacionales para Continuidad del Negocio y Recuperación ante Desastres (CCN-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "69167f20-c85c-508d-9a5c-da5430ebdbba",
+                "control-id": "cor-1",
+                "description": "Plan de Continuidad del Negocio establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "6433fcc3-0331-5ee8-8575-33bc56ce17ba",
+        "type": "policy",
+        "title": "Política de Gestión de Incidentes",
+        "description": "Detección, respuesta y gestión de incidentes de seguridad",
+        "purpose": "Documento POL-ADR-01 del SGX de Kudo (dominio ADR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-ADR-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "adr"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Incidentes"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "31c39d13-9965-5ec4-901c-dde16f7abad0",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Incidentes\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "2c128755-0529-578e-9b6b-988a5fe2b3a1",
+                "control-id": "adr-4",
+                "description": "Política de Gestión de Incidentes establece las directrices organizacionales para Atención de Eventos y/o Incidentes de Ciberseguridad (ADR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "c98a4177-9e11-5fcd-b14a-90f4ca9319f0",
+        "type": "policy",
+        "title": "Política de Gestión de Vulnerabilidades y Parches",
+        "description": "Identificación, priorización y remediación de vulnerabilidades con plazos según su severidad",
+        "purpose": "Documento POL-ADR-02 del SGX de Kudo (dominio ADR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-ADR-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "adr"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Vulnerabilidades y Parches"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "d83dfbcf-40fb-5c8d-890f-007a5f3d69d6",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Vulnerabilidades y Parches\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "5ca5e4bb-ab06-59e5-8eaa-c9573ba5f561",
+                "control-id": "adr-2",
+                "description": "Política de Gestión de Vulnerabilidades y Parches establece las directrices organizacionales para Gestión, Identificación y Remediación de Vulnerabilidades (ADR-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "6653d913-2560-5647-abe8-f3536b1a81c0",
+                "control-id": "cip-6",
+                "description": "Política de Gestión de Vulnerabilidades y Parches establece las directrices organizacionales para Ciberseguridad en Puntos Finales (CIP-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "cf02e6d4-2318-599f-9171-59c83241cbc8",
+                "control-id": "cif-3",
+                "description": "Política de Gestión de Vulnerabilidades y Parches establece las directrices organizacionales para Ciberseguridad en la Red y Sistemas (CIF-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "9abe6e89-5412-5a3e-9818-445c74e999cb",
+        "type": "policy",
+        "title": "Política de Protección contra Software Malicioso",
+        "description": "Prevención, detección y contención de malware en puntos finales, servidores, correo y navegación",
+        "purpose": "Documento POL-ADR-03 del SGX de Kudo (dominio ADR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-ADR-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "adr"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Protección contra Software Malicioso"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "4412742e-d28c-5380-8940-bdeb96d52497",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Protección contra Software Malicioso\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "2fd4c359-82f9-505a-9d5a-fff51d74b9f8",
+                "control-id": "adr-1",
+                "description": "Política de Protección contra Software Malicioso establece las directrices organizacionales para Protección contra Software Malicioso (ADR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "3d46d02d-98fb-54df-ad7f-a235b7e82cee",
+                "control-id": "cip-6",
+                "description": "Política de Protección contra Software Malicioso establece las directrices organizacionales para Ciberseguridad en Puntos Finales (CIP-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "4b573c73-95f7-5e39-a6db-0a9bad3b8ae7",
+        "type": "policy",
+        "title": "Política de Desarrollo Seguro",
+        "description": "Directrices para integrar seguridad en todo el ciclo de vida del software",
+        "purpose": "Documento POL-CAP-01 del SGX de Kudo (dominio CAP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CAP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cap"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-desarrollo-seguro",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Desarrollo Seguro"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Líder de Desarrollo"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "99581c1f-f057-5027-ae4b-9e6f7411df88",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Desarrollo Seguro\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "7e42b66f-54cf-5e31-bbf8-b1c8e41355d1",
+                "control-id": "cap-1",
+                "description": "Política de Desarrollo Seguro establece las directrices organizacionales para Ciberseguridad en el Ciclo de Desarrollo del Software (CAP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cap/cap-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "dcae5de6-da67-5135-bfa1-7552cfadd4f0",
+                "control-id": "cap-2",
+                "description": "Política de Desarrollo Seguro establece las directrices organizacionales para Ciberseguridad en APIs (CAP-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cap/cap-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "0b2d4d3d-eb62-5aef-a0a3-91076d293c26",
+                "control-id": "ccn-2",
+                "description": "Política de Desarrollo Seguro establece las directrices organizacionales para Pruebas de Calidad y Seguridad en la Gestión de Cambios (CCN-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "e3c48211-bca7-5a5d-b0f4-7c2bd5057f2e",
+        "type": "policy",
+        "title": "Política de Continuidad del Negocio",
+        "description": "Directrices para asegurar la continuidad de funciones críticas durante y después de interrupciones",
+        "purpose": "Documento POL-CCN-01 del SGX de Kudo (dominio CCN).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CCN-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "ccn"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-continuidad-del-negocio",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Continuidad del Negocio"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Continuidad (BCM)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "1b8bbc99-49a5-5306-bde7-44a8bf661adb",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Continuidad del Negocio\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "90c04824-a565-5403-934f-358d6e2c5ad2",
+                "control-id": "ccn-4",
+                "description": "Política de Continuidad del Negocio establece las directrices organizacionales para Continuidad del Negocio y Recuperación ante Desastres (CCN-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "8a5c4fac-6f1b-5773-9840-f42607ce0646",
+                "control-id": "cor-1",
+                "description": "Política de Continuidad del Negocio establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "08da07c1-db0e-53b8-a164-fc453c6c3f8b",
+                "control-id": "cif-1",
+                "description": "Política de Continuidad del Negocio establece las directrices organizacionales para Proveedores de Servicio de Nube (CIF-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "a9754047-7211-5d13-baf2-00e3c2e2b6cb",
+        "type": "policy",
+        "title": "Política de Gestión de Crisis",
+        "description": "Marco para respuesta y gestión de situaciones de crisis organizacional",
+        "purpose": "Documento POL-CCN-02 del SGX de Kudo (dominio CCN).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CCN-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "ccn"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-crisis",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Crisis"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Gerencia General"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "bac28a11-6271-5c46-94dc-12d1d9747ded",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Crisis\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "e8ca2987-fb0b-5f02-9634-dee0e07af4ad",
+                "control-id": "adr-4",
+                "description": "Política de Gestión de Crisis establece las directrices organizacionales para Atención de Eventos y/o Incidentes de Ciberseguridad (ADR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "8c5c3068-41d1-5764-b689-80871e34363c",
+                "control-id": "cor-1",
+                "description": "Política de Gestión de Crisis establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "04a1040e-61b3-5c2a-a436-382d3d0b8938",
+        "type": "policy",
+        "title": "Política de Gestión de Cambios y Configuración",
+        "description": "Control de cambios en sistemas y configuraciones de TI",
+        "purpose": "Documento POL-CCN-03 del SGX de Kudo (dominio CCN).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CCN-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "ccn"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Cambios y Configuración"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Gerente de Cambios"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "0c78b71a-4fde-5b8c-91da-ffa45114661e",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Cambios y Configuración\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "39aea001-9b7d-5bd0-aceb-9e83a0902e73",
+                "control-id": "ccn-1",
+                "description": "Política de Gestión de Cambios y Configuración establece las directrices organizacionales para Gestión y Control de Cambios (CCN-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "7fff0fe3-cc35-5c6c-a5ec-2e7ca42e43c9",
+                "control-id": "ccn-2",
+                "description": "Política de Gestión de Cambios y Configuración establece las directrices organizacionales para Pruebas de Calidad y Seguridad en la Gestión de Cambios (CCN-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "cbd15d65-c709-5ab4-a8a6-ce8b6bc74554",
+                "control-id": "ccn-3",
+                "description": "Política de Gestión de Cambios y Configuración establece las directrices organizacionales para Revertir Cambios (CCN-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "68a856d8-0d98-511b-b9f3-c090410afdb4",
+                "control-id": "cif-3",
+                "description": "Política de Gestión de Cambios y Configuración establece las directrices organizacionales para Ciberseguridad en la Red y Sistemas (CIF-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "14627094-f959-5394-9b00-64ad65a0d606",
+        "type": "policy",
+        "title": "Política de Seguridad Física",
+        "description": "Protección física de instalaciones, equipos y activos",
+        "purpose": "Documento POL-CIF-01 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-fisica",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Seguridad Física"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Seguridad Física"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "a724b82b-3763-5819-b938-6a55d5e9f6b2",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Seguridad Física\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "076b57a2-bbc0-5d9c-9692-db652a8b4135",
+                "control-id": "cif-2",
+                "description": "Política de Seguridad Física establece las directrices organizacionales para Inventario de Activos (CIF-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "b685ed49-543f-530b-a36f-ae13fcd84f41",
+                "control-id": "dia-4",
+                "description": "Política de Seguridad Física establece las directrices organizacionales para Ciberseguridad en Información y Datos (DIA-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "b6cdf390-efcd-58ea-83fe-46c30d0dd4f2",
+        "type": "policy",
+        "title": "Política de Seguridad de TI",
+        "description": "Estándares de seguridad para infraestructura y servicios de TI",
+        "purpose": "Documento POL-CIF-02 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Seguridad de TI"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "9243f673-c2f6-5130-ac8b-0f5a43e2409c",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Seguridad de TI\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "110a48af-1c14-5081-8440-74934a5be735",
+                "control-id": "cip-5",
+                "description": "Política de Seguridad de TI establece las directrices organizacionales para Inventario de Puntos Finales (CIP-5).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-5",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "164f915a-319c-5011-9bc4-351799191c7e",
+                "control-id": "cip-6",
+                "description": "Política de Seguridad de TI establece las directrices organizacionales para Ciberseguridad en Puntos Finales (CIP-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "7d1b6e43-e784-52f9-b000-7d70774a9f10",
+                "control-id": "thp-2",
+                "description": "Política de Seguridad de TI establece las directrices organizacionales para Trabajo Remoto (THP-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "2348b231-cd84-5261-afa5-b3beffece898",
+        "type": "policy",
+        "title": "Política de Seguridad de Comunicaciones",
+        "description": "Protección de comunicaciones y transferencias de información",
+        "purpose": "Documento POL-CIF-03 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Seguridad de Comunicaciones"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "8d3bf356-ee1d-5430-bf81-3ae59e67843b",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Seguridad de Comunicaciones\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "6e09ee2f-e2e1-5b21-92f9-ba804e128e76",
+                "control-id": "cif-3",
+                "description": "Política de Seguridad de Comunicaciones establece las directrices organizacionales para Ciberseguridad en la Red y Sistemas (CIF-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "a6384f52-3369-58b1-8011-2d06c2041e67",
+                "control-id": "cif-4",
+                "description": "Política de Seguridad de Comunicaciones establece las directrices organizacionales para Cifrado de Información y Datos (CIF-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "cc578b51-a027-5273-96fc-2a9df5ae18d0",
+                "control-id": "dia-3",
+                "description": "Política de Seguridad de Comunicaciones establece las directrices organizacionales para Ciclo de Vida de los Datos (DIA-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "246b18fb-fcfd-5cde-bc90-d3ba78404164",
+        "type": "policy",
+        "title": "Política de Seguridad ICS/OT",
+        "description": "Seguridad de sistemas de control industrial y tecnología operacional",
+        "purpose": "Documento POL-CIF-04 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-04"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-ics-ot",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Seguridad ICS/OT"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Operaciones (OT)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "f7e9beda-f105-581c-8ce7-f1ccc1ed8744",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Seguridad ICS/OT\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "988667f0-3653-5169-b16a-f79da13caecf",
+                "control-id": "cif-2",
+                "description": "Política de Seguridad ICS/OT establece las directrices organizacionales para Inventario de Activos (CIF-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "e77efd7a-4ba2-591d-af49-cafeca25ce09",
+                "control-id": "cif-3",
+                "description": "Política de Seguridad ICS/OT establece las directrices organizacionales para Ciberseguridad en la Red y Sistemas (CIF-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "7cf33aca-70ae-5091-b61c-dfc916f00876",
+        "type": "policy",
+        "title": "Política de Servicios en la Nube",
+        "description": "Uso seguro y gestión de servicios cloud y SaaS",
+        "purpose": "Documento POL-CIF-05 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-05"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-servicios-en-la-nube",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Servicios en la Nube"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "1dc72c85-c7a7-5563-8912-0ce8f058c0a2",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Servicios en la Nube\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "f6bfaa46-1ed3-5e6f-b7a1-7cfd93fe6bb0",
+                "control-id": "cif-1",
+                "description": "Política de Servicios en la Nube establece las directrices organizacionales para Proveedores de Servicio de Nube (CIF-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "aaf4dc83-8858-5373-8b10-3619ab407342",
+                "control-id": "cif-2",
+                "description": "Política de Servicios en la Nube establece las directrices organizacionales para Inventario de Activos (CIF-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "84d115b2-78b8-537d-836a-0bcd244b4a9c",
+                "control-id": "dia-6",
+                "description": "Política de Servicios en la Nube establece las directrices organizacionales para Ubicación de Información y Datos (DIA-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "15a28986-417a-5949-a5bb-26a5a7e1f0de",
+        "type": "policy",
+        "title": "Política de Backups y Recuperación",
+        "description": "Respaldo y recuperación de información crítica del negocio",
+        "purpose": "Documento POL-CIF-06 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-06"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-backups-y-recuperacion",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Backups y Recuperación"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "dc88059a-bb07-5102-b089-9d5bcc919031",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Backups y Recuperación\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "8c749e26-4765-5bed-9a7b-5be185e10689",
+                "control-id": "ccn-4",
+                "description": "Política de Backups y Recuperación establece las directrices organizacionales para Continuidad del Negocio y Recuperación ante Desastres (CCN-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "b29d37ad-eed7-5422-9586-cdf36dde55f3",
+                "control-id": "dia-4",
+                "description": "Política de Backups y Recuperación establece las directrices organizacionales para Ciberseguridad en Información y Datos (DIA-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "af00613d-c095-5c72-92cd-bc0988bebebc",
+        "type": "policy",
+        "title": "Política de Registro y Monitoreo",
+        "description": "Registro de eventos y monitoreo de seguridad de sistemas",
+        "purpose": "Documento POL-CIF-07 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-07"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Registro y Monitoreo"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "1c2cb658-6de0-55cb-b22b-df16f7ec9cf8",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Registro y Monitoreo\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "94f63573-2b4f-5073-a1e5-4dc763fea626",
+                "control-id": "adr-3",
+                "description": "Política de Registro y Monitoreo establece las directrices organizacionales para Retención y Monitoreo de Registros (ADR-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "93a91a66-6cca-577a-80f2-3b9823a4a0cc",
+        "type": "policy",
+        "title": "Política de Criptografía y Gestión de Claves",
+        "description": "Uso correcto de técnicas criptográficas y gestión del ciclo de vida de claves y certificados",
+        "purpose": "Documento POL-CIF-08 del SGX de Kudo (dominio CIF).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIF-08"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cif"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Criptografía y Gestión de Claves"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "341833f6-60c4-53ce-906f-265b6d78afd4",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Criptografía y Gestión de Claves\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "1f86ab37-9c20-5f11-a13b-084b1f0500b9",
+                "control-id": "cif-4",
+                "description": "Política de Criptografía y Gestión de Claves establece las directrices organizacionales para Cifrado de Información y Datos (CIF-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "214b2ea3-0f5a-57fa-b846-238724977bd1",
+                "control-id": "cif-5",
+                "description": "Política de Criptografía y Gestión de Claves establece las directrices organizacionales para Administración y Gestión de Claves (CIF-5).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-5",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "371f24e4-cfcb-5de9-8e17-f90aca2bc9d7",
+        "type": "policy",
+        "title": "Política de Gestión de Accesos",
+        "description": "Control y gestión de acceso a sistemas y recursos de información",
+        "purpose": "Documento POL-CIP-01 del SGX de Kudo (dominio CIP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cip"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Accesos"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "1dec5411-d7c5-5c36-9bcc-d9f7c7dae186",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Accesos\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "d564cb57-86da-51de-b5a9-ff0661f747ce",
+                "control-id": "cip-1",
+                "description": "Política de Gestión de Accesos establece las directrices organizacionales para Inventario de Identidad (CIP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "7a8ad346-cf77-512d-95c5-b3efce5c8a4a",
+                "control-id": "cip-2",
+                "description": "Política de Gestión de Accesos establece las directrices organizacionales para Ciberseguridad en Autenticación (CIP-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "785e76b9-e762-5a90-8432-c7bfa7f95afd",
+                "control-id": "cip-3",
+                "description": "Política de Gestión de Accesos establece las directrices organizacionales para Ciberseguridad en Autorización (CIP-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "58bf471d-3473-5283-a2bd-687f3f196c5e",
+                "control-id": "cip-4",
+                "description": "Política de Gestión de Accesos establece las directrices organizacionales para Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades (CIP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "6f1e2d89-75f5-5d77-9655-31e6ca2a9b8f",
+        "type": "policy",
+        "title": "Política de Hardening",
+        "description": "Configuración segura y fortalecimiento de sistemas y aplicaciones",
+        "purpose": "Documento POL-CIP-02 del SGX de Kudo (dominio CIP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-CIP-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cip"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Hardening"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "f4af84be-0d00-5a7f-ae7f-b9e28fe4e662",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Hardening\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "25ae8772-6651-5cd2-8de8-1410d6e62958",
+                "control-id": "cip-6",
+                "description": "Política de Hardening establece las directrices organizacionales para Ciberseguridad en Puntos Finales (CIP-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "525fc45f-e6eb-571f-9e74-4e32645f33bb",
+                "control-id": "cif-3",
+                "description": "Política de Hardening establece las directrices organizacionales para Ciberseguridad en la Red y Sistemas (CIF-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "070de7df-8f9f-5913-9c41-2520afc1c668",
+        "type": "policy",
+        "title": "Política de Seguridad de la Información",
+        "description": "Protección de información, activos y reputación organizacional",
+        "purpose": "Documento POL-COR-01 del SGX de Kudo (dominio COR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-COR-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cor"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Seguridad de la Información"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "c2bdb1b5-a3a0-5369-8c9f-3d764241ba63",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Seguridad de la Información\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "95e76aef-0269-5a5a-9e07-dfdf33e59eed",
+                "control-id": "cor-1",
+                "description": "Política de Seguridad de la Información establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "82b55723-8125-5054-ba15-22abf682b608",
+                "control-id": "cor-2",
+                "description": "Política de Seguridad de la Información establece las directrices organizacionales para Mapeo de Cumplimiento Regulatorio (COR-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "9961ae8e-6752-5631-98ab-3e85fee36701",
+                "control-id": "cor-4",
+                "description": "Política de Seguridad de la Información establece las directrices organizacionales para Mejora Continua y Acciones Correctivas (COR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "1f52f646-db24-5a64-823f-31db3000dc55",
+        "type": "policy",
+        "title": "Política de Documentos y Registros",
+        "description": "Estándares para gestión de documentos y registros organizacionales",
+        "purpose": "Documento POL-COR-02 del SGX de Kudo (dominio COR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-COR-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cor"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Documentos y Registros"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "7acb6984-bc21-554a-b4fd-3364b35912a8",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Documentos y Registros\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "66e8d63b-1971-532b-a3f2-878bfd77b42d",
+                "control-id": "cor-1",
+                "description": "Política de Documentos y Registros establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "a8d9f4e0-4457-5831-9567-7fce1dd7de8b",
+                "control-id": "dia-3",
+                "description": "Política de Documentos y Registros establece las directrices organizacionales para Ciclo de Vida de los Datos (DIA-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "ccd427b4-2d5a-5347-8aea-5bf7e3aa16cc",
+        "type": "policy",
+        "title": "Política de Gestión de Riesgos",
+        "description": "Marco para identificación, evaluación y tratamiento de riesgos",
+        "purpose": "Documento POL-COR-03 del SGX de Kudo (dominio COR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-COR-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cor"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Riesgos"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Riesgos"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "54c33a6f-5d01-566f-8420-eecdb839f9ca",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Riesgos\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "d2a83cd1-99e8-5348-935e-b5ad9ee4b144",
+                "control-id": "cor-1",
+                "description": "Política de Gestión de Riesgos establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "62969e93-f6e9-5c8e-a800-ba89490cf5b4",
+                "control-id": "cor-3",
+                "description": "Política de Gestión de Riesgos establece las directrices organizacionales para Evaluación Independiente basada en Riesgos (COR-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "b01f9aac-979f-55c5-bed7-996cb7c2e3c1",
+                "control-id": "cor-4",
+                "description": "Política de Gestión de Riesgos establece las directrices organizacionales para Mejora Continua y Acciones Correctivas (COR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "8b147923-dce4-586d-916e-9be9eab6ad75",
+        "type": "policy",
+        "title": "Política de Gestión de Cumplimiento",
+        "description": "Aseguramiento del cumplimiento de requisitos legales y regulatorios",
+        "purpose": "Documento POL-COR-04 del SGX de Kudo (dominio COR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-COR-04"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cor"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Cumplimiento"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Cumplimiento"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "62580e5c-583f-5b97-bcd0-4e38369e9c79",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Cumplimiento\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "f2bff00d-cd6c-583a-a55f-f25095887462",
+                "control-id": "cor-2",
+                "description": "Política de Gestión de Cumplimiento establece las directrices organizacionales para Mapeo de Cumplimiento Regulatorio (COR-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "bfdd49d8-0c1c-584c-904f-e7b624aa13ad",
+                "control-id": "cor-3",
+                "description": "Política de Gestión de Cumplimiento establece las directrices organizacionales para Evaluación Independiente basada en Riesgos (COR-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "e6b713c5-5bff-585c-b647-be5d0818e1ff",
+        "type": "policy",
+        "title": "Política de Privacidad",
+        "description": "Protección de datos personales y cumplimiento de regulaciones de privacidad",
+        "purpose": "Documento POL-DIA-01 del SGX de Kudo (dominio DIA).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-DIA-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "dia"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Privacidad"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Oficial de Protección de Datos"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "0c1c71de-317e-5c71-b5fb-7bdfe7136026",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Privacidad\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "c01baf9c-d65d-5f46-bac2-845f8a3ac68e",
+                "control-id": "dia-2",
+                "description": "Política de Privacidad establece las directrices organizacionales para Inventario de Puntos de Recolección de Datos (DIA-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "02265f05-eb6b-54ac-a37d-e66be56ee62b",
+                "control-id": "dia-5",
+                "description": "Política de Privacidad establece las directrices organizacionales para Tiempo de Retención de Datos y Derecho al Olvido (DIA-5).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-5",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "c0c6f673-c904-5db3-95d2-fc14f293fb35",
+                "control-id": "dia-6",
+                "description": "Política de Privacidad establece las directrices organizacionales para Ubicación de Información y Datos (DIA-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "29b7f779-fd52-5e87-952d-1b14a8eb141b",
+        "type": "policy",
+        "title": "Política de Gestión de Activos",
+        "description": "Gestión y protección de activos de información de la organización",
+        "purpose": "Documento POL-DIA-02 del SGX de Kudo (dominio DIA).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-DIA-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "dia"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Activos"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "aff88020-0066-5951-8d12-70fd2671ccbb",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Activos\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "f0dbee6f-fdc5-5c15-8678-d8dc759322d4",
+                "control-id": "cif-2",
+                "description": "Política de Gestión de Activos establece las directrices organizacionales para Inventario de Activos (CIF-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cif/cif-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "d3bec4b0-1d53-5c6d-9be7-295028b371f0",
+                "control-id": "dia-1",
+                "description": "Política de Gestión de Activos establece las directrices organizacionales para Inventario de Datos (DIA-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "a459574e-13b6-553c-bc61-275ab73e958d",
+                "control-id": "cip-5",
+                "description": "Política de Gestión de Activos establece las directrices organizacionales para Inventario de Puntos Finales (CIP-5).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-5",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "5ae67815-f27e-504d-9347-d44972636f5b",
+        "type": "policy",
+        "title": "Política de Uso Aceptable de Inteligencia Artificial",
+        "description": "Uso seguro y responsable de herramientas, agentes y modelos de IA en la organización",
+        "purpose": "Documento POL-DIA-03 del SGX de Kudo (dominio DIA).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-DIA-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "dia"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Semestral"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Uso Aceptable de Inteligencia Artificial"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "fc560797-14c4-583c-a664-d8fd00b593e7",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Uso Aceptable de Inteligencia Artificial\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "9cdfc4df-dce8-5269-9a65-38af3232bc61",
+                "control-id": "dia-7",
+                "description": "Política de Uso Aceptable de Inteligencia Artificial establece las directrices organizacionales para Ciberseguridad en Modelos de Inteligencia Artificial (DIA-7).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-7",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "0fc2b851-ad10-57a2-85f6-7be720e042fb",
+                "control-id": "dia-4",
+                "description": "Política de Uso Aceptable de Inteligencia Artificial establece las directrices organizacionales para Ciberseguridad en Información y Datos (DIA-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "580c875d-2e97-5bd4-a39d-21b12369d886",
+                "control-id": "thp-1",
+                "description": "Política de Uso Aceptable de Inteligencia Artificial establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "ced1f074-8195-5a87-b5ae-4be5a1551884",
+        "type": "policy",
+        "title": "Política de Clasificación y Manejo de la Información",
+        "description": "Niveles de clasificación, etiquetado y reglas de manejo de la información según su sensibilidad",
+        "purpose": "Documento POL-DIA-04 del SGX de Kudo (dominio DIA).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-DIA-04"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "dia"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Clasificación y Manejo de la Información"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "8ab84e1b-599f-540d-b0eb-f6cf7e72b4d8",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Clasificación y Manejo de la Información\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "3c2eb57e-79b5-5c92-acaa-1ffb68c73196",
+                "control-id": "dia-1",
+                "description": "Política de Clasificación y Manejo de la Información establece las directrices organizacionales para Inventario de Datos (DIA-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "def58819-eb8f-5c08-9ccb-3df4d7d7780e",
+                "control-id": "dia-4",
+                "description": "Política de Clasificación y Manejo de la Información establece las directrices organizacionales para Ciberseguridad en Información y Datos (DIA-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "2f4da1d6-41cb-58c8-9793-1d3664b58cf4",
+                "control-id": "dia-3",
+                "description": "Política de Clasificación y Manejo de la Información establece las directrices organizacionales para Ciclo de Vida de los Datos (DIA-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "19768b71-162b-5ac1-8114-3353959bef41",
+        "type": "policy",
+        "title": "Política de Retención y Eliminación de Datos",
+        "description": "Plazos de conservación por categoría de datos y eliminación segura con evidencia",
+        "purpose": "Documento POL-DIA-05 del SGX de Kudo (dominio DIA).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-DIA-05"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "dia"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Retención y Eliminación de Datos"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Oficial de Protección de Datos"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "aae9bf90-e198-54f0-acf5-b61d55eacdc9",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Retención y Eliminación de Datos\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "25f8464a-c1b4-5628-ab35-ae7529f475e1",
+                "control-id": "dia-5",
+                "description": "Política de Retención y Eliminación de Datos establece las directrices organizacionales para Tiempo de Retención de Datos y Derecho al Olvido (DIA-5).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-5",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "814c0103-acef-5826-82d8-d4c8e24d90b8",
+                "control-id": "dia-3",
+                "description": "Política de Retención y Eliminación de Datos establece las directrices organizacionales para Ciclo de Vida de los Datos (DIA-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/dia/dia-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "dc41a615-b467-5ecc-aa30-5e51b2ebcb4d",
+        "type": "policy",
+        "title": "Política de Seguridad de Recursos Humanos",
+        "description": "Seguridad en el ciclo de vida del empleado y gestión de personal",
+        "purpose": "Documento POL-THP-01 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-THP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Seguridad de Recursos Humanos"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Recursos Humanos"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "b415ef32-aff1-5e6d-8669-44e88ed52240",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Seguridad de Recursos Humanos\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "a3665737-4905-504f-9cd9-1ab04a5ad1dd",
+                "control-id": "thp-1",
+                "description": "Política de Seguridad de Recursos Humanos establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "5433c1e8-d54f-5fe9-9a84-3d2f2a191e4a",
+                "control-id": "cip-4",
+                "description": "Política de Seguridad de Recursos Humanos establece las directrices organizacionales para Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades (CIP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "73a481aa-7d2c-5677-aed4-4d346e28508f",
+        "type": "policy",
+        "title": "Política de Gestión de Concienciación",
+        "description": "Programa de capacitación y concientización en seguridad de la información",
+        "purpose": "Documento POL-THP-02 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-THP-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-concienciacion",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Concienciación"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "18194b36-d60f-58c0-8cf1-fbe0ba4761a6",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Concienciación\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "b8bef84b-423c-5678-a7f9-c2d2e00cce42",
+                "control-id": "thp-1",
+                "description": "Política de Gestión de Concienciación establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "1bdb375e-be2e-53ad-b6b6-fef9b6edbf4a",
+        "type": "policy",
+        "title": "Política de Gestión de Proveedores",
+        "description": "Evaluación y gestión de riesgos de terceros y proveedores",
+        "purpose": "Documento POL-THP-03 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-THP-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Gestión de Proveedores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Compras"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "b9d18c67-9418-5a69-9264-adb6b96738ef",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Gestión de Proveedores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "85b8b6e8-0eb0-58d5-882d-e8ea06b1f77f",
+                "control-id": "thp-3",
+                "description": "Política de Gestión de Proveedores establece las directrices organizacionales para Inventario de la Cadena de Suministro (THP-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "4eddabd0-35be-5b83-aad7-b90dffc05393",
+                "control-id": "thp-4",
+                "description": "Política de Gestión de Proveedores establece las directrices organizacionales para Modelo de Responsabilidad Compartida en la Cadena de Suministro (THP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "96d3355e-c53b-5ddd-9f01-6b57a5c576f3",
+        "type": "policy",
+        "title": "Política de Trabajo Remoto y Dispositivos Móviles",
+        "description": "Requisitos de seguridad para el teletrabajo, el trabajo híbrido y el uso de dispositivos personales (BYOD)",
+        "purpose": "Documento POL-THP-04 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "POL-THP-04"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "politica"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Política de Trabajo Remoto y Dispositivos Móviles"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de TI"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "b8bd0609-b0d0-501e-9836-c72b3cd99211",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Política de Trabajo Remoto y Dispositivos Móviles\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "62b5ecf7-153a-5577-afb7-ac6ceec727b4",
+                "control-id": "thp-2",
+                "description": "Política de Trabajo Remoto y Dispositivos Móviles establece las directrices organizacionales para Trabajo Remoto (THP-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "be298fb1-c3b0-5493-be3a-27f14e142282",
+                "control-id": "cip-5",
+                "description": "Política de Trabajo Remoto y Dispositivos Móviles establece las directrices organizacionales para Inventario de Puntos Finales (CIP-5).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-5",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "53aae9f2-fe59-5ce2-b795-b08bef2ad179",
+                "control-id": "cip-6",
+                "description": "Política de Trabajo Remoto y Dispositivos Móviles establece las directrices organizacionales para Ciberseguridad en Puntos Finales (CIP-6).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-6",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "5b0a49df-324d-54fc-9c49-9b089ed12b3e",
+        "type": "process-procedure",
+        "title": "Procedimiento de Respuesta a Incidentes",
+        "description": "Pasos operativos, roles, plazos y guías rápidas para responder a incidentes de ciberseguridad",
+        "purpose": "Documento PRO-ADR-01 del SGX de Kudo (dominio ADR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-ADR-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "adr"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Respuesta a Incidentes"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "18bf8d05-2c6c-5717-a240-d4dcb40f1a04",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Respuesta a Incidentes\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "4e5cee18-07c8-5607-bfbd-76820dd45b96",
+                "control-id": "adr-4",
+                "description": "Procedimiento de Respuesta a Incidentes establece las directrices organizacionales para Atención de Eventos y/o Incidentes de Ciberseguridad (ADR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "a1898120-7bbc-5e7f-82d7-6dfe45774272",
+                "control-id": "adr-3",
+                "description": "Procedimiento de Respuesta a Incidentes establece las directrices organizacionales para Retención y Monitoreo de Registros (ADR-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "f3687d22-387c-5a3c-b628-2ba3989310f0",
+        "type": "process-procedure",
+        "title": "Procedimiento de Análisis de Impacto en el Negocio (BIA)",
+        "description": "Metodología para análisis de impacto en continuidad del negocio (BIA)",
+        "purpose": "Documento PRO-CCN-01 del SGX de Kudo (dominio CCN).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-CCN-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "ccn"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-analisis-de-impacto-en-el-negocio",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Análisis de Impacto en el Negocio (BIA)"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Continuidad (BCM)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "3ac96c4d-7a41-5875-b9f7-6a4cb3c8390d",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Análisis de Impacto en el Negocio (BIA)\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "7ec8bee9-9e7e-5e31-a217-eb99621cd505",
+                "control-id": "ccn-4",
+                "description": "Procedimiento de Análisis de Impacto en el Negocio (BIA) establece las directrices organizacionales para Continuidad del Negocio y Recuperación ante Desastres (CCN-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/ccn/ccn-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "cc250561-df41-59ba-897b-47e3b5ed1235",
+                "control-id": "cor-1",
+                "description": "Procedimiento de Análisis de Impacto en el Negocio (BIA) establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "a3345213-41d5-5cd2-9ff8-65b59ff54498",
+        "type": "process-procedure",
+        "title": "Procedimiento y Plan de Comunicación",
+        "description": "Estrategia de comunicación para incidentes y crisis",
+        "purpose": "Documento PRO-CCN-02 del SGX de Kudo (dominio CCN).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-CCN-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "ccn"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.1"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-y-plan-de-comunicacion",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento y Plan de Comunicación"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Comunicaciones"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "ae9d72ac-9810-5467-b2b5-352f48a6e2ff",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento y Plan de Comunicación\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "aafdb922-5013-5f18-b3c1-d49d048271f8",
+                "control-id": "adr-4",
+                "description": "Procedimiento y Plan de Comunicación establece las directrices organizacionales para Atención de Eventos y/o Incidentes de Ciberseguridad (ADR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/adr/adr-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "3bac1071-5911-54cd-b1d8-09989b0dc28b",
+                "control-id": "cor-1",
+                "description": "Procedimiento y Plan de Comunicación establece las directrices organizacionales para Programa de Gestión de Riesgos y Ciberseguridad (COR-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "ffce7e12-5a1e-5c3a-8a92-c8c02c1338a9",
+        "type": "process-procedure",
+        "title": "Procedimiento de Auditoría Interna",
+        "description": "Planificación, ejecución y reporte de auditorías internas independientes del SGX",
+        "purpose": "Documento PRO-COR-01 del SGX de Kudo (dominio COR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-COR-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cor"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Auditoría Interna"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Cumplimiento"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "0da58515-d95a-59ce-9830-41bfc188573c",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Auditoría Interna\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "e19b0ad3-4aeb-50ca-ac12-fb3270dab17b",
+                "control-id": "cor-3",
+                "description": "Procedimiento de Auditoría Interna establece las directrices organizacionales para Evaluación Independiente basada en Riesgos (COR-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "fd4fa44f-a3a4-5012-9ef2-8922e1f2a2f2",
+                "control-id": "cor-4",
+                "description": "Procedimiento de Auditoría Interna establece las directrices organizacionales para Mejora Continua y Acciones Correctivas (COR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "be1c4e0d-b4b8-594e-a334-bc4e10532b2e",
+        "type": "process-procedure",
+        "title": "Procedimiento de Acciones Correctivas y Mejora Continua",
+        "description": "Gestión de no conformidades, análisis de causa raíz, planes de acción y verificación de eficacia",
+        "purpose": "Documento PRO-COR-02 del SGX de Kudo (dominio COR).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-COR-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "cor"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Acciones Correctivas y Mejora Continua"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "59d9fe1b-d94d-55ad-9e33-adf9b9a62a80",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Acciones Correctivas y Mejora Continua\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "1a3274d9-d02d-53de-905c-6ce784ead629",
+                "control-id": "cor-4",
+                "description": "Procedimiento de Acciones Correctivas y Mejora Continua establece las directrices organizacionales para Mejora Continua y Acciones Correctivas (COR-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cor/cor-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "e6137eed-592d-51f5-8311-7ee33df24251",
+        "type": "process-procedure",
+        "title": "Procedimiento de Atracción de Talento",
+        "description": "Ciclo completo de vinculación: validación de candidatos, estudios de seguridad, contratación y aprovisionamiento de accesos",
+        "purpose": "Documento PRO-THP-01 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-THP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-atraccion-de-talento",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Atracción de Talento"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Atracción de Talento"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "adb53be1-6937-57fa-94f1-47b34d7214fb",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Atracción de Talento\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "1ccad607-5afe-54fd-b9b5-bc85696901e9",
+                "control-id": "cip-1",
+                "description": "Procedimiento de Atracción de Talento establece las directrices organizacionales para Inventario de Identidad (CIP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "2b926853-14be-5a16-9a06-81838d2321ac",
+                "control-id": "cip-4",
+                "description": "Procedimiento de Atracción de Talento establece las directrices organizacionales para Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades (CIP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/cip/cip-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "ea8f22c9-00fc-5117-b1d9-8c4eda835371",
+                "control-id": "thp-1",
+                "description": "Procedimiento de Atracción de Talento establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "7910fd12-56f0-555b-80c5-00541a98e066",
+        "type": "process-procedure",
+        "title": "Procedimiento de Concientización",
+        "description": "Plan de comunicaciones, charlas, campañas de phishing y checklists de validación del Programa de Concienciación",
+        "purpose": "Documento PRO-THP-02 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-THP-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-concientizacion",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Concientización"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Responsable de Ciberseguridad (CISO)"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "1fb91c03-2dca-52ba-8ef3-b1054c343855",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Concientización\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "025be7bf-dae0-5d3f-a88f-cb66db96c2e6",
+                "control-id": "thp-1",
+                "description": "Procedimiento de Concientización establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "0fe608bb-73ee-581b-8d7a-e50c73076b43",
+        "type": "process-procedure",
+        "title": "Procedimiento de Gestión de Proveedores",
+        "description": "Cómo se ejecuta el ciclo de vida de proveedores: inventario, clasificación, riesgos, comité de compras y validación externa",
+        "purpose": "Documento PRO-THP-03 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "PRO-THP-03"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "procedimiento"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-gestion-de-proveedores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Procedimiento de Gestión de Proveedores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Compras"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "dae2f422-cf0e-5914-89bf-1bb2893ac8a1",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Procedimiento de Gestión de Proveedores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "e1768c4d-b108-58d6-9251-2a8e563ee3bd",
+                "control-id": "thp-3",
+                "description": "Procedimiento de Gestión de Proveedores establece las directrices organizacionales para Inventario de la Cadena de Suministro (THP-3).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-3",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "eb141d04-ca3e-5bf5-a5b3-3597b97779e6",
+                "control-id": "thp-4",
+                "description": "Procedimiento de Gestión de Proveedores establece las directrices organizacionales para Modelo de Responsabilidad Compartida en la Cadena de Suministro (THP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "62016ef0-29df-59b5-80f6-f3735fc73829",
+        "type": "guidance",
+        "title": "Términos y Condiciones para Colaboradores",
+        "description": "TyC para colaboradores organizados según los ocho dominios de ciberseguridad de Kudo",
+        "purpose": "Documento TYC-THP-01 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "TYC-THP-01"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "terminos"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/terminos-y-condiciones-para-colaboradores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Términos y Condiciones para Colaboradores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Recursos Humanos"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "39c3aa2c-c72c-5aab-ae7d-544f3761a48f",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Términos y Condiciones para Colaboradores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "ac11fcd6-6bb7-5a43-90f0-667e1cfba8fb",
+                "control-id": "thp-1",
+                "description": "Términos y Condiciones para Colaboradores establece las directrices organizacionales para Capacitación de Ciberseguridad (THP-1).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-1",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              },
+              {
+                "uuid": "f1b53376-32b6-516e-a383-871f1985a1de",
+                "control-id": "thp-2",
+                "description": "Términos y Condiciones para Colaboradores establece las directrices organizacionales para Trabajo Remoto (THP-2).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-2",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "682c9b21-fd38-54d6-95c4-d6afea516aac",
+        "type": "guidance",
+        "title": "Términos y Condiciones para Proveedores",
+        "description": "TyC para proveedores organizados según los ocho dominios de ciberseguridad de Kudo",
+        "purpose": "Documento TYC-THP-02 del SGX de Kudo (dominio THP).",
+        "props": [
+          {
+            "name": "document-code",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "TYC-THP-02"
+          },
+          {
+            "name": "document-type",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "terminos"
+          },
+          {
+            "name": "domain",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "thp"
+          },
+          {
+            "name": "version",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "1.0"
+          },
+          {
+            "name": "review-frequency",
+            "ns": "https://divisioncero.com/kudo/framework/oscal",
+            "value": "Anual"
+          }
+        ],
+        "links": [
+          {
+            "href": "https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/terminos-y-condiciones-para-proveedores",
+            "rel": "reference",
+            "media-type": "text/html",
+            "text": "Términos y Condiciones para Proveedores"
+          }
+        ],
+        "responsible-roles": [
+          {
+            "role-id": "document-owner",
+            "remarks": "Compras"
+          }
+        ],
+        "control-implementations": [
+          {
+            "uuid": "0d847981-bd63-5a7a-808e-a0688e2d435c",
+            "source": "#242e1697-3681-58b1-900b-2954de79a7e0",
+            "description": "Controles Kudo que el documento \"Términos y Condiciones para Proveedores\" ayuda a implementar.",
+            "implemented-requirements": [
+              {
+                "uuid": "88717d09-51a7-5b7f-8b57-dde64b2efa9a",
+                "control-id": "thp-4",
+                "description": "Términos y Condiciones para Proveedores establece las directrices organizacionales para Modelo de Responsabilidad Compartida en la Cadena de Suministro (THP-4).",
+                "links": [
+                  {
+                    "href": "https://divisioncero.com/kudo/framework/thp/thp-4",
+                    "rel": "reference",
+                    "media-type": "text/html"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "back-matter": {
+      "resources": [
+        {
+          "uuid": "242e1697-3681-58b1-900b-2954de79a7e0",
+          "title": "Perfil Kudo – Línea base completa",
+          "description": "Perfil OSCAL que selecciona todos los controles del catálogo Kudo.",
+          "rlinks": [
+            {
+              "href": "https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-profile.json",
+              "media-type": "application/oscal+json"
+            },
+            {
+              "href": "https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-profile.xml",
+              "media-type": "application/oscal+xml"
+            },
+            {
+              "href": "https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-profile.yaml",
+              "media-type": "application/oscal+yaml"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

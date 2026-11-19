@@ -1,0 +1,62 @@
+---
+title: Profile
+description: Perfil OSCAL que selecciona los controles del catálogo Kudo que aplican a tu organización
+---
+
+El **Profile** define *qué controles del catálogo aplican* a una organización o sistema. Es la línea base que luego se implementa (Component Definition, SSP) y se evalúa (AP, AR). En términos de un sistema de gestión, equivale a la **declaración de aplicabilidad**.
+
+## Perfil Kudo – Línea base completa
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-profile.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-profile.json) |
+| xml | [kudo-profile.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-profile.xml) |
+| yaml | [kudo-profile.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-profile.yaml) |
+| toon | [kudo-profile.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-profile.toon) |
+
+## Contenido
+
+| Elemento | Valor |
+| -------- | ----- |
+| `imports` | [Catálogo Kudo](/framework/oscal/catalog) (referenciado desde `back-matter`) |
+| Selección | `include-all` – los 36 controles |
+| `merge` | `as-is: true` – conserva la estructura de dominios del catálogo |
+| Modificaciones | Ninguna |
+
+```json title="kudo-profile.json (extracto)"
+{
+  "profile": {
+    "imports": [{ "href": "#<uuid-del-catalogo>", "include-all": {} }],
+    "merge": { "as-is": true }
+  }
+}
+```
+
+## Cómo adaptarlo a tu organización
+
+1. Copia `kudo-profile.json` y cambia `metadata.title`, la organización en `parties` y la versión.
+2. Reemplaza `include-all` por `include-controls` para seleccionar solo los controles aplicables:
+
+```json
+"imports": [{
+  "href": "#<uuid-del-catalogo>",
+  "include-controls": [{ "with-ids": ["cor-1", "cor-2", "cip-2", "cip-4", "adr-4", "thp-1"] }]
+}]
+```
+
+3. Documenta la justificación de los controles excluidos en `metadata.remarks` o en `back-matter`.
+4. Si necesitas ajustar un control (por ejemplo, agregar una guía propia), usa `modify.alters`.
+
+<Callout title="Sugerencia">
+  Para organizaciones pequeñas, empieza por los controles de gobierno (COR-1, COR-2), identidad (CIP-2, CIP-4), respuesta a incidentes (ADR-4) y capacitación (THP-1), y amplía el perfil en cada ciclo de mejora.
+</Callout>
+
+## Validación
+
+```bash
+pnpm kudo:oscal:xml                       # desde el repositorio
+oscal-cli profile validate kudo-profile.json
+oscal-cli profile resolve kudo-profile.json kudo-profile-resuelto.json   # catálogo resultante
+```

@@ -1,0 +1,72 @@
+---
+title: "Política de Clasificación y Manejo de la Información"
+description: "Niveles de clasificación, etiquetado y reglas de manejo de la información según su sensibilidad"
+codigo: "POL-DIA-04"
+tipo: "politica"
+dominio: "dia"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.0"
+revision: "Anual"
+controles: [dia-1, dia-4, dia-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-DIA-04 | Política | DIA | 1.0 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Definir un esquema único de clasificación de la información y las reglas de manejo asociadas a cada nivel, para que todas las personas protejan la información de forma proporcional a su sensibilidad.
+
+## Alcance
+Aplica a toda la información creada, recibida, procesada o almacenada por la organización, en cualquier formato (documentos, bases de datos, correos, conversaciones, código fuente, registros) y a todas las personas que la manejan.
+
+## Niveles de Clasificación
+| Nivel | Definición | Ejemplos |
+| ----- | ---------- | -------- |
+| **Pública** | Información aprobada para su divulgación externa. Su exposición no causa daño. | Sitio web, comunicados de prensa, material de marketing publicado. |
+| **Interna** | Información de uso general dentro de la organización. Su exposición causa un daño menor. | Procedimientos internos, directorio, comunicaciones internas generales. |
+| **Confidencial** | Información cuyo acceso no autorizado puede dañar a la organización, a clientes o a colaboradores. | Contratos, información financiera, datos de clientes, código fuente, informes de auditoría y de vulnerabilidades. |
+| **Restringida** | Información altamente sensible, accesible solo para personas nominadas. Su exposición causa un daño grave o tiene consecuencias legales. | Datos personales sensibles (salud, biométricos), datos de tarjetas de pago, credenciales y llaves criptográficas, planes estratégicos no anunciados. |
+
+Si la información no está clasificada, se trata como **Interna**. Cuando un conjunto de datos combina niveles, se aplica el más alto.
+
+## Responsabilidades
+- **Propietario de la información:** asigna la clasificación, aprueba los accesos y la revisa al menos una vez al año.
+- **Custodios (TI, proveedores):** aplican los controles técnicos que corresponden a la clasificación.
+- **Usuarios:** manejan la información según su nivel y reportan cualquier exposición.
+
+## Reglas de Manejo
+| Actividad | Pública | Interna | Confidencial | Restringida |
+| --------- | ------- | ------- | ------------ | ----------- |
+| Etiquetado | Opcional | Recomendado | Obligatorio | Obligatorio |
+| Acceso | Libre | Colaboradores | Según necesidad, con aprobación del propietario | Solo personas nominadas; revisión trimestral |
+| Almacenamiento | Sin restricción | Repositorios corporativos | Repositorios corporativos con control de acceso y cifrado | Repositorios aprobados con cifrado adicional y registro de accesos |
+| Envío externo | Libre | Solo a terceros con acuerdo de confidencialidad | Canal cifrado y acuerdo de confidencialidad | Canal cifrado, autorización del propietario y registro |
+| Herramientas de IA | Permitido | Solo herramientas aprobadas | Solo herramientas aprobadas para ese nivel | Solo con aprobación expresa |
+| Impresión | Libre | Permitida | Recoger de inmediato | Solo si es indispensable; custodia permanente |
+| Eliminación | Normal | Normal | Borrado seguro o destrucción | Borrado seguro o destrucción con evidencia |
+
+## Etiquetado
+- Los documentos Confidenciales y Restringidos indican su clasificación en el encabezado o pie de página, en los metadatos o mediante etiquetas de la herramienta de colaboración.
+- Los sistemas y bases de datos registran la clasificación de la información que procesan en el inventario de activos.
+
+## Inventario y Descubrimiento de Datos
+- Se mantiene un inventario de los conjuntos de datos relevantes con su clasificación, propietario y ubicación.
+- Cuando sea posible, se usan herramientas de descubrimiento y clasificación automatizada de datos sensibles, cuyos resultados valida el propietario.
+- La clasificación se usa para priorizar los controles (cifrado, DLP, monitoreo y respaldos).
+
+## Reclasificación
+La información puede reclasificarse cuando cambia su sensibilidad (por ejemplo, al publicarse un informe). Solo su propietario puede reducir su nivel.
+
+## Monitoreo y Revisión
+Revisión anual de esta política y del inventario de datos; verificación periódica del etiquetado en las auditorías internas.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [DIA-1 · Inventario de Datos](/framework/dia/dia-1)
+- [DIA-4 · Ciberseguridad en Información y Datos](/framework/dia/dia-4)
+- [DIA-3 · Ciclo de Vida de los Datos](/framework/dia/dia-3)
+{/* /kudo:controles */}

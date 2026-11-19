@@ -1,0 +1,264 @@
+---
+title: Rastreo Informático basado en Dirección IP con Conan
+description: Obtener la dirección IP de un objetivo anónimo y convertirla en un dato útil para la investigación
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+## Descripción
+
+En muchas investigaciones de cibercrimen lo único que se tiene del victimario es un perfil de red social, un número de
+mensajería instantánea o un correo electrónico, todos creados con datos falsos. En ese punto el rastro parece perdido,
+pero toda persona que navega en Internet lo hace a través de una conexión, y esa conexión tiene un número que la
+identifica: la **dirección IP**. Si logramos obtenerla, junto con la fecha y hora exactas en que se usó, una autoridad
+facultada puede pedirle al Proveedor de Servicio de Internet (ISP) que informe a qué suscriptor estaba asignada en ese
+momento.
+
+[Conan](https://app.divisioncero.com/home/conan) es una herramienta gratuita de DivisionCero que genera un enlace de
+rastreo. Cuando el objetivo abre el enlace, Conan registra su dirección IP, la fecha y hora de conexión y su agente de
+usuario, y de inmediato lo redirige a la página web que tú elegiste, sin que note nada extraño.
+
+En esta lección aprenderás a:
+
+- Crear un Conan y entregar el enlace de rastreo al objetivo.
+- Interpretar los registros obtenidos: dirección IP, fecha y hora y agente de usuario.
+- Identificar el ISP propietario de una dirección IP.
+- Descargar el reporte PDF y allegar la información a la autoridad competente.
+- Reconocer los límites técnicos y jurídicos del rastreo basado en IP.
+
+## Caso hipotético: "Un pedófilo en la red"
+
+Para aterrizar los conceptos plantearemos toda la lección sobre un caso hipotético. Una niña de 12 años es contactada
+por un perfil de red social con nombre y foto falsos. El perfil se gana su confianza y luego empieza a presionarla para
+que envíe material íntimo (grooming y sextorsión). Los padres lo descubren y acuden a las autoridades, pero lo único que
+tienen es ese perfil anónimo.
+
+Plantéate estas preguntas:
+
+- ¿Cómo puedo ayudar a la víctima?
+- ¿Y si la víctima fuera mi hija, prima o sobrina?
+- ¿Estará este pedófilo contactando a más niños en este momento?
+- ¿Quedará impune el caso, siendo yo la víctima o el investigador?
+
+## Nociones técnicas
+
+En este momento, mientras lees esta lección, estás conectado a Internet desde algún lugar (casa, oficina, un parque) y
+a través de alguna red (los datos del celular, la wifi de tu hogar, la red de tu empresa). En cualquiera de esos
+escenarios hay dos componentes que siempre están presentes, y que los ciberdelincuentes también necesitan para navegar:
+
+**Dirección IP:** conjunto de números que identifica, de manera lógica y jerárquica, la interfaz de red de un
+dispositivo (computador, portátil, teléfono inteligente) que usa el protocolo IP, correspondiente al nivel de red del
+modelo TCP/IP. En palabras sencillas: *"el número que identifica una conexión a Internet"*.
+
+**Proveedor de Servicio de Internet (ISP):** por sus siglas en inglés, *Internet Service Provider*, es la empresa que
+brinda conexión a Internet a sus clientes y que asigna las direcciones IP. En palabras sencillas: *"la empresa a la que
+le pagamos el servicio de Internet"*.
+
+**Agente de usuario (User-Agent):** cabecera que el navegador envía en cada petición web. Contiene una cadena que
+permite identificar el tipo de aplicación, el sistema operativo, el proveedor y la versión del software desde el que se
+hizo la petición.
+
+<Callout title="Hacks">
+  Si quieres ver tu propia dirección IP, tu agente de usuario y los encabezados HTTP que recibe un servidor, usa la
+  herramienta [¿Cuál es mi IP?](/herramientas/cual-es-mi-ip). Es exactamente el tipo de información que obtiene Conan.
+</Callout>
+
+## ¿Qué es Conan y cómo obtiene la información?
+
+Un Conan es, básicamente, un enlace que se le envía al objetivo por el mismo medio por el que se comunica (red social,
+correo electrónico, aplicación de mensajería). Cuando el objetivo da clic, su navegador hace una petición HTTP al
+servidor de Conan; de esa petición se registran solo tres datos y enseguida se le redirige a la URL de destino:
+
+| Dato | Qué es |
+| --- | --- |
+| Dirección IP | La IP pública desde la que se abrió el enlace. |
+| Fecha y hora | El momento exacto de la conexión, en hora de Colombia (GMT-5). |
+| Agente de usuario | El navegador, el sistema operativo y el dispositivo desde el que se abrió el enlace. |
+
+Conan es un servicio web y funciona con los componentes y protocolos básicos de cualquier sitio web, por los puertos 80
+(HTTP) y 443 (HTTPS). No instala nada en el dispositivo del objetivo, no explota vulnerabilidades y no recolecta
+información distinta a la que aparece en los registros y en el reporte PDF, lo cual es totalmente auditable.
+
+**¿Quién puede usarlo?** Cualquier persona que lo necesite: víctimas, investigadores, policía judicial o analistas de
+respuesta a incidentes.
+
+**¿Cuándo usarlo?** Cuando exista una conducta punible o un elemento material probatorio relacionado con las
+tecnologías de la información y las comunicaciones: grooming, sextorsión, estafas, acoso, suplantación, fraude, trata de
+personas, entre otros.
+
+## Paso 1: Crear un Conan
+
+<Steps>
+<Step>
+
+### Ingresa a Conan
+
+[Regístrate en DivisionCero](https://app.divisioncero.com/auth/sign-up) o inicia sesión. En el menú lateral, dentro de
+la sección **Investigación**, encontrarás **Conan**, o entra directamente a
+[app.divisioncero.com/home/conan](https://app.divisioncero.com/home/conan).
+
+</Step>
+<Step>
+
+### Diligencia el formulario "Crear Nuevo Conan"
+
+- **Referencia:** un nombre corto (máximo 30 caracteres) para reconocer el rastreador más adelante, porque con el tiempo
+  crearás muchos. Para el caso usaremos `Un Pedófilo en la Red`.
+- **URL de Destino:** la página web a la que será redirigido el objetivo después de registrar su conexión. Debe empezar
+  por `http://` o `https://`. Elige algo coherente con la conversación para que el enlace no despierte sospechas, por
+  ejemplo un perfil, una noticia o un producto.
+
+</Step>
+<Step>
+
+### Acepta los términos y crea el Conan
+
+Marca la casilla de términos de servicio y privacidad, completa la verificación de seguridad y da clic en
+**Crear Conan**.
+
+</Step>
+<Step>
+
+### Copia la URL de Rastreo
+
+La plataforma te lleva a la página del rastreador. En **Información del Rastreador** verás:
+
+- **URL de Rastreo:** el enlace que debes enviar al objetivo, con la forma
+  `https://app.divisioncero.com/conan/<código>`. Usa el botón **Copiar**.
+- **URL de Destino:** la que ingresaste en el formulario.
+- **Total de Visitas:** cuántas veces se ha abierto el enlace.
+
+</Step>
+<Step>
+
+### Disimula el enlace
+
+Como la URL de rastreo contiene el dominio de DivisionCero, el objetivo podría sospechar. Puedes pasarla por un
+acortador de URL o presentarla dentro de un contexto natural de la conversación.
+
+</Step>
+<Step>
+
+### Envía el Conan al objetivo
+
+Envía el enlace por el mismo medio por el que se comunica el objetivo. El éxito depende de que dé clic: cuando lo hace,
+Conan registra su conexión y le muestra la URL de destino, como si se tratara de un enlace normal.
+
+</Step>
+</Steps>
+
+<Callout title="Errores" type="error">
+  NO abras tú mismo la URL de rastreo. Si lo haces, Conan registrará tu propia dirección IP y contaminarás los registros
+  de la investigación. Para revisar a dónde redirige, abre directamente la URL de destino.
+</Callout>
+
+## Paso 2: Revisar los registros
+
+Cada vez que el objetivo abra el enlace aparecerá una fila en **Registros de Actividad** con la **Dirección IP**, la
+**Fecha y Hora** (GMT-5) y el **Agente de Usuario**. Para volver a un rastreador, entra a Conan, abre la pestaña
+**Rastreadores** y da clic en **Ver Registros** sobre la referencia que buscas.
+
+<Callout title="Riesgos" type="warning">
+  Muchas aplicaciones de mensajería y redes sociales consultan el enlace desde sus propios servidores para generar la
+  vista previa. Esos registros no son del objetivo: se reconocen porque el agente de usuario corresponde a un bot (por
+  ejemplo `facebookexternalhit`, `WhatsApp` o `TelegramBot`) y la IP pertenece a la empresa de la plataforma, no a un
+  ISP. Analiza cada registro antes de reportarlo.
+</Callout>
+
+### Identificar el ISP
+
+Toda dirección IP tiene un propietario, normalmente un ISP. Para saber a qué empresa pertenece, consulta la IP en la
+herramienta [WHOIS de IP y Dominio](/herramientas/whois-ip-y-dominio): te muestra el titular, el rango de direcciones,
+el ASN y el registro regional responsable, y te permite exportar la consulta en PDF para anexarla al reporte de Conan.
+Para el caso, supongamos que la IP del pedófilo pertenece al mismo ISP al que nosotros le pagamos el servicio de
+Internet.
+
+### Descargar el reporte
+
+Con el botón **Descargar Reporte PDF** obtienes un documento listo para entregar a la autoridad judicial, que incluye la
+referencia del Conan, la URL de destino y:
+
+1. Registros de actividad.
+2. Marco jurídico y teórico de Conan.
+3. Glosario de términos.
+4. Consideraciones importantes.
+
+## Paso 3: Entregar la información a la autoridad judicial
+
+Con la dirección IP, la fecha y la hora, una entidad de investigación facultada puede solicitar al ISP los datos del
+suscriptor que tenía asignada la dirección `X.X.X.X` el día `DD/MM/AAAA` a las `HH:MM` horas, es decir, el lugar desde
+el que se conectó el objetivo.
+
+No somos poseedores de verdades absolutas; por eso solo sugerimos algunas actividades para allegar la información
+recolectada por Conan, tomando como referencia el sistema penal colombiano (Ley 906 de 2004):
+
+- Recolección de información de fuente humana, formal o no formal.
+- La víctima allega, mediante oficio, la información recolectada al fiscal que dirige la indagación.
+- Un funcionario de policía judicial recolecta la información en una diligencia de entrevista a la víctima.
+- El fiscal ordena al investigador la actividad de recolección de información pública.
+- El fiscal ordena la **búsqueda selectiva en bases de datos** dirigida al ISP (art. 244 del Código de Procedimiento
+  Penal).
+- El fiscal ordena la **recuperación de información producto de la transmisión de datos a través de las redes de
+  comunicaciones** (art. 236 del Código de Procedimiento Penal).
+- El fiscal ordena **operaciones encubiertas en medios de comunicación virtual** (art. 242 del Código de Procedimiento
+  Penal y Ley 1908 de 2018).
+
+Un dato puede llegar a una indagación penal de muchas maneras: depende de la conducta investigada, del marco jurídico de
+cada país, de la estrategia del fiscal y de los motivos fundados que existan. Revisa el
+[Módulo 2: Marco Legal de la Investigación de Cibercrimen](/cyberacademy/adr/investigacion-de-cibercrimen/modulo-2-marco-legal-de-la-investigacion-de-cibercrimen)
+para profundizar en tu jurisdicción.
+
+<Callout title="Optimización" type="success">
+  Actúa rápido. Los ISP conservan los registros de asignación de direcciones IP por un tiempo limitado, que depende de la
+  regulación de cada país. Descarga el reporte en cuanto obtengas registros y solicita la preservación de los datos lo
+  antes posible.
+</Callout>
+
+## Límites del rastreo basado en IP
+
+Una dirección IP **no identifica a una persona, identifica una conexión**, que puede ser usada por una o por miles de
+personas. Ten presentes estos escenarios:
+
+- **VPN, proxy o Tor:** si el objetivo los usa, Conan obtendrá la IP del servicio de anonimización y no la de su
+  conexión real. Aun así, el dato sirve como pista y puede vincular distintos incidentes.
+- **Redes compartidas:** una IP puede corresponder a una red empresarial, un café internet, una universidad o una wifi
+  pública, donde muchas personas comparten la misma salida a Internet.
+- **CGNAT en redes móviles:** los operadores móviles suelen compartir una misma IP pública entre muchos clientes. En
+  esos casos la fecha y hora exactas son indispensables, y el ISP puede necesitar información adicional para
+  individualizar al suscriptor.
+- **Si el objetivo no da clic,** no se obtiene ningún registro.
+
+Por eso, desde una perspectiva jurídica, la identificación de una persona a partir de Conan exige recolectar elementos
+materiales probatorios adicionales (registros del ISP, allanamientos, análisis forense de dispositivos, testimonios),
+como verás en la lección
+[Atribución de Ataques y sus Limitaciones](/cyberacademy/adr/investigacion-de-cibercrimen/modulo-3-tecnicas-de-investigacion-digital/atribucion-de-ataques-y-sus-limitaciones).
+
+<Callout title="Riesgos" type="warning">
+  Usa Conan solo en el marco de una investigación legítima y dentro de la ley de tu jurisdicción. DivisionCero no se hace
+  responsable del uso que se le dé a la herramienta. Si eres víctima, no confrontes al victimario ni intentes actuar por
+  tu cuenta: preserva las conversaciones y acude a la autoridad competente.
+</Callout>
+
+## Glosario
+
+**Fecha y hora de conexión:** momento en que se obtuvo la dirección IP. En DivisionCero se registra en hora de Colombia
+(Colombia Time, COT, UTC-5, sin horario de verano), cuyo identificador de zona horaria IANA es `America/Bogota`.
+
+**Agente de usuario:** cabecera `User-Agent` de la petición HTTP que identifica la aplicación, el sistema operativo, el
+proveedor y la versión del software desde el que se abrió el enlace.
+
+**URL de Rastreo:** enlace generado por Conan que se envía al objetivo.
+
+**URL de Destino:** página web a la que Conan redirige al objetivo después de registrar su conexión.
+
+**WHOIS:** protocolo y servicio de consulta que permite conocer el propietario de una dirección IP o de un dominio.
+
+## Conclusión
+
+Ya sabes cómo usar Conan para rastrear conexiones en Internet. La misma técnica aplica a estafadores, grooming, sexting,
+sextorsión, fraude, ubicación de personas, trata de personas y noticias falsas, entre otros. En esta lección aprendiste
+a crear y enviar un Conan, a interpretar los registros de un cibercriminal, a identificar el ISP de una dirección IP, a
+descargar el reporte con los motivos fundados y a reconocer los límites de esta técnica.
+
+Intenta identificar nuevas formas de usar Conan en distintos contextos para consolidar tu aprendizaje. ¡Feliz
+investigación!

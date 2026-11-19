@@ -14,9 +14,25 @@ Proyecto de documentación de ciberseguridad basado en el framework Kudo de Divi
 # Build para producción
 {{PACKAGE_MANAGER}} build
 
-# Exportar sitio estático
-{{PACKAGE_MANAGER}} export
+# El sitio estático queda en out/
 ```
+
+## 🤖 Trabajar con IA
+
+Este proyecto incluye el servidor MCP de Kudo (`.mcp.json`), 8 agentes de ciberseguridad (`.claude/agents/`) y 16 skills (`.claude/skills/`).
+
+```bash
+# Claude Code detecta .mcp.json al abrir el proyecto
+claude
+
+# Otros asistentes: instala las skills
+npx skills add PetterVargas/divisioncero.com
+
+# Servidor MCP por HTTP en http://localhost:3333/mcp
+{{PACKAGE_MANAGER}} run mcp:http
+```
+
+Guía: https://divisioncero.com/kudo/framework/overview/mcp-agentes-y-skills
 
 ## 📁 Estructura del Proyecto
 
@@ -27,10 +43,11 @@ Proyecto de documentación de ciberseguridad basado en el framework Kudo de Divi
 │   ├── [...slug]/                # Páginas dinámicas de documentación
 │   └── api/search/               # API de búsqueda
 ├── content/
-│   ├── docs/
-│   │   ├── politicas/           # Templates de políticas de seguridad
-│   │   └── framework/           # Documentación del framework Kudo
+│   ├── framework/               # Documentación del framework Kudo
+│   ├── sgx/                     # Políticas, procedimientos y correlación del SGX
 │   └── blog/                    # Blog posts
+├── .claude/                     # Agentes y skills de IA
+├── .mcp.json                    # Servidor MCP de Kudo
 ├── components/                   # Componentes React reutilizables
 ├── lib/                         # Utilidades y configuración
 └── public/                      # Assets estáticos
@@ -45,7 +62,7 @@ Proyecto de documentación de ciberseguridad basado en el framework Kudo de Divi
 
 ## 🛠️ Tecnologías
 
-- **Next.js 15** - Framework de React
+- **Next.js 16** - Framework de React
 - **Fumadocs** - Sistema de documentación
 - **Tailwind CSS** - Estilos
 - **TypeScript** - Tipado estático

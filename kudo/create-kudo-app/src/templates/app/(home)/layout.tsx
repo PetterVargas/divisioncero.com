@@ -113,7 +113,7 @@ function Footer() {
               <ul className="space-y-2">
                 <li><a href="https://herramientas.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Herramientas</a></li>
                 <li><a href="https://docs.divisioncero.com" className="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Documentación</a></li>
-                <li><a href="/sgsi" className="text-sm hover:underline">SGSI</a></li>
+                <li><a href="/sgx" className="text-sm hover:underline">SGX</a></li>
               </ul>
             </div>
             <div className="flex flex-col gap-y-2.5">

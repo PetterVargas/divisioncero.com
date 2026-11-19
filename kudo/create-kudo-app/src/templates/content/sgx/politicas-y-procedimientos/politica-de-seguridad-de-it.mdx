@@ -1,0 +1,68 @@
+---
+title: "Política de Seguridad de TI"
+description: "Estándares de seguridad para infraestructura y servicios de TI"
+codigo: "POL-CIF-02"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cip-5, cip-6, thp-2]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-02 | Política | CIF | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer los estándares para el uso seguro de los puntos finales (portátiles, equipos de escritorio y teléfonos móviles) y de los recursos de TI, protegiendo los datos y respaldando la misión de la organización.
+
+## Alcance
+Aplica a todos los usuarios, contratistas y dispositivos que acceden a recursos de TI de la organización, incluidos portátiles, teléfonos móviles, sistemas en la nube y plataformas que procesan datos organizacionales.
+
+## Estándares
+
+### Inventario y Uso Responsable
+- Todos los dispositivos que acceden a recursos de la organización se registran en el inventario de puntos finales, con responsable, sistema operativo, estado de cifrado y de protección.
+- Los dispositivos no registrados o que no cumplen los requisitos mínimos no acceden a recursos corporativos.
+- Las pérdidas, robos o actividades sospechosas se reportan de inmediato al equipo de Seguridad de la Información.
+
+### Requisitos Mínimos de los Puntos Finales
+- Gestión centralizada (MDM/UEM) para aplicar configuraciones, actualizaciones y borrado remoto.
+- Cifrado de disco completo.
+- Protección contra software malicioso / EDR activa y actualizada.
+- Actualizaciones de seguridad aplicadas según la Política de Gestión de Vulnerabilidades y Parches.
+- Bloqueo automático tras un máximo de 5 minutos de inactividad.
+- Firewall local activo y sin privilegios de administrador para el usuario de uso diario.
+- Instalación de software solo desde fuentes aprobadas.
+
+### Escritorio y Pantalla Limpios
+- Guardar la información sensible bajo llave y bloquear los dispositivos cuando no estén en uso.
+- Recoger de inmediato las impresiones y borrar pizarras y pantallas al finalizar reuniones.
+
+### Teléfonos Móviles
+- Acceso al correo y a aplicaciones corporativas solo desde dispositivos inscritos en MDM o mediante aplicaciones gestionadas.
+- Bloqueo con PIN, biometría o patrón robusto y sistema operativo con soporte vigente.
+- Los dispositivos personales (BYOD) se rigen por la [Política de Trabajo Remoto y Dispositivos Móviles](/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles).
+
+### Trabajo Remoto
+Los requisitos de conexión, entorno y dispositivos para trabajar fuera de las instalaciones se definen en la [Política de Trabajo Remoto y Dispositivos Móviles](/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles).
+
+### Mantenimiento y Devolución de Equipos
+- El mantenimiento lo realiza personal autorizado o proveedores con acuerdo de confidencialidad.
+- Al devolver o reasignar un equipo, se respaldan los datos necesarios y se realiza un borrado seguro antes de entregarlo a otra persona.
+
+## Monitoreo y Revisión
+- Revisión mensual del cumplimiento de los requisitos mínimos de los puntos finales mediante la consola de gestión.
+- Corrección inmediata de desviaciones o aislamiento del dispositivo.
+- Revisión anual de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIP-5 · Inventario de Puntos Finales](/framework/cip/cip-5)
+- [CIP-6 · Ciberseguridad en Puntos Finales](/framework/cip/cip-6)
+- [THP-2 · Trabajo Remoto](/framework/thp/thp-2)
+{/* /kudo:controles */}

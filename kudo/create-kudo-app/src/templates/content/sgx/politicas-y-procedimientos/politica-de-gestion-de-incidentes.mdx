@@ -1,0 +1,91 @@
+---
+title: "Política de Gestión de Incidentes"
+description: "Detección, respuesta y gestión de incidentes de seguridad"
+codigo: "POL-ADR-01"
+tipo: "politica"
+dominio: "adr"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.1"
+revision: "Anual"
+controles: [adr-4]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-ADR-01 | Política | ADR | 1.1 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer cómo la organización detecta, clasifica, contiene, erradica, recupera y aprende de los incidentes de seguridad de la información, minimizando sus impactos operativos, legales, contractuales y reputacionales.
+
+## Objetivos
+- Registrar y documentar todos los incidentes de forma consistente.
+- Responder con tiempos acordes a la severidad.
+- Preservar la evidencia para el análisis y, si aplica, para acciones legales.
+- Notificar a clientes, titulares de datos y reguladores dentro de los plazos aplicables.
+- Aprender de cada incidente y mejorar los controles.
+
+## Alcance
+Aplica a todos los eventos e incidentes de seguridad que afecten la información, los sistemas, los servicios en la nube o los proveedores de la organización, desde su detección hasta la revisión posincidente.
+
+## Definiciones Clave
+- **Evento de seguridad:** ocurrencia observable que puede indicar un problema de seguridad (por ejemplo, una alerta o un intento fallido de acceso).
+- **Incidente de seguridad:** evento que compromete o puede comprometer la confidencialidad, integridad o disponibilidad de la información (por ejemplo, malware, acceso no autorizado, fuga de datos, phishing exitoso o denegación de servicio).
+- **Brecha de datos personales:** incidente que afecta datos personales y puede requerir notificación a la autoridad y a los titulares.
+- **Crisis:** incidente de magnitud tal que se gestiona con la Política de Gestión de Crisis.
+- **Equipo de Respuesta a Incidentes (IRT/CSIRT):** equipo que coordina la respuesta técnica.
+
+## Roles y Responsabilidades
+- **Todos los colaboradores y proveedores:** reportan de inmediato cualquier evento sospechoso (los colaboradores, en un máximo de 24 horas según sus Términos y Condiciones; idealmente en el momento).
+- **Coordinador / Comandante del Incidente:** lidera la respuesta y toma las decisiones operativas.
+- **Equipo de Respuesta (IRT):** analiza, contiene, erradica y recupera.
+- **Legal y Oficial de Protección de Datos:** evalúan las obligaciones de notificación.
+- **Comunicaciones:** gestiona los mensajes internos y externos.
+- **Gerencia:** aprueba las decisiones de alto impacto y escala a crisis cuando corresponde.
+
+## Clasificación y Tiempos de Respuesta
+| Nivel | Criterio | Ejemplo | Inicio de la respuesta | Escalamiento |
+| ----- | -------- | ------- | ---------------------- | ------------ |
+| 1 – Bajo | Impacto local reducido, sin datos sensibles. | Malware bloqueado en un equipo. | 1 día hábil | Equipo de seguridad |
+| 2 – Medio | Impacto moderado o visible para clientes. | Cuenta de usuario comprometida. | 4 horas | Responsable de Ciberseguridad |
+| 3 – Alto | Afecta múltiples áreas, sistemas críticos o datos confidenciales. | Acceso no autorizado a una base de datos. | 1 hora | Gerencia |
+| 4 – Crítico | Impacto severo en el negocio, datos personales a gran escala o servicios críticos detenidos. | Ransomware en producción. | Inmediato (24/7) | Gerencia y Equipo de Crisis |
+
+## Proceso de Gestión de Incidentes
+1. **Detección y reporte:** el evento llega por alertas de monitoreo, reportes de usuarios, proveedores o terceros.
+2. **Registro y clasificación:** se registra el incidente y se asigna su nivel.
+3. **Contención:** se limita el daño (aislar equipos, deshabilitar cuentas, bloquear indicadores).
+4. **Erradicación:** se elimina la causa (malware, accesos, vulnerabilidad explotada).
+5. **Recuperación:** se restauran los servicios y se verifica su normalidad.
+6. **Notificación:** se informa a las partes interesadas según los plazos aplicables.
+7. **Cierre y lecciones aprendidas:** análisis de causa raíz para los incidentes de nivel 2 o superior, con acciones correctivas.
+
+El detalle operativo se define en el [Procedimiento de Respuesta a Incidentes](/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes).
+
+## Preservación de Evidencia
+- Antes de modificar o reinstalar sistemas comprometidos se preserva la evidencia relevante (registros, imágenes de disco o memoria cuando aplique).
+- Se mantiene la cadena de custodia para la evidencia que pueda usarse en procesos legales.
+
+## Notificación
+- **Clientes:** según los plazos de sus contratos.
+- **Autoridad de protección de datos y titulares:** según la ley aplicable en cada país (los plazos varían, por ejemplo, de 72 horas a algunos días hábiles); Legal y el Oficial de Protección de Datos determinan la obligación.
+- **Reguladores sectoriales y CSIRT nacional:** cuando la regulación lo exija.
+- Los proveedores deben notificar a la organización los incidentes que la afecten en un máximo de 48 horas.
+
+## Pruebas y Capacitación
+- Al menos un ejercicio de mesa al año sobre escenarios relevantes (ransomware, fuga de datos, compromiso de cuentas).
+- Capacitación del equipo de respuesta y de los colaboradores en cómo reportar incidentes.
+
+## Mejora Continua
+Las lecciones aprendidas alimentan la gestión de riesgos, los controles y esta política, mediante el Procedimiento de Acciones Correctivas y Mejora Continua.
+
+## Monitoreo y Revisión
+- Indicadores: número de incidentes por nivel, tiempo medio de detección (MTTD) y de respuesta (MTTR).
+- Revisión anual de esta política y del procedimiento.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-4 · Atención de Eventos y/o Incidentes de Ciberseguridad](/framework/adr/adr-4)
+{/* /kudo:controles */}

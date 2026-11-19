@@ -1,0 +1,58 @@
+---
+title: CCN-4 - Continuidad del Negocio y Recuperación ante Desastres
+description: Control de continuidad del negocio, respaldos y recuperación ante desastres
+---
+
+## Definición de Control
+
+Es necesario identificar los procesos críticos del negocio mediante un análisis de impacto y definir sus objetivos de recuperación (MTPD, RTO y RPO), y mantener planes de continuidad y de recuperación ante desastres documentados para cumplirlos. Es necesario respaldar los datos y sistemas críticos con copias aisladas e inmutables, cifradas y probadas periódicamente, y eliminar los puntos únicos de falla de los servicios críticos. Es necesario ejercitar los planes al menos una vez al año, verificar las capacidades de continuidad de los proveedores críticos y actualizar los planes con las lecciones aprendidas.
+
+## Requisitos
+
+### Requisito 1
+
+Realizamos un análisis de impacto en el negocio (BIA) para identificar los procesos y servicios críticos y sus dependencias de personas, tecnología, información y proveedores.
+
+### Requisito 2
+
+Definimos para cada proceso crítico el tiempo máximo tolerable de interrupción (MTPD), el tiempo objetivo de recuperación (RTO) y el punto objetivo de recuperación (RPO).
+
+### Requisito 3
+
+Documentamos un plan de continuidad del negocio con estrategias, roles, comunicación y criterios de activación para cada proceso crítico.
+
+### Requisito 4
+
+Documentamos un plan de recuperación ante desastres (DRP) para los sistemas que soportan los procesos críticos.
+
+### Requisito 5
+
+Respaldamos los datos, sistemas y configuraciones críticas con una frecuencia acorde al RPO definido.
+
+### Requisito 6
+
+Mantenemos al menos una copia de los respaldos fuera del sitio o de la cuenta principal y una copia inmutable o desconectada, protegida frente a ransomware.
+
+### Requisito 7
+
+Ciframos los respaldos y restringimos su acceso con credenciales separadas de las de producción.
+
+### Requisito 8
+
+Probamos la restauración de los respaldos de los sistemas críticos al menos trimestralmente y verificamos que se cumple el RTO.
+
+### Requisito 9
+
+Eliminamos los puntos únicos de falla de los servicios críticos mediante redundancia, alta disponibilidad o despliegue en múltiples zonas o regiones.
+
+### Requisito 10
+
+Ejecutamos al menos un ejercicio anual de continuidad o recuperación (prueba de mesa, recorrido o simulación) y documentamos sus resultados.
+
+### Requisito 11
+
+Verificamos que los proveedores críticos cuenten con capacidades de continuidad acordes a nuestros objetivos de recuperación.
+
+### Requisito 12
+
+Revisamos y actualizamos el BIA y los planes de continuidad al menos una vez al año, tras cada activación y ante cambios significativos.

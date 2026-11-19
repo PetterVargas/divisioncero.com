@@ -31,7 +31,7 @@ El modo interactivo te permitirá:
 
 ### Proyecto base
 
-- **Next.js 15** con React 19
+- **Next.js 16** con React 19
 - **Fumadocs** para documentación
 - **Tailwind CSS** para estilos
 - **TypeScript** configurado
@@ -44,7 +44,7 @@ El modo interactivo te permitirá:
 
 ### Templates de Políticas
 
-25+ templates de políticas organizacionales organizadas en 8 dominios:
+45 políticas, procedimientos y plantillas organizados en 8 dominios:
 
 1. **COR** - Coherencia Organizacional
 2. **CIP** - Ciberseguridad en Identidad y Puntos Finales
@@ -54,6 +54,12 @@ El modo interactivo te permitirá:
 6. **ADR** - Análisis, Detección y Respuesta
 7. **THP** - Talento Humano y Proveedores
 8. **DIA** - Datos e Inteligencia Artificial
+
+### IA local: MCP, agentes y skills
+
+- `.mcp.json` con el servidor MCP de Kudo ([`@divisioncero/kudo-mcp`](https://www.npmjs.com/package/@divisioncero/kudo-mcp))
+- 8 agentes de ciberseguridad en `.claude/agents/` y 16 skills en `.claude/skills/`
+- Omítelo con `--no-ai`
 
 ## 🏗️ Estructura del proyecto generado
 
@@ -87,9 +93,6 @@ pnpm dev
 
 # Build para producción
 pnpm build
-
-# Exportar sitio estático
-pnpm export
 
 # Iniciar servidor de producción
 pnpm start

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessment-results xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="ecd623a4-49e7-51ef-90be-8e2213e2c9f6">
+   <metadata>
+      <title>Resultados de Evaluación (AR) – Ejemplo de auditoría interna Kudo</title>
+      <published>2026-11-18T00:00:00Z</published>
+      <last-modified>2026-11-18T00:00:00Z</last-modified>
+      <version>0.1.0</version>
+      <oscal-version>1.2.3</oscal-version>
+      <link href="https://divisioncero.com/kudo/framework/oscal" rel="canonical" media-type="text/html">
+         <text>Kudo y OSCAL</text>
+      </link>
+      <role id="creator">
+         <title>Autor del contenido</title>
+      </role>
+      <role id="prepared-for">
+         <title>Organización destinataria</title>
+      </role>
+      <party uuid="ed04377f-1282-41a6-b653-477f0b38742c" type="organization">
+         <name>DivisionCero</name>
+         <link href="https://divisioncero.com/kudo" rel="homepage"/>
+      </party>
+      <party uuid="e9de3acc-be4b-58c9-816f-25e260a9dcbe" type="organization">
+         <name>[Nombre de tu organización]</name>
+         <remarks>
+            <p>Reemplaza este valor por la razón social de la organización que adopta Kudo.</p>
+         </remarks>
+      </party>
+      <responsible-party role-id="creator">
+         <party-uuid>ed04377f-1282-41a6-b653-477f0b38742c</party-uuid>
+      </responsible-party>
+      <responsible-party role-id="prepared-for">
+         <party-uuid>e9de3acc-be4b-58c9-816f-25e260a9dcbe</party-uuid>
+      </responsible-party>
+      <remarks>
+         <p>Resultados ILUSTRATIVOS de una auditoría interna con el plan de evaluación de Kudo. Muestran cómo registrar observaciones, hallazgos y riesgos por control. Reemplázalos por los resultados reales de tu organización.</p>
+      </remarks>
+   </metadata>
+   <import-ap href="#e2eb1ac1-b8ef-5745-97a0-f3e9e105e5d3"/>
+   <result uuid="52fde62e-dbaa-5b6c-8cea-f8e083aee6e2">
+      <title>Auditoría interna 2027</title>
+      <description>
+         <p>Resultados consolidados de la auditoría interna anual de los controles Kudo.</p>
+      </description>
+      <start>2027-01-01T00:00:00Z</start>
+      <end>2027-08-15T00:00:00Z</end>
+      <reviewed-controls>
+         <control-selection>
+            <include-all/>
+         </control-selection>
+      </reviewed-controls>
+      <observation uuid="674f5fcd-4a1e-56a8-8da4-dba013426a63">
+         <title>MFA no habilitada en todas las cuentas administrativas</title>
+         <description>
+            <p>En una muestra de 20 cuentas administrativas, 3 no tenían MFA habilitada en la consola de nube.</p>
+         </description>
+         <method>TEST</method>
+         <type>finding</type>
+         <collected>2027-01-01T00:00:00Z</collected>
+         <remarks>
+            <p>Ejemplo ilustrativo.</p>
+         </remarks>
+      </observation>
+      <observation uuid="1511672f-9dbe-58a9-b659-2f9736370d12">
+         <title>Vulnerabilidades altas remediadas fuera de plazo</title>
+         <description>
+            <p>El 35 % de las vulnerabilidades de severidad Alta del último trimestre superó el plazo de 30 días.</p>
+         </description>
+         <method>EXAMINE</method>
+         <type>finding</type>
+         <collected>2027-01-01T00:00:00Z</collected>
+         <remarks>
+            <p>Ejemplo ilustrativo.</p>
+         </remarks>
+      </observation>
+      <observation uuid="1e08bc87-d06b-547c-a52d-c7f493a00582">
+         <title>Sin evidencia de eliminación de datos vencidos</title>
+         <description>
+            <p>No existe registro de eliminación de los datos de candidatos con más de un año desde el cierre del proceso.</p>
+         </description>
+         <method>INTERVIEW</method>
+         <type>finding</type>
+         <collected>2027-01-01T00:00:00Z</collected>
+         <remarks>
+            <p>Ejemplo ilustrativo.</p>
+         </remarks>
+      </observation>
+      <observation uuid="67d0219c-7a12-5335-95e0-533951bc67e8">
+         <title>Programa de concienciación operando</title>
+         <description>
+            <p>Se verificaron las campañas trimestrales de phishing simulado y los registros de capacitación anual del 96 % de los colaboradores.</p>
+         </description>
+         <method>EXAMINE</method>
+         <type>control-objective</type>
+         <collected>2027-01-01T00:00:00Z</collected>
+         <remarks>
+            <p>Ejemplo ilustrativo.</p>
+         </remarks>
+      </observation>
+      <risk uuid="45c018b3-7099-57a8-b0c1-03fec78bfb0e">
+         <title>MFA no habilitada en todas las cuentas administrativas</title>
+         <description>
+            <p>Compromiso de cuentas administrativas por robo o reutilización de credenciales.</p>
+         </description>
+         <statement>
+            <p>En una muestra de 20 cuentas administrativas, 3 no tenían MFA habilitada en la consola de nube. Compromiso de cuentas administrativas por robo o reutilización de credenciales.</p>
+         </statement>
+         <status>open</status>
+         <characterization>
+            <origin>
+               <actor type="party" actor-uuid="e9de3acc-be4b-58c9-816f-25e260a9dcbe"/>
+            </origin>
+            <facet name="likelihood" system="https://divisioncero.com/kudo/framework/oscal" value="moderate"/>
+            <facet name="impact" system="https://divisioncero.com/kudo/framework/oscal" value="high"/>
+         </characterization>
+         <related-observation observation-uuid="674f5fcd-4a1e-56a8-8da4-dba013426a63"/>
+      </risk>
+      <risk uuid="e9fe7e5c-c17c-5963-9ac6-e547b7baaf05">
+         <title>Vulnerabilidades altas remediadas fuera de plazo</title>
+         <description>
+            <p>Explotación de vulnerabilidades conocidas en activos internos.</p>
+         </description>
+         <statement>
+            <p>El 35 % de las vulnerabilidades de severidad Alta del último trimestre superó el plazo de 30 días. Explotación de vulnerabilidades conocidas en activos internos.</p>
+         </statement>
+         <status>open</status>
+         <characterization>
+            <origin>
+               <actor type="party" actor-uuid="e9de3acc-be4b-58c9-816f-25e260a9dcbe"/>
+            </origin>
+            <facet name="likelihood" system="https://divisioncero.com/kudo/framework/oscal" value="moderate"/>
+            <facet name="impact" system="https://divisioncero.com/kudo/framework/oscal" value="moderate"/>
+         </characterization>
+         <related-observation observation-uuid="1511672f-9dbe-58a9-b659-2f9736370d12"/>
+      </risk>
+      <risk uuid="c2be3ca7-5d4a-51ed-9eb6-c25764315220">
+         <title>Sin evidencia de eliminación de datos vencidos</title>
+         <description>
+            <p>Incumplimiento del principio de limitación del plazo de conservación y sanciones de la autoridad de protección de datos.</p>
+         </description>
+         <statement>
+            <p>No existe registro de eliminación de los datos de candidatos con más de un año desde el cierre del proceso. Incumplimiento del principio de limitación del plazo de conservación y sanciones de la autoridad de protección de datos.</p>
+         </statement>
+         <status>open</status>
+         <characterization>
+            <origin>
+               <actor type="party" actor-uuid="e9de3acc-be4b-58c9-816f-25e260a9dcbe"/>
+            </origin>
+            <facet name="likelihood" system="https://divisioncero.com/kudo/framework/oscal" value="low"/>
+            <facet name="impact" system="https://divisioncero.com/kudo/framework/oscal" value="moderate"/>
+         </characterization>
+         <related-observation observation-uuid="1e08bc87-d06b-547c-a52d-c7f493a00582"/>
+      </risk>
+      <finding uuid="496659c5-009d-5c54-85b1-d78d3b9e9494">
+         <title>MFA no habilitada en todas las cuentas administrativas</title>
+         <description>
+            <p>En una muestra de 20 cuentas administrativas, 3 no tenían MFA habilitada en la consola de nube.</p>
+         </description>
+         <target type="objective-id" target-id="cip-2_smt">
+            <status state="not-satisfied"/>
+         </target>
+         <related-observation observation-uuid="674f5fcd-4a1e-56a8-8da4-dba013426a63"/>
+         <associated-risk risk-uuid="45c018b3-7099-57a8-b0c1-03fec78bfb0e"/>
+      </finding>
+      <finding uuid="a57920d1-012b-5bb2-9baa-1619da58680f">
+         <title>Vulnerabilidades altas remediadas fuera de plazo</title>
+         <description>
+            <p>El 35 % de las vulnerabilidades de severidad Alta del último trimestre superó el plazo de 30 días.</p>
+         </description>
+         <target type="objective-id" target-id="adr-2_smt">
+            <status state="not-satisfied"/>
+         </target>
+         <related-observation observation-uuid="1511672f-9dbe-58a9-b659-2f9736370d12"/>
+         <associated-risk risk-uuid="e9fe7e5c-c17c-5963-9ac6-e547b7baaf05"/>
+      </finding>
+      <finding uuid="407ffe01-d09f-509a-8273-346381d60759">
+         <title>Sin evidencia de eliminación de datos vencidos</title>
+         <description>
+            <p>No existe registro de eliminación de los datos de candidatos con más de un año desde el cierre del proceso.</p>
+         </description>
+         <target type="objective-id" target-id="dia-5_smt">
+            <status state="not-satisfied"/>
+         </target>
+         <related-observation observation-uuid="1e08bc87-d06b-547c-a52d-c7f493a00582"/>
+         <associated-risk risk-uuid="c2be3ca7-5d4a-51ed-9eb6-c25764315220"/>
+      </finding>
+      <finding uuid="844588d4-1ab6-5fae-ae7e-78f5b7d70831">
+         <title>Programa de concienciación operando</title>
+         <description>
+            <p>Se verificaron las campañas trimestrales de phishing simulado y los registros de capacitación anual del 96 % de los colaboradores.</p>
+         </description>
+         <target type="objective-id" target-id="thp-1_smt">
+            <status state="satisfied"/>
+         </target>
+         <related-observation observation-uuid="67d0219c-7a12-5335-95e0-533951bc67e8"/>
+      </finding>
+   </result>
+   <back-matter>
+      <resource uuid="e2eb1ac1-b8ef-5745-97a0-f3e9e105e5d3">
+         <title>Plan de Evaluación – plantilla Kudo</title>
+         <description>
+            <p>Plan de auditoría interna de los controles Kudo.</p>
+         </description>
+         <rlink href="https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-assessment-plan.json" media-type="application/oscal+json"/>
+         <rlink href="https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-assessment-plan.xml" media-type="application/oscal+xml"/>
+         <rlink href="https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-assessment-plan.yaml" media-type="application/oscal+yaml"/>
+      </resource>
+   </back-matter>
+</assessment-results>

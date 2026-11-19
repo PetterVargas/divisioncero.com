@@ -1,0 +1,50 @@
+---
+title: Plan of Actions & Milestones (POA&M)
+description: Plan de acciones y hitos OSCAL para remediar los hallazgos de las evaluaciones de controles Kudo
+---
+
+El **Plan of Action and Milestones (POA&M)** registra *qué se va a corregir, quién lo hará y para cuándo*: cada hallazgo abierto se convierte en un ítem con su riesgo, su plan de remediación y sus hitos. Es la versión OSCAL del [Procedimiento de Acciones Correctivas y Mejora Continua](/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua).
+
+## Plan de Acción y Hitos – Ejemplo Kudo
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-poam.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-poam.json) |
+| xml | [kudo-poam.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-poam.xml) |
+| yaml | [kudo-poam.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-poam.yaml) |
+| toon | [kudo-poam.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-poam.toon) |
+
+<Callout type="warn" title="Datos ilustrativos">
+  Los ítems de este archivo derivan de los [resultados de ejemplo](/framework/oscal/ar-assessment-results). Reemplázalos por tus propios hallazgos.
+</Callout>
+
+## Contenido
+
+| Sección | Contenido |
+| ------- | --------- |
+| `import-ssp` | [SSP – Plantilla Kudo](/framework/oscal/ssp-system-security-plan) |
+| `observations` | Evidencias de los 3 hallazgos abiertos |
+| `risks` | 3 riesgos con fecha límite (`deadline`) y un plan de remediación (`remediations`) con su hito (`milestone`) |
+| `poam-items` | 3 ítems vinculados a su observación, riesgo y hallazgo de origen |
+
+| Ítem | Control | Plazo | Remediación |
+| ---- | ------- | ----- | ----------- |
+| MFA no habilitada en todas las cuentas administrativas | CIP-2 | 30 días | MFA resistente a phishing mediante acceso condicional |
+| Vulnerabilidades altas remediadas fuera de plazo | ADR-2 | 60 días | Automatizar parches y reportar cumplimiento mensual |
+| Sin evidencia de eliminación de datos vencidos | DIA-5 | 90 días | Eliminación automática con registro de evidencia |
+
+Los plazos siguen la tabla del Procedimiento de Acciones Correctivas: crítica 30 días, alta 60 días y media 90 días.
+
+## Cómo usarlo
+
+- Crea un `poam-item` por cada hallazgo no satisfecho del AR (o de incidentes, pruebas de penetración y revisiones de riesgo).
+- Actualiza el `status` del riesgo (`open`, `investigating`, `remediating`, `deviation-approved`, `closed`) a medida que avanza.
+- Revisa el POA&M en cada Comité de Seguridad y escala los ítems vencidos.
+
+## Validación
+
+```bash
+oscal-cli poam validate kudo-poam.json
+```

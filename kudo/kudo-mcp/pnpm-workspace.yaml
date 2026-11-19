@@ -1,0 +1,2 @@
+# Hace de kudo-mcp su propia raíz de workspace de pnpm (usa su pnpm-lock.yaml).
+allowBuilds: {}

@@ -1,0 +1,80 @@
+---
+title: "Política de Criptografía y Gestión de Claves"
+description: "Uso correcto de técnicas criptográficas y gestión del ciclo de vida de claves y certificados"
+codigo: "POL-CIF-08"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.0"
+revision: "Anual"
+controles: [cif-4, cif-5]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-08 | Política | CIF | 1.0 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer el uso correcto de la criptografía para proteger la confidencialidad, integridad y autenticidad de la información, y la gestión segura del ciclo de vida de las claves criptográficas, secretos y certificados.
+
+## Alcance
+Aplica a todos los sistemas, aplicaciones, bases de datos, respaldos, dispositivos y servicios en la nube de la organización, y a las personas que diseñan, desarrollan o administran soluciones que usan criptografía.
+
+## Requisitos de Cifrado por Clasificación
+| Clasificación | En reposo | En tránsito |
+| ------------- | --------- | ----------- |
+| Pública | No requerido | TLS recomendado |
+| Interna | Cifrado del disco o del servicio | TLS 1.2 o superior |
+| Confidencial | Cifrado del disco o del servicio, con claves gestionadas por la organización (KMS) | TLS 1.2 o superior |
+| Restringida | Cifrado a nivel de campo o de aplicación, además del cifrado del servicio, con claves dedicadas | TLS 1.2 o superior; mTLS entre servicios críticos |
+
+## Algoritmos Aprobados
+| Uso | Aprobados | Prohibidos |
+| --- | --------- | ---------- |
+| Cifrado simétrico | AES-256 (GCM o equivalente); ChaCha20-Poly1305 | DES, 3DES, RC4, AES en modo ECB |
+| Cifrado asimétrico / firma | RSA ≥ 3072 bits, ECDSA / Ed25519 (curvas P-256 o superiores) | RSA de menos de 2048 bits |
+| Hash | SHA-256, SHA-384, SHA-512, SHA-3 | MD5, SHA-1 (para fines de seguridad) |
+| Contraseñas | Argon2id, bcrypt, scrypt o PBKDF2 con sal y alto número de iteraciones | Hash sin sal o algoritmos rápidos |
+| Protocolos | TLS 1.2 y 1.3, SSH v2, IPsec/IKEv2 | SSL, TLS 1.0 y 1.1, SSH v1 |
+
+No se permite desarrollar algoritmos criptográficos propios. La organización monitorea la evolución hacia la criptografía poscuántica y mantiene un inventario de sus usos criptográficos para facilitar la migración.
+
+## Gestión del Ciclo de Vida de las Claves
+- **Generación:** las claves se generan con generadores criptográficamente seguros, preferiblemente dentro de servicios especializados (KMS en la nube, HSM o gestores de secretos).
+- **Jerarquía:** se usan claves maestras (que protegen otras claves) y claves de datos; las claves maestras nunca salen del KMS/HSM.
+- **Almacenamiento:** las claves y secretos nunca se almacenan en el código, en repositorios, en archivos de configuración sin cifrar ni en canales de mensajería.
+- **Segregación:** claves distintas por entorno (desarrollo, pruebas, producción) y por propósito.
+- **Acceso:** mínimo privilegio; quien administra las claves no debe tener acceso a los datos que protegen, cuando sea posible.
+- **Rotación:**
+
+| Tipo | Rotación mínima |
+| ---- | --------------- |
+| Claves maestras (KMS) | Anual (automática si el servicio lo permite) |
+| Claves de datos y secretos de aplicaciones | Cada 180 días o ante sospecha de compromiso |
+| Certificados TLS | Antes de su vencimiento (se recomienda la renovación automática) |
+
+- **Compromiso:** ante la sospecha de compromiso, la clave se revoca y se reemplaza de inmediato y se gestiona como incidente.
+- **Destrucción:** las claves retiradas se destruyen de forma segura cuando ya no se requieren para descifrar información conservada.
+
+## Certificados Digitales
+- Inventario de certificados con su propietario y fecha de vencimiento, con alertas al menos 30 días antes.
+- Certificados emitidos por autoridades de certificación confiables; los autofirmados solo en entornos internos de prueba.
+
+## Responsabilidades
+- **Seguridad de la Información:** define los estándares criptográficos y aprueba las excepciones.
+- **TI y Desarrollo:** implementan el cifrado y la gestión de claves conforme a esta política.
+- **Propietarios de sistemas:** aseguran que sus sistemas cumplen los requisitos según la clasificación de sus datos.
+
+## Monitoreo y Revisión
+- Revisión anual del inventario criptográfico, de los certificados y de los algoritmos aprobados.
+- Registro y monitoreo del uso de las claves en el KMS/HSM.
+- Revisión anual de esta política o ante nuevas vulnerabilidades criptográficas relevantes.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIF-4 · Cifrado de Información y Datos](/kudo/framework/cif/cif-4)
+- [CIF-5 · Administración y Gestión de Claves](/kudo/framework/cif/cif-5)
+{/* /kudo:controles */}

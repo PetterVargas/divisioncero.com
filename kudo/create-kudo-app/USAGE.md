@@ -79,10 +79,10 @@ mi-empresa/
 │   ├── framework/
 │   │   ├── layout.tsx            # DocsLayout con tabs de sección
 │   │   └── [[...slug]]/page.tsx  # Páginas del framework
-│   ├── sgsi/
+│   ├── sgx/
 │   │   ├── layout.tsx            # DocsLayout con tabs de sección
-│   │   └── [[...slug]]/page.tsx  # Páginas del SGSI
-│   ├── api/search/route.ts       # Búsqueda estática (framework + sgsi)
+│   │   └── [[...slug]]/page.tsx  # Páginas del SGX
+│   ├── api/search/route.ts       # Búsqueda estática (framework + sgx)
 │   ├── layout.tsx                # Root layout con Provider
 │   ├── layout.config.tsx         # Navbar del home
 │   └── global.css
@@ -98,21 +98,21 @@ mi-empresa/
 │   ├── cn.ts                     # tailwind-merge
 │   ├── layout.shared.tsx         # baseOptions, sectionTabs, subTabs
 │   ├── shared.ts                 # Rutas, appName, gitConfig
-│   └── source.ts                 # frameworkSource, sgsiSource, blog
+│   └── source.ts                 # frameworkSource, sgxSource, blog
 ├── content/
 │   ├── framework/                # 127 archivos MDX del framework Kudo
 │   │   ├── overview/
 │   │   ├── cor/ cip/ cif/ cap/ ccn/ adr/ thp/ dia/
 │   │   ├── correlacion/          # ISO 27001, PCI DSS, SOC 2, CIS, NIST, CSA...
 │   │   └── cuestionarios/
-│   ├── sgsi/
+│   ├── sgx/
 │   │   ├── index.mdx
 │   │   ├── meta.json
 │   │   ├── politicas/            # Políticas seleccionadas por el usuario
 │   │   └── lineamientos/
 │   └── blog/                     # Posts de ejemplo (si se eligió)
 ├── next.config.mjs
-├── source.config.ts              # frameworkDocs + sgsiDocs + blogPosts
+├── source.config.ts              # frameworkDocs + sgxDocs + blogPosts
 ├── tsconfig.json
 ├── postcss.config.mjs
 └── package.json
@@ -139,8 +139,8 @@ Edita `app/layout.config.tsx` — ahí está el logo SVG y el nombre "Kudo" en e
 Para los layouts de docs edita `lib/layout.shared.tsx` → función `baseOptions()`.
 
 ### Agregar políticas después
-1. Crea un `.md` o `.mdx` en `content/sgsi/politicas/`
-2. Agrega el slug al array `"pages"` en `content/sgsi/politicas/meta.json`
+1. Crea un `.md` o `.mdx` en `content/sgx/politicas-y-procedimientos/`
+2. Agrega el slug al array `"pages"` en `content/sgx/politicas-y-procedimientos/meta.json`
 
 ```markdown
 ---

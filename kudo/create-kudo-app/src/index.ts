@@ -3,34 +3,61 @@
 import { Command } from 'commander';
 import fs from 'fs-extra';
 import path from 'node:path';
+import { createRequire } from 'node:module';
 import { confirm, isCancel, cancel, outro } from '@clack/prompts';
 import pc from 'picocolors';
-import { runInteractivePrompts } from './prompts.js';
-import { copyBaseTemplates, copyPolicies } from './utils/copy-template.js';
+import { runInteractivePrompts, type UserChoices } from './prompts.js';
+import { copyBaseTemplates, copyPolicies, copyAiTooling } from './utils/copy-template.js';
 import { logger } from './utils/logger.js';
+import { DOMINIOS, PACKAGE_MANAGERS, type DominioId, type PackageManager } from './constants.js';
+
+const { version } = createRequire(import.meta.url)('../package.json') as { version: string };
 
 const program = new Command();
 
 interface CliOptions {
-  packageManager?: 'npm' | 'pnpm' | 'yarn';
+  packageManager?: PackageManager;
+  yes?: boolean;
+  ai?: boolean;
 }
 
 program
   .name('create-kudo-app')
   .description('CLI para crear nuevas aplicaciones Kudo con templates de políticas de Ciberseguridad')
-  .version('0.1.0')
+  .version(version)
   .argument('[project-name]', 'Nombre del proyecto')
   .option('-p, --package-manager <pm>', 'Package manager a usar (npm, pnpm, yarn)')
+  .option('-y, --yes', 'Usar los valores por defecto sin preguntas (requiere el nombre del proyecto)')
+  .option('--no-ai', 'No incluir el servidor MCP, los agentes ni las skills de IA')
   .action(async (projectName: string | undefined, options: CliOptions) => {
     try {
-      // Ejecutar prompts interactivos
-      const choices = await runInteractivePrompts(projectName);
+      if (options.packageManager && !PACKAGE_MANAGERS.includes(options.packageManager)) {
+        throw new Error(`Package manager no soportado: ${options.packageManager}. Usa npm, pnpm o yarn.`);
+      }
 
-      // Determinar directorio de destino
+      let choices: UserChoices;
+      if (options.yes) {
+        if (!projectName) throw new Error('Con --yes debes indicar el nombre del proyecto: create-kudo-app mi-sgx --yes');
+        if (!/^[a-z0-9-_]+$/i.test(projectName)) {
+          throw new Error('El nombre solo puede contener letras, números, guiones y guiones bajos');
+        }
+        choices = {
+          projectName,
+          packageManager: options.packageManager ?? 'pnpm',
+          selectedDominios: Object.keys(DOMINIOS) as DominioId[],
+          includeBlog: true,
+          includeAi: options.ai !== false,
+        };
+      } else {
+        choices = await runInteractivePrompts(projectName);
+        if (options.ai === false) choices.includeAi = false;
+      }
+      const packageManager = options.packageManager || choices.packageManager;
+
       const targetDir = path.resolve(process.cwd(), choices.projectName);
 
-      // Verificar si el directorio ya existe
       if (await fs.pathExists(targetDir)) {
+        if (options.yes) throw new Error(`El directorio ${choices.projectName} ya existe`);
         const shouldOverwrite = await confirm({
           message: `El directorio ${pc.cyan(choices.projectName)} ya existe. ¿Quieres sobrescribirlo?`,
           initialValue: false,
@@ -44,57 +71,61 @@ program
         await fs.remove(targetDir);
       }
 
-      // Crear directorio
       await fs.ensureDir(targetDir);
 
       logger.title('🚀 Creando tu aplicación Kudo...');
+      const pasos = choices.includeAi ? 3 : 2;
 
-      // Paso 1: Copiar estructura base
-      logger.step(1, 2, 'Copiando estructura base del proyecto...');
+      logger.step(1, pasos, 'Copiando estructura base del proyecto...');
       await copyBaseTemplates({
         projectName: choices.projectName,
         targetDir,
-        packageManager: options.packageManager || choices.packageManager,
+        packageManager,
         includeBlog: choices.includeBlog,
       });
 
-      // Paso 2: Copiar políticas
-      if (choices.selectedPolicies.length > 0) {
-        logger.step(2, 2, 'Copiando políticas de seguridad...');
-        await copyPolicies(targetDir, choices.selectedPolicies);
-      } else {
-        logger.step(2, 2, 'Saltando políticas (ninguna seleccionada)');
+      logger.step(2, pasos, 'Copiando políticas y procedimientos del SGX...');
+      const documentos = await copyPolicies(targetDir);
+
+      let ia: { agentes: number; skills: number } | null = null;
+      if (choices.includeAi) {
+        logger.step(3, pasos, 'Configurando MCP, agentes y skills de IA...');
+        ia = await copyAiTooling(targetDir);
       }
 
-      // Mensaje de éxito
       console.log();
       outro(pc.green('✨ ¡Proyecto creado exitosamente!'));
 
-      // Mostrar siguiente pasos
+      const run = packageManager === 'npm' ? 'npm run' : packageManager;
       console.log();
       logger.title('📝 Próximos pasos:');
       console.log();
       console.log(pc.cyan(`  cd ${choices.projectName}`));
-      console.log(pc.cyan(`  ${choices.packageManager} install`));
-      console.log(pc.cyan(`  ${choices.packageManager} dev`));
+      console.log(pc.cyan(`  ${packageManager} install`));
+      console.log(pc.cyan(`  ${run} dev`));
       console.log();
       logger.info('Tu aplicación estará disponible en http://localhost:3000');
+
+      if (ia) {
+        console.log();
+        logger.title('🤖 Trabaja con IA:');
+        console.log();
+        console.log(`  El servidor MCP ${pc.cyan('kudo')} ya está configurado en ${pc.cyan('.mcp.json')}.`);
+        console.log(`  Abre el proyecto con tu asistente (por ejemplo ${pc.cyan('claude')}) y usa los agentes:`);
+        console.log(pc.dim('  kudo-ciso · kudo-auditor · kudo-redactor-sgx · kudo-respuesta-incidentes'));
+        console.log(pc.dim('  kudo-appsec · kudo-arquitecto-nube · kudo-privacidad-ia · kudo-personas-y-proveedores'));
+        console.log();
+        console.log(`  Otros asistentes: ${pc.cyan('npx skills add PetterVargas/divisioncero.com')}`);
+      }
       console.log();
-      logger.info('Para más información, visita: https://divisioncero.com/kudo');
+      logger.info('Guía completa: https://divisioncero.com/kudo/sgx/aprovisionamiento');
       console.log();
 
-      // Mostrar resumen de lo que se incluyó
-      if (choices.selectedDominios.length > 0) {
-        logger.info(`Dominios incluidos: ${choices.selectedDominios.join(', ').toUpperCase()}`);
-      }
-      if (choices.selectedPolicies.length > 0) {
-        logger.info(`Total de políticas: ${choices.selectedPolicies.length}`);
-      }
-      if (choices.includeBlog) {
-        logger.info('Blog incluido');
-      }
+      logger.info(`Dominios incluidos: ${choices.selectedDominios.join(', ').toUpperCase()}`);
+      logger.info(`Documentos del SGX: ${documentos}`);
+      if (ia) logger.info(`Agentes: ${ia.agentes} · Skills: ${ia.skills}`);
+      if (choices.includeBlog) logger.info('Blog incluido');
       console.log();
-
     } catch (error) {
       console.error();
       if (error instanceof Error) {

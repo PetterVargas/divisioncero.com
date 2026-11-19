@@ -1,7 +1,7 @@
 import type { BaseLayoutProps, LayoutTab } from 'fumadocs-ui/layouts/shared';
 import { getSidebarTabs } from 'fumadocs-ui/components/sidebar/tabs';
-import { appName, gitConfig, frameworkRoute, sgsiRoute } from './shared';
-import { frameworkSource, sgsiSource } from './source';
+import { appName, gitConfig, frameworkRoute, sgxRoute } from './shared';
+import { frameworkSource, sgxSource } from './source';
 import {
   LayoutTemplate, ShieldCheck,
   BookOpen, Network, GitMerge, FileText, BookMarked, ClipboardList,
@@ -17,10 +17,10 @@ export const sectionTabs: LayoutTab[] = [
     url: frameworkRoute,
   },
   {
-    title: 'SGSI',
-    description: 'Sistema de Gestión',
+    title: 'SGX',
+    description: 'Sistema de Gestión X (SGSI, SGC, SGIA…)',
     icon: <ShieldCheck className="size-4" />,
-    url: sgsiRoute,
+    url: sgxRoute,
   },
 ];
 
@@ -35,13 +35,14 @@ const frameworkIcons: Record<string, ReactNode> = {
   COR: <Building2 className="size-4" />,
   DIA: <Database className="size-4" />,
   THP: <Users className="size-4" />,
-  Correlación: <GitMerge className="size-4" />,
+  OSCAL: <GitMerge className="size-4" />,
   Cuestionarios: <ClipboardList className="size-4" />,
 };
 
-const sgsiIcons: Record<string, ReactNode> = {
-  Políticas: <FileText className="size-4" />,
-  Lineamientos: <BookMarked className="size-4" />,
+const sgxIcons: Record<string, ReactNode> = {
+  'Políticas y Procedimientos': <FileText className="size-4" />,
+  Procedimientos: <BookMarked className="size-4" />,
+  Correlación: <GitMerge className="size-4" />,
 };
 
 export function getFrameworkSubTabs(): LayoutTab[] {
@@ -53,11 +54,11 @@ export function getFrameworkSubTabs(): LayoutTab[] {
   });
 }
 
-export function getSgsiSubTabs(): LayoutTab[] {
-  return getSidebarTabs(sgsiSource.getPageTree(), {
+export function getSgxSubTabs(): LayoutTab[] {
+  return getSidebarTabs(sgxSource.getPageTree(), {
     transform: (option) => ({
       ...option,
-      icon: sgsiIcons[String(option.title)] ?? option.icon,
+      icon: sgxIcons[String(option.title)] ?? option.icon,
     }),
   });
 }

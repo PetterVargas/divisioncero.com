@@ -5,10 +5,13 @@
   "pages": [
     "---Framework Kudo---",
     "index",
+    "mcp-agentes-y-skills",
     "ambitos-de-gestion",
-    "dominios",
-    "matriz-controles-nube-mcn",
     "responsabilidad-compartida",
+    "dominios",
+    "controles",
+    "matriz-controles-nube-mcn",
+    "aclaracion",
     "---Cobertura---",
     "frameworks-revisados",
     "oscal"

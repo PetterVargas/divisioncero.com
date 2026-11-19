@@ -1,51 +1,77 @@
 ---
 title: "Política de Servicios en la Nube"
 description: "Uso seguro y gestión de servicios cloud y SaaS"
+codigo: "POL-CIF-05"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cif-1, cif-2, dia-6]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-05 | Política | CIF | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Establecer directrices para el uso seguro de servicios en la nube, asegurando protección y gestión de información sensible alineada con el programa de seguridad de la información de la organización.
+Establecer las directrices para seleccionar, contratar, configurar y usar de forma segura los servicios en la nube (IaaS, PaaS y SaaS), protegiendo la información de la organización en todo el ciclo de vida del servicio.
 
 ## Alcance
-Aplica a todos los colaboradores, contratistas y terceros que usan servicios en la nube (IaaS, PaaS, SaaS) dentro del entorno de la organización.
+Aplica a todos los colaboradores, contratistas y terceros que contratan, administran o usan servicios en la nube en nombre de la organización.
 
 ## Objetivos
-- Garantizar el uso seguro de servicios en la nube.  
-- Cumplir con el programa de gestión de seguridad de la información.  
-- Guiar a los colaboradores sobre uso apropiado.  
-- Proteger confidencialidad, integridad y disponibilidad de datos en la nube.
+- Usar solo servicios en la nube evaluados y aprobados.
+- Entender y cumplir el modelo de responsabilidad compartida de cada servicio.
+- Proteger la confidencialidad, integridad y disponibilidad de los datos en la nube.
+- Evitar la "nube en la sombra" (*shadow IT*).
 
 ## Estándares
 
-**Aprobación y Contratos**
-- Todo servicio en la nube debe ser aprobado por TI, Seguridad de la Información y gerencia.  
-- Revisar y aprobar contratos antes del uso, incluyendo cláusulas de seguridad y confidencialidad.
+**Selección, Aprobación y Contratos**
+- Todo servicio en la nube se aprueba por TI y Seguridad de la Información antes de su uso; los que procesen información Confidencial o Restringida, además, por la gerencia.
+- La evaluación considera las certificaciones del proveedor (ISO 27001, SOC 2, CSA STAR u otras), la ubicación de los datos y su plan de continuidad.
+- Los contratos incluyen: niveles de servicio, notificación de incidentes, derecho de auditoría o entrega de informes, ubicación de los datos, devolución y eliminación de datos al terminar, y condiciones de subcontratación.
+- Se mantiene un inventario de servicios en la nube aprobados con su propietario y la clasificación de los datos que procesa.
+
+**Responsabilidad Compartida**
+- Para cada servicio se documenta qué controles gestiona el proveedor y cuáles la organización (identidades, configuración, datos, respaldos). Consulta el [Modelo de Responsabilidad Compartida](/kudo/framework/overview/responsabilidad-compartida) de Kudo.
+
+**Configuración Segura**
+- Las cuentas y suscripciones se configuran conforme a la Política de Hardening, preferentemente con infraestructura como código.
+- Se monitorea la postura de seguridad (CSPM) para detectar configuraciones inseguras, como almacenamiento público o puertos expuestos.
+- Todos los recursos se etiquetan con propietario, entorno y clasificación de datos.
+
+**Identidad y Acceso**
+- Acceso mediante el IdP corporativo (SSO) y MFA obligatoria para todos los usuarios; las cuentas raíz o de propietario se protegen con MFA resistente a phishing y no se usan para la operación diaria.
 
 **Cifrado y Gestión de Claves**
-- Todos los datos en la nube deben cifrarse con algoritmos aprobados.  
-- Gestionar claves criptográficas de forma segura y restringir acceso a personal autorizado.
+- Datos cifrados en reposo y en tránsito, conforme a la Política de Criptografía y Gestión de Claves.
 
-**Parches y Actualizaciones**
-- Mantener todos los servicios en la nube actualizados y parcheados regularmente.
+**Ubicación de los Datos**
+- Los datos se almacenan solo en las regiones aprobadas, considerando las restricciones legales de residencia y transferencia internacional.
 
-**Control de Acceso**
-- Restringir acceso solo al personal autorizado.  
-- Usar autenticación multifactor (MFA) cuando sea posible.
+**Respaldo y Continuidad**
+- Los datos críticos en la nube se respaldan conforme a la Política de Backups y Recuperación, incluso en servicios SaaS.
+- Se monitorean la capacidad y el rendimiento de los servicios críticos.
 
 **Gestión de Incidentes**
-- Reportar inmediatamente incidentes o brechas a TI y Seguridad de la Información.  
-- Seguir planes de respuesta a incidentes.
+- Los incidentes se reportan de inmediato a Seguridad de la Información y se gestionan según la Política de Gestión de Incidentes.
 
-**Retención y Eliminación de Datos**
-- Eliminar datos sensibles cuando ya no sean necesarios, siguiendo políticas internas y regulaciones aplicables.  
-- Documentar evidencia de eliminación; exigir confirmación a proveedores externos cuando aplique.
+**Salida del Servicio**
+- Antes de contratar un servicio crítico se define la estrategia de salida (exportación de datos y alternativas).
+- Al terminar, se exige la devolución y eliminación de los datos con evidencia del proveedor.
 
-**Gestión de Capacidad**
-- Monitorear y probar capacidad de servicios en la nube para asegurar disponibilidad y rendimiento.  
-- Considerar proyecciones futuras y evitar dependencia de recursos clave.
+## Monitoreo y Revisión
+- Revisión semestral del inventario de servicios en la nube y de sus accesos.
+- Revisión anual de los proveedores críticos y de esta política.
 
-**Monitoreo y Revisión**
-- Revisar y auditar regularmente el uso de servicios en la nube para garantizar cumplimiento con esta política y el programa de seguridad.
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
 
-## Revisión de la Política
-TI y Seguridad de la Información revisarán y actualizarán periódicamente esta política para mantener su vigencia y alineamiento con las necesidades de la organización.
+- [CIF-1 · Proveedores de Servicio de Nube](/kudo/framework/cif/cif-1)
+- [CIF-2 · Inventario de Activos](/kudo/framework/cif/cif-2)
+- [DIA-6 · Ubicación de Información y Datos](/kudo/framework/dia/dia-6)
+{/* /kudo:controles */}
