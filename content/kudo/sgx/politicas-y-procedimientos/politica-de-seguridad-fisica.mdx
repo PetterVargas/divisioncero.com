@@ -1,56 +1,73 @@
 ---
 title: "Política de Seguridad Física"
 description: "Protección física de instalaciones, equipos y activos"
+codigo: "POL-CIF-01"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de Seguridad Física"
+version: "1.1"
+revision: "Anual"
+controles: [cif-2, dia-4]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-01 | Política | CIF | 1.1 | Responsable de Seguridad Física | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Proteger instalaciones, activos e información de la organización contra robo, acceso no autorizado, amenazas físicas y ambientales, asegurando continuidad del negocio, bienestar de colaboradores y cumplimiento legal.
+Proteger las instalaciones, activos e información de la organización contra robo, acceso no autorizado y amenazas físicas y ambientales, asegurando la continuidad del negocio, el bienestar de los colaboradores y el cumplimiento legal.
 
 ## Alcance
-Aplica a colaboradores, contratistas, visitantes y terceros con acceso físico a instalaciones o activos de la organización, tanto en sitio como fuera de las instalaciones, a nivel mundial.
+Aplica a colaboradores, contratistas, visitantes y terceros con acceso físico a instalaciones o activos de la organización, tanto en sitio como fuera de él. Cuando la infraestructura está en la nube, la seguridad física del centro de datos es responsabilidad del proveedor y se verifica mediante sus certificaciones (por ejemplo, ISO 27001 o SOC 2), conforme a la Política de Servicios en la Nube.
 
-## Política y Controles Clave
+## Controles Clave
 
-**Seguridad del Perímetro**
-- Cercas, barreras y accesos diseñados según evaluación de riesgos y criticidad de activos.  
+**Áreas Seguras**
+- Las instalaciones se clasifican en zonas (pública, oficinas, áreas restringidas como cuartos de servidores, de comunicaciones o archivo) con controles proporcionales a su criticidad.
+- Las áreas restringidas no se señalizan externamente y su acceso se limita a personal autorizado.
 
 **Control de Acceso a Instalaciones**
-- Acceso limitado a personal autorizado, con registro electrónico.  
-- Visitantes siempre escoltados.  
-
-**Protección de Oficinas e Infraestructura Crítica**
-- Controles de acceso diferenciados por ubicación.  
-- Evitar señalización externa que indique áreas críticas.  
+- Acceso limitado a personal autorizado, con registro electrónico (tarjeta, biometría o equivalente).
+- Los visitantes se registran, portan identificación visible y permanecen escoltados en áreas no públicas.
+- Los accesos físicos se revisan al menos semestralmente y se retiran el mismo día en que termina la relación laboral.
 
 **Vigilancia Física**
-- CCTV en perímetros, entradas, muelles y zonas sensibles, monitoreado continuamente por personal de seguridad.  
+- CCTV en perímetros, entradas y zonas sensibles. Las grabaciones se conservan al menos 30 días, salvo que la ley indique otro plazo.
 
 **Protección contra Amenazas Físicas y Ambientales**
-- Planes de respuesta ante desastres naturales, explosivos y otras amenazas, revisados y practicados regularmente.  
+- Detección y extinción de incendios, protección eléctrica (UPS, regulación) y control de temperatura y humedad en áreas técnicas.
+- Planes de respuesta ante desastres naturales y otras emergencias, probados al menos una vez al año.
 
-**Manejo Seguro de Activos**
-- Almacenamiento seguro de activos y bloqueo obligatorio de dispositivos durante inactividad.  
+**Escritorio y Pantalla Limpios**
+- Los documentos y medios con información Confidencial o Restringida se guardan bajo llave cuando no están en uso.
+- Los equipos se bloquean al alejarse del puesto de trabajo.
 
-**Seguridad de Cableado**
-- Cables protegidos contra daño o interferencia; separación de energía y datos; controles adicionales en sistemas críticos (conductos blindados, salas cerradas, blindaje electromagnético, inspecciones periódicas).  
-- Etiquetado físico para identificación de cables.  
+**Seguridad del Cableado**
+- Cableado de energía y datos separado, protegido contra daño o interceptación y etiquetado para su identificación.
 
 **Gestión de Medios de Almacenamiento**
-- Ciclo de vida seguro: adquisición, uso, transporte y eliminación.  
-- Criptografía para datos confidenciales, copias redundantes y registro de medios removibles.  
-- Eliminación segura y destrucción física de medios cuando corresponda.  
+- Los medios removibles se usan solo si están autorizados y cifrados.
+- Se registran los medios que contienen información Confidencial o Restringida.
 
-**Seguridad de Activos Fuera del Sitio**
-- Autorización y registro de activos trasladados fuera de instalaciones.  
-- Protección de equipos en tránsito y en uso en lugares públicos.  
-- Medidas de control de acceso, rastreo y borrado remoto cuando sea posible.  
-- Protocolos adicionales para equipos instalados permanentemente fuera de las instalaciones.  
+**Activos Fuera de las Instalaciones**
+- Se autoriza y registra el retiro de activos de las instalaciones.
+- Los equipos portátiles se protegen en tránsito y en lugares públicos, con cifrado de disco y capacidad de bloqueo y borrado remoto.
 
-**Eliminación Segura de Activos**
-- Medios que contienen datos sensibles se eliminan o destruyen de forma segura antes de su disposición o reutilización.  
+**Mantenimiento y Eliminación Segura**
+- El mantenimiento lo realiza personal autorizado; si el equipo sale de las instalaciones, se retiran o cifran los datos.
+- Los medios con información sensible se borran de forma segura o se destruyen físicamente antes de su disposición o reutilización, dejando constancia.
 
 ## Cumplimiento
-Todo el personal y entidades involucradas deben cumplir esta política. El incumplimiento puede generar acciones disciplinarias.
+Todo el personal y los terceros deben cumplir esta política. El incumplimiento puede generar acciones disciplinarias o contractuales.
 
-## Monitoreo y Control
-Un Equipo de Seguridad Física supervisa implementación, auditorías y revisión anual de la política. La efectividad de los controles se evalúa continuamente y se ajusta según amenazas emergentes.
+## Monitoreo y Revisión
+El responsable de Seguridad Física supervisa la implementación, realiza inspecciones periódicas y revisa esta política al menos una vez al año o ante cambios en las instalaciones o en las amenazas.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIF-2 · Inventario de Activos](/kudo/framework/cif/cif-2)
+- [DIA-4 · Ciberseguridad en Información y Datos](/kudo/framework/dia/dia-4)
+{/* /kudo:controles */}

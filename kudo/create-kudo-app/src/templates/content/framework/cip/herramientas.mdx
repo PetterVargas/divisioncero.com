@@ -1,81 +1,473 @@
 ---
-title: Herramientas
-description: Mecanismos de mejorar la Ciberseguridad
+title: Herramientas — Ciberseguridad en Identidad y Puntos Finales (CIP)
+description: "Herramientas gratuitas de DivisionCero para el dominio CIP de Kudo: identidades, autenticación, autorización y puntos finales."
 ---
 
+{/* Generado por scripts/kudo/generate-herramientas.ts a partir de lib/herramientas/tools.ts. No editar a mano. */}
+
+import { AtSign as IconAtSign, BadgeAlert as IconBadgeAlert, Binary as IconBinary, BookOpen as IconBookOpen, Bug as IconBug, Building2 as IconBuilding2, Calendar as IconCalendar, ClipboardCheck as IconClipboardCheck, Clock as IconClock, Code2 as IconCode2, FileCode2 as IconFileCode2, FileDigit as IconFileDigit, FileSearch as IconFileSearch, Fingerprint as IconFingerprint, Fish as IconFish, Gauge as IconGauge, Globe as IconGlobe, Grid3x3 as IconGrid3x3, Hash as IconHash, IdCard as IconIdCard, Inbox as IconInbox, KeyRound as IconKeyRound, Landmark as IconLandmark, Link2 as IconLink2, Lock as IconLock, Mail as IconMail, Map as IconMap, MessageCircleQuestion as IconMessageCircleQuestion, MessageCircleWarning as IconMessageCircleWarning, MonitorCheck as IconMonitorCheck, Network as IconNetwork, QrCode as IconQrCode, Radar as IconRadar, Scale as IconScale, ScanSearch as IconScanSearch, ShieldAlert as IconShieldAlert, ShieldCheck as IconShieldCheck, Timer as IconTimer, TimerReset as IconTimerReset, UserRoundSearch as IconUserRoundSearch, Users as IconUsers } from 'lucide-react';
+
 <Callout>
-  Herramientas disponibles en [DivisionCero](https://herramientas.divisioncero.com):
+  Todas las herramientas disponibles en [DivisionCero](https://divisioncero.com/herramientas), con las más útiles para identidades, autenticación, autorización y puntos finales primero. Las marcadas como *externa* son de terceros.
 </Callout>
 
+## Recomendadas para CIP
+
 <Cards>
-  <Card 
-    href="https://divisioncero.com/home/conan"
-    title="🕵️‍♂️ Conan Rastreo Informático"
-    description="Herramienta de rastreo forense."
-  />
-  <Card 
-    href="https://docs.divisioncero.com"
-    title="📘 Framework Kudo"
-    description="Marco de documentación de ciberseguridad."
+  <Card
+    href="https://divisioncero.com/herramientas/generador-contrasenas"
+    icon={<IconKeyRound />}
+    title="Generador de Contraseñas"
+    description="Crea contraseñas seguras y aleatorias al instante."
   />
   <Card
-    href="https://herramientas.divisioncero.com/cybermap"
-    title="🗺️ CyberMap"
-    description="Mapa visual de ciberamenazas y activos."
+    href="https://divisioncero.com/herramientas/analizador-contrasenas"
+    icon={<IconGauge />}
+    title="Analizador de Contraseñas"
+    description="Calcula cuánto tardaría un atacante en descifrar tu contraseña."
   />
   <Card
-    href="https://herramientas.divisioncero.com/tabla-periodica-ciberseguridad"
-    title="🧪 Tabla Periódica de Ciberseguridad"
-    description="Visualización de conceptos y controles de Ciberseguridad."
+    href="https://divisioncero.com/herramientas/totp"
+    icon={<IconTimerReset />}
+    title="Generador de Códigos TOTP"
+    description="Genera códigos 2FA (TOTP) a partir de una clave secreta, con QR para apps autenticadoras."
   />
   <Card
-    href="https://herramientas.divisioncero.com/rompehielos"
-    title="❄️ Rompehielos"
-    description="Actividades para entrenamiento y concienciación."
+    href="https://divisioncero.com/herramientas/flujo-autenticacion-autorizacion"
+    icon={<IconUsers />}
+    title="Flujo de Autenticación, Autorización y Roles"
+    description="Visualiza paso a paso cómo funcionan la autenticación, la autorización y los roles (fijos o custom) en accesos por API y por MCP."
   />
   <Card
-    href="https://herramientas.divisioncero.com/workflow-ciberseguridad"
-    title="🔄 Workflow de Ciberseguridad"
-    description="Guías y flujos de trabajo para procesos de seguridad."
+    href="https://haveibeenpwned.com/"
+    icon={<IconShieldAlert />}
+    title="Have I Been Pwned"
+    description="Verifica si tu correo o contraseña ha sido expuesto en alguna filtración de datos. (externa)"
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/calendario-ciberseguridad"
-    title="🗓️ Calendario de Ciberseguridad"
-    description="Fechas importantes del sector."
+  <Card
+    href="https://divisioncero.com/herramientas/malas-practicas-escritorio"
+    icon={<IconScanSearch />}
+    title="Buenas Prácticas en el Puesto de Trabajo"
+    description="Encuentra las 10 malas prácticas de seguridad en un escritorio simulado."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/generador-contrasenas"
-    title="🔐 Generador de Contraseñas"
-    description="Creación de contraseñas seguras."
+  <Card
+    href="https://divisioncero.com/herramientas/checklist-buenas-practicas-equipo"
+    icon={<IconClipboardCheck />}
+    title="Checklist de Buenas Prácticas del Equipo"
+    description="Verifica como líder que tu equipo y sus equipos de cómputo cumplan las protecciones básicas de ciberseguridad."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/generador-qr"
-    title="⛶ Generador de QR"
-    description="Creación de códigos QR."
+</Cards>
+
+## Más herramientas
+
+### Utilidades
+
+<Cards>
+  <Card
+    href="https://divisioncero.com/herramientas/generador-qr"
+    icon={<IconQrCode />}
+    title="Generador de QR"
+    description="Genera códigos QR gratis para tus enlaces y campañas."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/generador-hash"
-    title="⚙️ Generador de Hash"
-    description="Generación de hashes criptográficos."
+  <Card
+    href="https://divisioncero.com/herramientas/generador-hash"
+    icon={<IconHash />}
+    title="Generador de Hash"
+    description="Calcula el hash de cualquier texto o archivo."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/validador-spf"
-    title="📡 Validador SPF"
-    description="Validación de registros SPF."
+  <Card
+    href="https://divisioncero.com/herramientas/codificador-base64"
+    icon={<IconBinary />}
+    title="Codif/Decod Base64"
+    description="Codifica y decodifica texto en Base64."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/codificador-base64"
-    title="🔢 Codificador/Decodificador Base64"
-    description="Conversión entre texto y Base64."
+  <Card
+    href="https://divisioncero.com/herramientas/codificador-url"
+    icon={<IconLink2 />}
+    title="Codif/Decod URL"
+    description="Codifica y decodifica URLs fácilmente."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/codificador-url"
-    title="🌐 Codificador/Decodificador URL"
-    description="Conversión y decodificación de URLs."
+  <Card
+    href="https://divisioncero.com/herramientas/codificador-hexadecimal"
+    icon={<IconCode2 />}
+    title="Codif/Decod Hexadecimal"
+    description="Codifica y decodifica texto en hexadecimal."
   />
-  <Card 
-    href="https://herramientas.divisioncero.com/generador-uuid"
-    title="🧩 Generador de UUID"
-    description="Generación de identificadores únicos."
+  <Card
+    href="https://divisioncero.com/herramientas/generador-uuid"
+    icon={<IconFingerprint />}
+    title="Generador de UUID"
+    description="Genera identificadores únicos universales (UUID)."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/conversion-de-fecha-y-hora"
+    icon={<IconClock />}
+    title="Conversión de Fecha y Hora"
+    description="Convierte fechas y horas entre zonas horarias (UTC, Bogotá y más)."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/temporizador"
+    icon={<IconTimer />}
+    title="Temporizador"
+    description="Cuenta regresiva para charlas y clases; cambia de color en los últimos 10 segundos."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/cual-es-mi-ip"
+    icon={<IconGlobe />}
+    title="¿Cuál es mi IP?"
+    description="Consulta tu IP pública, ubicación aproximada, user agent y los encabezados HTTP que recibe un servidor, también desde la terminal."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/whois-ip-y-dominio"
+    icon={<IconNetwork />}
+    title="WHOIS de IP y Dominio"
+    description="Consulta el titular, rango y ASN de una IP, o el registrador, fechas y DNS de un dominio, y exporta un PDF."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/generador-y-validador-hash-archivo"
+    icon={<IconFileDigit />}
+    title="Generador y Validador de Hash de Archivo"
+    description="Calcula el MD5, SHA-1, SHA-256 y SHA-512 de un archivo (PDF, ZIP, RAR, imágenes u ofimática) sin subirlo a ningún servidor."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/analizador-metadatos"
+    icon={<IconFileSearch />}
+    title="Analizador de Metadatos"
+    description="Descubre los metadatos ocultos de una imagen o documento ofimático (autor, fechas, GPS) y descarga un reporte en PDF."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/visor-hexadecimal"
+    icon={<IconFileCode2 />}
+    title="Visor Hexadecimal"
+    description="Visualiza el contenido byte a byte de cualquier archivo en hexadecimal y ASCII, con búsqueda de texto o bytes."
+  />
+  <Card
+    href="https://endoflife.date/"
+    icon={<IconCalendar />}
+    title="endoflife.date"
+    description="Consulta las fechas de fin de soporte y ciclo de vida de software, sistemas operativos y lenguajes. (externa)"
+  />
+  <Card
+    href="https://fotoforensics.com/"
+    icon={<IconFileSearch />}
+    title="FotoForensics"
+    description="Detecta manipulaciones en imágenes mediante análisis de niveles de error (ELA). (externa)"
+  />
+  <Card
+    href="https://pdfcandy.com/es/edit-pdf-meta.html"
+    icon={<IconFileDigit />}
+    title="PDF Candy: Editar Metadatos"
+    description="Edita o elimina los metadatos de un PDF (autor, fechas, software) en línea. (externa)"
+  />
+</Cards>
+
+### Criptografía
+
+<Cards>
+  <Card
+    href="https://divisioncero.com/herramientas/cifrado-pgp"
+    icon={<IconLock />}
+    title="Cifrado PGP Explicado"
+    description="Cómo funciona el cifrado PGP paso a paso: claves públicas y privadas, cifrado híbrido y firma digital."
+  />
+</Cards>
+
+### Correo y Phishing
+
+<Cards>
+  <Card
+    href="https://divisioncero.com/herramientas/validador-spf"
+    icon={<IconMail />}
+    title="Validador SPF"
+    description="Verifica y valida los registros SPF de tu dominio."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/deteccion-phishing"
+    icon={<IconFish />}
+    title="Práctica: Detección de Phishing"
+    description="Practica identificando mensajes de phishing en correos y SMS."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/suplantacion-marcas"
+    icon={<IconBadgeAlert />}
+    title="10 ejemplos de suplantación de marcas"
+    description="Ejemplos ilustrados de suplantación de marcas en Instagram, Facebook, WhatsApp, sitios web y más, con señales de alerta y cómo verificar cuentas oficiales."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/identificador-correos-seguros"
+    icon={<IconInbox />}
+    title="Correos Seguros vs. No Seguros"
+    description="Revisa una bandeja simulada y distingue correos seguros de maliciosos."
+  />
+  <Card
+    href="https://emailrep.io/"
+    icon={<IconMail />}
+    title="EmailRep"
+    description="Consulta la reputación y el riesgo asociado a una dirección de correo. (externa)"
+  />
+  <Card
+    href="https://mxtoolbox.com/"
+    icon={<IconMail />}
+    title="MXToolbox"
+    description="Diagnostica registros MX, DNS, blacklists y la salud de tu dominio de correo. (externa)"
+  />
+  <Card
+    href="https://chromewebstore.google.com/detail/email-extractor/jdianbbpnakhcmfkcckaboohfgnngfcc"
+    icon={<IconMail />}
+    title="Email Extractor"
+    description="Extensión para extraer direcciones de correo visibles en una página web. (externa)"
+  />
+  <Card
+    href="https://www.comprobarcorreo.com/"
+    icon={<IconMail />}
+    title="Comprobar Correo"
+    description="Verifica si una dirección de correo electrónico existe y es válida. (externa)"
+  />
+</Cards>
+
+### Navegación Segura
+
+<Cards>
+  <Card
+    href="https://divisioncero.com/herramientas/verificar-sitio-seguro"
+    icon={<IconMonitorCheck />}
+    title="¿Es Seguro Este Sitio?"
+    description="Animación paso a paso de las señales que confirman un sitio seguro."
+  />
+  <Card
+    href="https://urlscan.io/"
+    icon={<IconScanSearch />}
+    title="URLScan"
+    description="Escanea y analiza URLs sospechosas para detectar phishing y contenido malicioso. (externa)"
+  />
+  <Card
+    href="https://www.dnstwister.report/"
+    icon={<IconGlobe />}
+    title="Dominios Similares (DNSTwister)"
+    description="Genera y detecta dominios similares o typosquatted a partir de un dominio dado. (externa)"
+  />
+</Cards>
+
+### Monitoreo y Amenazas
+
+<Cards>
+  <Card
+    href="https://app.divisioncero.com/home/conan"
+    icon={<IconRadar />}
+    title="Conan Rastreo Informático"
+    description="Tracking basado en direcciones IP para la detección de amenazas."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/cybermap"
+    icon={<IconMap />}
+    title="CyberMap"
+    description="Visualiza el panorama de amenazas y ciberataques en tiempo real."
+  />
+  <Card
+    href="https://www.shodan.io/"
+    icon={<IconRadar />}
+    title="Shodan"
+    description="Motor de búsqueda de dispositivos y servicios expuestos en internet. (externa)"
+  />
+  <Card
+    href="https://www.abuseipdb.com/"
+    icon={<IconShieldAlert />}
+    title="Reputación de IP (AbuseIPDB)"
+    description="Consulta el historial de abuso y reputación de una dirección IP. (externa)"
+  />
+  <Card
+    href="https://www.virustotal.com/"
+    icon={<IconShieldAlert />}
+    title="VirusTotal"
+    description="Analiza archivos, URLs, dominios e IPs sospechosas con decenas de motores antivirus. (externa)"
+  />
+  <Card
+    href="https://www.hybrid-analysis.com/"
+    icon={<IconBug />}
+    title="Hybrid Analysis (Sandbox)"
+    description="Sandbox gratuito para analizar el comportamiento de archivos y URLs sospechosas de malware. (externa)"
+  />
+</Cards>
+
+### Rastreo
+
+<Cards>
+  <Card
+    href="https://divisioncero.com/herramientas/identificador-id-red-social"
+    icon={<IconAtSign />}
+    title="Identificador de ID en Redes Sociales"
+    description="Obtén el ID y datos públicos de un perfil de Facebook, Instagram, TikTok o X."
+  />
+  <Card
+    href="https://www.faganfinder.com/"
+    icon={<IconScanSearch />}
+    title="Fagan Finder"
+    description="Directorio con cientos de motores de búsqueda especializados para investigación en línea. (externa)"
+  />
+  <Card
+    href="https://web.archive.org/"
+    icon={<IconFileSearch />}
+    title="Wayback Machine"
+    description="Consulta versiones históricas archivadas de cualquier sitio web. (externa)"
+  />
+  <Card
+    href="https://www.maltego.com/"
+    icon={<IconNetwork />}
+    title="Maltego"
+    description="Plataforma de análisis de enlaces para investigaciones OSINT y visualización de relaciones. (externa)"
+  />
+  <Card
+    href="https://whatsmyname.io/"
+    icon={<IconUserRoundSearch />}
+    title="WhatsMyName"
+    description="Busca un nombre de usuario en cientos de plataformas y redes sociales. (externa)"
+  />
+  <Card
+    href="https://github.com/sherlock-project/sherlock"
+    icon={<IconUserRoundSearch />}
+    title="Sherlock"
+    description="Herramienta de línea de comandos para localizar cuentas por nombre de usuario en redes sociales. (externa)"
+  />
+  <Card
+    href="https://github.com/soxoj/maigret"
+    icon={<IconUserRoundSearch />}
+    title="Maigret"
+    description="Recolecta información de perfiles públicos a partir de un nombre de usuario. (externa)"
+  />
+  <Card
+    href="https://github.com/laramies/theHarvester"
+    icon={<IconScanSearch />}
+    title="theHarvester"
+    description="Recolecta correos, subdominios, hosts y nombres desde fuentes públicas. (externa)"
+  />
+  <Card
+    href="https://github.com/lanmaster53/recon-ng"
+    icon={<IconCode2 />}
+    title="recon-ng"
+    description="Framework modular de reconocimiento web para investigaciones OSINT. (externa)"
+  />
+  <Card
+    href="https://dnsdumpster.com/"
+    icon={<IconNetwork />}
+    title="DNS Dumpster"
+    description="Mapea subdominios y la infraestructura DNS de un dominio de forma gratuita. (externa)"
+  />
+  <Card
+    href="https://github.com/ilektrojohn/creepy"
+    icon={<IconMap />}
+    title="Creepy"
+    description="Herramienta de geolocalización OSINT a partir de metadatos de redes sociales. (externa)"
+  />
+  <Card
+    href="https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax"
+    icon={<IconCode2 />}
+    title="GitHub Dorking"
+    description="Guía de sintaxis de búsqueda avanzada de GitHub para encontrar código y secretos expuestos. (externa)"
+  />
+</Cards>
+
+### Aprendizaje y Concientización
+
+<Cards>
+  <Card
+    href="https://divisioncero.com/herramientas/tabla-periodica-ciberseguridad"
+    icon={<IconGrid3x3 />}
+    title="Tabla Periódica de Ciberseguridad"
+    description="Explora los elementos clave de la Ciberseguridad de forma visual."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/rompehielos"
+    icon={<IconMessageCircleQuestion />}
+    title="Rompehielos de Seguridad"
+    description="Preguntas para romper el hielo y abrir la conversación sobre seguridad."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/calendario-ciberseguridad"
+    icon={<IconCalendar />}
+    title="Calendario de Ciberseguridad"
+    description="Fechas clave y eventos relevantes de Ciberseguridad."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/museo-cibercrimen"
+    icon={<IconLandmark />}
+    title="Museo del Cibercrimen"
+    description="Una galería visual con hitos, personajes y momentos icónicos del cibercrimen."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/triada-cia"
+    icon={<IconShieldCheck />}
+    title="Tríada CIA"
+    description="Aprende e identifica Confidencialidad, Integridad y Disponibilidad."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/rompehielos-practicas-ciberseguridad"
+    icon={<IconScale />}
+    title="Rompehielos: Buenas y Malas Prácticas"
+    description="Dinámica de equipo para discutir y aprender buenas y malas prácticas de ciberseguridad en equipos."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/detector-codigo-vulnerable"
+    icon={<IconBug />}
+    title="Detector de Código Vulnerable"
+    description="Practica identificando código vulnerable vs. seguro: OWASP Top 10, Top 10 de IA/LLM, secretos hardcodeados, SCA, SAST, DAST y pentesting."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/que-es-pii"
+    icon={<IconIdCard />}
+    title="¿Qué es un dato PII?"
+    description="Aprende qué es información de identificación personal (PII), sus categorías y cómo protegerla, con un quiz para practicar."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/que-es-grooming"
+    icon={<IconUserRoundSearch />}
+    title="¿Qué es el grooming?"
+    description="Herramienta didáctica para padres, niños, niñas y adolescentes: fases del grooming, señales de alerta y qué hacer, con un quiz para practicar."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/que-es-sexting"
+    icon={<IconMessageCircleWarning />}
+    title="¿Qué es el sexting?"
+    description="Herramienta didáctica sobre los riesgos del sexting: pérdida de control, permanencia digital, consecuencias legales y presión, con un quiz para practicar."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/que-es-sextorsion"
+    icon={<IconShieldAlert />}
+    title="¿Qué es la sextorsión?"
+    description="Herramienta didáctica sobre cómo opera la sextorsión, sus fases, señales de alerta y qué hacer si ocurre, con un quiz para practicar."
+  />
+</Cards>
+
+### Cumplimiento y Gestión
+
+<Cards>
+  <Card
+    href="/sgx"
+    icon={<IconBookOpen />}
+    title="Framework Kudo"
+    description="Framework de Ciberseguridad open-source para el cumplimiento de tu empresa."
+  />
+  <Card
+    href="https://app.divisioncero.com/home/empresas"
+    icon={<IconBuilding2 />}
+    title="GRC para Compañías"
+    description="Gestiona la gobernanza, el riesgo y el cumplimiento de ciberseguridad de tu empresa."
+  />
+  <Card
+    href="https://app.divisioncero.com/home/cyberkit"
+    icon={<IconShieldCheck />}
+    title="CyberKit"
+    description="Kit de recursos y herramientas de ciberseguridad para fortalecer tu organización."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/workflow-ciberseguridad"
+    icon={<IconNetwork />}
+    title="Workflow de Ciberseguridad"
+    description="Diagramas de flujo para procesos y procedimientos de seguridad."
+  />
+  <Card
+    href="https://divisioncero.com/herramientas/checklist-incidente-seguridad"
+    icon={<IconShieldAlert />}
+    title="Checklist de Mitigación de Incidentes"
+    description="Pasos inmediatos ante un incidente de seguridad, como colaborador o como líder del equipo."
   />
 </Cards>

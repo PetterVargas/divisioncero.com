@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "kudo": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@divisioncero/kudo-mcp@latest"
+      ]
+    }
+  }
+}

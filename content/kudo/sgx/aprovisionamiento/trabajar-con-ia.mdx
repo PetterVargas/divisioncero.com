@@ -1,0 +1,83 @@
+---
+title: Paso 4 - Trabajar con IA
+description: Usa el servidor MCP, los agentes y las skills de ciberseguridad de Kudo con tu asistente de IA
+---
+
+El proyecto que creaste con el CLI ya trae todo lo necesario para trabajar tu SGX con un asistente de IA (Claude Code, Cursor, VS Code con Copilot, Codex, etc.):
+
+| Archivo | Qué es |
+| ------- | ------ |
+| `.mcp.json` | Configuración del **servidor MCP de Kudo** (`@divisioncero/kudo-mcp`) |
+| `.claude/agents/` | **8 agentes** de ciberseguridad |
+| `.claude/skills/` | **16 skills** que usan los agentes |
+
+Conoce qué hace cada uno en [MCP, Agentes y Skills](/kudo/framework/overview/mcp-agentes-y-skills).
+
+<Callout title="¿Creaste el proyecto con una versión anterior del CLI?">
+  Ejecuta los comandos de las secciones siguientes desde la carpeta de tu proyecto para agregar el MCP y las skills.
+</Callout>
+
+## 1. Conectar el servidor MCP
+
+El servidor lee las políticas y procedimientos de **tu** proyecto (`content/sgsi/politicas` o `content/sgx/politicas-y-procedimientos`), de modo que el asistente trabaja con tus documentos adaptados, no con los genéricos.
+
+```bash tab="Claude Code"
+# Claude Code detecta .mcp.json al abrir el proyecto y te pide aprobarlo
+claude
+
+# o agrégalo manualmente
+claude mcp add kudo -- npx -y @divisioncero/kudo-mcp@latest
+```
+
+```json tab="Cursor / VS Code / otros"
+{
+  "mcpServers": {
+    "kudo": {
+      "command": "npx",
+      "args": ["-y", "@divisioncero/kudo-mcp@latest"]
+    }
+  }
+}
+```
+
+```bash tab="HTTP"
+# Servidor HTTP local en http://localhost:3333/mcp
+pnpm mcp:http
+
+claude mcp add --transport http kudo http://localhost:3333/mcp
+```
+
+Verifica la conexión pidiéndole al asistente: *"Usa kudo_cobertura y dime qué controles no tienen documento"*.
+
+## 2. Instalar las skills en otros asistentes
+
+Claude Code usa directamente las skills de `.claude/skills/`. Para cualquier otro asistente compatible con [Agent Skills](https://agentskills.io), instálalas con:
+
+```bash
+npx skills add PetterVargas/divisioncero.com
+```
+
+El instalador te deja elegir qué skills y para qué asistentes instalarlas (requiere Node.js 22.20 o superior). Para instalar solo una:
+
+```bash
+npx skills add PetterVargas/divisioncero.com --skill kudo-oscal
+```
+
+## 3. Usar los agentes
+
+En Claude Code, pide la tarea mencionando al agente o deja que el asistente elija el adecuado:
+
+```text
+Usa el agente kudo-ciso para priorizar los controles que debemos implementar en los próximos 90 días.
+Usa el agente kudo-redactor-sgx para adaptar la Política de Gestión de Accesos a una empresa de 40 personas.
+Usa el agente kudo-auditor para preparar la lista de verificación de la auditoría del dominio CIP.
+```
+
+En otros clientes MCP, los agentes están disponibles como **prompts** (`agente-ciso`, `agente-auditor`, `agente-redactor-sgx`, …) o con la herramienta `kudo_obtener_agente`.
+
+## Buenas prácticas
+
+- **Revisa siempre** lo que genera el asistente antes de aprobar un documento: la responsabilidad sigue siendo de la organización.
+- No compartas con el asistente credenciales, secretos ni datos personales reales; usa datos anonimizados.
+- Usa herramientas de IA aprobadas por tu organización, según la [Política de Uso Aceptable de Inteligencia Artificial](/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial).
+- El servidor MCP es de **solo lectura**: no modifica archivos; los cambios los hace tu asistente con tu aprobación.

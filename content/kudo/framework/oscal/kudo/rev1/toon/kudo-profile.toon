@@ -1,0 +1,46 @@
+profile:
+  uuid: 9f069403-afaf-5587-b9a5-82e62ae57242
+  metadata:
+    title: Perfil Kudo – Línea base completa
+    published: "2026-11-18T00:00:00Z"
+    "last-modified": "2026-11-18T00:00:00Z"
+    version: 0.1.0
+    "oscal-version": 1.2.3
+    remarks: "Perfil OSCAL que importa el catálogo Kudo y selecciona sus 36 controles sin modificaciones. Úsalo como punto de partida: copia este archivo y reemplaza include-all por include-controls para seleccionar solo los controles aplicables a tu organización (declaración de aplicabilidad)."
+    links[1]{href,rel,"media-type",text}:
+      "https://divisioncero.com/kudo/framework/oscal",canonical,text/html,Kudo y OSCAL
+    roles[2]{id,title}:
+      creator,Autor del contenido
+      prepared-for,Organización destinataria
+    parties[2]:
+      - uuid: ed04377f-1282-41a6-b653-477f0b38742c
+        type: organization
+        name: DivisionCero
+        links[1]{href,rel}:
+          "https://divisioncero.com/kudo",homepage
+      - uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+        type: organization
+        name: "[Nombre de tu organización]"
+        remarks: Reemplaza este valor por la razón social de la organización que adopta Kudo.
+    "responsible-parties"[2]:
+      - "role-id": creator
+        "party-uuids"[1]: ed04377f-1282-41a6-b653-477f0b38742c
+      - "role-id": prepared-for
+        "party-uuids"[1]: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+    props[2]{name,ns,value}:
+      control-count,"https://divisioncero.com/kudo/framework/oscal","36"
+      baseline,"https://divisioncero.com/kudo/framework/oscal",completa
+  imports[1]:
+    - href: "#868c33bd-0dc6-542b-a4ba-e06c3b7ddbbb"
+      "include-all":
+  merge:
+    "as-is": true
+  "back-matter":
+    resources[1]:
+      - uuid: 868c33bd-0dc6-542b-a4ba-e06c3b7ddbbb
+        title: Catálogo de Controles Kudo
+        description: "Catálogo OSCAL de Kudo (8 dominios, 36 controles)."
+        rlinks[3]{href,"media-type"}:
+          "https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-catalog.json",application/oscal+json
+          "https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-catalog.xml",application/oscal+xml
+          "https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-catalog.yaml",application/oscal+yaml

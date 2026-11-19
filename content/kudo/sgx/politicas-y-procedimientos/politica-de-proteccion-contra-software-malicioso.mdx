@@ -1,0 +1,69 @@
+---
+title: "Política de Protección contra Software Malicioso"
+description: "Prevención, detección y contención de malware en puntos finales, servidores, correo y navegación"
+codigo: "POL-ADR-03"
+tipo: "politica"
+dominio: "adr"
+propietario: "Responsable de TI"
+version: "1.0"
+revision: "Anual"
+controles: [adr-1, cip-6]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-ADR-03 | Política | ADR | 1.0 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Prevenir, detectar y neutralizar el software malicioso (virus, ransomware, troyanos, *spyware*, *infostealers*) en toda la organización, combinando controles técnicos con la participación de los colaboradores.
+
+## Alcance
+Aplica a puntos finales, servidores, cargas de trabajo en la nube, contenedores, correo electrónico, navegación web y medios extraíbles de la organización, y a todos los usuarios.
+
+## Estándares
+
+**Protección de Puntos Finales y Servidores**
+- Todos los puntos finales y servidores cuentan con una solución de protección con detección basada en comportamiento (EDR o equivalente), gestionada de forma centralizada e integrada con el SIEM.
+- Los usuarios no pueden deshabilitar ni desinstalar la protección.
+- Las firmas y los motores se actualizan automáticamente; los equipos que no reportan en más de 7 días se investigan.
+- La cuarentena automática está habilitada para las amenazas de alta confianza.
+
+**Control de Aplicaciones**
+- Solo se instala software desde fuentes aprobadas; los usuarios no tienen privilegios de administrador en su uso diario.
+- En los servidores críticos y en los sistemas ICS/OT se aplican listas de aplicaciones permitidas (*allowlisting*) cuando es viable.
+- Se bloquea la ejecución de macros de fuentes no confiables en documentos de ofimática.
+
+**Correo Electrónico**
+- Filtrado antimalware y antiphishing, con análisis de adjuntos en entorno aislado (*sandbox*) y reescritura o análisis de enlaces.
+- Autenticación de dominios con SPF, DKIM y DMARC conforme a la Política de Seguridad de Comunicaciones.
+- Advertencia visible en los correos externos.
+
+**Navegación Web**
+- Filtrado de DNS o web para bloquear sitios maliciosos y categorías de alto riesgo.
+
+**Medios Extraíbles**
+- Los medios extraíbles se analizan automáticamente al conectarse; en entornos sensibles se bloquean salvo autorización.
+
+**Factor Humano**
+- Los colaboradores reciben capacitación para reconocer y reportar comunicaciones sospechosas, conforme a la Política de Gestión de Concienciación. Puedes reforzarla con la herramienta [Práctica: Detección de Phishing](/herramientas/deteccion-phishing).
+- Se habilita un mecanismo sencillo para reportar correos sospechosos (por ejemplo, un botón de reporte en el cliente de correo).
+
+**Resiliencia ante Ransomware**
+- Respaldos inmutables o desconectados conforme a la Política de Backups y Recuperación.
+- Segmentación de red para limitar la propagación.
+
+## Respuesta
+Toda detección que no se contenga automáticamente, o que afecte a servidores o a varias máquinas, se gestiona como incidente conforme a la Política de Gestión de Incidentes.
+
+## Monitoreo y Revisión
+- Indicadores mensuales: porcentaje de equipos protegidos y actualizados, detecciones por tipo y tasa de reporte de phishing simulado.
+- Revisión anual de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-1 · Protección contra Software Malicioso](/kudo/framework/adr/adr-1)
+- [CIP-6 · Ciberseguridad en Puntos Finales](/kudo/framework/cip/cip-6)
+{/* /kudo:controles */}

@@ -1,0 +1,50 @@
+---
+title: Assessment Results (AR)
+description: Resultados de evaluación OSCAL de los controles Kudo, con observaciones, hallazgos y riesgos
+---
+
+El **Assessment Results (AR)** registra *qué se encontró* al ejecutar el plan de evaluación: observaciones (evidencias), hallazgos por control y riesgos identificados. Kudo publica un ejemplo para que veas cómo documentar una auditoría.
+
+## Resultados de Evaluación – Ejemplo de auditoría interna Kudo
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-assessment-results.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-assessment-results.json) |
+| xml | [kudo-assessment-results.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-assessment-results.xml) |
+| yaml | [kudo-assessment-results.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-assessment-results.yaml) |
+| toon | [kudo-assessment-results.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-assessment-results.toon) |
+
+<Callout type="warn" title="Datos ilustrativos">
+  Los resultados de este archivo son **ejemplos**. Reemplázalos por los resultados reales de tu auditoría.
+</Callout>
+
+## Contenido
+
+| Sección | Contenido |
+| ------- | --------- |
+| `import-ap` | [Plan de Evaluación – Auditoría interna Kudo](/framework/oscal/ap-assessment-plan) |
+| `results` | 1 resultado: "Auditoría interna 2027" (enero – agosto) |
+| `observations` | 4 observaciones con su método (`EXAMINE`, `INTERVIEW`, `TEST`) |
+| `findings` | 4 hallazgos: 3 `not-satisfied` y 1 `satisfied` |
+| `risks` | 3 riesgos abiertos, caracterizados por probabilidad e impacto |
+
+| Control | Hallazgo | Estado |
+| ------- | -------- | ------ |
+| CIP-2 | MFA no habilitada en todas las cuentas administrativas | No satisfecho |
+| ADR-2 | Vulnerabilidades altas remediadas fuera de plazo | No satisfecho |
+| DIA-5 | Sin evidencia de eliminación de datos vencidos | No satisfecho |
+| THP-1 | Programa de concienciación operando | Satisfecho |
+
+## Cómo usarlo
+
+1. Por cada evidencia revisada, crea una `observation` con su método y fecha de recolección.
+2. Por cada requisito evaluado, crea un `finding` con `target.status.state` = `satisfied` o `not-satisfied`, y vincúlalo a sus observaciones.
+3. Para los hallazgos no satisfechos, registra el `risk` asociado: estos alimentan el [POA&M](/framework/oscal/poam-plan-of-actions-and-milestones).
+
+## Validación
+
+```bash
+oscal-cli ar validate kudo-assessment-results.json
+```

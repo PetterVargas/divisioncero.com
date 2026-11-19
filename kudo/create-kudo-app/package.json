@@ -1,7 +1,7 @@
 {
   "name": "@divisioncero/create-kudo-app",
-  "version": "0.3.0",
-  "description": "CLI para crear nuevas aplicaciones Kudo con templates de políticas de Ciberseguridad",
+  "version": "0.4.0",
+  "description": "CLI para crear tu sitio Kudo con el SGX (políticas y procedimientos de ciberseguridad), el servidor MCP y agentes de IA",
   "type": "module",
   "bin": {
     "create-kudo-app": "./bin/cli.js"
@@ -14,26 +14,31 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "node scripts/sync-templates.mjs && tsc",
     "dev": "tsc --watch",
     "prepublishOnly": "pnpm build",
-    "test": "echo \"Tests coming soon\" && exit 0"
+    "test": "node --test test/*.test.mjs",
+    "sync": "node scripts/sync-templates.mjs"
   },
   "keywords": [
-    "kudo",
-    "divisioncero",
+    "agentes",
     "ciberseguridad",
+    "cli",
     "cybersecurity",
-    "políticas",
-    "policies",
+    "divisioncero",
+    "documentation",
     "framework",
     "fumadocs",
-    "cli",
-    "scaffolding",
-    "nextjs",
-    "documentation",
     "iso27001",
-    "latam"
+    "kudo",
+    "latam",
+    "mcp",
+    "nextjs",
+    "oscal",
+    "policies",
+    "políticas",
+    "scaffolding",
+    "skills"
   ],
   "author": "DivisionCero <hello@divisioncero.com> (https://divisioncero.com)",
   "license": "MIT",
@@ -47,17 +52,17 @@
     "url": "https://github.com/PetterVargas/divisioncero.com/issues"
   },
   "dependencies": {
-    "@clack/prompts": "^0.8.2",
-    "commander": "^12.1.0",
-    "execa": "^9.5.2",
+    "@clack/prompts": "^1.8.1",
+    "commander": "^15.0.0",
+    "execa": "^10.2.1",
     "fs-extra": "^11.4.1",
-    "ora": "^8.1.1",
+    "ora": "^10.0.0",
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.10.2",
-    "typescript": "^5.8.3"
+    "@types/node": "^22.19.0",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=20.0.0"

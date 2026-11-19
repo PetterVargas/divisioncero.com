@@ -10,11 +10,25 @@ pnpm create @divisioncero/kudo-app
 ```
 
 ```bash tab="npm"
-npm create @divisioncero/kudo-app
+npm create @divisioncero/kudo-app@latest
 ```
 
 ```bash tab="yarn"
 yarn create @divisioncero/kudo-app
 ```
 
-El CLI te preguntará el nombre del proyecto y creará el directorio con toda la estructura de contenido lista para personalizar.
+El CLI te preguntará:
+
+1. El **nombre del proyecto**.
+2. El **gestor de paquetes** (pnpm recomendado).
+3. Si quieres incluir el **servidor MCP, los agentes y las skills de IA** (recomendado).
+
+Y creará el directorio con:
+
+- El **framework** completo (8 dominios y 36 controles).
+- El **SGX**: 45 políticas, procedimientos y plantillas listos para adaptar.
+- `.mcp.json`, `.claude/agents/` y `.claude/skills/` para [trabajar con IA](/kudo/sgx/aprovisionamiento/trabajar-con-ia).
+
+<Callout title="Sin preguntas">
+  Para automatizarlo (por ejemplo en CI), usa `pnpm create @divisioncero/kudo-app mi-sgx --yes`. Agrega `--no-ai` si no quieres la configuración de IA.
+</Callout>

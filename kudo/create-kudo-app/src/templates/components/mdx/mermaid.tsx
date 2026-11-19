@@ -1,5 +1,9 @@
 'use client';
 
+// Mermaid usa selection.transition() en los tooltips; ese método lo agrega d3-transition
+// como efecto secundario, que el bundler elimina si nadie lo importa explícitamente.
+import 'd3-transition';
+
 import { useEffect, useId, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
 

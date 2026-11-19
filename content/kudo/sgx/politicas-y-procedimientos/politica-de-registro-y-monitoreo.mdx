@@ -1,40 +1,68 @@
 ---
 title: "Política de Registro y Monitoreo"
 description: "Registro de eventos y monitoreo de seguridad de sistemas"
+codigo: "POL-CIF-07"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.1"
+revision: "Anual"
+controles: [adr-3]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-07 | Política | CIF | 1.1 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Garantizar la supervisión efectiva de sistemas y aplicaciones, preservando la integridad, confidencialidad y disponibilidad de los datos, y mejorando la detección de eventos anómalos y amenazas.
+Garantizar que los eventos relevantes para la seguridad se registren, se protejan y se analicen, de modo que las amenazas y anomalías se detecten a tiempo y se disponga de evidencia para investigar incidentes.
 
 ## Alcance
-Aplica a todos los sistemas, aplicaciones e infraestructura en la nube, incluyendo registros de instancias Ubuntu EC2, aplicaciones canalizadas a CloudWatch, monitores de tráfico de red y fuentes de amenazas externas.
+Aplica a todos los sistemas, aplicaciones, servicios en la nube, equipos de red y herramientas de seguridad de la organización, y a las fuentes externas de inteligencia de amenazas que se integren al monitoreo.
 
 ## Principios
-- Registro completo y seguro de eventos críticos.
-- Agregación y correlación de datos de múltiples fuentes para detección de anomalías.
-- Almacenamiento seguro y retención de registros según periodos definidos.
-- Pruebas periódicas de efectividad de descubrimiento de datos, especialmente para información sensible (ej. PAN).
+- Registrar los eventos críticos de forma completa y protegida.
+- Centralizar y correlacionar los registros de múltiples fuentes en un SIEM o plataforma equivalente.
+- Proteger los registros contra alteración y acceso no autorizado.
+- Conservar los registros durante los periodos definidos.
 
-## Configuración de Sistemas
-- Todos los sistemas y aplicaciones deben registrar información esencial.
-- Los datos deben ser confidenciales, íntegros y accesibles solo a personal autorizado.
-- Los registros se preservan según política de retención y se eliminan de manera segura tras su evaluación.
+## Eventos que Deben Registrarse
+Como mínimo:
+- Autenticaciones exitosas y fallidas, y cambios de contraseña o de MFA.
+- Creación, modificación y eliminación de cuentas, roles y permisos.
+- Uso de cuentas privilegiadas y comandos administrativos.
+- Cambios de configuración en sistemas, redes y servicios en la nube.
+- Accesos a información Confidencial o Restringida.
+- Alertas de seguridad (EDR, WAF, firewall, antimalware).
+- Errores y eventos críticos de las aplicaciones.
 
-## Monitoreo
-- Scripts automáticos analizan eventos cada cinco minutos en CloudWatch.
-- Motores de correlación detectan patrones complejos de amenazas.
-- Notificaciones inmediatas al personal pertinente vía canales designados (ej., Slack).
-- Investigación de incidentes según Política de Gestión de Incidentes.
+Cada registro incluye: fecha y hora sincronizada (NTP), origen, usuario o identidad, acción y resultado. Los registros **no deben contener** contraseñas, secretos ni datos sensibles en claro (por ejemplo, números completos de tarjeta).
+
+## Protección y Retención
+- Acceso de solo lectura para el personal autorizado; los administradores de los sistemas no pueden borrar sus propios registros.
+- Retención mínima de **12 meses**, con al menos **3 meses** disponibles para consulta inmediata, salvo que una ley o un contrato exijan más.
+- Eliminación segura al vencer el plazo de retención.
+
+## Monitoreo y Alertas
+- Reglas de correlación para detectar patrones de amenaza (fuerza bruta, accesos desde ubicaciones inusuales, escalamiento de privilegios, exfiltración).
+- Las alertas se notifican al personal responsable por los canales designados (por ejemplo, correo, mensajería corporativa o sistema de tickets) según su severidad.
+- Las alertas se atienden según la Política de Gestión de Incidentes.
+- Se integran fuentes de inteligencia de amenazas confiables para enriquecer la detección.
+
+> **Ejemplo de implementación:** registros de servidores y aplicaciones enviados a CloudWatch, Azure Monitor o Google Cloud Logging, centralizados en un SIEM con alertas cada 5 minutos hacia un canal de guardia.
 
 ## Revisión y Análisis
-- Análisis periódico de registros para confirmar efectividad y detectar amenazas.
-- Registro sistemático de inconsistencias y mejoras identificadas.
-- Documentación de pruebas de efectividad de descubrimiento de datos anualmente.
-
-## Respuesta e Investigación
-- Todos los incidentes son analizados y documentados exhaustivamente.
-- Los hallazgos influyen en mejoras continuas de sistemas de registro y monitoreo.
+- Revisión periódica de las alertas y de las fuentes de registro para verificar que todas siguen activas.
+- Pruebas al menos anuales de las reglas de detección (por ejemplo, simulando ataques conocidos).
+- Pruebas anuales de descubrimiento de datos sensibles en los registros.
 
 ## Monitoreo y Revisión de la Política
-- Revisión anual o ante cambios significativos en sistemas o procesos.
-- Auditorías y evaluaciones frecuentes para mantener relevancia frente a amenazas y cambios tecnológicos.
+Revisión anual o ante cambios significativos en los sistemas o procesos.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-3 · Retención y Monitoreo de Registros](/kudo/framework/adr/adr-3)
+{/* /kudo:controles */}

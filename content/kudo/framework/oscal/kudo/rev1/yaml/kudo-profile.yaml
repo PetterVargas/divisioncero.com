@@ -1,0 +1,61 @@
+profile:
+  uuid: 9f069403-afaf-5587-b9a5-82e62ae57242
+  metadata:
+    title: Perfil Kudo – Línea base completa
+    published: 2026-11-18T00:00:00Z
+    last-modified: 2026-11-18T00:00:00Z
+    version: 0.1.0
+    oscal-version: 1.2.3
+    remarks: "Perfil OSCAL que importa el catálogo Kudo y selecciona sus 36 controles sin modificaciones. Úsalo como punto de partida: copia este archivo y reemplaza include-all por include-controls para seleccionar solo los controles aplicables a tu organización (declaración de aplicabilidad)."
+    links:
+      - href: https://divisioncero.com/kudo/framework/oscal
+        rel: canonical
+        media-type: text/html
+        text: Kudo y OSCAL
+    roles:
+      - id: creator
+        title: Autor del contenido
+      - id: prepared-for
+        title: Organización destinataria
+    parties:
+      - uuid: ed04377f-1282-41a6-b653-477f0b38742c
+        type: organization
+        name: DivisionCero
+        links:
+          - href: https://divisioncero.com/kudo
+            rel: homepage
+      - uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+        type: organization
+        name: "[Nombre de tu organización]"
+        remarks: Reemplaza este valor por la razón social de la organización que adopta Kudo.
+    responsible-parties:
+      - role-id: creator
+        party-uuids:
+          - ed04377f-1282-41a6-b653-477f0b38742c
+      - role-id: prepared-for
+        party-uuids:
+          - e9de3acc-be4b-58c9-816f-25e260a9dcbe
+    props:
+      - name: control-count
+        ns: https://divisioncero.com/kudo/framework/oscal
+        value: "36"
+      - name: baseline
+        ns: https://divisioncero.com/kudo/framework/oscal
+        value: completa
+  imports:
+    - href: "#868c33bd-0dc6-542b-a4ba-e06c3b7ddbbb"
+      include-all: {}
+  merge:
+    as-is: true
+  back-matter:
+    resources:
+      - uuid: 868c33bd-0dc6-542b-a4ba-e06c3b7ddbbb
+        title: Catálogo de Controles Kudo
+        description: Catálogo OSCAL de Kudo (8 dominios, 36 controles).
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-catalog.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-catalog.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-catalog.yaml
+            media-type: application/oscal+yaml

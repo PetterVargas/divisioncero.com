@@ -1,6 +1,6 @@
 {
   "title": "Aprovisionamiento",
-  "description": "Aprovisionamiento del SGSI",
+  "description": "Aprovisionamiento del SGX",
   "root": true,
   "pages": [
     "index",
@@ -8,6 +8,7 @@
     "requisitos",
     "crear-proyecto",
     "ejecucion-local",
+    "trabajar-con-ia",
     "adaptacion",
     "probar-cambios",
     "autenticacion-corporativa",

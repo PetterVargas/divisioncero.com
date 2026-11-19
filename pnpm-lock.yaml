@@ -187,6 +187,9 @@ importers:
       d3-force:
         specifier: ^3.0.1
         version: 3.0.1
+      d3-transition:
+        specifier: 3.0.2
+        version: 3.0.2(d3-selection@3.0.1)
       feed:
         specifier: ^6.0.0
         version: 6.0.0
@@ -278,6 +281,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.3.5
         version: 4.3.5
+      '@toon-format/toon':
+        specifier: 4.4.0
+        version: 4.4.0
       '@types/d3-force':
         specifier: ^3.0.10
         version: 3.0.10
@@ -320,6 +326,9 @@ importers:
       wrangler:
         specifier: 4.161.0
         version: 4.161.0(@types/node@26.6.6)
+      yaml:
+        specifier: 2.9.1
+        version: 2.9.1
 
 packages:
 
@@ -1772,6 +1781,9 @@ packages:
 
   '@tailwindcss/postcss@4.3.5':
     resolution: {integrity: sha512-FAV37Tlx9wBiT/hkfgVD0Q6CWsP2oUX3lf28nrfjW8+ksILjnpuFulUqWDfNR4/ZiEHHDRBX8DUTzD1Rys687A==}
+
+  '@toon-format/toon@4.4.0':
+    resolution: {integrity: sha512-A6UcsVoWbNdhdLNhJbe6JpRlocmf/DZGG57fur3bd8oQtsjBaKWo2hHbOU2zTuy+byUmLIOyP1xJeitopCZzpQ==}
 
   '@tweenjs/tween.js@25.0.0':
     resolution: {integrity: sha512-XKLA6syeBUaPzx4j3qwMqzzq+V4uo72BnlbOjmuljLrRqdsd3qnzvZZoxvMHZ23ndsRS4aufU6JOZYpCbU6T1A==}
@@ -5425,6 +5437,8 @@ snapshots:
       '@tailwindcss/oxide': 4.3.5
       postcss: 8.5.32
       tailwindcss: 4.3.5
+
+  '@toon-format/toon@4.4.0': {}
 
   '@tweenjs/tween.js@25.0.0': {}
 

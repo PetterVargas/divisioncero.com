@@ -1,0 +1,229 @@
+plan-of-action-and-milestones:
+  uuid: 70ad6a29-8036-52e3-a436-3210aea68e09
+  metadata:
+    title: Plan de Acción y Hitos (POA&M) – Ejemplo Kudo
+    published: 2026-11-18T00:00:00Z
+    last-modified: 2026-11-18T00:00:00Z
+    version: 0.1.0
+    oscal-version: 1.2.3
+    remarks: "POA&M ILUSTRATIVO derivado de los resultados de evaluación de ejemplo: cada hallazgo abierto tiene un riesgo, un plan de remediación y un hito con fecha según su severidad (Procedimiento de Acciones Correctivas y Mejora Continua). Reemplázalo por tus propios hallazgos."
+    links:
+      - href: https://divisioncero.com/kudo/framework/oscal
+        rel: canonical
+        media-type: text/html
+        text: Kudo y OSCAL
+    roles:
+      - id: creator
+        title: Autor del contenido
+      - id: prepared-for
+        title: Organización destinataria
+    parties:
+      - uuid: ed04377f-1282-41a6-b653-477f0b38742c
+        type: organization
+        name: DivisionCero
+        links:
+          - href: https://divisioncero.com/kudo
+            rel: homepage
+      - uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+        type: organization
+        name: "[Nombre de tu organización]"
+        remarks: Reemplaza este valor por la razón social de la organización que adopta Kudo.
+    responsible-parties:
+      - role-id: creator
+        party-uuids:
+          - ed04377f-1282-41a6-b653-477f0b38742c
+      - role-id: prepared-for
+        party-uuids:
+          - e9de3acc-be4b-58c9-816f-25e260a9dcbe
+  import-ssp:
+    href: "#01974cd3-6aa5-5c1d-8131-808922726ef3"
+  observations:
+    - uuid: 674f5fcd-4a1e-56a8-8da4-dba013426a63
+      title: MFA no habilitada en todas las cuentas administrativas
+      description: En una muestra de 20 cuentas administrativas, 3 no tenían MFA habilitada en la consola de nube.
+      methods:
+        - TEST
+      types:
+        - finding
+      collected: 2027-01-01T00:00:00Z
+      remarks: Ejemplo ilustrativo.
+    - uuid: 1511672f-9dbe-58a9-b659-2f9736370d12
+      title: Vulnerabilidades altas remediadas fuera de plazo
+      description: El 35 % de las vulnerabilidades de severidad Alta del último trimestre superó el plazo de 30 días.
+      methods:
+        - EXAMINE
+      types:
+        - finding
+      collected: 2027-01-01T00:00:00Z
+      remarks: Ejemplo ilustrativo.
+    - uuid: 1e08bc87-d06b-547c-a52d-c7f493a00582
+      title: Sin evidencia de eliminación de datos vencidos
+      description: No existe registro de eliminación de los datos de candidatos con más de un año desde el cierre del proceso.
+      methods:
+        - INTERVIEW
+      types:
+        - finding
+      collected: 2027-01-01T00:00:00Z
+      remarks: Ejemplo ilustrativo.
+  risks:
+    - uuid: 45c018b3-7099-57a8-b0c1-03fec78bfb0e
+      title: MFA no habilitada en todas las cuentas administrativas
+      description: Compromiso de cuentas administrativas por robo o reutilización de credenciales.
+      statement: En una muestra de 20 cuentas administrativas, 3 no tenían MFA habilitada en la consola de nube. Compromiso de cuentas administrativas por robo o reutilización de credenciales.
+      status: open
+      characterizations:
+        - origin:
+            actors:
+              - type: party
+                actor-uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+          facets:
+            - name: likelihood
+              system: https://divisioncero.com/kudo/framework/oscal
+              value: moderate
+            - name: impact
+              system: https://divisioncero.com/kudo/framework/oscal
+              value: high
+      related-observations:
+        - observation-uuid: 674f5fcd-4a1e-56a8-8da4-dba013426a63
+      deadline: 2027-09-14T00:00:00Z
+      remediations:
+        - uuid: bba574cb-3585-5a13-9698-5752fce1dee9
+          lifecycle: planned
+          title: "Remediación: MFA no habilitada en todas las cuentas administrativas"
+          description: Exigir MFA resistente a phishing para todas las cuentas privilegiadas mediante una política de acceso condicional.
+          tasks:
+            - uuid: 34e439fd-41ac-51f7-9696-ed784b2c1d77
+              type: milestone
+              title: Remediación implementada y verificada
+              timing:
+                on-date:
+                  date: 2027-09-14T00:00:00Z
+    - uuid: e9fe7e5c-c17c-5963-9ac6-e547b7baaf05
+      title: Vulnerabilidades altas remediadas fuera de plazo
+      description: Explotación de vulnerabilidades conocidas en activos internos.
+      statement: El 35 % de las vulnerabilidades de severidad Alta del último trimestre superó el plazo de 30 días. Explotación de vulnerabilidades conocidas en activos internos.
+      status: open
+      characterizations:
+        - origin:
+            actors:
+              - type: party
+                actor-uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+          facets:
+            - name: likelihood
+              system: https://divisioncero.com/kudo/framework/oscal
+              value: moderate
+            - name: impact
+              system: https://divisioncero.com/kudo/framework/oscal
+              value: moderate
+      related-observations:
+        - observation-uuid: 1511672f-9dbe-58a9-b659-2f9736370d12
+      deadline: 2027-10-14T00:00:00Z
+      remediations:
+        - uuid: 755f10c7-6ed9-5564-b96a-d2a9ff337876
+          lifecycle: planned
+          title: "Remediación: Vulnerabilidades altas remediadas fuera de plazo"
+          description: Automatizar el despliegue de parches en servidores y reportar mensualmente el cumplimiento de plazos al Comité de Seguridad.
+          tasks:
+            - uuid: edcb5ba5-f3bd-5f16-a188-4fb14760399e
+              type: milestone
+              title: Remediación implementada y verificada
+              timing:
+                on-date:
+                  date: 2027-10-14T00:00:00Z
+    - uuid: c2be3ca7-5d4a-51ed-9eb6-c25764315220
+      title: Sin evidencia de eliminación de datos vencidos
+      description: Incumplimiento del principio de limitación del plazo de conservación y sanciones de la autoridad de protección de datos.
+      statement: No existe registro de eliminación de los datos de candidatos con más de un año desde el cierre del proceso. Incumplimiento del principio de limitación del plazo de conservación y sanciones de la autoridad de protección de datos.
+      status: open
+      characterizations:
+        - origin:
+            actors:
+              - type: party
+                actor-uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+          facets:
+            - name: likelihood
+              system: https://divisioncero.com/kudo/framework/oscal
+              value: low
+            - name: impact
+              system: https://divisioncero.com/kudo/framework/oscal
+              value: moderate
+      related-observations:
+        - observation-uuid: 1e08bc87-d06b-547c-a52d-c7f493a00582
+      deadline: 2027-11-13T00:00:00Z
+      remediations:
+        - uuid: a5565116-2a8f-5d44-9127-cd7f0a252e8e
+          lifecycle: planned
+          title: "Remediación: Sin evidencia de eliminación de datos vencidos"
+          description: Configurar la eliminación automática en el sistema de selección y conservar el registro de eliminación.
+          tasks:
+            - uuid: 99425a70-238a-5e19-afa0-40f9575a1f23
+              type: milestone
+              title: Remediación implementada y verificada
+              timing:
+                on-date:
+                  date: 2027-11-13T00:00:00Z
+  poam-items:
+    - uuid: 6fa7f070-e5c2-53a8-af1a-83d0caa7d44b
+      title: MFA no habilitada en todas las cuentas administrativas
+      description: "Exigir MFA resistente a phishing para todas las cuentas privilegiadas mediante una política de acceso condicional. Control afectado: CIP-2. Plazo: 30 días."
+      props:
+        - name: control-id
+          ns: https://divisioncero.com/kudo/framework/oscal
+          value: cip-2
+        - name: source-finding
+          ns: https://divisioncero.com/kudo/framework/oscal
+          value: 496659c5-009d-5c54-85b1-d78d3b9e9494
+      related-observations:
+        - observation-uuid: 674f5fcd-4a1e-56a8-8da4-dba013426a63
+      related-risks:
+        - risk-uuid: 45c018b3-7099-57a8-b0c1-03fec78bfb0e
+    - uuid: f1e2e600-dd61-55d3-9072-5e81e68f6759
+      title: Vulnerabilidades altas remediadas fuera de plazo
+      description: "Automatizar el despliegue de parches en servidores y reportar mensualmente el cumplimiento de plazos al Comité de Seguridad. Control afectado: ADR-2. Plazo: 60 días."
+      props:
+        - name: control-id
+          ns: https://divisioncero.com/kudo/framework/oscal
+          value: adr-2
+        - name: source-finding
+          ns: https://divisioncero.com/kudo/framework/oscal
+          value: a57920d1-012b-5bb2-9baa-1619da58680f
+      related-observations:
+        - observation-uuid: 1511672f-9dbe-58a9-b659-2f9736370d12
+      related-risks:
+        - risk-uuid: e9fe7e5c-c17c-5963-9ac6-e547b7baaf05
+    - uuid: 0dc91aaf-6041-5073-8ead-69344343b0bd
+      title: Sin evidencia de eliminación de datos vencidos
+      description: "Configurar la eliminación automática en el sistema de selección y conservar el registro de eliminación. Control afectado: DIA-5. Plazo: 90 días."
+      props:
+        - name: control-id
+          ns: https://divisioncero.com/kudo/framework/oscal
+          value: dia-5
+        - name: source-finding
+          ns: https://divisioncero.com/kudo/framework/oscal
+          value: 407ffe01-d09f-509a-8273-346381d60759
+      related-observations:
+        - observation-uuid: 1e08bc87-d06b-547c-a52d-c7f493a00582
+      related-risks:
+        - risk-uuid: c2be3ca7-5d4a-51ed-9eb6-c25764315220
+  back-matter:
+    resources:
+      - uuid: 01974cd3-6aa5-5c1d-8131-808922726ef3
+        title: Plan de Seguridad del Sistema – plantilla Kudo
+        description: SSP de referencia basado en el perfil Kudo.
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-ssp.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-ssp.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-ssp.yaml
+            media-type: application/oscal+yaml
+      - uuid: 4e68f6a6-9e47-53df-b89c-1f3a4305cc37
+        title: Resultados de Evaluación – plantilla Kudo
+        description: Resultados de ejemplo de una auditoría interna Kudo.
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-assessment-results.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-assessment-results.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-assessment-results.yaml
+            media-type: application/oscal+yaml

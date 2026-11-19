@@ -230,6 +230,26 @@ export const toolFaqs: Record<string, Faq[]> = {
       answer:
         'Para guardar evidencia de la consulta: el hash SHA-256 permite comprobar después que el reporte no fue modificado. Es útil, por ejemplo, para documentar desde qué conexión se hizo una acción.',
     },
+    {
+      question: '¿Qué son los encabezados HTTP que recibe el servidor?',
+      answer:
+        'Son los datos que tu navegador envía en cada petición: User-Agent, idiomas (Accept-Language), compresión (Accept-Encoding), tipos de contenido (Accept), página de referencia (Referer) y, si hay proxies de por medio, X-Forwarded-For. Cualquier sitio web los recibe y puede registrarlos junto con tu IP.',
+    },
+    {
+      question: '¿Puedo consultar mi IP desde la terminal?',
+      answer:
+        'Sí. Ejecuta curl https://divisioncero.com/herramientas/api/mi-ip para obtener tu IP, o agrega /ua, /idioma, /forwarded, /todo o /todo.json para ver otros datos. Funciona con curl, wget o cualquier cliente HTTP.',
+    },
+    {
+      question: '¿Por qué mi IP cambia o la comparto con otras personas?',
+      answer:
+        'La mayoría de los proveedores asignan IP dinámicas, que cambian con el tiempo. En redes móviles es común el CGNAT, donde muchos clientes comparten la misma IP pública a la vez. Por eso una IP identifica una conexión en un momento dado, no a una persona.',
+    },
+    {
+      question: '¿Cuál es la diferencia entre IPv4 e IPv6?',
+      answer:
+        'IPv4 usa cuatro números separados por puntos (por ejemplo 186.0.80.197) y sus direcciones ya se agotaron. IPv6 usa grupos hexadecimales separados por dos puntos y permite una dirección por dispositivo. Muchas conexiones tienen ambas y el sitio ve la que se usó en esa petición.',
+    },
   ],
   '/cybermap': [
     {

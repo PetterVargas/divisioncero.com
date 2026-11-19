@@ -7,7 +7,7 @@ import { IpInfoComponent } from './ip-info-component';
 
 const title = '¿Cuál es mi IP?';
 const description =
-  'Descubre tu dirección IP pública, tu ubicación aproximada, fecha de conexión y datos de tu navegador. Descarga un reporte en PDF firmado con su hash SHA-256.';
+  'Descubre tu dirección IP pública, tu ubicación aproximada, los encabezados HTTP que recibe un servidor y los datos de tu navegador. Consúltala también desde la terminal con curl y descarga un reporte en PDF con su hash SHA-256.';
 const path = '/cual-es-mi-ip';
 
 export const generateMetadata = toolMetadata({ title, description, path });

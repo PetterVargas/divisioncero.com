@@ -1,0 +1,51 @@
+---
+title: Assessment Plan (AP)
+description: Plan de evaluación OSCAL para la auditoría interna de los controles Kudo
+---
+
+El **Assessment Plan (AP)** define *cómo se evaluarán* los controles de un sistema: alcance, sujetos, métodos, actividades, calendario y reglas. Kudo lo usa para expresar en OSCAL el programa del [Procedimiento de Auditoría Interna](/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna).
+
+## Plan de Evaluación – Auditoría interna Kudo
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-assessment-plan.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-assessment-plan.json) |
+| xml | [kudo-assessment-plan.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-assessment-plan.xml) |
+| yaml | [kudo-assessment-plan.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-assessment-plan.yaml) |
+| toon | [kudo-assessment-plan.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-assessment-plan.toon) |
+
+## Contenido
+
+| Sección | Contenido |
+| ------- | --------- |
+| `import-ssp` | [SSP – Plantilla Kudo](/framework/oscal/ssp-system-security-plan) |
+| `reviewed-controls` | Los 36 controles del perfil (`include-all`) |
+| `assessment-subjects` | Todos los componentes del SSP |
+| `local-definitions.activities` | 3 métodos de evaluación: revisión documental (`EXAMINE`), entrevista (`INTERVIEW`) y prueba técnica (`TEST`) |
+| `tasks` | 8 tareas, una por dominio, programadas mes a mes durante 2027 |
+| `terms-and-conditions` | Reglas de la evaluación: independencia del auditor, pruebas sin afectar la operación y clasificación de hallazgos |
+
+| Tarea | Dominio | Controles |
+| ----- | ------- | --------- |
+| Enero | ADR | ADR-1 a ADR-4 |
+| Febrero | CAP | CAP-1, CAP-2 |
+| Marzo | CCN | CCN-1 a CCN-4 |
+| Abril | CIF | CIF-1 a CIF-5 |
+| Mayo | CIP | CIP-1 a CIP-6 |
+| Junio | COR | COR-1 a COR-4 |
+| Julio | DIA | DIA-1 a DIA-7 |
+| Agosto | THP | THP-1 a THP-4 |
+
+## Cómo adaptarlo
+
+- Ajusta las fechas (`timing.within-date-range`) y asigna auditores con `responsible-roles`.
+- Reduce el alcance por año con `control-selections.include-controls` para cubrir todos los dominios en un ciclo de hasta tres años, priorizando los de mayor riesgo.
+- Usa el [cuestionario de Kudo](/framework/cuestionarios) como lista de verificación de cada actividad.
+
+## Validación
+
+```bash
+oscal-cli ap validate kudo-assessment-plan.json
+```

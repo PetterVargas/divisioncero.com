@@ -1,0 +1,66 @@
+---
+title: "Política de Seguridad ICS/OT"
+description: "Seguridad de sistemas de control industrial y tecnología operacional"
+codigo: "POL-CIF-04"
+tipo: "politica"
+dominio: "cif"
+propietario: "Responsable de Operaciones (OT)"
+version: "1.1"
+revision: "Anual"
+controles: [cif-2, cif-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIF-04 | Política | CIF | 1.1 | Responsable de Operaciones (OT) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Proteger los Sistemas de Control Industrial (ICS) y la Tecnología Operacional (OT) contra ciberamenazas, priorizando la seguridad de las personas y la continuidad de la operación, sin descuidar la integridad, disponibilidad y confidencialidad de los sistemas.
+
+## Alcance
+Aplica a todos los activos ICS/OT (PLC, SCADA, HMI, sensores, actuadores, dispositivos de red industrial, software y equipos asociados) y a todo el personal, contratistas e integradores que interactúan con ellos. Si la organización no opera sistemas ICS/OT, esta política puede declararse no aplicable en la declaración de aplicabilidad.
+
+## Objetivos
+- Mantener un inventario completo de los activos y conexiones ICS/OT.
+- Aislar la red OT de las redes corporativas y de internet.
+- Garantizar la resiliencia y la respuesta rápida ante incidentes que afecten la operación.
+
+## Estándares Clave
+
+**Gestión de Activos y Conexiones**
+- Documentar todos los dispositivos ICS/OT en el inventario de activos, con firmware, ubicación y responsable.
+- Mantener un diagrama actualizado de la red OT y de sus conexiones.
+- Restringir el uso de medios extraíbles y dispositivos móviles; si son imprescindibles, analizarlos en una estación de limpieza antes de conectarlos.
+
+**Arquitectura y Segmentación**
+- Segmentación física y lógica estricta entre las redes OT y las corporativas, siguiendo un modelo por zonas y conductos (por ejemplo, IEC 62443 o el modelo Purdue), con una DMZ industrial para el intercambio de datos.
+- Sin conexiones directas de la red OT a internet.
+- El acceso remoto de proveedores e integradores se realiza solo a través de un punto controlado, con MFA, sesión supervisada y habilitación temporal.
+
+**Redes y Sistemas**
+- Monitorear de forma continua la red OT con herramientas compatibles con protocolos industriales y conservar los registros de eventos de seguridad.
+- Endurecer los sistemas según las recomendaciones del fabricante.
+- Proteger los Sistemas Instrumentados de Seguridad (SIS) mediante aislamiento y controles estrictos.
+- Aplicar parches según una ventana acordada con operaciones, previa prueba en un entorno de validación; cuando no sea posible parchear, implementar controles compensatorios documentados.
+
+**Datos y Aplicaciones**
+- Clasificar y manejar los datos ICS/OT según su sensibilidad e importancia operacional.
+- Mantener respaldos de configuraciones y lógicas de control, probados periódicamente.
+
+**Colaboradores y Contratistas**
+- Capacitación obligatoria en ciberseguridad ICS/OT para quienes operan o mantienen estos sistemas.
+- Reporte inmediato de anomalías, fallas o amenazas.
+
+## Monitoreo y Revisión
+- Auditorías al menos anuales para verificar el cumplimiento.
+- Corrección de desviaciones mediante ajustes técnicos o capacitación.
+- Revisión anual de esta política o ante cambios en la planta o en las amenazas.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIF-2 · Inventario de Activos](/framework/cif/cif-2)
+- [CIF-3 · Ciberseguridad en la Red y Sistemas](/framework/cif/cif-3)
+{/* /kudo:controles */}

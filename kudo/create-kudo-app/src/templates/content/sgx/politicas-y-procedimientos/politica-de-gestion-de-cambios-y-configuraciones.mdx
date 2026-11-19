@@ -1,0 +1,82 @@
+---
+title: "Política de Gestión de Cambios y Configuración"
+description: "Control de cambios en sistemas y configuraciones de TI"
+codigo: "POL-CCN-03"
+tipo: "politica"
+dominio: "ccn"
+propietario: "Gerente de Cambios"
+version: "1.1"
+revision: "Anual"
+controles: [ccn-1, ccn-2, ccn-3, cif-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CCN-03 | Política | CCN | 1.1 | Gerente de Cambios | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer un marco claro para gestionar los cambios y las configuraciones de la infraestructura y las aplicaciones, asegurando su planificación, evaluación de impacto, aprobación, pruebas, capacidad de reversión y documentación.
+
+## Objetivos
+- Registrar, evaluar, aprobar y ejecutar los cambios de manera consistente.
+- Minimizar los riesgos para la operación y los clientes.
+- Garantizar que todo cambio se pruebe antes de producción y pueda revertirse.
+- Mantener un rastro de auditoría completo.
+- Mantener líneas base de configuración seguras y controladas.
+
+## Alcance
+Aplica a todos los cambios en infraestructura (servidores, redes, bases de datos, servicios en la nube), aplicaciones (código, configuración, cuentas, roles, autenticación) y a la gestión de configuraciones de hardware, software, servicios y redes. Incluye a todos los colaboradores y contratistas.
+
+## Definiciones
+- **Cambio:** agregar, modificar o eliminar cualquier Elemento de Configuración (CI).
+- **Elemento de Configuración (CI):** componente que se gestiona para entregar un servicio (servidor, aplicación, base de datos, regla de firewall, etc.).
+- **Plan de reversión (*rollback*):** pasos documentados y probados para regresar al estado anterior.
+
+## Responsabilidades
+- **Solicitante:** registra el cambio, su justificación y su análisis de impacto.
+- **Comité de Cambios (CAB):** aprueba los cambios mayores; se reúne según la cadencia definida (por ejemplo, semanal).
+- **Gerente de Cambios:** supervisa el proceso y aprueba los cambios de emergencia.
+- **Implementador:** ejecuta el cambio; no puede ser quien lo aprueba.
+
+## Tipos de Cambio
+| Tipo | Descripción | Aprobación |
+| ---- | ----------- | ---------- |
+| Estándar | Cambio rutinario, de bajo riesgo y preaprobado (por ejemplo, un despliegue automatizado con pruebas superadas). | Preaprobado; se registra. |
+| Normal / menor | Cambio con impacto limitado. | Responsable técnico o par revisor. |
+| Mayor | Impacto en datos de clientes, en servicios críticos o en la seguridad. | Comité de Cambios. |
+| Emergencia | Cambio urgente para resolver un incidente. | Gerente de Cambios; se documenta y revisa en un máximo de 2 días hábiles. |
+
+## Proceso de Gestión de Cambios
+1. **Registrar:** crear la solicitud de cambio (ticket o *pull request*) con descripción, justificación y sistemas afectados.
+2. **Evaluar el impacto y el riesgo:** efectos en la seguridad, la disponibilidad, los datos y la continuidad.
+3. **Planificar:** ventana de implementación, comunicación a los afectados y **plan de reversión** con criterios claros de activación.
+4. **Probar:** validar el cambio en un entorno no productivo con configuración equivalente a producción, incluidas las pruebas de seguridad que correspondan (SAST, SCA o escaneo de infraestructura).
+5. **Aprobar:** según el tipo de cambio.
+6. **Implementar:** en la ventana aprobada, preferiblemente con estrategias que permitan revertir rápidamente (*blue-green*, *canary*, *feature flags*).
+7. **Verificar y comunicar:** confirmar el resultado; si se cumplen los criterios de reversión, ejecutar el *rollback*.
+8. **Cerrar:** documentar el resultado y las lecciones aprendidas de los cambios fallidos.
+
+## Gestión de Configuración
+- Mantener **líneas base de configuración** seguras conforme a la Política de Hardening, versionadas (preferiblemente como código).
+- Mantener un registro de CI (CMDB o inventario) con propietario, versión y fecha.
+- Detectar de forma automatizada las desviaciones (*drift*) respecto a la línea base y corregirlas.
+
+## Impacto en la Continuidad del Negocio
+- Los cambios mayores consideran su efecto en el Plan de Continuidad del Negocio y en los equipos de respuesta.
+- Se evita programar cambios mayores en periodos críticos del negocio, salvo aprobación expresa.
+
+## Monitoreo y Revisión
+- Indicadores: porcentaje de cambios exitosos, cambios de emergencia y cambios no autorizados detectados.
+- Revisión periódica de los cambios no autorizados como posibles incidentes.
+- Revisión anual de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CCN-1 · Gestión y Control de Cambios](/framework/ccn/ccn-1)
+- [CCN-2 · Pruebas de Calidad y Seguridad en la Gestión de Cambios](/framework/ccn/ccn-2)
+- [CCN-3 · Revertir Cambios](/framework/ccn/ccn-3)
+- [CIF-3 · Ciberseguridad en la Red y Sistemas](/framework/cif/cif-3)
+{/* /kudo:controles */}

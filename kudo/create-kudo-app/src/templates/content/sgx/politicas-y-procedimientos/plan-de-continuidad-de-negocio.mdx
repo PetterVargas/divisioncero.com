@@ -1,0 +1,94 @@
+---
+title: "Plan de Continuidad del Negocio"
+description: "Marco para responder a incidentes disruptivos que afecten las operaciones y asegurar funciones esenciales"
+codigo: "PLN-CCN-01"
+tipo: "plan"
+dominio: "ccn"
+propietario: "Responsable de Continuidad (BCM)"
+version: "1.1"
+revision: "Anual"
+controles: [ccn-4, cor-1]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| PLN-CCN-01 | Plan | CCN | 1.1 | Responsable de Continuidad (BCM) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer el marco para responder a incidentes disruptivos que afecten las operaciones, de forma que la organización mantenga sus funciones esenciales y se recupere dentro de los tiempos definidos en el BIA.
+
+## Alcance
+Aplica a todas las ubicaciones, procesos y áreas de la organización que puedan verse afectadas por interrupciones operativas, incluidos los servicios en la nube y los proveedores críticos.
+
+## Objetivos
+- Proveer un marco claro de respuesta y recuperación.
+- Reducir el impacto de las interrupciones manteniendo operativas las funciones críticas.
+- Definir los procedimientos de recuperación de los procesos esenciales.
+
+## Responsabilidades
+- **Equipo de Gestión de Crisis (CMT):** dirección ejecutiva; toma las decisiones estratégicas, activa el plan y coordina en general.
+- **Equipo de Continuidad de TI (ITBC):** recupera la tecnología conforme al DRP y a la Política de Backups y Recuperación.
+- **Líderes de continuidad por área:** ejecutan los procedimientos de su proceso durante la interrupción.
+- **Todos los colaboradores:** conocen su rol y siguen las instrucciones del CMT.
+
+## Procesos Críticos y Objetivos de Recuperación
+Completa esta tabla con los resultados del [BIA](/sgx/politicas-y-procedimientos/procedimiento-de-analisis-de-impacto-en-el-negocio):
+
+| Proceso / servicio crítico | Responsable | MTPD | RTO | RPO | Estrategia de recuperación | Dependencias (sistemas / proveedores) |
+| -------------------------- | ----------- | ---- | --- | --- | -------------------------- | ------------------------------------- |
+| [Ej.: Facturación] | [Rol] | [48 h] | [24 h] | [4 h] | [Restaurar en región alterna] | [ERP, proveedor de pagos] |
+| [Proceso 2] | | | | | | |
+
+## Escenarios de Impacto
+- **Lugar de trabajo no disponible:** inaccesibilidad parcial o total de una sede → trabajo remoto o sede alterna.
+- **Personal no disponible:** ausencia de personas clave → suplentes designados y documentación de tareas críticas.
+- **TI no disponible:** falla de aplicaciones, infraestructura o ciberataque (incluido ransomware) → DRP y respaldos inmutables.
+- **Proveedor crítico no disponible:** → proveedor alterno o procedimiento manual.
+- **Desastre regional:** evento de gran escala → recuperación en otra región o país.
+
+## Supuestos y Dependencias
+- Los respaldos están disponibles y han sido probados.
+- Existe una ubicación o región alterna para recuperar los servicios críticos.
+- Hay personal suplente capacitado para las funciones críticas.
+
+## Fases de Activación y Recuperación
+1. **Detección y evaluación:** cualquier persona reporta el evento; el CMT evalúa el impacto frente a los criterios de activación (por ejemplo, interrupción prevista mayor al RTO de un proceso crítico).
+2. **Activación:** el CMT decide activar el plan y lo comunica a los equipos.
+3. **Respuesta:** proteger a las personas, contener el evento y comunicar a las partes interesadas.
+4. **Recuperación:** ejecutar las estrategias de cada proceso según la prioridad definida en el BIA.
+5. **Retorno a la normalidad:** restablecer las operaciones regulares y verificar la integridad de los datos.
+6. **Cierre y lecciones aprendidas:** informe posincidente y actualización del plan.
+
+## Centros de Comando
+Ubicaciones físicas o virtuales para coordinar la respuesta:
+- Principal: [Ubicación o sala virtual]
+- Alterna: [Ubicación o sala virtual]
+
+## Plan de Comunicación
+- **Personal interno:** informado por los canales oficiales (con un canal alterno si el principal no está disponible).
+- **Clientes clave:** notificados por los líderes de negocio con mensajes aprobados por el CMT.
+- **Proveedores críticos y autoridades:** coordinados por el CMT conforme al [Procedimiento y Plan de Comunicación](/sgx/politicas-y-procedimientos/procedimiento-y-plan-de-comunicacion).
+
+## Listas de Contactos
+Se mantienen listas actualizadas (y disponibles fuera de los sistemas principales) de personal clave, suplentes, clientes clave, proveedores críticos y autoridades. Se verifican al menos semestralmente.
+
+## Pruebas y Mantenimiento
+- **Pruebas de mesa:** al menos una vez al año.
+- **Recorridos estructurados o simulaciones:** según la criticidad, al menos una vez cada dos años.
+- **Mantenimiento:** revisión anual del plan o tras cambios significativos en operaciones, tecnología o proveedores.
+
+## Informe Posincidente
+Tras cada activación o ejercicio se documentan: cronología, tiempos reales de recuperación frente al RTO, problemas encontrados y acciones correctivas, que se gestionan con el Procedimiento de Acciones Correctivas y Mejora Continua.
+
+## Monitoreo y Revisión
+- Evaluar el conocimiento del personal sobre el plan mediante encuestas o ejercicios.
+- Reportar a la gerencia la efectividad del plan y sus actividades.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CCN-4 · Continuidad del Negocio y Recuperación ante Desastres](/framework/ccn/ccn-4)
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/framework/cor/cor-1)
+{/* /kudo:controles */}

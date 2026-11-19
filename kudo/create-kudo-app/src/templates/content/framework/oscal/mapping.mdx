@@ -1,0 +1,76 @@
+---
+title: Mapping
+description: Correlación de ISO 27001, NIST CSF, CIS Controls, SOC 2, PCI DSS, CSA CCM y CSA AICM con Kudo expresada en el modelo OSCAL mapping
+---
+
+El modelo **Mapping** (OSCAL 1.2) expresa *cómo se relacionan los controles de dos catálogos*. Kudo lo usa para publicar en formato máquina las páginas de [Correlación](/sgx/correlacion) del SGX: cada control de un estándar se relaciona con los controles Kudo que lo atienden.
+
+## Mapping – Correlación de estándares con Kudo
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-mapping.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-mapping.json) |
+| xml | [kudo-mapping.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-mapping.xml) |
+| yaml | [kudo-mapping.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-mapping.yaml) |
+| toon | [kudo-mapping.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-mapping.toon) |
+
+## Contenido
+
+Una `mapping-collection` con 7 `mappings`, uno por estándar:
+
+| Estándar | Controles del estándar | Controles Kudo relacionados | Controles Kudo sin relación (`target-gap-summary`) |
+| -------- | ---------------------- | --------------------------- | --------------------------------------------------- |
+| [ISO/IEC 27001:2022 – Anexo A](/sgx/correlacion/iso27001-v2022-y-kudo) | 93 | 32 de 36 | ADR-1, ADR-2, CIF-5, DIA-7 |
+| [NIST Cybersecurity Framework 2.0](/sgx/correlacion/nist-cybersecurity-framework-y-kudo) | 106 | 32 de 36 | ADR-1, ADR-2, CIF-5, DIA-7 |
+| [CIS Controls v8.1](/sgx/correlacion/cis-controls-y-kudo) | 155 | 32 de 36 | ADR-1, ADR-2, CIF-5, DIA-7 |
+| [SOC 2 – Trust Services Criteria](/sgx/correlacion/soc-2-y-kudo) | 62 | 30 de 36 | ADR-1, ADR-2, CIF-5, DIA-1, DIA-7, THP-1 |
+| [PCI DSS v4.0.1](/sgx/correlacion/pci-dss-y-kudo) | 63 | 29 de 36 | ADR-1, ADR-2, CCN-4, CIF-1, CIF-5, DIA-7, THP-2 |
+| [CSA Cloud Controls Matrix v4](/sgx/correlacion/csa-ccm-y-kudo) | 197 | 32 de 36 | ADR-1, ADR-2, CIF-5, DIA-7 |
+| [CSA AI Controls Matrix](/sgx/correlacion/csa-aicm-y-kudo) | 75 | 20 de 36 | ADR-1, ADR-2, CCN-1, CCN-3, CCN-4, CIF-1, CIF-3, CIF-4, CIF-5, CIP-1, CIP-2, CIP-3, CIP-4, DIA-4, DIA-7, THP-1 |
+
+| Elemento | Uso en Kudo |
+| -------- | ----------- |
+| `provenance` | Método `hybrid`, criterio `semantic`, estado `complete` |
+| `source-resource` | Referencia al estándar (su texto no se redistribuye) |
+| `target-resource` | [Catálogo Kudo](/framework/oscal/catalog) |
+| `maps` | Un `map` por control del estándar con relación `intersects-with`; `sources` es el control del estándar y `targets` los controles Kudo |
+| `props` / `links` | Código y enlace del documento del SGX que sustenta la relación |
+
+```json title="Un map (extracto)"
+{
+  "relationship": "intersects-with",
+  "sources": [{ "type": "control", "id-ref": "iso_A.5.29", "props": [{ "name": "label", "value": "A.5.29" }] }],
+  "targets": [
+    { "type": "control", "id-ref": "ccn-4" },
+    { "type": "control", "id-ref": "cor-1" },
+    { "type": "control", "id-ref": "cif-1" }
+  ],
+  "props": [{ "name": "sgx-document", "value": "POL-CCN-01" }]
+}
+```
+
+## Cómo se construye
+
+La relación se deriva en dos pasos, ambos versionados en el repositorio:
+
+1. **Estándar → documento SGX:** la tabla de cada página "Controles … con SGSI" de la correlación.
+2. **Documento SGX → controles Kudo:** el campo `controles` del frontmatter de cada política.
+
+Por eso la relación se declara como `intersects-with` (el control del estándar y los controles Kudo comparten objetivo, no son equivalentes uno a uno). Al actualizar una política o una tabla de correlación, regenera el modelo:
+
+```bash
+pnpm kudo:oscal       # json, yaml y toon
+pnpm kudo:oscal:xml   # valida y genera el XML
+```
+
+<Callout title="Brechas como hoja de ruta">
+  Los controles en `target-gap-summary` indican dónde la correlación del estándar todavía no apunta a la política del SGX que cubre ese control. Son un buen punto de partida para revisar las tablas de correlación.
+</Callout>
+
+## Validación
+
+```bash
+oscal-cli mapping validate kudo-mapping.json
+```

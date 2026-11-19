@@ -1,0 +1,74 @@
+---
+title: "Política de Documentos y Registros"
+description: "Estándares para gestión de documentos y registros organizacionales"
+codigo: "POL-COR-02"
+tipo: "politica"
+dominio: "cor"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.1"
+revision: "Anual"
+controles: [cor-1, dia-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-COR-02 | Política | COR | 1.1 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer cómo se crean, aprueban, versionan, publican, conservan y eliminan los documentos y registros del SGSI, de modo que la información documentada sea confiable, esté disponible para quien la necesita y sirva como evidencia ante auditorías.
+
+## Objetivos
+- Asegurar que todo documento del SGSI tenga propietario, versión, fecha de aprobación y frecuencia de revisión.
+- Garantizar que los registros (evidencias) se conserven íntegros durante su periodo de retención.
+- Evitar el uso de versiones obsoletas o no aprobadas.
+
+## Alcance
+Aplica a las políticas, procedimientos, planes, formatos, plantillas y registros del SGSI, en cualquier formato (digital o físico), y a todas las personas que los crean, modifican o consultan.
+
+## Definiciones
+- **Documento:** información que indica *cómo* debe hacerse algo (política, procedimiento, plan, formato). Se actualiza.
+- **Registro:** evidencia de que algo *se hizo* (actas, tickets, logs, reportes de auditoría). No se modifica.
+
+## Control de Documentos
+- Cada documento incluye un bloque de control con: código, tipo, dominio, versión, propietario y frecuencia de revisión.
+- **Codificación:** `TIPO-DOMINIO-NN` (por ejemplo, `POL-COR-01`, `PRO-ADR-01`). Tipos: POL (política), PRO (procedimiento), PLN (plan), FOR (formato), PLA (plantilla), CLA (cláusulas), TYC (términos y condiciones).
+- **Versionado:** cambios menores incrementan el decimal (1.1 → 1.2); cambios de fondo incrementan el entero (1.2 → 2.0). Se conserva el historial de cambios (por ejemplo, en el control de versiones del repositorio).
+- **Aprobación:** el propietario propone; el Responsable de Ciberseguridad revisa; la gerencia aprueba las políticas. Los procedimientos los aprueba el propietario del proceso.
+- **Publicación:** la versión vigente se publica en el sitio del SGX; las versiones anteriores se retiran de circulación y se archivan.
+- **Revisión:** al menos anual, o antes si hay cambios legales, tecnológicos, organizacionales o tras un incidente relevante.
+
+## Clasificación y Etiquetado
+Los documentos y registros se clasifican y etiquetan conforme a la [Política de Clasificación y Manejo de la Información](/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion) (Pública, Interna, Confidencial o Restringida). Si un documento no indica clasificación, se trata como **Interna**.
+
+## Gestión de Registros
+- Los registros se almacenan en repositorios con control de acceso, copia de seguridad y protección contra modificación (por ejemplo, almacenamiento de solo lectura o con versionado).
+- Se identifican de forma que puedan encontrarse en una auditoría (fecha, proceso, responsable).
+- Su retención y eliminación siguen la [Política de Retención y Eliminación de Datos](/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos). A modo de referencia mínima:
+
+| Tipo de registro | Retención mínima de referencia |
+| ---------------- | ------------------------------ |
+| Actas del Comité de Seguridad y revisiones por la dirección | 5 años |
+| Informes de auditoría y acciones correctivas | 5 años |
+| Registros de incidentes de seguridad | 5 años |
+| Registros de Recursos Humanos | Según legislación laboral (referencia: 7 años) |
+| Registros financieros y contables | Según legislación tributaria (referencia: 10 años) |
+| Logs de seguridad | Según la Política de Registro y Monitoreo (mínimo 12 meses) |
+
+Los plazos legales del país prevalecen sobre esta tabla.
+
+## Responsabilidades
+- **Propietarios de documentos:** mantenerlos vigentes, revisarlos en la fecha prevista y comunicar los cambios.
+- **Responsable de Ciberseguridad:** mantener el listado maestro de documentos y verificar su vigencia.
+- **Todo el personal:** usar solo versiones vigentes, proteger los registros según su clasificación y no alterar evidencias.
+
+## Monitoreo y Revisión
+El Responsable de Ciberseguridad revisa semestralmente el listado maestro de documentos para detectar documentos vencidos o sin propietario. Esta política se revisa anualmente y sus cambios se comunican a los interesados.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/framework/cor/cor-1)
+- [DIA-3 · Ciclo de Vida de los Datos](/framework/dia/dia-3)
+{/* /kudo:controles */}

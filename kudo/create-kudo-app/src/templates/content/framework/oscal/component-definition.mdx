@@ -1,0 +1,63 @@
+---
+title: Component Definition
+description: Componentes del SGX de Kudo (políticas, procedimientos y plantillas) y los controles que implementan, según modelo OSCAL
+---
+
+El **Component Definition** describe *qué aporta cada componente* (un producto, un servicio, un proceso o un documento) a la implementación de los controles. Kudo lo usa para trazar cada documento del [SGX](/sgx/politicas-y-procedimientos) hasta los controles del framework.
+
+## Definición de Componentes Kudo – SGX
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-component-definition.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-component-definition.json) |
+| xml | [kudo-component-definition.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-component-definition.xml) |
+| yaml | [kudo-component-definition.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-component-definition.yaml) |
+| toon | [kudo-component-definition.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-component-definition.toon) |
+
+## Contenido
+
+| Elemento | Valor |
+| -------- | ----- |
+| `components` | 45 documentos del SGX |
+| Tipos de componente | `policy` (políticas), `process-procedure` (procedimientos), `plan` (planes), `guidance` (formatos, plantillas, cláusulas y términos) |
+| `control-implementations` | Una por componente, con `source` apuntando al [Profile](/framework/oscal/profile) |
+| `implemented-requirements` | 100 relaciones documento → control, que cubren los 36 controles |
+| `props` | Código (`POL-COR-01`), tipo, dominio, versión y frecuencia de revisión del documento |
+
+```json title="Un componente (extracto)"
+{
+  "type": "policy",
+  "title": "Política de Gestión de Vulnerabilidades y Parches",
+  "props": [{ "name": "document-code", "value": "POL-ADR-02" }],
+  "control-implementations": [{
+    "implemented-requirements": [
+      { "control-id": "adr-2", "description": "…" },
+      { "control-id": "cip-6", "description": "…" },
+      { "control-id": "cif-3", "description": "…" }
+    ]
+  }]
+}
+```
+
+## Fuente de los datos
+
+Las relaciones se generan a partir del frontmatter de cada documento del SGX (`codigo`, `tipo`, `dominio`, `controles`), el mismo que alimenta el bloque **Controles Kudo relacionados** de cada política. Así, la documentación y el modelo OSCAL no se desalinean:
+
+```bash
+pnpm kudo:sgx         # actualiza los bloques generados de las políticas
+pnpm kudo:oscal       # regenera los modelos OSCAL (json, yaml, toon)
+pnpm kudo:oscal:xml   # valida y genera los XML
+```
+
+## Cómo adaptarlo
+
+- Agrega tus **componentes técnicos** (`software`, `service`, `hardware`): IdP, EDR, SIEM, proveedor de nube, gestor de secretos, con los controles que implementan.
+- Si un proveedor ya publica su propio Component Definition, impórtalo en lugar de describirlo a mano.
+
+## Validación
+
+```bash
+oscal-cli component-definition validate kudo-component-definition.json
+```

@@ -1,0 +1,88 @@
+---
+title: "Procedimiento de Respuesta a Incidentes"
+description: "Pasos operativos, roles, plazos y guías rápidas para responder a incidentes de ciberseguridad"
+codigo: "PRO-ADR-01"
+tipo: "procedimiento"
+dominio: "adr"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.0"
+revision: "Anual"
+controles: [adr-4, adr-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| PRO-ADR-01 | Procedimiento | ADR | 1.0 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Definir el **cómo** operativo de la [Política de Gestión de Incidentes](/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes): los pasos, roles, plazos y registros para responder a un incidente de ciberseguridad desde su detección hasta su cierre.
+
+## Alcance
+Aplica a todos los incidentes de seguridad de la organización, incluidos los que se originen en proveedores o servicios en la nube.
+
+## Roles
+- **Coordinador del incidente:** lidera la respuesta, decide y mantiene la bitácora.
+- **Analistas de respuesta (IRT):** investigan, contienen y erradican.
+- **TI / Desarrollo:** ejecutan los cambios técnicos y la recuperación.
+- **Legal y Oficial de Protección de Datos:** evalúan las notificaciones obligatorias.
+- **Comunicaciones:** preparan los mensajes internos y externos.
+
+Mantén una lista de contactos 24/7 del equipo (y de sus suplentes) accesible fuera de los sistemas corporativos.
+
+## 1. Detección y Reporte
+- Fuentes: alertas del SIEM/EDR, reportes de colaboradores, clientes, proveedores o terceros.
+- Cualquier persona reporta al canal de incidentes definido (correo, formulario o línea de guardia) indicando qué observó, cuándo y en qué sistema.
+- **No** apagues el equipo ni borres evidencia; desconéctalo de la red si se sospecha de malware.
+
+## 2. Registro y Triage (primeros 30 minutos para los niveles 3 y 4)
+- Crear el registro del incidente con identificador, fecha y hora, reportante, sistemas afectados y descripción.
+- Confirmar si es un incidente real o un falso positivo.
+- Asignar el nivel (1 a 4) según la Política de Gestión de Incidentes y escalar si corresponde.
+
+## 3. Contención
+- **Corto plazo:** aislar equipos, deshabilitar o restablecer cuentas comprometidas, revocar sesiones y tokens, bloquear IP, dominios o *hashes* maliciosos.
+- **Preservar evidencia antes de cambiar el sistema:** exportar registros y, si aplica, tomar imágenes de disco o memoria; registrar quién manipula la evidencia (cadena de custodia).
+- **Largo plazo:** aplicar soluciones temporales que permitan operar mientras se erradica.
+
+## 4. Erradicación
+- Identificar la causa raíz y el vector de entrada.
+- Eliminar el malware, los accesos y la persistencia del atacante; corregir la vulnerabilidad explotada.
+- Verificar que no existan otros sistemas comprometidos (búsqueda de indicadores de compromiso).
+
+## 5. Recuperación
+- Restaurar desde respaldos limpios y verificados o reconstruir desde imágenes seguras.
+- Rotar credenciales y secretos potencialmente expuestos.
+- Monitorear de forma reforzada los sistemas recuperados durante al menos 30 días.
+
+## 6. Notificación
+- El coordinador, con Legal y el Oficial de Protección de Datos, determina si existen obligaciones de notificación (clientes, autoridad de protección de datos, titulares, reguladores, CSIRT nacional, aseguradora) y sus plazos.
+- Las comunicaciones externas se aprueban antes de enviarse, conforme al Procedimiento y Plan de Comunicación.
+
+## 7. Cierre y Lecciones Aprendidas
+- El coordinador declara el cierre cuando el servicio es estable y no hay actividad maliciosa.
+- Para los incidentes de nivel 2 o superior se realiza una reunión de lecciones aprendidas en un máximo de **10 días hábiles**, sin buscar culpables.
+- Las acciones de mejora se registran en el Procedimiento de Acciones Correctivas y Mejora Continua.
+
+## Guías Rápidas (*Playbooks*)
+| Escenario | Primeras acciones |
+| --------- | ----------------- |
+| Phishing con credenciales entregadas | Restablecer contraseña, revocar sesiones y tokens, revisar reglas de reenvío del buzón, buscar otros destinatarios del mismo correo. |
+| Ransomware | Aislar los equipos afectados de la red, proteger los respaldos, identificar el alcance, escalar a crisis, no pagar sin decisión de la gerencia y asesoría legal. |
+| Fuga de datos | Identificar los datos y titulares afectados, cortar el canal de fuga, evaluar las notificaciones legales. |
+| Cuenta de nube comprometida | Revocar llaves y sesiones, revisar recursos creados y cambios de IAM, habilitar MFA, revisar facturación anómala. |
+| Equipo perdido o robado | Bloqueo y borrado remoto, revocar sesiones, evaluar si contenía información sin cifrar. |
+
+## Registros
+Bitácora del incidente (cronología, decisiones, acciones y responsables), evidencias, comunicaciones y el informe de cierre, conservados conforme a la Política de Documentos y Registros.
+
+## Monitoreo y Revisión
+Este procedimiento y sus guías rápidas se prueban al menos una vez al año con un ejercicio de mesa y se actualizan tras cada incidente relevante.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-4 · Atención de Eventos y/o Incidentes de Ciberseguridad](/kudo/framework/adr/adr-4)
+- [ADR-3 · Retención y Monitoreo de Registros](/kudo/framework/adr/adr-3)
+{/* /kudo:controles */}

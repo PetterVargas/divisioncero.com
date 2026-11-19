@@ -3,14 +3,24 @@ import { jsPDF } from 'jspdf';
 import { formatDateWithUtcOffset } from '@/lib/herramientas/datetime';
 import { REPORT_HEADER_OFFSET, drawDivisionCeroLogo, drawGeneratedByDivisionCero } from '@/lib/herramientas/pdf-report';
 
-import type { BrowserInfo, IpGeoInfo } from './ip-info';
+import type { BrowserInfo, ConnectionInfo, IpGeoInfo } from './ip-info';
 
 const MARGIN_X = 14;
 const PAGE_WIDTH = 210;
 const LABEL_WIDTH = 52;
 const VALUE_WIDTH = PAGE_WIDTH - MARGIN_X * 2 - LABEL_WIDTH;
+const PAGE_BOTTOM = 282;
+const PAGE_TOP = 20;
+
+/** Pasa a una página nueva si el bloque que sigue no cabe en la actual. */
+function ensureSpace(doc: jsPDF, y: number, needed: number): number {
+  if (y + needed <= PAGE_BOTTOM) return y;
+  doc.addPage();
+  return PAGE_TOP;
+}
 
 function addSectionTitle(doc: jsPDF, title: string, y: number): number {
+  y = ensureSpace(doc, y, 20);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
   doc.setTextColor(20, 20, 20);
@@ -21,14 +31,17 @@ function addSectionTitle(doc: jsPDF, title: string, y: number): number {
 }
 
 function addRow(doc: jsPDF, label: string, value: string, y: number): number {
-  doc.setFont('helvetica', 'bold');
   doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  const lines: string[] = doc.splitTextToSize(value || 'No disponible', VALUE_WIDTH);
+  y = ensureSpace(doc, y, lines.length * 5 + 2);
+
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(60, 60, 60);
   doc.text(label, MARGIN_X, y);
 
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(20, 20, 20);
-  const lines: string[] = doc.splitTextToSize(value || 'No disponible', VALUE_WIDTH);
   doc.text(lines, MARGIN_X + LABEL_WIDTH, y);
 
   return y + lines.length * 5 + 2;
@@ -41,7 +54,11 @@ function addRow(doc: jsPDF, label: string, value: string, y: number): number {
  * async), así el hash SHA-256 se calcula sobre bytes ya definitivos y el
  * nombre del archivo puede incluirlo sin ninguna dependencia circular.
  */
-export function buildIpReportPdf(ipInfo: IpGeoInfo, browserInfo: BrowserInfo): ArrayBuffer {
+export function buildIpReportPdf(
+  ipInfo: IpGeoInfo,
+  browserInfo: BrowserInfo,
+  connectionInfo: ConnectionInfo | null,
+): ArrayBuffer {
   const doc = new jsPDF({ unit: 'mm', format: 'a4' });
 
   drawDivisionCeroLogo(doc, MARGIN_X);
@@ -93,7 +110,27 @@ export function buildIpReportPdf(ipInfo: IpGeoInfo, browserInfo: BrowserInfo): A
   y = addRow(doc, 'Página de referencia', browserInfo.referrer, y);
   y = addRow(doc, 'URL visitada', browserInfo.pageUrl, y);
 
+  if (connectionInfo) {
+    const c = connectionInfo;
+    y += 6;
+    y = addSectionTitle(doc, 'Lo que recibe el servidor (encabezados HTTP)', y);
+    y = addRow(doc, 'IP de origen', `${c.ip} (${c.ipVersion})`, y);
+    y = addRow(doc, 'Método', c.method, y);
+    y = addRow(doc, 'User-Agent', c.userAgent, y);
+    y = addRow(doc, 'Accept-Language', c.acceptLanguage, y);
+    y = addRow(doc, 'Accept-Encoding', c.acceptEncoding, y);
+    y = addRow(doc, 'Accept (MIME)', c.accept, y);
+    y = addRow(doc, 'Referer', c.referer, y);
+    y = addRow(doc, 'X-Forwarded-For', c.xForwardedFor, y);
+    y = addRow(doc, 'Client Hints', [c.clientHintsBrowser, c.clientHintsPlatform].filter(Boolean).join(' · '), y);
+    y = addRow(doc, 'Protocolo HTTP', c.httpProtocol, y);
+    y = addRow(doc, 'TLS', [c.tlsVersion, c.tlsCipher].filter(Boolean).join(' · '), y);
+    y = addRow(doc, 'ASN', [c.asn, c.asOrganization].filter(Boolean).join(' · '), y);
+    y = addRow(doc, 'Recibido (UTC)', c.receivedAt, y);
+  }
+
   y += 6;
+  y = ensureSpace(doc, y, 20);
   doc.setDrawColor(200, 200, 200);
   doc.line(MARGIN_X, y, PAGE_WIDTH - MARGIN_X, y);
   y += 6;
@@ -101,8 +138,9 @@ export function buildIpReportPdf(ipInfo: IpGeoInfo, browserInfo: BrowserInfo): A
   doc.setFontSize(8.5);
   doc.setTextColor(120, 120, 120);
   const disclaimer = doc.splitTextToSize(
-    'Este reporte se generó completamente en tu navegador, sin enviar datos a ningún servidor propio. ' +
-      'La información de geolocalización proviene de un servicio público de consulta por IP y es aproximada.',
+    'Este reporte se generó completamente en tu navegador. Los encabezados HTTP los devolvió el servidor de ' +
+      'DivisionCero, que no los almacena. La información de geolocalización proviene de un servicio público de ' +
+      'consulta por IP y es aproximada.',
     PAGE_WIDTH - MARGIN_X * 2,
   );
   doc.text(disclaimer, MARGIN_X, y);

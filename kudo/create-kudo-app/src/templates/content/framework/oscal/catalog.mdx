@@ -1,0 +1,46 @@
+---
+title: Catalog
+description: Catálogo de controles de seguridad del framework Kudo estructurado según modelo OSCAL
+---
+
+El **Catalog** es la capa base de OSCAL: contiene los 8 dominios (`groups`), los 36 controles (`controls`) y los 503 requisitos (`parts` de tipo `item`) de Kudo. Todos los demás modelos lo referencian directa o indirectamente.
+
+## Catálogo del Kudo Framework
+
+### Revisión 1
+
+| Formato | Enlace |
+|----------|--------|
+| json | [kudo-catalog.json](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-catalog.json) |
+| xml | [kudo-catalog.xml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-catalog.xml) |
+| yaml | [kudo-catalog.yaml](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-catalog.yaml) |
+| toon | [kudo-catalog.toon](https://github.com/PetterVargas/divisioncero.com/blob/main/content/kudo/framework/oscal/kudo/rev1/toon/kudo-catalog.toon) |
+
+## Estructura
+
+| Elemento OSCAL | Uso en Kudo | Ejemplo |
+| -------------- | ----------- | ------- |
+| `group` (class `domain`) | Dominio Kudo | `adr` – Análisis, Detección y Respuesta |
+| `control` | Control Kudo | `adr-1` – Protección contra Software Malicioso |
+| `part` `overview` | Descripción del dominio | `adr_ovw` |
+| `part` `statement` | Enunciado del control | `adr-1_smt` |
+| `part` `item` | Requisito del control (con `requirement-id`) | `adr-1_smt.a` |
+| `link` `reference` | Página del control en el sitio | `/kudo/framework/adr/adr-1` |
+
+## Modelos derivados
+
+El catálogo es importado por el [Profile](/framework/oscal/profile), que a su vez es la base del [Component Definition](/framework/oscal/component-definition) y del [SSP](/framework/oscal/ssp-system-security-plan).
+
+## Herramientas de Soporte
+
+### Validadores OSCAL
+
+El JSON es la fuente de verdad: las versiones YAML y TOON se derivan de él y el XML se genera con el conversor oficial de NIST, por lo que cumple el esquema XSD.
+
+```bash
+# Desde el repositorio: valida todos los modelos contra el esquema OSCAL 1.2.3 y regenera los XML
+pnpm kudo:oscal:xml
+
+# Con oscal-cli (Java 17+, https://github.com/metaschema-framework/oscal-cli/releases)
+oscal-cli catalog validate kudo-catalog.json
+```

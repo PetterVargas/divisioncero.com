@@ -1,60 +1,80 @@
 ---
 title: "Política de Hardening"
 description: "Configuración segura y fortalecimiento de sistemas y aplicaciones"
+codigo: "POL-CIP-02"
+tipo: "politica"
+dominio: "cip"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cip-6, cif-3]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIP-02 | Política | CIP | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Garantizar la seguridad de la información en entornos en la nube y locales, protegiendo datos, asegurando confidencialidad, integridad y disponibilidad, y alineándose con los estándares de la organización.
+Definir las configuraciones seguras mínimas (*hardening*) de servidores, puntos finales, redes, bases de datos y servicios de nube, para reducir la superficie de ataque y proteger la confidencialidad, integridad y disponibilidad de la información.
 
 ## Alcance
-Aplica a todos los colaboradores y sistemas de la organización en la nube y en instalaciones físicas.
+Aplica a todos los sistemas de la organización, en la nube y en instalaciones propias, y a los colaboradores y proveedores que los administran.
+
+## Líneas Base de Configuración
+- Cada tipo de sistema (sistema operativo, base de datos, contenedor, servicio de nube, equipo de red) tiene una **línea base documentada**, basada en referencias de la industria como los CIS Benchmarks o las guías del fabricante.
+- Los sistemas nuevos se despliegan desde imágenes o plantillas endurecidas (infraestructura como código cuando sea posible).
+- Las desviaciones respecto a la línea base se detectan con herramientas automatizadas (CSPM, escáneres de configuración) y se corrigen o se registran como excepción.
+- Toda modificación de la línea base sigue la Política de Gestión de Cambios y Configuraciones.
 
 ## Acceso y Cuentas
-- Solo colaboradores autorizados (TI, seguridad y gerencia) acceden a sistemas y servicios.  
-- Uso obligatorio de contraseñas fuertes y MFA.  
-- Acceso basado en tokens debe rotarse cada 180 días.  
-- Acceso SSH a servidores mediante bastión y restricciones por IP.  
+- Solo personal autorizado (TI, Seguridad y responsables designados) administra sistemas y servicios.
+- MFA obligatoria para todo acceso administrativo.
+- Se deshabilitan o renombran las cuentas por defecto y se cambian las contraseñas predeterminadas antes de la puesta en producción.
+- El acceso SSH/RDP a servidores se realiza a través de bastión o acceso de confianza cero (*zero trust*), con restricción por IP y sin acceso directo desde internet.
+- Los tokens y llaves de acceso se rotan al menos cada 180 días.
 
-## Infraestructura y Servidores
-- Servidores Ubuntu actualizados regularmente; volúmenes separados para SO y datos (cifrados).  
-- Cambios sujetos a gestión de cambios.  
-- Políticas de contraseña fuertes en todos los sistemas.  
-- Monitoreo automático de actualizaciones y parches semanales.  
+## Servidores y Puntos Finales
+- Se instalan solo los servicios, puertos y paquetes necesarios; el resto se deshabilita.
+- Sistemas operativos con soporte vigente del fabricante; los equipos sin soporte se reemplazan o aíslan.
+- Volúmenes de sistema y de datos separados y cifrados.
+- Protección contra software malicioso y EDR conforme a la [Política de Protección contra Software Malicioso](/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso).
+- Bloqueo de pantalla automático, cifrado de disco y firewall local activos en los puntos finales.
 
 ## Seguridad de Red
-- Segregación de red por confianza, sensibilidad y criticidad.  
-- Uso de VPC única por entorno, WAF y balanceador de carga para HTTP/HTTPS.  
-- Redes inalámbricas segregadas; Wi-Fi de invitados con restricciones estrictas.  
-- Monitoreo y control de acceso a redes, autenticación y cifrado de conexiones.  
+- Segmentación de red por nivel de confianza, sensibilidad y criticidad (producción, no producción, administración, invitados).
+- Una red virtual (VPC/VNet) por entorno, con reglas de firewall de "denegar por defecto".
+- Los servicios expuestos a internet se publican detrás de balanceador y WAF.
+- Redes inalámbricas corporativas con WPA3 o WPA2-Enterprise; Wi-Fi de invitados aislada de la red corporativa.
+- Se deshabilitan protocolos inseguros (Telnet, FTP, SMBv1, TLS 1.0/1.1).
 
 ## Bases de Datos y Criptografía
-- Bases de datos RDS cifradas en la región designada, respaldos diarios, retención 15 días.  
-- Claves cifrado gestionadas por KMS del proveedor de nube.  
-- Cifrado AES-256 en tránsito y reposo.  
+- Bases de datos sin exposición pública, con cifrado en reposo y en tránsito, y acceso solo desde las aplicaciones y bastiones autorizados.
+- Respaldos conforme a la [Política de Backups y Recuperación](/kudo/sgx/politicas-y-procedimientos/politica-de-backups-y-recuperacion).
+- Algoritmos y gestión de claves conforme a la [Política de Criptografía y Gestión de Claves](/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves) (por ejemplo, AES-256 en reposo y TLS 1.2 o superior en tránsito).
 
-## Gestión de Parches y Vulnerabilidades
-- Ciclo de parches mensual.  
-- Escaneo regular de vulnerabilidades con herramientas estándar.  
-- Vulnerabilidades críticas atendidas de inmediato y plan de remediación documentado.  
+## Parches y Vulnerabilidades
+Los parches y la remediación de vulnerabilidades siguen los plazos de la [Política de Gestión de Vulnerabilidades y Parches](/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches).
 
 ## Pruebas de Penetración y Resiliencia
-- Pruebas de penetración anuales o tras cambios significativos.  
-- Pruebas avanzadas lideradas por amenazas cada tres años, incluyendo sistemas críticos en producción.  
-- Evaluaciones de vulnerabilidades antes de implementar servicios críticos.  
-- Reportes de hallazgos y plan de remediación para brechas críticas.  
+- Pruebas de penetración al menos una vez al año y después de cambios significativos en sistemas expuestos.
+- Evaluaciones de vulnerabilidades antes de poner en producción servicios críticos.
+- Los hallazgos se registran con un plan de remediación y responsable.
 
 ## Prevención de Fuga de Datos (DLP)
-- Identificación y clasificación de datos sensibles.  
-- Monitoreo de canales como correo, dispositivos y transferencias de archivos.  
-- Restricción de copia, pegado y carga a servicios externos.  
-- Protección de respaldos con cifrado y control de acceso.  
-
-## Inteligencia de Amenazas
-- Participación en análisis de amenazas y vulnerabilidades de fuentes confiables.  
-- Uso de información para decisiones proactivas de seguridad.  
+- Identificar los datos sensibles según la Política de Clasificación y Manejo de la Información.
+- Monitorear los canales de salida (correo, dispositivos USB, carga a servicios externos) y bloquear o alertar según la clasificación.
+- Proteger los respaldos con cifrado y control de acceso.
 
 ## Monitoreo y Revisión
-- Auditorías periódicas de cumplimiento y permisos.  
-- Monitoreo de logs, eventos de seguridad y vulnerabilidades.  
-- Revisión anual de la política y ajustes según amenazas o cambios de entorno.  
-- Reporte inmediato de incidentes al equipo de seguridad de la información.
+- Verificación automatizada y continua del cumplimiento de las líneas base; reporte mensual de desviaciones.
+- Revisión anual de esta política y de las líneas base, o antes si cambian las amenazas o la tecnología.
+- Cualquier configuración insegura detectada se reporta al equipo de Seguridad de la Información.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIP-6 · Ciberseguridad en Puntos Finales](/kudo/framework/cip/cip-6)
+- [CIF-3 · Ciberseguridad en la Red y Sistemas](/kudo/framework/cif/cif-3)
+{/* /kudo:controles */}

@@ -1,0 +1,72 @@
+---
+title: "Política de Gestión de Vulnerabilidades y Parches"
+description: "Identificación, priorización y remediación de vulnerabilidades con plazos según su severidad"
+codigo: "POL-ADR-02"
+tipo: "politica"
+dominio: "adr"
+propietario: "Responsable de Ciberseguridad (CISO)"
+version: "1.0"
+revision: "Anual"
+controles: [adr-2, cip-6, cif-3]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-ADR-02 | Política | ADR | 1.0 | Responsable de Ciberseguridad (CISO) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Identificar, priorizar y remediar de forma continua las vulnerabilidades de los activos tecnológicos, reduciendo la ventana de exposición a ataques que exploten debilidades conocidas.
+
+## Alcance
+Aplica a todos los activos tecnológicos de la organización: servidores, puntos finales, equipos de red, aplicaciones, contenedores, dependencias de software, servicios en la nube y, con las adaptaciones necesarias, los sistemas ICS/OT.
+
+## Roles y Responsabilidades
+- **Seguridad de la Información:** opera los escaneos, prioriza las vulnerabilidades y reporta los indicadores.
+- **TI y Desarrollo:** remedian las vulnerabilidades dentro de los plazos.
+- **Propietarios de sistemas:** aprueban las ventanas de mantenimiento y aceptan las excepciones de su ámbito.
+
+## Identificación
+- **Inventario actualizado:** la gestión de vulnerabilidades parte del inventario de activos; un activo no inventariado es un activo no protegido.
+- **Escaneos de infraestructura:** al menos mensuales para los activos internos y semanales para los expuestos a internet.
+- **Escaneos de aplicaciones y dependencias:** en cada *pull request* (SAST/SCA) y periódicamente en los entornos de prueba (DAST), conforme a la Política de Desarrollo Seguro.
+- **Postura de nube (CSPM):** de forma continua.
+- **Inteligencia de amenazas:** seguimiento de avisos de fabricantes, del CSIRT nacional y de catálogos de vulnerabilidades explotadas activamente (por ejemplo, el catálogo KEV de CISA).
+- **Pruebas de penetración:** al menos una vez al año y tras cambios significativos.
+- **Divulgación responsable:** canal para que terceros reporten vulnerabilidades (por ejemplo, un archivo `security.txt`).
+
+## Priorización
+La severidad se determina con CVSS y se ajusta según el contexto: exposición a internet, existencia de un *exploit* público o explotación activa, criticidad del activo y clasificación de los datos.
+
+## Plazos de Remediación
+| Severidad | Activos expuestos a internet | Activos internos |
+| --------- | ---------------------------- | ---------------- |
+| Crítica o explotada activamente | 72 horas | 7 días |
+| Alta | 15 días | 30 días |
+| Media | 60 días | 90 días |
+| Baja | Siguiente ciclo planificado | Siguiente ciclo planificado |
+
+## Gestión de Parches
+- Ciclo mensual de actualizaciones para sistemas operativos y aplicaciones, con actualizaciones automáticas en los puntos finales siempre que sea posible.
+- Los parches se prueban en un entorno no productivo antes de aplicarse en los sistemas críticos, sin que esto exceda los plazos de la tabla.
+- Los sistemas sin soporte del fabricante se reemplazan o se aíslan con controles compensatorios documentados.
+
+## Excepciones
+Si una vulnerabilidad no puede remediarse en plazo, se documenta la excepción con controles compensatorios (por ejemplo, reglas de WAF o segmentación), riesgo residual, aprobación del propietario del sistema (y de la gerencia si es crítica) y fecha de vencimiento.
+
+## Verificación
+Toda remediación de severidad Crítica o Alta se verifica con un nuevo escaneo o prueba antes de cerrarse.
+
+## Monitoreo y Revisión
+- Indicadores mensuales: vulnerabilidades abiertas por severidad, porcentaje remediado en plazo y tiempo medio de remediación.
+- Reporte trimestral al Comité de Seguridad.
+- Revisión anual de esta política.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-2 · Gestión, Identificación y Remediación de Vulnerabilidades](/kudo/framework/adr/adr-2)
+- [CIP-6 · Ciberseguridad en Puntos Finales](/kudo/framework/cip/cip-6)
+- [CIF-3 · Ciberseguridad en la Red y Sistemas](/kudo/framework/cif/cif-3)
+{/* /kudo:controles */}

@@ -1,0 +1,89 @@
+---
+title: "Política de Gestión de Crisis"
+description: "Marco para respuesta y gestión de situaciones de crisis organizacional"
+codigo: "POL-CCN-02"
+tipo: "politica"
+dominio: "ccn"
+propietario: "Gerencia General"
+version: "1.1"
+revision: "Anual"
+controles: [adr-4, cor-1]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CCN-02 | Política | CCN | 1.1 | Gerencia General | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Establecer cómo la organización declara, gestiona y comunica una crisis, garantizando una respuesta coordinada frente a eventos que afecten gravemente sus operaciones críticas, personas, activos o reputación.
+
+## Objetivos
+- Identificar oportunamente cuándo un evento se convierte en crisis.
+- Tomar decisiones de forma ágil y con roles claros.
+- Comunicar de forma consistente a las partes interesadas internas y externas.
+- Notificar a clientes y reguladores dentro de los plazos legales y contractuales.
+- Aprender de cada crisis y actualizar el plan.
+
+## Alcance
+Aplica a todas las crisis de la organización, cualquiera sea su origen (ciberataque, falla tecnológica, desastre natural, evento reputacional o legal), desde su identificación hasta la revisión posterior.
+
+## Definiciones
+- **Incidente:** evento que afecta o puede afectar la seguridad o la operación y se gestiona con la Política de Gestión de Incidentes.
+- **Crisis:** incidente o evento que, por su magnitud, amenaza la continuidad del negocio, la seguridad de las personas o la reputación, o tiene impactos legales o financieros significativos. Por regla general, un incidente de **Nivel 4** (ver Política de Gestión de Incidentes) se escala como crisis.
+- **Equipo de Gestión de Crisis (CMT):** alta gerencia responsable de la respuesta corporativa.
+- **Equipo de Comunicación de Crisis (CCT):** gestiona la comunicación interna y externa.
+
+## Roles y Responsabilidades
+- **Líder del Equipo de Crisis / Portavoz:** toma las decisiones estratégicas y realiza las declaraciones públicas.
+- **Líder de Comunicación de Crisis:** coordina los mensajes internos y externos.
+- **Legal y Cumplimiento:** revisa los mensajes y las obligaciones de notificación.
+- **Recursos Humanos:** vela por la seguridad y la información de los colaboradores.
+- **Líder de Recuperación de Negocio:** coordina la activación del Plan de Continuidad del Negocio.
+- **Líder Comercial / Financiero:** gestiona el impacto en clientes y finanzas.
+- **Seguridad de la Información y TI:** lideran la contención técnica y mantienen los canales de comunicación.
+
+## Criterios de Declaración de Crisis
+Se declara crisis cuando se cumple al menos uno de estos criterios:
+- Riesgo para la vida o la integridad de las personas.
+- Interrupción de un proceso crítico por encima de su RTO.
+- Compromiso confirmado de datos personales o información Restringida a gran escala.
+- Exposición mediática o regulatoria significativa.
+
+## Proceso de Gestión de Crisis
+1. **Alerta:** quien detecta el evento lo notifica al Líder de Crisis o al Líder de Comunicación en un máximo de **15 minutos**.
+2. **Evaluación:** el CMT reúne la información disponible y decide si se declara crisis (en un máximo de 1 hora).
+3. **Activación:** se convoca al CMT y al CCT, se activa el centro de comando y, si aplica, el Plan de Continuidad del Negocio.
+4. **Gestión y comunicación:** se ejecutan las acciones de contención y recuperación y se emiten comunicaciones aprobadas con una frecuencia definida (por ejemplo, cada 4 horas).
+5. **Cierre:** el CMT declara el fin de la crisis cuando las operaciones están estabilizadas.
+6. **Revisión posterior:** en un máximo de 10 días hábiles se realiza el análisis de lecciones aprendidas.
+
+## Escalamiento
+La ruta de escalamiento (quién, cuándo y por qué medio) se documenta en el plan de respuesta a crisis e incluye suplentes para cada rol.
+
+## Coordinación con Terceros
+- Coordinación con autoridades, CSIRT nacional, aseguradoras, proveedores críticos y socios de la industria cuando corresponda.
+- La información se comparte de forma segura y respetando la privacidad y las regulaciones.
+- Solo los voceros autorizados se comunican con medios de comunicación.
+
+## Lecciones Aprendidas
+- Análisis de causa raíz y acciones correctivas para prevenir recurrencias, gestionadas con el Procedimiento de Acciones Correctivas y Mejora Continua.
+- Actualización del plan de respuesta a crisis según los hallazgos.
+
+## Documentación y Notificación
+- Bitácora de decisiones y acciones durante toda la crisis.
+- Notificación a clientes y reguladores conforme a los plazos legales y contractuales.
+
+## Pruebas y Capacitación
+Al menos un ejercicio de crisis al año (por ejemplo, un ejercicio de mesa de ransomware), con participación del CMT y del CCT.
+
+## Monitoreo y Revisión
+Revisión anual por el CMT y la gerencia, o tras cada crisis real.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [ADR-4 · Atención de Eventos y/o Incidentes de Ciberseguridad](/framework/adr/adr-4)
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/framework/cor/cor-1)
+{/* /kudo:controles */}

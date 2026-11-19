@@ -5,7 +5,7 @@ export { baseUrl, gitConfig } from '@/lib/shared';
 export const appName = 'Kudo';
 
 export const appDescription =
-  'Kudo es el framework de ciberseguridad abierto de LatAm: SGX, 35 controles adaptados a OSCAL y más de 25 templates de políticas listos para implementar.';
+  'Kudo es el framework de ciberseguridad abierto de LatAm: SGX, 36 controles adaptados a OSCAL y más de 40 plantillas de políticas y procedimientos listas para implementar.';
 
 // Kudo vive bajo divisioncero.com/kudo
 export const kudoRoute = '/kudo';

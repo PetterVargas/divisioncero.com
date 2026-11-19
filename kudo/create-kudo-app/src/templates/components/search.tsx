@@ -11,12 +11,13 @@ import {
   type SharedProps,
 } from 'fumadocs-ui/components/dialog/search';
 import { useDocsSearch } from 'fumadocs-core/search/client';
-import { create } from '@orama/orama';
+import { create } from 'zbsearch';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
 
 function initOrama() {
   return create({
     schema: { _: 'string' },
+    // https://docs.orama.com/docs/orama-js/supported-languages
     language: 'english',
   });
 }
@@ -28,6 +29,7 @@ export default function DefaultSearchDialog(props: SharedProps) {
     initOrama,
     locale,
   });
+  const items = query.data !== 'empty' && query.data ? query.data : null;
 
   return (
     <SearchDialog search={search} onSearchChange={setSearch} isLoading={query.isLoading} {...props}>
@@ -38,7 +40,7 @@ export default function DefaultSearchDialog(props: SharedProps) {
           <SearchDialogInput />
           <SearchDialogClose />
         </SearchDialogHeader>
-        <SearchDialogList items={query.data !== 'empty' ? query.data : null} />
+        <SearchDialogList items={items} />
       </SearchDialogContent>
     </SearchDialog>
   );

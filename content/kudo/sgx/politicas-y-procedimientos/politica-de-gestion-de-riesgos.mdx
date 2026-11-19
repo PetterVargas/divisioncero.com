@@ -1,38 +1,87 @@
 ---
 title: "Política de Gestión de Riesgos"
 description: "Marco para identificación, evaluación y tratamiento de riesgos"
+codigo: "POL-COR-03"
+tipo: "politica"
+dominio: "cor"
+propietario: "Responsable de Riesgos"
+version: "1.1"
+revision: "Anual"
+controles: [cor-1, cor-3, cor-4]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-COR-03 | Política | COR | 1.1 | Responsable de Riesgos | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Proveer un enfoque estandarizado para identificar, evaluar, tratar y monitorear riesgos, asegurando la resiliencia y cumplimiento del marco de seguridad de la información en todas las Unidades de Negocio.
+Proveer un enfoque estandarizado para identificar, analizar, evaluar, tratar y monitorear los riesgos de ciberseguridad, de modo que las decisiones se tomen con información y dentro del apetito de riesgo aprobado por la gerencia.
 
-## Configuración de Riesgos
-- **Probabilidad:** Alta (ya ocurrió), Media (plausible), Baja (improbable).  
-- **Impacto:** Alto (legales/contractuales), Medio (reputacional), Bajo (mínimo).  
-- **Registro de Riesgos:** Cada riesgo tiene propietario, partes interesadas y protocolo de respuesta definido.  
-- Se utilizan objetivos de operaciones claros para guiar la asignación de recursos y la toma de decisiones.
+## Alcance
+Aplica a todos los procesos, activos de información, proyectos, proveedores y unidades de negocio de la organización. Se ejecuta al menos una vez al año y, adicionalmente, ante cambios significativos (nuevos sistemas, proveedores críticos, cambios regulatorios o incidentes relevantes).
 
-## Registro y Reporte
-- Documentar acciones y resultados de gestión de riesgos para informar decisiones y mejorar procesos.  
-- Considerar sensibilidad de la información, contexto, partes interesadas, costo, frecuencia y relevancia del reporte.
+## Roles y Responsabilidades
+- **Gerencia:** aprueba el apetito de riesgo y acepta formalmente los riesgos residuales altos.
+- **Responsable de Riesgos / Ciberseguridad:** mantiene la metodología, el registro de riesgos y reporta su estado.
+- **Propietarios de riesgo:** definen y ejecutan el tratamiento de los riesgos de su ámbito.
+- **Áreas y colaboradores:** reportan nuevos riesgos, debilidades e incidentes.
 
-## Evaluación de Riesgos
-1. **Identificación:** Reconocer riesgos que puedan afectar objetivos; considerar fuentes, causas, eventos, vulnerabilidades, activos, oportunidades, contexto y limitaciones de información.  
-2. **Análisis:** Evaluar naturaleza, probabilidad, consecuencias, controles existentes, complejidad, volatilidad y sesgos.  
-3. **Evaluación:** Comparar con criterios de riesgo para decidir acciones: mantener, tratar, analizar más o reconsiderar objetivos.
+## Criterios de Riesgo
 
-### Consideración Especial
-Riesgos de tecnología y dispositivos críticos (ej. POI) deben evaluarse con análisis específico, frecuencia y tipo de inspección adecuados.
+**Probabilidad**
+| Nivel | Valor | Criterio |
+| ----- | ----- | -------- |
+| Baja | 1 | Improbable en los próximos 12 meses; sin antecedentes. |
+| Media | 2 | Plausible en los próximos 12 meses; ha ocurrido en el sector. |
+| Alta | 3 | Esperable en los próximos 12 meses; ya ocurrió en la organización. |
 
-## Tratamiento de Riesgos
-- Formular y ejecutar medidas para mitigar riesgos.  
-- Opciones de tratamiento: mitigar, asumir, eliminar, cambiar probabilidad/consecuencia, distribuir o mantener riesgos de manera informada.  
-- Evaluar efectividad y documentar riesgos residuales para monitoreo y acciones adicionales si es necesario.
+**Impacto**
+| Nivel | Valor | Criterio |
+| ----- | ----- | -------- |
+| Bajo | 1 | Afectación menor, sin consecuencias legales, contractuales ni para clientes. |
+| Medio | 2 | Afectación reputacional o interrupción parcial; impacto visible a clientes. |
+| Alto | 3 | Consecuencias legales, contractuales o regulatorias; pérdida de datos personales o interrupción de servicios críticos. |
+
+**Nivel de riesgo = Probabilidad × Impacto**
+| Resultado | Nivel | Respuesta esperada |
+| --------- | ----- | ------------------ |
+| 1–2 | Bajo | Aceptable; se monitorea. |
+| 3–4 | Medio | Tratar en el plan anual; aceptación por el propietario del riesgo. |
+| 6–9 | Alto | Tratamiento prioritario; aceptación solo por la gerencia, con fecha de revisión. |
+
+> **Apetito de riesgo de referencia:** la organización acepta riesgos de nivel Bajo. Los riesgos Medios y Altos requieren tratamiento o aceptación formal documentada. Ajusta estos criterios a la realidad de tu organización.
+
+## Proceso de Gestión de Riesgos
+1. **Identificación:** reconocer riesgos que afecten los objetivos considerando activos, amenazas, vulnerabilidades, proveedores, contexto legal y resultados de auditorías, incidentes y escaneos.
+2. **Análisis:** estimar probabilidad e impacto teniendo en cuenta los controles existentes.
+3. **Evaluación:** comparar el nivel resultante con el apetito de riesgo y priorizar.
+4. **Tratamiento:** elegir una opción:
+   - **Mitigar:** implementar controles que reduzcan probabilidad o impacto.
+   - **Transferir:** compartir el riesgo (seguros, contratos, tercerización).
+   - **Evitar:** eliminar la actividad o el activo que origina el riesgo.
+   - **Aceptar:** asumir el riesgo de forma informada, con aprobación según su nivel.
+5. **Monitoreo:** revisar el estado de los riesgos y la eficacia de los tratamientos.
+
+## Registro de Riesgos
+Cada riesgo se documenta con, como mínimo: identificador, descripción (causa – evento – consecuencia), activo o proceso afectado, propietario, probabilidad, impacto, nivel inherente, controles existentes, opción de tratamiento, nivel residual, controles Kudo relacionados y fecha de próxima revisión.
 
 ## Plan de Tratamiento
-- Define responsables, acciones, recursos, medidas de desempeño, restricciones, monitoreo y cronograma.  
-- Justifica la selección de opciones y beneficios esperados.
+Para cada riesgo tratado se define: responsable, acciones, recursos, fecha compromiso, indicador de avance y beneficio esperado. El avance se reporta al Comité de Seguridad trimestralmente.
+
+## Riesgos de Tecnologías Críticas
+Los sistemas críticos (por ejemplo, plataformas de pago, sistemas ICS/OT o dispositivos de punto de interacción) se evalúan con un análisis específico y con la frecuencia de inspección que corresponda a su criticidad.
 
 ## Monitoreo y Revisión
-- Revisar regularmente la gestión de riesgos, resultados y eficacia de los tratamientos.  
-- Actualizar metodologías, registrar cambios y realizar revisiones anuales para garantizar trazabilidad y mejora continua.
+- El registro de riesgos se revisa al menos trimestralmente para los riesgos Altos y anualmente para el resto.
+- La metodología se revisa anualmente; los cambios quedan registrados para mantener la trazabilidad.
+- Los riesgos materializados (incidentes) alimentan la siguiente evaluación.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/kudo/framework/cor/cor-1)
+- [COR-3 · Evaluación Independiente basada en Riesgos](/kudo/framework/cor/cor-3)
+- [COR-4 · Mejora Continua y Acciones Correctivas](/kudo/framework/cor/cor-4)
+{/* /kudo:controles */}

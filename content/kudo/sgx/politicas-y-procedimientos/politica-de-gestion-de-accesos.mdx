@@ -1,76 +1,109 @@
 ---
 title: "Política de Gestión de Accesos"
 description: "Control y gestión de acceso a sistemas y recursos de información"
+codigo: "POL-CIP-01"
+tipo: "politica"
+dominio: "cip"
+propietario: "Responsable de TI"
+version: "1.1"
+revision: "Anual"
+controles: [cip-1, cip-2, cip-3, cip-4]
 ---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CIP-01 | Política | CIP | 1.1 | Responsable de TI | Anual |
+{/* /kudo:control-documento */}
 
 ## Propósito
 
-Establecer cómo la organización controla el acceso a sistemas e información, gestionando el ciclo de vida completo de las identidades y garantizando autenticación segura, asignación y revisión periódica de permisos, y uso responsable de herramientas privilegiadas.
+Establecer cómo la organización controla el acceso a sistemas e información, gestionando el ciclo de vida completo de las identidades y garantizando autenticación segura, asignación y revisión periódica de permisos y uso responsable de las herramientas privilegiadas.
 
 ## Alcance
 
-Aplica a todas las identidades humanas y no humanas, sistemas, aplicaciones, programas utilitarios y accesos temporales dentro de la organización, incluyendo terceros.
+Aplica a todas las identidades humanas y no humanas (cuentas de servicio, API keys, tokens), sistemas, aplicaciones, programas utilitarios y accesos temporales de la organización, incluidos los de terceros.
 
 ## Principios Clave
 
-- Acceso basado en necesidad y rol.
-- Segregación de funciones para minimizar riesgos.
-- Registro y auditoría de todos los derechos de acceso.
-- Uso de autenticación robusta y multifactor.
-- Control estricto de programas utilitarios y accesos privilegiados.
+- **Mínimo privilegio y necesidad de conocer:** cada identidad recibe solo los accesos que requiere su función.
+- **Acceso basado en roles:** los permisos se asignan mediante perfiles definidos en la Matriz de Control de Acceso.
+- **Segregación de funciones** en actividades críticas.
+- **Identidad única:** no se permiten cuentas compartidas; las excepciones (cuentas de emergencia) se custodian y registran.
+- **Trazabilidad:** todos los accesos y cambios quedan registrados.
 
 ## Roles y Responsabilidades
 
-- Propietarios de Sistemas: Revisar y aprobar accesos, supervisar cumplimiento, reportar discrepancias.
-- TI: Implementar accesos, aplicar cambios a la Matriz de Control, auditar y monitorear sistemas y programas utilitarios.
-- Gerencia: Validar cambios estratégicos, revisar riesgos y autorizar accesos privilegiados.
-- Usuarios: Cumplir con la política y reportar incidentes.
+- **Propietarios de sistemas:** aprueban accesos, revisan periódicamente los permisos y reportan discrepancias.
+- **TI:** implementa los accesos, mantiene la Matriz de Control de Acceso y monitorea los sistemas y programas utilitarios.
+- **Gerencia:** valida cambios estratégicos y autoriza los accesos privilegiados.
+- **Usuarios:** protegen sus credenciales, cumplen esta política y reportan incidentes.
 
 ## Gestión de Cuentas e Identidades
 
-### Aprovisionamiento
+### Inventario de Identidades
+- Se mantiene un inventario de identidades humanas y no humanas, integrado con el proveedor de identidad (IdP) y con el sistema de RRHH.
+- Cada cuenta de servicio o credencial técnica tiene un propietario responsable.
 
-- Solicitud de acceso mediante sistema de tickets, con justificación.
-- Revisión y aprobación según la Matriz de Control de Acceso.
-- Documentar todas las decisiones para transparencia.
-- Control de accesos de terceros con NDAs y verificación de confianza.
-- Separación de roles de aprobación e implementación para evitar conflictos de interés.
-- Automatización donde sea posible para reducir errores y mejorar eficiencia.
+### Aprovisionamiento (Joiner)
+- El acceso se solicita mediante ticket, con justificación, y se aprueba según la Matriz de Control de Acceso.
+- Siempre que sea posible, el aprovisionamiento se automatiza desde el registro en RRHH hacia el IdP.
+- Los accesos de terceros requieren acuerdo de confidencialidad, fecha de vencimiento y un responsable interno.
+- Quien aprueba un acceso no es quien lo implementa.
 
-### Desaprovisionamiento
+### Cambios de Rol (Mover)
+- Ante un cambio de cargo se revisan los accesos: se otorgan los del nuevo rol y se retiran los que ya no corresponden en un plazo máximo de **5 días hábiles**.
 
-- Eliminación de accesos mediante tickets.
-- Revisión conjunta de Propietarios de Sistemas, TI y Gerencia.
-- Revocar privilegios innecesarios y eliminar identidades duplicadas.
-- Eliminación oportuna de accesos para cambios de rol o salida de la organización.
-- Accesos temporales limitados a periodos definidos y revocados automáticamente.
-- Automatización donde sea posible para reducir errores y mejorar eficiencia.
+### Desaprovisionamiento (Leaver)
+- Al terminar la relación laboral o contractual, los accesos se revocan **el mismo día** (de inmediato si la salida no es voluntaria).
+- Los accesos temporales se configuran con vencimiento automático.
+- Las identidades duplicadas, huérfanas o inactivas por más de **90 días** se deshabilitan.
 
 ## Estándares de Autenticación
 
-- Selección de métodos según la sensibilidad de la información.
-- Autenticación multifactor obligatoria para sistemas.
-- Protección contra fuerza bruta: bloqueo o restablecimiento tras intentos fallidos.
-- Validación completa de credenciales antes de mostrar información sensible.
-- Notificación en canal separado de último inicio de sesión y fallos.
-- Duración de sesiones limitada para aplicaciones.
+- **Autenticación centralizada (SSO)** a través del IdP corporativo siempre que el sistema lo permita.
+- **MFA obligatoria** para todos los accesos remotos, administrativos, a correo y a sistemas críticos. Para cuentas privilegiadas se prefieren factores resistentes a phishing (llaves FIDO2/passkeys).
+- **Contraseñas:** longitud mínima de 12 caracteres (16 para cuentas privilegiadas), verificación contra listas de contraseñas comprometidas y cambio obligatorio solo ante sospecha de compromiso. Se recomienda el uso de un gestor de contraseñas corporativo.
+- Bloqueo o retardo progresivo tras **5 intentos fallidos** consecutivos.
+- Validación completa de credenciales antes de mostrar información sensible y notificación de inicios de sesión inusuales.
+- Duración máxima de sesión definida por aplicación y cierre automático por inactividad.
+- Los secretos de aplicaciones (API keys, tokens) se almacenan en un gestor de secretos y se rotan al menos cada **180 días** o ante sospecha de exposición.
 
-## Programas Utilitarios y Accesos Privilegiados
+## Accesos Privilegiados y Programas Utilitarios
 
-- Acceso restringido a un mínimo de usuarios autorizados y confiables.
-- Segregación de programas utilitarios de software de aplicación y su tráfico de red.
-- Disponibilidad limitada a periodos específicos y registro obligatorio de uso.
-- Eliminación o desactivación de utilitarios innecesarios, respetando segregación de funciones.
+- Las cuentas privilegiadas son nominales, separadas de la cuenta de uso diario y limitadas a un mínimo de personas autorizadas.
+- Se privilegia el acceso **just-in-time** (elevación temporal con aprobación) sobre los privilegios permanentes.
+- Las cuentas de emergencia (*break-glass*) se custodian de forma segura, se usan solo ante contingencias y cada uso se revisa.
+- Los programas utilitarios con capacidad de eludir controles se restringen, se registra su uso y se eliminan cuando no son necesarios.
+
+## Revisión de Accesos
+
+| Tipo de acceso | Frecuencia de revisión |
+| -------------- | ---------------------- |
+| Cuentas privilegiadas y de administración | Trimestral |
+| Sistemas críticos y con datos confidenciales | Semestral |
+| Resto de sistemas | Anual |
+| Cuentas de terceros y de servicio | Semestral |
+
+Los propietarios de sistemas certifican el resultado de cada revisión; los accesos no justificados se retiran.
 
 ## Cambios a la Matriz de Control de Acceso
 
-- Todos los cambios requieren aprobación de Propietario del Sistema, TI y Gerencia (En los casos que se considere necesario).
-- Documentar cambios y razones para transparencia.
-- TI responsable de implementar cambios y mantener la Matriz actualizada.
+- Los cambios requieren aprobación del propietario del sistema y de TI, y de la gerencia cuando afecten accesos privilegiados.
+- Se documentan los cambios y sus razones.
+- TI implementa los cambios y mantiene la matriz actualizada.
 
 ## Monitoreo y Auditoría
 
-- Revisión de cumplimiento por Propietarios de Sistemas y TI.
-- Registro central de todos los derechos de acceso y cambios.
-- Auditorías periódicas de accesos, identidades y programas utilitarios.
-- Ajuste de accesos privilegiados según evaluación de riesgos.
+- Registro centralizado de autenticaciones, cambios de permisos y uso de cuentas privilegiadas, conforme a la Política de Registro y Monitoreo.
+- Alertas ante patrones anómalos (accesos fuera de horario, desde ubicaciones inusuales o múltiples fallos).
+- Auditorías periódicas de accesos, identidades y programas utilitarios; esta política se revisa anualmente.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CIP-1 · Inventario de Identidad](/kudo/framework/cip/cip-1)
+- [CIP-2 · Ciberseguridad en Autenticación](/kudo/framework/cip/cip-2)
+- [CIP-3 · Ciberseguridad en Autorización](/kudo/framework/cip/cip-3)
+- [CIP-4 · Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades](/kudo/framework/cip/cip-4)
+{/* /kudo:controles */}

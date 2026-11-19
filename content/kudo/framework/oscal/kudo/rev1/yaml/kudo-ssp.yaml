@@ -1,0 +1,1592 @@
+system-security-plan:
+  uuid: a8228fef-0049-5088-9de4-3525e383ad73
+  metadata:
+    title: Plan de Seguridad del Sistema (SSP) – Plantilla Kudo
+    published: 2026-11-18T00:00:00Z
+    last-modified: 2026-11-18T00:00:00Z
+    version: 0.1.0
+    oscal-version: 1.2.3
+    remarks: 'SSP de referencia: describe un sistema genérico ("Plataforma de la organización") que adopta el perfil Kudo. Reemplaza los valores entre corchetes, documenta tus componentes técnicos y actualiza el estado de implementación de cada control (planned → partial → implemented).'
+    links:
+      - href: https://divisioncero.com/kudo/framework/oscal
+        rel: canonical
+        media-type: text/html
+        text: Kudo y OSCAL
+    roles:
+      - id: creator
+        title: Autor del contenido
+      - id: prepared-for
+        title: Organización destinataria
+      - id: system-owner
+        title: Propietario del sistema
+      - id: ciso
+        title: Responsable de Ciberseguridad
+    parties:
+      - uuid: ed04377f-1282-41a6-b653-477f0b38742c
+        type: organization
+        name: DivisionCero
+        links:
+          - href: https://divisioncero.com/kudo
+            rel: homepage
+      - uuid: e9de3acc-be4b-58c9-816f-25e260a9dcbe
+        type: organization
+        name: "[Nombre de tu organización]"
+        remarks: Reemplaza este valor por la razón social de la organización que adopta Kudo.
+    responsible-parties:
+      - role-id: creator
+        party-uuids:
+          - ed04377f-1282-41a6-b653-477f0b38742c
+      - role-id: prepared-for
+        party-uuids:
+          - e9de3acc-be4b-58c9-816f-25e260a9dcbe
+  import-profile:
+    href: "#242e1697-3681-58b1-900b-2954de79a7e0"
+  system-characteristics:
+    system-ids:
+      - identifier-type: https://ietf.org/rfc/rfc4122
+        id: 88b342b8-8fa8-5ee8-b527-2adf564cf2fc
+    system-name: "[Plataforma de la organización]"
+    system-name-short: SGX
+    description: "Conjunto de procesos, personas y tecnología dentro del alcance del SGX de la organización: aplicaciones de negocio, infraestructura en la nube, puntos finales y proveedores críticos."
+    security-sensitivity-level: moderate
+    system-information:
+      information-types:
+        - uuid: cc0871a3-481c-5d7b-ae99-dbcd6947ddc4
+          title: Datos de clientes
+          description: Información de clientes y datos personales tratados por la plataforma (clasificación Confidencial).
+          confidentiality-impact:
+            base: moderate
+          integrity-impact:
+            base: moderate
+          availability-impact:
+            base: moderate
+        - uuid: ea7a8c92-bcba-5f86-a087-e9ca6eb53ecf
+          title: Información interna de la organización
+          description: Información financiera, contractual y operativa (clasificación Interna o Confidencial).
+          confidentiality-impact:
+            base: moderate
+          integrity-impact:
+            base: moderate
+          availability-impact:
+            base: low
+    security-impact-level:
+      security-objective-confidentiality: moderate
+      security-objective-integrity: moderate
+      security-objective-availability: moderate
+    status:
+      state: operational
+    authorization-boundary:
+      description: "[Describe el alcance del SGX: sedes, aplicaciones, cuentas de nube, procesos y proveedores incluidos, y las exclusiones justificadas.]"
+  system-implementation:
+    users:
+      - uuid: ca514f8b-ed9c-5146-8a0d-5fe10dd27d59
+        title: Colaboradores
+        role-ids:
+          - prepared-for
+        authorized-privileges:
+          - title: Usuario estándar
+            functions-performed:
+              - Uso de aplicaciones de negocio
+      - uuid: 9b88058c-4c4b-5cc7-8b76-a5bb695b130d
+        title: Administradores de TI
+        role-ids:
+          - system-owner
+        authorized-privileges:
+          - title: Administrador
+            functions-performed:
+              - Administración de infraestructura y accesos
+    components:
+      - uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+        type: this-system
+        title: "[Plataforma de la organización]"
+        description: El sistema en su conjunto.
+        status:
+          state: operational
+      - uuid: ed72c648-62d3-5d74-a3af-17c30bfd093b
+        type: guidance
+        title: Cláusulas para Colaboradores
+        description: Cláusulas contractuales obligatorias aplicables a colaboradores en materia de seguridad de la información
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: CLA-THP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/clausulas-para-colaboradores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: dcc7b547-10d7-561c-a087-ebc0d6dacd1c
+        type: guidance
+        title: Cláusulas para Proveedores
+        description: Cláusulas contractuales obligatorias aplicables a proveedores, incluyendo propiedad intelectual
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: CLA-THP-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/clausulas-para-proveedores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: d8db43da-a8fd-525d-9222-ecd496e32571
+        type: guidance
+        title: Solicitud de Compras
+        description: Formato y flujo para solicitar la adquisición de bienes o servicios a proveedores
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: FOR-THP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/solicitud-de-compras
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 8b5a3ca9-ac5f-5fa5-a672-5f08c8f8a007
+        type: guidance
+        title: Plantilla de Contrato de Proveedores
+        description: Estructura base de contrato para la vinculación formal de proveedores
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PLA-THP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/plantilla-de-contrato-proveedores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 5bb4f2af-e575-5a06-b287-700ec1d0c90e
+        type: plan
+        title: Plan de Continuidad del Negocio
+        description: Marco para responder a incidentes disruptivos que afecten las operaciones y asegurar funciones esenciales
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PLN-CCN-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 6433fcc3-0331-5ee8-8575-33bc56ce17ba
+        type: policy
+        title: Política de Gestión de Incidentes
+        description: Detección, respuesta y gestión de incidentes de seguridad
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-ADR-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-incidentes
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: c98a4177-9e11-5fcd-b14a-90f4ca9319f0
+        type: policy
+        title: Política de Gestión de Vulnerabilidades y Parches
+        description: Identificación, priorización y remediación de vulnerabilidades con plazos según su severidad
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-ADR-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-vulnerabilidades-y-parches
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 9abe6e89-5412-5a3e-9818-445c74e999cb
+        type: policy
+        title: Política de Protección contra Software Malicioso
+        description: Prevención, detección y contención de malware en puntos finales, servidores, correo y navegación
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-ADR-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-proteccion-contra-software-malicioso
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 4b573c73-95f7-5e39-a6db-0a9bad3b8ae7
+        type: policy
+        title: Política de Desarrollo Seguro
+        description: Directrices para integrar seguridad en todo el ciclo de vida del software
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CAP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-desarrollo-seguro
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: e3c48211-bca7-5a5d-b0f4-7c2bd5057f2e
+        type: policy
+        title: Política de Continuidad del Negocio
+        description: Directrices para asegurar la continuidad de funciones críticas durante y después de interrupciones
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CCN-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-continuidad-del-negocio
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: a9754047-7211-5d13-baf2-00e3c2e2b6cb
+        type: policy
+        title: Política de Gestión de Crisis
+        description: Marco para respuesta y gestión de situaciones de crisis organizacional
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CCN-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-crisis
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 04a1040e-61b3-5c2a-a436-382d3d0b8938
+        type: policy
+        title: Política de Gestión de Cambios y Configuración
+        description: Control de cambios en sistemas y configuraciones de TI
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CCN-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cambios-y-configuraciones
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 14627094-f959-5394-9b00-64ad65a0d606
+        type: policy
+        title: Política de Seguridad Física
+        description: Protección física de instalaciones, equipos y activos
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-fisica
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: b6cdf390-efcd-58ea-83fe-46c30d0dd4f2
+        type: policy
+        title: Política de Seguridad de TI
+        description: Estándares de seguridad para infraestructura y servicios de TI
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-it
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 2348b231-cd84-5261-afa5-b3beffece898
+        type: policy
+        title: Política de Seguridad de Comunicaciones
+        description: Protección de comunicaciones y transferencias de información
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-comunicaciones
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 246b18fb-fcfd-5cde-bc90-d3ba78404164
+        type: policy
+        title: Política de Seguridad ICS/OT
+        description: Seguridad de sistemas de control industrial y tecnología operacional
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-04
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-ics-ot
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 7cf33aca-70ae-5091-b61c-dfc916f00876
+        type: policy
+        title: Política de Servicios en la Nube
+        description: Uso seguro y gestión de servicios cloud y SaaS
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-05
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-servicios-en-la-nube
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 15a28986-417a-5949-a5bb-26a5a7e1f0de
+        type: policy
+        title: Política de Backups y Recuperación
+        description: Respaldo y recuperación de información crítica del negocio
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-06
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-backups-y-recuperacion
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: af00613d-c095-5c72-92cd-bc0988bebebc
+        type: policy
+        title: Política de Registro y Monitoreo
+        description: Registro de eventos y monitoreo de seguridad de sistemas
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-07
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-registro-y-monitoreo
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 93a91a66-6cca-577a-80f2-3b9823a4a0cc
+        type: policy
+        title: Política de Criptografía y Gestión de Claves
+        description: Uso correcto de técnicas criptográficas y gestión del ciclo de vida de claves y certificados
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIF-08
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-criptografia-y-gestion-de-claves
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 371f24e4-cfcb-5de9-8e17-f90aca2bc9d7
+        type: policy
+        title: Política de Gestión de Accesos
+        description: Control y gestión de acceso a sistemas y recursos de información
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-accesos
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 6f1e2d89-75f5-5d77-9655-31e6ca2a9b8f
+        type: policy
+        title: Política de Hardening
+        description: Configuración segura y fortalecimiento de sistemas y aplicaciones
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-CIP-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-hardening
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 070de7df-8f9f-5913-9c41-2520afc1c668
+        type: policy
+        title: Política de Seguridad de la Información
+        description: Protección de información, activos y reputación organizacional
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-COR-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-la-informacion
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 1f52f646-db24-5a64-823f-31db3000dc55
+        type: policy
+        title: Política de Documentos y Registros
+        description: Estándares para gestión de documentos y registros organizacionales
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-COR-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-documentos-y-registros
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: ccd427b4-2d5a-5347-8aea-5bf7e3aa16cc
+        type: policy
+        title: Política de Gestión de Riesgos
+        description: Marco para identificación, evaluación y tratamiento de riesgos
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-COR-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-riesgos
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 8b147923-dce4-586d-916e-9be9eab6ad75
+        type: policy
+        title: Política de Gestión de Cumplimiento
+        description: Aseguramiento del cumplimiento de requisitos legales y regulatorios
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-COR-04
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-cumplimiento
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: e6b713c5-5bff-585c-b647-be5d0818e1ff
+        type: policy
+        title: Política de Privacidad
+        description: Protección de datos personales y cumplimiento de regulaciones de privacidad
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-DIA-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-privacidad
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 29b7f779-fd52-5e87-952d-1b14a8eb141b
+        type: policy
+        title: Política de Gestión de Activos
+        description: Gestión y protección de activos de información de la organización
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-DIA-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-activos
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 5ae67815-f27e-504d-9347-d44972636f5b
+        type: policy
+        title: Política de Uso Aceptable de Inteligencia Artificial
+        description: Uso seguro y responsable de herramientas, agentes y modelos de IA en la organización
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-DIA-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-uso-aceptable-de-inteligencia-artificial
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: ced1f074-8195-5a87-b5ae-4be5a1551884
+        type: policy
+        title: Política de Clasificación y Manejo de la Información
+        description: Niveles de clasificación, etiquetado y reglas de manejo de la información según su sensibilidad
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-DIA-04
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-clasificacion-y-manejo-de-la-informacion
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 19768b71-162b-5ac1-8114-3353959bef41
+        type: policy
+        title: Política de Retención y Eliminación de Datos
+        description: Plazos de conservación por categoría de datos y eliminación segura con evidencia
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-DIA-05
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-retencion-y-eliminacion-de-datos
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: dc41a615-b467-5ecc-aa30-5e51b2ebcb4d
+        type: policy
+        title: Política de Seguridad de Recursos Humanos
+        description: Seguridad en el ciclo de vida del empleado y gestión de personal
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-THP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-seguridad-de-recursos-humanos
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 73a481aa-7d2c-5677-aed4-4d346e28508f
+        type: policy
+        title: Política de Gestión de Concienciación
+        description: Programa de capacitación y concientización en seguridad de la información
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-THP-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-concienciacion
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 1bdb375e-be2e-53ad-b6b6-fef9b6edbf4a
+        type: policy
+        title: Política de Gestión de Proveedores
+        description: Evaluación y gestión de riesgos de terceros y proveedores
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-THP-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-gestion-de-proveedores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 96d3355e-c53b-5ddd-9f01-6b57a5c576f3
+        type: policy
+        title: Política de Trabajo Remoto y Dispositivos Móviles
+        description: Requisitos de seguridad para el teletrabajo, el trabajo híbrido y el uso de dispositivos personales (BYOD)
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: POL-THP-04
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/politica-de-trabajo-remoto-y-dispositivos-moviles
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 5b0a49df-324d-54fc-9c49-9b089ed12b3e
+        type: process-procedure
+        title: Procedimiento de Respuesta a Incidentes
+        description: Pasos operativos, roles, plazos y guías rápidas para responder a incidentes de ciberseguridad
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-ADR-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-respuesta-a-incidentes
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: f3687d22-387c-5a3c-b628-2ba3989310f0
+        type: process-procedure
+        title: Procedimiento de Análisis de Impacto en el Negocio (BIA)
+        description: Metodología para análisis de impacto en continuidad del negocio (BIA)
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-CCN-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-analisis-de-impacto-en-el-negocio
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: a3345213-41d5-5cd2-9ff8-65b59ff54498
+        type: process-procedure
+        title: Procedimiento y Plan de Comunicación
+        description: Estrategia de comunicación para incidentes y crisis
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-CCN-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-y-plan-de-comunicacion
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: ffce7e12-5a1e-5c3a-8a92-c8c02c1338a9
+        type: process-procedure
+        title: Procedimiento de Auditoría Interna
+        description: Planificación, ejecución y reporte de auditorías internas independientes del SGX
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-COR-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-auditoria-interna
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: be1c4e0d-b4b8-594e-a334-bc4e10532b2e
+        type: process-procedure
+        title: Procedimiento de Acciones Correctivas y Mejora Continua
+        description: Gestión de no conformidades, análisis de causa raíz, planes de acción y verificación de eficacia
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-COR-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-acciones-correctivas-y-mejora-continua
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: e6137eed-592d-51f5-8311-7ee33df24251
+        type: process-procedure
+        title: Procedimiento de Atracción de Talento
+        description: "Ciclo completo de vinculación: validación de candidatos, estudios de seguridad, contratación y aprovisionamiento de accesos"
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-THP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-atraccion-de-talento
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 7910fd12-56f0-555b-80c5-00541a98e066
+        type: process-procedure
+        title: Procedimiento de Concientización
+        description: Plan de comunicaciones, charlas, campañas de phishing y checklists de validación del Programa de Concienciación
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-THP-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-concientizacion
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 0fe608bb-73ee-581b-8d7a-e50c73076b43
+        type: process-procedure
+        title: Procedimiento de Gestión de Proveedores
+        description: "Cómo se ejecuta el ciclo de vida de proveedores: inventario, clasificación, riesgos, comité de compras y validación externa"
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: PRO-THP-03
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/procedimiento-de-gestion-de-proveedores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 62016ef0-29df-59b5-80f6-f3735fc73829
+        type: guidance
+        title: Términos y Condiciones para Colaboradores
+        description: TyC para colaboradores organizados según los ocho dominios de ciberseguridad de Kudo
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: TYC-THP-01
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/terminos-y-condiciones-para-colaboradores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+      - uuid: 682c9b21-fd38-54d6-95c4-d6afea516aac
+        type: guidance
+        title: Términos y Condiciones para Proveedores
+        description: TyC para proveedores organizados según los ocho dominios de ciberseguridad de Kudo
+        props:
+          - name: document-code
+            ns: https://divisioncero.com/kudo/framework/oscal
+            value: TYC-THP-02
+        links:
+          - href: https://divisioncero.com/kudo/sgx/politicas-y-procedimientos/terminos-y-condiciones-para-proveedores
+            rel: reference
+            media-type: text/html
+        status:
+          state: under-development
+          remarks: Adaptar y aprobar el documento para la organización.
+  control-implementation:
+    description: Implementación de los 36 controles Kudo. Cada requisito se atiende con los documentos del SGX que lo desarrollan y con el sistema en su conjunto; agrega los componentes técnicos que correspondan.
+    implemented-requirements:
+      - uuid: 2fa3cd3a-c70b-5632-84fe-af62ebc85403
+        control-id: adr-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 00de3d46-4353-5dad-bcaf-3e4ab4951cd0
+            description: "[Describe cómo la organización implementa ADR-1 – Protección contra Software Malicioso: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 9abe6e89-5412-5a3e-9818-445c74e999cb
+            uuid: 3faa2a81-7f8a-5f43-b1c9-03c31cf62e74
+            description: Política de Protección contra Software Malicioso (POL-ADR-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: e806cf14-78f6-53c1-b686-891a59c644f1
+        control-id: adr-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 6ea47f91-e534-5a6c-be5b-6443beb0b396
+            description: "[Describe cómo la organización implementa ADR-2 – Gestión, Identificación y Remediación de Vulnerabilidades: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: c98a4177-9e11-5fcd-b14a-90f4ca9319f0
+            uuid: 0d0278fe-8220-5337-bf37-b04912c2d6bc
+            description: Política de Gestión de Vulnerabilidades y Parches (POL-ADR-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: ba523632-5d90-561d-9c69-4bdab9b576f7
+        control-id: adr-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: aa46f787-ab89-5b45-ab67-2d54b665690b
+            description: "[Describe cómo la organización implementa ADR-3 – Retención y Monitoreo de Registros: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: af00613d-c095-5c72-92cd-bc0988bebebc
+            uuid: 38c00504-1eb1-56c9-952f-55704031f00a
+            description: Política de Registro y Monitoreo (POL-CIF-07) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 5b0a49df-324d-54fc-9c49-9b089ed12b3e
+            uuid: ab0ae52f-ecd7-5668-a21a-6a44cf5d1ba4
+            description: Procedimiento de Respuesta a Incidentes (PRO-ADR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 88e78373-bd87-5ca1-9ef6-4f2f144734d6
+        control-id: adr-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: ccf5b72e-5ea0-5335-81a0-d5ddf57dabc1
+            description: "[Describe cómo la organización implementa ADR-4 – Atención de Eventos y/o Incidentes de Ciberseguridad: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 6433fcc3-0331-5ee8-8575-33bc56ce17ba
+            uuid: 4c9e265c-d4b0-5221-82ee-97a60cb41fd8
+            description: Política de Gestión de Incidentes (POL-ADR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: a9754047-7211-5d13-baf2-00e3c2e2b6cb
+            uuid: 4bc86763-e919-50f8-abf2-807df2d0dc68
+            description: Política de Gestión de Crisis (POL-CCN-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 5b0a49df-324d-54fc-9c49-9b089ed12b3e
+            uuid: 26154245-7025-59fb-96b9-f82059956fc4
+            description: Procedimiento de Respuesta a Incidentes (PRO-ADR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: a3345213-41d5-5cd2-9ff8-65b59ff54498
+            uuid: 4ee05b0a-366c-5a3b-a8d0-ba273e025a8b
+            description: Procedimiento y Plan de Comunicación (PRO-CCN-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 93168bbe-e87a-5002-9bc6-c609b575aef2
+        control-id: cap-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: ebf94e55-2e14-50c0-b176-3408625148ba
+            description: "[Describe cómo la organización implementa CAP-1 – Ciberseguridad en el Ciclo de Desarrollo del Software: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 4b573c73-95f7-5e39-a6db-0a9bad3b8ae7
+            uuid: fdbd7a67-2cbe-5c4c-a9b5-126ce773c932
+            description: Política de Desarrollo Seguro (POL-CAP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: e6e31a10-c71a-51c6-b824-b6cba3b0ab52
+        control-id: cap-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 2d6ca4c5-5ce3-533a-966e-e91a0c689413
+            description: "[Describe cómo la organización implementa CAP-2 – Ciberseguridad en APIs: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 4b573c73-95f7-5e39-a6db-0a9bad3b8ae7
+            uuid: edee60bf-2cc9-55d2-9cf0-c0daa8f224a3
+            description: Política de Desarrollo Seguro (POL-CAP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 42c8a76d-eb54-59ba-91c4-5f310bb81b5d
+        control-id: ccn-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 6e657f27-e0f9-5f5c-9476-b395de8f90e0
+            description: "[Describe cómo la organización implementa CCN-1 – Gestión y Control de Cambios: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 04a1040e-61b3-5c2a-a436-382d3d0b8938
+            uuid: 48c346f4-08ca-56d5-bb5c-6b1ec52a2655
+            description: Política de Gestión de Cambios y Configuración (POL-CCN-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 6cd2c261-f20a-5a78-ac41-b3f8068d83de
+        control-id: ccn-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 64bb04a2-a02c-5f7f-aff2-4f43607788d4
+            description: "[Describe cómo la organización implementa CCN-2 – Pruebas de Calidad y Seguridad en la Gestión de Cambios: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 4b573c73-95f7-5e39-a6db-0a9bad3b8ae7
+            uuid: 0b4efebb-aea2-5448-b3c3-d9c885ad06bc
+            description: Política de Desarrollo Seguro (POL-CAP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 04a1040e-61b3-5c2a-a436-382d3d0b8938
+            uuid: 4808dc9e-a56a-5b6d-b985-796a4c0d5817
+            description: Política de Gestión de Cambios y Configuración (POL-CCN-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 558a2dbd-6a8d-5630-8e29-9c14bd1d2b02
+        control-id: ccn-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 56af8cbf-1c2c-5a71-af9f-e4378a990946
+            description: "[Describe cómo la organización implementa CCN-3 – Revertir Cambios: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 04a1040e-61b3-5c2a-a436-382d3d0b8938
+            uuid: 2d636f4e-f621-5db5-a008-a4d2a74ed9cf
+            description: Política de Gestión de Cambios y Configuración (POL-CCN-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 97708f57-2f75-50aa-996d-83c265113fbc
+        control-id: ccn-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: c7364626-c2c6-5856-93cc-e319b28a8946
+            description: "[Describe cómo la organización implementa CCN-4 – Continuidad del Negocio y Recuperación ante Desastres: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 5bb4f2af-e575-5a06-b287-700ec1d0c90e
+            uuid: 2c52903f-8175-5ba4-8573-a92b63bad646
+            description: Plan de Continuidad del Negocio (PLN-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e3c48211-bca7-5a5d-b0f4-7c2bd5057f2e
+            uuid: 5bbcbaa3-bcde-5f4e-9394-aec8c8259189
+            description: Política de Continuidad del Negocio (POL-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 15a28986-417a-5949-a5bb-26a5a7e1f0de
+            uuid: c0752b98-4a37-5f57-ae7b-488cd52ab1b1
+            description: Política de Backups y Recuperación (POL-CIF-06) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: f3687d22-387c-5a3c-b628-2ba3989310f0
+            uuid: 3d71fb51-cf24-523b-8667-56a8fde8b861
+            description: Procedimiento de Análisis de Impacto en el Negocio (BIA) (PRO-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 767c7783-a729-592e-aac4-d80cef92af88
+        control-id: cif-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: fc277406-7082-592b-9a7b-0fb5ef82ae63
+            description: "[Describe cómo la organización implementa CIF-1 – Proveedores de Servicio de Nube: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 8b5a3ca9-ac5f-5fa5-a672-5f08c8f8a007
+            uuid: f3f23d69-d365-5269-9874-d8fe3bb4f37e
+            description: Plantilla de Contrato de Proveedores (PLA-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e3c48211-bca7-5a5d-b0f4-7c2bd5057f2e
+            uuid: 231c843f-6f2f-50b4-8779-42e4d9f702ee
+            description: Política de Continuidad del Negocio (POL-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 7cf33aca-70ae-5091-b61c-dfc916f00876
+            uuid: f42ff6aa-7e4a-5613-8678-f4a36efbc951
+            description: Política de Servicios en la Nube (POL-CIF-05) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 4a2b19f6-8395-5693-bb2a-24a993fcb131
+        control-id: cif-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 45e489ef-b021-56e7-ba98-aec8d45bd6e5
+            description: "[Describe cómo la organización implementa CIF-2 – Inventario de Activos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 14627094-f959-5394-9b00-64ad65a0d606
+            uuid: e8461e99-62cc-5bee-b3ac-c9ee9728f06a
+            description: Política de Seguridad Física (POL-CIF-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 246b18fb-fcfd-5cde-bc90-d3ba78404164
+            uuid: 9c321d8b-8017-58d5-acf0-c48d052961cd
+            description: Política de Seguridad ICS/OT (POL-CIF-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 7cf33aca-70ae-5091-b61c-dfc916f00876
+            uuid: 859ed175-1196-5832-8609-9c54879f09a8
+            description: Política de Servicios en la Nube (POL-CIF-05) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 29b7f779-fd52-5e87-952d-1b14a8eb141b
+            uuid: d9598f07-791b-5998-be5b-12598b228b2e
+            description: Política de Gestión de Activos (POL-DIA-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: f8a2d7cc-eb7f-5403-b8e8-cc28a138a475
+        control-id: cif-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: c069ed50-439d-5609-8e92-ebfb625b5ff5
+            description: "[Describe cómo la organización implementa CIF-3 – Ciberseguridad en la Red y Sistemas: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: c98a4177-9e11-5fcd-b14a-90f4ca9319f0
+            uuid: 419480ae-7a90-5cf5-804e-ce91357a2ffe
+            description: Política de Gestión de Vulnerabilidades y Parches (POL-ADR-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 04a1040e-61b3-5c2a-a436-382d3d0b8938
+            uuid: aa3f7a8f-fcef-5c94-ae54-6cd964b28626
+            description: Política de Gestión de Cambios y Configuración (POL-CCN-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 2348b231-cd84-5261-afa5-b3beffece898
+            uuid: 72cfee9c-c265-5dd4-bdc1-bdfe5f50cb5d
+            description: Política de Seguridad de Comunicaciones (POL-CIF-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 246b18fb-fcfd-5cde-bc90-d3ba78404164
+            uuid: 121a90de-0a06-5914-930c-a898236a5f0b
+            description: Política de Seguridad ICS/OT (POL-CIF-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 6f1e2d89-75f5-5d77-9655-31e6ca2a9b8f
+            uuid: 2a791890-b040-568a-9b80-7ec837d44991
+            description: Política de Hardening (POL-CIP-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: c75342a2-fedc-565b-bf34-50ed8301d6d3
+        control-id: cif-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: bab4bf9c-7cbe-5f74-908f-143602bb5271
+            description: "[Describe cómo la organización implementa CIF-4 – Cifrado de Información y Datos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 2348b231-cd84-5261-afa5-b3beffece898
+            uuid: 1b5aebc1-6933-55fd-9ee6-f52027adfeee
+            description: Política de Seguridad de Comunicaciones (POL-CIF-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 93a91a66-6cca-577a-80f2-3b9823a4a0cc
+            uuid: d42fba41-1f68-5879-93ac-5ac2bfee3789
+            description: Política de Criptografía y Gestión de Claves (POL-CIF-08) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: a6c135aa-995d-51c1-838e-62e9393bf62d
+        control-id: cif-5
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: b8d6ee79-722d-5917-ad65-cd63658b4f9c
+            description: "[Describe cómo la organización implementa CIF-5 – Administración y Gestión de Claves: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 93a91a66-6cca-577a-80f2-3b9823a4a0cc
+            uuid: 27476c3c-9491-501c-ac7e-18c57cf9a35d
+            description: Política de Criptografía y Gestión de Claves (POL-CIF-08) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: e117c5e1-b81f-51a6-9605-02da326ed470
+        control-id: cip-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 21ed638d-2f89-58d5-96dc-302ad26ced59
+            description: "[Describe cómo la organización implementa CIP-1 – Inventario de Identidad: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 371f24e4-cfcb-5de9-8e17-f90aca2bc9d7
+            uuid: acfa2dec-3330-59b5-b35f-adfcd5506c8b
+            description: Política de Gestión de Accesos (POL-CIP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e6137eed-592d-51f5-8311-7ee33df24251
+            uuid: 1be55ce8-b336-561c-aa0d-83fa9c67eec8
+            description: Procedimiento de Atracción de Talento (PRO-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 20340b6c-50fc-5eb6-81df-04d49932eb8c
+        control-id: cip-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: be1c0a32-ff62-55d3-be01-90dbfbacd180
+            description: "[Describe cómo la organización implementa CIP-2 – Ciberseguridad en Autenticación: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 371f24e4-cfcb-5de9-8e17-f90aca2bc9d7
+            uuid: 7f1df98b-9b2b-58bd-b114-5aa79c16efd1
+            description: Política de Gestión de Accesos (POL-CIP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 0818ad55-794d-5f51-a36b-d7aaf1ef038d
+        control-id: cip-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 243709cb-8122-5a02-810b-2bcaff062a63
+            description: "[Describe cómo la organización implementa CIP-3 – Ciberseguridad en Autorización: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 371f24e4-cfcb-5de9-8e17-f90aca2bc9d7
+            uuid: 442bfd7f-9df5-5ebb-979c-18c444dab6d0
+            description: Política de Gestión de Accesos (POL-CIP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 5b889df7-04ba-5a39-ad01-a3341bc55753
+        control-id: cip-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: bef99601-1590-5feb-a323-d3a15af970ef
+            description: "[Describe cómo la organización implementa CIP-4 – Aprovisionamiento, Cambios y Desaprovisionamiento de Identidades: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 371f24e4-cfcb-5de9-8e17-f90aca2bc9d7
+            uuid: 6e4a19e1-8bf6-5bf1-b5ec-dc00a3dafb94
+            description: Política de Gestión de Accesos (POL-CIP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: dc41a615-b467-5ecc-aa30-5e51b2ebcb4d
+            uuid: f9cee39f-c1cb-511e-bf16-5415fa6c76e7
+            description: Política de Seguridad de Recursos Humanos (POL-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e6137eed-592d-51f5-8311-7ee33df24251
+            uuid: 0ac43017-9d7d-5ebc-94b2-de78235769d8
+            description: Procedimiento de Atracción de Talento (PRO-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 114632b9-3c22-5722-8045-0b576020dcb3
+        control-id: cip-5
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 83c6d5a3-c9aa-572b-8b34-39297525cfb8
+            description: "[Describe cómo la organización implementa CIP-5 – Inventario de Puntos Finales: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: b6cdf390-efcd-58ea-83fe-46c30d0dd4f2
+            uuid: d9719ca3-f24a-5f72-8898-68c617a5979a
+            description: Política de Seguridad de TI (POL-CIF-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 29b7f779-fd52-5e87-952d-1b14a8eb141b
+            uuid: bfb1c136-d848-58b6-ad5b-cdb011de3d96
+            description: Política de Gestión de Activos (POL-DIA-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 96d3355e-c53b-5ddd-9f01-6b57a5c576f3
+            uuid: 13bee75b-34ea-5861-9701-c93d58339c38
+            description: Política de Trabajo Remoto y Dispositivos Móviles (POL-THP-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 2faaa289-1fb1-5a41-995c-fe9585b6586c
+        control-id: cip-6
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 1a95a625-b86e-5277-8661-fa1d8bffc6bd
+            description: "[Describe cómo la organización implementa CIP-6 – Ciberseguridad en Puntos Finales: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: c98a4177-9e11-5fcd-b14a-90f4ca9319f0
+            uuid: c55c1b81-7649-502c-a213-1d53a37e4c2b
+            description: Política de Gestión de Vulnerabilidades y Parches (POL-ADR-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 9abe6e89-5412-5a3e-9818-445c74e999cb
+            uuid: 73a6d452-30d2-56ee-94c5-28cb677ed433
+            description: Política de Protección contra Software Malicioso (POL-ADR-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: b6cdf390-efcd-58ea-83fe-46c30d0dd4f2
+            uuid: 76aa7a17-55af-5a77-968f-4a0bb95cf9c7
+            description: Política de Seguridad de TI (POL-CIF-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 6f1e2d89-75f5-5d77-9655-31e6ca2a9b8f
+            uuid: 7d7b508a-76c2-5df3-8776-588ff1a5a371
+            description: Política de Hardening (POL-CIP-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 96d3355e-c53b-5ddd-9f01-6b57a5c576f3
+            uuid: 8409ae06-1ecd-545e-a678-0184df49ebf2
+            description: Política de Trabajo Remoto y Dispositivos Móviles (POL-THP-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 46711466-b24d-5204-b646-d0c3e4581d49
+        control-id: cor-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 0ca87b43-b10d-599e-b0eb-5e7147d0bc52
+            description: "[Describe cómo la organización implementa COR-1 – Programa de Gestión de Riesgos y Ciberseguridad: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 5bb4f2af-e575-5a06-b287-700ec1d0c90e
+            uuid: 281be8a9-5a4c-507d-af49-cc7329c0db39
+            description: Plan de Continuidad del Negocio (PLN-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e3c48211-bca7-5a5d-b0f4-7c2bd5057f2e
+            uuid: 0493c890-d623-5581-a62d-e78c38449324
+            description: Política de Continuidad del Negocio (POL-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: a9754047-7211-5d13-baf2-00e3c2e2b6cb
+            uuid: 8264dc71-5856-5c34-a1e8-e25ef21162a8
+            description: Política de Gestión de Crisis (POL-CCN-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 070de7df-8f9f-5913-9c41-2520afc1c668
+            uuid: db90798b-03cc-528f-b5a6-58867ae06ab0
+            description: Política de Seguridad de la Información (POL-COR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 1f52f646-db24-5a64-823f-31db3000dc55
+            uuid: 622c8f77-dddd-5fd6-a991-18eeaba10bbc
+            description: Política de Documentos y Registros (POL-COR-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ccd427b4-2d5a-5347-8aea-5bf7e3aa16cc
+            uuid: f0c9b03f-836e-5d8f-992e-453bd876df90
+            description: Política de Gestión de Riesgos (POL-COR-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: f3687d22-387c-5a3c-b628-2ba3989310f0
+            uuid: 241b327e-60dd-552a-8b0d-663874dff79e
+            description: Procedimiento de Análisis de Impacto en el Negocio (BIA) (PRO-CCN-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: a3345213-41d5-5cd2-9ff8-65b59ff54498
+            uuid: f30f21f0-2d3b-54a5-aa22-636a8b8acb2f
+            description: Procedimiento y Plan de Comunicación (PRO-CCN-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 145629a3-4af7-5e8a-a60d-94ffd60e3532
+        control-id: cor-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 81210d63-731f-5be6-96a7-d69bcfe26550
+            description: "[Describe cómo la organización implementa COR-2 – Mapeo de Cumplimiento Regulatorio: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 070de7df-8f9f-5913-9c41-2520afc1c668
+            uuid: 1dbca64a-2b29-5f23-9f37-2488693159e9
+            description: Política de Seguridad de la Información (POL-COR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 8b147923-dce4-586d-916e-9be9eab6ad75
+            uuid: cc54cbe1-fce8-5257-bba5-c8a127f4dbab
+            description: Política de Gestión de Cumplimiento (POL-COR-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 9084a215-f2d5-5bf6-ba4f-e2ec1fe4d80b
+        control-id: cor-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: be56604a-df0a-5932-8ede-02bf89b890ac
+            description: "[Describe cómo la organización implementa COR-3 – Evaluación Independiente basada en Riesgos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: ccd427b4-2d5a-5347-8aea-5bf7e3aa16cc
+            uuid: 1ba6d222-b26d-5b6e-bd9f-b48c113aebc5
+            description: Política de Gestión de Riesgos (POL-COR-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 8b147923-dce4-586d-916e-9be9eab6ad75
+            uuid: 9d17f2c9-dab1-5f01-928f-12a0abfce1ff
+            description: Política de Gestión de Cumplimiento (POL-COR-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ffce7e12-5a1e-5c3a-8a92-c8c02c1338a9
+            uuid: 6a965eea-54c5-5fb7-8006-843216968fd5
+            description: Procedimiento de Auditoría Interna (PRO-COR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: abe293cb-f743-56d6-8cfc-41419cca31ed
+        control-id: cor-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 1733a58d-481c-5b6e-b937-93dc5eb72453
+            description: "[Describe cómo la organización implementa COR-4 – Mejora Continua y Acciones Correctivas: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 070de7df-8f9f-5913-9c41-2520afc1c668
+            uuid: 62e419e9-1aba-58c1-988a-7d60c8d56e95
+            description: Política de Seguridad de la Información (POL-COR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ccd427b4-2d5a-5347-8aea-5bf7e3aa16cc
+            uuid: 4d23f077-3459-5d5f-bd24-a29268352b78
+            description: Política de Gestión de Riesgos (POL-COR-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ffce7e12-5a1e-5c3a-8a92-c8c02c1338a9
+            uuid: f2dd1f6e-c550-53bc-b63f-a03e5631e4cc
+            description: Procedimiento de Auditoría Interna (PRO-COR-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: be1c4e0d-b4b8-594e-a334-bc4e10532b2e
+            uuid: d5709438-d11b-5c04-a64c-fdafe3ee6399
+            description: Procedimiento de Acciones Correctivas y Mejora Continua (PRO-COR-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 762461ef-fbd2-5b07-a0cc-1d78cd6a5c50
+        control-id: dia-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: bf16be95-263f-552f-a377-061f08880185
+            description: "[Describe cómo la organización implementa DIA-1 – Inventario de Datos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 29b7f779-fd52-5e87-952d-1b14a8eb141b
+            uuid: 86c0e6ec-638c-5e2e-98e3-f228101337fa
+            description: Política de Gestión de Activos (POL-DIA-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ced1f074-8195-5a87-b5ae-4be5a1551884
+            uuid: f2899900-e97c-5cbf-89de-37aaccc15f7a
+            description: Política de Clasificación y Manejo de la Información (POL-DIA-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: e32c96c4-f10d-5e88-a48e-8b37604e00ca
+        control-id: dia-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: d43b68c8-8c1e-5853-a65d-51ca28bf2292
+            description: "[Describe cómo la organización implementa DIA-2 – Inventario de Puntos de Recolección de Datos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: e6b713c5-5bff-585c-b647-be5d0818e1ff
+            uuid: 75830cb0-5071-526b-b8c5-20e453ee1b0c
+            description: Política de Privacidad (POL-DIA-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: ced272bd-9da3-53c2-9aed-26b174591ee5
+        control-id: dia-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: c819924b-3025-5c08-9920-d33f24cef78e
+            description: "[Describe cómo la organización implementa DIA-3 – Ciclo de Vida de los Datos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 2348b231-cd84-5261-afa5-b3beffece898
+            uuid: d25d0505-de13-5ab7-887c-147cab4e8a8d
+            description: Política de Seguridad de Comunicaciones (POL-CIF-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 1f52f646-db24-5a64-823f-31db3000dc55
+            uuid: 5057a86f-dc51-5b0f-b1e5-b473e7f9ad18
+            description: Política de Documentos y Registros (POL-COR-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ced1f074-8195-5a87-b5ae-4be5a1551884
+            uuid: bb2045be-675b-55cd-b1a1-0f858703c3ca
+            description: Política de Clasificación y Manejo de la Información (POL-DIA-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 19768b71-162b-5ac1-8114-3353959bef41
+            uuid: 5d79a703-34a1-5e49-944d-4fb2958574f7
+            description: Política de Retención y Eliminación de Datos (POL-DIA-05) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 18d48348-707d-5b44-ac61-92667fe2a579
+        control-id: dia-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 3d1298b1-a40f-5301-8162-5bb976ab7910
+            description: "[Describe cómo la organización implementa DIA-4 – Ciberseguridad en Información y Datos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: ed72c648-62d3-5d74-a3af-17c30bfd093b
+            uuid: 87fc833a-3f82-5f75-8710-56b34dd70e40
+            description: Cláusulas para Colaboradores (CLA-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 14627094-f959-5394-9b00-64ad65a0d606
+            uuid: 4c59abf3-e99a-56df-adca-864272b23699
+            description: Política de Seguridad Física (POL-CIF-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 15a28986-417a-5949-a5bb-26a5a7e1f0de
+            uuid: 4e5434c3-4368-51a1-84bf-d3bcf86884cf
+            description: Política de Backups y Recuperación (POL-CIF-06) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 5ae67815-f27e-504d-9347-d44972636f5b
+            uuid: 763eb538-8431-5e2e-95d1-c1bad7d17085
+            description: Política de Uso Aceptable de Inteligencia Artificial (POL-DIA-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: ced1f074-8195-5a87-b5ae-4be5a1551884
+            uuid: c8b0e488-926e-5343-808f-37edda1f6171
+            description: Política de Clasificación y Manejo de la Información (POL-DIA-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 8f97a2d6-d7b2-5f3a-963a-bc6dd3978534
+        control-id: dia-5
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: ae711af3-fa25-5fe5-a792-c4f22301e761
+            description: "[Describe cómo la organización implementa DIA-5 – Tiempo de Retención de Datos y Derecho al Olvido: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: e6b713c5-5bff-585c-b647-be5d0818e1ff
+            uuid: 370ec0d8-52ce-5db9-ade6-fbeb58661c18
+            description: Política de Privacidad (POL-DIA-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 19768b71-162b-5ac1-8114-3353959bef41
+            uuid: 1d2eabe9-fb4a-595a-8133-9a125741a4ef
+            description: Política de Retención y Eliminación de Datos (POL-DIA-05) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 11f9f342-cfd0-5fc0-8bb1-2a2c2066b149
+        control-id: dia-6
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: ba9826c7-b168-570f-9804-0c5259e4ff9e
+            description: "[Describe cómo la organización implementa DIA-6 – Ubicación de Información y Datos: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 7cf33aca-70ae-5091-b61c-dfc916f00876
+            uuid: 8254268d-3a0f-5ed3-9fc8-4886d3e14323
+            description: Política de Servicios en la Nube (POL-CIF-05) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e6b713c5-5bff-585c-b647-be5d0818e1ff
+            uuid: ce6fecd1-d31a-57a7-9757-db746208a739
+            description: Política de Privacidad (POL-DIA-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: d4c9d9ca-68f6-51b2-884c-ca160660f82b
+        control-id: dia-7
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 304941a0-233f-570f-a341-900343260ce9
+            description: "[Describe cómo la organización implementa DIA-7 – Ciberseguridad en Modelos de Inteligencia Artificial: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: 5ae67815-f27e-504d-9347-d44972636f5b
+            uuid: 107b1eb6-f984-559b-a7e3-2132d6863f47
+            description: Política de Uso Aceptable de Inteligencia Artificial (POL-DIA-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: f73546f8-815f-5c4b-bb33-ee6624e251fe
+        control-id: thp-1
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 3c895e79-4934-59ab-a80c-583f19220942
+            description: "[Describe cómo la organización implementa THP-1 – Capacitación de Ciberseguridad: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: ed72c648-62d3-5d74-a3af-17c30bfd093b
+            uuid: 6cf3b747-3f4c-5483-b333-ac51b8f33344
+            description: Cláusulas para Colaboradores (CLA-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 5ae67815-f27e-504d-9347-d44972636f5b
+            uuid: d81f849f-af8c-561f-b915-4a993254b554
+            description: Política de Uso Aceptable de Inteligencia Artificial (POL-DIA-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: dc41a615-b467-5ecc-aa30-5e51b2ebcb4d
+            uuid: 9ef20ac3-e8c6-524c-9800-f7c1132b8563
+            description: Política de Seguridad de Recursos Humanos (POL-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 73a481aa-7d2c-5677-aed4-4d346e28508f
+            uuid: 70a10f05-385c-5be6-93b4-771188725d08
+            description: Política de Gestión de Concienciación (POL-THP-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: e6137eed-592d-51f5-8311-7ee33df24251
+            uuid: e8ee9871-6cef-56d6-88d8-1d6dff59fb41
+            description: Procedimiento de Atracción de Talento (PRO-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 7910fd12-56f0-555b-80c5-00541a98e066
+            uuid: 8296ef52-e3dc-506b-9ef1-a5eb8464839e
+            description: Procedimiento de Concientización (PRO-THP-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 62016ef0-29df-59b5-80f6-f3735fc73829
+            uuid: d4eb0af2-415f-552f-8bcc-48c1ea0b00a4
+            description: Términos y Condiciones para Colaboradores (TYC-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: d5052096-2b71-5267-9b7a-64819bba901a
+        control-id: thp-2
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: 6cf6325f-dfee-58c8-b39c-f7f0df12c841
+            description: "[Describe cómo la organización implementa THP-2 – Trabajo Remoto: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: b6cdf390-efcd-58ea-83fe-46c30d0dd4f2
+            uuid: 8780faba-d5c5-585a-9459-9bc9182925e8
+            description: Política de Seguridad de TI (POL-CIF-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 96d3355e-c53b-5ddd-9f01-6b57a5c576f3
+            uuid: 06dbdb7c-cce5-5449-8da9-93721cc4e260
+            description: Política de Trabajo Remoto y Dispositivos Móviles (POL-THP-04) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 62016ef0-29df-59b5-80f6-f3735fc73829
+            uuid: 09afed2f-9e3e-5dfe-b56c-59ba0a33e88b
+            description: Términos y Condiciones para Colaboradores (TYC-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: cd75624a-2349-5066-8578-0564ad0e7e53
+        control-id: thp-3
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: d1ee1643-eba1-561b-92a0-22bdc950e4cf
+            description: "[Describe cómo la organización implementa THP-3 – Inventario de la Cadena de Suministro: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: d8db43da-a8fd-525d-9222-ecd496e32571
+            uuid: b0984625-3d9c-5e72-94fe-3d00496c3485
+            description: Solicitud de Compras (FOR-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 1bdb375e-be2e-53ad-b6b6-fef9b6edbf4a
+            uuid: 058e9427-2a14-5838-84d7-6ff8f8b22c14
+            description: Política de Gestión de Proveedores (POL-THP-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 0fe608bb-73ee-581b-8d7a-e50c73076b43
+            uuid: 9da69acc-7b7a-5214-ba39-ef4fe4b3a7bb
+            description: Procedimiento de Gestión de Proveedores (PRO-THP-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+      - uuid: 6d6399e2-1122-56ae-904a-b1ee230c7ffa
+        control-id: thp-4
+        by-components:
+          - component-uuid: f9a352c1-b10e-5bf5-ac79-2403bce40332
+            uuid: c34cb140-73fe-56f5-83f8-77acbec095b8
+            description: "[Describe cómo la organización implementa THP-4 – Modelo de Responsabilidad Compartida en la Cadena de Suministro: responsables, tecnología y evidencias.]"
+            implementation-status:
+              state: planned
+          - component-uuid: dcc7b547-10d7-561c-a087-ebc0d6dacd1c
+            uuid: 758d0084-9c51-51f3-a45e-45e0ab1b2069
+            description: Cláusulas para Proveedores (CLA-THP-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 8b5a3ca9-ac5f-5fa5-a672-5f08c8f8a007
+            uuid: f65812bc-34de-5385-a643-788ed823efcf
+            description: Plantilla de Contrato de Proveedores (PLA-THP-01) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 1bdb375e-be2e-53ad-b6b6-fef9b6edbf4a
+            uuid: 9c345c79-81d0-5de0-96ca-149858494cc1
+            description: Política de Gestión de Proveedores (POL-THP-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 0fe608bb-73ee-581b-8d7a-e50c73076b43
+            uuid: 1dbfa18f-537f-5cea-a62a-e5dd396bde2d
+            description: Procedimiento de Gestión de Proveedores (PRO-THP-03) define las directrices para este control.
+            implementation-status:
+              state: planned
+          - component-uuid: 682c9b21-fd38-54d6-95c4-d6afea516aac
+            uuid: 98d23a3b-59c8-55fa-9c59-331a9afb7f85
+            description: Términos y Condiciones para Proveedores (TYC-THP-02) define las directrices para este control.
+            implementation-status:
+              state: planned
+  back-matter:
+    resources:
+      - uuid: 242e1697-3681-58b1-900b-2954de79a7e0
+        title: Perfil Kudo – Línea base completa
+        description: Perfil OSCAL que selecciona todos los controles del catálogo Kudo.
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-profile.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-profile.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-profile.yaml
+            media-type: application/oscal+yaml
+      - uuid: 329fd8bb-c2c6-53ef-824f-94f7aedfb27a
+        title: Definición de componentes Kudo SGX
+        description: Componentes (políticas y procedimientos del SGX) y los controles que implementan.
+        rlinks:
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/json/kudo-component-definition.json
+            media-type: application/oscal+json
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/xml/kudo-component-definition.xml
+            media-type: application/oscal+xml
+          - href: https://raw.githubusercontent.com/PetterVargas/divisioncero.com/main/content/kudo/framework/oscal/kudo/rev1/yaml/kudo-component-definition.yaml
+            media-type: application/oscal+yaml

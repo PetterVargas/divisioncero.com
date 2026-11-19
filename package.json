@@ -7,7 +7,7 @@
   "scripts": {
     "build": "pnpm build:presentaciones && pnpm museo:update && pnpm build:next",
     "build:next": "pnpm static:generate && next build --webpack",
-    "static:generate": "fumadocs-mdx && tsx --import ./scripts/register-mdx.ts ./scripts/og-generate.tsx && tsx --import ./scripts/register-mdx.ts ./scripts/search-generate.ts",
+    "static:generate": "pnpm kudo:herramientas && fumadocs-mdx && tsx --import ./scripts/register-mdx.ts ./scripts/og-generate.tsx && tsx --import ./scripts/register-mdx.ts ./scripts/search-generate.ts",
     "build:presentaciones": "pnpm --dir cyberacademy/presentaciones install --frozen-lockfile && PRESENTACIONES_OUT_DIR=../../public/cyberacademy/presentaciones pnpm --dir cyberacademy/presentaciones build",
     "dev": "next dev",
     "start": "next start",
@@ -21,7 +21,11 @@
     "openapi:generate": "tsx ./scripts/generate-openapi.ts",
     "museo:fetch": "tsx scripts/herramientas/museo-fetch.ts",
     "museo:process": "tsx scripts/herramientas/museo-process.ts",
-    "museo:update": "pnpm run museo:fetch && pnpm run museo:process"
+    "museo:update": "pnpm run museo:fetch && pnpm run museo:process",
+    "kudo:sgx": "tsx scripts/kudo/sync-sgx-documentos.ts",
+    "kudo:oscal": "tsx scripts/kudo/oscal-generate.ts",
+    "kudo:oscal:xml": "bash scripts/kudo/oscal-to-xml.sh",
+    "kudo:herramientas": "tsx scripts/kudo/generate-herramientas.ts"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.9",
@@ -29,6 +33,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "d3-force": "^3.0.1",
+    "d3-transition": "3.0.2",
     "feed": "^6.0.0",
     "fumadocs-core": "16.19.0",
     "fumadocs-mdx": "15.6.1",
@@ -61,6 +66,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.5",
+    "@toon-format/toon": "4.4.0",
     "@types/d3-force": "^3.0.10",
     "@types/mdx": "^2.0.14",
     "@types/node": "^26.6.6",
@@ -74,6 +80,7 @@
     "tailwindcss": "^4.3.5",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "wrangler": "4.161.0"
+    "wrangler": "4.161.0",
+    "yaml": "2.9.1"
   }
 }

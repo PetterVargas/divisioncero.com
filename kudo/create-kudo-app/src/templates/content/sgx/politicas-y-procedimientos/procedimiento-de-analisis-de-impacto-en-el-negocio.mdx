@@ -1,0 +1,75 @@
+---
+title: "Procedimiento de Análisis de Impacto en el Negocio (BIA)"
+description: "Metodología para análisis de impacto en continuidad del negocio (BIA)"
+codigo: "PRO-CCN-01"
+tipo: "procedimiento"
+dominio: "ccn"
+propietario: "Responsable de Continuidad (BCM)"
+version: "1.1"
+revision: "Anual"
+controles: [ccn-4, cor-1]
+---
+
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| PRO-CCN-01 | Procedimiento | CCN | 1.1 | Responsable de Continuidad (BCM) | Anual |
+{/* /kudo:control-documento */}
+
+## Propósito
+Determinar los procesos críticos de la organización, el impacto de su interrupción a lo largo del tiempo y los recursos y tiempos necesarios para su recuperación, considerando dependencias internas y externas.
+
+## Alcance
+Aplica a todos los procesos de negocio, sistemas, instalaciones y proveedores relevantes de la organización.
+
+## Objetivos
+- Identificar los procesos y sistemas críticos.
+- Evaluar el impacto de las interrupciones en el tiempo.
+- Definir los objetivos de recuperación (MTPD, RTO, RPO y MBCO).
+- Identificar dependencias (personas, sistemas, datos, proveedores e instalaciones).
+- Priorizar la recuperación.
+
+## Definiciones Clave
+- **BIA:** análisis de las funciones del negocio y de los efectos que tendría su interrupción.
+- **MBCO:** nivel mínimo de servicio aceptable durante una interrupción.
+- **MTPD:** tiempo máximo que puede durar una interrupción antes de que sus impactos sean inaceptables.
+- **RTO:** tiempo objetivo para reanudar un proceso o servicio (debe ser menor que el MTPD).
+- **RPO:** cantidad máxima de datos que se puede perder, expresada en tiempo (punto hasta el que deben restaurarse los datos).
+- **SME:** experto en la materia del proceso.
+
+## Responsabilidades
+- **Gerencia:** valida los resultados del BIA y aprueba los objetivos de recuperación y las prioridades.
+- **Responsable de Continuidad (BCM):** planifica los talleres, recopila y analiza la información y consolida el informe.
+- **Líderes de proceso y SME:** aportan la información de su proceso y validan los resultados.
+
+## Procedimiento
+1. **Preparación:** definir el alcance, el listado de procesos y el calendario de entrevistas o talleres.
+2. **Recopilación de información:** mediante entrevistas, cuestionarios o talleres con cada líder de proceso, documentar actividades, recursos, sistemas, datos, proveedores y picos de operación.
+3. **Evaluación del impacto en el tiempo:** calificar el impacto (1 = bajo, 2 = medio, 3 = alto) en cada horizonte de tiempo:
+
+| Tipo de impacto | 4 h | 24 h | 72 h | 1 semana | 30 días |
+| --------------- | --- | ---- | ---- | -------- | ------- |
+| Financiero | | | | | |
+| Clientes / operación | | | | | |
+| Legal / regulatorio | | | | | |
+| Reputacional | | | | | |
+
+4. **Definición de objetivos:** a partir del momento en que el impacto se vuelve alto, definir el MTPD; luego fijar RTO, RPO y MBCO con el líder del proceso.
+5. **Análisis de dependencias:** verificar que los sistemas y proveedores de los que depende cada proceso pueden recuperarse dentro de su RTO; registrar las brechas.
+6. **Priorización y validación:** ordenar los procesos por criticidad, presentar los resultados a la gerencia y obtener su aprobación.
+7. **Entrega:** actualizar la tabla de procesos críticos del [Plan de Continuidad del Negocio](/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio) y la Política de Backups y Recuperación con los nuevos objetivos.
+
+## Registros
+- Cuestionarios o actas de entrevistas por proceso.
+- Informe del BIA aprobado por la gerencia.
+
+## Monitoreo y Revisión
+- BIA completo al menos cada dos años; revisión anual o ante cambios significativos en procesos, sistemas o proveedores.
+- Seguimiento de las brechas de recuperación identificadas como acciones del plan de tratamiento de riesgos.
+
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CCN-4 · Continuidad del Negocio y Recuperación ante Desastres](/framework/ccn/ccn-4)
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/framework/cor/cor-1)
+{/* /kudo:controles */}

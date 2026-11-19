@@ -1,103 +1,92 @@
 ---
 title: "Política de Continuidad del Negocio"
 description: "Directrices para asegurar la continuidad de funciones críticas durante y después de interrupciones"
+codigo: "POL-CCN-01"
+tipo: "politica"
+dominio: "ccn"
+propietario: "Responsable de Continuidad (BCM)"
+version: "1.1"
+revision: "Anual"
+controles: [ccn-4, cor-1, cif-1]
 ---
 
+{/* kudo:control-documento — generado por scripts/kudo/sync-sgx-documentos.ts */}
+| Código | Tipo | Dominio | Versión | Propietario | Revisión |
+| ------ | ---- | ------- | ------- | ----------- | -------- |
+| POL-CCN-01 | Política | CCN | 1.1 | Responsable de Continuidad (BCM) | Anual |
+{/* /kudo:control-documento */}
+
 ## Propósito
-Esta política establece las directrices para asegurar la continuidad de las funciones críticas de la organización durante y después de una interrupción. Garantiza que el personal conozca los principios de continuidad del negocio, gestión de riesgos, respuesta a incidentes y cumplimiento. Su cumplimiento es obligatorio para todo el personal y aplica a todas las áreas.
+Establecer las directrices para asegurar la continuidad de las funciones críticas de la organización durante y después de una interrupción, mediante un Sistema de Gestión de Continuidad del Negocio (BCMS) proporcional a su tamaño y riesgos. Su cumplimiento es obligatorio para todo el personal.
 
 ## Objetivos
 - Identificar los procesos y servicios críticos y asegurar su continuidad ante una interrupción.
-- Minimizar el impacto en la organización, clientes y partes interesadas.
-- Garantizar la recuperación rápida y ordenada de operaciones esenciales.
-- Alinear el BCMS con la estrategia y requisitos regulatorios.
+- Minimizar el impacto en la organización, sus clientes y partes interesadas.
+- Recuperar las operaciones esenciales dentro de los tiempos definidos (RTO/RPO).
 - Establecer una estructura clara de gestión de crisis.
 - Mantener un BCMS actualizado, práctico y en mejora continua.
 
 ## Alcance
-Esta política abarca:
-- Todas las ubicaciones, oficinas y unidades de negocio.
-- Funciones esenciales como TI, Finanzas, Operaciones, RRHH y otras áreas clave.
-- Procesos críticos y recursos necesarios (equipos, instalaciones, aplicaciones, conocimiento).
-- Riesgos relevantes: desastres naturales, ciberataques, fallas técnicas, errores humanos.
-- Programas de capacitación y concienciación para todo el personal.
+- Todas las ubicaciones, oficinas, unidades de negocio y servicios en la nube.
+- Funciones esenciales como TI, Finanzas, Operaciones, RRHH y atención a clientes.
+- Recursos necesarios: personas, instalaciones, tecnología, información y proveedores.
+- Escenarios de riesgo: desastres naturales, ciberataques (incluido ransomware), fallas técnicas, fallas de proveedores y ausencia de personal clave.
 
-## Estándar
+## Roles y Responsabilidades
+- **Gerencia:** aprueba la política, los recursos y las estrategias de recuperación.
+- **Responsable de Continuidad (BCM):** coordina el BIA, los planes, los ejercicios y los reportes.
+- **Líderes de proceso:** mantienen los planes de su área y participan en los ejercicios.
+- **Todos los colaboradores:** conocen su rol en el plan y participan en las capacitaciones.
 
-### Evaluación de Riesgos
-Identificar amenazas y vulnerabilidades que puedan afectar la continuidad. Determinar procesos críticos y requisitos mínimos operativos.
+## Estándares
+
+### Análisis de Impacto y Riesgos
+- Ejecutar el [BIA](/kudo/sgx/politicas-y-procedimientos/procedimiento-de-analisis-de-impacto-en-el-negocio) completo al menos cada dos años y revisarlo anualmente o ante cambios significativos.
+- Evaluar las amenazas que pueden afectar la continuidad conforme a la Política de Gestión de Riesgos.
 
 ### Plan de Continuidad del Negocio (BCP)
-Desarrollar planes por función crítica, incluyendo pasos de recuperación, roles, comunicación y salvaguarda de la información. Los planes deben probarse y actualizarse periódicamente.
+- Mantener el [Plan de Continuidad del Negocio](/kudo/sgx/politicas-y-procedimientos/plan-de-continuidad-de-negocio) con estrategias, roles, comunicación y pasos de recuperación para cada proceso crítico.
+- Integrar el plan de recuperación tecnológica (DRP) con la Política de Backups y Recuperación.
 
-### Respuesta a Incidentes
-Activar procedimientos de respuesta ante interrupciones para restablecer servicios con el menor impacto posible y recuperar sistemas, datos y procesos críticos.
+### Respuesta a Incidentes y Crisis
+- Las interrupciones originadas en incidentes de seguridad se gestionan con la Política de Gestión de Incidentes; las de gran impacto, con la Política de Gestión de Crisis.
 
-### Capacitación y Concienciación
-- Capacitación anual obligatoria.
-- Campañas regulares de concienciación.
-- Capacitación de inducción para nuevos colaboradores.
-- Sesiones de actualización según cambios relevantes.
-- Registros actualizados de todas las capacitaciones.
-
-### Cumplimiento Legal y Regulatorio
-El BCMS debe cumplir requisitos aplicables como GDPR, HIPAA, BRRD u otros reguladores según la jurisdicción.
-
-### Análisis de Impacto al Negocio (BIA)
-Ejecutar un BIA completo cada tres años, con revisiones anuales para ajustar prioridades y tiempos de recuperación.
-
-### Evaluación de Proveedores
-Identificar proveedores críticos y validar su cumplimiento con acuerdos de continuidad, especialmente durante BIA y revisiones periódicas.
+### Proveedores
+- Identificar los proveedores críticos y validar sus capacidades de continuidad durante el BIA y en las revisiones periódicas.
 
 ### Ejercicios y Pruebas
-Realizar ejercicios regulares de BC/DR para validar tiempos de recuperación, roles y efectividad de los planes.
+- Ejecutar al menos **un ejercicio al año** (de mesa, recorrido o simulación) que cubra los escenarios más relevantes y validar los tiempos de recuperación.
 
-### Estructura de Respuesta a Incidentes
-Definir cómo se gestionan incidentes graves como:
-- Pérdida de centro de datos
-- Pérdida de oficinas o instalaciones
-- Fallas de proveedores críticos
-- Ausencia de personal esencial
+### Capacitación y Concienciación
+- Incluir la continuidad del negocio en la inducción y en la capacitación anual, conforme a la Política de Gestión de Concienciación.
 
-### Competencias
-Definir las habilidades requeridas para roles del BCMS y garantizar su cumplimiento mediante formación continua.
-
-### Evaluación de Desempeño
-Medir el desempeño del BCMS mediante KPIs y reportarlos en los Comités de Continuidad para priorizar mejoras.
-
-### Auditoría y Evaluación
-Realizar auditorías internas y externas para validar la eficacia del BCMS. Las auditorías deben cubrir todas las áreas al menos una vez cada 3 años.
-
-### Mejora Continua
-Identificar acciones correctivas, no conformidades y oportunidades de mejora, aplicarlas y verificar su efectividad en cada ciclo de revisión.
-
-## Protección Contra Fallas de Servicios Públicos
-Para asegurar la continuidad, se deben proteger instalaciones y sistemas frente a fallas de energía o servicios públicos mediante:
-- Equipos configurados y mantenidos según especificación.
-- Evaluaciones periódicas de capacidad frente al crecimiento.
-- Inspecciones y pruebas regulares.
-- Sistemas de alarma para fallos.
-- Alimentación redundante y rutas diversas.
-- Separación de redes entre equipos críticos y sistemas de TI.
-- Protección de equipos conectados a internet.
+### Protección contra Fallas de Servicios
+- Equipos críticos con alimentación redundante (UPS y, cuando aplique, generador), mantenimiento periódico y alarmas de falla.
+- Conectividad redundante para los servicios críticos.
 - Iluminación y comunicaciones de emergencia disponibles.
 
+### Cumplimiento Legal y Regulatorio
+El BCMS cumple los requisitos de continuidad exigidos por la legislación y los reguladores sectoriales aplicables (por ejemplo, superintendencias financieras o de salud). Si existen leyes o estándares más estrictos, estos prevalecen.
+
+### Desempeño y Mejora
+- Medir el BCMS con indicadores (por ejemplo: % de procesos críticos con plan vigente, ejercicios ejecutados, tiempos de recuperación logrados frente a los objetivos) y reportarlos a la gerencia.
+- Gestionar los hallazgos con el Procedimiento de Acciones Correctivas y Mejora Continua.
+
 ## Compromiso de Recursos
-La gerencia define anualmente los recursos necesarios para continuidad y Finanzas garantiza los fondos requeridos.
+La gerencia define anualmente los recursos necesarios para la continuidad y Finanzas asigna los fondos requeridos.
 
 ## Comunicación
-El Gerente del BCMS, con Comunicaciones Internas, gestiona la comunicación del programa. En emergencias, se sigue la estrategia de comunicación de crisis establecida para proteger la reputación corporativa.
-
-## Cumplimiento
-El cumplimiento de esta política es obligatorio. Si existen leyes o estándares más estrictos, éstos prevalecen.
+El Responsable de Continuidad, junto con Comunicaciones, gestiona la comunicación del programa. En emergencias se sigue el [Procedimiento y Plan de Comunicación](/kudo/sgx/politicas-y-procedimientos/procedimiento-y-plan-de-comunicacion).
 
 ## Monitoreo y Revisión
-La organización mantiene un proceso para evaluar la efectividad del BCMS mediante:
-- Revisión regular de documentos, políticas y controles.
-- Evaluación del cumplimiento legal y contractual.
-- Reportes periódicos a la gerencia sobre el desempeño del BCMS.
-- Evaluación continua de controles internos y comunicación oportuna de deficiencias.
-- Verificación y seguimiento de acciones correctivas.
-- Auditorías internas periódicas y revisiones de efectividad.
+- Revisión anual de esta política, del BIA y de los planes, o antes si hay cambios significativos.
+- Auditoría interna del BCMS al menos una vez cada tres años para todas las áreas.
+- La gerencia revisa los resultados y garantiza la implementación de las mejoras.
 
-La gerencia revisa los resultados y garantiza la implementación de mejoras y ajustes cuando sea necesario para mantener la continuidad y resiliencia de la organización.
+{/* kudo:controles — generado por scripts/kudo/sync-sgx-documentos.ts */}
+## Controles Kudo relacionados
+
+- [CCN-4 · Continuidad del Negocio y Recuperación ante Desastres](/kudo/framework/ccn/ccn-4)
+- [COR-1 · Programa de Gestión de Riesgos y Ciberseguridad](/kudo/framework/cor/cor-1)
+- [CIF-1 · Proveedores de Servicio de Nube](/kudo/framework/cif/cif-1)
+{/* /kudo:controles */}
